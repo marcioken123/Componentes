@@ -1,0 +1,40 @@
+Tento Software je freeware. Pro komerèní použití je však vyžadována
+registrace.
+
+Vyplòte formuláø a odešlete na emailovou adresu register@2p.cz
+
+
+FIRMA:		___________________________
+KONTAKTNÍ OSOBA:___________________________
+
+ADRESA
+ULICE:		___________________________
+PSÈ/OBEC:	___________________________
+STÁT:		___________________________
+
+EMAIL:		___________________________
+URL:		HTTP://____________________
+
+ÚÈEL:           ( ) komerèní
+                ( ) osobní použití
+                ( ) školní
+
+REGISTRUJI TUTO VERZI PRODUKTU BUMERANG:
+LITE		( )
+GSM STANDARD	( )
+BMG		( )
+BMG PRO		( )
+EMI		( )
+EMI PRO		( )
+GSM EXPERT	( )
+
+ANO, MÁM ZÁJEM O KOUPI DALŠÍ VERZE PRODUKTU BUMERANG (VIZ. CENIK.RTF):
+GSM STANDARD	[ ]
+BMG		[ ]
+BMG PRO		[ ]
+EMI		[ ]
+EMI PRO		[ ]
+GSM EXPERT	[ ]
+
+
+DATUM:	__________

@@ -1,0 +1,59 @@
+package Tropicom_D7;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'Tropicom Componentes'}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcl,
+  vcldb,
+  dbrtl,
+  RxCtl7,
+  vclx,
+  VclSmp,
+  vcljpg,
+  inet,
+  qrpt,
+  bdertl,
+  designide,
+  vclactnband,
+  DJcl,
+  JvCoreD7R,
+  JvStdCtrlsD7R,
+  JvSystemD7R,
+  JvDBD7R;
+
+contains
+  DBEditTropicom in 'DBEditTropicom.pas',
+  EditTropicom in 'EditTropicom.pas',
+  SpinEditTropicom in 'SpinEditTropicom.pas',
+  dbSpinEditTropicom in 'dbSpinEditTropicom.pas',
+  DBDateEditTropicom in 'DBDateEditTropicom.pas',
+  DBCalcEditTropicom in 'DBCalcEditTropicom.pas',
+  JvCalcEditTropicom in 'JvCalcEditTropicom.pas',
+  JvDateEditTropicom in 'JvDateEditTropicom.pas',
+  ArquivoBancario in 'ArquivoBancario.pas';
+
+end.

@@ -1,0 +1,104 @@
+/GLExplosionFx.pas/1.4/Sun Oct 26 16:22:12 2003//
+/GLFireFX.pas/1.15/Sun Oct 26 16:22:12 2003//
+/GLGLUTesselation.pas/1.4/Sun Oct 26 16:22:12 2003//
+/GLMultiPolygon.pas/1.10/Sun Oct 26 16:22:12 2003//
+/GLPerlinBase.pas/1.3/Wed Jul  9 07:55:06 2003//
+/GLPortal.pas/1.7/Sun Oct 26 16:22:12 2003//
+/GLSMFMOD.pas/1.12/Sun Oct 26 16:22:12 2003//
+/GLSMOpenAL.pas/1.2/Sun Oct 26 16:22:12 2003//
+/GLSound.pas/1.12/Sun Oct 26 16:22:14 2003//
+/GLSpaceText.pas/1.10/Wed Jul 23 17:47:24 2003//
+/GLSpecials.pas/1.5/Sun Oct 26 16:22:14 2003//
+/GLStrings.pas/1.5/Fri Aug 22 14:29:42 2003//
+/GLTimeEventsMgr.pas/1.5/Thu Sep  4 14:43:20 2003//
+/GLVerletClothify.pas/1.16/Sun Oct 26 16:22:14 2003//
+/readme.htm/1.3/Fri Jan 18 15:54:06 2002//
+D/Base////
+D/CgShaders////
+D/DesignTime////
+D/FileFormats////
+D/GameAPIs////
+D/PhysicsAPIs////
+D/Platform////
+D/PlugIn////
+D/Shaders////
+D/SoundAPIs////
+D/VideoAPIs////
+/GLMultiProxy.pas/1.5/Thu Nov 27 12:21:36 2003//
+/GLGeomObjects.pas/1.8/Tue Dec  2 14:49:58 2003//
+/.cvsignore/1.8/Tue Jan  6 17:26:28 2004//
+/GLProxyObjects.pas/1.2/Tue Jan  6 17:26:30 2004//
+/GLVerletSkeletonColliders.pas/1.3/Tue Jan  6 17:26:32 2004//
+/GLExtrusion.pas/1.10/Tue Mar  9 15:18:46 2004//
+/GLGraph.pas/1.12/Tue Mar  9 15:18:46 2004//
+/GLMesh.pas/1.13/Tue Mar  9 15:18:46 2004//
+/GLMeshOptimizer.pas/1.5/Tue Mar  9 15:18:48 2004//
+/GLPolyhedron.pas/1.4/Tue Mar  9 15:18:54 2004//
+/GLSilhouette.pas/1.16/Tue Mar  9 15:18:56 2004//
+/GLState.pas/1.2/Tue Mar  9 15:18:58 2004//
+/GLBaseMeshSilhouette.pas/1.6/Wed May  5 13:55:28 2004//
+/GLBehaviours.pas/1.11/Wed May  5 13:55:30 2004//
+/GLBumpmapHDS.pas/1.4/Wed May  5 13:55:30 2004//
+/GLDWS2Objects.pas/1.1/Wed Apr 28 01:40:52 2004//
+/GLODECustomColliders.pas/1.5/Wed May  5 13:55:50 2004//
+/GLODESkeletonColliders.pas/1.2/Wed May  5 13:56:16 2004//
+/GLShadowPlane.pas/1.20/Wed May  5 13:56:26 2004//
+/GLSkyBox.pas/1.9/Wed May  5 13:56:26 2004//
+/GLSoundFileObjects.pas/1.5/Wed May  5 13:56:28 2004//
+/GLTexLensFlare.pas/1.1/Thu Apr 15 14:52:56 2004//
+/GLTilePlane.pas/1.5/Wed May  5 13:56:30 2004//
+/GLVerletClasses.pas/1.5/Wed May  5 13:56:34 2004//
+/GLWaterPlane.pas/1.5/Tue Apr 27 08:02:12 2004//
+/_Cleanup.bat/1.1/Thu Apr 15 16:14:28 2004//
+D/ScriptingAPIs////
+/GLAVIRecorder.pas/1.4/Wed Jun  9 03:37:04 2004//
+/GLContext.pas/1.45/Result of merge//
+/GLGraphics.pas/1.36/Wed Jun  9 03:37:06 2004//
+/GLHeightTileFileHDS.pas/1.5/Wed Jun  9 03:37:06 2004//
+/GLMirror.pas/1.18/Wed Jun  9 03:37:08 2004//
+/GLParametricSurfaces.pas/1.6/Wed Jun  9 03:37:12 2004//
+/GLProcTextures.pas/1.7/Wed Jun  9 03:37:12 2004//
+/GLROAMPatch.pas/1.26/Wed Jun  9 03:37:12 2004//
+/GLShadowVolume.pas/1.34/Wed Jun  9 03:37:12 2004//
+/GLSkydome.pas/1.29/Wed Jun  9 03:37:12 2004//
+/GLTeapot.pas/1.8/Wed Jun  9 03:37:12 2004//
+/GLThorFX.pas/1.14/Wed Jun  9 03:37:12 2004//
+/GLTree.pas/1.13/Wed Jun  9 03:37:12 2004//
+/GLUtils.pas/1.5/Wed Jun  9 03:37:12 2004//
+/GLLensFlare.pas/1.24/Fri Jun 25 22:50:38 2004//
+/GLPerlinPFX.pas/1.6/Fri Jun 25 22:50:38 2004//
+/GLAnimatedSprite.pas/1.7/Wed Jul 28 04:09:22 2004//
+/GLBSP.pas/1.13/Fri Sep 10 03:37:16 2004//
+/GLBitmapFont.pas/1.37/Fri Sep 10 03:37:16 2004//
+/GLCadencer.pas/1.29/Fri Sep 10 03:37:16 2004//
+/GLCollision.pas/1.15/Fri Sep 10 03:37:16 2004//
+/GLDCE.pas/1.1/Tue Sep  7 19:13:56 2004//
+/GLDCEMisc.pas/1.1/Tue Sep  7 19:13:56 2004//
+/GLEllipseCollision.pas/1.2/Thu Sep  9 04:50:30 2004//
+/GLFPSMovement.pas/1.5/Fri Sep 10 03:37:24 2004//
+/GLFeedback.pas/1.1/Fri Jul 23 03:47:42 2004//
+/GLGui.pas/1.12/Fri Sep 10 03:37:24 2004//
+/GLHUDObjects.pas/1.19/Fri Sep 10 03:37:24 2004//
+/GLHeightData.pas/1.46/Fri Sep 10 03:37:24 2004//
+/GLImposter.pas/1.20/Fri Sep 10 03:37:24 2004//
+/GLMaterialScript.pas/1.3/Thu Sep  9 04:07:32 2004//
+/GLMeshBuilder.pas/1.3/Fri Sep 10 03:37:26 2004//
+/GLMeshCSG.pas/1.4/Fri Sep 10 03:37:26 2004//
+/GLMisc.pas/1.49/Fri Sep 10 03:37:26 2004//
+/GLMovement.pas/1.13/Fri Sep 10 03:37:26 2004//
+/GLNavigator.pas/1.11/Fri Sep 10 03:37:26 2004//
+/GLODEManager.pas/1.42/Fri Sep 10 03:37:30 2004//
+/GLObjects.pas/1.96/Fri Sep 10 03:37:32 2004//
+/GLParticleFX.pas/1.49/Fri Sep 10 03:37:32 2004//
+/GLParticles.pas/1.8/Fri Sep 10 03:37:32 2004//
+/GLPerlin.pas/1.8/Fri Sep 10 03:37:32 2004//
+/GLSMBASS.pas/1.10/Fri Sep 10 03:37:32 2004//
+/GLScene.inc/1.13/Result of merge//
+/GLScene.pas/1.221/Fri Sep 10 03:37:32 2004//
+/GLScreen.pas/1.9/Fri Sep 10 03:37:32 2004//
+/GLTerrainRenderer.pas/1.52/Fri Sep 10 03:37:32 2004//
+/GLTexture.pas/1.117/Fri Sep 10 03:37:32 2004//
+/GLVectorFileObjects.pas/1.168/Fri Sep 10 03:37:32 2004//
+/GLWindows.pas/1.23/Fri Sep 10 03:37:32 2004//
+/GLWindowsFont.pas/1.13/Fri Sep 10 03:37:32 2004//
+/GLzBuffer.pas/1.21/Fri Sep 10 03:37:32 2004//

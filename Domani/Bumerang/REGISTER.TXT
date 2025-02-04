@@ -1,0 +1,40 @@
+This Software is freeware. For commercial purposes registration is
+required.
+
+Fill form, please, and send to email address register@2p.cz
+
+
+FIRM:		___________________________
+PERSON:		___________________________
+
+ADDRESS
+STREET:		___________________________
+ZIP/CITY:	___________________________
+STATE:		___________________________
+
+EMAIL:		___________________________
+URL:		HTTP://____________________
+
+PURPOSE:        ( ) commercial
+                ( ) personal
+                ( ) educational
+
+I WOULD REGISTER THIS VERSION OF BUMERANG:
+LITE		( )
+GSM STANDARD	( )
+BMG		( )
+BMG PRO		( )
+EMI		( )
+EMI PRO		( )
+GSM EXPERT	( )
+
+YES, I WOULD BUY THIS VERSION OF BUMERANG (SEE. PRICE.RTF):
+GSM STANDARD	[ ]
+BMG		[ ]
+BMG PRO		[ ]
+EMI		[ ]
+EMI PRO		[ ]
+GSM EXPERT	[ ]
+
+
+DATE:	__________

@@ -1,0 +1,57 @@
+package GmPrintSuite_D5;
+
+{$R *.RES}
+{$R 'GmPreview.dcr'}
+{$R 'GmRtfPreview.dcr'}
+{$R 'GmGridPrint.dcr'}
+{$R 'GmThumbnails.dcr'}
+{$R 'GmMultipageImage.dcr'}
+{$R 'GmOrientationImage.dcr'}
+{$R 'GmPrinterList.dcr'}
+{$ALIGN OFF}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA OFF}
+{$IOCHECKS OFF}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'GmPrintSuite Printing Components'}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl50,
+  vcljpg50;
+
+contains
+  GmTypes in 'GmTypes.pas',
+  GmPrinter in 'GmPrinter.pas',
+  GmConst in 'GmConst.pas',
+  GmRegister in 'GmRegister.pas',
+  GmCanvas in 'GmCanvas.pas',
+  GmStream in 'GmStream.pas',
+  GmObjects in 'GmObjects.pas',
+  GmErrors in 'GmErrors.pas',
+  GmPreview in 'GmPreview.pas',
+  GmRtfPreview in 'GmRtfPreview.pas',
+  GmRtfFuncs in 'GmRtfFuncs.pas',
+  GmGridPrint in 'GmGridPrint.pas',
+  GmThumbnails in 'GmThumbnails.pas',
+  GmMultipageImage in 'GmMultipageImage.pas',
+  GmOrientationImage in 'GmOrientationImage.pas',
+  GmPrinterList in 'GmPrinterList.pas';
+
+end.

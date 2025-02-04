@@ -1,0 +1,41 @@
+unit Highlighter;
+
+{ Global variables }
+var
+  Highlighter: TMenuItem;
+  HighlighterAdd: TMenuItem;
+
+//  THighLighter = (hlNone, hlPascal, hlCBuilder, hlSql, hlPython,
+//                  hlJava, hlVB, hlHtml, hlPerl);
+
+
+{ function NewItem(const ACaption: string; AShortCut: TShortCut; AChecked, AEnabled: Boolean; AOnClick: TNotifyEvent; hCtx: Word; const AName: string): TMenuItem; }
+
+procedure InitHighlighter;
+var
+  Ctrl: set;
+begin
+  Highlighter := nil;
+  Highlighter := NewItem('&Highlighter', 0, False, True, 0, nil {ignored - always must be nil}, 'miHighlighter');
+  MainWindow.Menu.Items.Insert(MainWindow.Menu.Items.Count - 1, Highlighter);
+  Ctrl := [ssCtrl, ssShift];
+
+  HighlighterAdd := NewItem('Pascal', ShortCut(ord('P'), Ctrl), False, True, 0, 0, 'miHighlighterPascal');
+  HighlighterAdd.OnClick := HighlighterClick;
+  HighlighterAdd.Tag := 1;
+  Highlighter.Add(HighlighterAdd);
+
+  HighlighterAdd := NewItem('Html', ShortCut(ord('H'), Ctrl), False, True, 0, 0, 'miHighlighterPascal');
+  HighlighterAdd.OnClick := HighlighterClick;
+  HighlighterAdd.Tag := 7;
+  Highlighter.Add(HighlighterAdd);
+end;
+
+procedure HighlighterClick(Sender: TObject);
+begin
+  Editor.Highlighter := Sender.Tag;
+  Editor.LoadColors;
+end;
+
+
+end.

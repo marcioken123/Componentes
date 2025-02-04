@@ -1,0 +1,36 @@
+unit Completion;
+
+uses Global;
+
+procedure InitCompletion;
+begin
+  { dummy }
+end;
+
+procedure DoneCompletion;
+begin
+  { dummy }
+end;
+
+procedure CompletionFileOpen(FileName: string);
+var
+  FN: string;
+begin
+  if Editor.HighlighterName = 'Html' then
+  begin
+    FN := WorkingDir + 'html.identifers';
+    if FileExists(FN) then
+    begin
+      Editor.Completion.Enabled := True;
+      Editor.Completion.Separator := '~';
+      Editor.Completion.Identifers.LoadFromFile(FN);
+    end;
+  end
+  else
+  begin
+    Editor.Completion.Enabled := False;
+    Editor.Completion.Identifers.Clear;
+  end;
+end;
+
+end.

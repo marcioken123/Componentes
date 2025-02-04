@@ -1,0 +1,1394 @@
+***  Installation Started 04/26/2022 1:48  ***
+Title: LMD-Tools Special Edition
+Source: E:\Projetos\Componentes\lmd70se_d7.exe | 08-26-2005 | 00:39:24 | 11355985
+File Copy: C:\Projetos\Componentes\LMD70SE\source\dummy\lmdbredt.pas | 01-01-2005 | 07:02:00 | | 717 | ff3ad3ae
+File Copy: C:\Projetos\Componentes\LMD70SE\source\dummy\lmdbtn.pas | 01-01-2005 | 07:02:00 | | 735 | 265dc1b1
+File Copy: C:\Projetos\Componentes\LMD70SE\source\dummy\lmdcctrl.pas | 01-01-2005 | 07:02:00 | | 719 | 3f0e507d
+File Copy: C:\Projetos\Componentes\LMD70SE\source\dummy\lmdcombo.pas | 01-01-2005 | 07:02:00 | | 684 | ec845ccf
+File Copy: C:\Projetos\Componentes\LMD70SE\source\dummy\lmdcompo.pas | 01-01-2005 | 07:02:00 | | 686 | 7e2f046f
+File Copy: C:\Projetos\Componentes\LMD70SE\source\dummy\LMDComponent.pas | 01-01-2005 | 07:02:00 | | 774 | 1da9e542
+File Copy: C:\Projetos\Componentes\LMD70SE\source\dummy\LMDCtrl.pas | 01-01-2005 | 07:02:00 | | 604 | 31560c59
+File Copy: C:\Projetos\Componentes\LMD70SE\source\dummy\lmdctrlA.pas | 01-01-2005 | 07:02:00 | | 702 | e8d125b0
+File Copy: C:\Projetos\Componentes\LMD70SE\source\dummy\lmddlgS.pas | 01-01-2005 | 07:02:00 | | 581 | 2ea0e61a
+File Copy: C:\Projetos\Componentes\LMD70SE\source\dummy\lmdeditb.pas | 01-01-2005 | 07:02:00 | | 603 | f15d8ec6
+File Copy: C:\Projetos\Componentes\LMD70SE\source\dummy\lmdeditc.pas | 01-01-2005 | 07:02:00 | | 603 | 140076d8
+File Copy: C:\Projetos\Componentes\LMD70SE\source\dummy\LMDEditM.pas | 01-01-2005 | 07:02:00 | | 603 | 7c6e1950
+File Copy: C:\Projetos\Componentes\LMD70SE\source\dummy\lmdextcA.pas | 01-01-2005 | 07:02:00 | | 658 | a46411c0
+File Copy: C:\Projetos\Componentes\LMD70SE\source\dummy\lmdextcS.pas | 01-01-2005 | 07:02:00 | | 658 | d0606c79
+File Copy: C:\Projetos\Componentes\LMD70SE\source\dummy\LMDGrapA.pas | 01-01-2005 | 07:02:00 | | 583 | d42d17e4
+File Copy: C:\Projetos\Componentes\LMD70SE\source\dummy\lmdgroup.pas | 01-01-2005 | 07:02:00 | | 664 | fb02b01d
+File Copy: C:\Projetos\Componentes\LMD70SE\source\dummy\LMDMemoC.pas | 01-01-2005 | 07:02:00 | | 656 | d3a014ea
+File Copy: C:\Projetos\Componentes\LMD70SE\source\dummy\lmdmmS.pas | 01-01-2005 | 07:02:00 | | 598 | 4714278b
+File Copy: C:\Projetos\Componentes\LMD70SE\source\dummy\lmdnonvA.pas | 01-01-2005 | 07:02:00 | | 601 | 91a06632
+File Copy: C:\Projetos\Componentes\LMD70SE\source\dummy\lmdnonvS.pas | 01-01-2005 | 07:02:00 | | 601 | fc69c368
+File Copy: C:\Projetos\Componentes\LMD70SE\source\dummy\lmdnwgui.pas | 01-01-2005 | 07:02:00 | | 756 | 77fb7726
+File Copy: C:\Projetos\Componentes\LMD70SE\source\dummy\lmdrctrl.pas | 01-01-2005 | 07:02:00 | | 603 | ef0937a5
+File Copy: C:\Projetos\Componentes\LMD70SE\source\dummy\lmdrectutils.pas | 01-01-2005 | 07:02:00 | | 618 | c961d25a
+File Copy: C:\Projetos\Componentes\LMD70SE\source\dummy\lmdshapA.pas | 01-01-2005 | 07:02:00 | | 605 | 2b261740
+File Copy: C:\Projetos\Componentes\LMD70SE\source\dummy\LMDStdCA.pas | 01-01-2005 | 07:02:00 | | 601 | fb2f0424
+File Copy: C:\Projetos\Componentes\LMD70SE\source\dummy\lmdstdcS.pas | 01-01-2005 | 07:02:00 | | 605 | 96481bdf
+Made Dir: C:\Projetos\Componentes\LMD70SE\source\strings
+Made Dir: C:\Projetos\Componentes\LMD70SE\source\strings\eng
+File Copy: C:\Projetos\Componentes\LMD70SE\source\strings\eng\LMDConst.pas | 01-01-2005 | 07:02:00 | | 5309 | 926d25ed
+Made Dir: C:\Projetos\Componentes\LMD70SE\source\strings\fre
+File Copy: C:\Projetos\Componentes\LMD70SE\source\strings\fre\LMDConst.pas | 01-01-2005 | 07:02:00 | | 5977 | a7d1a617
+Made Dir: C:\Projetos\Componentes\LMD70SE\source\strings\ger
+File Copy: C:\Projetos\Componentes\LMD70SE\source\strings\ger\LMDConst.pas | 01-01-2005 | 07:02:00 | | 5833 | daadf2e8
+Made Dir: C:\Projetos\Componentes\LMD70SE\source\strings\nor
+File Copy: C:\Projetos\Componentes\LMD70SE\source\strings\nor\LMDConst.pas | 01-01-2005 | 07:02:00 | | 5269 | 41d1ec87
+Made Dir: C:\Projetos\Componentes\LMD70SE\source\strings\rus
+File Copy: C:\Projetos\Componentes\LMD70SE\source\strings\rus\LMDConst.pas | 01-01-2005 | 07:02:00 | | 5764 | 546936bf
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\intfLMDBackGround.dcu | 01-01-2005 | 07:02:00 | | 3340 | e4416020
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\intfLMDBase.dcu | 01-01-2005 | 07:02:00 | | 717 | c2bbc772
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\intfLMDControlPosSize.dcu | 01-01-2005 | 07:02:00 | | 2497 | 332a6cd8
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\intfLMDFaceController.dcu | 01-01-2005 | 07:02:00 | | 1117 | 52f8a0fb
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\intfLMDFaceControllerEditable.dcu | 01-01-2005 | 07:02:00 | | 794 | a28cb0bb
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\intfLMDFaceControllerPressable.dcu | 01-01-2005 | 07:02:00 | | 724 | a2159e25
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\intfLMDThemes.dcu | 01-01-2005 | 07:02:00 | | 1554 | a678b509
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMD3DCaption.dcu | 01-01-2005 | 07:02:00 | | 3995 | a3f7b968
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMD3DEffectButton.dcu | 01-01-2005 | 07:02:00 | | 5923 | 78cbf40c
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\lmd70se_d7.bpl | 01-01-2005 | 07:02:00 | 7.0.60.4 | 2790912 | 55558071
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\lmd70se_d7.dcu | 01-01-2005 | 07:02:00 | | 28930 | 62b93681
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\lmd70se_d7.dof | 01-01-2005 | 07:02:00 | | 2187 | 1e4397e9
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\lmd70se_d7.dpk | 01-01-2005 | 07:02:00 | | 13918 | fd1ff0a5
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\lmd70se_d7.res | 01-01-2005 | 07:02:00 | | 1680 | d43fbb39
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDAboutDlg.dcu | 01-01-2005 | 07:02:00 | | 15326 | 3924fd63
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDAlphaObject.dcu | 01-01-2005 | 07:02:00 | | 7453 | 18067cae
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDAniCtrl.dcu | 01-01-2005 | 07:02:00 | | 15291 | d04202d6
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDApplicationCtrl.dcu | 01-01-2005 | 07:02:00 | | 11043 | 79193272
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDAssist.dcu | 01-01-2005 | 07:02:00 | | 25625 | b67844b2
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDBack.dcu | 01-01-2005 | 07:02:00 | | 3766 | 49078f1c
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDBackPanel.dcu | 01-01-2005 | 07:02:00 | | 10504 | 3d3d0be6
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDBase.dcu | 01-01-2005 | 07:02:00 | | 4485 | 9865671e
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDBaseControl.dcu | 01-01-2005 | 07:02:00 | | 6980 | 7131eff4
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDBaseController.dcu | 01-01-2005 | 07:02:00 | | 3573 | f2234eb6
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDBaseDialog.dcu | 01-01-2005 | 07:02:00 | | 6031 | c74fc0d5
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDBaseEdit.dcu | 01-01-2005 | 07:02:00 | | 58329 | cfddc91d
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDBaseGraphicButton.dcu | 01-01-2005 | 07:02:00 | | 25612 | d7342de6
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDBaseGraphicControl.dcu | 01-01-2005 | 07:02:00 | | 4826 | 221725ca
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDBaseImage.dcu | 01-01-2005 | 07:02:00 | | 4486 | fdafb0ef
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDBaseLabel.dcu | 01-01-2005 | 07:02:00 | | 9078 | 6731d1c2
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDBaseMeter.dcu | 01-01-2005 | 07:02:00 | | 11927 | 88470e9b
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDBaseShape.dcu | 01-01-2005 | 07:02:00 | | 15742 | 7d4975f8
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDBevel.dcu | 01-01-2005 | 07:02:00 | | 8090 | 4bc1a061
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDBitmapEffectObject.dcu | 01-01-2005 | 07:02:00 | | 7989 | d5f64f4b
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDBitmapList.dcu | 01-01-2005 | 07:02:00 | | 11144 | 978e780b
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDBmp.dcu | 01-01-2005 | 07:02:00 | | 8942 | 63debd31
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDBmp.res | 01-01-2005 | 07:02:00 | | 4112 | 7c3122a1
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDBoundLabel.dcu | 01-01-2005 | 07:02:00 | | 5935 | c2cdfc0e
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDBrowseDlg.dcu | 01-01-2005 | 07:02:00 | | 10634 | d707c162
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDBrowseEdit.dcu | 01-01-2005 | 07:02:00 | | 12587 | 73995e8c
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDBuffer.dcu | 01-01-2005 | 07:02:00 | | 4848 | 175c6791
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDButton.dcu | 01-01-2005 | 07:02:00 | | 3795 | a3f686ae
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDButtonBase.dcu | 01-01-2005 | 07:02:00 | | 5548 | fb142dd0
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDButtonControl.dcu | 01-01-2005 | 07:02:00 | | 20116 | 8493e2fa
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDButtonLayout.dcu | 01-01-2005 | 07:02:00 | | 3172 | be86dfea
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDButtonPanel.dcu | 01-01-2005 | 07:02:00 | | 16258 | aae39f9a
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCaption.dcu | 01-01-2005 | 07:02:00 | | 5748 | 60d86cc8
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCaret.dcu | 01-01-2005 | 07:02:00 | | 5869 | dcc86e41
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCFCSettingObject.dcu | 01-01-2005 | 07:02:00 | | 14646 | b267d34e
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCFCStateObject.dcu | 01-01-2005 | 07:02:00 | | 11659 | c6e3b4ae
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCheckBox.dcu | 01-01-2005 | 07:02:00 | | 5990 | a8e8278c
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCheckGroup.dcu | 01-01-2005 | 07:02:00 | | 5721 | ad67536b
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCheckGroupButton.dcu | 01-01-2005 | 07:02:00 | | 7607 | 5cb37b45
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDClass.dcu | 01-01-2005 | 07:02:00 | | 29210 | c3838ecb
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDClock.dcu | 01-01-2005 | 07:02:00 | | 30257 | 5b5d99c5
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDColorComboBox.dcu | 01-01-2005 | 07:02:00 | | 3826 | cdd34cd1
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDColorEdit.dcu | 01-01-2005 | 07:02:00 | | 14066 | 3685744
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDColorListBox.dcu | 01-01-2005 | 07:02:00 | | 6175 | dd6565f
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDComboBox.dcu | 01-01-2005 | 07:02:00 | | 9903 | 4f4c1e98
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDConst.dcu | 01-01-2005 | 07:02:00 | | 7810 | 60619026
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCont.dcu | 01-01-2005 | 07:02:00 | | 7327 | f4391ea8
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDContainerComponent.dcu | 01-01-2005 | 07:02:00 | | 4023 | 1724d191
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDControl.dcu | 01-01-2005 | 07:02:00 | | 8734 | c72f8b37
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCPCore.dcr | 01-01-2005 | 07:02:00 | | 635112 | c76ee35d
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCPGet.dcu | 01-01-2005 | 07:02:00 | | 18680 | 762bbdd6
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCPUInfoObject.dcu | 01-01-2005 | 07:02:00 | | 5707 | ac66217e
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCurrencySettings.dcu | 01-01-2005 | 07:02:00 | | 6965 | c14966cb
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustom3DButton.dcu | 01-01-2005 | 07:02:00 | | 15687 | 32f502d6
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomBevelPanel.dcu | 01-01-2005 | 07:02:00 | | 10773 | b89c5e3b
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomBrowseEdit.dcu | 01-01-2005 | 07:02:00 | | 8231 | afef72b8
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomButton.dcu | 01-01-2005 | 07:02:00 | | 26988 | 3bf3fda5
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomButtonGroup.dcu | 01-01-2005 | 07:02:00 | | 18997 | dcc4c0f2
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomCheckBox.dcu | 01-01-2005 | 07:02:00 | | 22015 | bcdcc153
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomCheckGroup.dcu | 01-01-2005 | 07:02:00 | | 17279 | a845a273
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomColorComboBox.dcu | 01-01-2005 | 07:02:00 | | 19180 | 27ac8ef2
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomColorListBox.dcu | 01-01-2005 | 07:02:00 | | 18545 | 53498b13
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomComboBox.dcu | 01-01-2005 | 07:02:00 | | 13489 | fdee237c
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomComponent.dcu | 01-01-2005 | 07:02:00 | | 2713 | a721c12c
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomContainer.dcu | 01-01-2005 | 07:02:00 | | 13517 | ab883fef
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomControl.dcu | 01-01-2005 | 07:02:00 | | 29188 | d5d0fe7a
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomDockLabel.dcu | 01-01-2005 | 07:02:00 | | 10145 | bde2541a
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomEdit.dcu | 01-01-2005 | 07:02:00 | | 20047 | 42c6f95d
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomExtCombo.dcu | 01-01-2005 | 07:02:00 | | 16052 | 95d81b50
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomExtSpinEdit.dcu | 01-01-2005 | 07:02:00 | | 19155 | 16b903a9
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomFileEdit.dcu | 01-01-2005 | 07:02:00 | | 9221 | ecd7200
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomFormFill.dcu | 01-01-2005 | 07:02:00 | | 9644 | 6364b487
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomGlyphLabel.dcu | 01-01-2005 | 07:02:00 | | 6655 | c469dff9
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomGraphicLabel.dcu | 01-01-2005 | 07:02:00 | | 12741 | 3f95a00d
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomGroupBox.dcu | 01-01-2005 | 07:02:00 | | 14705 | 426521f0
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomHint.dcu | 01-01-2005 | 07:02:00 | | 3567 | 7bb34a27
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomImageComboBox.dcu | 01-01-2005 | 07:02:00 | | 19765 | 8f288d4a
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomImageList.dcu | 01-01-2005 | 07:02:00 | | 5448 | 1cc56ed0
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomImageListBox.dcu | 01-01-2005 | 07:02:00 | | 18295 | dd4167a4
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomIniComponent.dcu | 01-01-2005 | 07:02:00 | | 4786 | 8dc0e932
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomLabel.dcu | 01-01-2005 | 07:02:00 | | 11398 | 4c252b55
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomLabelFill.dcu | 01-01-2005 | 07:02:00 | | 11427 | f492bd21
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomLImage.dcu | 01-01-2005 | 07:02:00 | | 7262 | 16677cfd
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomListBox.dcu | 01-01-2005 | 07:02:00 | | 42841 | a65349b1
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomMaskEdit.dcu | 01-01-2005 | 07:02:00 | | 46067 | 63e80a10
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomMemo.dcu | 01-01-2005 | 07:02:00 | | 47240 | d126c9f9
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomMMButton.dcu | 01-01-2005 | 07:02:00 | | 16919 | eea7fba
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomNImage.dcu | 01-01-2005 | 07:02:00 | | 10123 | c034ac5d
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomPanel.dcu | 01-01-2005 | 07:02:00 | | 8201 | 1340bae7
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomPanelFill.dcu | 01-01-2005 | 07:02:00 | | 12828 | 3f1e886
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomParentPanel.dcu | 01-01-2005 | 07:02:00 | | 11551 | 247bb8da
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomProgress.dcu | 01-01-2005 | 07:02:00 | | 12845 | 148fa664
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomProgressFill.dcu | 01-01-2005 | 07:02:00 | | 10055 | 9b25208c
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomRadioGroup.dcu | 01-01-2005 | 07:02:00 | | 16896 | d1e8cabd
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomScrollBox.dcu | 01-01-2005 | 07:02:00 | | 19784 | 652c2bef
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomShapeButton.dcu | 01-01-2005 | 07:02:00 | | 20350 | d31ef5d3
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomShapeHint.dcu | 01-01-2005 | 07:02:00 | | 3451 | 88d0ed18
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomSimpleLabel.dcu | 01-01-2005 | 07:02:00 | | 13322 | 913270ce
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomSpeedButton.dcu | 01-01-2005 | 07:02:00 | | 13696 | afd9254c
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomStatusBar.dcu | 01-01-2005 | 07:02:00 | | 5232 | 6827336c
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDCustomTrackBar.dcu | 01-01-2005 | 07:02:00 | | 34974 | fbb512a9
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDDateFormat.dcu | 01-01-2005 | 07:02:00 | | 13543 | ee9e99e9
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDDateL.dcu | 01-01-2005 | 07:02:00 | | 3528 | 65708db8
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDDateTime.dcu | 01-01-2005 | 07:02:00 | | 4358 | 469d0077
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDDirDlg.dcu | 01-01-2005 | 07:02:00 | | 11221 | 1a9afc6f
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDDockButton.dcu | 01-01-2005 | 07:02:00 | | 9835 | 14613a64
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDDockLabel.dcu | 01-01-2005 | 07:02:00 | | 7506 | 40c959d8
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDDockSpeedButton.dcu | 01-01-2005 | 07:02:00 | | 10848 | d9f2ce7a
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDDrawEdge.dcu | 01-01-2005 | 07:02:00 | | 7065 | d73484cf
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDDriveComboBox.dcu | 01-01-2005 | 07:02:00 | | 13636 | ac85e45
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDDynLIFOBuffer.dcu | 01-01-2005 | 07:02:00 | | 3383 | ce07c207
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDEdit.dcu | 01-01-2005 | 07:02:00 | | 12311 | 6dcda789
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDEditAutoComplete.dcu | 01-01-2005 | 07:02:00 | | 10444 | c21de556
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDExtListBox.dcu | 01-01-2005 | 07:02:00 | | 8159 | 5bb4b613
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDExtSpinEdit.dcu | 01-01-2005 | 07:02:00 | | 10192 | 4116b114
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDFaceController.dcu | 01-01-2005 | 07:02:00 | | 12400 | 3bce615e
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDFileOpenEdit.dcu | 01-01-2005 | 07:02:00 | | 11340 | cb20e381
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDFileSaveEdit.dcu | 01-01-2005 | 07:02:00 | | 12508 | 71021191
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDFill.dcu | 01-01-2005 | 07:02:00 | | 9028 | d647565e
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDFillObject.dcu | 01-01-2005 | 07:02:00 | | 6218 | 82e9b80f
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDFMDrop.dcu | 01-01-2005 | 07:02:00 | | 4139 | 4f10e4b1
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDFontComboBox.dcu | 01-01-2005 | 07:02:00 | | 16889 | 604c9d05
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDFontListBox.dcu | 01-01-2005 | 07:02:00 | | 13781 | 2b3912c9
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDFontSizeComboBox.dcu | 01-01-2005 | 07:02:00 | | 20790 | fef3feaf
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDFormA.dcu | 01-01-2005 | 07:02:00 | | 24277 | 7a58dc16
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDFormDisplay.dcu | 01-01-2005 | 07:02:00 | | 20890 | e906e4d1
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDFormFill.dcu | 01-01-2005 | 07:02:00 | | 5698 | 9a06f2f9
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDFormShadow.dcu | 01-01-2005 | 07:02:00 | | 9393 | cbb4c28e
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDFormStyler.dcu | 01-01-2005 | 07:02:00 | | 11476 | 4ca313f0
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDFormTabControl.dcu | 01-01-2005 | 07:02:00 | | 16540 | 6396cd4a
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDFXCaption.dcu | 01-01-2005 | 07:02:00 | | 2820 | f6493046
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDGlobalHotkey.dcu | 01-01-2005 | 07:02:00 | | 3897 | 5bb8b875
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDGlyph.dcu | 01-01-2005 | 07:02:00 | | 9432 | 92546eb0
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDGlyphLabel.dcu | 01-01-2005 | 07:02:00 | | 7736 | b318a026
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDGlyphTextLayout.dcu | 01-01-2005 | 07:02:00 | | 2672 | d6d70010
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDGradient.dcu | 01-01-2005 | 07:02:00 | | 7069 | 6009e661
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDGraph.dcu | 01-01-2005 | 07:02:00 | | 8622 | 94c72a5e
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDGraphicControl.dcu | 01-01-2005 | 07:02:00 | | 4506 | 3d90bdcd
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDGraphicLabel.dcu | 01-01-2005 | 07:02:00 | | 5668 | 9ad2d4f5
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDGrlf.dcu | 01-01-2005 | 07:02:00 | | 13498 | 9d14d7c3
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDGroupBox.dcu | 01-01-2005 | 07:02:00 | | 10695 | 55d02957
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDHideNonVC.dcu | 01-01-2005 | 07:02:00 | | 5267 | ce587a7b
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDHint.dcu | 01-01-2005 | 07:02:00 | | 3479 | ffd0d7dc
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDHintWindow.dcu | 01-01-2005 | 07:02:00 | | 4979 | 89cec992
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDHookComponent.dcu | 01-01-2005 | 07:02:00 | | 5559 | 70cc498a
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDImageComboBox.dcu | 01-01-2005 | 07:02:00 | | 4022 | 3e699b5d
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDImageList.dcu | 01-01-2005 | 07:02:00 | | 25513 | b1567031
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDImageListBox.dcu | 01-01-2005 | 07:02:00 | | 9281 | 93d63099
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDImageListConnector.dcu | 01-01-2005 | 07:02:00 | | 10670 | 69ec1b9f
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDInformationLabel.dcu | 01-01-2005 | 07:02:00 | | 14304 | ae3107ca
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDIniCtrl.dcu | 01-01-2005 | 07:02:00 | | 27899 | 35478acb
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDLabel.dcu | 01-01-2005 | 07:02:00 | | 4847 | 45180cfb
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDLabelFill.dcu | 01-01-2005 | 07:02:00 | | 5257 | efd9bf5
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDLed.dcu | 01-01-2005 | 07:02:00 | | 10878 | 54ce1fb2
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDLEDCustomLabel.dcu | 01-01-2005 | 07:02:00 | | 10037 | 4a0ba414
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDLEDLabel.dcu | 01-01-2005 | 07:02:00 | | 4168 | 64b64ff6
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDLImage.dcu | 01-01-2005 | 07:02:00 | | 5486 | 6bf42038
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDListBox.dcu | 01-01-2005 | 07:02:00 | | 41870 | b08d0cf7
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDMaskEdit.dcu | 01-01-2005 | 07:02:00 | | 12840 | 93abc978
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDMemo.dcu | 01-01-2005 | 07:02:00 | | 16191 | 38e17362
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDMessageHint.dcu | 01-01-2005 | 07:02:00 | | 3011 | 4100fcb8
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDMMButton.dcu | 01-01-2005 | 07:02:00 | | 3659 | 7dd24542
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDMouseBaseCtrl.dcu | 01-01-2005 | 07:02:00 | | 4234 | cf697b4d
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDMouseFencer.dcu | 01-01-2005 | 07:02:00 | | 2878 | 1ecc4e94
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDMousePositioner.dcu | 01-01-2005 | 07:02:00 | | 3806 | f0940f7c
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDMRUList.dcu | 01-01-2005 | 07:02:00 | | 14237 | e9609009
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDMsg.dcu | 01-01-2005 | 07:02:00 | | 24717 | 98513b36
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDNImage.dcu | 01-01-2005 | 07:02:00 | | 3253 | 5fd9e5c8
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDObject.dcu | 01-01-2005 | 07:02:00 | | 1832 | 9fa2033c
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDOneInstance.dcu | 01-01-2005 | 07:02:00 | | 3705 | fd7c9623
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDPanelFill.dcu | 01-01-2005 | 07:02:00 | | 11599 | f9494bb3
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDPointList.dcu | 01-01-2005 | 07:02:00 | | 2343 | 4f677a1f
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDPrinterComboBox.dcu | 01-01-2005 | 07:02:00 | | 12552 | cb64ca61
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDProcs.dcu | 01-01-2005 | 07:02:00 | | 13627 | ccf47a06
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDProgress.dcu | 01-01-2005 | 07:02:00 | | 3415 | 1580a60a
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDProgressFill.dcu | 01-01-2005 | 07:02:00 | | 3471 | f1c07252
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDRadioButton.dcu | 01-01-2005 | 07:02:00 | | 20360 | 74ce6574
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDRadioGroup.dcu | 01-01-2005 | 07:02:00 | | 5609 | 2aff193b
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDRadioGroupButton.dcu | 01-01-2005 | 07:02:00 | | 9198 | 19dd97ea
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDRegion.dcu | 01-01-2005 | 07:02:00 | | 35336 | 6fec8694
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDRegionMask.dcu | 01-01-2005 | 07:02:00 | | 5269 | 1be84bd
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDRepeatedShape.dcu | 01-01-2005 | 07:02:00 | | 8032 | 28f94eee
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDResWinControl.dcu | 01-01-2005 | 07:02:00 | | 3006 | 4d123d20
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDRgnShadow.dcu | 01-01-2005 | 07:02:00 | | 1568 | db38fb73
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDSBar.dcu | 01-01-2005 | 07:02:00 | | 35331 | 41f3e064
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDSBtn.dcu | 01-01-2005 | 07:02:00 | | 15693 | 65e76fe8
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDScrollBox.dcu | 01-01-2005 | 07:02:00 | | 4001 | 61a2c9d8
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDScrollText.dcu | 01-01-2005 | 07:02:00 | | 20095 | b1ed72b3
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDShadow.dcu | 01-01-2005 | 07:02:00 | | 2646 | 311fb46f
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDShadowFill.dcu | 01-01-2005 | 07:02:00 | | 5904 | 9779026a
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDShape.dcu | 01-01-2005 | 07:02:00 | | 25630 | 63b4f6f3
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDShapeBase.dcu | 01-01-2005 | 07:02:00 | | 766 | 10101dfc
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDShapeButton.dcu | 01-01-2005 | 07:02:00 | | 3678 | d1e020a0
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDShapeButtonColor.dcu | 01-01-2005 | 07:02:00 | | 1953 | 1da2f2f3
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDShapeControl.dcu | 01-01-2005 | 07:02:00 | | 4183 | ddcaca46
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDShapeFill.dcu | 01-01-2005 | 07:02:00 | | 4306 | 9b872f6d
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDShapeHint.dcu | 01-01-2005 | 07:02:00 | | 3562 | 51f47f2b
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDShapeHintWindow.dcu | 01-01-2005 | 07:02:00 | | 14811 | a267414f
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDShUtils.dcu | 01-01-2005 | 07:02:00 | | 1339 | 4c5972e3
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDSimpleBevel.dcu | 01-01-2005 | 07:02:00 | | 2904 | b35e189a
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDSimpleLabel.dcu | 01-01-2005 | 07:02:00 | | 4628 | 4833dc3
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDSimplePanel.dcu | 01-01-2005 | 07:02:00 | | 13285 | dc6eb0c4
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDSmallBar.dcu | 01-01-2005 | 07:02:00 | | 2656 | 59688ff8
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDSpeedButton.dcu | 01-01-2005 | 07:02:00 | | 5096 | 3e9db95f
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDSpinButton.dcu | 01-01-2005 | 07:02:00 | | 20518 | e651e478
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDSpinEdit.dcu | 01-01-2005 | 07:02:00 | | 15601 | 1458f411
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDStarter.dcu | 01-01-2005 | 07:02:00 | | 8581 | 3caf762c
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDStaticText.dcu | 01-01-2005 | 07:02:00 | | 14914 | 1972b3cd
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDStatusBar.dcu | 01-01-2005 | 07:02:00 | | 26753 | 342c2d61
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDStopWatch.dcu | 01-01-2005 | 07:02:00 | | 4254 | e28e4559
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDStreamUtils.dcu | 01-01-2005 | 07:02:00 | | 6820 | 62164922
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDStringList.dcu | 01-01-2005 | 07:02:00 | | 5837 | be7a7072
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDStrings.dcu | 01-01-2005 | 07:02:00 | | 6919 | 25d86dc1
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDSysIn.dcu | 01-01-2005 | 07:02:00 | | 28124 | 79582fda
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDSysInfo.dcu | 01-01-2005 | 07:02:00 | | 20043 | 37d38287
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDTechnicalLine.dcu | 01-01-2005 | 07:02:00 | | 25297 | c7c9ed4b
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDTeeth.dcu | 01-01-2005 | 07:02:00 | | 2479 | dc35f687
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDTimer.dcu | 01-01-2005 | 07:02:00 | | 6620 | 192f0080
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDTipDlg.dcu | 01-01-2005 | 07:02:00 | | 13982 | 77e05596
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDTrackBar.dcu | 01-01-2005 | 07:02:00 | | 5178 | 2ebebb5c
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDTransparent.dcu | 01-01-2005 | 07:02:00 | | 2161 | 6a15c3e9
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDTrayIcon.dcu | 01-01-2005 | 07:02:00 | | 12109 | e825a804
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDUtils.dcu | 01-01-2005 | 07:02:00 | | 53834 | cf231628
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDWave.dcu | 01-01-2005 | 07:02:00 | | 9628 | e2287de4
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDWaveComp.dcu | 01-01-2005 | 07:02:00 | | 2711 | 9b13811e
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDWaveList.dcu | 01-01-2005 | 07:02:00 | | 5565 | 65ecf5d5
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDWindowListDlg.dcu | 01-01-2005 | 07:02:00 | | 9470 | ff8d7f02
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDWndProcComponent.dcu | 01-01-2005 | 07:02:00 | | 6269 | 4eca72f0
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDXP.res | 01-01-2005 | 07:02:00 | | 736 | 41997fc8
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDXPRes.pas | 01-01-2005 | 07:02:00 | | 787 | b538cbec
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDXPStyles.dcu | 01-01-2005 | 07:02:00 | | 18467 | f5b47986
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\LMDXPThemeManager.dcu | 01-01-2005 | 07:02:00 | | 2291 | f1be9192
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMD3DEffectEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 16233 | 29e052d
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMD3DEffectEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 15730 | d0f72132
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDAboutDlg.dcu | 01-01-2005 | 07:02:00 | | 7347 | c1c657c2
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDAboutDlg.dfm | 01-01-2005 | 07:02:00 | | 347685 | 66d9c9c8
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDAviEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 6334 | 6f855178
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDAviEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 2083 | 5cb69425
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDBevelEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 11722 | 2f3769f2
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDBevelEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 22402 | e87a7a47
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDBitmapItemPropertiesEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 6577 | 604e518c
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDBitmapItemPropertiesEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 3868 | eedb5be
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDBitmapListEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 21636 | bd719d89
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDBitmapListEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 26160 | 8074ac18
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDBitmapPropertiesEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 6781 | 8c1a596f
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDBitmapPropertiesEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 5422 | a1fb1452
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDBitmapStyleEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 4946 | 88ad619d
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDBitmapStyleEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 80417 | 14cb78e
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDBmpRegionEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 19551 | 6680c025
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDBmpRegionEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 11495 | 995567ad
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDBrushEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 6339 | c0272e24
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDBrushEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 3772 | 3028cc11
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDButtonLayoutEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 9610 | 89d9f764
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDButtonLayoutEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 14858 | 7d91389c
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDCaptionEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 6747 | e2e314c9
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDCaptionEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 3972 | 82bb315c
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDCE.dcu | 01-01-2005 | 07:02:00 | | 106007 | b18e277e
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDCE.RES | 01-01-2005 | 07:02:00 | | 320 | fe3da7b6
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDCustomImageListSelectDlg.dcu | 01-01-2005 | 07:02:00 | | 11004 | 32b0b86c
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDCustomImageListSelectDlg.dfm | 01-01-2005 | 07:02:00 | | 4906 | 7f2248ab
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDDateListEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 8545 | e5e76494
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDDateListEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 3839 | 9efbcd03
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDDateTimeEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 6536 | 9a353340
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDDateTimeEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 5855 | f463364e
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDDateTimeFormatEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 6613 | 8a0a712a
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDDateTimeFormatEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 3590 | b0bbe7bd
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDDsgnCPGet.dcu | 01-01-2005 | 07:02:00 | | 18954 | d623eedc
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDFillObjectEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 7992 | b552d095
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDFillObjectEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 7238 | 9e6f07b1
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDFilterPropertyEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 5613 | a5d1aa24
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDFilterPropertyEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 1501 | f0aa6d1b
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDFontFXEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 8300 | 41213f5a
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDFontFXEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 13793 | 65fe0227
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDGlyphTextLayoutEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 7666 | 3a247d4e
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDGlyphTextLayoutEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 9909 | dff531f6
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDGradientEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 10848 | b06a0223
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDGradientEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 7091 | 7b283046
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDGraphicLabelEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 15491 | 6c81d7dd
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDGraphicLabelEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 14053 | ec72f744
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDHideNonVC.dcu | 01-01-2005 | 07:02:00 | | 15029 | cdd8679f
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDHideNonVC.dfm | 01-01-2005 | 07:02:00 | | 5000 | 8ea1336a
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDImageListEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 28263 | b773b5bd
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDImageListEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 26499 | 912bfe65
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDLEDEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 8692 | 7ef65bcb
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDLEDEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 8264 | 39fd981b
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDMaskEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 5177 | b4a2ceb0
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDMaskEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 2671 | 3f0c2b12
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDMMButtonFaceEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 8412 | 3029faa5
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDMMButtonFaceEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 3934 | 1ee93f87
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDPE.dcu | 01-01-2005 | 07:02:00 | | 48602 | bcecde7a
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDPeCst.dcu | 01-01-2005 | 07:02:00 | | 2230 | 12ca2d9d
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDPeStr.dfm | 01-01-2005 | 07:02:00 | | 1250 | 14ba3552
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDPictureItemPropertiesEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 3367 | 17448b37
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDPointListEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 8455 | e6998e3b
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDPointListEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 3423 | 203e67c2
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDSECst.dcu | 01-01-2005 | 07:02:00 | | 971 | e052daba
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDSectionEdit.dfm | 01-01-2005 | 07:02:00 | | 2007 | f13b3f7c
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDShadowEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 7542 | 2c107e51
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDShadowEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 5057 | ab531aa0
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDShapeEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 5072 | 3d104f6b
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDShapeEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 2559 | eb3ceb40
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDSimpleBevelEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 7664 | 2d14dbfb
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDSimpleBevelEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 6921 | 4998e56d
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDSmallBarEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 7631 | cd39214c
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDSmallBarEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 4303 | e639ca96
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDStatusBarEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 4485 | 3577b86c
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDStatusBarEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 1665 | 4a78c724
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDStringListEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 18871 | 76ee7602
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDStringListEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 20496 | 586e6336
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDStringListItemPropertiesEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 7804 | 8463e6c9
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDStringListItemPropertiesEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 5789 | 3a7319a3
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDStringsEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 14158 | 7a16fe44
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDStringsEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 12331 | 924af3d7
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDTeethEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 6957 | 640cf883
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDTeethEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 6550 | aab77a0d
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDToolsSE.dcu | 01-01-2005 | 07:02:00 | | 4757 | cfdfb082
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDToolsSE.dfm | 01-01-2005 | 07:02:00 | | 1922 | 7b74d00
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDTransparentEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 7138 | abafffd3
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDTransparentEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 26740 | 5d9754ac
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDWaveEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 13274 | 90bf6362
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDWaveEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 10019 | 2b266ebd
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDWaveItemPropertiesEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 7194 | ed24b8ec
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDWaveItemPropertiesEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 5923 | 399c915
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDWaveListEditorDlg.dcu | 01-01-2005 | 07:02:00 | | 19222 | 7b09dd5b
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\pLMDWaveListEditorDlg.dfm | 01-01-2005 | 07:02:00 | | 21299 | 3ed06e3c
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\_LMD_RegContainer.dcu | 01-01-2005 | 07:02:00 | | 3220 | b13b427b
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\_LMD_RegDialogs.dcu | 01-01-2005 | 07:02:00 | | 2847 | 572222fc
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\_LMD_RegEditControls.dcu | 01-01-2005 | 07:02:00 | | 3257 | 11eb3faf
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\_LMD_RegExt.dcu | 01-01-2005 | 07:02:00 | | 5439 | 93d33087
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\_LMD_RegForm.dcu | 01-01-2005 | 07:02:00 | | 2932 | 8104e7fb
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\_LMD_RegListControls.dcu | 01-01-2005 | 07:02:00 | | 3669 | 2c8b4189
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\_LMD_RegMM.dcu | 01-01-2005 | 07:02:00 | | 3662 | ea4f176c
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\_LMD_RegPropertyEditors.dcu | 01-01-2005 | 07:02:00 | | 8580 | 61dc673b
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\_LMD_RegShell.dcu | 01-01-2005 | 07:02:00 | | 2108 | c1b1a207
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\_LMD_RegStd.dcu | 01-01-2005 | 07:02:00 | | 6429 | ce1172c0
+File Copy: C:\Projetos\Componentes\LMD70SE\LIB\D7\_LMD_RegSys.dcu | 01-01-2005 | 07:02:00 | | 4042 | 7066a378
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\MegaDemo.dpr | 07-11-2005 | 06:03:26 | | 9852 | 773c2a10
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\Megademo.inc | 07-11-2005 | 06:03:26 | | 239 | 46196c7
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\MegaDemo.res | 07-11-2005 | 06:03:26 | | 1660 | c32c2e70
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont\LMDBitmapList
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont\LMDBitmapList\d_LMDBitmapList.dfm | 07-11-2005 | 06:03:00 | | 3225 | 58599e9f
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont\LMDBitmapList\d_LMDBitmapList.pas | 07-11-2005 | 06:03:00 | | 5153 | 85a1c64b
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont\LMDBitmapList\pLMDBitmapList.dpr | 07-11-2005 | 06:03:00 | | 250 | 8e30bf1f
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont\LMDBitmapList\pLMDBitmapList.res | 07-11-2005 | 06:03:00 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont\LMDContainerCtrls
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont\LMDContainerCtrls\d_LMDContainerCtrls.dfm | 07-11-2005 | 06:03:00 | | 6999 | dce60ca9
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont\LMDContainerCtrls\d_LMDContainerCtrls.pas | 07-11-2005 | 06:03:00 | | 1663 | dd4cd6bf
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont\LMDContainerCtrls\LMDContainerCtrls.dpr | 07-11-2005 | 06:03:00 | | 516 | 573497d6
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont\LMDContainerCtrls\LMDContainerCtrls.res | 07-11-2005 | 06:03:00 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont\LMDImageList
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont\LMDImageList\d_LMDImageList.ddp | 07-11-2005 | 06:03:02 | | 51 | 4fc2fcbe
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont\LMDImageList\d_LMDImageList.dfm | 07-11-2005 | 06:03:02 | | 4739 | f7b4429f
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont\LMDImageList\d_LMDImageList.pas | 07-11-2005 | 06:03:02 | | 2141 | 741812c2
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont\LMDImageList\pLMDImageList.dpr | 07-11-2005 | 06:03:02 | | 412 | 604b1b3e
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont\LMDImageList\pLMDImageList.res | 07-11-2005 | 06:03:02 | | 1684 | 69d46c0a
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont\LMDImageListConnector
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont\LMDImageListConnector\d_LMDImageListConnector.ddp | 07-11-2005 | 06:03:00 | | 51 | 4fc2fcbe
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont\LMDImageListConnector\d_LMDImageListConnector.dfm | 07-11-2005 | 06:03:00 | | 40334 | 806e39af
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont\LMDImageListConnector\d_LMDImageListConnector.pas | 07-11-2005 | 06:03:00 | | 1275 | f20331e1
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont\LMDImageListConnector\pLMDImageListConnector.dpr | 07-11-2005 | 06:03:00 | | 298 | c7d7ba6b
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont\LMDImageListConnector\pLMDImageListConnector.res | 07-11-2005 | 06:03:00 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont\LMDStringList
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont\LMDStringList\d_LMDStringList.ddp | 07-11-2005 | 06:02:58 | | 51 | 4fc2fcbe
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont\LMDStringList\d_LMDStringList.dfm | 07-11-2005 | 06:02:58 | | 5029 | 6565c6fb
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont\LMDStringList\d_LMDStringList.pas | 07-11-2005 | 06:02:58 | | 2132 | a73151dd
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont\LMDStringList\pLMDStringList.dpr | 07-11-2005 | 06:02:58 | | 416 | 882d5962
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont\LMDStringList\pLMDStringList.res | 07-11-2005 | 06:02:58 | | 1684 | 69d46c0a
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont\LMDWaveList
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont\LMDWaveList\d_LMDWaveList.dfm | 07-11-2005 | 06:03:02 | | 5322 | 50bb06fd
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont\LMDWaveList\d_LMDWaveList.pas | 07-11-2005 | 06:03:02 | | 6044 | 1822a4d4
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont\LMDWaveList\pLMDWaveList.dpr | 07-11-2005 | 06:03:02 | | 238 | bbcafbc8
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Cont\LMDWaveList\pLMDWaveList.res | 07-11-2005 | 06:03:02 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Dlg
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Dlg\LMDAboutDlg
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Dlg\LMDAboutDlg\d_LMDAboutDlg.dfm | 07-11-2005 | 06:03:08 | | 4488 | e4899663
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Dlg\LMDAboutDlg\d_LMDAboutDlg.pas | 07-11-2005 | 06:03:08 | | 2379 | 1b9fbf48
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Dlg\LMDAboutDlg\pLMDAboutDlg.dpr | 07-11-2005 | 06:03:08 | | 367 | 22e3bb1f
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Dlg\LMDAboutDlg\pLMDAboutDlg.res | 07-11-2005 | 06:03:08 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Dlg\LMDBrowseDlg
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Dlg\LMDBrowseDlg\d_LMDBrowseDlg.dfm | 07-11-2005 | 06:03:06 | | 3829 | 5e561473
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Dlg\LMDBrowseDlg\d_LMDBrowseDlg.pas | 07-11-2005 | 06:03:06 | | 2533 | 1fa2fc6f
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Dlg\LMDBrowseDlg\pLMDBrowseDlg.dpr | 07-11-2005 | 06:03:06 | | 244 | af7b2d05
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Dlg\LMDBrowseDlg\pLMDBrowseDlg.res | 07-11-2005 | 06:03:06 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Dlg\LMDDirDlg
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Dlg\LMDDirDlg\d_LMDDirDlg.dfm | 07-11-2005 | 06:03:06 | | 2869 | 7bc24015
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Dlg\LMDDirDlg\d_LMDDirDlg.pas | 07-11-2005 | 06:03:06 | | 2215 | da2bb582
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Dlg\LMDDirDlg\pLMDDirDlg.dpr | 07-11-2005 | 06:03:06 | | 355 | d8f83a2d
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Dlg\LMDDirDlg\pLMDDirDlg.res | 07-11-2005 | 06:03:06 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Dlg\LMDMessageBoxDlg
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Dlg\LMDMessageBoxDlg\d_LMDMessageBoxDlg.dfm | 07-11-2005 | 06:03:04 | | 52698 | 3c7b3a0f
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Dlg\LMDMessageBoxDlg\d_LMDMessageBoxDlg.pas | 07-11-2005 | 06:03:04 | | 6853 | cd3c910c
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Dlg\LMDMessageBoxDlg\pLMDMessageBoxDlg.dpr | 07-11-2005 | 06:03:04 | | 397 | 9dfdea05
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Dlg\LMDMessageBoxDlg\pLMDMessageBoxDlg.res | 07-11-2005 | 06:03:04 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Dlg\LMDTipDlg
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Dlg\LMDTipDlg\d_LMDTipDlg.dfm | 07-11-2005 | 06:03:04 | | 2270 | 917b60ca
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Dlg\LMDTipDlg\d_LMDTipDlg.pas | 07-11-2005 | 06:03:04 | | 2089 | 8243b843
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Dlg\LMDTipDlg\pLMDTipDlg.dpr | 07-11-2005 | 06:03:04 | | 355 | 5eef0ddc
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Dlg\LMDTipDlg\pLMDTipDlg.res | 07-11-2005 | 06:03:04 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Dlg\LMDWindowListDlg
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Dlg\LMDWindowListDlg\d_LMDWindowListDlg.dfm | 07-11-2005 | 06:03:06 | | 2147 | dcaa9f43
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Dlg\LMDWindowListDlg\d_LMDWindowListDlg.pas | 07-11-2005 | 06:03:06 | | 2191 | aa6ce10e
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Dlg\LMDWindowListDlg\pLMDAboutDlg.res | 07-11-2005 | 06:03:06 | | 876 | de402301
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Dlg\LMDWindowListDlg\pLMDWindowListDlg.dpr | 07-11-2005 | 06:03:06 | | 397 | aee00e0
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Dlg\LMDWindowListDlg\pLMDWindowListDlg.res | 07-11-2005 | 06:03:06 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDBrowseEdit
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDBrowseEdit\d_LMDBrowseEdit.dfm | 07-11-2005 | 06:02:20 | | 2026 | d56cf61a
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDBrowseEdit\d_LMDBrowseEdit.pas | 07-11-2005 | 06:02:20 | | 1085 | 5b3d915d
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDBrowseEdit\pLMDBrowseEdit.dpr | 07-11-2005 | 06:02:20 | | 250 | 207534a8
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDBrowseEdit\pLMDBrowseEdit.res | 07-11-2005 | 06:02:20 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDColorEdit
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDColorEdit\d_LMDColorEdit.dfm | 07-11-2005 | 06:02:18 | | 4357 | d7e500d4
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDColorEdit\d_LMDColorEdit.pas | 07-11-2005 | 06:02:18 | | 1554 | 70799bb
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDColorEdit\pLMDColorEdit.dpr | 07-11-2005 | 06:02:18 | | 244 | d23c1e56
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDColorEdit\pLMDColorEdit.res | 07-11-2005 | 06:02:18 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDEdit
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDEdit\d_LMDEdit.dfm | 07-11-2005 | 06:02:18 | | 10829 | 3efb8355
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDEdit\d_LMDEdit.pas | 07-11-2005 | 06:02:18 | | 5084 | 5252821c
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDEdit\pLMDEdit.dpr | 07-11-2005 | 06:02:18 | | 343 | c6389bb
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDEdit\pLMDEdit.res | 07-11-2005 | 06:02:18 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDFileOpenEdit
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDFileOpenEdit\d_LMDFileOpenEdit.dfm | 07-11-2005 | 06:02:20 | | 1966 | 1e3193a
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDFileOpenEdit\d_LMDFileOpenEdit.pas | 07-11-2005 | 06:02:20 | | 1096 | 2a50c94
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDFileOpenEdit\pLMDFileOpenEdit.dpr | 07-11-2005 | 06:02:20 | | 262 | 16d2fd70
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDFileOpenEdit\pLMDFileOpenEdit.res | 07-11-2005 | 06:02:20 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDFileSaveEdit
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDFileSaveEdit\d_LMDFileSaveEdit.dfm | 07-11-2005 | 06:02:18 | | 1871 | 878fe606
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDFileSaveEdit\d_LMDFileSaveEdit.pas | 07-11-2005 | 06:02:18 | | 1055 | 855bce1c
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDFileSaveEdit\pLMDFileSaveEdit.dpr | 07-11-2005 | 06:02:18 | | 262 | a8ab882c
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDFileSaveEdit\pLMDFileSaveEdit.res | 07-11-2005 | 06:02:18 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDMaskEdit
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDMaskEdit\d_LMDMaskEdit.dfm | 07-11-2005 | 06:02:20 | | 15237 | 4146aca4
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDMaskEdit\d_LMDMaskEdit.pas | 07-11-2005 | 06:02:20 | | 3388 | 563075ed
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDMaskEdit\pLMDMaskEdit.dpr | 07-11-2005 | 06:02:20 | | 367 | c78f9f0d
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDMaskEdit\pLMDMaskEdit.res | 07-11-2005 | 06:02:20 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDMemo
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDMemo\d_LMDMemo.dfm | 07-11-2005 | 06:02:20 | | 9213 | 46cb0e64
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDMemo\d_LMDMemo.pas | 07-11-2005 | 06:02:20 | | 2369 | c3940a78
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDMemo\pLMDMemo.dpr | 07-11-2005 | 06:02:20 | | 343 | eb4d8b82
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Edit\LMDMemo\pLMDMemo.res | 07-11-2005 | 06:02:20 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDAssist
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDAssist\d_LMDAssist.dfm | 07-11-2005 | 06:02:50 | | 18058 | d94b629a
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDAssist\d_LMDAssist.pas | 07-11-2005 | 06:02:48 | | 4723 | d72ca713
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDAssist\pLMDAssist.dpr | 07-11-2005 | 06:02:48 | | 226 | 19095191
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDAssist\pLMDAssist.res | 07-11-2005 | 06:02:50 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDButtonPanel
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDButtonPanel\d_LMDButtonPanel.ddp | 07-11-2005 | 06:02:44 | | 51 | 4fc2fcbe
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDButtonPanel\d_LMDButtonPanel.dfm | 07-11-2005 | 06:02:44 | | 10240 | 5f4ef25f
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDButtonPanel\d_LMDButtonPanel.pas | 07-11-2005 | 06:02:44 | | 1176 | f31b2554
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDButtonPanel\pLMDButtonPanel.dpr | 07-11-2005 | 06:02:44 | | 385 | 1f99ded3
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDButtonPanel\pLMDButtonPanel.res | 07-11-2005 | 06:02:44 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDClock
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDClock\d_LMDClock.dfm | 07-11-2005 | 06:02:42 | | 90899 | 3981315c
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDClock\d_LMDClock.pas | 07-11-2005 | 06:02:42 | | 4004 | 9a88fcf3
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDClock\pLMDClock.dpr | 07-11-2005 | 06:02:42 | | 349 | c684c960
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDClock\pLMDClock.res | 07-11-2005 | 06:02:42 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDFill
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDFill\d_LMDFill.dfm | 07-11-2005 | 06:02:40 | | 1560 | a4689688
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDFill\d_LMDFill.pas | 07-11-2005 | 06:02:38 | | 572 | 2c3464d1
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDFill\pLMDFill.dpr | 07-11-2005 | 06:02:38 | | 343 | 5d0ca416
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDFill\pLMDFill.res | 07-11-2005 | 06:02:40 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDFormDisplay
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDFormDisplay\d_LMDFormDisplay.ddp | 07-11-2005 | 06:02:40 | | 51 | 4fc2fcbe
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDFormDisplay\d_LMDFormDisplay.dfm | 07-11-2005 | 06:02:40 | | 2364 | 458bcb1d
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDFormDisplay\d_LMDFormDisplay.pas | 07-11-2005 | 06:02:40 | | 2306 | 85255b39
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDFormDisplay\d_LMDFormDisplay_1.ddp | 07-11-2005 | 06:02:40 | | 51 | 4fc2fcbe
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDFormDisplay\d_LMDFormDisplay_1.dfm | 07-11-2005 | 06:02:40 | | 1716 | b4bb2694
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDFormDisplay\d_LMDFormDisplay_1.pas | 07-11-2005 | 06:02:40 | | 1225 | a125e8e4
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDFormDisplay\d_LMDFormDisplay_2.dfm | 07-11-2005 | 06:02:40 | | 2368 | e574b39b
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDFormDisplay\d_LMDFormDisplay_2.pas | 07-11-2005 | 06:02:40 | | 1475 | 2d28dfad
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDFormDisplay\d_LMDFormDisplay_3.dfm | 07-11-2005 | 06:02:40 | | 553 | a2efcd4d
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDFormDisplay\d_LMDFormDisplay_3.pas | 07-11-2005 | 06:02:40 | | 476 | ca4c6402
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDFormDisplay\pLMDFormDisplay.dpr | 07-11-2005 | 06:02:40 | | 424 | cc51ff9
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDFormDisplay\pLMDFormDisplay.res | 07-11-2005 | 06:02:40 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDFormTabControl
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDFormTabControl\d_LMDFormTabControl.dfm | 07-11-2005 | 06:02:42 | | 428 | be5cbf0a
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDFormTabControl\d_LMDFormTabControl.pas | 07-11-2005 | 06:02:42 | | 801 | fd471992
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDFormTabControl\pLMDFormTabControl.dpr | 07-11-2005 | 06:02:42 | | 691 | ec1be367
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDFormTabControl\pLMDFormTabControl.res | 07-11-2005 | 06:02:42 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDGraphicLabel
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDGraphicLabel\d_LMDGraphicLabel.dfm | 07-11-2005 | 06:02:52 | | 6935 | ce2d7be1
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDGraphicLabel\d_LMDGraphicLabel.pas | 07-11-2005 | 06:02:52 | | 5994 | 92cffb7d
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDGraphicLabel\pLMDGraphicLabel.dpr | 07-11-2005 | 06:02:52 | | 391 | f59aa436
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDGraphicLabel\pLMDGraphicLabel.res | 07-11-2005 | 06:02:52 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDLabelFill
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDLabelFill\d_LMDLabelFill.ddp | 07-11-2005 | 06:02:38 | | 51 | 4fc2fcbe
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDLabelFill\d_LMDLabelFill.dfm | 07-11-2005 | 06:02:38 | | 27515 | b62fec0e
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDLabelFill\d_LMDLabelFill.pas | 07-11-2005 | 06:02:38 | | 1900 | 939dec06
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDLabelFill\pLMDLabelFill.dpr | 07-11-2005 | 06:02:38 | | 373 | 6460570a
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDLabelFill\pLMDLabelFill.res | 07-11-2005 | 06:02:38 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDLEDLabel
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDLEDLabel\d_LMDLEDLabel.dfm | 07-11-2005 | 06:02:48 | | 4028 | 12d4fc40
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDLEDLabel\d_LMDLEDLabel.pas | 07-11-2005 | 06:02:48 | | 1141 | 49963efe
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDLEDLabel\pLMDLEDLabel.dpr | 07-11-2005 | 06:02:48 | | 238 | 34af6461
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDLEDLabel\pLMDLEDLabel.res | 07-11-2005 | 06:02:48 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDLImage
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDLImage\d_LMDLImage.dfm | 07-11-2005 | 06:02:46 | | 1187 | 5db565a3
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDLImage\d_LMDLImage.pas | 07-11-2005 | 06:02:46 | | 638 | d3fa881c
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDLImage\pLMDLImage.dpr | 07-11-2005 | 06:02:46 | | 355 | edeb106f
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDLImage\pLMDLImage.res | 07-11-2005 | 06:02:46 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDNImage
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDNImage\d_LMDNImage.dfm | 07-11-2005 | 06:02:46 | | 71471 | dbde1428
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDNImage\d_LMDNImage.pas | 07-11-2005 | 06:02:46 | | 2886 | af80c6e8
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDNImage\pLMDNImage.dpr | 07-11-2005 | 06:02:46 | | 226 | 935c17d7
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDNImage\pLMDNImage.res | 07-11-2005 | 06:02:46 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDPageControl
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDPanelFill
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDPanelFill\d_LMDPanelFill.dfm | 07-11-2005 | 06:02:48 | | 4176 | ac06da02
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDPanelFill\d_LMDPanelFill.pas | 07-11-2005 | 06:02:48 | | 933 | 7221f8c4
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDPanelFill\pLMDPanelFill.dpr | 07-11-2005 | 06:02:48 | | 373 | c5cf5ba5
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDPanelFill\pLMDPanelFill.res | 07-11-2005 | 06:02:48 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDProgressFill
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDProgressFill\d_LMDProgressFill.dfm | 07-11-2005 | 06:02:52 | | 6630 | 5749423
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDProgressFill\d_LMDProgressFill.pas | 07-11-2005 | 06:02:52 | | 1591 | 96439781
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDProgressFill\pLMDProgressFill.dpr | 07-11-2005 | 06:02:52 | | 262 | b5ed4922
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDProgressFill\pLMDProgressFill.res | 07-11-2005 | 06:02:52 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDScrollBox
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDScrollBox\d_LMDScrollBox.ddp | 07-11-2005 | 06:02:50 | | 51 | 4fc2fcbe
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDScrollBox\d_LMDScrollBox.dfm | 07-11-2005 | 06:02:50 | | 2795 | a970c7d0
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDScrollBox\d_LMDScrollBox.pas | 07-11-2005 | 06:02:50 | | 1521 | 2906f3bd
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDScrollBox\pLMDScrollBox.dpr | 07-11-2005 | 06:02:50 | | 373 | 456af06
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDScrollBox\pLMDScrollBox.res | 07-11-2005 | 06:02:50 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDShadowFill
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDShadowFill\d_LMDShadowFill.dfm | 07-11-2005 | 06:02:44 | | 1909 | e68bc847
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDShadowFill\d_LMDShadowFill.pas | 07-11-2005 | 06:02:44 | | 1089 | be4de368
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDShadowFill\pLMDShadowFill.dpr | 07-11-2005 | 06:02:44 | | 250 | 7f41d0c4
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDShadowFill\pLMDShadowFill.res | 07-11-2005 | 06:02:44 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDStatusBar
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDStatusBar\d_LMDStatusBar.dfm | 07-11-2005 | 06:02:50 | | 5655 | 4ce6e8bf
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDStatusBar\d_LMDStatusBar.pas | 07-11-2005 | 06:02:50 | | 1291 | 1e0371df
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDStatusBar\pLMDStatusBar.dpr | 07-11-2005 | 06:02:50 | | 244 | 9a5de753
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDStatusBar\pLMDStatusBar.res | 07-11-2005 | 06:02:50 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDTechnicalLine
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDTechnicalLine\d_LMDTechnicalLine.dfm | 07-11-2005 | 06:02:48 | | 4892 | feef3739
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDTechnicalLine\d_LMDTechnicalLine.pas | 07-11-2005 | 06:02:48 | | 5853 | 2049f0
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDTechnicalLine\pLMDTechnicalLine.dpr | 07-11-2005 | 06:02:48 | | 397 | b29433d4
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDTechnicalLine\pLMDTechnicalLine.res | 07-11-2005 | 06:02:48 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDTrackBar
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDTrackBar\d_LMDTrackBar.ddp | 07-11-2005 | 06:02:42 | | 51 | 4fc2fcbe
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDTrackBar\d_LMDTrackBar.dfm | 07-11-2005 | 06:02:42 | | 14431 | 15117b02
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDTrackBar\d_LMDTrackBar.pas | 07-11-2005 | 06:02:42 | | 3653 | 8150c772
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDTrackBar\pLMDTrackBar.dpr | 07-11-2005 | 06:02:42 | | 367 | 23bfeee5
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Ext\LMDTrackBar\pLMDTrackBar.res | 07-11-2005 | 06:02:42 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDBack
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDBack\d_LMDBack.dfm | 07-11-2005 | 06:02:58 | | 885 | dbbd87d7
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDBack\d_LMDBack.pas | 07-11-2005 | 06:02:58 | | 1065 | 71581a30
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDBack\d_LMDBack_1.dfm | 07-11-2005 | 06:02:58 | | 360 | 5ce3ac07
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDBack\d_LMDBack_1.pas | 07-11-2005 | 06:02:58 | | 887 | 9a40a4b4
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDBack\d_LMDBack_2.dfm | 07-11-2005 | 06:02:58 | | 346 | 15005689
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDBack\d_LMDBack_2.pas | 07-11-2005 | 06:02:58 | | 424 | a2523faa
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDBack\pLMDBack.dpr | 07-11-2005 | 06:02:58 | | 565 | 99dc88af
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDBack\pLMDBack.res | 07-11-2005 | 06:02:58 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDForm
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDForm\d_LMDForm.dfm | 07-11-2005 | 06:02:54 | | 387 | 9d365da5
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDForm\d_LMDForm.pas | 07-11-2005 | 06:02:54 | | 587 | ea3af457
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDForm\d_LMDForm_1.dfm | 07-11-2005 | 06:02:54 | | 4428 | aea5d3d8
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDForm\d_LMDForm_1.pas | 07-11-2005 | 06:02:54 | | 3121 | 9e111093
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDForm\pLMDForm.dpr | 07-11-2005 | 06:02:54 | | 322 | b455b6b3
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDForm\pLMDForm.res | 07-11-2005 | 06:02:54 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDFormFill
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDFormFill\d_LMDFormFill.dfm | 07-11-2005 | 06:02:56 | | 525 | 843b367
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDFormFill\d_LMDFormFill.pas | 07-11-2005 | 06:02:58 | | 1002 | d958ab4f
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDFormFill\d_LMDFormFill_1.dfm | 07-11-2005 | 06:02:56 | | 1331 | 3ba094da
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDFormFill\d_LMDFormFill_1.pas | 07-11-2005 | 06:02:58 | | 810 | da9df868
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDFormFill\d_LMdFormFill_2.dfm | 07-11-2005 | 06:02:56 | | 1380 | af5f26a4
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDFormFill\d_LMdFormFill_2.pas | 07-11-2005 | 06:02:58 | | 1077 | 78b42292
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDFormFill\pLMDFormFill.dpr | 07-11-2005 | 06:02:56 | | 623 | cb748186
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDFormFill\pLMDFormFill.res | 07-11-2005 | 06:02:56 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDFormShadow
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDFormShadow\d_LMDFormShadow.dfm | 07-11-2005 | 06:02:56 | | 777 | 9200505c
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDFormShadow\d_LMDFormShadow.pas | 07-11-2005 | 06:02:56 | | 1146 | 8b662d41
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDFormShadow\d_LMDFormShadow_1.dfm | 07-11-2005 | 06:02:56 | | 706 | 8657d1ec
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDFormShadow\d_LMDFormShadow_1.pas | 07-11-2005 | 06:02:56 | | 635 | 1fefaf08
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDFormShadow\d_LMDFormShadow_2.dfm | 07-11-2005 | 06:02:56 | | 709 | 7df2e398
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDFormShadow\d_LMDFormShadow_2.pas | 07-11-2005 | 06:02:56 | | 633 | bc3feb90
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDFormShadow\pLMDFormShadow.dpr | 07-11-2005 | 06:02:56 | | 526 | 15e9dfd8
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDFormShadow\pLMDFormShadow.res | 07-11-2005 | 06:02:56 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDFormStyler
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDFormStyler\d_LMDFormStyler.dfm | 07-11-2005 | 06:02:54 | | 635 | 3d13f736
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDFormStyler\d_LMDFormStyler.pas | 07-11-2005 | 06:02:54 | | 779 | 269d92d7
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDFormStyler\d_LMDFormStyler_1.dfm | 07-11-2005 | 06:02:54 | | 1084 | 65de21d3
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDFormStyler\d_LMDFormStyler_1.pas | 07-11-2005 | 06:02:54 | | 763 | 190e5180
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDFormStyler\d_LMDFormStyler_2.dfm | 07-11-2005 | 06:02:54 | | 2329 | 8f759842
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDFormStyler\d_LMDFormStyler_2.pas | 07-11-2005 | 06:02:54 | | 4132 | 6e3cef08
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDFormStyler\pLMDFormStyler.dpr | 07-11-2005 | 06:02:54 | | 526 | 8eb8f186
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Form\LMDFormStyler\pLMDFormStyler.res | 07-11-2005 | 06:02:54 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMD3DEffectButton
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMD3DEffectButton\d_LMD3DEffectButton.dfm | 07-11-2005 | 06:03:14 | | 82115 | 60da098b
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMD3DEffectButton\d_LMD3DEffectButton.pas | 07-11-2005 | 06:03:14 | | 881 | 1fafcdad
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMD3DEffectButton\pLMD3DEffectButton.dpr | 07-11-2005 | 06:03:14 | | 403 | e4711abd
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMD3DEffectButton\pLMD3DEffectButton.res | 07-11-2005 | 06:03:14 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDAniCtrl
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDAniCtrl\d_LMDAniCtrl.dfm | 07-11-2005 | 06:03:12 | | 17273 | 1acbb074
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDAniCtrl\d_LMDAniCtrl.pas | 07-11-2005 | 06:03:12 | | 4614 | 83bccdf4
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDAniCtrl\pLMDAniCtrl.dpr | 07-11-2005 | 06:03:12 | | 361 | 6b697568
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDAniCtrl\pLMDAniCtrl.res | 07-11-2005 | 06:03:12 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDHiTimer
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDHiTimer\d_LMDHiTimer.dfm | 07-11-2005 | 06:03:14 | | 1995 | 3870f270
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDHiTimer\d_LMDHiTimer.pas | 07-11-2005 | 06:03:14 | | 2062 | 6e4d8a44
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDHiTimer\pLMDHiTimer.dpr | 07-11-2005 | 06:03:14 | | 232 | 3293a488
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDHiTimer\pLMDHiTimer.res | 07-11-2005 | 06:03:14 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDMMButton
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDMMButton\d_LMDMMButton.ddp | 07-11-2005 | 06:03:10 | | 51 | 4fc2fcbe
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDMMButton\d_LMDMMButton.dfm | 07-11-2005 | 06:03:10 | | 54714 | 24c59562
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDMMButton\d_LMDMMButton.pas | 07-11-2005 | 06:03:10 | | 2274 | c094e6f2
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDMMButton\pLMDMMButton.dpr | 07-11-2005 | 06:03:10 | | 367 | 8d006e9c
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDMMButton\pLMDMMButton.res | 07-11-2005 | 06:03:10 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDRepeatedShape
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDRepeatedShape\d_LMDRepeatedShape.dfm | 07-11-2005 | 06:03:12 | | 10624 | f2df502a
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDRepeatedShape\d_LMDRepeatedShape.pas | 07-11-2005 | 06:03:12 | | 712 | 2dbf790a
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDRepeatedShape\pLMDRepeatedShape.dpr | 07-11-2005 | 06:03:12 | | 397 | 83839aa6
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDRepeatedShape\pLMDRepeatedShape.res | 07-11-2005 | 06:03:12 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDScrollText
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDScrollText\d_LMDScrollText.ddp | 07-11-2005 | 06:03:10 | | 51 | 4fc2fcbe
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDScrollText\d_LMDScrollText.dfm | 07-11-2005 | 06:03:10 | | 4003 | 8b2b7ce
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDScrollText\d_LMDScrollText.pas | 07-11-2005 | 06:03:10 | | 3244 | 58f74b18
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDScrollText\pLMDScrollText.dpr | 07-11-2005 | 06:03:10 | | 379 | dad89999
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDScrollText\pLMDScrollText.res | 07-11-2005 | 06:03:10 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDShapeButton
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDShapeButton\d_LMDShapeButton.dfm | 07-11-2005 | 06:03:12 | | 5811 | eae36bdb
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDShapeButton\d_LMDShapeButton.pas | 07-11-2005 | 06:03:12 | | 1118 | 5bee9ac3
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDShapeButton\pLMDShapeButton.dpr | 07-11-2005 | 06:03:12 | | 382 | 5899a8a4
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDShapeButton\pLMDShapeButton.res | 07-11-2005 | 06:03:12 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDShapeControl
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDShapeControl\d_LMDShapeControl.dfm | 07-11-2005 | 06:03:14 | | 114221 | f450888e
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDShapeControl\d_LMDShapeControl.pas | 07-11-2005 | 06:03:14 | | 4262 | ce6880e5
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDShapeControl\pLMDShapeControl.dpr | 07-11-2005 | 06:03:14 | | 262 | 232073e3
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDShapeControl\pLMDShapeControl.res | 07-11-2005 | 06:03:14 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDWaveComp
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDWaveComp\d_LMDWaveComp.dfm | 07-11-2005 | 06:03:14 | | 1176 | 5941cf41
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDWaveComp\d_LMDWaveComp.pas | 07-11-2005 | 06:03:14 | | 1651 | 276e5ffb
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDWaveComp\pLMDWaveComp.dpr | 07-11-2005 | 06:03:14 | | 238 | d238836d
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD MM\LMDWaveComp\pLMDWaveComp.res | 07-11-2005 | 06:03:14 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Shell
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Shell\LMDStarter
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Shell\LMDStarter\d_LMDStarter.ddp | 07-11-2005 | 06:03:08 | | 51 | 4fc2fcbe
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Shell\LMDStarter\d_LMDStarter.dfm | 07-11-2005 | 06:03:08 | | 3313 | c85ca79f
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Shell\LMDStarter\d_LMDStarter.pas | 07-11-2005 | 06:03:08 | | 3047 | 8d8a3193
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Shell\LMDStarter\pLMDStarter.dpr | 07-11-2005 | 06:03:08 | | 232 | 4b1de85f
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Shell\LMDStarter\pLMDStarter.res | 07-11-2005 | 06:03:08 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDBackPanel
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDBackPanel\d_LMDBackPanel.dfm | 07-11-2005 | 06:02:38 | | 1572 | 1e3f1605
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDBackPanel\d_LMDBackPanel.pas | 07-11-2005 | 06:02:38 | | 838 | 3aba1771
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDBackPanel\pLMDBackPanel.dpr | 07-11-2005 | 06:02:38 | | 373 | dace9c1a
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDBackPanel\pLMDBackPanel.res | 07-11-2005 | 06:02:38 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDButton
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDButton\d_LMDButton.dfm | 07-11-2005 | 06:02:34 | | 8583 | 77107f61
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDButton\d_LMDButton.pas | 07-11-2005 | 06:02:34 | | 2677 | 5dd36ea
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDButton\pLMDButton.dpr | 07-11-2005 | 06:02:34 | | 355 | 21e3be4d
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDButton\pLMDButton.res | 07-11-2005 | 06:02:34 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDCheckBox
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDCheckBox\d_LMDCheckBox.ddp | 07-11-2005 | 06:02:28 | | 51 | 4fc2fcbe
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDCheckBox\d_LMDCheckBox.dfm | 07-11-2005 | 06:02:28 | | 6520 | 9e70463c
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDCheckBox\d_LMDCheckBox.pas | 07-11-2005 | 06:02:28 | | 1462 | e571d7c1
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDCheckBox\pLMDCheckBox.dpr | 07-11-2005 | 06:02:28 | | 367 | 7d74ff9
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDCheckBox\pLMDCheckBox.res | 07-11-2005 | 06:02:28 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDCheckGroup
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDCheckGroup\d_LMDCheckGroup.dfm | 07-11-2005 | 06:02:30 | | 3950 | b06e345c
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDCheckGroup\d_LMDCheckGroup.pas | 07-11-2005 | 06:02:30 | | 830 | faa47b15
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDCheckGroup\pLMDCheckGroup.dpr | 07-11-2005 | 06:02:30 | | 379 | a86a1db0
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDCheckGroup\pLMDCheckGroup.res | 07-11-2005 | 06:02:30 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDDockButton
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDDockButton\d_LMDDockButton.dfm | 07-11-2005 | 06:02:34 | | 7968 | 18297b48
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDDockButton\d_LMDDockButton.pas | 07-11-2005 | 06:02:36 | | 2056 | 980974f4
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDDockButton\pLMDDockButton.dpr | 07-11-2005 | 06:02:36 | | 250 | c0af4035
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDDockButton\pLMDDockButton.res | 07-11-2005 | 06:02:34 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDDockLabel
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDDockLabel\d_LMDDockLabel.dfm | 07-11-2005 | 06:02:36 | | 3686 | b9cbf522
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDDockLabel\d_LMDDockLabel.pas | 07-11-2005 | 06:02:36 | | 1260 | 2c05694
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDDockLabel\pLMDDockLabel.dpr | 07-11-2005 | 06:02:36 | | 373 | b4031a30
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDDockLabel\pLMDDockLabel.res | 07-11-2005 | 06:02:36 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDDockSpeedButton
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDDockSpeedButton\d_LMDDockSpeedButton.dfm | 07-11-2005 | 06:02:32 | | 3993 | eb196778
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDDockSpeedButton\d_LMDDockSpeedButton.pas | 07-11-2005 | 06:02:32 | | 1736 | c097c56
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDDockSpeedButton\pLMDDockSpeedButton.dpr | 07-11-2005 | 06:02:32 | | 280 | 7a514488
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDDockSpeedButton\pLMDDockSpeedButton.res | 07-11-2005 | 06:02:32 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDDrawEdge
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDDrawEdge\d_LMDDrawEdge.dfm | 07-11-2005 | 06:02:26 | | 11988 | 3dc58fc3
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDDrawEdge\d_LMDDrawEdge.pas | 07-11-2005 | 06:02:26 | | 3103 | d043e8c3
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDDrawEdge\LMDDrawEdge.res | 07-11-2005 | 06:02:26 | | 876 | de402301
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDDrawEdge\pLMDDrawEdge.dpr | 07-11-2005 | 06:02:26 | | 367 | 643610ed
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDDrawEdge\pLMDDrawEdge.res | 07-11-2005 | 06:02:26 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDGlyphLabel
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDGlyphLabel\d_LMDGlyphLabel.dfm | 07-11-2005 | 06:02:28 | | 3377 | 9f3a4403
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDGlyphLabel\d_LMDGlyphLabel.pas | 07-11-2005 | 06:02:28 | | 1036 | 1e90ae5f
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDGlyphLabel\pLMDGlyphLabel.dpr | 07-11-2005 | 06:02:28 | | 379 | 63f32241
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDGlyphLabel\pLMDGlyphLabel.res | 07-11-2005 | 06:02:28 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDGroupBox
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDGroupBox\d_LMDGroupBox.dfm | 07-11-2005 | 06:02:32 | | 4736 | d5d99be2
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDGroupBox\d_LMDGroupBox.pas | 07-11-2005 | 06:02:32 | | 1012 | fea1861f
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDGroupBox\pLMDGroupBox.dpr | 07-11-2005 | 06:02:32 | | 367 | e5bd3c4
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDGroupBox\pLMDGroupBox.res | 07-11-2005 | 06:02:32 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDInformationLabel
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDInformationLabel\d_LMDInformationLabel.dfm | 07-11-2005 | 06:02:28 | | 9498 | 5ea2e504
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDInformationLabel\d_LMDInformationLabel.pas | 07-11-2005 | 06:02:28 | | 2663 | 5236011b
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDInformationLabel\pLMDInformationLabel.dpr | 07-11-2005 | 06:02:28 | | 415 | abcf8807
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDInformationLabel\pLMDInformationLabel.res | 07-11-2005 | 06:02:28 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDLabel
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDLabel\d_LMDLabel.dfm | 07-11-2005 | 06:02:36 | | 4877 | 6e23accc
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDLabel\d_LMDLabel.pas | 07-11-2005 | 06:02:36 | | 818 | cbf66e14
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDLabel\pLMDLabel.dpr | 07-11-2005 | 06:02:36 | | 220 | 7aa1066c
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDLabel\pLMDLabel.res | 07-11-2005 | 06:02:36 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDProgress
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDProgress\d_LMDProgress.dfm | 07-11-2005 | 06:02:32 | | 4269 | f08e3570
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDProgress\d_LMDProgress.pas | 07-11-2005 | 06:02:32 | | 2255 | c193dae
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDProgress\pLMDProgress.dpr | 07-11-2005 | 06:02:32 | | 238 | 6a8848f5
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDProgress\pLMDProgress.res | 07-11-2005 | 06:02:32 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDRadioButton
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDRadioButton\d_LMDRadioButton.ddp | 07-11-2005 | 06:02:30 | | 51 | 4fc2fcbe
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDRadioButton\d_LMDRadioButton.dfm | 07-11-2005 | 06:02:30 | | 5059 | 40eb89ef
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDRadioButton\d_LMDRadioButton.pas | 07-11-2005 | 06:02:30 | | 1401 | 70965275
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDRadioButton\pLMDRadioButton.dpr | 07-11-2005 | 06:02:30 | | 385 | 3aa9c20b
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDRadioButton\pLMDRadioButton.res | 07-11-2005 | 06:02:30 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDRadioGroup
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDRadioGroup\d_LMDRadioGroup.dfm | 07-11-2005 | 06:02:34 | | 3978 | 3c76561
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDRadioGroup\d_LMDRadioGroup.pas | 07-11-2005 | 06:02:34 | | 870 | 270db5f0
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDRadioGroup\pLMDRadioGroup.dpr | 07-11-2005 | 06:02:34 | | 250 | 44a6278e
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDRadioGroup\pLMDRadioGroup.res | 07-11-2005 | 06:02:34 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDScrollBar
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDScrollBar\d_LMDScrollBar.ddp | 07-11-2005 | 06:02:26 | | 51 | 4fc2fcbe
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDScrollBar\d_LMDScrollBar.dfm | 07-11-2005 | 06:02:26 | | 5812 | 424d1f2d
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDScrollBar\d_LMDScrollBar.pas | 07-11-2005 | 06:02:26 | | 2052 | 43721d19
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDScrollBar\pLMDScrollBar.dpr | 07-11-2005 | 06:02:26 | | 373 | 81909792
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDScrollBar\pLMDScrollBar.res | 07-11-2005 | 06:02:26 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDSimpleLabel
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDSimpleLabel\d_LMDSimpleLabel.ddp | 07-11-2005 | 06:02:28 | | 51 | 4fc2fcbe
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDSimpleLabel\d_LMDSimpleLabel.dfm | 07-11-2005 | 06:02:30 | | 13321 | a04aa50
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDSimpleLabel\d_LMDSimpleLabel.pas | 07-11-2005 | 06:02:30 | | 2937 | dbeb8499
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDSimpleLabel\pLMDSimpleLabel.dpr | 07-11-2005 | 06:02:28 | | 256 | d2b31b78
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDSimpleLabel\pLMDSimpleLabel.res | 07-11-2005 | 06:02:30 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDSimplePanel
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDSimplePanel\d_LMDSimplePanel.ddp | 07-11-2005 | 06:02:34 | | 51 | 4fc2fcbe
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDSimplePanel\d_LMDSimplePanel.dfm | 07-11-2005 | 06:02:34 | | 2983 | 96b63ca9
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDSimplePanel\d_LMDSimplePanel.pas | 07-11-2005 | 06:02:34 | | 1472 | 19459c57
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDSimplePanel\pLMDSimplePanel.dpr | 07-11-2005 | 06:02:34 | | 385 | 4b892881
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDSimplePanel\pLMDSimplePanel.res | 07-11-2005 | 06:02:34 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDSpeedButton
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDSpeedButton\d_LMDSpeedButton.ddp | 07-11-2005 | 06:02:32 | | 51 | 4fc2fcbe
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDSpeedButton\d_LMDSpeedButton.dfm | 07-11-2005 | 06:02:30 | | 15189 | b96e5cdb
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDSpeedButton\d_LMDSpeedButton.pas | 07-11-2005 | 06:02:32 | | 4021 | 128967f0
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDSpeedButton\pLMDSpeedButton.dpr | 07-11-2005 | 06:02:32 | | 385 | 4f6555ed
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Std\LMDSpeedButton\pLMDSpeedButton.res | 07-11-2005 | 06:02:30 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDApplicationCtrl
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDApplicationCtrl\d_LMDApplicationCtrl.ddp | 07-11-2005 | 06:03:24 | | 51 | 4fc2fcbe
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDApplicationCtrl\d_LMDApplicationCtrl.dfm | 07-11-2005 | 06:03:24 | | 40610 | f71f8cd5
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDApplicationCtrl\d_LMDApplicationCtrl.pas | 07-11-2005 | 06:03:24 | | 5418 | 65f5006b
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDApplicationCtrl\pLMDApplicationCtrl.dpr | 07-11-2005 | 06:03:24 | | 280 | b2ab519b
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDApplicationCtrl\pLMDApplicationCtrl.res | 07-11-2005 | 06:03:24 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDHint
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDHint\d_LMDHint.dfm | 07-11-2005 | 06:03:18 | | 1435 | a5ff9ed4
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDHint\d_LMDHint.pas | 07-11-2005 | 06:03:18 | | 1881 | 12938bbc
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDHint\pLMDHint.dpr | 07-11-2005 | 06:03:18 | | 214 | e9f4a8ef
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDHint\pLMDHint.res | 07-11-2005 | 06:03:20 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDIniCtrl
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDIniCtrl\d_LMDIniCtrl.dfm | 07-11-2005 | 06:03:22 | | 11420 | b62d269a
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDIniCtrl\d_LMDIniCtrl.pas | 07-11-2005 | 06:03:22 | | 5529 | d263ff71
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDIniCtrl\d_LMDIniCtrl_1.dfm | 07-11-2005 | 06:03:22 | | 767 | 20025fb1
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDIniCtrl\d_LMDIniCtrl_1.pas | 07-11-2005 | 06:03:22 | | 796 | 5164271c
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDIniCtrl\pLMDIniCtrl.dpr | 07-11-2005 | 06:03:22 | | 359 | dcceef92
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDIniCtrl\pLMDIniCtrl.res | 07-11-2005 | 06:03:22 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDMessageHint
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDMessageHint\d_LMDMessageHint.dfm | 07-11-2005 | 06:03:22 | | 3807 | fffd5377
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDMessageHint\d_LMDMessageHint.pas | 07-11-2005 | 06:03:22 | | 3039 | 7dd0e8e
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDMessageHint\pLMDMessageHint.dpr | 07-11-2005 | 06:03:22 | | 256 | 3253170b
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDMessageHint\pLMDMessageHint.res | 07-11-2005 | 06:03:22 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDMouseFencer
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDMouseFencer\d_LMDMouseFencer.dfm | 07-11-2005 | 06:03:24 | | 415 | fcd9f854
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDMouseFencer\d_LMDMouseFencer.pas | 07-11-2005 | 06:03:26 | | 636 | e148bb91
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDMouseFencer\d_LMDMouseFencer_1.dfm | 07-11-2005 | 06:03:24 | | 2996 | 78572e40
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDMouseFencer\d_LMDMouseFencer_1.pas | 07-11-2005 | 06:03:26 | | 2644 | ad91e074
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDMouseFencer\pLMDMouseFencer.dpr | 07-11-2005 | 06:03:26 | | 399 | e2482f77
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDMouseFencer\pLMDMouseFencer.res | 07-11-2005 | 06:03:26 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDMousePositioner
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDMousePositioner\d_LMDMousePositioner.dfm | 07-11-2005 | 06:03:22 | | 423 | 29fda169
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDMousePositioner\d_LMDMousePositioner.pas | 07-11-2005 | 06:03:22 | | 666 | 38dbebd2
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDMousePositioner\d_LMDMousePositioner_1.dfm | 07-11-2005 | 06:03:22 | | 2139 | 83cb0b35
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDMousePositioner\d_LMDMousePositioner_1.pas | 07-11-2005 | 06:03:22 | | 1552 | 230b33a2
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDMousePositioner\d_LMDMousePositioner_2.dfm | 07-11-2005 | 06:03:22 | | 3142 | 10c42205
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDMousePositioner\d_LMDMousePositioner_2.pas | 07-11-2005 | 06:03:22 | | 2190 | 535f2a52
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDMousePositioner\pLMDMousePositioner.dpr | 07-11-2005 | 06:03:22 | | 606 | f173ebd7
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDMousePositioner\pLMDMousePositioner.res | 07-11-2005 | 06:03:22 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDMRUList
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDMRUList\d_LMDMRUList.dfm | 07-11-2005 | 06:03:26 | | 1384 | 4eb9f01f
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDMRUList\d_LMDMRUList.pas | 07-11-2005 | 06:03:26 | | 953 | 89b7b529
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDMRUList\pLMDMRUList.dpr | 07-11-2005 | 06:03:26 | | 232 | 55bc54d3
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDMRUList\pLMDMRUList.res | 07-11-2005 | 06:03:26 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDShapeHint
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDShapeHint\d_LMDShapeHint.dfm | 07-11-2005 | 06:03:20 | | 9006 | 2df6782d
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDShapeHint\d_LMDShapeHint.pas | 07-11-2005 | 06:03:20 | | 2343 | 887453f8
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDShapeHint\pLMDShapeHint.dpr | 07-11-2005 | 06:03:20 | | 260 | 4780219
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDShapeHint\pLMDShapeHint.res | 07-11-2005 | 06:03:20 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDStopWatch
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDStopWatch\d_LMDStopWatch.dfm | 07-11-2005 | 06:03:26 | | 8141 | 459298
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDStopWatch\d_LMDStopWatch.pas | 07-11-2005 | 06:03:26 | | 5052 | 2679469c
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDStopWatch\pLMDStopWatch.dpr | 07-11-2005 | 06:03:26 | | 260 | 4785aaa9
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDStopWatch\pLMDStopWatch.res | 07-11-2005 | 06:03:26 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDSysInfo
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDSysInfo\d_LMDSysInfo.dfm | 07-11-2005 | 06:03:24 | | 20682 | c51822c8
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDSysInfo\d_LMDSysInfo.pas | 07-11-2005 | 06:03:24 | | 15153 | 73c025ea
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDSysInfo\pLMDSysInfo.dpr | 07-11-2005 | 06:03:24 | | 246 | 657e4b41
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDSysInfo\pLMDSysInfo.res | 07-11-2005 | 06:03:24 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDTimerPool
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDTimerPool\d_LMDTimerPool.dfm | 07-11-2005 | 06:03:24 | | 30256 | 80a0b4e6
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDTimerPool\d_LMDTimerPool.pas | 07-11-2005 | 06:03:24 | | 3159 | 89b0885
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDTimerPool\pLMDTimerPool.dpr | 07-11-2005 | 06:03:24 | | 260 | 6b218d3f
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\LMD Sys\LMDTimerPool\pLMDTimerPool.res | 07-11-2005 | 06:03:24 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_Data
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_Data\d_ComponentData.ddp | 07-11-2005 | 06:03:18 | | 51 | 4fc2fcbe
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_Data\d_ComponentData.dfm | 07-11-2005 | 06:03:18 | | 245451 | 5e801ebf
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_Data\d_ComponentData.pas | 07-11-2005 | 06:03:18 | | 491 | 2eee92f2
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_Data\d_GlobalData.dfm | 07-11-2005 | 06:03:18 | | 393514 | b6a2b112
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_Data\d_GlobalData.pas | 07-11-2005 | 06:03:18 | | 876 | d0f5e400
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_Main
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_Main\ControlCenter.ddp | 07-11-2005 | 06:02:24 | | 51 | 4fc2fcbe
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_Main\ControlCenter.dfm | 07-11-2005 | 06:02:24 | | 11319 | f2ec4ef5
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_Main\ControlCenter.pas | 07-11-2005 | 06:02:24 | | 19111 | 8d089bcd
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_Main\d_LMDInnovative_Components.dfm | 07-11-2005 | 06:02:24 | | 3125 | f0cb925e
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_Main\d_LMDInnovative_Components.pas | 07-11-2005 | 06:02:24 | | 3293 | 7da001d1
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_Main\d_LMDInnovative_Contact.dfm | 07-11-2005 | 06:02:24 | | 18733 | 132190d1
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_Main\d_LMDInnovative_Contact.pas | 07-11-2005 | 06:02:24 | | 2494 | 4bcdf127
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_Main\d_LMDInnovative_LMDTools_QuickFind.dfm | 07-11-2005 | 06:02:24 | | 4402 | 7eadac2f
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_Main\d_LMDInnovative_LMDTools_QuickFind.pas | 07-11-2005 | 06:02:26 | | 1298 | 26edf0e
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_Main\d_LMDInnovative_order.ddp | 07-11-2005 | 06:02:24 | | 51 | 4fc2fcbe
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_Main\d_LMDInnovative_order.dfm | 07-11-2005 | 06:02:24 | | 5209 | 9a089ee5
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_Main\d_LMDInnovative_order.pas | 07-11-2005 | 06:02:24 | | 1528 | fcf3e3f3
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_Main\d_LMDInnovative_OtherSay.dfm | 07-11-2005 | 06:02:24 | | 13332 | fb83436b
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_Main\d_LMDInnovative_OtherSay.pas | 07-11-2005 | 06:02:24 | | 1389 | dde2ac7f
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_Main\d_LMDInnovative_Splash.dfm | 07-11-2005 | 06:02:24 | | 250956 | 1617b0a1
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_Main\d_LMDInnovative_Splash.pas | 07-11-2005 | 06:02:26 | | 1424 | 69622f80
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_Main\d_LMDInnovative_Welcome.dfm | 07-11-2005 | 06:02:24 | | 65872 | 611e45d6
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_Main\d_LMDInnovative_Welcome.pas | 07-11-2005 | 06:02:24 | | 1537 | 1b7e57ce
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_Main\d_LMDNoDemo.dfm | 07-11-2005 | 06:02:24 | | 9304 | 7ee903a8
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_Main\d_LMDNoDemo.pas | 07-11-2005 | 06:02:24 | | 857 | e7ac35f7
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_Main\d_LMDPackageDesc.ddp | 07-11-2005 | 06:02:24 | | 51 | 4fc2fcbe
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_Main\d_LMDPackageDesc.dfm | 07-11-2005 | 06:02:24 | | 2513 | 553b4a69
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_Main\d_LMDPackageDesc.pas | 07-11-2005 | 06:02:24 | | 880 | abcf4a61
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_ProjectBPGs
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_ProjectBPGs\LMDDemos_Cont.bpg | 07-11-2005 | 06:02:16 | | 1945 | 9964dbfc
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_ProjectBPGs\LMDDemos_Dlg.bpg | 07-11-2005 | 06:02:16 | | 3049 | 81e2b6fb
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_ProjectBPGs\LMDDemos_Edit.bpg | 07-11-2005 | 06:02:16 | | 1894 | c957a43e
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_ProjectBPGs\LMDDemos_Ext.bpg | 07-11-2005 | 06:02:16 | | 3426 | 9fe40ba5
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_ProjectBPGs\LMDDemos_Form.bpg | 07-11-2005 | 06:02:16 | | 1428 | 7bb9ea1d
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_ProjectBPGs\LMDDemos_List.bpg | 07-11-2005 | 06:02:16 | | 2787 | 8bfe4bf3
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_ProjectBPGs\LMDDemos_MM.bpg | 07-11-2005 | 06:02:16 | | 1774 | c15a1192
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_ProjectBPGs\LMDDemos_Shell.bpg | 07-11-2005 | 06:02:16 | | 1071 | f3d543a8
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_ProjectBPGs\LMDDemos_Std.bpg | 07-11-2005 | 06:02:16 | | 2736 | 67f8388c
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_ProjectBPGs\LMDDemos_Sys.bpg | 07-11-2005 | 06:02:16 | | 2138 | 66e93b5d
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_ProjectBPGs\LMDDemos_Text.bpg | 07-11-2005 | 06:02:16 | | 1957 | 5765459e
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD Megademo\_ProjectBPGs\_LMDDemos_NewLMD2003.bpg | 07-11-2005 | 06:02:16 | | 2076 | ddc5c75a
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD XP Demo
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD XP Demo\d_lmdxp0.dfm | 07-11-2005 | 06:02:16 | | 71781 | 8eadabcf
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD XP Demo\d_lmdxp0.pas | 07-11-2005 | 06:02:14 | | 3216 | 263a985a
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD XP Demo\d_lmdxp1.dfm | 07-11-2005 | 06:02:16 | | 46322 | 9b410db1
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD XP Demo\d_lmdxp1.pas | 07-11-2005 | 06:02:14 | | 1288 | e69a95d4
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD XP Demo\d_lmdxp2.dfm | 07-11-2005 | 06:02:16 | | 4749 | ce32a706
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD XP Demo\d_lmdxp2.pas | 07-11-2005 | 06:02:14 | | 773 | 1bd51b00
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD XP Demo\d_lmdxp2a.dfm | 07-11-2005 | 06:02:14 | | 11103 | 844f29a4
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD XP Demo\d_lmdxp2a.pas | 07-11-2005 | 06:02:14 | | 1888 | c3a62a43
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD XP Demo\d_lmdxp3.dfm | 07-11-2005 | 06:02:14 | | 5699 | c5db4b0
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD XP Demo\d_lmdxp3.pas | 07-11-2005 | 06:02:14 | | 1124 | d205f8a5
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD XP Demo\d_lmdxpedit.dfm | 07-11-2005 | 06:02:14 | | 8727 | f76f5ef7
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD XP Demo\d_lmdxpedit.pas | 07-11-2005 | 06:02:14 | | 1968 | 2e7af664
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD XP Demo\d_lmdxplist.dfm | 07-11-2005 | 06:02:14 | | 5674 | 1890fd9
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD XP Demo\d_lmdxplist.pas | 07-11-2005 | 06:02:16 | | 2109 | 3f8af990
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD XP Demo\d_lmdxpstd.dfm | 07-11-2005 | 06:02:16 | | 8356 | f4ea7de
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD XP Demo\d_lmdxpstd.pas | 07-11-2005 | 06:02:14 | | 1910 | e9f81b2b
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD XP Demo\pLMDXP.dpr | 07-11-2005 | 06:02:14 | | 511 | f2f2dedd
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\LMD XP Demo\pLMDXP.res | 07-11-2005 | 06:02:14 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys\LMDDemos_Sys2.bpg | 07-11-2005 | 06:02:12 | | 1117 | 9c57e91b
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys\LMDFMDrop
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys\LMDFMDrop\d_LMDFMDrop.dfm | 07-11-2005 | 06:02:10 | | 691 | f55e3106
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys\LMDFMDrop\d_LMDFMDrop.pas | 07-11-2005 | 06:02:10 | | 1097 | 31f0d7c
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys\LMDFMDrop\pLMDFMDrop.dpr | 07-11-2005 | 06:02:10 | | 226 | a348271b
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys\LMDFMDrop\pLMDFMDrop.res | 07-11-2005 | 06:02:10 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys\LMDGlobalHotKey
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys\LMDGlobalHotKey\d_LMDGlobalHotKey.dfm | 07-11-2005 | 06:02:10 | | 1653 | c2e8563
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys\LMDGlobalHotKey\d_LMDGlobalHotKey.pas | 07-11-2005 | 06:02:10 | | 1595 | 3f4165de
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys\LMDGlobalHotKey\pLMDGlobalHotKey.dpr | 07-11-2005 | 06:02:10 | | 262 | 4ae44894
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys\LMDGlobalHotKey\pLMDGlobalHotKey.res | 07-11-2005 | 06:02:10 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys\LMDHideNonVC
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys\LMDHideNonVC\d_LMDHideNonVC.ddp | 07-11-2005 | 06:02:12 | | 51 | 4fc2fcbe
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys\LMDHideNonVC\d_LMDHideNonVC.dfm | 07-11-2005 | 06:02:12 | | 22435 | 2097c3bd
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys\LMDHideNonVC\d_LMDHideNonVC.pas | 07-11-2005 | 06:02:12 | | 7111 | dfa42e62
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys\LMDHideNonVC\d_LMDHideNonVC0.dfm | 07-11-2005 | 06:02:12 | | 3770 | bacbbe42
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys\LMDHideNonVC\d_LMDHideNonVC0.pas | 07-11-2005 | 06:02:12 | | 7419 | e462639d
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys\LMDHideNonVC\pLMDHideNonVC.dpr | 07-11-2005 | 06:02:12 | | 234 | 8007565f
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys\LMDHideNonVC\pLMDHideNonVC.INI | 07-11-2005 | 06:02:12 | | 57 | 5f0fd025
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys\LMDOneInstance
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys\LMDOneInstance\d_LMDOneInstance.dfm | 07-11-2005 | 06:02:10 | | 1749 | 4ce688c4
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys\LMDOneInstance\d_LMDOneInstance.pas | 07-11-2005 | 06:02:10 | | 963 | 287cdfa1
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys\LMDOneInstance\d_LMDOneInstance_1.dfm | 07-11-2005 | 06:02:10 | | 243 | 63f50382
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys\LMDOneInstance\d_LMDOneInstance_1.pas | 07-11-2005 | 06:02:10 | | 700 | b8377119
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys\LMDOneInstance\pLMDOneInstance.dfm | 07-11-2005 | 06:02:10 | | 343 | 660c4724
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys\LMDOneInstance\pLMDOneInstance.dpr | 07-11-2005 | 06:02:10 | | 358 | 5ea3f1c
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys\LMDOneInstance\pLMDOneInstance.pas | 07-11-2005 | 06:02:10 | | 307 | ae13b826
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys\LMDOneInstance\pLMDOneInstance.res | 07-11-2005 | 06:02:10 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys\LMDTrayIcon
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys\LMDTrayIcon\d_LMDTrayIcon.dfm | 07-11-2005 | 06:02:12 | | 6704 | b6512264
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys\LMDTrayIcon\d_LMDTrayIcon.pas | 07-11-2005 | 06:02:12 | | 3096 | 3be056f
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys\LMDTrayIcon\pLMDTrayIcon.dpr | 07-11-2005 | 06:02:12 | | 248 | 326ccff0
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\Other\LMD Sys\LMDTrayIcon\pLMDTrayIcon.res | 07-11-2005 | 06:02:12 | | 876 | de402301
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\Tips&Tricks
+Made Dir: C:\Projetos\Componentes\LMD70SE\demos\delphi\Tips&Tricks\SpeedButton
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\Tips&Tricks\SpeedButton\d_sp0.dfm | 07-11-2005 | 06:02:14 | | 1570 | 38b1c347
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\Tips&Tricks\SpeedButton\d_sp0.pas | 07-11-2005 | 06:02:14 | | 1218 | 3a67f835
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\Tips&Tricks\SpeedButton\pSpeedButton.dpr | 07-11-2005 | 06:02:14 | | 192 | bb1caaf7
+File Copy: C:\Projetos\Componentes\LMD70SE\demos\delphi\Tips&Tricks\SpeedButton\pSpeedButton.res | 07-11-2005 | 06:02:14 | | 876 | de402301
+File Copy: C:\Program Files (x86)\Borland\Delphi7\Help\lmdtools.cnt | 01-03-2004 | 08:01:00 | | 11690 | f632e81d
+File Copy: C:\Program Files (x86)\Borland\Delphi7\Help\lmdtools.hlp | 01-03-2004 | 08:01:00 | | 10337741 | fbe04411
+File Edit: C:\Program Files (x86)\Borland\Delphi7\Help\d7.cnt
+Backup Copy: C:\Program Files (x86)\Borland\Delphi7\Help\d7.002
+File Copy: C:\Program Files (x86)\Borland\Delphi7\Help\lmdtools.als | 01-03-2004 | 08:01:00 | | 374377 | 55a0a523
+Made Dir: C:\Projetos\Componentes\LMD70SE\info
+File Copy: C:\Projetos\Componentes\LMD70SE\info\InfoNET.htm | 04-21-2005 | 07:01:00 | | 3514 | eca77585
+File Copy: C:\Projetos\Componentes\LMD70SE\info\Installation.htm | 01-03-2004 | 08:01:00 | | 18903 | 316bc66c
+File Copy: C:\Projetos\Componentes\LMD70SE\info\LMD2004_History.htm | 08-25-2005 | 16:42:00 | | 41056 | 6fe18d87
+File Copy: C:\Projetos\Componentes\LMD70SE\info\LMDOrderFrm.htm | 04-21-2005 | 07:01:00 | | 3431 | 3aea0342
+File Copy: C:\Projetos\Componentes\LMD70SE\info\LMDOrderFrm.pdf | 04-21-2005 | 07:01:00 | | 37511 | 162d801a
+File Copy: C:\Projetos\Componentes\LMD70SE\info\LMDOrderFrm.txt | 04-21-2005 | 07:01:00 | | 2358 | 28b287ae
+File Copy: C:\Projetos\Componentes\LMD70SE\info\LMDToolsSE.htm | 04-21-2005 | 07:01:00 | | 12315 | bc6eba13
+File Copy: C:\Projetos\Componentes\LMD70SE\info\TrialInfo.htm | 08-25-2005 | 18:34:32 | | 36453 | 1230e760
+File Copy: C:\Projetos\Componentes\LMD70SE\info\TroubleShooting.htm | 08-06-2005 | 01:44:20 | | 33420 | 357dbe5
+File Copy: C:\Projetos\Componentes\LMD70SE\info\_ReadMe.htm | 04-21-2005 | 07:01:00 | | 3831 | 3f783767
+Made Dir: C:\Projetos\Componentes\LMD70SE\info\overview
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\lmdoverview.htm | 04-21-2005 | 07:01:00 | | 280259 | 54f82280
+Made Dir: C:\Projetos\Componentes\LMD70SE\info\overview\image
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\new.jpg | 04-21-2005 | 07:01:00 | | 1086 | 5b97068f
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TDock97.jpg | 04-21-2005 | 07:01:00 | | 1188 | 6ba68cac
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TEdit97.jpg | 04-21-2005 | 07:01:00 | | 997 | ffec1ef0
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\tick.jpg | 04-21-2005 | 07:01:00 | | 838 | b95899cb
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMD2PaneSplitCtrl.jpg | 04-21-2005 | 07:01:00 | | 1188 | f51aa186
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMD3DCaptionButton.jpg | 04-21-2005 | 07:01:00 | | 1177 | 703667df
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMD3DEffectButton.jpg | 04-21-2005 | 07:01:00 | | 1239 | 18fa5f18
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMD3DShapeButton.jpg | 04-21-2005 | 07:01:00 | | 1221 | 650c3c30
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMD3DShapeLabelButton.jpg | 04-21-2005 | 07:01:00 | | 1254 | 48735031
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMD3PaneSplitCtrl.jpg | 04-21-2005 | 07:01:00 | | 1225 | e7264239
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMD4Pane3SplitCtrl.jpg | 04-21-2005 | 07:01:00 | | 1235 | 89438648
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMD4PaneSplitCtrl.jpg | 04-21-2005 | 07:01:00 | | 1236 | 701036c1
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDAboutDlg.jpg | 04-21-2005 | 07:01:00 | | 1237 | bd2f22c0
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDAlarmComponent.jpg | 04-21-2005 | 07:01:00 | | 1427 | 38f8c1a6
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDAniCtrl.jpg | 04-21-2005 | 07:01:00 | | 1453 | 417ac0e3
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDAniImage.jpg | 04-21-2005 | 07:01:00 | | 1437 | 81a3959e
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDAniPicClip.jpg | 04-21-2005 | 07:01:00 | | 1436 | 9757c3
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDApp.jpg | 04-21-2005 | 07:01:00 | | 1286 | 8355cf12
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDApplicationCtrl.jpg | 04-21-2005 | 07:01:00 | | 1315 | 12e3bf26
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDAssist.jpg | 04-21-2005 | 07:01:00 | | 1184 | bdcdfb8c
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDBack.jpg | 04-21-2005 | 07:01:00 | | 1268 | e54b6d64
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDBackPanel.jpg | 04-21-2005 | 07:01:00 | | 1218 | 24b48069
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDBarHTMLLabel.jpg | 04-21-2005 | 07:01:00 | | 1382 | 51e4cb63
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDBitmapList.jpg | 04-21-2005 | 07:01:00 | | 1460 | 75fffd46
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDBookmarkCont.jpg | 04-21-2005 | 07:01:00 | | 1301 | 4d69bf
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDBrowseDlg.jpg | 04-21-2005 | 07:01:00 | | 1384 | ff9446c
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDBrowseEdit.jpg | 04-21-2005 | 07:01:00 | | 1313 | 8931175f
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDButton.jpg | 04-21-2005 | 07:01:00 | | 1196 | 183c4d00
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDButtonBar.jpg | 04-21-2005 | 07:01:00 | | 1141 | 9c00a67c
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDButtonBarPopupMenu.jpg | 04-21-2005 | 07:01:00 | | 1289 | 8808e47a
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDButtonPanel.jpg | 04-21-2005 | 07:01:00 | | 1320 | dc13ae50
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDCalculator.jpg | 04-21-2005 | 07:01:00 | | 1220 | 188087c9
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDCalculatorComboBox.jpg | 04-21-2005 | 07:01:00 | | 1311 | 4ae92575
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDCalculatorDlg.jpg | 04-21-2005 | 07:01:00 | | 1240 | 1f267993
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDCalculatorEdit.jpg | 04-21-2005 | 07:01:00 | | 1294 | 89b5129b
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDCalendar.jpg | 04-21-2005 | 07:01:00 | | 1227 | c07e6f8e
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDCalendarComboBox.jpg | 04-21-2005 | 07:01:00 | | 1242 | 3ee10185
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDCalendarDlg.jpg | 04-21-2005 | 07:01:00 | | 1238 | 83518eec
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDCalendarEdit.jpg | 04-21-2005 | 07:01:00 | | 1333 | 2ff3b9ff
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDCaptionButtons.jpg | 04-21-2005 | 07:01:00 | | 1210 | bdc6e222
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDCaptionPanel.jpg | 04-21-2005 | 07:01:00 | | 1113 | 7feee0dc
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDCaptionPanelGroup.jpg | 04-21-2005 | 07:01:00 | | 1169 | 74de734c
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDCheckBox.jpg | 04-21-2005 | 07:01:00 | | 1231 | 9f7a56b3
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDCheckGroup.jpg | 04-21-2005 | 07:01:00 | | 1248 | 6d882275
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDCheckListBox.jpg | 04-21-2005 | 07:01:00 | | 1351 | 959ceb4a
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDCheckListComboBox.jpg | 04-21-2005 | 07:01:00 | | 1231 | 1a30cfa3
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDCheckListDlg.jpg | 04-21-2005 | 07:01:00 | | 1210 | 89d4d671
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDClock.jpg | 04-21-2005 | 07:01:00 | | 1232 | 41f8f2f
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDColorComboBox.jpg | 04-21-2005 | 07:01:00 | | 1254 | 88d9ad6e
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDColorEdit.jpg | 04-21-2005 | 07:01:00 | | 1349 | 622e465d
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDColorListBox.jpg | 04-21-2005 | 07:01:00 | | 1271 | f44a142b
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDComboBox.jpg | 04-21-2005 | 07:01:00 | | 1349 | 70e3e238
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDContainerCtrl.jpg | 04-21-2005 | 07:01:00 | | 1290 | 1749f8ef
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDCSV2DBImport.jpg | 04-21-2005 | 07:01:00 | | 1317 | 6780879a
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBAliasNameComboBox.jpg | 04-21-2005 | 07:01:00 | | 1253 | 26a9ca48
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBCalculatorComboBox.jpg | 04-21-2005 | 07:01:00 | | 1311 | 4ae92575
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBCalendar.jpg | 04-21-2005 | 07:01:00 | | 1235 | c4c0b725
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBCalendarComboBox.jpg | 04-21-2005 | 07:01:00 | | 1242 | 3ee10185
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBCheckBox.jpg | 04-21-2005 | 07:01:00 | | 1186 | fb76e60f
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBCheckGroup.jpg | 04-21-2005 | 07:01:00 | | 1273 | a2f6d071
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBColorComboBox.jpg | 04-21-2005 | 07:01:00 | | 1339 | fe5b440f
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBDiagramm.jpg | 04-21-2005 | 07:01:00 | | 1240 | 538f002d
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBDriverComboBox.jpg | 04-21-2005 | 07:01:00 | | 1266 | b2c761b9
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBEdit.jpg | 04-21-2005 | 07:01:00 | | 1378 | ba5e23a5
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBEditDBLookup.jpg | 04-21-2005 | 07:01:00 | | 1405 | 2d1bef90
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBExport.jpg | 04-21-2005 | 07:01:00 | | 1209 | c524d37e
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBExtSpinEdit.jpg | 04-21-2005 | 07:01:00 | | 1265 | c6090550
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBFieldComboBox.jpg | 04-21-2005 | 07:01:00 | | 1396 | 290dcc82
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBFilter.jpg | 04-21-2005 | 07:01:00 | | 1114 | 4fcfe950
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBGlyphInfoLabel.jpg | 04-21-2005 | 07:01:00 | | 1449 | c0125814
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBGraphicLabel.jpg | 04-21-2005 | 07:01:00 | | 1350 | 4c693419
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBImageComboBox.jpg | 04-21-2005 | 07:01:00 | | 1361 | e1712069
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBImageListBox.jpg | 04-21-2005 | 07:01:00 | | 1345 | 2c69c75c
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBInformationLabel.jpg | 04-21-2005 | 07:01:00 | | 1344 | 2c650ec8
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBLabel.jpg | 04-21-2005 | 07:01:00 | | 1226 | 4d9e504
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBLabelFill.jpg | 04-21-2005 | 07:01:00 | | 1306 | 667776ae
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBLEDLabel.jpg | 04-21-2005 | 07:01:00 | | 1480 | 74532bb
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBLight.jpg | 04-21-2005 | 07:01:00 | | 1279 | 1a905dd8
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBListComboBox.jpg | 04-21-2005 | 07:01:00 | | 1242 | 72e62aca
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBMaskEdit.jpg | 04-21-2005 | 07:01:00 | | 1233 | 6ac1e5ea
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBMemo.jpg | 04-21-2005 | 07:01:00 | | 1284 | e0514c88
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBNavigator.jpg | 04-21-2005 | 07:01:00 | | 1255 | 19c187a8
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBNImage.jpg | 04-21-2005 | 07:01:00 | | 1454 | 10f4918d
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBProgress.jpg | 04-21-2005 | 07:01:00 | | 1213 | abd24b65
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBProgressFill.jpg | 04-21-2005 | 07:01:00 | | 1217 | e6b7567
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBRadioGroup.jpg | 04-21-2005 | 07:01:00 | | 1260 | f2cfd998
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBRefine.jpg | 04-21-2005 | 07:01:00 | | 1298 | f637f9f
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBRestoreGrid.jpg | 04-21-2005 | 07:01:00 | | 1174 | f65776d3
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBRichEdit.jpg | 04-21-2005 | 07:01:00 | | 1286 | 6c68e22a
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBRichLabel.jpg | 04-21-2005 | 07:01:00 | | 1288 | d7336d7d
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBRichScrollBox.jpg | 04-21-2005 | 07:01:00 | | 1357 | 67de71ed
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBRichScrollText.jpg | 04-21-2005 | 07:01:00 | | 1364 | 7afdd31d
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBShapeControl.jpg | 04-21-2005 | 07:01:00 | | 1353 | a806fd47
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBShapeLabel.jpg | 04-21-2005 | 07:01:00 | | 1339 | 53f0d3c0
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBSimpleLabel.jpg | 04-21-2005 | 07:01:00 | | 1201 | 65f3737f
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBSpeedButton.jpg | 04-21-2005 | 07:01:00 | | 1198 | 6fdf9fdd
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBSpinEdit.jpg | 04-21-2005 | 07:01:00 | | 1256 | b43a0a5b
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBSwitch.jpg | 04-21-2005 | 07:01:00 | | 1258 | 8634e709
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBSyntaxEdit.jpg | 04-21-2005 | 07:01:00 | | 1361 | 8766fd45
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBTableComboBox.jpg | 04-21-2005 | 07:01:00 | | 1232 | 5e828413
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBTrackBar.jpg | 04-21-2005 | 07:01:00 | | 1182 | 4d59c473
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDBTreeComboBox.jpg | 04-21-2005 | 07:01:00 | | 1232 | 52594eb4
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDesigner.jpg | 04-21-2005 | 07:01:00 | | 1351 | a72bb6e9
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDesignManager.jpg | 04-21-2005 | 07:01:00 | | 1314 | 5b26b2f2
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDesignPanel.jpg | 04-21-2005 | 07:01:00 | | 1290 | 13b8fc07
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDiagram.jpg | 04-21-2005 | 07:01:00 | | 1204 | e962bf4
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDirDlg.jpg | 04-21-2005 | 07:01:00 | | 1259 | 59eec2d5
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDlgButtonPanel.jpg | 04-21-2005 | 07:01:00 | | 1169 | 11f9fe69
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDockButton.jpg | 04-21-2005 | 07:01:00 | | 1100 | 1f4c8de5
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDockLabel.jpg | 04-21-2005 | 07:01:00 | | 1312 | 14873203
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDockOfficeButton.jpg | 04-21-2005 | 07:01:00 | | 1150 | 7fd04aad
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDockSpeedButton.jpg | 04-21-2005 | 07:01:00 | | 1173 | 26e9ac83
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDrawEdge.jpg | 04-21-2005 | 07:01:00 | | 1134 | 75afe23f
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDDriveComboBox.jpg | 04-21-2005 | 07:01:00 | | 1296 | 68da9382
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDEdit.jpg | 04-21-2005 | 07:01:00 | | 1367 | 381ba292
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDEditAutoComplete.jpg | 04-21-2005 | 07:01:00 | | 1499 | 3f9b45a8
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDEditDBLookup.jpg | 04-21-2005 | 07:01:00 | | 1395 | f9bb288
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDExplorerBar.jpg | 04-21-2005 | 07:01:00 | | 1384 | c6555307
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDExplorerBarController.jpg | 04-21-2005 | 07:01:00 | | 1445 | 6179a940
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDExplorerBarStorage.jpg | 04-21-2005 | 07:01:00 | | 1506 | cf20b064
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDExplorerButton.jpg | 04-21-2005 | 07:01:00 | | 1119 | 95c9180f
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDExtListBox.jpg | 04-21-2005 | 07:01:00 | | 1215 | ba6ca7e0
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDExtSpinEdit.jpg | 04-21-2005 | 07:01:00 | | 1359 | 2eea337a
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDFaceController.jpg | 04-21-2005 | 07:01:00 | | 1370 | 3e0bb71a
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDFile.jpg | 04-21-2005 | 07:01:00 | | 1203 | 35190d14
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDFileCtrl.jpg | 04-21-2005 | 07:01:00 | | 1252 | 43eba15a
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDFileGrep.jpg | 04-21-2005 | 07:01:00 | | 1310 | c78dbc8b
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDFileOpenEdit.jpg | 04-21-2005 | 07:01:00 | | 1363 | 2d82881f
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDFileSaveEdit.jpg | 04-21-2005 | 07:01:00 | | 1370 | d019f61f
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDFill.jpg | 04-21-2005 | 07:01:00 | | 1175 | 969db897
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDFMDrop.jpg | 04-21-2005 | 07:01:00 | | 1269 | 467bc09c
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDFontComboBox.jpg | 04-21-2005 | 07:01:00 | | 1210 | 8c89c7dc
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDFontListBox.jpg | 04-21-2005 | 07:01:00 | | 1199 | bcf805df
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDFontSizeComboBox.jpg | 04-21-2005 | 07:01:00 | | 1161 | 7c87591b
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDFontSizeListBox.jpg | 04-21-2005 | 07:01:00 | | 1187 | 6b985b8
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDForm.jpg | 04-21-2005 | 07:01:00 | | 1249 | 95b3fbaf
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDFormChangeIconDialog.jpg | 04-21-2005 | 07:01:00 | | 1370 | 52862450
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDFormColorDialog.jpg | 04-21-2005 | 07:01:00 | | 1359 | 844d915d
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDFormDisplay.jpg | 04-21-2005 | 07:01:00 | | 1170 | 915d03e0
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDFormFill.jpg | 04-21-2005 | 07:01:00 | | 1199 | 3b8c7197
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDFormFolderDialog.jpg | 04-21-2005 | 07:01:00 | | 1386 | f117615c
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDFormFontDialog.jpg | 04-21-2005 | 07:01:00 | | 1328 | 2d262c2
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDFormInsertObjectDialog.jpg | 04-21-2005 | 07:01:00 | | 1253 | d11d0a89
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDFormOpenDialog.jpg | 04-21-2005 | 07:01:00 | | 1353 | 3b2f5778
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDFormPageSetupDialog.jpg | 04-21-2005 | 07:01:00 | | 1336 | e0a82c18
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDFormPrintCommDialog.jpg | 04-21-2005 | 07:01:00 | | 1342 | 7a2f706c
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDFormPrinterSetupDialog.jpg | 04-21-2005 | 07:01:00 | | 1343 | 7ac30240
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDFormSaveDialog.jpg | 04-21-2005 | 07:01:00 | | 1381 | b3c832bd
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDFormShadow.jpg | 04-21-2005 | 07:01:00 | | 1136 | bf7e13dd
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDFormShape.jpg | 04-21-2005 | 07:01:00 | | 1305 | af767382
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDFormStyler.jpg | 04-21-2005 | 07:01:00 | | 1251 | 4033d08b
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDFormTabControl.jpg | 04-21-2005 | 07:01:00 | | 1142 | 6cefafcc
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDFxAnimationForm.jpg | 04-21-2005 | 07:01:00 | | 1359 | c35cde29
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDFxAnimationList.jpg | 04-21-2005 | 07:01:00 | | 1269 | 2f6f7c12
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDFxImage.jpg | 04-21-2005 | 07:01:00 | | 1473 | e6001ef6
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDFxImageList.jpg | 04-21-2005 | 07:01:00 | | 1337 | eaca0fde
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDGenericList.jpg | 04-21-2005 | 07:01:00 | | 1249 | c269df0b
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDGlobalHotKey.jpg | 04-21-2005 | 07:01:00 | | 1176 | 25034474
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDGlyphLabel.jpg | 04-21-2005 | 07:01:00 | | 1312 | 388c3f5d
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDGraphicLabel.jpg | 04-21-2005 | 07:01:00 | | 1225 | b68739d8
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDGraphicList.jpg | 04-21-2005 | 07:01:00 | | 1396 | cb404228
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDGroupBox.jpg | 04-21-2005 | 07:01:00 | | 1112 | 65858ae3
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDHeader.jpg | 04-21-2005 | 07:01:00 | | 1271 | ac50217f
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDHeaderListComboBox.jpg | 04-21-2005 | 07:01:00 | | 1230 | 65c57fb8
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDHeaderPanel.jpg | 04-21-2005 | 07:01:00 | | 1187 | 23aaa156
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDHeaderPanelButton.jpg | 04-21-2005 | 07:01:00 | | 1268 | fb999992
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDHideNonVC.jpg | 04-21-2005 | 07:01:00 | | 1326 | a227d373
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDHint.jpg | 04-21-2005 | 07:01:00 | | 1277 | 7ac9ab37
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDHiTimer.jpg | 04-21-2005 | 07:01:00 | | 1250 | 3d97635f
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDHookComponent.jpg | 04-21-2005 | 07:01:00 | | 1422 | 3df45d04
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDHTMLLabel.jpg | 04-21-2005 | 07:01:00 | | 1317 | ed2ac868
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDImage.jpg | 04-21-2005 | 07:01:00 | | 1361 | ac6ebef9
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDImageComboBox.jpg | 04-21-2005 | 07:01:00 | | 1243 | d254eb95
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDImageList.jpg | 04-21-2005 | 07:01:00 | | 1463 | 7b479760
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDImageListBox.jpg | 04-21-2005 | 07:01:00 | | 1253 | c403c019
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDImageListConnector.jpg | 04-21-2005 | 07:01:00 | | 1469 | ab579496
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDImageListVCLConnector.jpg | 04-21-2005 | 07:01:00 | | 1454 | 6c1db3cf
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDInformationLabel.jpg | 04-21-2005 | 07:01:00 | | 1311 | 591183f1
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDIniCtrl.jpg | 04-21-2005 | 07:01:00 | | 1316 | 83da41a6
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDInputDlg.jpg | 04-21-2005 | 07:01:00 | | 1226 | 48ea69c
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDJoystick.jpg | 04-21-2005 | 07:01:00 | | 1238 | ec5d2615
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDLabel.jpg | 04-21-2005 | 07:01:00 | | 1143 | 9f76216d
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDLabelFill.jpg | 04-21-2005 | 07:01:00 | | 1296 | d03d6760
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDLEDLabel.jpg | 04-21-2005 | 07:01:00 | | 1451 | a6db9cc9
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDLight.jpg | 04-21-2005 | 07:01:00 | | 1251 | 23c7e23e
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDLImage.jpg | 04-21-2005 | 07:01:00 | | 1378 | 334b118d
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDListBox.jpg | 04-21-2005 | 07:01:00 | | 1173 | 60568d33
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDListComboBox.jpg | 04-21-2005 | 07:01:00 | | 1145 | 818836da
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDListComponent.jpg | 04-21-2005 | 07:01:00 | | 1411 | 1cc8b2cd
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDMAPISendMail.jpg | 04-21-2005 | 07:01:00 | | 1376 | 77bff098
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDMaskEdit.jpg | 04-21-2005 | 07:01:00 | | 1341 | 2cf2902a
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDMemo.jpg | 04-21-2005 | 07:01:00 | | 1306 | 9cf96d16
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDMessageDlg.jpg | 04-21-2005 | 07:01:00 | | 1240 | c499c45f
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDMessageHint.jpg | 04-21-2005 | 07:01:00 | | 1337 | 3ec0a1e1
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDMeter.jpg | 04-21-2005 | 07:01:00 | | 1091 | 73c7e77c
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDMMButton.jpg | 04-21-2005 | 07:01:00 | | 1353 | 11270ba8
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDMMButtonFaceController.jpg | 04-21-2005 | 07:01:00 | | 1339 | 869faa13
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDMouseFencer.jpg | 04-21-2005 | 07:01:00 | | 1152 | 6b28a850
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDMousePositioner.jpg | 04-21-2005 | 07:01:00 | | 1256 | 7c402f07
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDMRUList.jpg | 04-21-2005 | 07:01:00 | | 1221 | d98d7e09
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDNImage.jpg | 04-21-2005 | 07:01:00 | | 1386 | c303e01e
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDNotebook.jpg | 04-21-2005 | 07:01:00 | | 1308 | c4d6a274
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDObjectComboBox.jpg | 04-21-2005 | 07:01:00 | | 1299 | 986c2b8d
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDObjectStorage.jpg | 04-21-2005 | 07:01:00 | | 1347 | 4abc380c
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDOfficeButton.jpg | 04-21-2005 | 07:01:00 | | 1116 | 4a41a97
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDOneInstance.jpg | 04-21-2005 | 07:01:00 | | 1131 | 4e61cc99
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDPageControl.jpg | 04-21-2005 | 07:01:00 | | 1163 | 86a65bf4
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDPanel.jpg | 04-21-2005 | 07:01:00 | | 1199 | 92702a6c
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDPanelFill.jpg | 04-21-2005 | 07:01:00 | | 1321 | a428db6f
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDPanelShape.jpg | 04-21-2005 | 07:01:00 | | 1387 | 8811b5b0
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDPicClip.jpg | 04-21-2005 | 07:01:00 | | 1365 | e71225db
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDPopupMenu.jpg | 04-21-2005 | 07:01:00 | | 1358 | 8309e2bf
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDPrinterComboBox.jpg | 04-21-2005 | 07:01:00 | | 1339 | 5a95f235
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDProgress.jpg | 04-21-2005 | 07:01:00 | | 1205 | bbd61d8a
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDProgressFill.jpg | 04-21-2005 | 07:01:00 | | 1247 | 1d208e4
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDPropertyInspector.jpg | 04-21-2005 | 07:01:00 | | 1290 | faddbd29
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDQueueComponent.jpg | 04-21-2005 | 07:01:00 | | 1338 | fe2d5bf1
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDRadioButton.jpg | 04-21-2005 | 07:01:00 | | 1151 | f794e8b0
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDRadioGroup.jpg | 04-21-2005 | 07:01:00 | | 1221 | 92aa701f
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDRAS.jpg | 04-21-2005 | 07:01:00 | | 1417 | 879796d
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDRefine.jpg | 04-21-2005 | 07:01:00 | | 1409 | a56ffdec
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDRepeatedShape.jpg | 04-21-2005 | 07:01:00 | | 1445 | c56c31e3
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDRichEdit.jpg | 04-21-2005 | 07:01:00 | | 1348 | 4967c0b6
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDRichFontComboBox.jpg | 04-21-2005 | 07:01:00 | | 1336 | 93d6805
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDRichFontSizeComboBox.jpg | 04-21-2005 | 07:01:00 | | 1338 | fd8964d5
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDRichHyperTextStorage.jpg | 04-21-2005 | 07:01:00 | | 1414 | e3223e38
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDRichInsertCharMapDialog.jpg | 04-21-2005 | 07:01:00 | | 1335 | 11dbc551
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDRichInsertDateTimeDialog.jpg | 04-21-2005 | 07:01:00 | | 1399 | 31fa85b7
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDRichLabel.jpg | 04-21-2005 | 07:01:00 | | 1262 | 2c6db12d
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDRichPageSetupDialog.jpg | 04-21-2005 | 07:01:00 | | 1397 | 4ee913c1
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDRichScrollBox.jpg | 04-21-2005 | 07:01:00 | | 1354 | 6c7f3ef4
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDRichScrollText.jpg | 04-21-2005 | 07:01:00 | | 1321 | 3d968990
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDRichStorage.jpg | 04-21-2005 | 07:01:00 | | 1422 | 30c0356b
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDRichSyntaxEdit.jpg | 04-21-2005 | 07:01:00 | | 1363 | 39b4c8e3
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDRuler.jpg | 04-21-2005 | 07:01:00 | | 1102 | 3dfaf179
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSciptControl.jpg | 04-21-2005 | 07:01:00 | | 1422 | 99f83126
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDScreenCanvas.jpg | 04-21-2005 | 07:01:00 | | 1399 | 985971a1
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDScreenSaver.jpg | 04-21-2005 | 07:01:00 | | 1347 | 4d01398c
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDScrollBar.jpg | 04-21-2005 | 07:01:00 | | 1200 | d8a38521
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDScrollBox.jpg | 04-21-2005 | 07:01:00 | | 1244 | 5816d7ae
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDScrollText.jpg | 04-21-2005 | 07:01:00 | | 1239 | 7300bf40
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSearchFileGrep.jpg | 04-21-2005 | 07:01:00 | | 1399 | 3be4a243
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSectionBar.jpg | 04-21-2005 | 07:01:00 | | 1170 | 53d13550
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSectionBarController.jpg | 04-21-2005 | 07:01:00 | | 1282 | 71b326a6
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSectionBarPopupMenu.jpg | 04-21-2005 | 07:01:00 | | 1252 | af1796a7
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSectionBarStorage.jpg | 04-21-2005 | 07:01:00 | | 1266 | 29707c24
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSendKeys.jpg | 04-21-2005 | 07:01:00 | | 1305 | 7a3d56c
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDShadowFill.jpg | 04-21-2005 | 07:01:00 | | 1151 | 65f357f3
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDShapeButton.jpg | 04-21-2005 | 07:01:00 | | 1198 | 5c43488e
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDShapeControl.jpg | 04-21-2005 | 07:01:00 | | 1327 | 9631fe24
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDShapeHint.jpg | 04-21-2005 | 07:01:00 | | 1313 | 7482212a
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDShapeLabel.jpg | 04-21-2005 | 07:01:00 | | 1186 | 420c4526
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDShapeLabelButton.jpg | 04-21-2005 | 07:01:00 | | 1362 | c3ec98e0
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDShellAboutDialog.jpg | 04-21-2005 | 07:01:00 | | 1317 | 939747c5
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDShellAddFavoritesDialog.jpg | 04-21-2005 | 07:01:00 | | 1364 | ca5f9e92
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDShellAppletLoader.jpg | 04-21-2005 | 07:01:00 | | 1431 | 3a795142
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDShellBrowseDialog.jpg | 04-21-2005 | 07:01:00 | | 1333 | fc5c781e
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDShellComboBox.jpg | 04-21-2005 | 07:01:00 | | 1283 | d890d441
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDShellDriveListBox.jpg | 04-21-2005 | 07:01:00 | | 1248 | c77b11d2
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDShellFavoritesDialog.jpg | 04-21-2005 | 07:01:00 | | 1364 | ca5f9e92
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDShellFavoritesMenu.jpg | 04-21-2005 | 07:01:00 | | 1381 | 26d22fe8
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDShellFindDialog.jpg | 04-21-2005 | 07:01:00 | | 1291 | af016637
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDShellFolder.jpg | 04-21-2005 | 07:01:00 | | 1235 | a8f345d2
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDShellFormatDrivesDialog.jpg | 04-21-2005 | 07:01:00 | | 1245 | 7fb8f9f7
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDShellLink.jpg | 04-21-2005 | 07:01:00 | | 1234 | dbafcaac
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDShellList.jpg | 04-21-2005 | 07:01:00 | | 1237 | 380e6ac1
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDShellListDialog.jpg | 04-21-2005 | 07:01:00 | | 1225 | de60ba00
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDShellListFilterDialog.jpg | 04-21-2005 | 07:01:00 | | 1258 | 8e4b6db1
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDShellNetConnectionDialog.jpg | 04-21-2005 | 07:01:00 | | 1285 | 88bd57aa
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDShellNotify.jpg | 04-21-2005 | 07:01:00 | | 1326 | 895d140a
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDShellObjectPropertiesDialog.jpg | 04-21-2005 | 07:01:00 | | 1245 | 7fb8f9f7
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDShellPathDialog.jpg | 04-21-2005 | 07:01:00 | | 1372 | 4f4261e2
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDShellPickIconDialog.jpg | 04-21-2005 | 07:01:00 | | 1240 | bff84ae6
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDShellRestartDialog.jpg | 04-21-2005 | 07:01:00 | | 1219 | a1c3ecd5
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDShellRunFileDialog.jpg | 04-21-2005 | 07:01:00 | | 1258 | 5d0abb5d
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDShellSysBrowseDialog.jpg | 04-21-2005 | 07:01:00 | | 1235 | 7db4daf6
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDShellTree.jpg | 04-21-2005 | 07:01:00 | | 1250 | 2d837257
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSimpleLabel.jpg | 04-21-2005 | 07:01:00 | | 1232 | acf2d29d
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSimplePanel.jpg | 04-21-2005 | 07:01:00 | | 1058 | fdf36cf7
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSpeedButton.jpg | 04-21-2005 | 07:01:00 | | 1139 | 3fcebf55
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSpinEdit.jpg | 04-21-2005 | 07:01:00 | | 1321 | ec345f2f
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSplitterPanel.jpg | 04-21-2005 | 07:01:00 | | 1235 | 89438648
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDStackComponent.jpg | 04-21-2005 | 07:01:00 | | 1351 | b5d829a7
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDStarter.jpg | 04-21-2005 | 07:01:00 | | 1194 | 29960c5
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDStaticText.jpg | 04-21-2005 | 07:01:00 | | 1188 | 19e3b399
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDStatusBar.jpg | 04-21-2005 | 07:01:00 | | 1184 | 40c00131
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDStopWatch.jpg | 04-21-2005 | 07:01:00 | | 1251 | fe082997
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDStorBinVault.jpg | 04-21-2005 | 07:01:00 | | 1286 | 5c9bf4af
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDStorControllerVault.jpg | 04-21-2005 | 07:01:00 | | 1490 | f990421f
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDStorCustomCryptor.jpg | 04-21-2005 | 07:01:00 | | 1327 | 4cced5d2
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDStorFormStorage.jpg | 04-21-2005 | 07:01:00 | | 1244 | b7379f72
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDStorIniVault.jpg | 04-21-2005 | 07:01:00 | | 1237 | 5ae9b098
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDStorPropertyStorage.jpg | 04-21-2005 | 07:01:00 | | 1242 | 5d494b43
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDStorRegistryVault.jpg | 04-21-2005 | 07:01:00 | | 1324 | eea9b5ce
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDStorTemplateStorage.jpg | 04-21-2005 | 07:01:00 | | 1402 | 7ad40f08
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDStorXMLVault.jpg | 04-21-2005 | 07:01:00 | | 1306 | 1c0207e6
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDStorXORCryptor.jpg | 04-21-2005 | 07:01:00 | | 1301 | 3da9ea5f
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDStringList.jpg | 04-21-2005 | 07:01:00 | | 1229 | bd3a92ee
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDStrList.jpg | 04-21-2005 | 07:01:00 | | 1234 | 2caba256
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSwitch.jpg | 04-21-2005 | 07:01:00 | | 1148 | 12901877
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSysDisplay.jpg | 04-21-2005 | 07:01:00 | | 1233 | ed65eecd
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSysDrive.jpg | 04-21-2005 | 07:01:00 | | 1231 | 96385541
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSysDrives.jpg | 04-21-2005 | 07:01:00 | | 1319 | 6248cdc0
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSysEventListView.jpg | 04-21-2005 | 07:01:00 | | 1227 | 31074103
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSysEventLog.jpg | 04-21-2005 | 07:01:00 | | 1159 | 39d79a59
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSysFileAssoc.jpg | 04-21-2005 | 07:01:00 | | 1186 | c16c2e4f
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSysFonts.jpg | 04-21-2005 | 07:01:00 | | 1238 | 3a71fd1c
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSysInfo.jpg | 04-21-2005 | 07:01:00 | | 1183 | 579588c8
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSysInfoListView.jpg | 04-21-2005 | 07:01:00 | | 1164 | 3f9a0789
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSysInfoTreeView.jpg | 04-21-2005 | 07:01:00 | | 1286 | 6fa2f20b
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSysInternet.jpg | 04-21-2005 | 07:01:00 | | 1266 | ed7bbea0
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSysKeyboard.jpg | 04-21-2005 | 07:01:00 | | 1271 | ca5a9f56
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSysLocale.jpg | 04-21-2005 | 07:01:00 | | 1289 | b731fc04
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSysLog.jpg | 04-21-2005 | 07:01:00 | | 1269 | b55927ef
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSysMemory.jpg | 04-21-2005 | 07:01:00 | | 1277 | dfaa76a8
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSysMenu.jpg | 04-21-2005 | 07:01:00 | | 1221 | f91dd425
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSysModem.jpg | 04-21-2005 | 07:01:00 | | 1214 | a1801875
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSysMouse.jpg | 04-21-2005 | 07:01:00 | | 1154 | ac12194e
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSysMultimedia.jpg | 04-21-2005 | 07:01:00 | | 1146 | dbcc9a7e
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSysNetTreeView.jpg | 04-21-2005 | 07:01:00 | | 1252 | cd3a594f
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSysNetwork.jpg | 04-21-2005 | 07:01:00 | | 1106 | 98e6901f
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSysNetworkEnumerator.jpg | 04-21-2005 | 07:01:00 | | 1425 | 2dc1cbf4
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSysPowerStatus.jpg | 04-21-2005 | 07:01:00 | | 1172 | a5b1a65
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSysPrinters.jpg | 04-21-2005 | 07:01:00 | | 1205 | 71b6bcc2
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSysProcessor.jpg | 04-21-2005 | 07:01:00 | | 1131 | dbf13728
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSysSystemInfo.jpg | 04-21-2005 | 07:01:00 | | 1204 | c7391e5b
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSysTimeZone.jpg | 04-21-2005 | 07:01:00 | | 1482 | 5e256076
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSysUninstall.jpg | 04-21-2005 | 07:01:00 | | 1240 | d88276e5
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDSysWindows.jpg | 04-21-2005 | 07:01:00 | | 1204 | c168f055
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDTechnicalLine.jpg | 04-21-2005 | 07:01:00 | | 1250 | 962697e3
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDTeethShape.jpg | 04-21-2005 | 07:01:00 | | 1188 | b8ed192b
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDTeethShapeLabel.jpg | 04-21-2005 | 07:01:00 | | 1255 | 9224519e
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDTextButton.jpg | 04-21-2005 | 07:01:00 | | 1223 | f13308ed
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDTextCheckBox.jpg | 04-21-2005 | 07:01:00 | | 1216 | daab0cea
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDTextCheckGroup.jpg | 04-21-2005 | 07:01:00 | | 1247 | fdf2cd97
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDTextContainer.jpg | 04-21-2005 | 07:01:00 | | 1200 | dc64b82f
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDTextDBExport.jpg | 04-21-2005 | 07:01:00 | | 1218 | cfe54c77
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDTextDBLabel.jpg | 04-21-2005 | 07:01:00 | | 1338 | 1ab52c2b
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDTextDBViewLabel.jpg | 04-21-2005 | 07:01:00 | | 1396 | 3004fd96
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDTextEditDlg.jpg | 04-21-2005 | 07:01:00 | | 1166 | d8067a1
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDTextHint.jpg | 04-21-2005 | 07:01:00 | | 1231 | 93a465fa
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDTextLabel.jpg | 04-21-2005 | 07:01:00 | | 1294 | 53eb5b3d
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDTextListBox.jpg | 04-21-2005 | 07:01:00 | | 1274 | d75d8059
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDTextPanel.jpg | 04-21-2005 | 07:01:00 | | 1094 | 28e95092
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDTextRadioButton.jpg | 04-21-2005 | 07:01:00 | | 1152 | 3ca9b4d1
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDTextRadioGroup.jpg | 04-21-2005 | 07:01:00 | | 1208 | 1f41ba86
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDTextScroll.jpg | 04-21-2005 | 07:01:00 | | 1180 | 836cfbda
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDTextScrollPanel.jpg | 04-21-2005 | 07:01:00 | | 1126 | 449170e5
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDTextShapeHint.jpg | 04-21-2005 | 07:01:00 | | 1266 | 6812166b
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDTextSpeedButton.jpg | 04-21-2005 | 07:01:00 | | 1120 | d9b13d4a
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDTile.jpg | 04-21-2005 | 07:01:00 | | 1312 | 7c9e7a58
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDTimerPool.jpg | 04-21-2005 | 07:01:00 | | 1396 | 66effba2
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDTipDlg.jpg | 04-21-2005 | 07:01:00 | | 1369 | 493e0e4a
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDTrackBar.jpg | 04-21-2005 | 07:01:00 | | 1200 | c2824c9b
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDTrackBarComboBox.jpg | 04-21-2005 | 07:01:00 | | 1328 | 995fb081
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDTrayIcon.jpg | 04-21-2005 | 07:01:00 | | 1269 | 51f929be
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDTreeComboBox.jpg | 04-21-2005 | 07:01:00 | | 1232 | 52594eb4
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDTxtPrinter.jpg | 04-21-2005 | 07:01:00 | | 1275 | 8a8980a9
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDVersionInfo.jpg | 04-21-2005 | 07:01:00 | | 1281 | 8857fdcc
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDWaveComp.jpg | 04-21-2005 | 07:01:00 | | 1254 | 837229ac
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDWaveList.jpg | 04-21-2005 | 07:01:00 | | 1301 | 83ec2e72
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDWebConfig.jpg | 04-21-2005 | 07:01:00 | | 1275 | 9286260c
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDWebHTMLScan.jpg | 04-21-2005 | 07:01:00 | | 1413 | ed4eba88
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDWebHTTPGet.jpg | 04-21-2005 | 07:01:00 | | 1447 | b8fffcdf
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDWebHTTPScan.jpg | 04-21-2005 | 07:01:00 | | 1413 | ca1642c2
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDWebInfo.jpg | 04-21-2005 | 07:01:00 | | 1395 | e0ce7893
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDWebNews.jpg | 04-21-2005 | 07:01:00 | | 1435 | 45a7add2
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDWebNewsView.jpg | 04-21-2005 | 07:01:00 | | 1377 | d6ba59eb
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDWebUpdate.jpg | 04-21-2005 | 07:01:00 | | 1374 | e1612ab8
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDWindowListDlg.jpg | 04-21-2005 | 07:01:00 | | 1211 | 7ba4d2d6
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TLMDWndButtonShape.jpg | 04-21-2005 | 07:01:00 | | 1291 | 99486bf6
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TToolBar97.jpg | 04-21-2005 | 07:01:00 | | 1130 | dc2b09f3
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TToolbarButton97.jpg | 04-21-2005 | 07:01:00 | | 1091 | 4318af5a
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TToolBarSep97.jpg | 04-21-2005 | 07:01:00 | | 912 | 6731c8ec
+File Copy: C:\Projetos\Componentes\LMD70SE\info\overview\image\TToolWindow97.jpg | 04-21-2005 | 07:01:00 | | 1121 | d8d6fd09
+File Copy: C:\Projetos\Componentes\LMD70SE\UNWISE.EXE | 07-26-2002 | 18:02:06 | | 153088 | 5be5019b
+RegDB Key: Software\Microsoft\Windows\CurrentVersion\Uninstall\LMD-Tools Special Edition (Delphi 7)
+RegDB Val: LMD-Tools Special Edition (Delphi 7)
+RegDB Name: DisplayName
+RegDB Root: 2
+RegDB Key: Software\Microsoft\Windows\CurrentVersion\Uninstall\LMD-Tools Special Edition (Delphi 7)
+RegDB Val: C:\Projetos\COMPON~1\LMD70SE\UNWISE.EXE C:\Projetos\COMPON~1\LMD70SE\INSTALL.LOG
+RegDB Name: UninstallString
+RegDB Root: 2
+Icon Group: LMD-Tools SE
+Icon Name: "ReadMe (HTML)"
+Icon Cmd: C:\Projetos\Componentes\LMD70SE\INFO\_readme.htm
+Icon Group: LMD-Tools SE
+Icon Name: LMD-Tools SE Reference
+Icon Cmd: WINHLP32 C:\Program Files (x86)\Borland\Delphi7\Help\lmdtools.hlp
+Icon Group: LMD-Tools SE
+Icon Name: Component Overview
+Icon Cmd: C:\Projetos\Componentes\LMD70SE\info\overview\lmdoverview.htm
+Icon Group: LMD-Tools SE
+Icon Name: LMD-Tools Order Info
+Icon Cmd: C:\Projetos\Componentes\LMD70SE\info\TrialInfo.htm
+Icon Group: LMD-Tools SE
+Icon Name: LMD-Tools Order Form
+Icon Cmd: C:\Projetos\Componentes\LMD70SE\info\LMDOrderFrm.htm
+RegDB Key: Software\LMD Innovative\LMD-Tools SE\7.0
+RegDB Val: C:\Projetos\Componentes\LMD70SE
+RegDB Name: ROOTPATH
+RegDB Root: 2

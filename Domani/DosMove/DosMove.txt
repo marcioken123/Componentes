@@ -1,0 +1,44 @@
+  DosMove v1.02,  Copyright 1998, Liran Shahar
+
+This component is FREE you can use it anywhere but on your own risk !.
+
+Purpose
+-------
+This component allows you to navigate thourgh the controls with
+UP/DOWN arrows or ENTER key insted of TAB.
+
+Files
+-----
+Readme.txt        This file
+DosMove.pas       Source code for the component
+DosMove.dcu       Compiled unit for Delphi 3
+DosMove.dcr       Unit resource file (pallete bitmap)
+
+History
+-------
+07/08/98 ver 1.00 - Initial release.
+
+28/08/98 ver 1.01 - Added 'EditNoBeep' property which disables the annoying
+                    beep when ENTER is pressed in edit box.
+
+09/10/98 ver 1.02 - 'EditNoBeep' fixed so that when this option is actived
+                    the user can still change the text in the edit box.
+
+Limitations
+-----------
+DosMove will work fine until...
+since it uses the creation flow of components in a form it will work
+until you set your own OnKeyPress or OnKeyDown in form with KeyPreview set
+to TRUE.
+however you can beat this problem by calling the inherited event before your
+code runs (which in most cases isn't so good !).
+
+Contact
+-------
+If you find bugs or have some questions, please contact me.
+My email address:  simpletech@ibm.net
+
+Thanks for using this component !
+
+Liran Shahar, 09.10.1998
+

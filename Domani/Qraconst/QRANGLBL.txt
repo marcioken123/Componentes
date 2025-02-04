@@ -1,0 +1,107 @@
+TQRAngledLabel: A QuickReport´s label with rotate text capabilities
+For Delphi 1, Delphi 2 (not tested) and Delphi 3.
+Version 1.0a Aug-03-1997
+(c) 1997 Francisco Maia Goncalves Neto
+
+
+Description:
+
+  TQRAngledLabel is a label component with rotate text capabilities. It´s
+  can be used with both QuickReports versions 1.x and 2.x.
+
+
+Properties:
+
+  Angle: Integer
+  The value for this can be any integer value. The assigned value is automactly 
+  converted to 0..359 range.
+
+
+Disclaimer:
+
+  This component is donated to the public as public domain.
+
+  This component can be freely used and distributed in commercial and
+  private environments.
+
+  The source code may be freely distributed and used. The author
+  accepts no responsibility for its use or misuse.
+
+  The author assumes no liability for damages, direct or consequential, which
+  may result from the use of this component.                           
+
+  Please forward any comments or suggestions to 
+  Francisco Maia Goncalves Neto at:  fneto@libnet.com.br   or   
+                                     fneto_br@hotmail.com
+
+
+Contents of QRANGLBL.ZIP:
+
+  README.TXT   : This file 
+  QRANGLBL.PAS : Contains TQRAngledLabel component the Register procedure
+  QRANGLBL.D16 : 16-bits component resource (image for the component palette)
+  QRANGLBL.D32 : 32-bits component resource
+  QRANGLBL.Q1X : QuickReport 1.x include file
+  QRANGLBL.Q2X : QuickReport 2.x include file
+
+
+Installation:
+
+  Verify your QuickReport version:
+
+    For QuickReport 1.x: 
+--->  RENAME the QRANGLBL.Q1X file to QRANGLBL.INC  <---
+
+    For QuickReport 2.x: 
+--->  RENAME the QRANGLBL.Q2X file to QRANGLBL.INC  <---
+
+
+  Copy the necessary files to your component directory:
+
+    For Delphi 1.x:
+      - QRANGLBL.PAS
+      - QRANGLBL.D16
+      - QRANGLBL.INC
+
+    For Delphi 2.x and Delphi 3.0:
+      - QRANGLBL.PAS
+      - QRANGLBL.D32
+      - QRANGLBL.INC
+
+
+  To add this component to the component palette do:
+
+    In Delphi 1.x and Delphi 2.x:
+      - Select Options | Install Components option from delphi menu
+      - Add QRANGLBL.PAS
+
+    In Delphi 3.0:
+      - Select Component | Install Components option from delphi menu
+      - Into existing package page, type unit file name as QRANGLBL.PAS
+        (the default package is 'Delphi User´s Component')
+
+
+History:
+
+  July, 26, 1997 - Version 1.0
+    . Initial version
+  August, 03, 1997 - Version 1.0a
+    . Bug fix! Several print bugs fixed under QR1 and QR2
+    . Bug fix! Zoom of ParentReport considered in paint routine
+
+
+Notes:
+
+  This component was tested in Delphi 1.x with QuickReport 1.1a and in 
+  Delphi 3.0 with QuickReport 2.0g. I think it´s work properly with Delphi 2.x,
+  but I don´t know.
+  Please report any experience you get with this component to 
+  <fneto@libnet.com.br>  or  <fneto_br@hotmail.com>
+
+  Thanks in advance,
+
+  Francisco Maia Goncalves Neto
+  Belem - Para - Brazil
+
+
+PS: I´m sorry by my bad english

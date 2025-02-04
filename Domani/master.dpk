@@ -1,0 +1,80 @@
+package master;
+
+{$R *.res}
+{$R 'keyspy\Keyspy.dcr'}
+{$R 'backup\backup.dcr'}
+{$R 'rprinter\RawPrinter.dcr'}
+{$R 'beeper\BTOdeum.dcr'}
+{$R 'dosmove\DosMove.dcr'}
+{$R 'tbcreat\TableCreator.dcr'}
+{$R 'winenv\AMWinEnv.dcr'}
+{$R 'winenv\AMReg.dcr'}
+{$R 'Excel\XLSReadWrite.dcr'}
+{$R 'zproplst\ZPropLst.dcr'}
+{$R 'regware\regware2.dcr'}
+{$R 'PBPrint\PBPrinterSetupDialog.dcr'}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'Componentes Master'}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcl,
+  designide,
+  vclactnband,
+  vclx,
+  dbrtl,
+  bdertl,
+  vcldb;
+
+contains
+  Keyspy in 'KeySpy\Keyspy.pas',
+  backup in 'Backup\backup.pas',
+  LZRW1KH in 'backup\LZRW1KH.pas',
+  RAWPrinter in 'RPrinter\RawPrinter.pas',
+  BTOdeum in 'Beeper\BTOdeum.pas',
+  DosMove in 'DosMove\DosMove.pas',
+  TableCreator in 'TbCreat\TableCreator.pas',
+  datamake in 'TbCreat\DataMake.pas',
+  AMWinEnv in 'WinEnv\AMWinEnv.pas',
+  AMReg in 'WinEnv\AMReg.pas',
+  AlignEd in 'AlignEd\aligned.pas',
+  DBAlign in 'AlignEd\dbalign.pas',
+  DCalendar in 'DCalend\Dcalendar.pas',
+  DBNumEdt in 'NumEdit\DBNUMEDT.PAS',
+  XLSReadWrite in 'Excel\XLSReadWrite.pas',
+  PropEdExcelColorsD40 in 'Excel\PropEdExcelColorsD40.pas' {frmPropEdExcelColors},
+  XLSRead,
+  ExcelMask,
+  XLSWrite,
+  EncodeFormula,
+  ExcelFunc,
+  BIFFRecs,
+  supgaug in 'SuperGauge\supgaug.pas',
+  Barcode in 'BarCode1\Barcode.pas',
+  bcchksum in 'BarCode1\bcchksum.pas',
+  regware2 in 'RegWare\regware2.pas',
+  PBPrinterSetupDialog in 'PBPrint\PBPrinterSetupDialog.pas',
+  PBPrinterSetupDialogReg in 'PBPrint\PBPrinterSetupDialogReg.pas';
+
+end.

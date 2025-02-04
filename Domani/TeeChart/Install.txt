@@ -1,0 +1,62 @@
+==================================================
+   TeeChart Pro v6
+   Installation Instructions
+==================================================
+
+The automatic installer copies and registers 
+TeeChart Pro packages, help file and tutorials
+for Delphi and C++ Builder.
+
+If you want to manually install TeeChart Pro,
+please follow the instructions in:
+
+  Delphi7\install.txt (or Delphi 6, C++ Builder 6, etc)
+
+Installed Components:
+======================
+
+TChart    (non-database Chart)          "Additional" 
+
+TDBChart  (database Chart)              "Data Controls"
+
+TQRChart  (Optional QuickReport Chart)  "QReport" 
+
+Other components:
+=================
+
+Additional components are installed at "TeeChart" palette 
+when installing the TeeChart Pro packages:
+
+TSeriesDataSet        Virtual DataSet to link Series data.
+TDraw3D               Generic "3D PaintBox" canvas on steroids.
+TChartScrollBar       Scroll-bars for Chart points. 
+TTeeCommander         Toolbar for Charts.
+TChartEditor          Easy access to Chart Editor dialog.
+TChartEditorPanel     Chart Editor dialog as Form placeable Panel.
+TChartGalleryPanel    Series Type Gallery as Form placeable Panel.
+TChartPreviewer       Easy access to Print Preview dialog.
+TChartPreviewPanel    Print Preview dialog as Form placeable Panel.
+TChartListBox         Generic List-box of Chart Series.
+TTeeOpenGL            Optional OpenGL support.
+TChartGrid            Configurable and editable Grid of Chart contents
+                      as Form placeable Panel
+TChartGridNavigator   Navigator button panel for TChartGrid
+TChartPageNavigator   Navigator button panel to page through multi-page 
+                      Chart
+TChartWebSource       Access to URL located Tee template Charts
+TSeriesTextSource     Access to TeeChart supported text format data
+                      sources 
+
+See the help file and the "Whats New" document for explanation
+of the above components. See also the examples for a live
+example of new functionality.
+
+Help file:
+-----------
+The installer automatically registers the TeeChart Pro
+help files and merges them with Delphi / C++Builder's help system.
+
+See "Docs\Runtime Editor help source\Readme.txt" file for step by 
+step Runtime Help file modification instructions.
+
+----------------------------------------------------------------------

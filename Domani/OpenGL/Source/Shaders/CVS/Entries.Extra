@@ -1,0 +1,8 @@
+/.cvsignore///
+/GLHiddenLineShader.pas///
+/GLTexCombineShader.pas///
+/GLUserShader.pas///
+/GLMultiMaterialShader.pas///
+/GLOutlineShader.pas///
+/GLCelShader.pas///
+/GLBumpShader.pas///

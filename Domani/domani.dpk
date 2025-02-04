@@ -1,0 +1,78 @@
+package domani;
+
+{$R *.res}
+{$R 'Beeper\BTOdeum.dcr'}
+{$R 'Backup\backup.dcr'}
+{$R 'DosMove\DosMove.dcr'}
+{$R 'Excel\XLSReadWrite.dcr'}
+{$R 'KeySpy\Keyspy.dcr'}
+{$R 'RegWare\regware2.dcr'}
+{$R 'RPrinter\RawPrinter.dcr'}
+{$R 'TbCreat\TableCreator.dcr'}
+{$R 'VSOutlookbar\VSOutlookBar.dcr'}
+{$R 'PBPrint\PBPrinterSetupDialog.dcr'}
+{$R 'Qraconst\QrAngLbl.dcr'}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcl,
+  vcldb,
+  dbrtl,
+  vclx,
+  designide,
+  vclactnband,
+  bdertl,
+  qrpt;
+
+contains
+  BTOdeum in 'Beeper\BTOdeum.pas',
+  DBAlign in 'AlignEd\dbalign.pas',
+  AlignEd in 'AlignEd\aligned.pas',
+  LZRW1KH in 'Backup\Lzrw1kh.pas',
+  backup in 'Backup\backup.pas',
+  bcchksum in 'BarCode1\bcchksum.pas',
+  DCalendar in 'DCalend\Dcalendar.pas',
+  DosMove in 'DosMove\DosMove.pas',
+  XLSReadWrite in 'Excel\XLSReadWrite.pas',
+  XLSRead,
+  ExcelMask,
+  XLSWrite,
+  ExcelFunc,
+  EncodeFormula,
+  PropEdExcelColorsD40 in 'Excel\PropEdExcelColorsD40.pas' {frmPropEdExcelColors},
+  BIFFRecs,
+  Keyspy in 'KeySpy\Keyspy.pas',
+  DBNumEdt in 'NumEdit\DBNUMEDT.PAS',
+  regware2 in 'RegWare\regware2.pas',
+  RAWPrinter in 'RPrinter\RawPrinter.pas',
+  supgaug in 'SuperGauge\supgaug.pas',
+  TableCreator in 'TbCreat\TableCreator.pas',
+  datamake in 'TbCreat\DataMake.pas',
+  PBPrinterSetupDialogReg in 'PBPrint\PBPrinterSetupDialogReg.pas',
+  PBPrinterSetupDialog in 'PBPrint\PBPrinterSetupDialog.pas',
+  RAWPrinting in 'RPrinter\RawPrinting.pas',
+  QrAngLbl in 'Qraconst\QrAngLbl.pas';
+
+end.

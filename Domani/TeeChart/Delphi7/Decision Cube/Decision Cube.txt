@@ -1,0 +1,92 @@
+Steema Software SL
+Rebuilding Borland's Decision Cube packages in Delphi 7.
+---------------------------------------------------------
+
+When TeeChart Pro is installed in Delphi 7, the Decision
+Cube packages are automatically disabled because TeeChart
+Pro packages are different to the ones included by 
+default in Delphi 7.
+
+With Delphi Enterprise versions, source code files for 
+the Decision Cube components are included,
+so it's possible to recompile the Decision Cube packages
+using TeeChart Pro.
+
+Option 1:
+==========
+
+Use the included executable application to automatically
+do the recompilation, copy the new packages and install them.
+
+DCubeRecomp.exe
+
+This utility creates backup copies of the modified files,
+adding the prefix "BackupOf_" to them.
+If you need to revert back to the original Decision Cube
+packages, use the backup files (delete the "BackupOf_" prefix).
+
+Destination of backup files are:
+
+-the Decision Cube source folder ( ...\Delphi 7\source\Decision Cube)
+-the Windows System folder ( c:\windows\system or c:\winnt\system32)
+-the Delphi 7 Lib folder ( ...\Delphi 7\lib)
+-the Delphi 7 Bin folder ( ...\Delphi 7\bin)
+
+Option 2:
+==========
+
+If the automatic utility DCubeRecomp.exe fails for any reason,
+you might want to try recompiling the packages manually.
+
+Instructions to recompile:
+---------------------------
+
+1. Download and install TeeChart Pro v5 for Delphi 7.
+   (Available at www.steema.com, Customer Downloads)
+
+2. Select "Components->Install packages" in Delphi 7, and remove
+   "Borland Decision Cube components" with the "Remove button.
+
+3. Remove *all* Decision cube compiled files. These files are :
+
+   + Delphi 7\Lib directory files:
+
+   mxarrays.dcu, mxbuttons.dcu, mxcommon.dcu, mxConsts.dcu, mxDB.dcu,
+   mxdcube.dcu, mxdcube.dfm, mxdsql.dcu, mxdsql.dfm, mxgraph.dcu, mxgrid.dcu, 
+   mxpbar.dcu, mxpbar.dfm, mxpivsrc.dcu, mxqedcom.dcu, mxqparse.dcu,
+   mxstore.dcu, mxtables.dcu, dss.dcp, mxdconst.dcu, mxdimedt.dcu, 
+   mxdssqry.dcu, mxreg.dcu, dcldss.dcp
+
+  + Delphi 7\Bin directory file: dcldss70.bpl
+
+  + WinNT\System32 (or Windows\System) directory file: dss70.bpl
+
+4. Go to Delphi 7 \Lib\ directory and remove dcltee.dcp, teeui.dcp and 
+   tee.dcp files.
+
+5. Locate the Decision Cube source code. It should be in the Delphi 7
+   \Source\Decision Cube directory.
+
+6. Open the DSS.dpk package and recompile. If you get a complaint about 
+   "always built package with the newer built...", then click on "Options" 
+   speed button and change: "Build control" to "Rebuild as needed", 
+   and recompile.
+
+7. Copy the new DSS70.bpl to Windows \System directory. Copy *all* 
+   newly compiled *.dcu, *.dcp, all *.dfm and *.res files to the Delphi 7 
+   \Lib directory. 
+
+8. Then open the DclDSS.dpk package. Add DclBDE.dcp to the "Requires" section.
+   Change "Build control" to "Rebuild as needed".
+
+9. Open MXReg.pas file and replace (Uses line) ChartReg with TeeChartReg. 
+   Save and close MXReg.pas. Recompile DclDss.dpk package.
+
+8. Copy the newly recompiled DclDSS70.bpl to Delphi 7 \Bin directory 
+   and *all* newly compiled *.dcu and *.dcp files files to Delphi 7 \Lib directory.
+
+9. Select "Component->Install packages" menu and click the "Add" button.
+   Then select the new DclDSS70.bpl package, located in 
+   Delphi 7 \Bin directory.
+
+---------------------------------------------------------------------------

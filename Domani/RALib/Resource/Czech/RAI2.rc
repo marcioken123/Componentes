@@ -1,0 +1,55 @@
+#define BaseRes $5000
+STRINGTABLE
+LANGUAGE LANG_CZECH, 1
+{
+ BaseRes +   0, "Ok"
+ BaseRes +   1, "Neznámá chyba"
+ BaseRes +   2, "Interní chyba interpretu: %s"
+ BaseRes +   3, "Pøerušeno uživatelem"
+ BaseRes +   4, "Nové vyvolání vyjímky (re-raising) povoleno pouze v obsluze vyjímky"
+ BaseRes +   5, "Chyba v jednotce '%s' na øádku %d: %s"
+ BaseRes +  31, "Záznam '%s' nebyl definován"
+
+ BaseRes +  52, "Pøeteèení zásobníku"
+ BaseRes +  53, "Nevhodný typ"
+ BaseRes +  55, "Funkce 'main' nebyla definována"
+ BaseRes +  56, "Jednotka '%s' nebyla nalezena"
+ BaseRes +  57, "Událost '%s' nebyla registrována"
+
+ BaseRes + 101, "Chyba v poznámce"
+ BaseRes + 103, "Oèekáváno %s, ale nalezeno %s"
+ BaseRes + 104, "Nedeklarovaný identifikátor '%s'"
+ BaseRes + 105, "Typ výrazu musí být logického typu"
+ BaseRes + 106, "Je požadován typ tøídy"
+ BaseRes + 107, "';' nemùže být pøed else"
+ BaseRes + 108, "Typ výrazu musí být celoèíselný"
+ BaseRes + 109, "Je požadován záznam, objekt nebo tøída"
+ BaseRes + 110, "Chybìjící operátor nebo støedník"
+ BaseRes + 111, "Znova deklarovaný identifikátor: '%s'"
+
+ BaseRes + 171, "English: Array index out of bounds"
+ BaseRes + 172, "English: Too many array bounds"
+ BaseRes + 173, "English: Not enough array bounds"
+ BaseRes + 174, "English: Invalid array dimension"
+ BaseRes + 175, "English: Invalid array range"
+
+ BaseRes + 181, "Pøíliš mnoho parametrù"
+ BaseRes + 182, "Nedostatek parametrù"
+ BaseRes + 183, "Nekompatibilní typy: '%s' a '%s'"
+ BaseRes + 184, "Chyba pøi naèítání knihovny '%s'"
+ BaseRes + 185, "Špatný typ argumentu pøi volání funkce '%s'"
+ BaseRes + 186, "Špatný typ výsledku pøi volání funkce '%s'"
+ BaseRes + 187, "Nemohu získat adresu funkce '%s'"
+ BaseRes + 188, "Špatný typ argumentu pøi volání funkce '%s'"
+ BaseRes + 189, "Špatný typ výsledku pøi volání funkce '%s'"
+ BaseRes + 190, "Špatná volací konvence pro funkci '%s'"
+
+ BaseRes + 201, "Volání '%s' neuspìlo: '%s'"
+
+ BaseRes + 301, "Výraz"
+ BaseRes + 302, "Identifikátor"
+ BaseRes + 303, "Deklarace"
+ BaseRes + 304, "konec souboru"
+
+ BaseRes + 401, "Implementace jednotky nenalezena"
+}

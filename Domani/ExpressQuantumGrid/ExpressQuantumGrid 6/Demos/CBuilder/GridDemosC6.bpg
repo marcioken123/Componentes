@@ -1,0 +1,209 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = ViewTableSimpleDemoC6.exe ViewBandedDemoC6.exe ViewBandedFixedDemoC6.exe \
+  ViewNestedBandsDemoC6.exe ViewCardSimpleDemoC6.exe ViewCardDemoC6.exe CardLayoutDemoC6.exe \
+  ViewChartDemoC6.exe ChartDataDrillingDemoC6.exe \
+  MasterDetailTableDemoC6.exe MasterDetailCardDemoC6.exe MasterDetailDemoC6.exe \
+  MasterDetailMultiDemoC6.exe MasterDetailChartDemoC6.exe \
+  UnboundSimpleDemoC6.exe UnboundListDemoC6.exe UnboundExternalDataDemoC6.exe \
+  UnboundDesignDefinedDemoC6.exe UnboundModeDemoC6.exe UnboundColumnsDemoC6.exe \
+  GridModeDemoC6.exe SummaryFooterDemoC6.exe SummaryGroupDemoC6.exe \
+  SummaryMultiDemoC6.exe FilterDemoC6.exe FilterByCodeDemoC6.exe FilterControlDemoC6.exe \
+  ColumnsSimpleDemoC6.exe EditorsInPlaceDemoC6.exe EditorsLookupDemoC6.exe \
+  EditorsMaskDemoC6.exe ColumnsMultiEditorsDemoC6.exe ColumnsShareDemoC6.exe \
+  StylesMultiDemoC6.exe StylesCardViewDemoC6.exe StylesSimpleDemoC6.exe \
+  CellLevelMultiselectDemoC6.exe CustomDrawTableViewDemoC6.exe \
+  CustomDrawCardViewDemoC6.exe Office11GroupRowStyleDemoC6.exe DragDropDemoC6.exe \
+  CustomRowHeightDemoC6.exe GridMenuViewsDemoC6.exe IssueListC6.exe EditorsStylesDemoC6.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+ViewTableSimpleDemoC6.exe: ViewTableSimpleDemo\ViewTableSimpleDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ViewBandedDemoC6.exe: ViewBandedDemo\ViewBandedDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ViewBandedFixedDemoC6.exe: ViewBandedFixedDemo\ViewBandedFixedDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ViewNestedBandsDemoC6.exe: ViewNestedBandsDemo\ViewNestedBandsDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ViewCardSimpleDemoC6.exe: ViewCardSimpleDemo\ViewCardSimpleDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ViewCardDemoC6.exe: ViewCardDemo\ViewCardDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+MasterDetailTableDemoC6.exe: MasterDetailTableDemo\MasterDetailTableDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+MasterDetailCardDemoC6.exe: MasterDetailCardDemo\MasterDetailCardDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+MasterDetailDemoC6.exe: MasterDetailDemo\MasterDetailDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+MasterDetailMultiDemoC6.exe: MasterDetailMultiDemo\MasterDetailMultiDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+UnboundSimpleDemoC6.exe: UnboundSimpleDemo\UnboundSimpleDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+UnboundListDemoC6.exe: UnboundListDemo\UnboundListDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+UnboundExternalDataDemoC6.exe: UnboundExternalDataDemo\UnboundExternalDataDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+UnboundDesignDefinedDemoC6.exe: UnboundDesignDefinedDemo\UnboundDesignDefinedDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+UnboundModeDemoC6.exe: UnboundModeDemo\UnboundModeDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+UnboundColumnsDemoC6.exe: UnboundColumnsDemo\UnboundColumnsDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+SummaryFooterDemoC6.exe: SummaryFooterDemo\SummaryFooterDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+SummaryGroupDemoC6.exe: SummaryGroupDemo\SummaryGroupDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+SummaryMultiDemoC6.exe: SummaryMultiDemo\SummaryMultiDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+FilterByCodeDemoC6.exe: FilterByCodeDemo\FilterByCodeDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+FilterControlDemoC6.exe: FilterControlDemo\FilterControlDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+GridModeDemoC6.exe: GridModeDemo\GridModeDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ColumnsSimpleDemoC6.exe: ColumnsSimpleDemo\ColumnsSimpleDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+EditorsInPlaceDemoC6.exe: EditorsInPlaceDemo\EditorsInPlaceDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+EditorsLookupDemoC6.exe: EditorsLookupDemo\EditorsLookupDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+EditorsMaskDemoC6.exe: EditorsMaskDemo\EditorsMaskDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ColumnsMultiEditorsDemoC6.exe: ColumnsMultiEditorsDemo\ColumnsMultiEditorsDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ColumnsShareDemoC6.exe: ColumnsShareDemo\ColumnsShareDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+StylesMultiDemoC6.exe: StylesMultiDemo\StylesMultiDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+StylesCardViewDemoC6.exe: StylesCardViewDemo\StylesCardViewDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+StylesSimpleDemoC6.exe: StylesSimpleDemo\StylesSimpleDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+CellLevelMultiselectDemoC6.exe: CellLevelMultiselectDemo\CellLevelMultiselectDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+CustomDrawTableViewDemoC6.exe: CustomDrawTableViewDemo\CustomDrawTableViewDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+CustomDrawCardViewDemoC6.exe: CustomDrawCardViewDemo\CustomDrawCardViewDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+Office11GroupRowStyleDemoC6.exe: Office11GroupRowStyleDemo\Office11GroupRowStyleDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+DragDropDemoC6.exe: DragDropDemo\DragDropDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+CustomRowHeightDemoC6.exe: CustomRowHeightDemo\CustomRowHeightDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+GridMenuViewsDemoC6.exe: GridMenuViewsDemo\GridMenuViewsDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+IssueListC6.exe: IssueList\IssueListC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+EditorsStylesDemoC6.exe: EditorsStylesDemo\EditorsStylesDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ViewChartDemoC6.exe: ViewChartDemo\ViewChartDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+MasterDetailChartDemoC6.exe: MasterDetailChartDemo\MasterDetailChartDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+CardLayoutDemoC6.exe: CardLayoutDemo\CardLayoutDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ChartDataDrillingDemoC6.exe: ChartDataDrillingDemo\ChartDataDrillingDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+FilterDemoC6.exe: FilterDemo\FilterDemoC6.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak

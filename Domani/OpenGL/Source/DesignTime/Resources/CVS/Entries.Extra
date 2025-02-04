@@ -1,0 +1,13 @@
+/.cvsignore///
+/GLSceneObjects.rc///
+/GLSceneVCLBass.rc///
+/GLSceneVCLCg.rc///
+/GLSceneVCLFMod.rc///
+/GLSceneVCLODE.rc///
+/GLSceneVCLSDL.rc///
+/glscene_icons_background_16x16.bmp///
+/glscene_icons_background_24x24.bmp///
+/make_dcr_files.bat///
+/nonGLSceneVCL.rc///
+D/vcl///
+/GLSceneVCL.rc///

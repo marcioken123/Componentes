@@ -1,0 +1,108 @@
+============================================================
+   TeeChart Pro v6
+   Installation Instructions for Delphi 7
+============================================================
+
+The automatic installer copies and registers TeeChart Pro
+packages, help file for Delphi 7 and installs the TeeChart 
+Pro examples and tutorials. No manual intervention should be 
+necessary.
+
+If at a later stage you require to manually modify the 
+TeeChart installation in Delphi 7, the key installation points 
+to note are as follows:
+
+1. Units and packages
+
+- The TeeChart Pro Delphi 7 folder contains all unit 
+  files and packages required for the TeeChart 
+  installation. No files are copied to any Delphi folders.
+  (For use of TeeChart source code, please refer to 
+  documentation included with source itself.)
+
+- To provide runtime package support, contents of 
+  TeeChart's Delphi7\System folder will be copied to 
+  either Windows\System (Win95 or Win98) or WinNT\System32 
+  (Windows XP, Windows 2000 or Windows NT 4).
+
+2. Registry/setup file changes
+
+- The path to TeeChart's Delphi7\Lib location is added to 
+  Delphi's Library search path.
+
+- TeeChart's helpfiles locations are added to the Windows
+  Help location registry.
+
+- TeeChart help filenames are added to Delphi 7's Helpfile 
+  Contents index files.
+
+- TeeChart Pro disables previous versions of TeeChart 
+  installed in Delphi.
+
+- TeeChart Pro disables Decision Cube as standard Delphi 7 
+  Decision Cube packages are not compatible with TeeChart 
+  Pro. See the Decision Cube document in this folder for 
+  information about how to recompile Decision Cube packages 
+  for use with TeeChart Pro.
+
+3. Removed files
+
+- TeeChart Pro installer removes previous TeeChart version files
+  from the Delphi folders. If the backup option has been 
+  selected in the TeeChart installer, those files will be 
+  backed up.
+
+4. Other
+
+- The LPNG.DLL file is copied to \Windows\System (System32)
+  folder to enable exporting of TeeCharts to PNG graphic 
+  format. This DLL is freely redistributable according to
+  the license found at: www.libpng.org
+
+5. Installing manually
+
+- If you wish to install the packages manually under 
+  Delphi 7, please do the following:
+
+  a) Check you have the runtime packages copied into 
+     \Windows\System (or System32).
+     You can find these packages in the System folder in
+     this installation.
+
+  b) Start Delphi and select Component->Install Packages.
+     Then add the following packages:
+
+      DclTee67.bpl
+      DclTeePro67.bpl
+      DclTGL67.bpl
+      \Windows\System\TeeImage67.bpl
+
+     If you wish QuickReport QRChart support:
+
+      Install the DclTQR67.bpl package and read the 
+      install.txt file under QuickReport folder.
+
+     Note: Delphi Standard version does not include 
+           QuickReport components.
+
+     Note: If you have Delphi Standard version, please
+           install DclTeeStd67.bpl instead of DclTee67.bpl,
+           and DCLTeeProStd67.bpl instead of DCLTeePro67.bpl
+
+
+6. Uninstalling TeeChart Pro
+
+   Please run the standard Windows procedure to remove
+   installed applications:
+
+   Control Panel->Add or Remove Programs
+
+   The uninstaller does not remove files that were generated
+   after installing TeeChart Pro, like compiled units and
+   executables.
+   The uninstaller does not remove copies (backup) of files
+   originally present in Delphi installation.
+   Backup files are preserved into the BACKUP folder.
+
+============================================================
+

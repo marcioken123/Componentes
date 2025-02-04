@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Package Name="JvRuntimeDesign" Design="0">
+  <Description>JVCL Runtime Design Components Runtime Package</Description>
+  <ClxDescription>JVCLX Runtime Design Components Runtime Package</ClxDescription>
+  <GUID>{019D8720-DBA1-49DD-A7AC-69BB6C65AF84}</GUID>
+  <C5PFlags>-LUvcl50 -LUJclC50</C5PFlags>
+  <C6PFlags>-LUJcl</C6PFlags>
+  <C5Libs/>
+  <C6Libs/>
+  <Requires>
+    <Package Name="JvCore-R" Targets="all" Condition=""/>
+    <Package Name="JclC50" Targets="Cv5" Condition=""/>
+    <Package Name="JclD50" Targets="Dv5" Condition=""/>
+    <Package Name="Jcl" Targets="allv6up" Condition=""/>
+    <Package Name="vcl50" Targets="allv5" Condition=""/>
+    <Package Name="vcldb50" Targets="DBv5" Condition="!DelphiPersonalEdition"/>
+    <Package Name="bcbsmp50" Targets="Cv5" Condition=""/>
+    <Package Name="bcbie50" Targets="Cv5" Condition=""/>
+    <Package Name="vclx50" Targets="allv5" Condition=""/>
+    <Package Name="rtl" Targets="allv6up" Condition=""/>
+    <Package Name="vcl" Targets="allv6up" Condition=""/>
+    <Package Name="dbrtl" Targets="DBv6up" Condition="!DelphiPersonalEdition"/>
+    <Package Name="vcldb" Targets="DBv6up" Condition="!DelphiPersonalEdition"/>
+    <Package Name="dataclx" Targets="K3" Condition="!DelphiPersonalEdition"/>
+    <Package Name="visualdbclx" Targets="clx" Condition="!DelphiPersonalEdition"/>
+    <Package Name="bcbsmp" Targets="C6,C6p" Condition=""/>
+    <Package Name="bcbie" Targets="C6,C6p" Condition=""/>
+    <Package Name="vclx" Targets="allv6up" Condition=""/>
+  </Requires>
+  <Contains>
+    <File Name="..\..\run\JvInspDB.pas" Targets="DB" Formname="" Condition="!DelphiPersonalEdition"/>
+    <File Name="..\..\run\JvInspector.pas" Targets="all" Formname="" Condition=""/>
+    <File Name="..\..\run\JvInspExtraEditors.pas" Targets="all" Formname="" Condition=""/>
+    <File Name="..\..\run\JvDesignClip.pas" Targets="all" Formname="" Condition=""/>
+    <File Name="..\..\run\JvDesignSurface.pas" Targets="all" Formname="" Condition=""/>
+    <File Name="..\..\run\JvDesignUtils.pas" Targets="all" Formname="" Condition=""/>
+    <File Name="..\..\run\JvDesignImp.pas" Targets="all" Formname="" Condition=""/>
+  </Contains>
+</Package>

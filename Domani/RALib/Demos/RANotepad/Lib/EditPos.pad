@@ -1,0 +1,43 @@
+unit EditPos;
+
+var
+  EditPosReg: TRegAuto;
+
+const
+  EditPosCfg = 'EditPos.cfg';
+
+procedure InitEditPos;
+begin
+  EditPosReg := TRegAuto.Create(MainWindow);
+  EditPosReg.IniFile := WorkingDir + EditPosCfg;
+  EditPosReg.UseIni := True;
+  EditPosReg.UseReg := False;
+end;
+
+procedure DoneEditPos;
+begin
+ { we must delete old records in 'EditPos.cfg' }
+  //..
+  EditPosReg.Free;
+end;
+
+procedure SaveEditPos(FileName: string);
+begin
+  ODS('Save edit pos');
+  EditPosReg.WriteInteger(FileName, 'X', Editor.CaretX);
+  EditPosReg.WriteInteger(FileName, 'Y', Editor.CaretY);
+  EditPosReg.WriteInteger(FileName, 'Left', Editor.LeftCol);
+  EditPosReg.WriteInteger(FileName, 'Top', Editor.TopRow);
+end;
+
+procedure RestoreEditPos(FileName: string);
+begin
+  ODS('Restore edit pos for file ' + FileName);
+  Editor.CaretX := EditPosReg.ReadInteger(FileName, 'X', 0);
+  Editor.CaretY := EditPosReg.ReadInteger(FileName, 'Y', 0);
+  Editor.SetLeftTop(EditPosReg.ReadInteger(FileName, 'Left', 0),
+    EditPosReg.ReadInteger(FileName, 'Top', 0));
+end;
+
+
+end.

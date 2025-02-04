@@ -1,0 +1,29 @@
+[DSP upload]
+Filename=DosMove.Zip
+Replacements=
+Version=1.02
+FileURL=
+Description=TDosMove allows the user to add movement with the   UP/DOWN arrows and ENTER between controls.   Just drop this component on a form a Walla, you can move     around just like in old good DOS !!!
+Delphi 1.0=N
+Delphi 2.0=N
+Delphi 3.0=Y
+C++Builder 1.0=N
+File Status=Freeware
+Full Source=Included
+Category=InVisible Components
+Note=This unit is freeware but i retain copyright so when you use it   somewhere in your code please mantion my name in the  credits list
+Additional info=Text file ( extension txt )
+
+[DSP Support]
+DSP Support=Y
+
+[Versions available]
+Delphi 1.0=
+Delphi 2.0=
+Delphi 3.0=
+C++Builder 1.0=
+
+[Uploader]
+Author name=Liran Shahar
+Author E-mail=simpletech@ibm.net
+Author URL=

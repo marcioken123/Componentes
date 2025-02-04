@@ -1,0 +1,189 @@
+Delphi 5 Build 5.0.5.62 ====================
+
+Added "D:\COMPON~1\JEDI\JVCL32~1\jcl\lib\d5;D:\COMPON~1\JEDI\JVCL32~1\jcl\source" to library path.
+
+Added "D:\COMPON~1\JEDI\JVCL32~1\jcl\source\common;D:\COMPON~1\JEDI\JVCL32~1\jcl\source\windows;D:\COMPON~1\JEDI\JVCL32~1\jcl\source\vcl;D:\COMPON~1\JEDI\JVCL32~1\jcl\source\visclx;" to library browsing path.
+
+Added "D:\COMPON~1\JEDI\JVCL32~1\jcl\lib\d5\debug" to Debug DCU Path.
+
+Making common library units for Delphi 5
+
+Compiling .dcu files...
+"C:\Arquivos de programas\Borland\Delphi5\bin\dcc32.exe" Jcl8087 JclAbstractContainers JclAlgorithms JclAnsiStrings JclArrayLists JclArraySets JclBase JclBinaryTrees JclBorlandTools JclComplex JclCompression JclContainerIntf JclCounter JclDateTime JclEDI JclEDI_ANSIX12 JclEDI_ANSIX12_Ext JclEDI_UNEDIFACT JclEDI_UNEDIFACT_Ext JclEDISEF JclEDITranslators JclEDIXML JclExprEval JclFileUtils JclHashMaps JclHashSets JclIniFiles JclLinkedLists JclLogic JclMath JclMIDI JclMime JclPCRE JclQueues JclResources JclRTTI JclSchedule JclStacks JclStatistics JclStrHashMap JclStrings JclSysInfo JclSysUtils JclUnitConv JclUnitVersioning JclUnitVersioningProviders JclValidation JclVectors JclWideStrings pcre
+Borland Delphi  Version 13.0  Copyright (c) 1983,99 Inprise Corporation
+156441 lines, 1.37 seconds, 787 bytes code, 68 bytes data.
+
+Making windows library units for Delphi 5
+
+Compiling .dcu files...
+"C:\Arquivos de programas\Borland\Delphi5\bin\dcc32.exe" Hardlinks JclAppInst JclCIL JclCLR JclCOM JclConsole JclDebug JclHookExcept JclLANMan JclLocales JclMapi JclMetadata JclMiscel JclMsdosSys JclMultimedia JclNTFS JclPeImage JclRegistry JclSecurity JclShell JclStructStorage JclSvcCtrl JclSynch JclTask JclTD32 JclUnicode JclWideFormat JclWin32 JclWinMIDI MSTask Snmp zlibh
+Borland Delphi  Version 13.0  Copyright (c) 1983,99 Inprise Corporation
+102347 lines, 1.09 seconds, 47501 bytes code, 16736 bytes data.
+
+Making vcl library units for Delphi 5
+
+Compiling .dcu files...
+"C:\Arquivos de programas\Borland\Delphi5\bin\dcc32.exe" JclGraphics JclGraphUtils JclPrint
+Borland Delphi  Version 13.0  Copyright (c) 1983,99 Inprise Corporation
+13899 lines, 0.28 seconds, 8479 bytes code, 8 bytes data.
+
+Making common library debug units for Delphi 5
+
+Compiling .dcu files...
+"C:\Arquivos de programas\Borland\Delphi5\bin\dcc32.exe" Jcl8087 JclAbstractContainers JclAlgorithms JclAnsiStrings JclArrayLists JclArraySets JclBase JclBinaryTrees JclBorlandTools JclComplex JclCompression JclContainerIntf JclCounter JclDateTime JclEDI JclEDI_ANSIX12 JclEDI_ANSIX12_Ext JclEDI_UNEDIFACT JclEDI_UNEDIFACT_Ext JclEDISEF JclEDITranslators JclEDIXML JclExprEval JclFileUtils JclHashMaps JclHashSets JclIniFiles JclLinkedLists JclLogic JclMath JclMIDI JclMime JclPCRE JclQueues JclResources JclRTTI JclSchedule JclStacks JclStatistics JclStrHashMap JclStrings JclSysInfo JclSysUtils JclUnitConv JclUnitVersioning JclUnitVersioningProviders JclValidation JclVectors JclWideStrings pcre
+Borland Delphi  Version 13.0  Copyright (c) 1983,99 Inprise Corporation
+156441 lines, 1.39 seconds, 913 bytes code, 68 bytes data.
+
+Making windows library debug units for Delphi 5
+
+Compiling .dcu files...
+"C:\Arquivos de programas\Borland\Delphi5\bin\dcc32.exe" Hardlinks JclAppInst JclCIL JclCLR JclCOM JclConsole JclDebug JclHookExcept JclLANMan JclLocales JclMapi JclMetadata JclMiscel JclMsdosSys JclMultimedia JclNTFS JclPeImage JclRegistry JclSecurity JclShell JclStructStorage JclSvcCtrl JclSynch JclTask JclTD32 JclUnicode JclWideFormat JclWin32 JclWinMIDI MSTask Snmp zlibh
+Borland Delphi  Version 13.0  Copyright (c) 1983,99 Inprise Corporation
+102347 lines, 1.14 seconds, 47637 bytes code, 16736 bytes data.
+
+Making vcl library debug units for Delphi 5
+
+Compiling .dcu files...
+"C:\Arquivos de programas\Borland\Delphi5\bin\dcc32.exe" JclGraphics JclGraphUtils JclPrint
+Borland Delphi  Version 13.0  Copyright (c) 1983,99 Inprise Corporation
+13899 lines, 0.29 seconds, 10514 bytes code, 8 bytes data.
+
+Compiling package D:\COMPON~1\JEDI\JVCL32~1\jcl\packages\d5\Jcld50.dpk...
+Compiling package D:\COMPON~1\JEDI\JVCL32~1\jcl\packages\d5\Jcld50.dpk
+"C:\Arquivos de programas\Borland\Delphi5\bin\dcc32.exe" D:\COMPON~1\JEDI\JVCL32~1\jcl\packages\d5\Jcld50.dpk
+Borland Delphi  Version 13.0  Copyright (c) 1983,99 Inprise Corporation
+Hint: Package 'JclD50' does not use or export 'JclHookExcept.HookExceptModuleList'
+Hint: Package 'JclD50' does not use or export 'JclHookExcept.JclHookExceptDebugHook'
+Hint: Package 'JclD50' does not use or export 'JclHookExcept.JclHookExceptDebugHookProc'
+Hint: Package 'JclD50' does not use or export 'JclHookExcept.CallExportedHookExceptProc'
+Hint: Package 'JclD50' does not use or export 'JclHookExcept.FinalizeLibrariesHookExcept'
+Hint: Package 'JclD50' does not use or export 'JclHookExcept.TJclHookExceptModuleList.Create'
+Hint: Package 'JclD50' does not use or export 'JclHookExcept.TJclHookExceptModuleList.Destroy'
+Hint: Package 'JclD50' does not use or export 'JclHookExcept.TJclHookExceptModuleList.HookModule'
+Hint: Package 'JclD50' does not use or export 'JclHookExcept.TJclHookExceptModuleList.HookStaticModules'
+Hint: Package 'JclD50' does not use or export 'JclHookExcept.TJclHookExceptModuleList.JclHookExceptDebugHookAddr'
+Hint: Package 'JclD50' does not use or export 'JclHookExcept.TJclHookExceptModuleList.List'
+Hint: Package 'JclD50' does not use or export 'JclHookExcept.TJclHookExceptModuleList.UnhookModule'
+Hint: Package 'JclD50' does not use or export 'JclBorlandTools.BPLFileName'
+Hint: Package 'JclD50' does not use or export 'JclEDISEF.InternalParseCOMSDataOfCOMSDefinition'
+Hint: Package 'JclD50' does not use or export 'JclEDISEF.InternalParseSEGSDataOfSEGSDefinition'
+Hint: Package 'JclD50' does not use or export 'JclExprEval.TExprVirtMachNode.GenCode'
+Hint: Package 'JclD50' does not use or export 'JclRTTI.DeReferenceType'
+Hint: Package 'JclD50' does not use or export 'JclRTTI.NewInfoItem'
+Hint: Package 'JclD50' does not use or export 'JclRTTI.JclAsClass'
+Hint: Package 'JclD50' does not use or export 'JclSchedule.TContainedObject.QueryInterface'
+Hint: Package 'JclD50' does not use or export 'JclSchedule.TScheduleAggregate.ValidStamp'
+Hint: Package 'JclD50' does not use or export 'JclSchedule.TScheduleAggregate.MakeValidStamp'
+Hint: Package 'JclD50' does not use or export 'JclSchedule.TScheduleAggregate.NextValidStamp'
+Hint: Package 'JclD50' does not use or export 'JclSchedule.TDailyFreq.ValidStamp'
+Hint: Package 'JclD50' does not use or export 'JclStatistics.ChiSquare'
+Hint: Package 'JclD50' does not use or export 'JclMetadata.ClrTableEventFlagMapping'
+Hint: Package 'JclD50' does not use or export 'JclLANMan.DeleteGlobalGroup'
+Hint: Package 'JclD50' does not use or export 'JclLANMan.DWORDToRID'
+Hint: Package 'JclD50' does not use or export 'JclNTFS.IsReparseTagValid'
+Hint: Package 'JclD50' does not use or export 'JclStructStorage.StgCreateStorageEx'
+Hint: Package 'JclD50' does not use or export 'JclStructStorage.StgOpenStorageEx'
+Hint: Package 'JclD50' does not use or export 'JclGraphUtils.Gray16'
+131 lines, 0.92 seconds, 1178024 bytes code, 46861 bytes data.
+Compilation success
+...done.
+
+Installing package D:\COMPON~1\JEDI\JVCL32~1\jcl\packages\d5\JclBaseExpertd50.dpk...
+Installing package D:\COMPON~1\JEDI\JVCL32~1\jcl\packages\d5\JclBaseExpertd50.dpk
+Compiling package D:\COMPON~1\JEDI\JVCL32~1\jcl\packages\d5\JclBaseExpertd50.dpk
+"C:\Arquivos de programas\Borland\Delphi5\bin\dcc32.exe" D:\COMPON~1\JEDI\JVCL32~1\jcl\packages\d5\JclBaseExpertd50.dpk
+Borland Delphi  Version 13.0  Copyright (c) 1983,99 Inprise Corporation
+7984 lines, 0.26 seconds, 28460 bytes code, 325 bytes data.
+Compilation success
+Registering package C:\ARQUIV~1\Borland\Delphi5\Projects\Bpl\JclBaseExpertd50.bpl
+Registration ok
+Installation of package finished
+...done.
+
+Installing package D:\COMPON~1\JEDI\JVCL32~1\jcl\packages\d5\JclDebugExpertd50.dpk...
+Installing package D:\COMPON~1\JEDI\JVCL32~1\jcl\packages\d5\JclDebugExpertd50.dpk
+Compiling package D:\COMPON~1\JEDI\JVCL32~1\jcl\packages\d5\JclDebugExpertd50.dpk
+"C:\Arquivos de programas\Borland\Delphi5\bin\dcc32.exe" D:\COMPON~1\JEDI\JVCL32~1\jcl\packages\d5\JclDebugExpertd50.dpk
+Borland Delphi  Version 13.0  Copyright (c) 1983,99 Inprise Corporation
+2555 lines, 0.20 seconds, 16092 bytes code, 197 bytes data.
+Compilation success
+Registering package C:\ARQUIV~1\Borland\Delphi5\Projects\Bpl\JclDebugExpertd50.bpl
+Registration ok
+Installation of package finished
+...done.
+
+Installing package D:\COMPON~1\JEDI\JVCL32~1\jcl\packages\d5\JclProjectAnalysisExpertd50.dpk...
+Installing package D:\COMPON~1\JEDI\JVCL32~1\jcl\packages\d5\JclProjectAnalysisExpertd50.dpk
+Compiling package D:\COMPON~1\JEDI\JVCL32~1\jcl\packages\d5\JclProjectAnalysisExpertd50.dpk
+"C:\Arquivos de programas\Borland\Delphi5\bin\dcc32.exe" D:\COMPON~1\JEDI\JVCL32~1\jcl\packages\d5\JclProjectAnalysisExpertd50.dpk
+Borland Delphi  Version 13.0  Copyright (c) 1983,99 Inprise Corporation
+3873 lines, 0.22 seconds, 19676 bytes code, 217 bytes data.
+Compilation success
+Registering package C:\ARQUIV~1\Borland\Delphi5\Projects\Bpl\JclProjectAnalysisExpertd50.bpl
+Registration ok
+Installation of package finished
+...done.
+
+Installing package D:\COMPON~1\JEDI\JVCL32~1\jcl\packages\d5\JclFavoriteFoldersExpertd50.dpk...
+Installing package D:\COMPON~1\JEDI\JVCL32~1\jcl\packages\d5\JclFavoriteFoldersExpertd50.dpk
+Compiling package D:\COMPON~1\JEDI\JVCL32~1\jcl\packages\d5\JclFavoriteFoldersExpertd50.dpk
+"C:\Arquivos de programas\Borland\Delphi5\bin\dcc32.exe" D:\COMPON~1\JEDI\JVCL32~1\jcl\packages\d5\JclFavoriteFoldersExpertd50.dpk
+Borland Delphi  Version 13.0  Copyright (c) 1983,99 Inprise Corporation
+3660 lines, 0.23 seconds, 10400 bytes code, 197 bytes data.
+Compilation success
+Registering package C:\ARQUIV~1\Borland\Delphi5\Projects\Bpl\JclFavoriteFoldersExpertd50.bpl
+Registration ok
+Installation of package finished
+...done.
+
+Installing package D:\COMPON~1\JEDI\JVCL32~1\jcl\packages\d5\JclThreadNameExpertd50.dpk...
+Installing package D:\COMPON~1\JEDI\JVCL32~1\jcl\packages\d5\JclThreadNameExpertd50.dpk
+Compiling package D:\COMPON~1\JEDI\JVCL32~1\jcl\packages\d5\JclThreadNameExpertd50.dpk
+"C:\Arquivos de programas\Borland\Delphi5\bin\dcc32.exe" D:\COMPON~1\JEDI\JVCL32~1\jcl\packages\d5\JclThreadNameExpertd50.dpk
+Borland Delphi  Version 13.0  Copyright (c) 1983,99 Inprise Corporation
+3681 lines, 0.22 seconds, 10940 bytes code, 169 bytes data.
+Compilation success
+Registering package C:\ARQUIV~1\Borland\Delphi5\Projects\Bpl\JclThreadNameExpertd50.bpl
+Registration ok
+Installation of package finished
+...done.
+
+Installing package D:\COMPON~1\JEDI\JVCL32~1\jcl\packages\d5\JclUsesExpertd50.dpk...
+Installing package D:\COMPON~1\JEDI\JVCL32~1\jcl\packages\d5\JclUsesExpertd50.dpk
+Compiling package D:\COMPON~1\JEDI\JVCL32~1\jcl\packages\d5\JclUsesExpertd50.dpk
+"C:\Arquivos de programas\Borland\Delphi5\bin\dcc32.exe" D:\COMPON~1\JEDI\JVCL32~1\jcl\packages\d5\JclUsesExpertd50.dpk
+Borland Delphi  Version 13.0  Copyright (c) 1983,99 Inprise Corporation
+Hint: Package 'JclUsesExpertD50' does not use or export 'JclParseUses.ReadIdentifier'
+Hint: Package 'JclUsesExpertD50' does not use or export 'JclUsesWizard.TLine.Create'
+Hint: Package 'JclUsesExpertD50' does not use or export 'JclUsesWizard.TLine.Destroy'
+Hint: Package 'JclUsesExpertD50' does not use or export 'JclUsesWizard.TLine.GetLineText'
+Hint: Package 'JclUsesExpertD50' does not use or export 'JclUsesWizard.ReadString'
+6762 lines, 0.24 seconds, 34688 bytes code, 313 bytes data.
+Compilation success
+Registering package C:\ARQUIV~1\Borland\Delphi5\Projects\Bpl\JclUsesExpertd50.bpl
+Registration ok
+Installation of package finished
+...done.
+
+Installing package D:\COMPON~1\JEDI\JVCL32~1\jcl\packages\d5\JclSIMDViewExpertd50.dpk...
+Installing package D:\COMPON~1\JEDI\JVCL32~1\jcl\packages\d5\JclSIMDViewExpertd50.dpk
+Compiling package D:\COMPON~1\JEDI\JVCL32~1\jcl\packages\d5\JclSIMDViewExpertd50.dpk
+"C:\Arquivos de programas\Borland\Delphi5\bin\dcc32.exe" D:\COMPON~1\JEDI\JVCL32~1\jcl\packages\d5\JclSIMDViewExpertd50.dpk
+Borland Delphi  Version 13.0  Copyright (c) 1983,99 Inprise Corporation
+10454 lines, 0.27 seconds, 43404 bytes code, 933 bytes data.
+Compilation success
+Registering package C:\ARQUIV~1\Borland\Delphi5\Projects\Bpl\JclSIMDViewExpertd50.bpl
+Registration ok
+Installation of package finished
+...done.
+
+Installing Exception Dialog...
+-> D:\COMPON~1\JEDI\JVCL32~1\JCL\EXPERTS\DEBUG\DIALOG\EXCEPTDLG.PAS
+-> D:\COMPON~1\JEDI\JVCL32~1\JCL\EXPERTS\DEBUG\DIALOG\EXCEPTDLG.ico
+...done.
+
+Installing Exception Dialog with Send...
+-> D:\COMPON~1\JEDI\JVCL32~1\JCL\EXPERTS\DEBUG\DIALOG\EXCEPTDLGMAIL.PAS
+-> D:\COMPON~1\JEDI\JVCL32~1\JCL\EXPERTS\DEBUG\DIALOG\EXCEPTDLGMAIL.ico
+...done.
+

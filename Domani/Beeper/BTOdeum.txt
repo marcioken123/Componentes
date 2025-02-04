@@ -1,0 +1,93 @@
+
+BTBeeper 0.01, a freeware beeper Delphi component
+
+by Theodoros Bebekis
+   Thessaloniki, Greece
+   email: bebekis@mail.otenet.gr 
+
+{-------------------------------------------------------
+ STATE: Freeware
+        No restrictions,
+        No guaranties
+        Use it at your own risk!
+--------------------------------------------------------}  
+
+
+BTOdeum.pas contains the BTBeeper component.
+
+BTBeeper uses the PC speaker to produce various sounds.
+In fact you can make it play entire songs.
+
+It contains many "preset" sounds. You can play them
+just calling the PlayPresetSound method.
+
+Also it has the ability to play songs or sounds 
+written in a plain ascii file.
+
+I wrote it just for fun but I think it maybe usefull
+in some situations ie. when a sound card is not present
+or when you don't like to use .wav files
+
+The code is straightforward and well commented - I think
+
+
+I used some fucntions posted to a (don't remebmer) newsgroup 
+by jatkins@paktel.compulink.co.uk (John Atkins)
+
+this is the John's code
+
+-----------------------------------------------------
+
+procedure SetPort(address, Value:Word);
+var
+  bValue: byte;
+begin
+  bValue := trunc(Value and 255);
+  asm
+    mov dx, address
+    mov al, bValue
+    out dx, al
+  end;
+end;
+
+function GetPort(address:word):word;
+var
+  bValue: byte;
+begin
+  asm
+    mov dx, address
+    in al, dx
+    mov bValue, al
+  end;
+  GetPort := bValue;
+end;
+
+procedure Sound(Freq : Word);
+var
+    B : Byte;
+begin
+    if Freq > 18 then
+        begin
+            Freq := Word(1193181 div LongInt(Freq));
+            B := Byte(GetPort($61));
+
+            if (B and 3) = 0 then
+               begin
+                   SetPort($61, Word(B or 3));
+                   SetPort($43, $B6);
+               end;
+
+            SetPort($42, Freq);
+            SetPort($42, Freq shr 8);
+        end;
+end;
+
+procedure NoSound;
+var
+  Value: Word;
+begin
+    Value := GetPort($61) and $FC;
+    SetPort($61, Value);
+end;
+
+--------------------------------------------------------------

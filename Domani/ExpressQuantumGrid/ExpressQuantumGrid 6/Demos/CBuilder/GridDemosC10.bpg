@@ -1,0 +1,209 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = ViewTableSimpleDemoC10.exe ViewBandedDemoC10.exe ViewBandedFixedDemoC10.exe \
+  ViewNestedBandsDemoC10.exe ViewCardSimpleDemoC10.exe ViewCardDemoC10.exe CardLayoutDemoC10.exe \
+  ViewChartDemoC10.exe ChartDataDrillingDemoC10.exe \
+  MasterDetailTableDemoC10.exe MasterDetailCardDemoC10.exe MasterDetailDemoC10.exe \
+  MasterDetailMultiDemoC10.exe MasterDetailChartDemoC10.exe \
+  UnboundSimpleDemoC10.exe UnboundListDemoC10.exe UnboundExternalDataDemoC10.exe \
+  UnboundDesignDefinedDemoC10.exe UnboundModeDemoC10.exe UnboundColumnsDemoC10.exe \
+  GridModeDemoC10.exe SummaryFooterDemoC10.exe SummaryGroupDemoC10.exe \
+  SummaryMultiDemoC10.exe FilterDemoC10.exe FilterByCodeDemoC10.exe FilterControlDemoC10.exe \
+  ColumnsSimpleDemoC10.exe EditorsInPlaceDemoC10.exe EditorsLookupDemoC10.exe \
+  EditorsMaskDemoC10.exe ColumnsMultiEditorsDemoC10.exe ColumnsShareDemoC10.exe \
+  StylesMultiDemoC10.exe StylesCardViewDemoC10.exe StylesSimpleDemoC10.exe \
+  CellLevelMultiselectDemoC10.exe CustomDrawTableViewDemoC10.exe \
+  CustomDrawCardViewDemoC10.exe Office11GroupRowStyleDemoC10.exe DragDropDemoC10.exe \
+  CustomRowHeightDemoC10.exe GridMenuViewsDemoC10.exe IssueListC10.exe EditorsStylesDemoC10.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+ViewTableSimpleDemoC10.exe: ViewTableSimpleDemo\ViewTableSimpleDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ViewBandedDemoC10.exe: ViewBandedDemo\ViewBandedDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ViewBandedFixedDemoC10.exe: ViewBandedFixedDemo\ViewBandedFixedDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ViewNestedBandsDemoC10.exe: ViewNestedBandsDemo\ViewNestedBandsDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ViewCardSimpleDemoC10.exe: ViewCardSimpleDemo\ViewCardSimpleDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ViewCardDemoC10.exe: ViewCardDemo\ViewCardDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+MasterDetailTableDemoC10.exe: MasterDetailTableDemo\MasterDetailTableDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+MasterDetailCardDemoC10.exe: MasterDetailCardDemo\MasterDetailCardDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+MasterDetailDemoC10.exe: MasterDetailDemo\MasterDetailDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+MasterDetailMultiDemoC10.exe: MasterDetailMultiDemo\MasterDetailMultiDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+UnboundSimpleDemoC10.exe: UnboundSimpleDemo\UnboundSimpleDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+UnboundListDemoC10.exe: UnboundListDemo\UnboundListDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+UnboundExternalDataDemoC10.exe: UnboundExternalDataDemo\UnboundExternalDataDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+UnboundDesignDefinedDemoC10.exe: UnboundDesignDefinedDemo\UnboundDesignDefinedDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+UnboundModeDemoC10.exe: UnboundModeDemo\UnboundModeDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+UnboundColumnsDemoC10.exe: UnboundColumnsDemo\UnboundColumnsDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+SummaryFooterDemoC10.exe: SummaryFooterDemo\SummaryFooterDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+SummaryGroupDemoC10.exe: SummaryGroupDemo\SummaryGroupDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+SummaryMultiDemoC10.exe: SummaryMultiDemo\SummaryMultiDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+FilterByCodeDemoC10.exe: FilterByCodeDemo\FilterByCodeDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+FilterControlDemoC10.exe: FilterControlDemo\FilterControlDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+GridModeDemoC10.exe: GridModeDemo\GridModeDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ColumnsSimpleDemoC10.exe: ColumnsSimpleDemo\ColumnsSimpleDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+EditorsInPlaceDemoC10.exe: EditorsInPlaceDemo\EditorsInPlaceDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+EditorsLookupDemoC10.exe: EditorsLookupDemo\EditorsLookupDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+EditorsMaskDemoC10.exe: EditorsMaskDemo\EditorsMaskDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ColumnsMultiEditorsDemoC10.exe: ColumnsMultiEditorsDemo\ColumnsMultiEditorsDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ColumnsShareDemoC10.exe: ColumnsShareDemo\ColumnsShareDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+StylesMultiDemoC10.exe: StylesMultiDemo\StylesMultiDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+StylesCardViewDemoC10.exe: StylesCardViewDemo\StylesCardViewDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+StylesSimpleDemoC10.exe: StylesSimpleDemo\StylesSimpleDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+CellLevelMultiselectDemoC10.exe: CellLevelMultiselectDemo\CellLevelMultiselectDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+CustomDrawTableViewDemoC10.exe: CustomDrawTableViewDemo\CustomDrawTableViewDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+CustomDrawCardViewDemoC10.exe: CustomDrawCardViewDemo\CustomDrawCardViewDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+Office11GroupRowStyleDemoC10.exe: Office11GroupRowStyleDemo\Office11GroupRowStyleDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+DragDropDemoC10.exe: DragDropDemo\DragDropDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+CustomRowHeightDemoC10.exe: CustomRowHeightDemo\CustomRowHeightDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+GridMenuViewsDemoC10.exe: GridMenuViewsDemo\GridMenuViewsDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+IssueListC10.exe: IssueList\IssueListC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+EditorsStylesDemoC10.exe: EditorsStylesDemo\EditorsStylesDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ViewChartDemoC10.exe: ViewChartDemo\ViewChartDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+MasterDetailChartDemoC10.exe: MasterDetailChartDemo\MasterDetailChartDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+CardLayoutDemoC10.exe: CardLayoutDemo\CardLayoutDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ChartDataDrillingDemoC10.exe: ChartDataDrillingDemo\ChartDataDrillingDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+FilterDemoC10.exe: FilterDemo\FilterDemoC10.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak

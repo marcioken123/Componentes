@@ -1,0 +1,734 @@
+XLSReadWrite V1.35
+
+Copyright(c) 1999, 2001 Lars Arvidsson, Axolot Data
+             Dr. Forselius backe 38
+             SE-413 26  GOTEBORG
+             SWEDEN
+
+e-mail       components@axolot.com
+
+URL          http://www.axolot.com
+
+XLSReadWrite is free to use for non-commercial use.
+For commercial usage, XLSReadWrite costs US $30, including full source code.
+
+
+--------------------------------------------------------------------------------
+NEWS IN VERSION 1.37
+--------------------------------------------------------------------------------
+
+* Support for Delphi 7
+
+--------------------------------------------------------------------------------
+NEWS IN VERSION 1.36
+--------------------------------------------------------------------------------
+
+* Fixed bug: Error message when opening file with Excel: 
+  "Some number formats where lost".
+
+--------------------------------------------------------------------------------
+NEWS IN VERSION 1.35
+--------------------------------------------------------------------------------
+
+* Support for Delphi 6
+
+--------------------------------------------------------------------------------
+NEWS IN VERSION 1.34
+--------------------------------------------------------------------------------
+
+* Fixed bug: Incorrect reading of files with multibyte strings.
+
+--------------------------------------------------------------------------------
+NEWS IN VERSION 1.33
+--------------------------------------------------------------------------------
+
+* Fixed bug: Under some circumstances, XLSRead read incorrect formula values.
+* Margins (Top, Bottom, Left, Right) can now be set in XLSWrite.  
+
+--------------------------------------------------------------------------------
+NEWS IN VERSION 1.32
+--------------------------------------------------------------------------------
+
+* Fixed bug: TXLSWrite can now write Excel97 files with multiple sheets.
+* New PageSetup property in TXLSWrite.  
+
+--------------------------------------------------------------------------------
+NEWS IN VERSION 1.31
+--------------------------------------------------------------------------------
+
+* Fixed bug (introduced in 1.30) creating invalid files when writing formulas
+  containing '*' or '/'.
+
+--------------------------------------------------------------------------------
+NEWS IN VERSION 1.30
+--------------------------------------------------------------------------------
+
+* TXLSWrite can now write merged cells. See MergeCell function.
+
+--------------------------------------------------------------------------------
+NEWS IN VERSION 1.23
+--------------------------------------------------------------------------------
+
+* Fixed bug: Corrupt file when writing the same Excel 97 more than once.
+* If an Excel file was saved as both 5.0/95 and 97, the Excel 95 part was read.
+  Now the 97 part is read.
+
+--------------------------------------------------------------------------------
+NEWS IN VERSION 1.21
+--------------------------------------------------------------------------------
+
+* Fixed bug when reading large files or files with multibyte characters
+  (east Europe).
+
+--------------------------------------------------------------------------------
+NEWS IN VERSION 1.20
+--------------------------------------------------------------------------------
+
+* TXLSWrite now supports Excel97 files.
+* FuncArgSeparator is now as default set from the environmental variable 
+  ListSeparator (in Delphi 4.0+ as Delphi 3 does not have this variable).
+
+--------------------------------------------------------------------------------
+NEWS IN VERSION 1.11
+--------------------------------------------------------------------------------
+
+* Bug fix when reading some numbers (mostly negative).
+
+--------------------------------------------------------------------------------
+NEWS IN VERSION 1.10
+--------------------------------------------------------------------------------
+
+**************** IMPROVMENTS *****************
+
+  ---- XLSRead: ----
+* Can now use Excel format strings.
+
+  NEW METHODS in TXLSRead:
+* function FormatNumber(FormatIndex: integer; Value: extended): string;
+  Returns a string with the Value formatted with the format string used in the cell.
+  Example:
+	procedure TForm1.XLSReadNumberCell(Sender: TObject; Col, Row, FormatIndex: Integer; Value: double; IsFormulaValue: Boolean);
+	begin
+  	  ShowMessage(XLSRead.FormatNumber(FormatIndex,Value));
+	end;
+
+* function FormatColor(FormatIndex: integer; Value: extended): TColor;
+  Returns the color that the format evaluates to (like red for negative numbers).
+
+* function FormatIsDateTime(FormatIndex: integer): boolean;
+  Returnes True if a format is a Date or Time format.
+
+  NEW EVENTS in TXLSRead:
+* property OnDateTimeCell: TDateTimeCellEvent;
+  type TDateTimeCellEvent =   procedure (Sender: TObject; Col,Row: integer; FormatIndex: integer; Value: TDateTime; IsFormulaValue: boolean) of object;
+  This event is fired if a cell is formatted as a Date or Time. If this even not is handled, a OnNumberCell event is fired.
+
+
+  ---- XLSWrite: ----
+* Number formats can be written with Excel style format strings.
+* Formats can be named.
+
+  NEW PROPERTIES in TCellFormat:
+* property Name: string;
+  Sets the Name of the format. Default is Format XX.
+
+
+* property TextFormatUser: string;
+  A Excel style format string. TextFormat must be set to tfUser for this property shall take effect.
+  IMPORTANT: This string always uses the US characters for Decimal, Thousand, Date and Time separator characters.
+
+  NEW METHODS in TCellFormats:
+* function IndexByName(Name: string): integer;
+  Returns the index of Format Name. If Name not is found, it returns -1.
+
+  NEW METHODS in TExcelFont:
+  procedure AssignTFont(Source: TFont);
+  Assigns a TFont to the TExcelFont.
+
+********** BUGS ***********
+
++ Fixed problem when reading Excel 2.x files. (BOF record was assumed to be zero size, which it is not).
++ OnRow: Doesn't always contain a valid FormatIndex (it is now set to -1 when it is undefined).
+
+
+--------------------------------------------------------------------------------
+DESCRIPTION
+--------------------------------------------------------------------------------
+XLSReadWrite is two native Delphi components, TXLSRead and TXLSWrite designed for 
+accessing Microsoft Excel XLS files. 
+There is no need for any other files to be installed, including Excel.
+TXLSRead can read Excel 2.1, 3.0, 4.0, 5.0, 95, 97 files. All cell
+Information is returned, including formulas and cell formatting.
+TXLSWrite can write Excel 4.0, 5.0/95 and 97 files. Formulas and cell formatting
+can be written as well.
+
+--------------------------------------------------------------------------------
+REGISTRATION
+--------------------------------------------------------------------------------
+If you register XLSReadWrite, you will have these benefits:
+* Rights to use XLSReadWrite commercially.
+* Receive full source code.
+* No copyright message in cell A1.
+
+The price is US $30 
+
+Registration is handled by ShareIt,
+go to: http://www.shareit.com/programs/103172.htm
+
+Or check http://www.axolo.com for latest details
+
+Se register.txt for more details.
+
+--------------------------------------------------------------------------------
+DELPHI Versions
+--------------------------------------------------------------------------------
+XLSReadWrite is tested with Delphi 1.0, 3.0, 4.0, 5.0 and 6.0.
+If you have purchased the source code, it should be possible to use XLSReadWrite
+with (some modifications) in Delphi 2.0. However this is not tested and not
+supported.
+
+The Delphi 1 version does NOT support the following features:
+  * XLS files from 5.0 and up.
+  * Cell formatting.
+  * References to Sheet Index are removed from methods/events, as there is only 
+    one sheet in Excel 2.1 -> 4.0 files.
+  
+
+--------------------------------------------------------------------------------
+INSTALLATION, UNREGISTERED
+--------------------------------------------------------------------------------
+       Extract the files in XLSRW.ZIP to a directory of your choice.
+
+***** Delphi 1.0
+       Extract the files in XLSRW_d10.ZIP.
+       From Delphi: Select Options | Install Components
+       Click Add... button; browse to your installation directory and
+       select the XLSRW.DCU file.
+
+***** Delphi 3.0
+       Extract the files in XLSRW_d30.ZIP.
+       Install the file XLSReadWrite.pas as a component.
+
+***** Delphi 4.0
+       Extract the files in XLSRW_d40.ZIP.
+       Install the file XLSReadWrite.pas as a component.
+
+***** Delphi 5.0
+       Extract the files in XLSRW_d50.ZIP.
+       Install the file XLSReadWrite.pas as a component.
+
+***** Delphi 6.0
+       Extract the files in XLSRW_d60.ZIP.
+       Install the file XLSReadWrite.pas as a component.
+	
+***** Delphi 7.0
+       Extract the files in XLSRW_d70.ZIP.
+       Install the file XLSReadWrite.pas as a component.
+	
+--------------------------------------------------------------------------------
+INSTALLATION, REGISTERED
+--------------------------------------------------------------------------------
+
+***** Delphi 1.0
+       Extract the files in SOURCE_D1.ZIP to a directory of your choice.
+       Install the file XLSRW.PAS as a component.
+	
+***** Delphi 3.0 - 7.0
+       Extract the files in SOURCE.ZIP to a directory of your choice.
+       Install the file XLSReadWrite.pas as a component.
+
+
+You might have to add the search path to the directory where you put the files under 
+"Project | Options | Directories | Search path".
+
+--------------------------------------------------------------------------------
+GENERAL
+--------------------------------------------------------------------------------
+Cell references in XLS files are zero based. This means that cell A1 has a
+row and column value of 0,0 and D2 has 1,3.
+
+Cell formatting is stored in a common format array. Each cell stores an index into
+this array. A record in this array holds all formatting (color, border, font,
+text formatting, etc) that is common to a group of cells.
+Formatting is not supported on excel versions prior to 5.0. This because they
+use a different way to store formatting, and it is difficult to find any
+documentation on this.
+
+Excel 5.0 and Excel 95 use the same file format.
+
+You can not read password protected files (protected workbooks) as they are
+encrypted.
+
+If you want more information on Excel files, you can take a look at
+http://www.msdn.microsoft.com
+
+--------------------------------------------------------------------------------
+USAGE TXLSRead
+--------------------------------------------------------------------------------
+
+Quick start
+
+To read the cell values in a sheet:
+- Write handlers for the OnNumberCell, OnStringCell and OnBoolCell events.
+- Write a handler for OnSheet if you want to read any sheet other than the first.
+  This is only of interest on Excel versions from 5.0, as prior to that there was
+  only one sheet in the file.
+- Set Filename to the XLS file.
+- Call the Read method.
+
+public properties
+
+  * FirstCol: integer
+    First column on the sheet.
+
+  * LastCol: integer
+    Last column on the sheet.
+
+  * FirstRow: integer
+    First row on the sheet.
+
+  * LastRow: integer
+    Last row on the sheet.
+
+  * Version: TExcelVersion
+    TExcelVersion = (ExcelUnknown,Excel21,Excel30,Excel40,Excel50,Excel95,Excel97);
+    The version of the file.
+
+  * Palette[Index: integer]: TColor
+    Color palette. The color value is not stored in XLS files, instead there is
+    an index to the color palette.
+
+  * Fonts[Index: integer]: TFont
+    Fonts used in the file.
+
+  * FontCount: integer
+    Number of fonts used in the file.
+
+  * SheetIndex: integer
+    The current sheet index while the file is being read. After (or before) that
+    the value has no meaning.
+
+  * FmtFont[Index: integer]: TFont
+    Returns the font for a cell format. The first font (Index = 0) is the default
+    for the file.
+
+  * FmtFontIndex[Index: integer]: integer
+    Returns the font index for a cell format.
+
+  * FmtProtection[Index: integer]: TCellProtections
+    TCellProtection = (cpLocked,cpHidden);
+    TCellProtections = set of TCellProtection;
+    Returns the cell protection level for a cell format.
+
+  * FmtHorizAlignment[Index: integer]: TCellHorizAlignment
+    TCellHorizAlignment = (chaGeneral,chaLeft,chaCenter,chaRight,chaFill,chaJustify,chaCenterAcross)
+    Returns the horizontal alignment for a cell format.
+
+  * FmtVertAlignment[Index: integer]: TCellVertAlignment
+    TCellVertAlignment = (cvaBottom,cvaTop,cvaCenter,cvaJustify);
+    Returns the vertical alignment for a cell format.
+
+  * FmtRotation[Index: integer]: integer
+    Returns the text rotation (in degrees) for a cell format.
+
+  * FmtBorderStyle[Index: integer; Border: TCellBorder]: TCellBorderStyle
+    TCellBorderStyle = (cbsNone,cbsThin,cbsMedium,cbsDashed,cbsDotted,cbsThick,
+                        cbsDouble,cbsHair,cbsMediumDashed,cbsDashDot,cbsMediumDashDot,
+                        cbsDashDotDot,cbsMediumDashDotDot,cbsSlantedDashDot);
+    Returns the border style for a cell format.
+
+  * FmtBorderColor[Index: integer; Border: TCellBorder]: TColor read GetFmtBorderColor;
+    Returns the border color for a cell format.
+
+  * FmtCellColor[Index: integer]: TColor read GetFmtCellColor;
+    Returns the cell color for a cell format.
+
+  * FmtCellColorIndex[Index: integer]: integer read GetFmtCellColorIndex;
+    Returns the color index for a cell format.
+
+published properties
+
+  * FileName: string
+    The name of the XLS file.
+
+  * FuncArgSeparator: char
+    Character used to separate function arguments. Default is the
+    environmental variable ListSeparator.
+
+  * StrTRUE: string
+    String to represent the logical value True. Default is "TRUE".
+
+  * StrFALSE: string
+    String to represent the logical value False. Default is "FALSE".
+
+
+public Methods:
+
+  * Read;
+    Starts reading the file.
+
+  * OpenFile;
+    Opens a file for Seek (see below).
+
+  * Seek(SheetIndex,Col,Row: integer; var Value: variant): boolean;
+    Seeks a file for a specific cell. This way is much faster than calling Read,
+    but assumes that you know which cell you are looking for.
+    SheetIndex is the zero based index of the sheet. It is ignored on excel
+    versions prior to 5.0.
+    Returns false if the cell not was found.
+
+  * CloseFile;
+    Closes a file after seeks.
+
+public Events
+  For all cell events:
+  Col and Row are the zero based cell reference.
+  FormatIndex is the index into the format array. Use it with the FmtXXX methods.
+  IsFormulaValue is true if the cell value is from a formula.
+
+  * OnProgress: TIntegerEvent
+    TIntegerEvent = procedure (Sender: TObject; Value: integer) of object
+    Called while the file is being read. Value ranges from 0 at the start of the
+    file, to 100 at the end.
+
+  * OnRecord: TRecordEvent
+    TRecordEvent = procedure (Sender: TObject; ID: word; Length: integer; Data: PByteArray) of object
+    Called for each record in the file. ID is the record id and Length is the
+    length of the Data array.
+    If you handle this event, it slows down processing a lot as there is a lot
+    of records.
+
+  * OnUnhandled: TRecordEvent
+    Called for each record in the file that not is handled by XLSRead.
+
+  * OnBlankCell: TBlankCellEvent
+    TBlankCellEvent = procedure (Sender: TObject; Col,Row: integer; FormatIndex: integer) of object
+    Called for blank cells. Blank cells are cells without values, but they have
+    formatting.
+
+  * OnBoolCell: TBoolCellEvent
+    TBoolCellEvent = procedure (Sender: TObject; Col,Row: integer; FormatIndex: integer; Value: boolean; IsFormulaValue: boolean) of object
+    Called for cells with a numeric value.
+
+  * OnNumberCell: TNumberCellEvent
+    TNumberCellEvent = procedure (Sender: TObject; Col,Row: integer; FormatIndex: integer; Value: double; IsFormulaValue: boolean) of object
+    Called for cells with a boolean value.
+
+  * OnStringCell: TStringCellEvent
+    TStringCellEvent = procedure (Sender: TObject; Col,Row: integer; FormatIndex: integer; Value: string; IsFormulaValue: boolean) of object
+    Called for cells with a string value.
+
+  * OnRichCell: TRichCellEvent
+    TRichCellEvent = procedure (Sender: TObject; Col,Row: integer; FormatIndex: integer; Value: string; Formatting: PRecREFormatArray) of object
+    TRecREFormat = packed record
+      CharIndex: word;
+      case word of
+        0: (FontIndex: word);
+        1: (FormatCount: word);
+      end;
+    TRecREFormatArray = array[0..32767] of TRecREFormat;
+    PRecREFormatArray = ^TRecREFormatArray;
+    Called for cells with a rich string formatted value. The first record in the
+    Formatting array holds the size of it (in the FormatCount parameter).
+    If this event not is handled, the OnStringCell event is called with the
+    string value.
+    In the TRecREFormat record:
+    CharIndex is the index in the string where the format starts.
+    FontIndex is the index in the font array. Use FmtFont to retrieve it.
+    Ex: Formatting has 3 records.
+        Formatting[0] = (0,2) 2 formats.
+        Formatting[1] = (4,5) at character position 4, start to use font #5.
+        Formatting[2] = (9,8) at character position 9, start to use font #8.
+
+  * OnFormulaCell: TFormulaCellEvent
+    TFormulaCellEvent = procedure (Sender: TObject; Col,Row: integer; Formula: string) of object
+    Called for cells with formula. The formula is returned as a string in the
+    Formula parameter. The value of the formula is returned by one of the cell
+    events, with IsFormulaValue set to true.
+
+  * OnCol: TColEvent
+    TColEvent = procedure (Sender: TObject; Col1,Col2,FormatIndex,Width: integer) of object
+    Returnes the column width of a range of columns. The Width is in 1/256s of
+    a character width.
+    FormatIndex: formatting index for the row.
+
+  * OnRow: TRowEvent
+    TRowEvent = procedure (Sender: TObject; Row,Col1,Col2,FormatIndex,Height: integer) of object
+    Returns the height of a row. The height is in units of 1/20th of a (font) point.
+    Col1,Col2: column range on where the formatting applies.
+
+  * OnSheet: TSheetEvent
+    TSheetEvent = procedure (Sender: TObject; Name: string; Index: integer; var ReadIt: boolean) of object
+    Called for each sheet in the file.
+    Name is the name of the sheet, and Index is the zero-based index of it.
+    Set ReadIt to true if you want to read it.
+    The default action is to read the first sheet and ignore the rest.
+    This event is only called if the file can hold more than one sheet
+    (E.g. Excel 5.0 and above).
+
+--------------------------------------------------------------------------------
+USAGE TXLSWrite
+--------------------------------------------------------------------------------
+
+Quick start
+
+- Set Version to the file version you want to create. Default is excel 5.0.
+- Set Filename to the XLS file.
+- Set SheetNames to the names of the sheets. The default is one sheet named
+  "Sheet1".
+  This is only of interest on Excel 5.0 files where there can be more than one
+  sheet.
+- Call OpenFile:
+- Call WriteNumber, WriteString or WriteBool to write the cell values.
+- Call NextSheet if you intend to write more than one sheet.
+- Call CloseFile;
+
+Excel colors:
+Excel stores colors as an index into a color array (there is 56 possible colors).
+
+public properties
+  * CurrSheetIndex: integer
+    Index of the current sheet that is being written. Only useful while the file
+    is open.
+
+  * ReservedExtnamesSize: integer
+    Size of string data that holds external names.
+    External names are names of functions that not are built in into Excel.
+    They can reside in macro sheets or plug ins. Or not be defined at all.
+    Built in functions are coded with a number that represents the function
+    (and its name). Excel can of course not know the name of a function that is not
+    built in, that's why external names have to be written. The problem with
+    this is that the names have to be written before the function itself, and
+    XLSWrite has no way of knowing how many external names will be there.
+    Therefore a portion of the file (256 bytes) is reserved for these names,
+    and if this size is exceeded an exception is raised.
+    If this happens, increase the value of ReservedExtnamesSize.
+
+  * FileIsOpen: boolean
+    Returns true if the file is open.
+
+published properties
+  * FileName: string
+    Name of the file.
+
+  * Font: TExcelFont
+    TExcelFont properties
+     Charset: TFontCharset
+     (see Delphi help).
+
+    + Color: TExcelColor
+      Use the object inspector to select a suitable color.
+      (TXLSWrite -> Formats -> CellColor).
+
+    + Name: TFontName
+      The name of the font.
+
+    + property Size: integer
+      Font size in points.
+
+    + property Style: TExcelFontStyles
+      TExcelFontStyle = (xfsBold,xfsItalic,xfsStrikeOut);
+      TExcelFontStyles = set of TExcelFontStyle;
+      Font style.
+
+    + property SubSuperScript: TExcelSubSuperscript read
+      TExcelSubSuperscript = (xssNone,xssSuperscript,sxxSubscript);
+
+    + property Underline: TExcelUnderline read FD.FUnderline write FD.FUnderline;
+      TExcelUnderline = (xulNone,xulSingle,xulDouble,xulSingleAccount,xulDoubleAccount);
+      Font underlining.
+
+    Default font used on the sheet(s).
+
+  * Formats: TCellFormats
+    TCellFormats properties:
+    + Font: TExcelFont
+      Font. See above.
+
+    + TextFormat: TTextFormat
+      TTextFormat = (tfGeneral,tf2Dec,tf0Dec1000,tf2Dec1000,tfPercent,
+                     tfCurrency0Dec,tfCurrency2Dec,tfDate,tfTime,tfText);
+        tfGeneral      = no formatting.
+        tf2Dec         = 1000.00
+        tf0Dec1000     = 1,000
+        tf2Dec1000     = 1,000.00
+        tfPercent      = 25% (if the value is 0.25)
+        tfCurrency0Dec = 1,000$
+        tfCurrency2Dec = 1,000.00$
+        tfDate         = 1999-01-01
+        tfTime         = 22:58
+        tfText         = Numeric values formatted as text.
+
+    + WrapText: boolean
+      Set it to true if text should be word wrapped in cells.
+
+    + CellColor: TExcelColor read FColorIndex write FColorIndex stored True;
+      Use the object inspector to select a suitable color.
+      (TXLSWrite -> Formats -> CellColor).
+
+    + Protection: TCellProtections
+      TCellProtection = (cpLocked,cpHidden);
+      TCellProtections = set of TCellProtection;
+      cpLocked: cell is locked.
+      cpHidden: cell is hidden.
+      The soProtected flag in Options must be set if these values should
+      take effect.
+
+    + HorizAlignment: TCellHorizAlignment
+      TCellHorizAlignment = (chaGeneral,chaLeft,chaCenter,chaRight,chaFill,chaJustify,chaCenterAcross);
+      Horizontal alignment in cells.
+
+    + VertAlignment: TCellVertAlignment
+      TCellVertAlignment = (cvaBottom,cvaTop,cvaCenter,cvaJustify);
+      Vertical alignment in cells.
+
+    + Border: TCellBorders
+      TCellBorder = (cbLeft,cbTop,cbRight,cbBottom,cbDiag);
+      TCellBorders = set of TCellBorder;
+      Which of the cell sides to draw a border on.
+
+    Cell formats. The easiest way to create new formats is to use the object
+    inspector. Formats are written to the file before any cell records, this means
+    that if you change a format after OpenFile is called, the changes will
+    have no effect on that file.
+
+  * FuncArgSeparator: char
+    Character used to separate function arguments. Default is the
+    environmental variable ListSeparator.
+
+  * Options: TSheetOptions
+    TSheetOption = (soGridlines,soRowColHeadings,soProtected);
+    TSheetOptions = set of TSheetOption;
+    soGridlines: sheet has gridlines.
+    soRowColHeadings: Row and column headings is shown.
+    soProtected: the sheet is protected.
+
+  * PageSetup: TPageSetup
+    Stores options and measurements from the Page Setup dialog box in Excel.
+    + Copies: word
+      Number of copies.
+
+    + FooterMargin: double
+      Footer Margin.
+
+    + HeaderMargin: double
+      Header Margin.
+
+    + Options: TPageSetupOptions
+      + psoLeftToRight
+        Print over, and then down.
+
+      + psoPortrait
+        Portrait mode.
+
+      + psoNoColor
+        Print black and white.
+
+      + psoDraftQuality
+        Print draft quality.
+
+      + psoPrintNotes
+        Print notes.
+
+  * RecalcFormulas: boolean
+    Instructs Excel to recalc formulas when they are loaded. XLSWrite does not
+    calculate any formulas, but the formula value can be supplied with the
+    formula. If you know the result of the formulas and save it with the formula,
+    can set RecalcFormulas to false. This might speed up loading of the file.
+
+  * Sheets: TStringList
+    The names of the sheets. Only useful with Excel 5.0 files.
+
+  * XLSVersion: TXLSVersion read FXLSVersion write SetXLSVersion;
+    TXLSVersion = (xls40,xls50)
+    The XLS version you want to write.
+
+  * WriteGlobalData: boolean
+    Set this to true if you want to write records in the global part of the XLS
+    file. If you do so, you have to call NextSheet before you write any cell
+    records.
+
+public methods
+  For all WriteXXX methods:
+  Col and Row are the zero based cell reference.
+  FormatIndex is the index into the format array.
+  Set FormatIndex to -1 for default format.
+
+  * OpenFile
+    Opens the file.
+
+  * WriteNumber(Col,Row: longint; FormatIndex: integer; Value: double);
+    Writes a number.
+
+  * procedure WriteString(Col,Row: longint; FormatIndex: integer; Value: string);
+    Writes a string.
+
+  * procedure WriteBool(Col,Row: longint; FormatIndex: integer; Value: boolean);
+    Writes a boolean value.
+
+  * procedure WriteFormula(Col,Row: longint; FormatIndex: integer; Value: Variant; Formula: string);
+    Writes a Formula. The Formula parameter should be in the same style as in Excel,
+    except for the leading "=". The R1C1 reference style is not supported.
+    Value is the result of the formula. If you don't know it, set it to anything
+    you like. Excel will recalc it when it loads the file (if RecalcFormulas is
+    set to true). Remember, because of that XLSWrite does not calculate the formulas
+    and if you don't know the result, XLSRead will not be able to present a
+    valid value if it reads a file created with XLSWrite.
+
+  * procedure WriteBlank(Col,Row: longint; FormatIndex: integer);
+    Writes a blank cell. That is a cell with only formatting.
+
+  * procedure WriteData(RecordID: word; DataSize: word; Data: PByteArray);
+    Writes any record to the file. If you uses this method and anything goes
+    wrong, you will have very little help from excel about what went wrong.
+    Excel is extremely sensitive about errors in the files.
+
+  * procedure WriteColumn(FirstCol,LastCol: word; FormatIndex: integer; Width: word);
+    Writes column widths and format for a range of columns. The Width is in 1/256s of
+    a character width.
+
+  * procedure WriteRow(Row: word; FormatIndex: integer; Height: word);
+    Writes row height and format for a row. The height is in units of 1/20th of
+    a (font) point.
+
+  * function  MergeCells(Col1,Row1,Col2,Row2: integer): boolean;
+    Merges the cells in the rectangle by Col1,Row1,Col2,Row2.
+    The data for the merged cells should be written in the upper left corner of the
+    merged cells with any of the WriteXXX methods. The color and text formatting of 
+    the merged cells is taken from the data cell.
+    If you want to have a border around the cells, you have to write blank cells, 
+    covering the border area of the merged cells. See sample for more info.
+
+
+  * procedure NextSheet;
+    Call NextSheet when you are finished with one sheet and want to proceed with
+    the next. If you only writes one sheet, you do not have to call NextSheet
+    at all.
+
+  * procedure CloseFile;
+    Closes the file.
+
+  * RefToStr(ACol,ARow: integer; AbsCol,AbsRow: boolean): string;
+    Returns a row and column reference value to its string representation.
+    AbsCol,AbsRow: set these to true if the reference is absolute ("$").
+
+  * AreaToStr(Col1,Row1,Col2,Row2: integer; AbsCol1,AbsRow1,AbsCol2,AbsRow2: boolean): string;
+    Returns a row and column area (A1:B2) reference value to its string representation.
+    AbsCol1,AbsRow1,AbsCol2,AbsRow2: set these to true if the reference is absolute ("$").
+
+QUESTIONS
+--------------------------------------------------------------------------------
+If you have any questions or comments, please send a mail to:
+components@axolot.com
+
+WARRANTY
+--------------------------------------------------------------------------------
+Users of the XLSReadWrite component must accept the following disclaimer
+of warranty:
+XLSReadWrite is supplied as is. The author disclaims all warranties,
+expressed or implied, including, without limitation, the warranties of
+merchantability and of fitness for any purpose. The author assumes no
+liability for damages, direct or consequential, which may result from the
+use of XLSReadWrite.
+
+

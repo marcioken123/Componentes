@@ -1,0 +1,48 @@
+package dclcxExtEditorsD5;
+
+{$R *.res}
+{$R cxExtEditReg.dcr}
+{$ALIGN ON}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'ExpressExtendedEditors Library 5 (VCL Edition) by Developer Express Inc.'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl50,
+  vcljpg50,
+  vcldb50,
+  cxLibraryVCLD5,
+  dxThemeD5,
+  cxEditorsD5,
+  cxDataD5,
+  cxExtEditorsD5,
+  dclcxEditorsD5;
+
+contains
+  cxExtEditReg,
+  cxShellEditorsReg,
+  cxHintEditor,
+  cxCheckGroupStatesEditor,
+  cxSplitterEditor;
+
+end.

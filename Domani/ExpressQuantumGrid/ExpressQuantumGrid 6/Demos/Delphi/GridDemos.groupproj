@@ -1,0 +1,146 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ProjectExtensions>
+    <Borland.Personality>Default.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+  <BorlandProject xmlns=""> <Default.Personality> </Default.Personality> </BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Target Name="ColumnsMultiEditorsDemo">
+    <MSBuild Projects="ColumnsMultiEditorsDemo\ColumnsMultiEditorsDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="ColumnsShareDemo">
+    <MSBuild Projects="ColumnsShareDemo\ColumnsShareDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="ColumnsSimpleDemo">
+    <MSBuild Projects="ColumnsSimpleDemo\ColumnsSimpleDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="CustomDrawCardViewDemo">
+    <MSBuild Projects="CustomDrawCardViewDemo\CustomDrawCardViewDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="CustomDrawTableViewDemo">
+    <MSBuild Projects="CustomDrawTableViewDemo\CustomDrawTableViewDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="DragDropDemo">
+    <MSBuild Projects="DragDropDemo\DragDropDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="EditorsInPlaceDemo">
+    <MSBuild Projects="EditorsInPlaceDemo\EditorsInPlaceDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="EditorsLookupDemo">
+    <MSBuild Projects="EditorsLookupDemo\EditorsLookupDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="EditorsMaskDemo">
+    <MSBuild Projects="EditorsMaskDemo\EditorsMaskDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="EditorsStylesDemo">
+    <MSBuild Projects="EditorsStylesDemo\EditorsStylesDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="FilterByCodeDemo">
+    <MSBuild Projects="FilterByCodeDemo\FilterByCodeDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="FilterControlDemo">
+    <MSBuild Projects="FilterControlDemo\FilterControlDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="GridMenuViewsDemo">
+    <MSBuild Projects="GridMenuViewsDemo\GridMenuViewsDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="GridModeDemo">
+    <MSBuild Projects="GridModeDemo\GridModeDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="IssueList">
+    <MSBuild Projects="IssueList\IssueList.dproj" Targets="" />
+  </Target>
+  <Target Name="MasterDetailCardDemo">
+    <MSBuild Projects="MasterDetailCardDemo\MasterDetailCardDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="MasterDetailDemo">
+    <MSBuild Projects="MasterDetailDemo\MasterDetailDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="MasterDetailMultiDemo">
+    <MSBuild Projects="MasterDetailMultiDemo\MasterDetailMultiDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="MasterDetailTableDemo">
+    <MSBuild Projects="MasterDetailTableDemo\MasterDetailTableDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="StylesCardViewDemo">
+    <MSBuild Projects="StylesCardViewDemo\StylesCardViewDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="StylesMultiDemo">
+    <MSBuild Projects="StylesMultiDemo\StylesMultiDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="StylesSimpleDemo">
+    <MSBuild Projects="StylesSimpleDemo\StylesSimpleDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="SummaryFooterDemo">
+    <MSBuild Projects="SummaryFooterDemo\SummaryFooterDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="SummaryGroupDemo">
+    <MSBuild Projects="SummaryGroupDemo\SummaryGroupDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="SummaryMultiDemo">
+    <MSBuild Projects="SummaryMultiDemo\SummaryMultiDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="UnboundExternalDataDemo">
+    <MSBuild Projects="UnboundExternalDataDemo\UnboundExternalDataDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="UnboundModeDemo">
+    <MSBuild Projects="UnboundModeDemo\UnboundModeDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="UnboundSimpleDemo">
+    <MSBuild Projects="UnboundSimpleDemo\UnboundSimpleDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="ViewBandedDemo">
+    <MSBuild Projects="ViewBandedDemo\ViewBandedDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="ViewBandedFixedDemo">
+    <MSBuild Projects="ViewBandedFixedDemo\ViewBandedFixedDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="ViewCardSimpleDemo">
+    <MSBuild Projects="ViewCardSimpleDemo\ViewCardSimpleDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="ViewTableSimpleDemo">
+    <MSBuild Projects="ViewTableSimpleDemo\ViewTableSimpleDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="CellLevelMultiselectDemo">
+    <MSBuild Projects="CellLevelMultiselectDemo\CellLevelMultiselectDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="CustomRowHeightDemo">
+    <MSBuild Projects="CustomRowHeightDemo\CustomRowHeightDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="Office11GroupRowStyleDemo">
+    <MSBuild Projects="Office11GroupRowStyleDemo\Office11GroupRowStyleDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="UnboundColumnsDemo">
+    <MSBuild Projects="UnboundColumnsDemo\UnboundColumnsDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="UnboundDesignDefinedDemo">
+    <MSBuild Projects="UnboundDesignDefinedDemo\UnboundDesignDefinedDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="ViewCardDemo">
+    <MSBuild Projects="ViewCardDemo\ViewCardDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="ViewNestedBandsDemo">
+    <MSBuild Projects="ViewNestedBandsDemo\ViewNestedBandsDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="UnboundListDemo">
+    <MSBuild Projects="UnboundListDemo\UnboundListDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="ViewChartDemo">
+    <MSBuild Projects="ViewChartDemo\ViewChartDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="MasterDetailChartDemo">
+    <MSBuild Projects="MasterDetailChartDemo\MasterDetailChartDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="CardLayoutDemo">
+    <MSBuild Projects="CardLayoutDemo\CardLayoutDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="ChartDataDrillingDemo">
+    <MSBuild Projects="ChartDataDrillingDemo\ChartDataDrillingDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="FilterDemo">
+    <MSBuild Projects="FilterDemo\FilterDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="Build">
+    <CallTarget Targets="ColumnsMultiEditorsDemo;ColumnsShareDemo;ColumnsSimpleDemo;CustomDrawCardViewDemo;CustomDrawTableViewDemo;DragDropDemo;EditorsInPlaceDemo;EditorsLookupDemo;EditorsMaskDemo;EditorsStylesDemo;FilterByCodeDemo;FilterControlDemo;GridMenuViewsDemo;GridModeDemo;IssueList;MasterDetailCardDemo;MasterDetailDemo;MasterDetailMultiDemo;MasterDetailTableDemo;StylesCardViewDemo;StylesMultiDemo;StylesSimpleDemo;SummaryFooterDemo;SummaryGroupDemo;SummaryMultiDemo;UnboundExternalDataDemo;UnboundModeDemo;UnboundSimpleDemo;ViewBandedDemo;ViewBandedFixedDemo;ViewCardSimpleDemo;ViewTableSimpleDemo;CellLevelMultiselectDemo;CustomRowHeightDemo;Office11GroupRowStyleDemo;UnboundColumnsDemo;UnboundDesignDefinedDemo;ViewCardDemo;ViewNestedBandsDemo;UnboundListDemo;ViewChartDemo;MasterDetailChartDemo;CardLayoutDemo;ChartDataDrillingDemo;FilterDemo" />
+  </Target>
+</Project>

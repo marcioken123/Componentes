@@ -1,0 +1,48 @@
+:Base C:\Program Files\Borland\Delphi5\Components\WakReg\regware2.hlp
+:Title F1Help file
+1 regware2
+2 regware2 unit=unit_regware2
+2 USES
+3 WinTypes
+3 WinProcs
+3 Messages
+3 SysUtils
+3 Classes
+3 Controls
+3 Forms
+3 Graphics
+3 Registry
+3 ComObj
+3 Dialogs
+2 CONST
+2 TYPES
+3 TRegInfo type=type_TRegInfo
+3 TRegwareII
+4 TRegwareII class=class_TRegwareII
+4 CalculateCode method=func_TRegwareIICalculateCode
+4 CheckExpired method=func_TRegwareIICheckExpired
+4 CheckRegistered method=func_TRegwareIICheckRegistered
+4 Create method=cons_TRegwareIICreate
+4 Destroy method=dest_TRegwareIIDestroy
+4 DoRegistration method=func_TRegwareIIDoRegistration
+4 SetUnregistered method=proc_TRegwareIISetUnregistered
+4 DaysLeft property=prop_TRegwareIIDaysLeft
+4 Expired property=prop_TRegwareIIExpired
+4 License property=prop_TRegwareIILicense
+4 Organization property=prop_TRegwareIIOrganization
+4 RegCode property=prop_TRegwareIIRegCode
+4 Registered property=prop_TRegwareIIRegistered
+4 OnClockChange event=prop_TRegwareIIOnClockChange
+4 OnExpire event=prop_TRegwareIIOnExpire
+4 OnNagScreen event=prop_TRegwareIIOnNagScreen
+4 CheckTamper property=prop_TRegwareIICheckTamper
+4 Days property=prop_TRegwareIIDays
+4 MaxChars property=prop_TRegwareIIMaxChars
+4 MinChars property=prop_TRegwareIIMinChars
+4 ProgGUID property=prop_TRegwareIIProgGUID
+4 Seed property=prop_TRegwareIISeed
+4 RegCodeSize property=prop_TRegwareIIRegCodeSize
+4 Timebomb property=prop_TRegwareIITimebomb
+2 VARS
+2 ROUTINES
+:Include DELPHI3.CFG

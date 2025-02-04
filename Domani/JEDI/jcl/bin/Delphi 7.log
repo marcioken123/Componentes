@@ -1,0 +1,430 @@
+Delphi 7 Build 7.0.4.453 ===================
+
+Added "C:\Projetos\COMPON~1\Domani\JEDI\jcl\lib\d7;C:\Projetos\COMPON~1\Domani\JEDI\jcl\source" to library path.
+
+Added "C:\Projetos\COMPON~1\Domani\JEDI\jcl\source\common;C:\Projetos\COMPON~1\Domani\JEDI\jcl\source\windows;C:\Projetos\COMPON~1\Domani\JEDI\jcl\source\vcl;C:\Projetos\COMPON~1\Domani\JEDI\jcl\source\visclx;" to library browsing path.
+
+Added "C:\Projetos\COMPON~1\Domani\JEDI\jcl\lib\d7\debug" to Debug DCU Path.
+
+Making common library units for Delphi 7
+
+Compiling .dcu files...
+"C:\Program Files (x86)\Borland\Delphi7\bin\dcc32.exe" 
+Borland Delphi Version 15.0
+Copyright (c) 1983,2002 Borland Software Corporation
+
+Syntax: dcc32 [options] filename [options]
+
+  -A<unit>=<alias> = Set unit alias  -LU<package> = Use package        
+  -B = Build all units               -M = Make modified units         
+  -CC = Console target               -N<path> = DCU output directory  
+  -CG = GUI target                   -O<paths> = Object directories   
+  -D<syms> = Define conditionals     -P = look for 8.3 file names also
+  -E<path> = EXE output directory    -Q = Quiet compile               
+  -F<offset> = Find error            -R<paths> = Resource directories 
+  -GD = Detailed map file            -U<paths> = Unit directories     
+  -GP = Map file with publics        -V = Debug information in EXE    
+  -GS = Map file with segments       -VR = Generate remote debug (RSM)
+  -H = Output hint messages          -W = Output warning messages     
+  -I<paths> = Include directories    -Z = Output 'never build' DCPs   
+  -J = Generate .obj file            -$<dir> = Compiler directive     
+  -JP = Generate C++ .obj file       --help = Show this help screen   
+  -K<addr> = Set image base addr     --version = Show name and version
+Compiler switches: -$<letter><state> (defaults are shown below)
+  A8  Aligned record fields           P+  Open string params            
+  B-  Full boolean Evaluation         Q-  Integer overflow checking     
+  C-  Evaluate assertions at runtime  R-  Range checking                
+  D-  Debug information               T-  Typed @ operator              
+  G+  Use imported data references    U-  Pentium(tm)-safe divide       
+  H+  Use long strings by default     V+  Strict var-strings            
+  I+  I/O checking                    W-  Generate stack frames         
+  J-  Writeable structured consts     X+  Extended syntax               
+  L+  Local debug symbols             Y+  Symbol reference info         
+  M-  Runtime type info               Z1  Minimum size of enum types    
+  O+  Optimization                  
+
+Making windows library units for Delphi 7
+
+Compiling .dcu files...
+"C:\Program Files (x86)\Borland\Delphi7\bin\dcc32.exe" 
+Borland Delphi Version 15.0
+Copyright (c) 1983,2002 Borland Software Corporation
+
+Syntax: dcc32 [options] filename [options]
+
+  -A<unit>=<alias> = Set unit alias  -LU<package> = Use package        
+  -B = Build all units               -M = Make modified units         
+  -CC = Console target               -N<path> = DCU output directory  
+  -CG = GUI target                   -O<paths> = Object directories   
+  -D<syms> = Define conditionals     -P = look for 8.3 file names also
+  -E<path> = EXE output directory    -Q = Quiet compile               
+  -F<offset> = Find error            -R<paths> = Resource directories 
+  -GD = Detailed map file            -U<paths> = Unit directories     
+  -GP = Map file with publics        -V = Debug information in EXE    
+  -GS = Map file with segments       -VR = Generate remote debug (RSM)
+  -H = Output hint messages          -W = Output warning messages     
+  -I<paths> = Include directories    -Z = Output 'never build' DCPs   
+  -J = Generate .obj file            -$<dir> = Compiler directive     
+  -JP = Generate C++ .obj file       --help = Show this help screen   
+  -K<addr> = Set image base addr     --version = Show name and version
+Compiler switches: -$<letter><state> (defaults are shown below)
+  A8  Aligned record fields           P+  Open string params            
+  B-  Full boolean Evaluation         Q-  Integer overflow checking     
+  C-  Evaluate assertions at runtime  R-  Range checking                
+  D-  Debug information               T-  Typed @ operator              
+  G+  Use imported data references    U-  Pentium(tm)-safe divide       
+  H+  Use long strings by default     V+  Strict var-strings            
+  I+  I/O checking                    W-  Generate stack frames         
+  J-  Writeable structured consts     X+  Extended syntax               
+  L+  Local debug symbols             Y+  Symbol reference info         
+  M-  Runtime type info               Z1  Minimum size of enum types    
+  O+  Optimization                  
+
+Making vcl library units for Delphi 7
+
+Compiling .dcu files...
+"C:\Program Files (x86)\Borland\Delphi7\bin\dcc32.exe" 
+Borland Delphi Version 15.0
+Copyright (c) 1983,2002 Borland Software Corporation
+
+Syntax: dcc32 [options] filename [options]
+
+  -A<unit>=<alias> = Set unit alias  -LU<package> = Use package        
+  -B = Build all units               -M = Make modified units         
+  -CC = Console target               -N<path> = DCU output directory  
+  -CG = GUI target                   -O<paths> = Object directories   
+  -D<syms> = Define conditionals     -P = look for 8.3 file names also
+  -E<path> = EXE output directory    -Q = Quiet compile               
+  -F<offset> = Find error            -R<paths> = Resource directories 
+  -GD = Detailed map file            -U<paths> = Unit directories     
+  -GP = Map file with publics        -V = Debug information in EXE    
+  -GS = Map file with segments       -VR = Generate remote debug (RSM)
+  -H = Output hint messages          -W = Output warning messages     
+  -I<paths> = Include directories    -Z = Output 'never build' DCPs   
+  -J = Generate .obj file            -$<dir> = Compiler directive     
+  -JP = Generate C++ .obj file       --help = Show this help screen   
+  -K<addr> = Set image base addr     --version = Show name and version
+Compiler switches: -$<letter><state> (defaults are shown below)
+  A8  Aligned record fields           P+  Open string params            
+  B-  Full boolean Evaluation         Q-  Integer overflow checking     
+  C-  Evaluate assertions at runtime  R-  Range checking                
+  D-  Debug information               T-  Typed @ operator              
+  G+  Use imported data references    U-  Pentium(tm)-safe divide       
+  H+  Use long strings by default     V+  Strict var-strings            
+  I+  I/O checking                    W-  Generate stack frames         
+  J-  Writeable structured consts     X+  Extended syntax               
+  L+  Local debug symbols             Y+  Symbol reference info         
+  M-  Runtime type info               Z1  Minimum size of enum types    
+  O+  Optimization                  
+
+Making visclx library units for Delphi 7
+
+Compiling .dcu files...
+"C:\Program Files (x86)\Borland\Delphi7\bin\dcc32.exe" 
+Borland Delphi Version 15.0
+Copyright (c) 1983,2002 Borland Software Corporation
+
+Syntax: dcc32 [options] filename [options]
+
+  -A<unit>=<alias> = Set unit alias  -LU<package> = Use package        
+  -B = Build all units               -M = Make modified units         
+  -CC = Console target               -N<path> = DCU output directory  
+  -CG = GUI target                   -O<paths> = Object directories   
+  -D<syms> = Define conditionals     -P = look for 8.3 file names also
+  -E<path> = EXE output directory    -Q = Quiet compile               
+  -F<offset> = Find error            -R<paths> = Resource directories 
+  -GD = Detailed map file            -U<paths> = Unit directories     
+  -GP = Map file with publics        -V = Debug information in EXE    
+  -GS = Map file with segments       -VR = Generate remote debug (RSM)
+  -H = Output hint messages          -W = Output warning messages     
+  -I<paths> = Include directories    -Z = Output 'never build' DCPs   
+  -J = Generate .obj file            -$<dir> = Compiler directive     
+  -JP = Generate C++ .obj file       --help = Show this help screen   
+  -K<addr> = Set image base addr     --version = Show name and version
+Compiler switches: -$<letter><state> (defaults are shown below)
+  A8  Aligned record fields           P+  Open string params            
+  B-  Full boolean Evaluation         Q-  Integer overflow checking     
+  C-  Evaluate assertions at runtime  R-  Range checking                
+  D-  Debug information               T-  Typed @ operator              
+  G+  Use imported data references    U-  Pentium(tm)-safe divide       
+  H+  Use long strings by default     V+  Strict var-strings            
+  I+  I/O checking                    W-  Generate stack frames         
+  J-  Writeable structured consts     X+  Extended syntax               
+  L+  Local debug symbols             Y+  Symbol reference info         
+  M-  Runtime type info               Z1  Minimum size of enum types    
+  O+  Optimization                  
+
+Making common library debug units for Delphi 7
+
+Compiling .dcu files...
+"C:\Program Files (x86)\Borland\Delphi7\bin\dcc32.exe" 
+Borland Delphi Version 15.0
+Copyright (c) 1983,2002 Borland Software Corporation
+
+Syntax: dcc32 [options] filename [options]
+
+  -A<unit>=<alias> = Set unit alias  -LU<package> = Use package        
+  -B = Build all units               -M = Make modified units         
+  -CC = Console target               -N<path> = DCU output directory  
+  -CG = GUI target                   -O<paths> = Object directories   
+  -D<syms> = Define conditionals     -P = look for 8.3 file names also
+  -E<path> = EXE output directory    -Q = Quiet compile               
+  -F<offset> = Find error            -R<paths> = Resource directories 
+  -GD = Detailed map file            -U<paths> = Unit directories     
+  -GP = Map file with publics        -V = Debug information in EXE    
+  -GS = Map file with segments       -VR = Generate remote debug (RSM)
+  -H = Output hint messages          -W = Output warning messages     
+  -I<paths> = Include directories    -Z = Output 'never build' DCPs   
+  -J = Generate .obj file            -$<dir> = Compiler directive     
+  -JP = Generate C++ .obj file       --help = Show this help screen   
+  -K<addr> = Set image base addr     --version = Show name and version
+Compiler switches: -$<letter><state> (defaults are shown below)
+  A8  Aligned record fields           P+  Open string params            
+  B-  Full boolean Evaluation         Q+  Integer overflow checking     
+  C+  Evaluate assertions at runtime  R+  Range checking                
+  D+  Debug information               T-  Typed @ operator              
+  G+  Use imported data references    U-  Pentium(tm)-safe divide       
+  H+  Use long strings by default     V+  Strict var-strings            
+  I+  I/O checking                    W+  Generate stack frames         
+  J-  Writeable structured consts     X+  Extended syntax               
+  L+  Local debug symbols             Y+  Symbol reference info         
+  M-  Runtime type info               Z1  Minimum size of enum types    
+  O-  Optimization                  
+
+Making windows library debug units for Delphi 7
+
+Compiling .dcu files...
+"C:\Program Files (x86)\Borland\Delphi7\bin\dcc32.exe" 
+Borland Delphi Version 15.0
+Copyright (c) 1983,2002 Borland Software Corporation
+
+Syntax: dcc32 [options] filename [options]
+
+  -A<unit>=<alias> = Set unit alias  -LU<package> = Use package        
+  -B = Build all units               -M = Make modified units         
+  -CC = Console target               -N<path> = DCU output directory  
+  -CG = GUI target                   -O<paths> = Object directories   
+  -D<syms> = Define conditionals     -P = look for 8.3 file names also
+  -E<path> = EXE output directory    -Q = Quiet compile               
+  -F<offset> = Find error            -R<paths> = Resource directories 
+  -GD = Detailed map file            -U<paths> = Unit directories     
+  -GP = Map file with publics        -V = Debug information in EXE    
+  -GS = Map file with segments       -VR = Generate remote debug (RSM)
+  -H = Output hint messages          -W = Output warning messages     
+  -I<paths> = Include directories    -Z = Output 'never build' DCPs   
+  -J = Generate .obj file            -$<dir> = Compiler directive     
+  -JP = Generate C++ .obj file       --help = Show this help screen   
+  -K<addr> = Set image base addr     --version = Show name and version
+Compiler switches: -$<letter><state> (defaults are shown below)
+  A8  Aligned record fields           P+  Open string params            
+  B-  Full boolean Evaluation         Q+  Integer overflow checking     
+  C+  Evaluate assertions at runtime  R+  Range checking                
+  D+  Debug information               T-  Typed @ operator              
+  G+  Use imported data references    U-  Pentium(tm)-safe divide       
+  H+  Use long strings by default     V+  Strict var-strings            
+  I+  I/O checking                    W+  Generate stack frames         
+  J-  Writeable structured consts     X+  Extended syntax               
+  L+  Local debug symbols             Y+  Symbol reference info         
+  M-  Runtime type info               Z1  Minimum size of enum types    
+  O-  Optimization                  
+
+Making vcl library debug units for Delphi 7
+
+Compiling .dcu files...
+"C:\Program Files (x86)\Borland\Delphi7\bin\dcc32.exe" 
+Borland Delphi Version 15.0
+Copyright (c) 1983,2002 Borland Software Corporation
+
+Syntax: dcc32 [options] filename [options]
+
+  -A<unit>=<alias> = Set unit alias  -LU<package> = Use package        
+  -B = Build all units               -M = Make modified units         
+  -CC = Console target               -N<path> = DCU output directory  
+  -CG = GUI target                   -O<paths> = Object directories   
+  -D<syms> = Define conditionals     -P = look for 8.3 file names also
+  -E<path> = EXE output directory    -Q = Quiet compile               
+  -F<offset> = Find error            -R<paths> = Resource directories 
+  -GD = Detailed map file            -U<paths> = Unit directories     
+  -GP = Map file with publics        -V = Debug information in EXE    
+  -GS = Map file with segments       -VR = Generate remote debug (RSM)
+  -H = Output hint messages          -W = Output warning messages     
+  -I<paths> = Include directories    -Z = Output 'never build' DCPs   
+  -J = Generate .obj file            -$<dir> = Compiler directive     
+  -JP = Generate C++ .obj file       --help = Show this help screen   
+  -K<addr> = Set image base addr     --version = Show name and version
+Compiler switches: -$<letter><state> (defaults are shown below)
+  A8  Aligned record fields           P+  Open string params            
+  B-  Full boolean Evaluation         Q+  Integer overflow checking     
+  C+  Evaluate assertions at runtime  R+  Range checking                
+  D+  Debug information               T-  Typed @ operator              
+  G+  Use imported data references    U-  Pentium(tm)-safe divide       
+  H+  Use long strings by default     V+  Strict var-strings            
+  I+  I/O checking                    W+  Generate stack frames         
+  J-  Writeable structured consts     X+  Extended syntax               
+  L+  Local debug symbols             Y+  Symbol reference info         
+  M-  Runtime type info               Z1  Minimum size of enum types    
+  O-  Optimization                  
+
+Making visclx library debug units for Delphi 7
+
+Compiling .dcu files...
+"C:\Program Files (x86)\Borland\Delphi7\bin\dcc32.exe" 
+Borland Delphi Version 15.0
+Copyright (c) 1983,2002 Borland Software Corporation
+
+Syntax: dcc32 [options] filename [options]
+
+  -A<unit>=<alias> = Set unit alias  -LU<package> = Use package        
+  -B = Build all units               -M = Make modified units         
+  -CC = Console target               -N<path> = DCU output directory  
+  -CG = GUI target                   -O<paths> = Object directories   
+  -D<syms> = Define conditionals     -P = look for 8.3 file names also
+  -E<path> = EXE output directory    -Q = Quiet compile               
+  -F<offset> = Find error            -R<paths> = Resource directories 
+  -GD = Detailed map file            -U<paths> = Unit directories     
+  -GP = Map file with publics        -V = Debug information in EXE    
+  -GS = Map file with segments       -VR = Generate remote debug (RSM)
+  -H = Output hint messages          -W = Output warning messages     
+  -I<paths> = Include directories    -Z = Output 'never build' DCPs   
+  -J = Generate .obj file            -$<dir> = Compiler directive     
+  -JP = Generate C++ .obj file       --help = Show this help screen   
+  -K<addr> = Set image base addr     --version = Show name and version
+Compiler switches: -$<letter><state> (defaults are shown below)
+  A8  Aligned record fields           P+  Open string params            
+  B-  Full boolean Evaluation         Q+  Integer overflow checking     
+  C+  Evaluate assertions at runtime  R+  Range checking                
+  D+  Debug information               T-  Typed @ operator              
+  G+  Use imported data references    U-  Pentium(tm)-safe divide       
+  H+  Use long strings by default     V+  Strict var-strings            
+  I+  I/O checking                    W+  Generate stack frames         
+  J-  Writeable structured consts     X+  Extended syntax               
+  L+  Local debug symbols             Y+  Symbol reference info         
+  M-  Runtime type info               Z1  Minimum size of enum types    
+  O-  Optimization                  
+
+Compiling package C:\Projetos\COMPON~1\Domani\JEDI\jcl\packages\d7\Jcl.dpk...
+Compiling package C:\Projetos\COMPON~1\Domani\JEDI\jcl\packages\d7\Jcl.dpk
+"C:\Program Files (x86)\Borland\Delphi7\bin\dcc32.exe" C:\Projetos\COMPON~1\Domani\JEDI\jcl\packages\d7\Jcl.dpk
+Borland Delphi Version 15.0
+Copyright (c) 1983,2002 Borland Software Corporation
+253388 lines, 0.42 seconds, 813524 bytes code, 44449 bytes data.
+Compilation success
+...done.
+
+Compiling package C:\Projetos\COMPON~1\Domani\JEDI\jcl\packages\d7\JclVClx.dpk...
+Compiling package C:\Projetos\COMPON~1\Domani\JEDI\jcl\packages\d7\JclVClx.dpk
+"C:\Program Files (x86)\Borland\Delphi7\bin\dcc32.exe" C:\Projetos\COMPON~1\Domani\JEDI\jcl\packages\d7\JclVClx.dpk
+Borland Delphi Version 15.0
+Copyright (c) 1983,2002 Borland Software Corporation
+6995 lines, 0.06 seconds, 25032 bytes code, 585 bytes data.
+Compilation success
+...done.
+
+Compiling package C:\Projetos\COMPON~1\Domani\JEDI\jcl\packages\d7\JclVcl.dpk...
+Compiling package C:\Projetos\COMPON~1\Domani\JEDI\jcl\packages\d7\JclVcl.dpk
+"C:\Program Files (x86)\Borland\Delphi7\bin\dcc32.exe" C:\Projetos\COMPON~1\Domani\JEDI\jcl\packages\d7\JclVcl.dpk
+Borland Delphi Version 15.0
+Copyright (c) 1983,2002 Borland Software Corporation
+C:\Projetos\COMPON~1\Domani\JEDI\jcl\source\vcl\JclPrint.pas(618) Warning: Symbol 'GetBinSourceList' is deprecated
+C:\Projetos\COMPON~1\Domani\JEDI\jcl\source\vcl\JclPrint.pas(622) Warning: Symbol 'GetBinSourceList' is deprecated
+C:\Projetos\COMPON~1\Domani\JEDI\jcl\source\vcl\JclPrint.pas(630) Warning: Symbol 'GetBinSourceList' is deprecated
+C:\Projetos\COMPON~1\Domani\JEDI\jcl\source\vcl\JclPrint.pas(666) Warning: Symbol 'GetPaperList' is deprecated
+C:\Projetos\COMPON~1\Domani\JEDI\jcl\source\vcl\JclPrint.pas(670) Warning: Symbol 'GetPaperList' is deprecated
+C:\Projetos\COMPON~1\Domani\JEDI\jcl\source\vcl\JclPrint.pas(678) Warning: Symbol 'GetPaperList' is deprecated
+13952 lines, 0.05 seconds, 70944 bytes code, 901 bytes data.
+Compilation success
+...done.
+
+Installing package C:\Projetos\COMPON~1\Domani\JEDI\jcl\packages\d7\JclBaseExpert.dpk...
+Installing package C:\Projetos\COMPON~1\Domani\JEDI\jcl\packages\d7\JclBaseExpert.dpk
+Compiling package C:\Projetos\COMPON~1\Domani\JEDI\jcl\packages\d7\JclBaseExpert.dpk
+"C:\Program Files (x86)\Borland\Delphi7\bin\dcc32.exe" C:\Projetos\COMPON~1\Domani\JEDI\jcl\packages\d7\JclBaseExpert.dpk
+Borland Delphi Version 15.0
+Copyright (c) 1983,2002 Borland Software Corporation
+7986 lines, 0.08 seconds, 21912 bytes code, 317 bytes data.
+Compilation success
+Registering package C:\PROGRA~2\Borland\Delphi7\Projects\Bpl\JclBaseExpert70.bpl
+Registration ok
+Installation of package finished
+...done.
+
+Installing package C:\Projetos\COMPON~1\Domani\JEDI\jcl\packages\d7\JclDebugExpert.dpk...
+Installing package C:\Projetos\COMPON~1\Domani\JEDI\jcl\packages\d7\JclDebugExpert.dpk
+Compiling package C:\Projetos\COMPON~1\Domani\JEDI\jcl\packages\d7\JclDebugExpert.dpk
+"C:\Program Files (x86)\Borland\Delphi7\bin\dcc32.exe" C:\Projetos\COMPON~1\Domani\JEDI\jcl\packages\d7\JclDebugExpert.dpk
+Borland Delphi Version 15.0
+Copyright (c) 1983,2002 Borland Software Corporation
+2557 lines, 0.05 seconds, 13292 bytes code, 193 bytes data.
+Compilation success
+Registering package C:\PROGRA~2\Borland\Delphi7\Projects\Bpl\JclDebugExpert70.bpl
+Registration ok
+Installation of package finished
+...done.
+
+Installing package C:\Projetos\COMPON~1\Domani\JEDI\jcl\packages\d7\JclProjectAnalysisExpert.dpk...
+Installing package C:\Projetos\COMPON~1\Domani\JEDI\jcl\packages\d7\JclProjectAnalysisExpert.dpk
+Compiling package C:\Projetos\COMPON~1\Domani\JEDI\jcl\packages\d7\JclProjectAnalysisExpert.dpk
+"C:\Program Files (x86)\Borland\Delphi7\bin\dcc32.exe" C:\Projetos\COMPON~1\Domani\JEDI\jcl\packages\d7\JclProjectAnalysisExpert.dpk
+Borland Delphi Version 15.0
+Copyright (c) 1983,2002 Borland Software Corporation
+3875 lines, 0.05 seconds, 16244 bytes code, 213 bytes data.
+Compilation success
+Registering package C:\PROGRA~2\Borland\Delphi7\Projects\Bpl\JclProjectAnalysisExpert70.bpl
+Registration ok
+Installation of package finished
+...done.
+
+Installing package C:\Projetos\COMPON~1\Domani\JEDI\jcl\packages\d7\JclFavoriteFoldersExpert.dpk...
+Installing package C:\Projetos\COMPON~1\Domani\JEDI\jcl\packages\d7\JclFavoriteFoldersExpert.dpk
+Compiling package C:\Projetos\COMPON~1\Domani\JEDI\jcl\packages\d7\JclFavoriteFoldersExpert.dpk
+"C:\Program Files (x86)\Borland\Delphi7\bin\dcc32.exe" C:\Projetos\COMPON~1\Domani\JEDI\jcl\packages\d7\JclFavoriteFoldersExpert.dpk
+Borland Delphi Version 15.0
+Copyright (c) 1983,2002 Borland Software Corporation
+3662 lines, 0.05 seconds, 9528 bytes code, 193 bytes data.
+Compilation success
+Registering package C:\PROGRA~2\Borland\Delphi7\Projects\Bpl\JclFavoriteFoldersExpert70.bpl
+Registration ok
+Installation of package finished
+...done.
+
+Installing package C:\Projetos\COMPON~1\Domani\JEDI\jcl\packages\d7\JclUsesExpert.dpk...
+Installing package C:\Projetos\COMPON~1\Domani\JEDI\jcl\packages\d7\JclUsesExpert.dpk
+Compiling package C:\Projetos\COMPON~1\Domani\JEDI\jcl\packages\d7\JclUsesExpert.dpk
+"C:\Program Files (x86)\Borland\Delphi7\bin\dcc32.exe" C:\Projetos\COMPON~1\Domani\JEDI\jcl\packages\d7\JclUsesExpert.dpk
+Borland Delphi Version 15.0
+Copyright (c) 1983,2002 Borland Software Corporation
+6764 lines, 0.05 seconds, 25488 bytes code, 309 bytes data.
+Compilation success
+Registering package C:\PROGRA~2\Borland\Delphi7\Projects\Bpl\JclUsesExpert70.bpl
+Registration ok
+Installation of package finished
+...done.
+
+Installing package C:\Projetos\COMPON~1\Domani\JEDI\jcl\packages\d7\JclSIMDViewExpert.dpk...
+Installing package C:\Projetos\COMPON~1\Domani\JEDI\jcl\packages\d7\JclSIMDViewExpert.dpk
+Compiling package C:\Projetos\COMPON~1\Domani\JEDI\jcl\packages\d7\JclSIMDViewExpert.dpk
+"C:\Program Files (x86)\Borland\Delphi7\bin\dcc32.exe" C:\Projetos\COMPON~1\Domani\JEDI\jcl\packages\d7\JclSIMDViewExpert.dpk
+Borland Delphi Version 15.0
+Copyright (c) 1983,2002 Borland Software Corporation
+10456 lines, 0.05 seconds, 35796 bytes code, 689 bytes data.
+Compilation success
+Registering package C:\PROGRA~2\Borland\Delphi7\Projects\Bpl\JclSIMDViewExpert70.bpl
+Registration ok
+Installation of package finished
+...done.
+
+Installing Exception Dialog...
+-> C:\PROJETOS\COMPON~1\DOMANI\JEDI\JCL\EXPERTS\DEBUG\DIALOG\EXCEPTDLG.PAS
+-> C:\PROJETOS\COMPON~1\DOMANI\JEDI\JCL\EXPERTS\DEBUG\DIALOG\EXCEPTDLG.ico
+...done.
+
+Installing Exception Dialog with Send...
+-> C:\PROJETOS\COMPON~1\DOMANI\JEDI\JCL\EXPERTS\DEBUG\DIALOG\EXCEPTDLGMAIL.PAS
+-> C:\PROJETOS\COMPON~1\DOMANI\JEDI\JCL\EXPERTS\DEBUG\DIALOG\EXCEPTDLGMAIL.ico
+...done.
+
+Installing CLX Exception Dialog...
+-> C:\PROJETOS\COMPON~1\DOMANI\JEDI\JCL\EXPERTS\DEBUG\DIALOG\CLXEXCEPTDLG.PAS
+-> C:\PROJETOS\COMPON~1\DOMANI\JEDI\JCL\EXPERTS\DEBUG\DIALOG\CLXEXCEPTDLG.ico
+...done.
+

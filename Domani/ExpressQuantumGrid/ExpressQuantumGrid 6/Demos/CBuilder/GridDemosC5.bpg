@@ -1,0 +1,209 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = ViewTableSimpleDemoC5.exe ViewBandedDemoC5.exe ViewBandedFixedDemoC5.exe \
+  ViewNestedBandsDemoC5.exe ViewCardSimpleDemoC5.exe ViewCardDemoC5.exe CardLayoutDemoC5.exe \
+  ViewChartDemoC5.exe ChartDataDrillingDemoC5.exe \
+  MasterDetailTableDemoC5.exe MasterDetailCardDemoC5.exe MasterDetailDemoC5.exe \
+  MasterDetailMultiDemoC5.exe MasterDetailChartDemoC5.exe \
+  UnboundSimpleDemoC5.exe UnboundListDemoC5.exe UnboundExternalDataDemoC5.exe \
+  UnboundDesignDefinedDemoC5.exe UnboundModeDemoC5.exe UnboundColumnsDemoC5.exe \
+  GridModeDemoC5.exe SummaryFooterDemoC5.exe SummaryGroupDemoC5.exe \
+  SummaryMultiDemoC5.exe FilterDemoC5.exe FilterByCodeDemoC5.exe FilterControlDemoC5.exe \
+  ColumnsSimpleDemoC5.exe EditorsInPlaceDemoC5.exe EditorsLookupDemoC5.exe \
+  EditorsMaskDemoC5.exe ColumnsMultiEditorsDemoC5.exe ColumnsShareDemoC5.exe \
+  StylesMultiDemoC5.exe StylesCardViewDemoC5.exe StylesSimpleDemoC5.exe \
+  CellLevelMultiselectDemoC5.exe CustomDrawTableViewDemoC5.exe \
+  CustomDrawCardViewDemoC5.exe Office11GroupRowStyleDemoC5.exe DragDropDemoC5.exe \
+  CustomRowHeightDemoC5.exe GridMenuViewsDemoC5.exe IssueListC5.exe EditorsStylesDemoC5.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+ViewTableSimpleDemoC5.exe: ViewTableSimpleDemo\ViewTableSimpleDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ViewBandedDemoC5.exe: ViewBandedDemo\ViewBandedDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ViewBandedFixedDemoC5.exe: ViewBandedFixedDemo\ViewBandedFixedDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ViewNestedBandsDemoC5.exe: ViewNestedBandsDemo\ViewNestedBandsDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ViewCardSimpleDemoC5.exe: ViewCardSimpleDemo\ViewCardSimpleDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ViewCardDemoC5.exe: ViewCardDemo\ViewCardDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+MasterDetailTableDemoC5.exe: MasterDetailTableDemo\MasterDetailTableDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+MasterDetailCardDemoC5.exe: MasterDetailCardDemo\MasterDetailCardDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+MasterDetailDemoC5.exe: MasterDetailDemo\MasterDetailDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+MasterDetailMultiDemoC5.exe: MasterDetailMultiDemo\MasterDetailMultiDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+UnboundSimpleDemoC5.exe: UnboundSimpleDemo\UnboundSimpleDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+UnboundListDemoC5.exe: UnboundListDemo\UnboundListDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+UnboundExternalDataDemoC5.exe: UnboundExternalDataDemo\UnboundExternalDataDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+UnboundDesignDefinedDemoC5.exe: UnboundDesignDefinedDemo\UnboundDesignDefinedDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+UnboundModeDemoC5.exe: UnboundModeDemo\UnboundModeDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+UnboundColumnsDemoC5.exe: UnboundColumnsDemo\UnboundColumnsDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+SummaryFooterDemoC5.exe: SummaryFooterDemo\SummaryFooterDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+SummaryGroupDemoC5.exe: SummaryGroupDemo\SummaryGroupDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+SummaryMultiDemoC5.exe: SummaryMultiDemo\SummaryMultiDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+FilterByCodeDemoC5.exe: FilterByCodeDemo\FilterByCodeDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+FilterControlDemoC5.exe: FilterControlDemo\FilterControlDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+GridModeDemoC5.exe: GridModeDemo\GridModeDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ColumnsSimpleDemoC5.exe: ColumnsSimpleDemo\ColumnsSimpleDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+EditorsInPlaceDemoC5.exe: EditorsInPlaceDemo\EditorsInPlaceDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+EditorsLookupDemoC5.exe: EditorsLookupDemo\EditorsLookupDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+EditorsMaskDemoC5.exe: EditorsMaskDemo\EditorsMaskDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ColumnsMultiEditorsDemoC5.exe: ColumnsMultiEditorsDemo\ColumnsMultiEditorsDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ColumnsShareDemoC5.exe: ColumnsShareDemo\ColumnsShareDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+StylesMultiDemoC5.exe: StylesMultiDemo\StylesMultiDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+StylesCardViewDemoC5.exe: StylesCardViewDemo\StylesCardViewDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+StylesSimpleDemoC5.exe: StylesSimpleDemo\StylesSimpleDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+CellLevelMultiselectDemoC5.exe: CellLevelMultiselectDemo\CellLevelMultiselectDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+CustomDrawTableViewDemoC5.exe: CustomDrawTableViewDemo\CustomDrawTableViewDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+CustomDrawCardViewDemoC5.exe: CustomDrawCardViewDemo\CustomDrawCardViewDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+Office11GroupRowStyleDemoC5.exe: Office11GroupRowStyleDemo\Office11GroupRowStyleDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+DragDropDemoC5.exe: DragDropDemo\DragDropDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+CustomRowHeightDemoC5.exe: CustomRowHeightDemo\CustomRowHeightDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+GridMenuViewsDemoC5.exe: GridMenuViewsDemo\GridMenuViewsDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+IssueListC5.exe: IssueList\IssueListC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+EditorsStylesDemoC5.exe: EditorsStylesDemo\EditorsStylesDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ViewChartDemoC5.exe: ViewChartDemo\ViewChartDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+MasterDetailChartDemoC5.exe: MasterDetailChartDemo\MasterDetailChartDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+CardLayoutDemoC5.exe: CardLayoutDemo\CardLayoutDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+ChartDataDrillingDemoC5.exe: ChartDataDrillingDemo\ChartDataDrillingDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+FilterDemoC5.exe: FilterDemo\FilterDemoC5.bpr
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak

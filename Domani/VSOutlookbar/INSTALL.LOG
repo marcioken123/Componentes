@@ -1,0 +1,34 @@
+***  Installation Started 10/04/2000 15:28  ***
+Title: VSOutlookBar Installation
+Source: E:\FREEWARE\VSOUTLOOKBAR___OUTLOOK_STYLE_SLIDE_BAR_FOR_D5_COMPANION_CD\SETUP.EXE
+Made Dir: C:\VSOutlookbar
+File Copy: C:\VSOutlookbar\UNWISE.EXE
+RegDB Key: Software\Microsoft\Windows\CurrentVersion\Uninstall\VSOutlookBar
+RegDB Val: VSOutlookBar
+RegDB Name: DisplayName
+RegDB Root: 2
+RegDB Key: Software\Microsoft\Windows\CurrentVersion\Uninstall\VSOutlookBar
+RegDB Val: C:\VSOUTL~1\UNWISE.EXE C:\VSOUTL~1\INSTALL.LOG
+RegDB Name: UninstallString
+RegDB Root: 2
+File Copy: C:\VSOutlookbar\VSOutlookBar.dcr
+File Copy: C:\VSOutlookbar\VSObarEdit.pas
+File Copy: C:\VSOutlookbar\VSOLBar50.dpk
+File Copy: C:\VSOutlookbar\VSOLBar50.res
+File Copy: C:\VSOutlookbar\VSOLBarEdit50.dpk
+File Copy: C:\VSOutlookbar\VSOLBarEdit50.res
+File Copy: C:\VSOutlookbar\VSOLButton.pas
+File Copy: C:\VSOutlookbar\VSOLGroup.pas
+File Copy: C:\VSOutlookbar\VSOutlookBar.pas
+File Copy: C:\VSOutlookbar\VSOLBar50.bpl
+File Copy: C:\VSOutlookbar\VSOLBar50.dcp
+File Copy: C:\VSOutlookbar\VSOLBarEdit50.bpl
+File Copy: C:\VSOutlookbar\VSOLBarEdit50.dcp
+RegDB Key: Software\Borland\Delphi\5.0\Known Packages
+RegDB Val: VSOutlookBar Package
+RegDB Name: C:\VSOutlookbar\VSOLBar50.bpl
+RegDB Root: 1
+RegDB Key: Software\Borland\Delphi\5.0\Known Packages
+RegDB Val: VSOutlookBar Component Editor
+RegDB Name: C:\VSOutlookbar\VSOLBarEdit50.bpl
+RegDB Root: 1

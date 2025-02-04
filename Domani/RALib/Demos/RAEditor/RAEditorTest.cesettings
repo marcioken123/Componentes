@@ -1,0 +1,60 @@
+; ***********************************************
+;           ClassExplorer Settings File
+; ***********************************************
+
+; This file is maintained by ClassExplorer
+; All project dependend ClassExplorer
+; settings are saved in this file
+;
+; DO NOT CHANGE THIS FILE MANUALLY!
+
+; General Project Options
+[General]
+
+; Window Settings
+UseProjectExternals=0
+SynchronizeContextBar=1
+SynchronizeContextBarSpeed=1
+SynchronizeContextBarModeIdle=1
+ClassViewActivePage=0
+[Window Settings\ClassView]
+StateSaved=1
+PositionX=1
+PositionY=106
+Width=240
+Height=388
+Visible=0
+Docked=0
+Align=3
+Size=-1
+
+[Window Settings\ContextBar]
+StateSaved=0
+PositionX=-1
+PositionY=-1
+Width=-1
+Visible=0
+Docked=0
+
+[Window Settings\BrowseHistory]
+
+; Files excluded from parsing
+StateSaved=0
+PositionX=-1
+PositionY=-1
+Width=-1
+Height=-1
+Visible=0
+[Exclude From Parsing]
+
+; Browse History
+Count=0
+[Browse History]
+
+; Class Filter Settings
+Count=3
+bh0=TDeleteSelectedUndo.Redo,3,0,5
+bh1=TDeleteSelectedUndo.Undo,3,0,5
+bh2=TRACustomEditor.Command,3,0,5
+[Class Filters]
+Count=0

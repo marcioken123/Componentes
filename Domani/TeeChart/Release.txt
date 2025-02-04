@@ -1,0 +1,18 @@
+ ===========================================
+ TeeChart Pro 6 VCL / CLX version
+
+ Steema Software
+ www.steema.com
+ ===========================================
+
+ For a list of changes, please open the 
+ WhatsNew.htm file located at installation
+ folder under \Docs\Whats New. 
+
+ An updated list of changes and additions is located here:
+
+ http://www.steema.com/support/teechart/6/WhatsNew/WhatsNew.htm
+
+ ===========================================
+ Copyright (c) 1995-2002 by David Berneda.
+ All Rights Reserved.

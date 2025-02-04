@@ -1,0 +1,43 @@
+package GraphicEx_d7;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcljpg,
+  vcl,
+  designide,
+  vclactnband,
+  vclx;
+
+contains
+  GraphicColor in 'GraphicColor.pas',
+  GraphicCompression in 'GraphicCompression.pas',
+  GraphicEx in 'GraphicEx.pas',
+  GraphicStrings in 'GraphicStrings.pas',
+  JPG in 'JPG.pas',
+  MZLib in 'MZLib.pas';
+
+end.

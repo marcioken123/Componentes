@@ -1,0 +1,88 @@
+unit1 pas ..\unit1.pas
+rafddefaultcomponentbitmap BITMAP ..\defaultcomponent.bmp
+#define ResBase $5400
+#define StrBase $5600
+STRINGTABLE
+LANGUAGE LANG_CZECH, 1
+{
+ ResBase +   1, "Soubor '%s' nenalezen"
+ ResBase +   2, "Nebyl vybrán žádný formuláø"
+ ResBase +   3, "Nemohu uložit soubor '%s'"
+ ResBase +   4, "Uložit zmìny do %s ?"
+
+ ResBase +   7, "Nemohu naèíst balíèek %s. Ten je potøebný pro bìh formuláøe"
+ ResBase +   8, "Funkce %s nebyla v balíèku nalezena. Mùže to být špatnou verzí balíèku"
+ ResBase +   9, "Chyba pøi naèítání experta %s: \n%s"
+ ResBase +   10, "Chyba pøi vytváøení formuláøe\n%s"
+ ResBase +   11, "Nemohu zmìnit ini texty dokud AppBuilder je spuštìn"
+ ResBase +   12, "Chyba pøi pøejmenování formuláøe"
+ ResBase +   13, "Chyba pøi pøejmenování jednotky"
+ ResBase +   14, "Chyba pøi pøejmenování metody %s"
+ ResBase +   15, "Nebyla nalezena deklarace formuláøe"
+ ResBase +   16, "Chyba v souboru %s: %s chybí nebo je nesprávná"
+
+ StrBase +   1, "OK"
+ StrBase +   2, "Zrušit"
+
+ StrBase +   50, "Pøesunout dopøedu"
+ StrBase +   51, "Odsunout dozadu"
+
+ StrBase +   100, "&Soubor"
+ StrBase +   101, "Úpr&ava"
+ StrBase +   102, "&Pohled"
+ StrBase +   103, "&Nový"
+ StrBase +   104, "Nový &formuláø"
+ StrBase +   105, "&Otevøít"
+ StrBase +   106, "&Uložit"
+ StrBase +   107, "Uložit &jako"
+ StrBase +   108, "Uložit &vše"
+ StrBase +   109, "&Zavøít"
+ StrBase +   110, "Zavøít vše"
+ StrBase +   111, "&Návrat"
+ StrBase +   112, "&Smazat"
+ StrBase +   113, "Inspektor &objektù"
+ StrBase +   114, "&Zarovnávací paleta"
+ StrBase +   115, "Paleta kompone&nt"
+ StrBase +   116, "&Spustit"
+ StrBase +   117, "Spustit &formuláø"
+ StrBase +   118, "Spustit &náhled reportu"
+ StrBase +   119, "Vymìnit formuláø/jednotku"
+ StrBase +   120, "Otevøít soubor"
+ StrBase +   121, "Uložit vše"
+ StrBase +   122, "Vymìnit formuláø/jednotku"
+ StrBase +   123, "Spustit formuláø"
+ StrBase +   124, "Spustit náhled reportu"
+ StrBase +   125, "&Komponenta"
+ StrBase +   126, "&Seznam oken..."
+ StrBase +   127, "&Hledat"
+ StrBase +   128, "&Projekt"
+ StrBase +   129, "Nás&troje"
+ StrBase +   130, "Zdroj pro&jektu"
+ StrBase +   131, "Nastavení p&rostøedí..."
+ StrBase +   132, "&Nápovìda"
+ StrBase +   133, "&Kopírovat"
+ StrBase +   134, "&Vložit"
+
+ StrBase +   200, "Zarovnat"
+ StrBase +   201, "Zarovnat na levý okraj"
+ StrBase +   202, "Zarovnat na pravý okraj"
+ StrBase +   203, "Zarovnat na horní okraj"
+ StrBase +   204, "Zarovnat na dolní okraj"
+ StrBase +   205, "Horizontálnì vystøedit"
+ StrBase +   206, "V oknì horizontálnì vystøedit"
+ StrBase +   207, "Rovnomìrné horizontální mezery"
+ StrBase +   208, "Vertikálnì vystøedit"
+ StrBase +   209, "V oknì vertikálnì vystøedit"
+ StrBase +   210, "Rovnomìrné vertikální mezery"
+
+ StrBase +   220, "Inspektor objektù"
+ StrBase +   221, "Vlastnosti"
+ StrBase +   222, "Události"
+
+ StrBase +   230, "Editor seznamu textù"
+ StrBase +   231, "Editor kódu..."
+
+ StrBase +   240, "Nové položky"
+ StrBase +   241, "Nový"
+}
+

@@ -1,0 +1,9 @@
+Não foi possível remover todas as pastas da instalação do GrFinger 4.2 pois foram detectados alguns arquivos privados na pasta do programa.
+Erro: Impossível atualizar a variável de ambiente PATH.
+Você deve remover 'C:\Program Files\Griaule\GrFinger 4.2\bin' do seu path para desinstalar o GrFinger 4.2 completamente.
+Erro: Impossível accessar a variável de ambiente PATH.
+Você deve remover 'C:\Program Files\Griaule\GrFinger 4.2\bin' do seu path para desinstalar o GrFinger 4.2 completamente.
+Erro: Impossível atualizar a variável de ambiente CLASSPATH.
+Você deve remover 'C:\Program Files\Griaule\GrFinger 4.2\bin\GrFingerJava.jar' da variável de ambiente CLASSPATH para desinstalar o GrFinger 4.2 completamente.
+Erro: Impossível accessar a variável de ambiente CLASSPATH.
+Você deve remover 'C:\Program Files\Griaule\GrFinger 4.2\bin\GrFingerJava.jar' da variável de ambiente CLASSPATH para desinstalar o GrFinger 4.2 completamente.

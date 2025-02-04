@@ -1,0 +1,123 @@
+R&A Form Designer version same as R&A Library
+=============================================
+
+The run-time form designer.
+100% Source Code.
+
+
+R&A Form Designer (RAFD) is run-time form designer for Delphi
+programs. It can open, create, modifing, save native Delphi
+forms stored in dfm/pas files. Full source code included.
+This RAFD is compatible with Borland Delphi 3 and 4.
+It is now distributing mainly for testing reason due many
+errors and bugs.
+We need feedback!
+Contact with us if you found this project interesting!
+
+R&A Form Designer is part of R&A Library which is a freeware product.
+R&A Form Designer distributed under R&A Library License Agreement.
+
+The authors disclaim all warranties as to this software, whether express
+or implied, including without limitation any implied warranties of
+merchantability or fitness for a particular purpose. Use under your own
+responsibility, but comments (even critique) in English (or in Russian)
+are welcome.
+
+
+1. Designer.
+This is designer for Delphi native form files and units.
+It can be used only as package.
+Designer contains the following parts:
+  - designer for manipulating with forms;
+  - text editor for manipulating with unit sources;
+  - project manager (very simple and not complete);
+  - main window - AppBuilder for open, saving files,...;
+  - component pallete and run-time package loading support
+    for loading new packages without recompiling Form Designer;
+  - object inspector for viewing and changing object properties;
+  - implementation (not all) of Delphi ToolsAPI to make it possible
+    to load native Delphi experts into Form Designer environment.
+
+2. Design Packages.
+Due conflict with Borland Deploy licence we (and you) can't
+distribute Delphi design packages with our applications.
+This packages work fine in RAFD, but...
+So we start to wrote our one design packages for standard Delphi
+components. Those packages placed in RALIB\DPACKS folder.
+Those packages register standard Delphi components and contains
+some property and component editors. The most harded editors
+allready writen. This are Menu Builder, Dataset Designer,
+Collection Editor, TStrings Property Editor and others.
+Not all Delphi editors implemented, so we need your help on this way!
+Contact with as!
+
+3. RAd October demo project.
+This demo project can be found in RALIB\DEMOS\RADOCTOBER\RAdOctober30.dpr
+(RAdOctober40.dpr for Delphi 4) file. It used by us to tests
+R&A Form Designer. This very simple project conatains only
+splash and create in run-time instance of TRAAppBuilder component
+and run it.
+
+4. Demo forms.
+
+
+Compatibility
+-------------
+
+This version of R&A Form Designer is writen and full tested with
+Borland Delphi 3 Client/Server Edition. After that we have ported
+it to Borland Delphi 4 Client/Server Edition with update pack 3 and
+Borland Delphi 5 Enterprise Edition.
+RAFD not compatible with Borland Delphi 2 and Borland C++ Builder 1.
+Also RAFD was not tested with Borland C++ Builder 3 and
+Borland C++ Builder 4.
+
+
+Installation
+------------
+
+
+1. Before installing R&A Form Designer you must install R&A Library
+components as described in RALIB\!README.TXT file.
+
+2. Compiling Designer.
+
+Use "File\Open..." menu item of Delphi IDE to open package
+RALIB\LIB\RAFD30.DPK (RAFD40.DPK for Delphi 4, RAFD50.DPK for Delphi 5).
+In "Package.." window click "Compile" button.
+RAFD package is run-time package only and you don't need install it.
+
+3. Compiling Design Packages.
+
+Use "File\Open..." menu item of Delphi IDE to open consistently RAFD
+design-time packages RALIB\DPACKS\DFDSTD30.DPK and
+RALIB\DPACKS\DFDSTD30.DPK (DFDSTD40.DPK and DFDDB40.DPK for
+Delphi 4, DFDSTD50.DPK and DFDDB50.DPK for Delphi 5). In "Package.." 
+window click "Compile" button.
+
+4. Compiling RAd October demo project.
+Use "File\Open..." menu item of Delphi IDE to open
+RALIB\DEMOS\RADOCTOBER\RAdOctober30.dpr (RAdOctober40.dpr for Delphi 4,
+RAdOctober50.dpr for Delphi 5) file. Use "Project\Complie" command to 
+make project.
+NOTE: RAd October can be compiled only with run-time package support.
+
+5. Running RAd October Demo.
+ - Copy file RALIB\LIB\RAFD30.DPL (RAFD40.BPL for Delphi 4,
+   RAFD50.BPL for Delphi 5) to RAd October exe folder 
+   (RALIB\RAFD by default).
+ - Copy files RALIB\DPACKS\DFDSTD30.DPL and DFDDB30.DPL
+   (DFDSTD40.BPL and DFDDB40.BPL for Delphi 4, DFDSTD50.BPL 
+   and DFDDB50.BPL for Delphi 5) to RAd October exe folder
+   (RALIB\DEMOS\RADOCTOBER by default).
+ - Copy files RALIB\LIB\RACTRL30.DPL and RAI2_30.DPL (RACTRL40.BPL and
+   RAI2_40.BPL for Delphi 4, RACTRL50.BPL and RAI2_50.BPL for Delphi 5)
+   to RAd October exe folder (RALIB\DEMOS\RADOCTOBER by default).
+ - Checkout file RALIB\DEMOS\RADOCTOBER\RAdOctober30.ini
+   (RAdOctober40.ini for Delphi 4, RAdOctober50.ini for Delphi 5), 
+   look at sections "Experts" and "Packages", correct paths to files 
+   in this sections.
+ - SAVE ALL DATA IN CURRENTLY RUNNING APPLICATIONS!
+ - Run RAdOctober30.exe (RAdOctober40.exe for Delphi 4,
+   RAdOctober50.exe for Delphi 5).
+

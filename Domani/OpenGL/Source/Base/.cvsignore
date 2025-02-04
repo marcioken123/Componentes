@@ -1,0 +1,9 @@
+*.dcu*
+*.~pas
+*.bk1
+*.bk2
+*.dpu
+*.cfg
+*.ppu
+*.rst
+*.s

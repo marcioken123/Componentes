@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2005/05/30 22:05:06.729.pas,D:\Projetos\BlitzVoIP2005\AdExcept.pas=D:\Projetos\BlitzVoIP2005\BVExcept.pas</Transaction>
+    <Transaction>2005/05/30 22:05:27.179.pas,D:\Projetos\BlitzVoIP2005\AdITapi3.pas=D:\Projetos\BlitzVoIP2005\BVITapi3.pas</Transaction>
+    <Transaction>2005/05/30 22:05:50.713.pas,D:\Projetos\BlitzVoIP2005\AdStrMap.pas=D:\Projetos\BlitzVoIP2005\BVStrMap.pas</Transaction>
+    <Transaction>2005/05/30 22:06:05.614.pas,D:\Projetos\BlitzVoIP2005\AdVoIP.pas=D:\Projetos\BlitzVoIP2005\BVoIP.pas</Transaction>
+    <Transaction>2005/05/30 22:06:17.171.pas,D:\Projetos\BlitzVoIP2005\AdVoipEd.pas=D:\Projetos\BlitzVoIP2005\BVoipEd.pas</Transaction>
+    <Transaction>2005/05/30 22:06:17.171.dfm,D:\Projetos\BlitzVoIP2005\AdVoipEd.dfm=D:\Projetos\BlitzVoIP2005\BVoipEd.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,56 @@
+==================================================
+   Welcome to TeeChart Pro 6  !
+
+   Steema Software SL
+   www.steema.com
+==================================================
+
+ INSTALL.TXT   
+
+  File contains installation information.
+
+
+ WHATS NEW.HTM 
+
+  Summarises changes since TeeChart v5. 
+
+  Please see Tee6New.exe (in TeeChart's program 
+  manager group) for a live summary.
+	
+
+ LICENSE.TXT   
+
+  File contains License and Disclaimer issues.
+
+
+ The Docs folder contains:
+ -------------------------
+
+ TeeChart6.hlp: Component Library reference
+
+ TeeChart6Guide.hlp: User guide
+
+ TeeUser6.hlp: Runtime Editor help (source included)
+
+ Tutorials: HTML format tutorials
+
+
+ The Demo project located in the Examples folder (Tee6New),
+ includes about 310 forms exploring full TeeChart capabilities.
+
+ The QuickReport folder includes the source code of
+ the "TQRChart" component.  
+ With these sources you can re-compile TeeChart for any 
+ QuickReport version.
+ See the "QuickReport\Install.txt" file for complete details.
+
+ Keep visiting our web site and the private sections for
+ upgrades, new announcements, examples, technical information and
+ Frequently Asked Questions.
+
+ Thank You Very Much for TeeCharting !
+
+ Steema Software
+ www.steema.com
+ Copyright (c) 1995-2002 by David Berneda. All Rights Reserved.
+ ----------------------------------------------------------------

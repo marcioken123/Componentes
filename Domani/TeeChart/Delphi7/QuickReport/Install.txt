@@ -1,0 +1,115 @@
+Steema Software SL
+TeeChart Pro v5 VCL
+---------------------
+
+Installing QuickReport TQRChart source code.
+============================================
+
+Depending on which QuickReport version you have
+installed on your machine, you might need to 
+manually recompile a small package for the QRChart
+component to use the same QuickReport version you have.
+
+This allows you to install TeeChart Pro with any
+past or future QuickReport version with few efforts.
+
+
+Recompilation is easy.
+----------------------
+
+Warning: 
+
+ Check first you have QuickReport installed !
+
+ Visit QuickReport web site at www.qusoft.no for
+ upgrades.
+
+ If you have an old TeeChart or TeeChart Pro version, 
+ recompilation will fail.  
+
+ Install first the TeeChart Pro v5 packages !
+  
+ If you are not a Steema customer, download the
+ "Free Upgrade Trial" version of TeeChart Pro 5 VCL from
+ our web site.
+
+ This upgrade can be found at the "VCL" page, clicking
+ on "Trial version Download" link.
+
+
+Installation Steps:
+====================
+
+1) Delete TeeQR.dcp, QRTee.dcu, TeeQRTeeReg.dcu and DCLTQR.dcp files 
+   from the Delphi 7\Lib folder. (If they exist).
+
+2) Open Delphi 7.
+
+3) Go to the "Component->Install packages" and remove the DclTQR70.bpl 
+   package from the list (the "Remove" button).
+
+4) Next, close all projects. Then go to the "File->Open project" menu
+   and pick the the TeeQR57.dpk package.
+
+5) Now click the "Compile" button. The package should compile fine. 
+   If you receive errors, see "TroubleShooting" below.
+
+6) Open ("File->Open project" menu) the DclTQR57.dpk package.
+
+7) Now click the "Compile" button. The package should compile fine. 
+   If you receive errors, see "TroubleShooting" below.
+
+8) Copy the compiled packages 
+   (most probably they were compiled to Delphi 7\Projects\BPL folder):
+
+    - TeeQR57.bpl  to Windows\System (or WinNT\System32).
+    - DclTQR57.bpl to Delphi 7\Bin.
+    - TeeQR57.dcp  to Delphi 7\Lib.
+    - DclTQR57.dcp to Delphi 7\Lib.
+
+    - TeeQR57.dcu, TeeQRTeeReg.dcu and DCLTQR57.dcu to \Delphi 7\Lib.
+
+9) Go to the "Component->Install packages" press the "Add" button and 
+   pick the DclTQR57.bpl package (located in Delphi 7\Bin directory,
+   if you followed previous steps).
+ 
+   This should install the QRChart component at QReport component palette.
+
+10) Remember to check the "Project->Options->Packages" dialog. 
+    The new package name should be listed at the bottom edit-box.
+
+11) IMPORTANT: 
+
+    Don't forget to copy all newly recompiled *.dcu files 
+    (from the directory where you keep the files TeeQR.dpk and DclTQR.dpk) 
+    to Delphi 7\Lib directory.
+
+
+
+---------------------------------------------------------------
+
+TroubleShooting:
+----------------
+
+  Most common causes for installation problems are:
+
+   -missing files 
+
+     When Delphi or C++ Builder compile this package, they try
+     to find the TeeChart Pro 5 and QuickReport units, either
+     in source code (*.pas) or compiled (*.dcu) format.
+
+     Check you have the correct paths to all units at 
+     "Environment -> Options" dialogs.
+
+   -wrong files
+
+     If you have the original TeeChart Standard version included
+     free in Delphi 7,6,5,4,3 or C++ Builder 6,5,4,3, installation 
+     can fail because the original compiled units have preference over
+     the new ones.
+
+     Check for existing TeeChart units at \Lib folder and replace
+     them with the new ones. 
+
+-----------------------------------------------------------------    

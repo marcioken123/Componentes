@@ -1,0 +1,33 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = ACBrMonitor.exe ACBrComum_d7k3cv.bpl ACBr_d7k3c.bpl ACBr_d7v.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+
+ACBrMonitor.exe: Monitor\CLX\ACBrMonitor.dpr
+  $(DCC)
+
+ACBrComum_d7k3cv.bpl: Pascal\ACBrComum_d7k3cv.dpk
+  $(DCC)
+
+ACBr_d7v.bpl: Pascal\ACBr_d7v.dpk
+  $(DCC)
+
+ACBr_d7k3c.bpl: Pascal\ACBr_d7k3c.dpk
+  $(DCC)
+
+ACBr_d7v.bpl: Pascal\ACBr_d7v.dpk
+  $(DCC)
+
+
