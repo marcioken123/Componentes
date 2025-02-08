@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{993E812B-7BCD-4DB0-A610-7A3CC04BE1BA}</ProjectGuid>
+    <ProjectType>CppPackage</ProjectType>
+    <MainSource>lmdrttoolsdb.cpp</MainSource>
+    <Config Condition="'$(Config)'==''">build</Config>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+    <Base>true</Base>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Config)'=='build' or '$(Cfg_1)'!=''">
+    <Base>true</Base>
+    <Cfg_1>true</Cfg_1>
+    <CfgParent>Base</CfgParent>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Base)'!=''">
+    <BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
+    <OutputExt>bpl</OutputExt>
+    <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
+    <DynamicRTL>true</DynamicRTL>
+    <ILINK_GenerateLibFile>true</ILINK_GenerateLibFile>
+    <ILINK_AppType>Windows</ILINK_AppType>
+    <ILINK_GenerateImportLibrary>true</ILINK_GenerateImportLibrary>
+    <DCC_DebugInformation>false</DCC_DebugInformation>
+    <UsePackages>true</UsePackages>
+    <BCC_ZeroLengthEmptyMemberFuncs>true</BCC_ZeroLengthEmptyMemberFuncs>
+    <DCC_MakeModifiedUnits>true</DCC_MakeModifiedUnits>
+    <FinalOutputDir>.</FinalOutputDir>
+    <TASM_AdditionalSwitches> /w2</TASM_AdditionalSwitches>
+    <PackageImports>lmdrtl.bpi;rtl.bpi;vcl.bpi;vclx.bpi;dbrtl.bpi;vcldb.bpi;lmdrtrtlx.bpi;lmdrtcore.bpi;lmdrttools.bpi</PackageImports>
+    <DCC_UnitSearchPath>.\;$(BDS)\lib;$(BDS)\lib\obj</DCC_UnitSearchPath>
+    <ILINK_Description>LMD-Tools Main Database Components</ILINK_Description>
+    <BCC_GenerateMultithreaded>true</BCC_GenerateMultithreaded>
+    <ILINK_WinAppType>Package</ILINK_WinAppType>
+    <BRCC_UserSuppliedOptions> -I$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware</BRCC_UserSuppliedOptions>
+    <BCC_PCHCache>true</BCC_PCHCache>
+    
+    <BCC_IntegerSizedEnums>false</BCC_IntegerSizedEnums>
+    <BCC_IncludePath>$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware</BCC_IncludePath>
+    <TASM_IncludePath>$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware</TASM_IncludePath>
+    <AllPackageLibs>rtl.lib</AllPackageLibs>
+    <BRCC_IncludePath>$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware</BRCC_IncludePath>
+    <DCC_IncludePath>.\;$(BDS)\lib;$(BDS)\lib\obj</DCC_IncludePath>
+    <BCC_ZeroLengthEmptyBaseClass>true</BCC_ZeroLengthEmptyBaseClass>
+    <ILINK_LibraryPath>$(BDS)\lib\obj;$(BDS)\lib</ILINK_LibraryPath>
+    <BCC_Defines>NO_STRICT</BCC_Defines>
+    <BRCC_Defines>_RTLDLL;NO_STRICT;USEPACKAGES</BRCC_Defines>
+    <TASM_Defines>_RTLDLL;NO_STRICT;USEPACKAGES</TASM_Defines>
+    <Multithreaded>true</Multithreaded>
+    <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+    <TASM_Debugging>None</TASM_Debugging>
+    <ILINK_PackageType>Runtime</ILINK_PackageType>
+    <DCC_SymbolReferenceInfo>2</DCC_SymbolReferenceInfo>
+    <ILINK_AdditionalOptions></ILINK_AdditionalOptions>
+    <IntermediateOutputDir>..\..\build</IntermediateOutputDir>
+    <DCC_HppOutput>..\..\build</DCC_HppOutput>
+    <DCC_DcuOutput>..\..\build</DCC_DcuOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Cfg_1)'!=''">
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>CPlusPlusBuilder.Personality</Borland.Personality>
+    <Borland.ProjectType>CppPackage</Borland.ProjectType>
+    <BorlandProject>
+<BorlandProject> <CPlusPlusBuilder.Personality>   <VersionInfoKeys>
+      <VersionInfoKeys Name="CompanyName">LMD Innovative</VersionInfoKeys>
+      <VersionInfoKeys Name="FileDescription">LMD-Tools Main Database Components</VersionInfoKeys>
+      <VersionInfoKeys Name="FileVersion">2016.5</VersionInfoKeys>
+      <VersionInfoKeys Name="InternalName"></VersionInfoKeys>
+      <VersionInfoKeys Name="LegalCopyright">LMD Innovative</VersionInfoKeys>
+      <VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys>
+      <VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys>
+      <VersionInfoKeys Name="ProductName">LMD-Tools Main Database Components</VersionInfoKeys>
+      <VersionInfoKeys Name="ProductVersion">2016.5</VersionInfoKeys>
+      <VersionInfoKeys Name="Comments"></VersionInfoKeys>
+    </VersionInfoKeys>
+    <Debugging>
+      <Debugging Name="DebugSourceDirs">$(BCB)\source\vcl</Debugging>
+    </Debugging>
+    <Parameters>
+      <Parameters Name="RunParams"></Parameters>
+      <Parameters Name="Launcher"></Parameters>
+      <Parameters Name="UseLauncher">False</Parameters>
+      <Parameters Name="DebugCWD"></Parameters>
+      <Parameters Name="HostApplication"></Parameters>
+      <Parameters Name="RemoteHost"></Parameters>
+      <Parameters Name="RemotePath"></Parameters>
+      <Parameters Name="RemoteLauncher"></Parameters>
+      <Parameters Name="RemoteCWD"></Parameters>
+      <Parameters Name="RemoteDebug">False</Parameters>
+      <Parameters Name="RemoteParams"></Parameters>
+      <Parameters Name="UseRemoteLauncher">False</Parameters>
+      <Parameters Name="Debug Symbols Search Path"></Parameters>
+      <Parameters Name="LoadAllSymbols">True</Parameters>
+      <Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+    </Parameters>
+    <Compiler>
+      <Compiler Name="ShowInfoMsgs">0</Compiler>
+      <Compiler Name="LinkDebugVcl">0</Compiler>
+      <Compiler Name="LinkCGLIB">0</Compiler>
+    </Compiler>
+    <Source>
+      <Source Name="MainSource">lmdrttoolsdb.cpp</Source>
+    </Source>
+    <VersionInfo>
+      <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+      <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+      <VersionInfo Name="MajorVer">1</VersionInfo>
+      <VersionInfo Name="MinorVer">0</VersionInfo>
+      <VersionInfo Name="Release">0</VersionInfo>
+      <VersionInfo Name="Build">0</VersionInfo>
+      <VersionInfo Name="Debug">False</VersionInfo>
+      <VersionInfo Name="PreRelease">False</VersionInfo>
+      <VersionInfo Name="Special">False</VersionInfo>
+      <VersionInfo Name="Private">False</VersionInfo>
+      <VersionInfo Name="DLL">False</VersionInfo>
+      <VersionInfo Name="Locale">1049</VersionInfo>
+      <VersionInfo Name="CodePage">1251</VersionInfo>
+    </VersionInfo>
+    <Linker>
+      <Linker Name="LibPrefix"></Linker>
+      <Linker Name="LibSuffix"></Linker>
+      <Linker Name="LibVersion"></Linker>
+    </Linker>
+    <ProjectProperties>
+      <ProjectProperties Name="AutoShowDeps">False</ProjectProperties>
+      <ProjectProperties Name="ManagePaths">True</ProjectProperties>
+      <ProjectProperties Name="VerifyPackages">True</ProjectProperties>
+    </ProjectProperties>
+  </CPlusPlusBuilder.Personality> </BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildBinPath)\Borland.Cpp.Targets" />
+  <ItemGroup>
+    <BuildConfiguration Include="build">
+      <Key>Cfg_1</Key>
+    </BuildConfiguration>
+    <CppCompile Include="lmdrttoolsdb.cpp" />
+    <ResFiles Include="lmdrttoolsdb.res" />
+    <PackageImport Include="lmdrtl.bpi" />
+      <PackageImport Include="rtl.bpi" />
+      <PackageImport Include="vcl.bpi" />
+      <PackageImport Include="vclx.bpi" />
+      <PackageImport Include="dbrtl.bpi" />
+      <PackageImport Include="vcldb.bpi" />
+      <PackageImport Include="lmdrtrtlx.bpi" />
+      <PackageImport Include="lmdrtcore.bpi" />
+      <PackageImport Include="lmdrttools.bpi" />
+      <DelphiCompile Include="..\..\LMDDBBase.pas" />
+      <DelphiCompile Include="..\..\LMDBookmarkCont.pas" />
+      <DelphiCompile Include="..\..\LMDBookmarkList.pas" />
+      <DelphiCompile Include="..\..\LMDCSV2DBImport.pas" />
+      <DelphiCompile Include="..\..\LMDCSVImport.pas" />
+      <DelphiCompile Include="..\..\LMDDBBtn.pas" />
+      <DelphiCompile Include="..\..\LMDDBCal.pas" />
+      <DelphiCompile Include="..\..\LMDDBCalculatorComboBox.pas" />
+      <DelphiCompile Include="..\..\LMDDBCalendarComboBox.pas" />
+      <DelphiCompile Include="..\..\LMDDBCheckBox.pas" />
+      <DelphiCompile Include="..\..\LMDDBCheckGroup.pas" />
+      <DelphiCompile Include="..\..\LMDDBColorCombobox.pas" />
+      <DelphiCompile Include="..\..\LMDDBConst.pas" />
+      <DelphiCompile Include="..\..\LMDDBEdit.pas" />
+      <DelphiCompile Include="..\..\LMDDBEditDBLookup.pas" />
+      <DelphiCompile Include="..\..\LMDDBExport.pas" />
+      <DelphiCompile Include="..\..\LMDDBExtSpinEdit.pas" />
+      <DelphiCompile Include="..\..\LMDDBFieldComboBox.pas" />
+      <DelphiCompile Include="..\..\LMDDBGlyphInfoLabel.pas" />
+      <DelphiCompile Include="..\..\LMDDBGraphicLabel.pas" />
+      <DelphiCompile Include="..\..\LMDDBImageComboBox.pas" />
+      <DelphiCompile Include="..\..\LMDDBImageListBox.pas" />
+      <DelphiCompile Include="..\..\LMDDBInformationLabel.pas" />
+      <DelphiCompile Include="..\..\LMDDBLabel.pas" />
+      <DelphiCompile Include="..\..\LMDDBHTMLLabel.pas" />
+      <DelphiCompile Include="..\..\LMDDBLabelFill.pas" />
+      <DelphiCompile Include="..\..\LMDDBLEDLabel.pas" />
+      <DelphiCompile Include="..\..\LMDDBLight.pas" />
+      <DelphiCompile Include="..\..\LMDDBListComboBox.pas" />
+      <DelphiCompile Include="..\..\LMDDBLookupCtrls.pas" />
+      <DelphiCompile Include="..\..\LMDDBMaskEdit.pas" />
+      <DelphiCompile Include="..\..\LMDDBMemo.pas" />
+      <DelphiCompile Include="..\..\LMDDBNImage.pas" />
+      <DelphiCompile Include="..\..\LMDDBProgress.pas" />
+      <DelphiCompile Include="..\..\LMDDBProgressFill.pas" />
+      <DelphiCompile Include="..\..\LMDDBRadioButton.pas" />
+      <DelphiCompile Include="..\..\LMDDBRadioGroup.pas" />
+      <DelphiCompile Include="..\..\LMDDBRestoreGrid.pas" />
+      <DelphiCompile Include="..\..\LMDDBShapeControl.pas" />
+      <DelphiCompile Include="..\..\LMDDBSimpleLabel.pas" />
+      <DelphiCompile Include="..\..\LMDDBSpeedButton.pas" />
+      <DelphiCompile Include="..\..\LMDDBSpinEdit.pas" />
+      <DelphiCompile Include="..\..\LMDDBSwitch.pas" />
+      <DelphiCompile Include="..\..\LMDDBTrackBar.pas" />
+      <DelphiCompile Include="..\..\LMDDBTreeComboBox.pas" />
+      <DelphiCompile Include="..\..\LMDEditDBLookup.pas" />
+      <DelphiCompile Include="..\..\LMDImport.pas" />
+  </ItemGroup>
+</Project>

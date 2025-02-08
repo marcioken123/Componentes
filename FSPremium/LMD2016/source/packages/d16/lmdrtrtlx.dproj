@@ -1,0 +1,247 @@
+	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{454D45CC-CCF9-4536-B8A7-EAD390C5754C}</ProjectGuid>
+			<FrameworkType>VCL</FrameworkType>
+			<MainSource>lmdrtrtlx.dpk</MainSource>
+			<ProjectVersion>13.4</ProjectVersion>
+			<Base>True</Base>
+			<Config Condition="'$(Config)'==''">build</Config>
+			<Platform Condition="'$(Platform)'==''">Win32</Platform>
+			<AppType>Package</AppType>
+			<DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+                        <TargetedPlatforms>3</TargetedPlatforms>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+			<Base_Win64>true</Base_Win64>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+			<Base_Win32>true</Base_Win32>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+                <PropertyGroup Condition="'$(Config)'=='build' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win64)'!=''">
+			<Cfg_1_Win64>true</Cfg_1_Win64>
+			<CfgParent>Cfg_1</CfgParent>
+			<Cfg_1>true</Cfg_1>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+			<Cfg_1_Win32>true</Cfg_1_Win32>
+			<CfgParent>Cfg_1</CfgParent>
+			<Cfg_1>true</Cfg_1>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<DCC_HppOutput>..\..</DCC_HppOutput>
+			<RuntimeOnlyPackage>true</RuntimeOnlyPackage>
+			<DesignOnlyPackage>false</DesignOnlyPackage>
+			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+			<VerInfo_Keys>CompanyName=LMD Innovative;FileDescription=LMD Extended Runtime Library;FileVersion=2016.5.0;InternalName=;LegalCopyright=Copyright (c) LMD Innovative;LegalTrademarks=;OriginalFilename=;ProductName=LMD VCL Series;ProductVersion=2016.5.0;Comments=</VerInfo_Keys>
+			<VerInfo_Locale>1033</VerInfo_Locale>
+			<DCC_Namespace>Winapi;System;System.Win;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
+			<DCC_CBuilderOutput>All</DCC_CBuilderOutput>
+			<GenPackage>true</GenPackage>
+			<GenDll>true</GenDll>
+			<DllSuffix>160</DllSuffix>
+			<DCC_Description>LMD Extended Runtime Library</DCC_Description>
+			<DCC_DcuOutput>..\..\build\$(Platform)</DCC_DcuOutput>
+			<DCC_ExeOutput>..\..\build\$(Platform)</DCC_ExeOutput>
+			<DCC_E>false</DCC_E>
+			<DCC_N>false</DCC_N>
+			<DCC_S>false</DCC_S>
+			<DCC_F>false</DCC_F>
+			<DCC_K>false</DCC_K>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base_Win64)'!=''">
+			<Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base_Win32)'!=''">
+			<Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+		</PropertyGroup>
+		<ItemGroup>
+			<DelphiCompile Include="lmdrtrtlx.dpk">
+				<MainSource>MainSource</MainSource>
+			</DelphiCompile>
+			<DCCReference Include="lmdrtl.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="rtl.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="vcl.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="vclx.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+			<DCCReference Include="..\..\intfLMDBackGround.pas" />
+    <DCCReference Include="..\..\intfLMDControlPosSize.pas" />
+    <DCCReference Include="..\..\intfLMDFaceController.pas" />
+    <DCCReference Include="..\..\intfLMDFaceControllerEditable.pas" />
+    <DCCReference Include="..\..\intfLMDFaceControllerPressable.pas" />
+    <DCCReference Include="..\..\intfLMDFileDialog.pas" />
+    <DCCReference Include="..\..\LMDActnList.pas" />
+    <DCCReference Include="..\..\LMDStdActns.pas" />
+    <DCCReference Include="..\..\LMDApplicationCtrl.pas" />
+    <DCCReference Include="..\..\LMD3DCaption.pas" />
+    <DCCReference Include="..\..\LMDAlphaObject.pas" />
+    <DCCReference Include="..\..\LMDBaseControl.pas" />
+    <DCCReference Include="..\..\LMDBaseController.pas" />
+    <DCCReference Include="..\..\LMDBaseGraphicControl.pas" />
+    <DCCReference Include="..\..\LMDBaseLabel.pas" />
+    <DCCReference Include="..\..\LMDBaseMRUList.pas" />
+    <DCCReference Include="..\..\LMDBevel.pas" />
+    <DCCReference Include="..\..\LMDBitmapEffectObject.pas" />
+    <DCCReference Include="..\..\LMDBitmapList.pas" />
+    <DCCReference Include="..\..\LMDBmp.pas" />
+    <DCCReference Include="..\..\LMDBrowseDlg.pas" />
+    <DCCReference Include="..\..\LMDButtonBase.pas" />
+    <DCCReference Include="..\..\LMDButtonLayout.pas" />
+    <DCCReference Include="..\..\LMDCabSupport.pas" />
+    <DCCReference Include="..\..\LMDCFCSettingObject.pas" />
+    <DCCReference Include="..\..\LMDCFCStateObject.pas" />
+    <DCCReference Include="..\..\LMDCompareValidator.pas" />
+    <DCCReference Include="..\..\LMDCont.pas" />
+    <DCCReference Include="..\..\LMDContainerComponent.pas" />
+    <DCCReference Include="..\..\LMDControl.pas" />
+    <DCCReference Include="..\..\LMDControlErrorProvider.pas" />
+    <DCCReference Include="..\..\LMDConversion.pas" />
+    <DCCReference Include="..\..\LMDCustomContainer.pas" />
+    <DCCReference Include="..\..\LMDCustomControl.pas" />
+    <DCCReference Include="..\..\LMDCustomImageList.pas" />
+    <DCCReference Include="..\..\LMDCustomStatusBar.pas" />
+    <DCCReference Include="..\..\LMDCustomPanel.pas" />
+    <DCCReference Include="..\..\LMDCustomBevelPanel.pas" />
+    <DCCReference Include="..\..\LMDDateTimeRangeValidator.pas" />
+    <DCCReference Include="..\..\LMDDwmAPI.pas" />
+    <DCCReference Include="..\..\LMDErrorProvider.pas" />
+    <DCCReference Include="..\..\LMDErrorProvidersGroup.pas" />
+    <DCCReference Include="..\..\LMDExtDialogs.pas" />
+    <DCCReference Include="..\..\LMDFaceController.pas" />
+    <DCCReference Include="..\..\LMDFigures.pas" />
+    <DCCReference Include="..\..\LMDFillers.pas" />
+    <DCCReference Include="..\..\LMDFormPersistent.pas" />
+    <DCCReference Include="..\..\LMDForms.pas" />
+    <DCCReference Include="..\..\LMDFillObject.pas" />
+    <DCCReference Include="..\..\LMDFloatRangeValidator.pas" />
+    <DCCReference Include="..\..\LMDFMDrop.pas" />
+    <DCCReference Include="..\..\LMDFormVista.pas" />
+    <DCCReference Include="..\..\LMDFXCaption.pas" />
+    <DCCReference Include="..\..\LMDGenericList.pas" />
+    <DCCReference Include="..\..\LMDGlyph.pas" />
+    <DCCReference Include="..\..\LMDGlyphTextLayout.pas" />
+    <DCCReference Include="..\..\LMDGradient.pas" />
+    <DCCReference Include="..\..\LMDGradientFrames.pas" />
+    <DCCReference Include="..\..\LMDGraph.pas" />
+    <DCCReference Include="..\..\LMDGraphUtils.pas" />
+    <DCCReference Include="..\..\LMDGraphicList.pas" />
+    <DCCReference Include="..\..\LMDHTMLUnit.pas" />
+    <DCCReference Include="..\..\LMDHookComponent.pas" />
+    <DCCReference Include="..\..\LMDIconErrorProvider.pas" />
+    <DCCReference Include="..\..\LMDInPlaceErrorProvider.pas" />
+    <DCCReference Include="..\..\LMDImageList.pas" />
+    <DCCReference Include="..\..\LMDImageListConnector.pas" />
+    <DCCReference Include="..\..\LMDInteropServices.pas" />
+    <DCCReference Include="..\..\LMDIntRangeValidator.pas" />
+    <DCCReference Include="..\..\LMDMessageBoxErrorProvider.pas" />
+    <DCCReference Include="..\..\LMDNativeHint.pas" />
+    <DCCReference Include="..\..\LMDPNGImage.pas" />
+    <DCCReference Include="..\..\LMDPNGImageFilters.pas" />
+    <DCCReference Include="..\..\LMDPNGImageList.pas" />
+    <DCCReference Include="..\..\LMDRangeValidator.pas" />
+    <DCCReference Include="..\..\LMDRegExpValidator.pas" />
+    <DCCReference Include="..\..\LMDRequiredFieldValidator.pas" />
+    <DCCReference Include="..\..\LMDRTLXConst.pas" />
+    <DCCReference Include="..\..\LMDShapeFill.pas" />
+    <DCCReference Include="..\..\LMDStreamUtils.pas" />
+    <DCCReference Include="..\..\LMDStringList.pas" />
+    <DCCReference Include="..\..\LMDStringRangeValidator.pas" />
+    <DCCReference Include="..\..\LMDStyleMan.pas" />
+    <DCCReference Include="..\..\LMDWave.pas" />
+    <DCCReference Include="..\..\LMDWaveList.pas" />
+    <DCCReference Include="..\..\LMDVistaDialogs.pas" />
+    <DCCReference Include="..\..\LMDTaskDialog.pas" />
+    <DCCReference Include="..\..\LMDTaskDialogTemplate.pas" />
+    <DCCReference Include="..\..\LMDTaskDialogButtonDsgn.pas" />
+    <DCCReference Include="..\..\LMDTaskDialogDsgn.pas" />
+    <DCCReference Include="..\..\LMDTaskDlg.pas" />
+    <DCCReference Include="..\..\LMDThemes.pas" />
+    <DCCReference Include="..\..\LMDUnicodeCtrls.pas" />
+    <DCCReference Include="..\..\LMDUnicodeDialogs.pas" />
+    <DCCReference Include="..\..\LMDVldBase.pas" />
+    <DCCReference Include="..\..\LMDWndProcComponent.pas" />
+    <DCCReference Include="..\..\LMDUsp10.pas" />
+    <DCCReference Include="..\..\LMDDropdownForm.pas" />
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Delphi.Personality.12</Borland.Personality>
+			<Borland.ProjectType>Package</Borland.ProjectType>
+			<BorlandProject>
+				<Delphi.Personality>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1049</VersionInfo>
+						<VersionInfo Name="CodePage">1251</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+                                                <VersionInfoKeys Name="CompanyName">LMD Innovative</VersionInfoKeys>
+						<VersionInfoKeys Name="FileDescription">LMD Extended Runtime Library</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">2016.5.0</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright">Copyright (c) LMD Innovative</VersionInfoKeys>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName">LMD 2009 VCL Series</VersionInfoKeys>
+						<VersionInfoKeys Name="ProductVersion">2016.5.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<Source>
+						<Source Name="MainSource">lmdrtrtlx.dpk</Source>
+					</Source>
+					<Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\bcboffice2k160.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\bcbofficexp160.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclofficexp160.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+					</Excluded_Packages>
+				</Delphi.Personality>
+				<Deployment/>
+				<Platforms>
+					<Platform value="Win64">True</Platform>
+					<Platform value="OSX32">False</Platform>
+					<Platform value="Win32">True</Platform>
+				</Platforms>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')" Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+		<Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+	</Project>

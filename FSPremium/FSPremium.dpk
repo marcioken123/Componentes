@@ -1,0 +1,50 @@
+package FSPremium;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'FSPremium'}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  vcl,
+  dbrtl,
+  vcldb,
+  bdertl,
+  qrpt,
+  VclSmp,
+  RxCtl7;
+
+contains
+  Abcexctl in 'Abcexctl.pas',
+  Abcfx in 'Abcfx.pas',
+  vgCtrls in 'vgCtrls.pas',
+  OvalBtn in '..\..\..\Compo2021\ovalbtn\OvalBtn.pas',
+  Abcsplit in 'Abcsplit.pas',
+  Abcpanel in 'Abcpanel.pas',
+  FSRegistroXY in 'FSRegistroXY.pas',
+  vgRxDBCt in 'vgRxDBCt.pas',
+  DBarcode in 'DBarcode.pas',
+  BarCodeFS in 'BarCodeFS.pas';
+
+end.

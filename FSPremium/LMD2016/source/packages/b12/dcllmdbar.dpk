@@ -1,0 +1,48 @@
+package dcllmdbar;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$LIBSUFFIX '120'}
+{$DESCRIPTION 'LMD 2016 - LMD-Tools BarPack Components'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  lmdrtl,
+  dcllmdrtl,
+  rtl,
+  vcl,
+  vclx,
+  designide,
+  dclstd,
+  dcllmdrtlx,
+  lmdrtbar;
+
+contains
+  LMD_RegBar in '..\..\LMD_RegBar.pas',
+  pLMDSectionBarEditorDlg in '..\..\pLMDSectionBarEditorDlg.pas' {LMDfrmSectionBarEditorDlg},
+  pLMDBarCE in '..\..\pLMDBarCE.pas',
+  pLMDBarSelectIMLDlg in '..\..\pLMDBarSelectIMLDlg.pas' {LMDfrmBarSelectIMLDlg},
+  pLMDBarPE in '..\..\pLMDBarPE.pas';
+
+end.

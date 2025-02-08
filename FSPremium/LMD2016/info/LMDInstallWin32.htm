@@ -1,0 +1,1045 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<meta http-equiv="Content-Language" content="en-us">
+<TITLE>LMD VCL - Installation (Win32)</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+</HEAD>
+<BODY>
+<STYLE>BODY {
+	FONT-SIZE: 70%; BACKGROUND: #ffffff; FONT-FAMILY: Verdana, Arial, Helvetica, MS Sans Serif
+}
+A:link {
+	COLOR: #0000ff; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #0000ff; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #ff0000; TEXT-DECORATION: underline
+}
+TABLE {
+	FONT-SIZE: 100%
+}
+HR {
+	WIDTH: 25%; COLOR: red; TEXT-ALIGN: left
+}
+.auto-style1 {
+	font-size: x-small;
+}
+</STYLE>
+<p>
+<FONT face=verdana size=+2><a name="Top"></a>LMD 2016 VCL - Installation 
+(Win32)<br>
+</FONT>
+<FONT size=-2>
+
+(© by LMD Innovative, (<A href="http://www.lmd.de/">http://www.lmd.de</A>
+ or <A href="http://www.lmdinnovative.com/">http://www.lmdinnovative.com</A>)</font></p>
+<HR>
+
+<p>
+<FONT color=#000080 size="1"><a href="_readme.htm">[Main]</a></FONT><br>
+<font size="2" face="Verdana"><br>
+<a href="#PackageNaming">Package naming conventions</a><br>
+<a href="#PackageOverview">Packages Overview</a><br>
+<span lang="de"><a href="#Source">Source Installation</a></span><br>
+<a href="#ERSX3">Delphi / C++ Builder XE3</a> <br>
+<a href="#ERSX2">Delphi / C++ Builder XE2</a> <br>
+<a href="#ERS2016">Delphi / C++ Builder XE</a> <br>
+<a href="#ERS2010">Delphi / C++ Builder 2010</a> <br>
+<a href="#CRS2009">Delphi / C++ Builder 2009</a> <br>
+<a href="#CRS2007">Delphi / C++ Builder 2007 </a><br>
+<a href="#BDS2006">Delphi / C++ Builder 2006</a><br>
+<a href="#Delphi9">Delphi 2005 </a><br>
+<a href="#Delphi 7">Delphi 7</a></font><br>
+<font size="2" face="Verdana"><a href="#Delphi6">Delphi / C++ Builder 6</a><br>
+<a href="#Uninstalling">Uninstalling LMD-Tools</a><br>
+</font><br>
+&nbsp;</p>
+<p>
+<font face="Verdana" size="3"><b><a name="PackageNaming"></a>Package naming 
+conventions</b></font><font face="Verdana" size="2"><br>
+If you did not choose automatic DPL/BPL installation, you have to install the 
+packages manually. This section describes naming conventions for LMD&nbsp;Package files:&nbsp;<br>
+<br>
+<i>Runtime</i> package names are constructed as follows: lmdrt[NAME][DB]XX<br>
+<br>
+[Name] is identifier for package name, e.g. lmdsys for LMD SysPack.<br>
+[DB] is added for database sensitive package, e.g. lmdrtdbrt160.bpl.<br>
+<br>
+<i>Designtime</i> package names are constructed as follows: dcllmd[NAME][DB]XX<br>
+[Name] is identifier for package name, e.g. dcllmdsys160.bpl for LMD SysPack.<br>
+[DB] is added for database sensitive package, e.g. dcllmdeldb160.bpl.</font></p>
+
+<P>
+<font face="Verdana" size="2">XX in package names represents the supported VCL 
+version. Value range starts from <b>60</b> (Delphi 6). Following 
+values are possible:</font><table border="0" width="48%">
+	<tr>
+		<td width="92"><font face="Verdana" size="2"><b>60, 70, 90: </b></font></td>
+		<td><font face="Verdana" size="2">Delphi/C++Builder 6, Delphi<b> </b>7 and 2005</font></td>
+	</tr>
+	<tr>
+		<td width="92"><font face="Verdana" size="2"><b>100: </b></font></td>
+		<td><font face="Verdana" size="2">BDS 2006 (Delphi / C++ personality)</font></td>
+	</tr>
+	<tr>
+		<td width="92"><font face="Verdana" size="2"><b>110: </b></font></td>
+		<td><font face="Verdana" size="2">CodeGear RAD Studio 2007 (Delphi / C++ 
+		personality)</font></td>
+	</tr>
+	<tr>
+		<td width="92"><font face="Verdana" size="2"><b>120: </b></font></td>
+		<td><font face="Verdana" size="2">CodeGear RAD Studio 2009 (Delphi / C++ 
+		personality)</font></td>
+	</tr>
+	<tr>
+		<td width="92"><font face="Verdana" size="2"><b>140: </b></font></td>
+		<td><font face="Verdana" size="2">Embarcadero RAD Studio 2010 (Delphi / C++ 
+		personality)</font></td>
+	</tr>
+	<tr>
+		<td width="92"><font face="Verdana" size="2"><b>150: </b></font></td>
+		<td><font face="Verdana" size="2">Embarcadero RAD Studio XE (Delphi / C++ 
+		personality)</font></td>
+	</tr>
+	<tr>
+		<td width="92" class="auto-style1"><strong>160:</strong></td>
+		<td><font face="Verdana" size="2">Embarcadero RAD Studio XE2 (Delphi / C++ 
+		personality)</font></td>
+	</tr>
+</table>
+<p><i><font face="Verdana" size="2">Example:<br>
+</font></i><font face="Courier New" size="2">lmdsys11rt_70.bpl
+</font><font face="Verdana" size="2">&nbsp;represents LMD SysPack 
+runtime package for Delphi 7.<br>
+</font><font face="Courier New" size="2">dcllmdsys10_110.bpl</font><font face="Verdana" size="2"> represents LMD SysPack designtime package for Delphi/C++ Builder 
+2007.</font></p>
+<p><font face="Verdana" size="2">In following Packages overview <b>project 
+groups </b>have different platform code (<b>YY</b>).<b><br>
+Delphi:</b>&nbsp;&nbsp;&nbsp;&nbsp; <b>D6</b> represents Delphi 6,&nbsp; <b>D7</b> represents Delphi 7.<br>
+<b>BDS:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; D9-D<span lang="de">1</span></b><strong>6</strong> 
+represents Delphi 2005 up to Delphi 2010<span lang="de"> and Delphi XE</span>, 
+XE2.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b>B10-B<span lang="de">1</span></b><strong>6 </strong>represents C++ Builder 2006 up to C++ Builder 2010<span lang="de"> 
+and C++ Builder XE</span>, XE2.</font></p>
+<p><i><font face="Verdana" size="2">Example:<br>
+</font><font face="Courier New" size="2">_</font></i><font face="Courier New" size="2">LMDBarPack_d7.bpg</font><font face="Verdana" size="2"> 
+represents LMD BarPack project group for Delphi 7.<br>
+</font><FONT color=#000080 size="1" face="Verdana"><a href="#Top">[Top]</a></FONT></p>
+<p><font face="Verdana" size="2"><i><br>
+<br>
+<a name="PackageOverview"></a></i></font><b><font face="Verdana" size="3">
+Packages Overview<br>
+</font></b><font face="Verdana" size="2">This section lists all available 
+package files after installation of a compiled LMD-Tools version. If you want to 
+recompile package files please follow descriptions in <span lang="de">next 
+section</span>.<span lang="de"> You will find files in the </span></font>
+<span lang="de"><font face="Courier New" size="2">\lib\XX</font><font face="Verdana" size="2"> 
+folder. XX indicates</font></span><font face="Verdana" size="2"> the platform ID<span lang="de"> 
+as explained in previous section.</span></font><i><font face="Verdana" size="2"><br>
+<br>
+<span lang="de">LMD VCL global project group<br>
+</span>
+</font></i><b><span lang="de"><font face="Verdana" size="2">
+_LMD2016VCL_XX.bdsgroup
+</font></span></b><font face="Verdana" size="2"><i><span lang="de"><b><br>
+</b></span></i><span lang="de">Available in LMD VCL Complete sourcecode version only. </span><i><br>
+</i>
+</font><i><font face="Verdana" size="2"><span lang="de"><br>
+LMD Common Shared Runtime Packages <br>
+</span>
+</font></i><font face="Verdana" size="2">Designtime:&nbsp; &nbsp;&nbsp; <span lang="de"> <b>&nbsp;</b></span></font><font face="Courier New" size="2">dcllmdXX.bpl, 
+dcllmdrtlx11_XX.bpl, dcllmdprint11_XX.bpl</font><span lang="de"><font face="Courier New" size="2">, 
+dcllmdthemes11_XX.bpl, dcllmdplugin11_XX.bpl, dcllmdinspector11_XX.bpl<br>
+</font>
+</span><font face="Verdana" size="2">Runtime:&nbsp;&nbsp;&nbsp;&nbsp; <span lang="de">&nbsp;&nbsp;&nbsp;</span></font><font face="Courier New" size="2"> 
+lmdrtl11rt_XX.bpl, lmdrtlx11rt_XX.bpl, lmdprint11rt_XX.bpl, </font><span lang="de"><font face="Courier New" size="2">
+lmdlog11rt_XX.bpl, lmdthemes11rt_XX.bpl, lmdplugin11rt_XX.bpl</font><font face="Verdana" size="2"><b>,
+</b></font> <font face="Courier New" size="2">lmdinspector11rt_XX.bpl</font><b><font face="Courier New" size="2"><br>
+</font> 
+<font color="#FF0000" face="Verdana" size="2">All LMD VCL packages require at least </font>
+</b>
+</span><b><font face="Verdana" size="2" color="#FF0000">
+lmdrtl11rt_XX.bpl and</font><span lang="de"><font color="#FF0000" size="2" face="Verdana"> 
+dcl</font></span><font face="Verdana" size="2" color="#FF0000">lmdrtl11_XX.bpl</font><span lang="de"><font color="#FF0000" size="2" face="Verdana">. If you 
+install manually without project groups, make sure to install these packages first!
+</font>
+</span></b></p>
+<p><i><font face="Verdana" size="2">LMD-Tools <br>
+</font></i><font face="Verdana" size="2">Designtime:&nbsp; &nbsp;&nbsp; <span lang="de"> <b>&nbsp;</b></span></font><font face="Courier New" size="2">dcllmdcore.bpl, 
+dcllmdtools11_XX.bpl, dcllmdtoolsdb11_XX.bpl&nbsp;&nbsp;</font><span lang="de"><font face="Courier New" size="2"><br>
+</font>
+</span><font face="Verdana" size="2">Runtime:&nbsp;&nbsp;&nbsp;&nbsp; <span lang="de">&nbsp;&nbsp;&nbsp;</span></font><font face="Courier New" size="2"> 
+lmdcore11rt_XX.bpl, lmdtools11rt_XX.bpl, lmdtoolsdb11rt_XX.bpl&nbsp;&nbsp;<br>
+</font><span lang="de"><font face="Verdana" size="2">Projectgroup:&nbsp;&nbsp; </font>
+<font face="Courier New" size="2">_LMDTools_XX.bdsgroup </font>
+</span><font face="Verdana" size="2"><br>
+Can be installed standalone. Requires Common Shared Runtime Package.<br>
+</font><i><font face="Verdana" size="2"><br>
+LMD ElPack<br>
+</font></i><font face="Verdana" size="2">Designtime:&nbsp; &nbsp;&nbsp; <span lang="de"> <b>&nbsp;</b></span></font><font face="Courier New" size="2">dcllmdelcore11_XX.bpl, 
+dcllmdelpro11_XX.bpl, dcllmdeldb11_XX.bpl<br>
+</font><font face="Verdana" size="2">Runtime:&nbsp;&nbsp;&nbsp;&nbsp; <span lang="de">&nbsp;&nbsp;&nbsp;</span></font><font face="Courier New" size="2"> 
+lmdelcore11rt_XX.bpl, lmdelpro11rt_XX.bpl, lmdeldb11rt_XX.bpl&nbsp;&nbsp;&nbsp;<br>
+</font><span lang="de"><font face="Verdana" size="2">Projectgroup:&nbsp;&nbsp; </font>
+<font face="Courier New" size="2">_LMDElPack_XX.bdsgroup <br>
+</font>
+</span><font face="Verdana" size="2">Can be installed standalone. Requires 
+Common Shared Runtime Package.<br>
+</font><i><font face="Verdana" size="2"><br>
+LMD IDE-Tools<br>
+</font></i><font face="Verdana" size="2">Designtime:&nbsp; &nbsp;&nbsp; <span lang="de"> <b>&nbsp;</b></span></font><font face="Courier New" size="2">dcllmdide11_XX.bpl<br>
+</font><font face="Verdana" size="2">Runtime:&nbsp;&nbsp;&nbsp;&nbsp; <span lang="de">&nbsp;&nbsp;&nbsp;</span></font><font face="Courier New" size="2"> 
+lmdide11rt_XX.bpl<br>
+</font><span lang="de"><font face="Verdana" size="2">Projectgroup:&nbsp;&nbsp; </font>
+<font face="Courier New" size="2">_LMDIDETools_XX.bdsgroup</font><font face="Verdana" size="2"><br>
+</font>
+</span><font face="Verdana" size="2">Can be installed standalone. Requires 
+common 
+runtime, in addition DesignPack, ScriptPack and SyntaxEdit.<br>
+</font><i><font face="Verdana" size="2"><br>
+</font></i><font face="Verdana" size="2"><i>LMD BarPack&nbsp;<br>
+</i>Designtime:&nbsp; &nbsp;&nbsp;&nbsp; </font>
+<font face="Courier New" size="2">dclmdbar11_XX.bpl</font><span lang="de"><font face="Courier New" size="2"><br>
+</font>
+</span><font face="Verdana" size="2">Runtime:&nbsp;&nbsp;&nbsp;&nbsp; <span lang="de">&nbsp;&nbsp;&nbsp;</span></font><font face="Courier New" size="2"> 
+lmdbar11rt_XX.bpl&nbsp;<br>
+</font><span lang="de"><font face="Verdana" size="2">Projectgroup:&nbsp;&nbsp; </font>
+<font face="Courier New" size="2">_LMDBarPack_XX.bdsgroup</font><font face="Verdana" size="2"><br>
+</font>
+</span><font face="Verdana" size="2">Can be installed standalone. Requires Rtl 
+runtime.<br>
+<i><br>
+LMD ChartPack<br>
+</i>Designtime:&nbsp; &nbsp;&nbsp; <span lang="de"> <b>&nbsp;</b></span></font><span lang="de"><font face="Courier New" size="2">dcllmdchart11_XX</font></span><font face="Courier New" size="2">.bpl, 
+dcllmdchartdb11_XX.bpl</font><span lang="de"><font face="Courier New" size="2"><br>
+</font>
+</span><font face="Verdana" size="2">Runtime:&nbsp;&nbsp;&nbsp;&nbsp; <span lang="de">&nbsp;&nbsp;&nbsp;</span></font><font face="Courier New" size="2"> 
+lmdchart11rt_XX.bpl, lmdchartdb11rt_XX.bpl<br>
+</font><span lang="de"><font face="Verdana" size="2">Projectgroup:&nbsp;&nbsp; </font>
+<font face="Courier New" size="2">_LMDChartPack_XX.bdsgroup</font><font face="Verdana" size="2"><br>
+</font>
+</span><font face="Verdana" size="2">Can be installed standalone. Requires Rtl 
+and RtlX runtime.<br>
+<i><br>
+LMD DesignPack&nbsp;<br>
+</i>Designtime:&nbsp; &nbsp;&nbsp; <span lang="de"> <b>&nbsp;</b></span></font><font face="Courier New" size="2">dcllmddsg11_XX.bpl</font><span lang="de"><font face="Courier New" size="2"><br>
+</font>
+</span><font face="Verdana" size="2">Runtime:&nbsp;&nbsp;&nbsp;&nbsp; <span lang="de">&nbsp;&nbsp;&nbsp;</span></font><font face="Courier New" size="2"> 
+lmddsg11rt_XX.bpl&nbsp;<br>
+</font><span lang="de"><font face="Verdana" size="2">Projectgroup:&nbsp;&nbsp; </font>
+<font face="Courier New" size="2">_LMDDesignPack_XX.bdsgroup</font><font face="Verdana" size="2"><br>
+</font>
+</span><font face="Verdana" size="2">Can be installed standalone. Requires Rtl 
+runtime.<br>
+<i><br>
+LMD FxPack&nbsp;<br>
+</i>Designtime:&nbsp; &nbsp;&nbsp; <span lang="de"> <b>&nbsp;</b></span></font><font face="Courier New" size="2">dcllmdfx11_XX.bpl</font><span lang="de"><font face="Courier New" size="2"><br>
+</font>
+</span><font face="Verdana" size="2">Runtime:&nbsp;&nbsp;&nbsp;&nbsp; <span lang="de">&nbsp;&nbsp;&nbsp;</span></font><font face="Courier New" size="2"> 
+lmdfx11rt_XX.bpl<br>
+</font><span lang="de"><font face="Verdana" size="2">Projectgroup:&nbsp;&nbsp; </font>
+<font face="Courier New" size="2">_LMDFxPack_XX.bdsgroup</font><font face="Verdana" size="2"><br>
+</font>
+</span><font face="Verdana" size="2">Can be installed standalone. Requires Rtl 
+runtime.<br>
+<i><br>
+LMD-Tools ParsePack &amp; TextPack&nbsp;<br>
+</i>Runtime:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; </font>
+<font face="Courier New" size="2">dcllmdtxt11_XX.bpl</font><span lang="de"><font face="Courier New" size="2">, 
+<br>
+</font>
+</span><font face="Verdana" size="2">Designtime:&nbsp;&nbsp;&nbsp;&nbsp; <b><span lang="de">&nbsp;</span></b></font><font face="Courier New" size="2">lmdparse11rt_XX.bpl, 
+lmdtxt11rt_XX.bpl, lmdtxtdb11rt_XX.bpl &nbsp;</font><font face="Verdana" size="2"><span lang="de"><b><br>
+</b>
+</span>Can not be installed standalone. Part of LMD-Tools.<br>
+<i><br>
+LMD RichPack&nbsp;<br>
+</i>Designtime:&nbsp; &nbsp;&nbsp; <span lang="de"> <b>&nbsp;</b></span></font><font face="Courier New" size="2">dcllmdrtf11_XX.bpl</font><span lang="de"><font face="Courier New" size="2">, </font>
+</span><font face="Courier New" size="2">dcllmdrtfdb11_XX.bpl<br>
+</font><font face="Verdana" size="2">Runtime:&nbsp;&nbsp;&nbsp;&nbsp; <span lang="de">&nbsp;&nbsp;&nbsp;</span></font><font face="Courier New" size="2"> 
+lmdrtf11rt_XX.bpl, lmdrtfdb11rt_XX.bpl&nbsp;<br>
+</font><span lang="de"><font face="Verdana" size="2">Projectgroup:&nbsp;&nbsp; </font>
+<font face="Courier New" size="2">_LMDRichPack_XX.bdsgroup</font><font face="Verdana" size="2"><br>
+</font>
+</span><font face="Verdana" size="2">Can be installed standalone. Requires Rtl 
+and RtlX runtime.<br>
+<i><br>
+LMD SearchPack&nbsp;<br>
+</i>Designtime:&nbsp; &nbsp;&nbsp; <span lang="de"> <b>&nbsp;</b></span></font><font face="Courier New" size="2">dcllmdsearch11_XX.bpl</font><span lang="de"><font face="Courier New" size="2"><br>
+</font>
+</span><font face="Verdana" size="2">Runtime:&nbsp;&nbsp;&nbsp;&nbsp; <span lang="de">&nbsp;&nbsp;&nbsp;</span></font><font face="Courier New" size="2"> 
+lmdsearch11rt_XX.bpl, lmdsearchdb11rt_XX.bpl&nbsp;&nbsp;<br>
+</font><span lang="de"><font face="Verdana" size="2">Projectgroup:&nbsp;&nbsp; </font>
+<font face="Courier New" size="2">_LMDSearchPack_XX.bdsgroup</font><font face="Verdana" size="2"><br>
+</font>
+</span><font face="Verdana" size="2">Can be installed standalone. Requires Rtl 
+runtime.<br>
+<i><br>
+LMD ShellPack&nbsp;<br>
+</i>Designtime:&nbsp; &nbsp;&nbsp; <span lang="de"> <b>&nbsp;</b></span></font><font face="Courier New" size="2">dcllmdshell11_XX.bpl</font><span lang="de"><font face="Courier New" size="2"><br>
+</font>
+</span><font face="Verdana" size="2">Runtime:&nbsp;&nbsp;&nbsp;&nbsp; <span lang="de">&nbsp;&nbsp;&nbsp;</span></font><font face="Courier New" size="2"> 
+lmdshell11rt_XX.bpl<br>
+</font><span lang="de"><font face="Verdana" size="2">Projectgroup:&nbsp;&nbsp; </font>
+<font face="Courier New" size="2">_LMDShellPack_XX.bdsgroup</font><font face="Verdana" size="2"><br>
+</font>
+</span><font face="Verdana" size="2">Can be installed standalone. Requires Rtl 
+runtime.<br>
+<i><br>
+LMD StoragePack&nbsp;<br>
+</i>Designtime:&nbsp; &nbsp;&nbsp; <span lang="de"> <b>&nbsp;</b></span></font><font face="Courier New" size="2">dcllmdstorage11_XX.bpl</font><span lang="de"><font face="Courier New" size="2"><br>
+</font>
+</span><font face="Verdana" size="2">Runtime:&nbsp;&nbsp;&nbsp;&nbsp; <span lang="de">&nbsp;&nbsp;&nbsp;</span></font><font face="Courier New" size="2"> 
+lmdstorage11rt_XX.bpl<br>
+</font><span lang="de"><font face="Verdana" size="2">Projectgroup:&nbsp;&nbsp; </font>
+<font face="Courier New" size="2">_LMDStoragePack_XX.bdsgroup</font><font face="Verdana" size="2"><br>
+</font>
+</span><font face="Verdana" size="2">Can be installed standalone. Requires Rtl 
+runtime.<br>
+<i><br>
+LMD SyntaxEdit<br>
+</i>Designtime:&nbsp; &nbsp;&nbsp; <span lang="de"> <b>&nbsp;</b></span></font><font face="Courier New" size="2">dcllmdsyntax11_XX.bpl</font><span lang="de"><font face="Courier New" size="2"><br>
+</font>
+</span><font face="Verdana" size="2">Runtime:&nbsp;&nbsp;&nbsp;&nbsp; <span lang="de">&nbsp;&nbsp;&nbsp;</span></font><font face="Courier New" size="2"> 
+lmdsyntax11rt_XX.bpl&nbsp;<br>
+</font><span lang="de"><font face="Verdana" size="2">Projectgroup:&nbsp;&nbsp; </font>
+<font face="Courier New" size="2">_LMDSyntaxEdit_XX.bdsgroup</font><font face="Verdana" size="2"><br>
+</font>
+</span><font face="Verdana" size="2">Can be installed standalone. Requires Rtl 
+runtime.<br>
+<i><br>
+LMD SysPack&nbsp;<br>
+</i>Designtime:&nbsp; &nbsp;&nbsp; <span lang="de"> <b>&nbsp;</b></span></font><font face="Courier New" size="2">dcllmdsys11_XX.bpl</font><span lang="de"><font face="Courier New" size="2"><br>
+</font>
+</span><font face="Verdana" size="2">Runtime:&nbsp;&nbsp;&nbsp;&nbsp; <span lang="de">&nbsp;&nbsp;&nbsp;</span></font><font face="Courier New" size="2"> 
+lmdsys11rt_XX.bpl<br>
+</font><span lang="de"><font face="Verdana" size="2">Projectgroup:&nbsp;&nbsp; </font>
+<font face="Courier New" size="2">_LMDSysPack_XX.bdsgroup</font><font face="Verdana" size="2"><br>
+</font>
+</span><font face="Verdana" size="2">Can be installed standalone. Requires Rtl 
+runtime.<br>
+<br>
+<i>LMD WebPack<br>
+</i>Designtime:&nbsp; &nbsp;&nbsp; <span lang="de"> <b>&nbsp;</b></span></font><font face="Courier New" size="2">dcllmdweb11_XX.bpl</font><span lang="de"><font face="Courier New" size="2"><br>
+</font>
+</span><font face="Verdana" size="2">Runtime:&nbsp;&nbsp;&nbsp;&nbsp; <span lang="de">&nbsp;&nbsp;&nbsp;</span></font><font face="Courier New" size="2"> 
+lmdweb11rt_XX.bpl<br>
+</font><span lang="de"><font face="Verdana" size="2">Projectgroup:&nbsp;&nbsp; </font>
+<font face="Courier New" size="2">_LMDWebPack_XX.bdsgroup</font><font face="Verdana" size="2"><br>
+</font>
+</span><font face="Verdana" size="2">Can be installed standalone. Requires Rtl 
+runtime.<br>
+<a href="#Top">[Top]</a><br>
+&nbsp;</font></p>
+<p><span lang="de"><b><font face="Verdana" size="3"><a name="Source"></a>Source 
+Installation</font></b></span><font face="Verdana" size="3"><b><br>
+</b>
+</font><span lang="de"><font face="Verdana" size="2">
+Installation of sourcecode was simplified for LMD VCL 2016 packages: For each 
+package project groups as listed above are available. As a rule: For runtime 
+packages press <i>Compile</i> button, for Designtime packages in addition <i>
+Install</i> button. <b><font color="#FF0000">&nbsp;</font></b>Make sure that 
+library path settings reference the source path.<b><font color="#FF0000"> </font></b><br>
+<br>
+<i>Changing compiler switches</i><b><br>
+</b>Unlike in previous releases only one compiler switch file exists which is 
+shared by all LMD Packages. It is named
+</font>
+<font size="2" face="Courier New">lmdcmps.inc</font><font face="Verdana" size="2">. 
+To enable e.g. DebugMode in LMD-Tools, simply enable the </font>
+<font size="2" face="Courier">LMDDEBUG</font><font face="Verdana" size="2"> 
+conditional define.<br>
+</font></span><font face="Verdana" size="2">
+<a href="#Top">[Top]</a></font></p>
+<p>
+<b><font size="3" face="Verdana"><a name="ERSX3"></a>RAD Studio <span lang="de">XE</span>3 (Delphi/C++)</font></b><font size="2" face="Verdana"><br>
+<br>
+<strong>How to add the components</strong><br>
+The installation program tries to install the packages automatically (unless you 
+unchecked this option). For installing packages manually, you have to install 
+the LMD VCL designtime packages (check the package list above for available 
+options), Please note, that all designtime package names start with dcl[...] 
+prefix - installing a runtime package does not work.&nbsp;<br>
+<br>
+<i>Installation</i></font></p>
+<ol>
+  <li><font face="Verdana" size="2">Run Delphi and select &quot;Components&quot; menu. 
+  Click on &quot; Install Packages...&quot; button.</font><font face="Verdana"> </font>
+  </li>
+  <li><font face="Verdana" size="2">Click on the &quot;Add...&quot; button. A dialog box 
+  appears. Click there on the &quot;Browse...&quot; button.</font><font face="Verdana">
+  </font></li>
+  <li><font face="Verdana" size="2">From the file dialog select the library path 
+  of package(s) you want to install (usually the 
+  \lib\d17 directory below your LMD VCL installation folder). If you installed designtime packages during installation to default BPL output folder, please 
+  search at that location).&nbsp;</font></li>
+  <li><font face="Verdana" size="2">Select desired designtime package files as mentioned in the package list above. 
+  Note: Hold Ctrl-key to select more than one file at the same time.</font><font face="Verdana">
+  </font></li>
+</ol>
+<p><font face="Verdana" color="#ff0000" size="2"><strong>Important:</strong></font><font face="Verdana" size="2"><br>
+If installer did not add path settings automatically, you have to add the full 
+paths (e.g. C:\LMD2016\lib\d17) of LMD VCL DCU files yourself to the 
+Delphi's library path (Library Page/Environment Options in the Tools Menu).&nbsp;<br>
+<br>
+<font color="#FF0000"><b>Important for C++ user:<br>
+</b></font>Because of the fact that no *.obj files are included in precompiled 
+packages, you have to add required *.lib files to your 
+project. For example to add non-db core controls add 
+</font><font face="Courier New" size="2">lmdtools16<span lang="de">0</span>.lib</font><font face="Verdana" size="2">, for 
+db-controls 
+</font><font face="Courier New" size="2">lmdtoolsdb16<span lang="de">0</span>.lib</font><font face="Verdana" size="2">. For other sub packages add 
+corresponding <u>runtime</u> lib files as described above.</font></p>
+<div align="left">
+
+<font size="2" face="Verdana"><strong>How to add helpfile into the Delphi-IDE
+</strong></font>
+
+</div>
+<div align="left">
+
+<font size="2" face="Verdana">By default the installer tries to install helpfile automatically. To install any LMD 
+VCL Helpfile manually, check the </font>
+
+<font size="2" face="Courier New">\help\bds10</font><font size="2" face="Verdana"> 
+folder below installation directory.</font>&nbsp; <font size="2">All available 
+documentation files for corresponding IDE and the <font face="Courier New">
+RegHelp2.exe</font> tool can be found here. <br>
+To install all available files, simply run </font>
+<font size="2" face="Courier New">RegHelp2</font><font size="2">. To uninstall 
+all available files, switch to command line and run </font>
+<font size="2" face="Courier New">RegHelp2 </font><font size="2">/u. To 
+install/uninstall certain files, simply mention the corresponding hxx file. E.g. 
+to uninstall the shared helpfile only, use:</font></div>
+<div align="center">
+
+<font size="2" face="Courier New">RegHelp2 /u lmdsharedBds10.hxx</font></div>
+<p><FONT color=#000080 size="1" face="Verdana"><a href="#Top">[Top]</a></FONT></p>
+<p>
+&nbsp;</p>
+<p>
+<b><font size="3" face="Verdana"><a name="ERSX2"></a>RAD Studio <span lang="de">XE</span>2 (Delphi/C++)</font></b><font size="2" face="Verdana"><br>
+<br>
+<strong>How to add the components</strong><br>
+The installation program tries to install the packages automatically (unless you 
+unchecked this option). For installing packages manually, you have to install 
+the LMD VCL designtime packages (check the package list above for available 
+options), Please note, that all designtime package names start with dcl[...] 
+prefix - installing a runtime package does not work.&nbsp;<br>
+<br>
+<i>Installation</i></font></p>
+<ol>
+  <li><font face="Verdana" size="2">Run Delphi and select &quot;Components&quot; menu. 
+  Click on &quot; Install Packages...&quot; button.</font><font face="Verdana"> </font>
+  </li>
+  <li><font face="Verdana" size="2">Click on the &quot;Add...&quot; button. A dialog box 
+  appears. Click there on the &quot;Browse...&quot; button.</font><font face="Verdana">
+  </font></li>
+  <li><font face="Verdana" size="2">From the file dialog select the library path 
+  of package(s) you want to install (usually the 
+  \lib\d16 directory below your LMD VCL installation folder). If you installed designtime packages during installation to default BPL output folder, please 
+  search at that location).&nbsp;</font></li>
+  <li><font face="Verdana" size="2">Select desired designtime package files as mentioned in the package list above. 
+  Note: Hold Ctrl-key to select more than one file at the same time.</font><font face="Verdana">
+  </font></li>
+</ol>
+<p><font face="Verdana" color="#ff0000" size="2"><strong>Important:</strong></font><font face="Verdana" size="2"><br>
+If installer did not add path settings automatically, you have to add the full 
+paths (e.g. C:\LMD2016\lib\d16) of LMD VCL DCU files yourself to the 
+Delphi's library path (Library Page/Environment Options in the Tools Menu).&nbsp;<br>
+<br>
+<font color="#FF0000"><b>Important for C++ user:<br>
+</b></font>Because of the fact that no *.obj files are included in precompiled 
+packages, you have to add required *.lib files to your 
+project. For example to add non-db core controls add 
+</font><font face="Courier New" size="2">lmdtools11rt_16<span lang="de">0</span>.lib</font><font face="Verdana" size="2">, for 
+db-controls 
+</font><font face="Courier New" size="2">lmdtoolsdb11rt_16<span lang="de">0</span>.lib</font><font face="Verdana" size="2">. For other sub packages add 
+corresponding <u>runtime</u> lib files as described above.</font></p>
+<div align="left">
+
+<font size="2" face="Verdana"><strong>How to add helpfile into the Delphi-IDE
+</strong></font>
+
+</div>
+<div align="left">
+
+<font size="2" face="Verdana">By default the installer tries to install helpfile automatically. To install any LMD 
+VCL Helpfile manually, check the </font>
+
+<font size="2" face="Courier New">\help\bds<span lang="de">8</span></font><font size="2" face="Verdana"> 
+folder below installation directory.</font>&nbsp; <font size="2">All available 
+documentation files for corresponding IDE and the <font face="Courier New">
+RegHelp2.exe</font> tool can be found here. <br>
+To install all available files, simply run </font>
+<font size="2" face="Courier New">RegHelp2</font><font size="2">. To uninstall 
+all available files, switch to command line and run </font>
+<font size="2" face="Courier New">RegHelp2 </font><font size="2">/u. To 
+install/uninstall certain files, simply mention the corresponding hxx file. E.g. 
+to uninstall the shared helpfile only, use:</font></div>
+<div align="center">
+
+<font size="2" face="Courier New">RegHelp2 /u lmdsharedBds9.hxx</font></div>
+<p><FONT color=#000080 size="1" face="Verdana"><a href="#Top">[Top]</a></FONT></p>
+<br>
+<b><font size="3" face="Verdana"><a name="ERS2016"></a>RAD Studio <span lang="de">XE</span> (Delphi/C++)</font></b><font size="2" face="Verdana"><br>
+<br>
+<strong>How to add the components</strong><br>
+The installation program tries to install the packages automatically (unless you 
+unchecked this option). For installing packages manually, you have to install 
+the LMD VCL designtime packages (check the package list above for available 
+options), Please note, that all designtime package names start with dcl[...] 
+prefix - installing a runtime package does not work.&nbsp;<br>
+<br>
+<i>Installation</i></font></p>
+<ol>
+  <li><font face="Verdana" size="2">Run Delphi and select &quot;Components&quot; menu. 
+  Click on &quot; Install Packages...&quot; button.</font><font face="Verdana"> </font>
+  </li>
+  <li><font face="Verdana" size="2">Click on the &quot;Add...&quot; button. A dialog box 
+  appears. Click there on the &quot;Browse...&quot; button.</font><font face="Verdana">
+  </font></li>
+  <li><font face="Verdana" size="2">From the file dialog select the library path 
+  of package(s) you want to install (usually the 
+  \lib\d1<span lang="de">5</span> directory below your LMD VCL installation folder). If you installed designtime packages during installation to default BPL output folder, please 
+  search at that location).&nbsp;</font></li>
+  <li><font face="Verdana" size="2">Select desired designtime package files as mentioned in the package list above. 
+  Note: Hold Ctrl-key to select more than one file at the same time.</font><font face="Verdana">
+  </font></li>
+</ol>
+<p><font face="Verdana" color="#ff0000" size="2"><strong>Important:</strong></font><font face="Verdana" size="2"><br>
+If installer did not add path settings automatically, you have to add the full 
+paths (e.g. C:\LMD2016\lib\d1<span lang="de">5</span>) of LMD VCL DCU files yourself to the 
+Delphi's library path (Library Page/Environment Options in the Tools Menu).&nbsp;<br>
+<br>
+<font color="#FF0000"><b>Important for C++ user:<br>
+</b></font>Because of the fact that no *.obj files are included in precompiled 
+packages, you have to add required *.lib files to your 
+project. For example to add non-db core controls add 
+</font><font face="Courier New" size="2">lmdtools11rt_1<span lang="de">50</span>.lib</font><font face="Verdana" size="2">, for 
+db-controls 
+</font><font face="Courier New" size="2">lmdtoolsdb11rt_1<span lang="de">50</span>.lib</font><font face="Verdana" size="2">. For other sub packages add 
+corresponding <u>runtime</u> lib files as described above.</font></p>
+<div align="left">
+
+<font size="2" face="Verdana"><strong>How to add helpfile into the Delphi-IDE
+</strong></font>
+
+</div>
+<div align="left">
+
+<font size="2" face="Verdana">By default the installer tries to install helpfile automatically. To install any LMD 
+VCL Helpfile manually, check the </font>
+
+<font size="2" face="Courier New">\help\bds<span lang="de">8</span></font><font size="2" face="Verdana"> 
+folder below installation directory.</font>&nbsp; <font size="2">All available 
+documentation files for corresponding IDE and the <font face="Courier New">
+RegHelp2.exe</font> tool can be found here. <br>
+To install all available files, simply run </font>
+<font size="2" face="Courier New">RegHelp2</font><font size="2">. To uninstall 
+all available files, switch to command line and run </font>
+<font size="2" face="Courier New">RegHelp2 </font><font size="2">/u. To 
+install/uninstall certain files, simply mention the corresponding hxx file. E.g. 
+to uninstall the shared helpfile only, use:</font></div>
+<div align="center">
+
+<font size="2" face="Courier New">RegHelp2 /u lmdsharedBds<span lang="de">8</span>.hxx</font></div>
+<p><FONT color=#000080 size="1" face="Verdana"><a href="#Top">[Top]</a></FONT></p>
+<p><br>
+<b><font size="3" face="Verdana"><a name="ERS2010"></a>RAD Studio 2010 (Delphi/C++)</font></b><font size="2" face="Verdana"><br>
+<br>
+<strong>How to add the components</strong><br>
+The installation program tries to install the packages automatically (unless you 
+unchecked this option). For installing packages manually, you have to install 
+the LMD VCL designtime packages (check the package list above for available 
+options), Please note, that all designtime package names start with dcl[...] 
+prefix - installing a runtime package does not work.&nbsp;<br>
+<br>
+<i>Installation</i></font></p>
+<ol>
+  <li><font face="Verdana" size="2">Run Delphi and select &quot;Components&quot; menu. 
+  Click on &quot; Install Packages...&quot; button.</font><font face="Verdana"> </font>
+  </li>
+  <li><font face="Verdana" size="2">Click on the &quot;Add...&quot; button. A dialog box 
+  appears. Click there on the &quot;Browse...&quot; button.</font><font face="Verdana">
+  </font></li>
+  <li><font face="Verdana" size="2">From the file dialog select the library path 
+  of package(s) you want to install (usually the 
+  \lib\d14 directory below your LMD VCL installation folder). If you installed designtime packages during installation to default BPL output folder, please 
+  search at that location).&nbsp;</font></li>
+  <li><font face="Verdana" size="2">Select desired designtime package files as mentioned in the package list above. 
+  Note: Hold Ctrl-key to select more than one file at the same time.</font><font face="Verdana">
+  </font></li>
+</ol>
+<p><font face="Verdana" color="#ff0000" size="2"><strong>Important:</strong></font><font face="Verdana" size="2"><br>
+If installer did not add path settings automatically, you have to add the full 
+paths (e.g. C:\LMD2016\lib\d14) of LMD VCL DCU files yourself to the 
+Delphi's library path (Library Page/Environment Options in the Tools Menu).&nbsp;<br>
+<br>
+<font color="#FF0000"><b>Important for C++ user:<br>
+</b></font>Because of the fact that no *.obj files are included in precompiled 
+packages, you have to add required *.lib files to your 
+project. For example to add non-db core controls add 
+</font><font face="Courier New" size="2">lmdtools11rt_140.lib</font><font face="Verdana" size="2">, for 
+db-controls 
+</font><font face="Courier New" size="2">lmdtoolsdb11rt_140.lib</font><font face="Verdana" size="2">. For other sub packages add 
+corresponding <u>runtime</u> lib files as described above.</font></p>
+<div align="left">
+
+<font size="2" face="Verdana"><strong>How to add helpfile into the Delphi-IDE
+</strong></font>
+
+</div>
+<div align="left">
+
+<font size="2" face="Verdana">By default the installer tries to install helpfile automatically. To install any LMD 
+VCL Helpfile manually, check the </font>
+
+<font size="2" face="Courier New">\help\bds7</font><font size="2" face="Verdana"> 
+folder below installation directory.</font>&nbsp; <font size="2">All available 
+documentation files for corresponding IDE and the <font face="Courier New">
+RegHelp2.exe</font> tool can be found here. <br>
+To install all available files, simply run </font>
+<font size="2" face="Courier New">RegHelp2</font><font size="2">. To uninstall 
+all available files, switch to command line and run </font>
+<font size="2" face="Courier New">RegHelp2 </font><font size="2">/u. To 
+install/uninstall certain files, simply mention the corresponding hxx file. E.g. 
+to uninstall the shared helpfile only, use:</font></div>
+<div align="center">
+
+<font size="2" face="Courier New">RegHelp2 /u lmdsharedBds7.hxx</font></div>
+<p><FONT color=#000080 size="1" face="Verdana"><a href="#Top">[Top]</a></FONT></p>
+<p><b><font size="3" face="Verdana"><br>
+<a name="CRS2009"></a>CodeGear RAD Studio 2009 (Delphi/C++)</font></b><font size="2" face="Verdana"><br>
+<br>
+<strong>How to add the components</strong><br>
+The installation program tries to install the packages automatically (unless you 
+unchecked this option). For installing packages manually, you have to install 
+the LMD VCL designtime packages (check the package list above for available 
+options), Please note, that all designtime package names start with dcl[...] 
+prefix - installing a runtime package does not work.&nbsp;<br>
+<br>
+<i>Installation</i></font></p>
+<ol>
+  <li><font face="Verdana" size="2">Run Delphi and select &quot;Components&quot; menu. 
+  Click on &quot; Install Packages...&quot; button.</font><font face="Verdana"> </font>
+  </li>
+  <li><font face="Verdana" size="2">Click on the &quot;Add...&quot; button. A dialog box 
+  appears. Click there on the &quot;Browse...&quot; button.</font><font face="Verdana">
+  </font></li>
+  <li><font face="Verdana" size="2">From the file dialog select the library path 
+  of package(s) you want to install (usually the 
+  \lib\d12 directory below your LMD VCL installation folder). If you installed designtime packages during installation to default BPL output folder, please 
+  search at that location).&nbsp;</font></li>
+  <li><font face="Verdana" size="2">Select desired designtime package files as mentioned in the package list above. 
+  Note: Hold Ctrl-key to select more than one file at the same time.</font><font face="Verdana">
+  </font></li>
+</ol>
+<p><font face="Verdana" color="#ff0000" size="2"><strong>Important:</strong></font><font face="Verdana" size="2"><br>
+If installer did not add path settings automatically, you have to add the full 
+paths (e.g. C:\LMD2016\lib\d12) of LMD VCL DCU files yourself to the 
+Delphi's library path (Library Page/Environment Options in the Tools Menu).&nbsp;<br>
+<br>
+<font color="#FF0000"><b>Important for C++ user:<br>
+</b></font>Because of the fact that no *.obj files are included in precompiled 
+packages, you have to add required *.lib files to your 
+project. For example to add non-db core controls add 
+</font><font face="Courier New" size="2">lmdtools11rt_120.lib</font><font face="Verdana" size="2">, for 
+db-controls 
+</font><font face="Courier New" size="2">lmdtoolsdb11rt_120.lib</font><font face="Verdana" size="2">. For other sub packages add 
+corresponding <u>runtime</u> lib files as described above.</font></p>
+<div align="left">
+
+<font size="2" face="Verdana"><strong>How to add helpfile into the Delphi-IDE
+</strong></font>
+
+</div>
+<div align="left">
+
+<font size="2" face="Verdana">By default the installer tries to install helpfile automatically. To install any LMD 
+VCL Helpfile manually, check the </font>
+
+<font size="2" face="Courier New">\help\bds6</font><font size="2" face="Verdana"> 
+folder below installation directory.</font>&nbsp; <font size="2">All available 
+documentation files for corresponding IDE and the <font face="Courier New">
+RegHelp2.exe</font> tool can be found here. <br>
+To install all available files, simply run </font>
+<font size="2" face="Courier New">RegHelp2</font><font size="2">. To uninstall 
+all available files, switch to command line and run </font>
+<font size="2" face="Courier New">RegHelp2 </font><font size="2">/u. To 
+install/uninstall certain files, simply mention the corresponding hxx file. E.g. 
+to uninstall the shared helpfile only, use:</font></div>
+<div align="center">
+
+<font size="2" face="Courier New">RegHelp2 /u lmdsharedBds6.hxx</font></div>
+<p><FONT color=#000080 size="1" face="Verdana"><a href="#Top">[Top]</a></FONT></p>
+<p>&nbsp;</p>
+<p><b><font size="3" face="Verdana"><a name="CRS2007"></a>CodeGear RAD Studio 2007 (Delphi/C++)</font></b><font size="2" face="Verdana"><br>
+<br>
+<strong>How to add the components</strong><br>
+The installation program tries to install the packages automatically (unless you 
+unchecked this option). For installing packages manually, you have to install 
+the LMD VCL designtime packages (check the package list above for available 
+options), Please note, that all designtime package names start with dcl[...] 
+prefix - installing a runtime package does not work.&nbsp;<br>
+<br>
+<i>Installation</i></font></p>
+<ol>
+  <li><font face="Verdana" size="2">Run Delphi and select &quot;Components&quot; menu. 
+  Click on &quot; Install Packages...&quot; button.</font><font face="Verdana"> </font>
+  </li>
+  <li><font face="Verdana" size="2">Click on the &quot;Add...&quot; button. A dialog box 
+  appears. Click there on the &quot;Browse...&quot; button.</font><font face="Verdana">
+  </font></li>
+  <li><font face="Verdana" size="2">From the file dialog select the library path 
+  of package(s) you want to install (usually the 
+  \lib\d11 directory below your LMD VCL installation folder). If you installed designtime packages during installation to default BPL output folder, please 
+  search at that location).&nbsp;</font></li>
+  <li><font face="Verdana" size="2">Select desired designtime package files as mentioned in the package list above. 
+  Note: Hold Ctrl-key to select more than one file at the same time.</font><font face="Verdana">
+  </font></li>
+</ol>
+<p><font face="Verdana" color="#ff0000" size="2"><strong>Important:</strong></font><font face="Verdana" size="2"><br>
+If installer did not add path settings automatically, you have to add the full 
+paths (e.g. C:\LMD2016\lib\d11) of LMD VCL DCU files yourself to the 
+Delphi's library path (Library Page/Environment Options in the Tools Menu).&nbsp;<br>
+<br>
+<font color="#FF0000"><b>Important for C++ user:<br>
+</b></font>Because of the fact that no *.obj files are included in precompiled 
+packages, you have to add required *.lib files to your 
+project. For example to add non-db core controls add 
+</font><font face="Courier New" size="2">lmdtools11rt_110.lib</font><font face="Verdana" size="2">, for 
+db-controls 
+</font><font face="Courier New" size="2">lmdtoolsdb11rt_110.lib</font><font face="Verdana" size="2">. For other sub packages add 
+corresponding <u>runtime</u> lib files as described above.</font></p>
+<div align="left">
+
+<font size="2" face="Verdana"><strong>How to add helpfile into the Delphi-IDE
+</strong></font>
+
+</div>
+<div align="left">
+
+<font size="2" face="Verdana">By default the installer tries to install helpfile automatically. To install any LMD 
+VCL Helpfile manually, check the </font>
+
+<font size="2" face="Courier New">\help\bds5</font><font size="2" face="Verdana"> 
+folder below installation directory.</font>&nbsp; <font size="2">All available 
+documentation files for corresponding IDE and the <font face="Courier New">
+RegHelp2.exe</font> tool can be found here. <br>
+To install all available files, simply run </font>
+<font size="2" face="Courier New">RegHelp2</font><font size="2">. To uninstall 
+all available files, switch to command line and run </font>
+<font size="2" face="Courier New">RegHelp2 </font><font size="2">/u. To 
+install/uninstall certain files, simply mention the corresponding hxx file. E.g. 
+to uninstall the shared helpfile only, use:</font></div>
+<div align="left">
+
+&nbsp;</div>
+<div align="center">
+
+<font size="2" face="Courier New">RegHelp2 /u lmdsharedBds5.hxx</font></div>
+<p><FONT color=#000080 size="1" face="Verdana"><a href="#Top">[Top]</a></FONT></p>
+<p><font face="Verdana" size="3"><strong><br>
+<a name="BDS2006"></a>Borland Developer Studio 2006 (Delphi and C++)</strong></font><font face="Verdana" size="2"><br>
+<br>
+<strong>How to add the components</strong><br>
+The installation program tries to install the packages automatically (unless you 
+unchecked this option). For installing packages manually, you have to install 
+the LMD VCL designtime packages (check the package list above for available 
+options), Please note, that all designtime package names start with dcl[...] 
+prefix - installing a runtime package does not work.&nbsp;<br>
+<br>
+<i>Installation</i></font></p>
+<ol>
+  <li><font face="Verdana" size="2">Run Delphi and select &quot;Components&quot; menu. 
+  Click on &quot; Install Packages...&quot; button.</font><font face="Verdana"> </font>
+  </li>
+  <li><font face="Verdana" size="2">Click on the &quot;Add...&quot; button. A dialog box 
+  appears. Click there on the &quot;Browse...&quot; button.</font><font face="Verdana">
+  </font></li>
+  <li><font face="Verdana" size="2">From the file dialog select the library path 
+  of package(s) you want to install (usually the 
+  \lib\d10 directory below your LMD VCL installation folder). If you installed designtime packages during installation to default BPL output folder, please 
+  search at that location).&nbsp;</font></li>
+  <li><font face="Verdana" size="2">Select desired designtime package files as mentioned in the package list above. 
+  Note: Hold Ctrl-key to select more than one file at the same time.</font><font face="Verdana">
+	</font></li>
+</ol>
+<p><font face="Verdana" color="#ff0000" size="2"><strong>Important:</strong></font><font face="Verdana" size="2"><br>
+If installer did not add path settings automatically, you have to add the full 
+paths (e.g. C:\LMD2016\lib\d10) of LMD VCL DCU files yourself to the 
+Delphi's library path (Library Page/Environment Options in the Tools Menu).&nbsp;<br>
+<br>
+<font color="#FF0000"><b>Important for C++ user:<br>
+</b></font>Because of the fact that no *.obj files are included in precompiled 
+packages, you have to add required *.lib files to your 
+project. For example to add non-db core controls add 
+</font><font face="Courier New" size="2">lmdtools11rt_100.lib</font><font face="Verdana" size="2">, for 
+db-controls 
+</font><font face="Courier New" size="2">lmdtoolsdb11rt_100.lib</font><font face="Verdana" size="2">. For other sub packages add 
+corresponding <u>runtime</u> lib files as described above.</font></p>
+<div align="left">
+
+<font size="2" face="Verdana"><strong>How to add helpfile into the Delphi-IDE
+</strong></font>
+
+</div>
+<div align="left">
+
+<font size="2" face="Verdana">By default the installer tries to install helpfile automatically. To install any LMD 
+VCL Helpfile manually, check the </font>
+
+<font size="2" face="Courier New">\help\bds4</font><font size="2" face="Verdana"> 
+folder below installation directory.</font>&nbsp; <font size="2">All available 
+documentation files for corresponding IDE and the <font face="Courier New">
+RegHelp2.exe</font> tool can be found here. <br>
+To install all available files, simply run </font>
+<font size="2" face="Courier New">RegHelp2</font><font size="2">. To uninstall 
+all available files, switch to command line and run </font>
+<font size="2" face="Courier New">RegHelp2 </font><font size="2">/u. To 
+install/uninstall certain files, simply mention the corresponding hxx file. E.g. 
+to uninstall the shared helpfile only, use:</font></div>
+<div align="left">
+
+&nbsp;</div>
+<div align="center">
+
+<font size="2" face="Courier New">RegHelp2 /u lmdsharedBds4.hxx</font></div>
+<p><FONT color=#000080 size="1" face="Verdana"><a href="#Top">[Top]</a></FONT></p>
+<p><br>
+<font face="Verdana" size="3"><strong><a name="Delphi9"></a>Delphi 2005</strong></font><font face="Verdana" size="2"><br>
+<br>
+<strong>How to add the components</strong><br>
+The installation program tries to install the packages automatically (unless you 
+unchecked this option). For installing packages manually, you have to install 
+the LMD VCL designtime packages (check the package list above for available 
+options), Please note, that all designtime package names start with dcl[...] 
+prefix - installing a runtime package does not work.&nbsp;<br>
+<br>
+<i>Installation</i></font></p>
+<ol>
+  <li><font face="Verdana" size="2">Run Delphi and select &quot;Components&quot; menu. 
+  Click on &quot; Install Packages...&quot; button.</font><font face="Verdana"> </font>
+  </li>
+  <li><font face="Verdana" size="2">Click on the &quot;Add...&quot; button. A dialog box 
+  appears. Click there on the &quot;Browse...&quot; button.</font><font face="Verdana">
+  </font></li>
+  <li><font face="Verdana" size="2">From the file dialog select the library path 
+  of package(s) you want to install (usually the 
+  \lib\d9 directory below your LMD VCL installation folder). If you installed designtime packages during installation to default BPL output folder, please 
+  search at that location).&nbsp;</font></li>
+  <li><font face="Verdana" size="2">Select desired designtime package files as mentioned in the package list above. 
+  Note: Hold Ctrl-key to select more than one file at the same time.</font><font face="Verdana">
+  </font></li>
+</ol>
+<p><font face="Verdana" color="#ff0000" size="2"><strong>Important:</strong></font><font face="Verdana" size="2"><br>
+If installer did not add path settings automatically, you have to add the full 
+paths (e.g. C:\LMD2016\lib\d9) of LMD VCL DCU files yourself to the 
+Delphi's library path (Library Page/Environment Options in the Tools Menu).&nbsp;</font></p>
+<div align="left">
+
+<font size="2" face="Verdana"><strong>How to add helpfile into the Delphi-IDE
+</strong></font>
+
+</div>
+<div align="left">
+
+<font size="2" face="Verdana">By default the installer tries to install helpfile automatically. To install any LMD 
+VCL Helpfile manually, check the </font>
+
+<font size="2" face="Courier New">\help\bds3</font><font size="2" face="Verdana"> 
+folder below installation directory.</font>&nbsp; <font size="2">All available 
+documentation files for corresponding IDE and the <font face="Courier New">
+RegHelp2.exe</font> tool can be found here. <br>
+To install all available files, simply run </font>
+<font size="2" face="Courier New">RegHelp2</font><font size="2">. To uninstall 
+all available files, switch to command line and run </font>
+<font size="2" face="Courier New">RegHelp2 </font><font size="2">/u. To 
+install/uninstall certain files, simply mention the corresponding hxx file. E.g. 
+to uninstall the shared helpfile only, use:</font></div>
+<div align="left">
+
+&nbsp;</div>
+<div align="center">
+
+<font size="2" face="Courier New">RegHelp2 /u lmdsharedBds3.hxx</font></div>
+<p><FONT color=#000080 size="1" face="Verdana"><a href="#Top">[Top]</a></FONT></p>
+<p>&nbsp;</p>
+<p><font face="Verdana" size="3"><strong>
+<a name="Delphi 7"></a>Delphi 7</strong></font><font face="Verdana" size="2"><br>
+<br>
+<strong>How to add the components</strong><br>
+The installation program tries to install the packages automatically (unless you 
+unchecked this option). For installing packages manually, you have to install 
+the LMD VCL designtime packages (check the package list above for available 
+options), Please note, that all designtime package names start with dcl[...] 
+praefix - installing a runtime package does not work.&nbsp;<br>
+<br>
+<i>Installation</i></font></p>
+<ol>
+  <li><font face="Verdana" size="2">Run Delphi and select &quot;Components&quot; menu. 
+  Click on &quot; Install Packages...&quot; button.</font><font face="Verdana"> </font>
+  </li>
+  <li><font face="Verdana" size="2">Click on the &quot;Add...&quot; button. A dialog box 
+  appears. Click there on the &quot;Browse...&quot; button.</font><font face="Verdana">
+  </font></li>
+  <li><font face="Verdana" size="2">From the file dialog select the library path 
+  of package(s) you want to install (usually the 
+  \lib\d7 directory below your LMD VCL installation folder. If you installed designtime packages during installation to default BPL output folder, please 
+  search at that location).&nbsp;</font></li>
+  <li><font face="Verdana" size="2">Select desired designtime package files as mentioned in the package list above. 
+  Note: Hold Ctrl-key to select more than one file at the same time.</font><font face="Verdana">
+  </font></li>
+</ol>
+<p><font face="Verdana" color="#ff0000" size="2"><strong>Important:</strong></font><font face="Verdana" size="2"><br>
+If installer did not add path settings automatically, you have to add the full 
+paths (e.g. C:\LMD2016\lib\d7) of LMD VCL DCU files yourself to the 
+Delphi's library path (Library Page/Environment Options in the Tools Menu).&nbsp;<br>
+<br>
+<br>
+<strong>How to add helpfile into the Delphi-IDE </strong><br>
+By default the installer is able toinstall helpfiles automatically.&nbsp;&nbsp;<br>
+If you have for any reason to install helpfiles manually follow these steps:</font></p>
+<ol>
+  <li><font face="Verdana" size="2">Start Borland Openhelp Tool (Menu 
+  Help|Customize...).&nbsp;</font><font face="Verdana"> </font></li>
+  <li><font face="Verdana" size="2">Select Tab &quot;Link&quot;. Choose &quot;Add Files...&quot; 
+  from the Edit Menu.</font><font face="Verdana"> </font></li>
+  <li><font face="Verdana" size="2">Add any LMD VCL Helpfiles. You find them 
+  usually in the \help menu of your Delphi Installation. If not - copy all 
+  helpfiles from the \help folder of the LMD VCL installation folder to this 
+  folder (*.hlp, *.cnt AND *.als files).<br>
+  &nbsp;</font><font face="Verdana"> </font></li>
+</ol>
+<p><font face="Verdana" size="2">Possible filenames of LMD VCL helpfiles are:<br>
+<br>
+</font><font size="2" face="Courier New">lmdtools.hlp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+LMD-Tools Helpfile<br>
+lmdshared.hlp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LMD Common Shared 
+Runtime Helpfile<br>
+lmdelpack.hlp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LMD ElPack Helpfile<br>
+lmdidettols.hlp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LMD IDE-Tools Helpfile<br>
+lmdpacks.hlp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LMD 
+Standalone Packs Helpfile&nbsp;<br>
+</font><FONT color=#000080 size="1" face="Verdana"><a href="#Top">[Top]</a></FONT></p>
+<p><br>
+<font face="Verdana" size="3"><strong><a name="Delphi6"></a>Delphi / C++ Builder 6<br>
+</strong></font><font face="Verdana" size="2">
+<br>
+<strong>How to add the components</strong><br>
+The installation program tries to install the packages automatically (unless you 
+unchecked this option). For installing packages manually, you have to install 
+the LMD VCL designtime packages (check the package list above for available 
+options), Please note, that all designtime package names start with dcl[...] 
+prefix - installing a runtime package does not work.&nbsp;<br>
+<br>
+<i>Installation</i></font></p>
+<ol>
+  <li><font face="Verdana" size="2">Run Delphi and select &quot;Components&quot; menu. 
+  Click on &quot; Install Packages...&quot; button.</font><font face="Verdana"> </font>
+  </li>
+  <li><font face="Verdana" size="2">Click on the &quot;Add...&quot; button. A dialog box 
+  appears. Click there on the &quot;Browse...&quot; button.</font><font face="Verdana">
+  </font></li>
+  <li><font face="Verdana" size="2">From the file dialog select the library path 
+  of package(s) you want to install (usually the 
+  \lib\d6 directory below your LMD VCL installation folder). If you installed designtime packages during installation to default BPL output folder, please 
+  search at that location).&nbsp;</font></li>
+  <li><font face="Verdana" size="2">Select desired designtime package files as mentioned in the package list above. 
+  Note: Hold Ctrl-key to select more than one file at the same time.</font><font face="Verdana">
+	</font></li>
+</ol>
+<p><font face="Verdana" color="#ff0000" size="2"><strong>Important:</strong></font><font face="Verdana" size="2"><br>
+If installer did not add path settings automatically, you have to add the full 
+paths (e.g. C:\LMD2016\lib\d6) of LMD VCL DCU files yourself to the 
+Delphi's library path (Library Page/Environment Options in the Tools Menu).&nbsp;<br>
+<br>
+<font color="#FF0000"><b>Important for C++ user:<br>
+</b></font>Because of the fact that no *.obj files are included in precompiled 
+packages, you have to add required *.lib files to your 
+project. For example to add non-db core controls add 
+</font><font face="Courier New" size="2">lmdtools11rt_60.lib</font><font face="Verdana" size="2">, for 
+db-controls 
+</font><font face="Courier New" size="2">lmdtoolsdb11rt_60.lib</font><font face="Verdana" size="2">. For other sub packages add 
+corresponding <u>runtime</u> lib files as described above.</font><br>
+<FONT color=#000080 size="1" face="Verdana"><a href="#Top">[Top]</a></FONT></p>
+<p><br>
+<br>
+<font face="Verdana" size="3"><strong><a name="Uninstalling"></a>Uninstalling LMD 
+VCL packages</strong></font></p>
+<p><font face="Verdana" size="2">To remove LMD VCL packages from your system completely 
+follow the directions below.</font></p>
+<p><font face="Verdana" size="2"><strong>Delphi 6, 7 and C++Builder 6</strong></font></p>
+<ul>
+  <li><font face="Verdana" size="2">Close all files and projects and and select 
+  &quot;Components|Install Packages...&quot;.</font><font face="Verdana"> </font></li>
+  <li><font face="Verdana" size="2">Select all LMD VCL packages from the 
+  Packages list and click the &quot;Remove&quot; button. </font></li>
+  <li><font face="Verdana" size="2">After that remove all LMD VCL paths from 
+  the global library search path (Library Page/Environment Options in the Tools 
+  Menu).</font><font face="Verdana"> </font></li>
+  <li><font face="Verdana" size="2">Start OpenHelp tool and remove any LMD VCL helpfiles (Menu Help|Customize..., select Tab &quot;Link&quot; then).</font><font face="Verdana">
+  </font></li>
+</ul>
+<p><font face="Verdana" size="2"><strong>Delphi 2005 and higher</strong></font></p>
+<ul>
+  <li><font face="Verdana" size="2">Close all files and projects and and select 
+  &quot;Components|Install Packages...&quot;.</font><font face="Verdana"> </font></li>
+  <li><font face="Verdana" size="2">Select all LMD VCL packages from the 
+  Packages list and click the &quot;Remove&quot; button. </font></li>
+  <li><font face="Verdana" size="2">After that remove all LMD VCL paths from 
+  the global library search path (Options|Environment Options in the Tools 
+  Menu. See either ).</font><font face="Verdana"> </font></li>
+  <li><font face="Verdana" size="2">To uninstall helpfile from the IDE check the \help\bdsXXXW 
+	folder below installation directory and run </font>
+	<font face="Courier New" size="2">RegHelp2 /u</font><font face="Verdana" size="2"> 
+	from command line 
+	(XXXW specifies the BDS version, example is BDS4) 
+  to remove the particular help files from IDE. This is only required when 
+	automatic installer failed to remove helpfiles.</font></li>
+</ul>
+<p><font face="Verdana" size="2"><strong>Removing LMD VCL files completely from your hard disk<br>
+</strong>After uninstalling the components from the CBuilder IDE/Delphi you may 
+remove the component files physically. </font></p>
+<ul>
+  <li><font face="Verdana" size="2">Open the Add/Remove Programs icon from the 
+  Control Panel and double click the &quot;LMD [..]&quot; entry.</font><font face="Verdana">
+  </font></li>
+  <li><font face="Verdana" size="2">All the DCUs/object and backup files have to 
+  be removed manually from the LMD VCL' uninstallation directory. As a rule 
+  the installation directory won't be deleted during the uninstallation process, because 
+  such files will be generated while you work on the Tools but - for safety's 
+  sake - won't be deleted automatically by the uninstaller.<span lang="de">
+  <font color="#000080">Alternative: Use the Custom Uninstall method in 
+  Uninstaller application and select always all options - this will remove 
+  complete paths including generated files.</font></span><font color="#000080">
+  <span lang="de">We recommend to use the second way.</span></font></font></li>
+  <li><font face="Verdana" size="2">Remove all dcllmd*.* and lmd*.* files from 
+  the \projects\bpl (and&nbsp; \projects\lib in CBuilder) folders and below your 
+  CBuilder/Delphi installation folder. If you had chosen to install runtime 
+  files into system directory, remove all lmd*.bpl packages from the System 
+  directory of your Windows installation. To be sure search harddisk for these 
+  files and remove them all. <font color="#000080">Do not remove license files 
+  or registration utility from the system directory.</font></font><font face="Verdana">
+  </font></li>
+  <li><font face="Verdana" size="2">Be sure that you did not compile LMD VCL 
+  files into a custom package!</font><font face="Verdana"> </font></li>
+  <li><font face="Verdana" size="2">Possible registry keys can be found under:<br>
+  </font><font face="Courier New" size="2">HKEY_LOCAL_MACHINE\SOFTWARE\LMD Innovative\LMD-Tools 
+	201<span lang="de">1</span></font><font face="Verdana" size="2"><br>
+  Remove them if you don't want to use LMD VCL packages any longer.<br>
+&nbsp;</font></li>
+</ul>
+<p>
+<FONT color=#000080 size="1" face="Verdana"><a href="#Top">[Top]</a></FONT><font face="Verdana" size="1"><br>
+&nbsp;</font></p>
+<P> 
+<HR>
+
+<P><FONT color=#000080>©&nbsp;  </FONT><FONT color=#0000FF>by</FONT><FONT color=#000080> <A 
+href="http://www.lmd.de/">LMD Innovative</A> Germany<BR>All other trademarks are 
+acknowledged.</FONT> </P></BODY></HTML>

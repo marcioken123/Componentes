@@ -1,0 +1,61 @@
+package lmdrtprint;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$LIBSUFFIX '70'}
+{$DESCRIPTION 'LMD PrintPack Components'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  lmdrtl,
+  rtl,
+  vcl,
+  vclx,
+  lmdrtrtlx;
+
+contains
+  LMDPrinter in '..\..\LMDPrinter.pas',
+  LMDDocModel in '..\..\LMDDocModel.pas',
+  LMDPrintablePage in '..\..\LMDPrintablePage.pas',
+  LMDDocElementRenderer in '..\..\LMDDocElementRenderer.pas',
+  LMDPageLayout in '..\..\LMDPageLayout.pas',
+  LMDSimpleDocLayout in '..\..\LMDSimpleDocLayout.pas',
+  LMDCustomPrintTask in '..\..\LMDCustomPrintTask.pas',
+  LMDLayoutRenderPrintTask in '..\..\LMDLayoutRenderPrintTask.pas',
+  LMDPrintConst in '..\..\LMDPrintConst.pas',
+  LMDPrintPageDialog in '..\..\LMDPrintPageDialog.pas',
+  LMDPrintPreviewPanel in '..\..\LMDPrintPreviewPanel.pas',
+  LMDPrintToolBar in '..\..\LMDPrintToolBar.pas',
+  LMDPrintResModule in '..\..\LMDPrintResModule.pas' {LMDPrintResDataModule},
+  LMDPrintStatusBar in '..\..\LMDPrintStatusBar.pas',
+  LMDStringsPrintTask in '..\..\LMDStringsPrintTask.pas',
+  LMDMLGen in '..\..\LMDMLGen.pas',
+  LMDControlPrintTasks in '..\..\LMDControlPrintTasks.pas',
+  LMDSimpleRectPageLayout in '..\..\LMDSimpleRectPageLayout.pas',
+  LMDImagePrintTask in '..\..\LMDImagePrintTask.pas',
+  LMDPrintPreviewDlg in '..\..\LMDPrintPreviewDlg.pas' {LMDPrintPreviewForm},
+  LMDPrintPreviewModeDlg in '..\..\LMDPrintPreviewModeDlg.pas' {LMDPrintPreviewModeDialog},
+  LMDPrintTemplateEditDlg in '..\..\LMDPrintTemplateEditDlg.pas' {LMDPrintTemplateEditDialog};
+
+end.

@@ -1,0 +1,61 @@
+T+: TListControlItem
+        PE: Data
+        P+: Caption
+        P+: ImageIndex
+T+: TListItemsSortType
+T+: TListCompareEvent
+TE: TListItemsCompare
+T+: TListControlItems
+        P+: Items
+        P+: CaseSensitive
+        P+: SortType
+        P+: OnCompare
+T+: TGetItemCountEvent
+T+: TItemSelectedEvent
+T+: TCustomListAction
+        P+: Images
+        P+: Loading
+        P+: OnGetItemCount
+        P+: OnItemSelected
+        P+: Active
+        P+: Count
+        P+: ItemIndex
+        P+: Strings
+TE: TGetVirtualItemEvent
+T+: TVirtualListAction
+        P+: Count
+        P+: Active
+        P+: Caption
+        P+: Enabled
+        P+: HelpContext
+        P+: Hint
+        P+: Images
+        P+: ItemIndex
+        P+: ShortCut
+        P+: SecondaryShortCuts
+        P+: Visible
+        PE: OnGetItem
+        P+: OnGetItemCount
+        P+: OnItemSelected
+        P+: OnHint
+T+: TGetItemEvent
+T+: TStaticListItems
+T+: TListControlItemClass
+T+: TStaticListAction
+        P+: Count
+        P+: Active
+        P+: Caption
+        P+: Enabled
+        P+: HelpContext
+        P+: Hint
+        P+: Images
+        P+: ItemIndex
+        P+: Items
+        P+: ShortCut
+        P+: SecondaryShortCuts
+        P+: Visible
+        P+: OnGetItem
+        P+: OnItemSelected
+        P+: OnHint
+        P+: OnUpdate
+T+: TListActionLink

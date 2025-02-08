@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="lmdrttxt60.bpl"/>
+    <OBJFILES value="lmdrttxt.obj ..\..\LMDTextButton.obj ..\..\LMDTextObject.obj ..\..\LMDTextPanel.obj ..\..\LMDTextListBox.obj ..\..\LMDTextSpeedButton.obj ..\..\LMDTextHint.obj ..\..\LMDTextShapeHint.obj ..\..\LMDTextLabel.obj ..\..\LMDTextCheckGroup.obj ..\..\LMDTextRadioButton.obj ..\..\LMDTextRadioGroup.obj ..\..\LMDTextScroll.obj ..\..\LMDTextCheckBox.obj ..\..\LMDTextCustomPanel.obj ..\..\LMDTextCustomScroll.obj ..\..\LMDTextCustomLabel.obj ..\..\LMDTextRadioGroupButton.obj ..\..\LMDTextCheckGroupButton.obj ..\..\LMDTextScrollPanel.obj ..\..\LMDTextContainer.obj"/>
+    <RESFILES value="lmdrttxt.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) "/>
+    <LIBFILES value=""/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value="rtl.lib"/>
+    <PACKAGES value="lmdrtl.bpi rtl.bpi vcl.bpi vclx.bpi lmdrtcore.bpi lmdrtparse.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value=""/>
+    <SYSDEFINES value="_RTLDLL;NO_STRICT;USEPACKAGES"/>
+    <MAINSOURCE value="lmdrttxt.cpp"/>
+    <INCLUDEPATH value="$(BCB)\include;$(BCB)\include\vcl;"/>
+    <LIBPATH value="$(BCB)\lib\obj;$(BCB)\lib;"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I$(BCB)\include -I$(BCB)\include\vcl -src_suffix cpp -boa"/>
+    <CFLAG1 value="-O2 -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -a8 -b- -k- -vi -c -tWM"/>
+    <PFLAGS value="-N2..\..\build -N0..\..\build -NH..\..\build -$Y- -$L- -$D- -$A8 -v -JPHNE -M "/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zn"/>
+    <LFLAGS value="-I..\.. -D&quot;LMD-Tools TextPack Components&quot; -aa -Tpp -Gpr -x -Gn -Gl -Gi"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0pkg32.obj $(PACKAGES) Memmgr.Lib sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib "/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="lmdrttxt.cpp" FORMNAME="" UNITNAME="lmdrttxt" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrttxt.res" FORMNAME="" UNITNAME="lmdrttxt.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtl.bpi" FORMNAME="" UNITNAME="lmdrtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="rtl.bpi" FORMNAME="" UNITNAME="rtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vcl.bpi" FORMNAME="" UNITNAME="vcl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vclx.bpi" FORMNAME="" UNITNAME="vclx" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtcore.bpi" FORMNAME="" UNITNAME="lmdrtcore" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtparse.bpi" FORMNAME="" UNITNAME="lmdrtparse" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTextButton.pas" FORMNAME="" UNITNAME="LMDTextButton" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTextObject.pas" FORMNAME="" UNITNAME="LMDTextObject" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTextPanel.pas" FORMNAME="" UNITNAME="LMDTextPanel" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTextListBox.pas" FORMNAME="" UNITNAME="LMDTextListBox" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTextSpeedButton.pas" FORMNAME="" UNITNAME="LMDTextSpeedButton" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTextHint.pas" FORMNAME="" UNITNAME="LMDTextHint" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTextShapeHint.pas" FORMNAME="" UNITNAME="LMDTextShapeHint" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTextLabel.pas" FORMNAME="" UNITNAME="LMDTextLabel" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTextCheckGroup.pas" FORMNAME="" UNITNAME="LMDTextCheckGroup" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTextRadioButton.pas" FORMNAME="" UNITNAME="LMDTextRadioButton" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTextRadioGroup.pas" FORMNAME="" UNITNAME="LMDTextRadioGroup" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTextScroll.pas" FORMNAME="" UNITNAME="LMDTextScroll" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTextCheckBox.pas" FORMNAME="" UNITNAME="LMDTextCheckBox" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTextCustomPanel.pas" FORMNAME="" UNITNAME="LMDTextCustomPanel" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTextCustomScroll.pas" FORMNAME="" UNITNAME="LMDTextCustomScroll" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTextCustomLabel.pas" FORMNAME="" UNITNAME="LMDTextCustomLabel" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTextRadioGroupButton.pas" FORMNAME="" UNITNAME="LMDTextRadioGroupButton" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTextCheckGroupButton.pas" FORMNAME="" UNITNAME="LMDTextCheckGroupButton" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTextScrollPanel.pas" FORMNAME="" UNITNAME="LMDTextScrollPanel" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTextContainer.pas" FORMNAME="" UNITNAME="LMDTextContainer" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+  <IDEOPTIONS>
+[Version Info Keys]
+CompanyName=LMD Innovative
+FileDescription=LMD-Tools TextPack Components
+FileVersion=2016.5
+InternalName=
+LegalCopyright=© LMD Innovative
+LegalTrademarks=
+OriginalFilename=
+ProductName=LMD-Tools TextPack Components
+ProductVersion=2016.5
+Comments=
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[Linker]
+LibPrefix=
+LibSuffix=60
+LibVersion=
+  </IDEOPTIONS>
+</PROJECT>

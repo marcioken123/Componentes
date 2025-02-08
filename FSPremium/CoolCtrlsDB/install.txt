@@ -1,0 +1,16 @@
+Installation
+
+  For proper installation of the package you need to copy all the package 
+  files to the folder where your components are placed. 
+
+  For Delphi 3/4/5/6/7
+  ====================
+  1. All files should be copied to the same place. 
+  2. Open in Dlephi CDBUd(x).dpk package.
+  3. Install the package.
+
+  For C++ Builder 4/5/6
+  =====================
+  1. All files should be copied to the same place. 
+  2. Open CDBUb(x).bpk file.
+  3. Install the package. 

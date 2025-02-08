@@ -1,0 +1,58 @@
+package lmdrtlog;
+
+{$R *.res}
+{$R *.otares}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'LMD 2016 - Logging Library'}
+{$LIBSUFFIX '250'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcl,
+  vclx,
+  lmdrtl,
+  dbrtl,
+  vcldb;
+
+contains
+  LMDCallStack in '..\..\LMDCallStack.pas',
+  LMDExceptionHook in '..\..\LMDExceptionHook.pas',
+  LMDMapFile in '..\..\LMDMapFile.pas',
+  LMDLogDBSession in '..\..\LMDLogDBSession.pas',
+  LMDLogMessage in '..\..\LMDLogMessage.pas',
+  LMDLogServer in '..\..\LMDLogServer.pas',
+  LMDLogWMCopyServer in '..\..\LMDLogWMCopyServer.pas',
+  LMDLogWMCopyTransport in '..\..\LMDLogWMCopyTransport.pas',
+  LMDLogFileTransport in '..\..\LMDLogFileTransport.pas',
+  LMDLogLayoutTransport in '..\..\LMDLogLayoutTransport.pas',
+  LMDLogBinaryLayout in '..\..\LMDLogBinaryLayout.pas',
+  LMDLogPatternLayout in '..\..\LMDLogPatternLayout.pas',
+  LMDLogConsoleTransport in '..\..\LMDLogConsoleTransport.pas',
+  LMDLogDebugStringTransport in '..\..\LMDLogDebugStringTransport.pas';
+
+end.

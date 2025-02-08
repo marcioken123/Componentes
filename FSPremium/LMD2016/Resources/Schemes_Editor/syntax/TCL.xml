@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SchemeList root='Main'>
+
+    <Scheme name='Text' inherit='Numbers'>                
+    
+        <Regex token0='email'>
+            [_a-zA-Z\d\-\.]{1,40}
+            @ 
+            ([_ a-z A-Z \d \-]+ 
+            (\. [_ a-z A-Z \d \-]+ )+ )
+        </Regex>
+    
+        <Regex token0='st' regex=' \/\* | \*\/   ' />                
+                
+        <SyntaxBlock capture="true">
+            <Start> st:/*  </Start>
+            <End> st:*/  </End>
+        </SyntaxBlock>              
+    </Scheme>
+
+    <Scheme name='Numbers'>
+        <Regex token0='number'>
+            \b (0x \d+ [lL]? | \d+ (e \d*)? [lLdDfF]? ) \b
+        </Regex>
+        
+        <Regex token0='number'>
+            \b [+\-]? \d+ (\. \d+)? ([eE] [+\-]? \d+) \b
+        </Regex>
+    </Scheme>
+
+    <Scheme name='Comment' inherit='Text' defaultToken='comment'  />
+
+    <Scheme name='StringEscape' inherit='Text' defaultToken='string'>
+    
+        <Regex token0='escaped' regex='\\[abfnrtv {} \[\] $ &quot; ]' />
+        <Regex token0='escaped' regex='\\u[0-9a-fA-F]{4}' priority='10' />        
+        <Regex token0='escaped' regex='\\o[0-7]{2}' priority='10' />        
+        <Regex token0='escaped' regex='\\x[0-9a-fA-F]{2}' priority='10' />        
+        
+        <RegexBlock innerScheme='Main' start_token0='default' 
+                    end_token0='default' >
+
+            <Start> \[  </Start>        
+            <End> \] </End>        
+        </RegexBlock>
+        
+    </Scheme>
+
+    <Scheme name='String' inherit='StringEscape' defaultToken='string'>
+        <Regex token0='quotedVariable' regex='\$\w+' />    
+        
+        <RegexBlock innerScheme='StringNoSubst' start_token0='string' 
+                    end_token0='string' >
+
+            <Start> \{  </Start>        
+            <End> \} </End>        
+        </RegexBlock>
+        
+    </Scheme>
+
+    <Scheme name='StringNoSubst' inherit='StringEscape' defaultToken='string'>
+        <RegexBlock innerScheme='String' start_token0='string' 
+                    end_token0='string' >
+
+            <Start> &quot;  </Start>        
+            <End> &quot; </End>        
+        </RegexBlock>
+    
+    </Scheme>
+
+    
+    <Scheme name='Main'     
+            defaultToken='default'           
+
+            keywordsIgnoreCase='false'
+    >
+        <KeywordRegex>\b[a-zA-Z_][\w_]*\b</KeywordRegex>
+
+        <Keywords>    
+             break      case     catch
+             continue   for      foreach
+             global     if       else
+             elseif     proc     return
+             set        source   switch
+             unset      uplevel  upvar
+             variable   while    namespace
+
+             puts   
+             after      append   bgerror
+             binary     array    cd
+             clock      close    concat
+             eof        error    eval
+             exec       exit     expr
+             fblocked   fcopy    fconfigure
+             file       fileevent   filename
+             flush      format   gets
+             glob       history  incr
+             info       interp   join
+             lappend    library  lindex
+             linsert    list     llength
+             load       lrange   lreplace
+             lsearch    lsort    vwait
+             open       package  pid
+             pkg_mkindexputs     pwd
+             read       regexp   regsub
+             rename     resource scan
+             seek       socket   split
+             string     subst    tell
+             time       trace    update
+
+            bell       bind     bindtags
+            bitmap     button   canvas
+            checkbutton clipboard destroy
+            entry      event    focus
+            font       frame    grab
+            
+             grid       image    label
+             listbox    lower    menu
+             menubutton message  option
+             pack       pack-old photo
+             place      raise    radiobutton
+             scale      scrollbar selection
+             send       text     tk_menuBar
+             
+             tk_bindForTraversal                tk_bisque
+             tk_setPalette                      tk_chooseColor
+             tk_dialog                          tk_focusFollowsMouse
+             tk_focusNext                       tk_focusPrev
+             tk_getOpenFile                     tk_getSaveFile
+             tk_messageBox                      tk_optionMenu
+             tk_popup   tkerror  tkwait
+             toplevel   winfo    wm
+        </Keywords>
+
+
+        <Regex innerScheme='Comment' regex='\#.*$' />
+
+        <Regex token0='symbol' regex='[   \]  {}()  \[  &gt; &lt; ]' />
+        <Regex token0='symbol' regex='[-:?\~=+!^;,]' />
+
+        <RegexBlock innerScheme='String' start_token0='string' 
+                    end_token0='string' >
+
+            <Start> &quot;  </Start>        
+            <End> &quot; </End>        
+        </RegexBlock>
+
+
+        <SkipSyntaxToken token='comment' />
+
+
+        <SyntaxBlock capture="false" priority='0'  >
+            <Start> sym:{  </Start>
+            <End> sym:}  </End>
+        </SyntaxBlock>
+
+        <SyntaxBlock capture="true">
+            <Start> kw:else sym:{  </Start>
+            <End> sym:}  </End>
+        </SyntaxBlock>
+
+        <SyntaxBlock capture="true">
+            <Start> 
+                [ kw:proc ] ( kw | id ) 
+                sym:{ 
+                        ( [^ sym:{ sym:} ]* sym:{ [^ sym:{ sym:} ]* sym:} )*? 
+                        [^ sym:{ sym:} ]*
+                sym:} 
+                sym:{ 
+            </Start>
+            <End> sym:}  </End>
+        </SyntaxBlock>
+
+        <SyntaxBlock capture="true">
+            <Start> 
+                [ kw:if kw:for ] 
+                sym:{ 
+                        ( [^ sym:{ sym:} ]* sym:{ [^ sym:{ sym:} ]* sym:} )*? 
+                        [^ sym:{ sym:} ]*
+                sym:} 
+                sym:{ 
+            </Start>
+            <End> sym:}  </End>
+        </SyntaxBlock>
+
+        <SyntaxBlock capture="true">
+            <Start> 
+                [ kw:if kw:for ] [^ sym:{ ]+
+                sym:{ 
+            </Start>
+            <End> sym:}  </End>
+        </SyntaxBlock>
+
+    </Scheme>
+</SchemeList>

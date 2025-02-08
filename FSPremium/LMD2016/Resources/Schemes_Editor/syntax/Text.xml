@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SchemeList root='Main'>
+
+  <TokenAlias name='text' baseToken='default' />
+  
+  <Scheme name='Text' inherit='Numbers'>
+        <Regex token0='email'>
+            [_a-zA-Z\d\-\.]{1,40}
+            @ 
+            ([_ a-z A-Z \d \-]+ 
+            (\. [_ a-z A-Z \d \-]+ )+ )
+        </Regex>                
+  </Scheme>
+
+  <Scheme name='Numbers'>
+    <Regex token0='number'>\b (0x \d+ [lL]? | \d+ (e \d*)? [lLdDfF]? ) \b</Regex>
+    <Regex token0='number'>\b [+\-]? \d+ (\. \d+)? ([eE] [+\-]? \d+) \b</Regex>
+  </Scheme>
+
+  <Scheme name='Main' keywordsIgnoreCase='false' 
+          inherit='Text'
+          defaultToken='text'>
+  </Scheme>
+</SchemeList>

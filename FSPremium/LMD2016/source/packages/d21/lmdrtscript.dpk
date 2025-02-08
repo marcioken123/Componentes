@@ -1,0 +1,51 @@
+package lmdrtscript;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$LIBSUFFIX '210'}
+{$DESCRIPTION 'LMD ScriptPack run-time package'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  lmdrtl,
+  rtl,
+  vcl,
+  vclx;
+
+contains
+  LMDSctMemMgr in '..\..\LMDSctMemMgr.pas',
+  LMDSctClass in '..\..\LMDSctClass.pas',
+  LMDSctWrappers in '..\..\LMDSctWrappers.pas',
+  LMDSctCst in '..\..\LMDSctCst.pas',
+  LMDSctMSScriptTLB in '..\..\LMDSctMSScriptTLB.pas',
+  LMDSctScripter in '..\..\LMDSctScripter.pas',
+  LMDSctSysWrappers in '..\..\LMDSctSysWrappers.pas',
+  LMDSctSource in '..\..\LMDSctSource.pas',
+  LMDSctVMByteCode in '..\..\LMDSctVMByteCode.pas',
+  LMDSctVMCompBase in '..\..\LMDSctVMCompBase.pas',
+  LMDSctVM in '..\..\LMDSctVM.pas',
+  LMDSctPasCompiler in '..\..\LMDSctPasCompiler.pas',
+  LMDSctVbCompiler in '..\..\LMDSctVbCompiler.pas';
+
+end.

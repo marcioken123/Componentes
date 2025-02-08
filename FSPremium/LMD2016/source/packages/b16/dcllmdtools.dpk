@@ -1,0 +1,75 @@
+package dcllmdtools;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$LIBSUFFIX '160'}
+{$DESCRIPTION 'LMD 2016 - LMD-Tools Main Components'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  lmdrtcore,
+  lmdrttools,
+  lmdrtl,
+  dcllmdrtl,
+  rtl,
+  vcl,
+  vclx,
+  designide,
+  dclstd,
+  dcllmdcore,
+  dcllmdprint;
+
+contains
+  LMD_RegMain in '..\..\LMD_RegMain.pas',
+  LMD_RegMainEditors in '..\..\LMD_RegMainEditors.pas',
+  pLMDCPGetMain in '..\..\pLMDCPGetMain.pas',
+  pLMDCstMain in '..\..\pLMDCstMain.pas',
+  pLMDCEMain in '..\..\pLMDCEMain.pas',
+  pLMDPEMain in '..\..\pLMDPEMain.pas',
+  pLMDRegOS in '..\..\pLMDRegOS.pas',
+  pLMD3DEffectEditorDlg in '..\..\pLMD3DEffectEditorDlg.pas' {LMD3DEffectEditorDlg},
+  pLMDBmpRegionEditorDlg in '..\..\pLMDBmpRegionEditorDlg.pas' {LMDfrmRegionFromBMPdlg},
+  pLMDButtonBarEditorDlg in '..\..\pLMDButtonBarEditorDlg.pas' {frmLMDButtonBarEditorDlg},
+  pLMDCaptionEditorDlg in '..\..\pLMDCaptionEditorDlg.pas' {LMDCaptionEditorDlg},
+  pLMDDlgBtnEditorDlg in '..\..\pLMDDlgBtnEditorDlg.pas' {LMDDlgButtonEditorDlg},
+  pLMDFilterPropertyEditorDlg in '..\..\pLMDFilterPropertyEditorDlg.pas' {LMDFilterPropsDlg},
+  pLMDGraphicLabelEditorDlg in '..\..\pLMDGraphicLabelEditorDlg.pas' {LMDFormGraphicLabelEditor},
+  pLMDHideNonVC in '..\..\pLMDHideNonVC.pas' {LMDHideNonVCfrm},
+  pLMDLEDEditorDlg in '..\..\pLMDLEDEditorDlg.pas' {LMDLEDEditorDlg},
+  pLMDLightEditorDlg in '..\..\pLMDLightEditorDlg.pas' {LMDLightEditorDlg},
+  pLMDMMButtonFaceEditorDlg in '..\..\pLMDMMButtonFaceEditorDlg.pas' {LMDButtonFaceDlg},
+  pLMDOSPropForm in '..\..\pLMDOSPropForm.pas' {LMDOSPropForm},
+  pLMDPointListEditorDlg in '..\..\pLMDPointListEditorDlg.pas' {frmTLMDPointListEditor},
+  pLMDSendKeyEditorDlg in '..\..\pLMDSendKeyEditorDlg.pas' {LMDSendKeysEditorDlg},
+  pLMDShadowEditorDlg in '..\..\pLMDShadowEditorDlg.pas' {LMDShadowEditorDlg},
+  pLMDShapeEditorDlg in '..\..\pLMDShapeEditorDlg.pas' {LMDShapeEditorDlg},
+  pLMDSimpleBevelEditorDlg in '..\..\pLMDSimpleBevelEditorDlg.pas' {LMDSimpleBevelEditorDlg},
+  pLMDStyleManProp in '..\..\pLMDStyleManProp.pas',
+  pLMDTeethEditorDlg in '..\..\pLMDTeethEditorDlg.pas' {LMDTeethEditorDlg},
+  pLMDVldRegExpEditor in '..\..\pLMDVldRegExpEditor.pas' {LMDRegExprForm},
+  pLMDDateListEditorDlg in '..\..\pLMDDateListEditorDlg.pas' {LMDDateListEditorDlg},
+  pLMDControlFaceEditorDlg in '..\..\pLMDControlFaceEditorDlg.pas' {frmLMDControlFaceComponentEditor},
+  pLMDControlFaceEditorDlgAddState in '..\..\pLMDControlFaceEditorDlgAddState.pas' {frmStateAddingDlg};
+
+end.

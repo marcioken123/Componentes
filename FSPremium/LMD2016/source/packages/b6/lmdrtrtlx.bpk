@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="lmdrtrtlx60.bpl"/>
+    <OBJFILES value="lmdrtrtlx.obj ..\..\intfLMDBackGround.obj ..\..\intfLMDControlPosSize.obj ..\..\intfLMDFaceController.obj ..\..\intfLMDFaceControllerEditable.obj ..\..\intfLMDFaceControllerPressable.obj ..\..\intfLMDFileDialog.obj ..\..\LMDActnList.obj ..\..\LMDStdActns.obj ..\..\LMDApplicationCtrl.obj ..\..\LMD3DCaption.obj ..\..\LMDAlphaObject.obj ..\..\LMDBaseControl.obj ..\..\LMDBaseController.obj ..\..\LMDBaseGraphicControl.obj ..\..\LMDBaseLabel.obj ..\..\LMDBaseMRUList.obj ..\..\LMDBevel.obj ..\..\LMDBitmapEffectObject.obj ..\..\LMDBitmapList.obj ..\..\LMDBmp.obj ..\..\LMDBrowseDlg.obj ..\..\LMDButtonBase.obj ..\..\LMDButtonLayout.obj ..\..\LMDCabSupport.obj ..\..\LMDCFCSettingObject.obj ..\..\LMDCFCStateObject.obj ..\..\LMDCompareValidator.obj ..\..\LMDCont.obj ..\..\LMDContainerComponent.obj ..\..\LMDControl.obj ..\..\LMDControlErrorProvider.obj ..\..\LMDConversion.obj ..\..\LMDCustomContainer.obj ..\..\LMDCustomControl.obj ..\..\LMDCustomImageList.obj ..\..\LMDCustomStatusBar.obj ..\..\LMDCustomPanel.obj ..\..\LMDCustomBevelPanel.obj ..\..\LMDDateTimeRangeValidator.obj ..\..\LMDDwmAPI.obj ..\..\LMDErrorProvider.obj ..\..\LMDErrorProvidersGroup.obj ..\..\LMDExtDialogs.obj ..\..\LMDFaceController.obj ..\..\LMDFigures.obj ..\..\LMDFillers.obj ..\..\LMDFormPersistent.obj ..\..\LMDForms.obj ..\..\LMDFillObject.obj ..\..\LMDFloatRangeValidator.obj ..\..\LMDFMDrop.obj ..\..\LMDFormVista.obj ..\..\LMDFXCaption.obj ..\..\LMDGenericList.obj ..\..\LMDGlyph.obj ..\..\LMDGlyphTextLayout.obj ..\..\LMDGradient.obj ..\..\LMDGradientFrames.obj ..\..\LMDGraph.obj ..\..\LMDGraphUtils.obj ..\..\LMDGraphicList.obj ..\..\LMDHTMLUnit.obj ..\..\LMDHookComponent.obj ..\..\LMDIconErrorProvider.obj ..\..\LMDInPlaceErrorProvider.obj ..\..\LMDImageList.obj ..\..\LMDImageListConnector.obj ..\..\LMDInteropServices.obj ..\..\LMDIntRangeValidator.obj ..\..\LMDMessageBoxErrorProvider.obj ..\..\LMDNativeHint.obj ..\..\LMDPNGImage.obj ..\..\LMDPNGImageFilters.obj ..\..\LMDPNGImageList.obj ..\..\LMDRangeValidator.obj ..\..\LMDRegExpValidator.obj ..\..\LMDRequiredFieldValidator.obj ..\..\LMDRTLXConst.obj ..\..\LMDShapeFill.obj ..\..\LMDStreamUtils.obj ..\..\LMDStringList.obj ..\..\LMDStringRangeValidator.obj ..\..\LMDStyleMan.obj ..\..\LMDWave.obj ..\..\LMDWaveList.obj ..\..\LMDVistaDialogs.obj ..\..\LMDTaskDialog.obj ..\..\LMDTaskDialogTemplate.obj ..\..\LMDTaskDialogButtonDsgn.obj ..\..\LMDTaskDialogDsgn.obj ..\..\LMDTaskDlg.obj ..\..\LMDThemes.obj ..\..\LMDUnicodeCtrls.obj ..\..\LMDUnicodeDialogs.obj ..\..\LMDVldBase.obj ..\..\LMDWndProcComponent.obj ..\..\LMDUsp10.obj ..\..\LMDDropdownForm.obj"/>
+    <RESFILES value="lmdrtrtlx.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) "/>
+    <LIBFILES value=""/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value="rtl.lib"/>
+    <PACKAGES value="lmdrtl.bpi rtl.bpi vcl.bpi vclx.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value=""/>
+    <SYSDEFINES value="_RTLDLL;NO_STRICT;USEPACKAGES"/>
+    <MAINSOURCE value="lmdrtrtlx.cpp"/>
+    <INCLUDEPATH value="$(BCB)\include;$(BCB)\include\vcl;"/>
+    <LIBPATH value="$(BCB)\lib\obj;$(BCB)\lib;"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I$(BCB)\include -I$(BCB)\include\vcl -src_suffix cpp -boa"/>
+    <CFLAG1 value="-O2 -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -a8 -b- -k- -vi -c -tWM"/>
+    <PFLAGS value="-N2..\..\build -N0..\..\build -NH..\..\build -$Y- -$L- -$D- -$A8 -v -JPHNE -M "/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zn"/>
+    <LFLAGS value="-I..\.. -D&quot;LMD Extended Runtime Library&quot; -aa -Tpp -Gpr -x -Gn -Gl -Gi"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0pkg32.obj $(PACKAGES) Memmgr.Lib sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib "/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="lmdrtrtlx.cpp" FORMNAME="" UNITNAME="lmdrtrtlx" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtrtlx.res" FORMNAME="" UNITNAME="lmdrtrtlx.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtl.bpi" FORMNAME="" UNITNAME="lmdrtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="rtl.bpi" FORMNAME="" UNITNAME="rtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vcl.bpi" FORMNAME="" UNITNAME="vcl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vclx.bpi" FORMNAME="" UNITNAME="vclx" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\intfLMDBackGround.pas" FORMNAME="" UNITNAME="intfLMDBackGround" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\intfLMDControlPosSize.pas" FORMNAME="" UNITNAME="intfLMDControlPosSize" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\intfLMDFaceController.pas" FORMNAME="" UNITNAME="intfLMDFaceController" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\intfLMDFaceControllerEditable.pas" FORMNAME="" UNITNAME="intfLMDFaceControllerEditable" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\intfLMDFaceControllerPressable.pas" FORMNAME="" UNITNAME="intfLMDFaceControllerPressable" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\intfLMDFileDialog.pas" FORMNAME="" UNITNAME="intfLMDFileDialog" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDActnList.pas" FORMNAME="" UNITNAME="LMDActnList" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDStdActns.pas" FORMNAME="" UNITNAME="LMDStdActns" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDApplicationCtrl.pas" FORMNAME="" UNITNAME="LMDApplicationCtrl" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMD3DCaption.pas" FORMNAME="" UNITNAME="LMD3DCaption" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDAlphaObject.pas" FORMNAME="" UNITNAME="LMDAlphaObject" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDBaseControl.pas" FORMNAME="" UNITNAME="LMDBaseControl" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDBaseController.pas" FORMNAME="" UNITNAME="LMDBaseController" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDBaseGraphicControl.pas" FORMNAME="" UNITNAME="LMDBaseGraphicControl" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDBaseLabel.pas" FORMNAME="" UNITNAME="LMDBaseLabel" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDBaseMRUList.pas" FORMNAME="" UNITNAME="LMDBaseMRUList" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDBevel.pas" FORMNAME="" UNITNAME="LMDBevel" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDBitmapEffectObject.pas" FORMNAME="" UNITNAME="LMDBitmapEffectObject" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDBitmapList.pas" FORMNAME="" UNITNAME="LMDBitmapList" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDBmp.pas" FORMNAME="" UNITNAME="LMDBmp" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDBrowseDlg.pas" FORMNAME="" UNITNAME="LMDBrowseDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDButtonBase.pas" FORMNAME="" UNITNAME="LMDButtonBase" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDButtonLayout.pas" FORMNAME="" UNITNAME="LMDButtonLayout" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCabSupport.pas" FORMNAME="" UNITNAME="LMDCabSupport" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCFCSettingObject.pas" FORMNAME="" UNITNAME="LMDCFCSettingObject" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCFCStateObject.pas" FORMNAME="" UNITNAME="LMDCFCStateObject" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCompareValidator.pas" FORMNAME="" UNITNAME="LMDCompareValidator" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCont.pas" FORMNAME="" UNITNAME="LMDCont" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDContainerComponent.pas" FORMNAME="" UNITNAME="LMDContainerComponent" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDControl.pas" FORMNAME="" UNITNAME="LMDControl" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDControlErrorProvider.pas" FORMNAME="" UNITNAME="LMDControlErrorProvider" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDConversion.pas" FORMNAME="" UNITNAME="LMDConversion" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCustomContainer.pas" FORMNAME="" UNITNAME="LMDCustomContainer" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCustomControl.pas" FORMNAME="" UNITNAME="LMDCustomControl" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCustomImageList.pas" FORMNAME="" UNITNAME="LMDCustomImageList" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCustomStatusBar.pas" FORMNAME="" UNITNAME="LMDCustomStatusBar" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCustomPanel.pas" FORMNAME="" UNITNAME="LMDCustomPanel" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCustomBevelPanel.pas" FORMNAME="" UNITNAME="LMDCustomBevelPanel" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDateTimeRangeValidator.pas" FORMNAME="" UNITNAME="LMDDateTimeRangeValidator" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDwmAPI.pas" FORMNAME="" UNITNAME="LMDDwmAPI" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDErrorProvider.pas" FORMNAME="" UNITNAME="LMDErrorProvider" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDErrorProvidersGroup.pas" FORMNAME="" UNITNAME="LMDErrorProvidersGroup" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDExtDialogs.pas" FORMNAME="" UNITNAME="LMDExtDialogs" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDFaceController.pas" FORMNAME="" UNITNAME="LMDFaceController" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDFigures.pas" FORMNAME="" UNITNAME="LMDFigures" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDFillers.pas" FORMNAME="" UNITNAME="LMDFillers" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDFormPersistent.pas" FORMNAME="" UNITNAME="LMDFormPersistent" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDForms.pas" FORMNAME="" UNITNAME="LMDForms" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDFillObject.pas" FORMNAME="" UNITNAME="LMDFillObject" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDFloatRangeValidator.pas" FORMNAME="" UNITNAME="LMDFloatRangeValidator" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDFMDrop.pas" FORMNAME="" UNITNAME="LMDFMDrop" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDFormVista.pas" FORMNAME="" UNITNAME="LMDFormVista" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDFXCaption.pas" FORMNAME="" UNITNAME="LMDFXCaption" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDGenericList.pas" FORMNAME="" UNITNAME="LMDGenericList" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDGlyph.pas" FORMNAME="" UNITNAME="LMDGlyph" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDGlyphTextLayout.pas" FORMNAME="" UNITNAME="LMDGlyphTextLayout" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDGradient.pas" FORMNAME="" UNITNAME="LMDGradient" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDGradientFrames.pas" FORMNAME="" UNITNAME="LMDGradientFrames" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDGraph.pas" FORMNAME="" UNITNAME="LMDGraph" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDGraphUtils.pas" FORMNAME="" UNITNAME="LMDGraphUtils" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDGraphicList.pas" FORMNAME="" UNITNAME="LMDGraphicList" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDHTMLUnit.pas" FORMNAME="" UNITNAME="LMDHTMLUnit" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDHookComponent.pas" FORMNAME="" UNITNAME="LMDHookComponent" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDIconErrorProvider.pas" FORMNAME="" UNITNAME="LMDIconErrorProvider" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDInPlaceErrorProvider.pas" FORMNAME="" UNITNAME="LMDInPlaceErrorProvider" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDImageList.pas" FORMNAME="" UNITNAME="LMDImageList" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDImageListConnector.pas" FORMNAME="" UNITNAME="LMDImageListConnector" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDInteropServices.pas" FORMNAME="" UNITNAME="LMDInteropServices" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDIntRangeValidator.pas" FORMNAME="" UNITNAME="LMDIntRangeValidator" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDMessageBoxErrorProvider.pas" FORMNAME="" UNITNAME="LMDMessageBoxErrorProvider" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDNativeHint.pas" FORMNAME="" UNITNAME="LMDNativeHint" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDPNGImage.pas" FORMNAME="" UNITNAME="LMDPNGImage" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDPNGImageFilters.pas" FORMNAME="" UNITNAME="LMDPNGImageFilters" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDPNGImageList.pas" FORMNAME="" UNITNAME="LMDPNGImageList" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRangeValidator.pas" FORMNAME="" UNITNAME="LMDRangeValidator" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRegExpValidator.pas" FORMNAME="" UNITNAME="LMDRegExpValidator" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRequiredFieldValidator.pas" FORMNAME="" UNITNAME="LMDRequiredFieldValidator" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTLXConst.pas" FORMNAME="" UNITNAME="LMDRTLXConst" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDShapeFill.pas" FORMNAME="" UNITNAME="LMDShapeFill" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDStreamUtils.pas" FORMNAME="" UNITNAME="LMDStreamUtils" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDStringList.pas" FORMNAME="" UNITNAME="LMDStringList" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDStringRangeValidator.pas" FORMNAME="" UNITNAME="LMDStringRangeValidator" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDStyleMan.pas" FORMNAME="" UNITNAME="LMDStyleMan" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDWave.pas" FORMNAME="" UNITNAME="LMDWave" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDWaveList.pas" FORMNAME="" UNITNAME="LMDWaveList" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDVistaDialogs.pas" FORMNAME="" UNITNAME="LMDVistaDialogs" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTaskDialog.pas" FORMNAME="" UNITNAME="LMDTaskDialog" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTaskDialogTemplate.pas" FORMNAME="" UNITNAME="LMDTaskDialogTemplate" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTaskDialogButtonDsgn.pas" FORMNAME="" UNITNAME="LMDTaskDialogButtonDsgn" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTaskDialogDsgn.pas" FORMNAME="" UNITNAME="LMDTaskDialogDsgn" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTaskDlg.pas" FORMNAME="" UNITNAME="LMDTaskDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDThemes.pas" FORMNAME="" UNITNAME="LMDThemes" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDUnicodeCtrls.pas" FORMNAME="" UNITNAME="LMDUnicodeCtrls" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDUnicodeDialogs.pas" FORMNAME="" UNITNAME="LMDUnicodeDialogs" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDVldBase.pas" FORMNAME="" UNITNAME="LMDVldBase" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDWndProcComponent.pas" FORMNAME="" UNITNAME="LMDWndProcComponent" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDUsp10.pas" FORMNAME="" UNITNAME="LMDUsp10" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDropdownForm.pas" FORMNAME="" UNITNAME="LMDDropdownForm" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+  <IDEOPTIONS>
+[Version Info Keys]
+CompanyName=LMD Innovative
+FileDescription=LMD Extended Runtime Library
+FileVersion=2016.5
+InternalName=
+LegalCopyright=© LMD Innovative
+LegalTrademarks=
+OriginalFilename=
+ProductName=LMD Extended Runtime Library
+ProductVersion=2016.5
+Comments=
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[Linker]
+LibPrefix=
+LibSuffix=60
+LibVersion=
+  </IDEOPTIONS>
+</PROJECT>

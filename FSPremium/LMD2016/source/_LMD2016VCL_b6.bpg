@@ -1,0 +1,306 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = lmdrtl.bpl dcllmdrtl.bpl lmdrtrtlx.bpl dcllmdrtlx.bpl lmdrtlog.bpl lmdrtthemes.bpl \
+dcllmdthemes.bpl lmdrtplugin.bpl dcllmdplugin.bpl lmdrtprint.bpl dcllmdprint.bpl lmdrtelcore.bpl \
+dcllmdelcore.bpl lmdrtelpro.bpl lmdrteldb.bpl dcllmdelpro.bpl dcllmdeldb.bpl lmdrtdocking.bpl \
+dcllmddocking.bpl lmdrtrtf.bpl lmdrtrtfdb.bpl dcllmdrtf.bpl dcllmdrtfdb.bpl lmdrtshell.bpl \
+dcllmdshell.bpl lmdrtsys.bpl dcllmdsys.bpl lmdrtcore.bpl dcllmdcore.bpl lmdrttools.bpl \
+lmdrttoolsdb.bpl dcllmdtools.bpl dcllmdtoolsdb.bpl lmdrtdialog.bpl dcllmddlgcmps.bpl dcllmddialog.bpl \
+lmdrtgrid.bpl dcllmdgrid.bpl lmdrtparse.bpl lmdrttxt.bpl lmdrttxtdb.bpl dcllmdtxt.bpl \
+lmdrtweb.bpl dcllmdweb.bpl lmdrtsearch.bpl lmdrtsearchdb.bpl dcllmdsearch.bpl lmdrtbar.bpl \
+dcllmdbar.bpl lmdrtinspector.bpl dcllmdinspector.bpl lmdrtdesign.bpl dcllmddesign.bpl lmdrtscript.bpl \
+lmdrtscriptimp.bpl dcllmdscript.bpl lmdrtstorage.bpl dcllmdstorage.bpl lmdrtfx.bpl dcllmdfx.bpl \
+lmdrtchart.bpl lmdrtchartdb.bpl dcllmdchart.bpl dcllmdchartdb.bpl lmdrtide.bpl dcllmdide.bpl \
+lmdrtsyntax.bpl dcllmdsyntax.bpl dcllmdlegacy.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+lmdrtl.bpl: packages\b6\lmdrtl.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dcllmdrtl.bpl: packages\b6\dcllmdrtl.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrtrtlx.bpl: packages\b6\lmdrtrtlx.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dcllmdrtlx.bpl: packages\b6\dcllmdrtlx.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrtlog.bpl: packages\b6\lmdrtlog.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrtthemes.bpl: packages\b6\lmdrtthemes.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dcllmdthemes.bpl: packages\b6\dcllmdthemes.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrtplugin.bpl: packages\b6\lmdrtplugin.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dcllmdplugin.bpl: packages\b6\dcllmdplugin.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrtprint.bpl: packages\b6\lmdrtprint.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dcllmdprint.bpl: packages\b6\dcllmdprint.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrtelcore.bpl: packages\b6\lmdrtelcore.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dcllmdelcore.bpl: packages\b6\dcllmdelcore.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrtelpro.bpl: packages\b6\lmdrtelpro.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrteldb.bpl: packages\b6\lmdrteldb.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dcllmdelpro.bpl: packages\b6\dcllmdelpro.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dcllmdeldb.bpl: packages\b6\dcllmdeldb.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrtdocking.bpl: packages\b6\lmdrtdocking.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dcllmddocking.bpl: packages\b6\dcllmddocking.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrtrtf.bpl: packages\b6\lmdrtrtf.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrtrtfdb.bpl: packages\b6\lmdrtrtfdb.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dcllmdrtf.bpl: packages\b6\dcllmdrtf.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dcllmdrtfdb.bpl: packages\b6\dcllmdrtfdb.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrtshell.bpl: packages\b6\lmdrtshell.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dcllmdshell.bpl: packages\b6\dcllmdshell.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrtsys.bpl: packages\b6\lmdrtsys.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dcllmdsys.bpl: packages\b6\dcllmdsys.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrtcore.bpl: packages\b6\lmdrtcore.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dcllmdcore.bpl: packages\b6\dcllmdcore.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrttools.bpl: packages\b6\lmdrttools.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrttoolsdb.bpl: packages\b6\lmdrttoolsdb.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dcllmdtools.bpl: packages\b6\dcllmdtools.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dcllmdtoolsdb.bpl: packages\b6\dcllmdtoolsdb.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrtdialog.bpl: packages\b6\lmdrtdialog.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dcllmddlgcmps.bpl: packages\b6\dcllmddlgcmps.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dcllmddialog.bpl: packages\b6\dcllmddialog.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrtgrid.bpl: packages\b6\lmdrtgrid.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dcllmdgrid.bpl: packages\b6\dcllmdgrid.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrtparse.bpl: packages\b6\lmdrtparse.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrttxt.bpl: packages\b6\lmdrttxt.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrttxtdb.bpl: packages\b6\lmdrttxtdb.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dcllmdtxt.bpl: packages\b6\dcllmdtxt.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrtweb.bpl: packages\b6\lmdrtweb.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dcllmdweb.bpl: packages\b6\dcllmdweb.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrtsearch.bpl: packages\b6\lmdrtsearch.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrtsearchdb.bpl: packages\b6\lmdrtsearchdb.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dcllmdsearch.bpl: packages\b6\dcllmdsearch.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrtbar.bpl: packages\b6\lmdrtbar.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dcllmdbar.bpl: packages\b6\dcllmdbar.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrtinspector.bpl: packages\b6\lmdrtinspector.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dcllmdinspector.bpl: packages\b6\dcllmdinspector.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrtdesign.bpl: packages\b6\lmdrtdesign.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dcllmddesign.bpl: packages\b6\dcllmddesign.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrtscript.bpl: packages\b6\lmdrtscript.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrtscriptimp.bpl: packages\b6\lmdrtscriptimp.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dcllmdscript.bpl: packages\b6\dcllmdscript.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrtstorage.bpl: packages\b6\lmdrtstorage.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dcllmdstorage.bpl: packages\b6\dcllmdstorage.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrtfx.bpl: packages\b6\lmdrtfx.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dcllmdfx.bpl: packages\b6\dcllmdfx.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrtchart.bpl: packages\b6\lmdrtchart.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrtchartdb.bpl: packages\b6\lmdrtchartdb.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dcllmdchart.bpl: packages\b6\dcllmdchart.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dcllmdchartdb.bpl: packages\b6\dcllmdchartdb.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrtide.bpl: packages\b6\lmdrtide.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dcllmdide.bpl: packages\b6\dcllmdide.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+lmdrtsyntax.bpl: packages\b6\lmdrtsyntax.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dcllmdsyntax.bpl: packages\b6\dcllmdsyntax.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+dcllmdlegacy.bpl: packages\b6\dcllmdlegacy.bpk
+  $(ROOT)\bin\bpr2mak $**
+  $(ROOT)\bin\make -$(MAKEFLAGS) -f$*.mak
+
+
+
+

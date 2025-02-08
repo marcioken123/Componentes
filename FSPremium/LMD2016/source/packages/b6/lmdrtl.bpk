@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="lmdrtl60.bpl"/>
+    <OBJFILES value="lmdrtl.obj ..\..\Themes.obj ..\..\UxTheme.obj ..\..\intfLMDBase.obj ..\..\LMDArray.obj ..\..\LMDArrayUtils.obj ..\..\LMDBitmap.obj ..\..\LMDBuffer.obj ..\..\LMDBinaryTree.obj ..\..\LMDClass.obj ..\..\LMDCustomComponent.obj ..\..\LMDCustomIniComponent.obj ..\..\LMDDateTime.obj ..\..\LMDDebugUnit.obj ..\..\LMDDynFIFOBuffer.obj ..\..\LMDDynLIFOBuffer.obj ..\..\LMDIniCtrl.obj ..\..\LMDList.obj ..\..\LMDHashTable.obj ..\..\LMDMemoryMappedStream.obj ..\..\LMDObject.obj ..\..\LMDObjectList.obj ..\..\LMDProcs.obj ..\..\LMDQueue.obj ..\..\LMDRTLConst.obj ..\..\LMDShSpinEdit.obj ..\..\LMDShUtils.obj ..\..\LMDStack.obj ..\..\LMDStrings.obj ..\..\LMDSysIn.obj ..\..\LMDThreads.obj ..\..\LMDTypes.obj ..\..\LMDUnicode.obj ..\..\LMDUnicodeControl.obj ..\..\LMDUnicodeStrings.obj ..\..\LMDUnicodeEncodings.obj ..\..\LMDUtils.obj ..\..\LMDDateUtils.obj ..\..\LMDFiles.obj ..\..\LMDRegExpr.obj ..\..\LMDInprocHookAPI.obj ..\..\LMDXML.obj ..\..\LMDZLib.obj ..\..\LMDZCommonUnit.obj ..\..\LMDZCompressUnit.obj ..\..\LMDZUnCompressUnit.obj ..\..\LMDSvcPvdr.obj"/>
+    <RESFILES value="lmdrtl.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) "/>
+    <LIBFILES value=""/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value="rtl.lib"/>
+    <PACKAGES value="rtl.bpi vcl.bpi vclx.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value=""/>
+    <SYSDEFINES value="_RTLDLL;NO_STRICT;USEPACKAGES"/>
+    <MAINSOURCE value="lmdrtl.cpp"/>
+    <INCLUDEPATH value="$(BCB)\include;$(BCB)\include\vcl;"/>
+    <LIBPATH value="$(BCB)\lib\obj;$(BCB)\lib;"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I$(BCB)\include -I$(BCB)\include\vcl -src_suffix cpp -boa"/>
+    <CFLAG1 value="-O2 -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -a8 -b- -k- -vi -c -tWM"/>
+    <PFLAGS value="-N2..\..\build -N0..\..\build -NH..\..\build -$Y- -$L- -$D- -$A8 -v -JPHNE -M "/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zn"/>
+    <LFLAGS value="-I..\.. -D&quot;LMD 2016 - Runtime Library&quot; -aa -Tpp -Gpr -x -Gn -Gl -Gi"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0pkg32.obj $(PACKAGES) Memmgr.Lib sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib "/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="lmdrtl.cpp" FORMNAME="" UNITNAME="lmdrtl" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtl.res" FORMNAME="" UNITNAME="lmdrtl.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="rtl.bpi" FORMNAME="" UNITNAME="rtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vcl.bpi" FORMNAME="" UNITNAME="vcl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vclx.bpi" FORMNAME="" UNITNAME="vclx" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\Themes.pas" FORMNAME="" UNITNAME="Themes" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\UxTheme.pas" FORMNAME="" UNITNAME="UxTheme" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\intfLMDBase.pas" FORMNAME="" UNITNAME="intfLMDBase" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDArray.pas" FORMNAME="" UNITNAME="LMDArray" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDArrayUtils.pas" FORMNAME="" UNITNAME="LMDArrayUtils" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDBitmap.pas" FORMNAME="" UNITNAME="LMDBitmap" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDBuffer.pas" FORMNAME="" UNITNAME="LMDBuffer" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDBinaryTree.pas" FORMNAME="" UNITNAME="LMDBinaryTree" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDClass.pas" FORMNAME="" UNITNAME="LMDClass" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCustomComponent.pas" FORMNAME="" UNITNAME="LMDCustomComponent" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCustomIniComponent.pas" FORMNAME="" UNITNAME="LMDCustomIniComponent" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDateTime.pas" FORMNAME="" UNITNAME="LMDDateTime" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDebugUnit.pas" FORMNAME="" UNITNAME="LMDDebugUnit" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDynFIFOBuffer.pas" FORMNAME="" UNITNAME="LMDDynFIFOBuffer" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDynLIFOBuffer.pas" FORMNAME="" UNITNAME="LMDDynLIFOBuffer" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDIniCtrl.pas" FORMNAME="" UNITNAME="LMDIniCtrl" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDList.pas" FORMNAME="" UNITNAME="LMDList" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDHashTable.pas" FORMNAME="" UNITNAME="LMDHashTable" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDMemoryMappedStream.pas" FORMNAME="" UNITNAME="LMDMemoryMappedStream" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDObject.pas" FORMNAME="" UNITNAME="LMDObject" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDObjectList.pas" FORMNAME="" UNITNAME="LMDObjectList" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDProcs.pas" FORMNAME="" UNITNAME="LMDProcs" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDQueue.pas" FORMNAME="" UNITNAME="LMDQueue" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTLConst.pas" FORMNAME="" UNITNAME="LMDRTLConst" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDShSpinEdit.pas" FORMNAME="" UNITNAME="LMDShSpinEdit" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDShUtils.pas" FORMNAME="" UNITNAME="LMDShUtils" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDStack.pas" FORMNAME="" UNITNAME="LMDStack" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDStrings.pas" FORMNAME="" UNITNAME="LMDStrings" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysIn.pas" FORMNAME="" UNITNAME="LMDSysIn" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDThreads.pas" FORMNAME="" UNITNAME="LMDThreads" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTypes.pas" FORMNAME="" UNITNAME="LMDTypes" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDUnicode.pas" FORMNAME="" UNITNAME="LMDUnicode" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDUnicodeControl.pas" FORMNAME="" UNITNAME="LMDUnicodeControl" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDUnicodeStrings.pas" FORMNAME="" UNITNAME="LMDUnicodeStrings" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDUnicodeEncodings.pas" FORMNAME="" UNITNAME="LMDUnicodeEncodings" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDUtils.pas" FORMNAME="" UNITNAME="LMDUtils" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDateUtils.pas" FORMNAME="" UNITNAME="LMDDateUtils" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDFiles.pas" FORMNAME="" UNITNAME="LMDFiles" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRegExpr.pas" FORMNAME="" UNITNAME="LMDRegExpr" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDInprocHookAPI.pas" FORMNAME="" UNITNAME="LMDInprocHookAPI" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDXML.pas" FORMNAME="" UNITNAME="LMDXML" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDZLib.pas" FORMNAME="" UNITNAME="LMDZLib" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDZCommonUnit.pas" FORMNAME="" UNITNAME="LMDZCommonUnit" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDZCompressUnit.pas" FORMNAME="" UNITNAME="LMDZCompressUnit" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDZUnCompressUnit.pas" FORMNAME="" UNITNAME="LMDZUnCompressUnit" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSvcPvdr.pas" FORMNAME="" UNITNAME="LMDSvcPvdr" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+  <IDEOPTIONS>
+[Version Info Keys]
+CompanyName=LMD Innovative
+FileDescription=LMD 2016 - Runtime Library
+FileVersion=2016.5
+InternalName=
+LegalCopyright=© LMD Innovative
+LegalTrademarks=
+OriginalFilename=
+ProductName=LMD 2016 - Runtime Library
+ProductVersion=2016.5
+Comments=
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[Linker]
+LibPrefix=
+LibSuffix=60
+LibVersion=
+  </IDEOPTIONS>
+</PROJECT>

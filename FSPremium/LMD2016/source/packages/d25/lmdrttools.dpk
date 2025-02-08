@@ -1,0 +1,147 @@
+package lmdrttools;
+
+{$R *.res}
+{$R *.otares}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'LMD-Tools Main Components'}
+{$LIBSUFFIX '250'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  lmdrtl,
+  rtl,
+  vcl,
+  vclx,
+  lmdrtrtlx,
+  lmdrtcore,
+  lmdrtprint;
+
+contains
+  LMDBack in '..\..\LMDBack.pas',
+  LMDCheckListDlg in '..\..\LMDCheckListDlg.pas',
+  LMD3DEffectButton in '..\..\LMD3DEffectButton.pas',
+  LMDAboutDlg in '..\..\LMDAboutDlg.pas',
+  LMDAlarmComponent in '..\..\LMDAlarmComponent.pas',
+  LMDAniCtrl in '..\..\LMDAniCtrl.pas',
+  LMDAssist in '..\..\LMDAssist.pas',
+  LMDBaseShape in '..\..\LMDBaseShape.pas',
+  LMDBufferComponent in '..\..\LMDBufferComponent.pas',
+  LMDButtonBar in '..\..\LMDButtonBar.pas',
+  LMDButtonBarPopupMenu in '..\..\LMDButtonBarPopupMenu.pas',
+  LMDCalendar in '..\..\LMDCalendar.pas',
+  LMDCalculator in '..\..\LMDCalculator.pas',
+  LMDCalculatorComboBox in '..\..\LMDCalculatorComboBox.pas',
+  LMDCalculatorDlg in '..\..\LMDCalculatorDlg.pas',
+  LMDCalculatorEdit in '..\..\LMDCalculatorEdit.pas',
+  LMDCalendarComboBox in '..\..\LMDCalendarComboBox.pas',
+  LMDCalendarDlg in '..\..\LMDCalendarDlg.pas',
+  LMDCalendarEdit in '..\..\LMDCalendarEdit.pas',
+  LMDCaptionButtons in '..\..\LMDCaptionButtons.pas',
+  LMDCaptionPanel in '..\..\LMDCaptionPanel.pas',
+  LMDCaptionPanelGroup in '..\..\LMDCaptionPanelGroup.pas',
+  LMDCheckListComboBox in '..\..\LMDCheckListComboBox.pas',
+  LMDClock in '..\..\LMDClock.pas',
+  LMDCustom3DButton in '..\..\LMDCustom3DButton.pas',
+  LMDCustomDateTimePicker in '..\..\LMDCustomDateTimePicker.pas',
+  LMDCustomFormComboBox in '..\..\LMDCustomFormComboBox.pas',
+  LMDCustomGraphicLabel in '..\..\LMDCustomGraphicLabel.pas',
+  LMDCustomHeaderPanel in '..\..\LMDCustomHeaderPanel.pas',
+  LMDCustomLabelFill in '..\..\LMDCustomLabelFill.pas',
+  LMDCustomLight in '..\..\LMDCustomLight.pas',
+  LMDCustomListComboBox in '..\..\LMDCustomListComboBox.pas',
+  LMDCustomMMButton in '..\..\LMDCustomMMButton.pas',
+  LMDCustomShapeButton in '..\..\LMDCustomShapeButton.pas',
+  LMDCustomSwitch in '..\..\LMDCustomSwitch.pas',
+  LMDDateTimePicker in '..\..\LMDDateTimePicker.pas',
+  LMDDirDlg in '..\..\LMDDirDlg.pas',
+  LMDDlgButtonPanel in '..\..\LMDDlgButtonPanel.pas',
+  LMDDlgEx in '..\..\LMDDlgEx.pas',
+  LMDDriveComboBox in '..\..\LMDDriveComboBox.pas',
+  LMDEditActions in '..\..\LMDEditActions.pas',
+  LMDExpressionEval in '..\..\LMDExpressionEval.pas',
+  LMDFlyoutController in '..\..\LMDFlyoutController.pas',
+  LMDFormA in '..\..\LMDFormA.pas',
+  LMDFormComboBox in '..\..\LMDFormComboBox.pas',
+  LMDFormFill in '..\..\LMDFormFill.pas',
+  LMDFormShadow in '..\..\LMDFormShadow.pas',
+  LMDFormShape in '..\..\LMDFormShape.pas',
+  LMDGlobalHotkey in '..\..\LMDGlobalHotkey.pas',
+  LMDGraphicLabel in '..\..\LMDGraphicLabel.pas',
+  LMDGrlf in '..\..\LMDGrlf.pas',
+  LMDHeader in '..\..\LMDHeader.pas',
+  LMDHeaderListComboBox in '..\..\LMDHeaderListComboBox.pas',
+  LMDHeaderPanel in '..\..\LMDHeaderPanel.pas',
+  LMDHeaderPanelButton in '..\..\LMDHeaderPanelButton.pas',
+  LMDHideNonVC in '..\..\LMDHideNonVC.pas',
+  LMDInputDlg in '..\..\LMDInputDlg.pas',
+  LMDLabelFill in '..\..\LMDLabelFill.pas',
+  LMDLED in '..\..\LMDLED.pas',
+  LMDLEDCustomLabel in '..\..\LMDLEDCustomLabel.pas',
+  LMDLEDLabel in '..\..\LMDLEDLabel.pas',
+  LMDLight in '..\..\LMDLight.pas',
+  LMDListComboBox in '..\..\LMDListComboBox.pas',
+  LMDListComponent in '..\..\LMDListComponent.pas',
+  LMDMain in '..\..\LMDMain.pas',
+  LMDMathParser in '..\..\LMDMathParser.pas',
+  LMDMMButton in '..\..\LMDMMButton.pas',
+  LMDMMButtonFaceController in '..\..\LMDMMButtonFaceController.pas',
+  LMDMsg in '..\..\LMDMsg.pas',
+  LMDNoteBook in '..\..\LMDNoteBook.pas',
+  LMDObjectStorage in '..\..\LMDObjectStorage.pas',
+  LMDPanelCaptionObject in '..\..\LMDPanelCaptionObject.pas',
+  LMDPanelShape in '..\..\LMDPanelShape.pas',
+  LMDPopupMenu in '..\..\LMDPopupMenu.pas',
+  LMDQueueComponent in '..\..\LMDQueueComponent.pas',
+  LMDRegion in '..\..\LMDRegion.pas',
+  LMDRegionMask in '..\..\LMDRegionMask.pas',
+  LMDRepeatedShape in '..\..\LMDRepeatedShape.pas',
+  LMDScrollText in '..\..\LMDScrollText.pas',
+  LMDSendKeys in '..\..\LMDSendKeys.pas',
+  LMDShape in '..\..\LMDShape.pas',
+  LMDShapeBase in '..\..\LMDShapeBase.pas',
+  LMDShapeButton in '..\..\LMDShapeButton.pas',
+  LMDShapeButtonColor in '..\..\LMDShapeButtonColor.pas',
+  LMDShapeControl in '..\..\LMDShapeControl.pas',
+  LMDSimpleBevel in '..\..\LMDSimpleBevel.pas',
+  LMDStackComponent in '..\..\LMDStackComponent.pas',
+  LMDStaticText in '..\..\LMDStaticText.pas',
+  LMDSwitch in '..\..\LMDSwitch.pas',
+  LMDSysMenu in '..\..\LMDSysMenu.pas',
+  LMDTagEditor in '..\..\LMDTagEditor.pas',
+  LMDTechnicalLine in '..\..\LMDTechnicalLine.pas',
+  LMDTeeth in '..\..\LMDTeeth.pas',
+  LMDTextEditDlg in '..\..\LMDTextEditDlg.pas',
+  LMDTextEditor in '..\..\LMDTextEditor.pas' {LMDFrmTextEditor},
+  LMDTipDlg in '..\..\LMDTipDlg.pas',
+  LMDTrackBarComboBox in '..\..\LMDTrackBarComboBox.pas',
+  LMDTreeComboBox in '..\..\LMDTreeComboBox.pas',
+  LMDTxtPrinter in '..\..\LMDTxtPrinter.pas',
+  LMDWindowListDlg in '..\..\LMDWindowListDlg.pas',
+  LMDWndButtonShape in '..\..\LMDWndButtonShape.pas',
+  LMDEditPrintTask in '..\..\LMDEditPrintTask.pas';
+
+end.

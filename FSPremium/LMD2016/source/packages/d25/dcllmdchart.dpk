@@ -1,0 +1,59 @@
+package dcllmdchart;
+
+{$R *.res}
+{$R *.otares}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'LMD 2016 - LMD-Tools ChartPack Components'}
+{$LIBSUFFIX '250'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  lmdrtl,
+  dcllmdrtl,
+  rtl,
+  vcl,
+  vclx,
+  designide,
+  dclstd,
+  lmdrtchart,
+  dcllmdprint;
+
+contains
+  LMD_RegChart in '..\..\LMD_RegChart.pas',
+  pLMDMarginsEditor in '..\..\pLMDMarginsEditor.pas',
+  pLMDAlignmentEditor in '..\..\pLMDAlignmentEditor.pas',
+  pLMDChartValuesOptionsSelDlg in '..\..\pLMDChartValuesOptionsSelDlg.pas' {LMDChartValuesOptionsSelDlg},
+  pLMDAreaFillEditor in '..\..\pLMDAreaFillEditor.pas' {LMDAreaFillEditor},
+  pLMDChartCE in '..\..\pLMDChartCE.pas',
+  pLMDChartSeriesEditor in '..\..\pLMDChartSeriesEditor.pas',
+  pLMDAddSeriesDlg in '..\..\pLMDAddSeriesDlg.pas' {LMDAddSeriesDlg},
+  pLMDChartSeriesEditorDlg in '..\..\pLMDChartSeriesEditorDlg.pas' {LMDChartSeriesEditorDlg},
+  pLMDChartEditorDlg in '..\..\pLMDChartEditorDlg.pas' {LMDChartEditor},
+  pLMDDistanceAndPositionDlg in '..\..\pLMDDistanceAndPositionDlg.pas' {LMDDistanceAndSizeEditor},
+  pLMDLineEditorDlg in '..\..\pLMDLineEditorDlg.pas' {LMDLineEditor};
+
+end.

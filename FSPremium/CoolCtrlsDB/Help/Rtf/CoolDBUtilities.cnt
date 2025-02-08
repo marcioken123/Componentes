@@ -1,0 +1,78 @@
+:Base CoolDBUtilities.hlp>MAIN
+:Title CoolDBUtilities
+1 Welcome=id_0
+1 Additional Information
+2 Additional Information=id_293
+2 Installation=id_295
+2 License agreement=id_296
+2 CoolDBUtilities Registration=id_297
+2 Release history=id_298
+1 Symbol Reference
+2 Classes
+3 TCoolBDEInformant=id_1>MAIN
+3 TCoolDBBackup=id_28>MAIN
+3 TCoolDBComparer=id_55>MAIN
+3 TCoolDBComponent=id_33>MAIN
+3 TCoolDBDatabasesCompare=id_104>MAIN
+3 TCoolDBPack=id_128>MAIN
+3 TCoolDBSort=id_139>MAIN
+3 TCoolDBStructureExporter=id_157>MAIN
+3 TCoolDBStructureRestorer=id_169>MAIN
+3 TCoolDBTablesCompare=id_181>MAIN
+3 TCoolDBUpdater=id_202>MAIN
+3 TCoolDBUpdater2=id_207>MAIN
+3 TCoolDBUtility=id_228>MAIN
+3 TDBCUAboutBox=id_27>MAIN
+2 Records / Structs
+3 TUVerifyCallBack=id_281>MAIN
+2 Functions
+3 AddAnyIndex=id_255>MAIN
+3 AddField=id_256>MAIN
+3 AddPrimaryIndex=id_257>MAIN
+3 AliasExists=id_258>MAIN
+3 ChangeField=id_259>MAIN
+3 ChangeIndex=id_260>MAIN
+3 CopyTable=id_261>MAIN
+3 DeleteField=id_262>MAIN
+3 FieldsEqual=id_263>MAIN
+3 GetAliasPath=id_264>MAIN
+3 GetFieldDesc=id_265>MAIN
+3 GetFields=id_266>MAIN
+3 GetIndexDesc=id_267>MAIN
+3 GetIndexes=id_268>MAIN
+3 GetRIDesc=id_269>MAIN
+3 GetRIs=id_270>MAIN
+3 IndexesEqual=id_271>MAIN
+3 IndexesRestructure=id_272>MAIN
+3 InsertField=id_273>MAIN
+3 MoveField=id_274>MAIN
+3 PriorityToPoints=id_275>MAIN
+3 RemoveRITotal=id_276>MAIN
+3 RIEqual=id_277>MAIN
+3 RIRestructure=id_278>MAIN
+3 TableExists=id_279>MAIN
+3 TableRestructure=id_280>MAIN
+2 Types
+3 hTUses=id_283>MAIN
+3 TActionInProgress=id_103>MAIN
+3 TBDEString=id_54>MAIN
+3 TComparePosition=id_284>MAIN
+3 TComparePositions=id_81>MAIN
+3 TDatabaseAction=id_248>MAIN
+3 TDBResultType=id_127>MAIN
+3 TPriority=id_85>MAIN
+3 TProgressEvent=id_92>MAIN
+3 TResultType=id_201>MAIN
+3 TSortType=id_155>MAIN
+3 TTablesAction=id_102>MAIN
+3 TTableSortEvent=id_156>MAIN
+3 TUVerifyProcess=id_282>MAIN
+2 Constants
+3 POINTS_HIGH=id_285>MAIN
+3 POINTS_HIGHER=id_286>MAIN
+3 POINTS_HIGHEST=id_287>MAIN
+3 POINTS_LOW=id_288>MAIN
+3 POINTS_LOWER=id_289>MAIN
+3 POINTS_LOWEST=id_290>MAIN
+3 POINTS_NONE=id_291>MAIN
+3 SErrorFieldName=id_292>MAIN

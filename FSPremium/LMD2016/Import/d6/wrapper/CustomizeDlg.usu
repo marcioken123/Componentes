@@ -1,0 +1,8 @@
+T+: TCustomizeFrm
+        P+: ActionManager
+        P+: ActiveActionList
+T+: TCustomizeDlg
+        P+: ActionManager
+        P+: StayOnTop
+        P+: OnClose
+        P+: OnShow

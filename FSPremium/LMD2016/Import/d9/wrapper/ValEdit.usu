@@ -1,0 +1,92 @@
+T+: TDisplayOption
+T+: TDisplayOptions
+T+: TKeyOption
+T+: TKeyOptions
+T+: TGetPickListEvent
+T+: TOnValidateEvent
+T+: TValueListEditor
+        P+: EditList
+        P+: Cells
+        P+: ColCount
+        P+: ItemProps
+        P+: Keys
+        P+: RowCount
+        P+: Values
+        P+: VisibleColCount
+        P+: VisibleRowCount
+        P+: Align
+        P+: Anchors
+        P+: BiDiMode
+        P+: BorderStyle
+        P+: Color
+        P+: Constraints
+        P+: Ctl3D
+        P+: DefaultColWidth
+        P+: DefaultDrawing
+        P+: DefaultRowHeight
+        P+: DisplayOptions
+        P+: DragCursor
+        P+: DragKind
+        P+: DragMode
+        P+: DropDownRows
+        P+: Enabled
+        P+: FixedColor
+        P+: FixedCols
+        P+: Font
+        P+: GridLineWidth
+        P+: KeyOptions
+        P+: Options
+        P+: ParentBiDiMode
+        P+: ParentColor
+        P+: ParentCtl3D
+        P+: ParentFont
+        P+: ParentShowHint
+        P+: PopupMenu
+        P+: ScrollBars
+        P+: ShowHint
+        P+: Strings
+        P+: TabOrder
+        P+: TitleCaptions
+        P+: Visible
+        P+: OnClick
+        P+: OnContextPopup
+        P+: OnDblClick
+        P+: OnDragDrop
+        P+: OnDragOver
+        P+: OnDrawCell
+        P+: OnEditButtonClick
+        P+: OnEndDock
+        P+: OnEndDrag
+        P+: OnEnter
+        P+: OnExit
+        P+: OnGetEditMask
+        P+: OnGetEditText
+        P+: OnGetPickList
+        P+: OnKeyDown
+        P+: OnKeyPress
+        P+: OnKeyUp
+        P+: OnMouseActivate
+        P+: OnMouseDown
+        P+: OnMouseMove
+        P+: OnMouseUp
+        P+: OnMouseWheelDown
+        P+: OnMouseWheelUp
+        P+: OnRowMoved
+        P+: OnSelectCell
+        P+: OnSetEditText
+        P+: OnStartDock
+        P+: OnStartDrag
+        P+: OnStringsChange
+        P+: OnStringsChanging
+        P+: OnTopLeftChanged
+        P+: OnValidate
+TE: TItemProps
+T+: TValueListStrings
+        P+: ItemProps
+T+: TItemProp
+        P+: EditMask
+        P+: EditStyle
+        P+: KeyDesc
+        P+: PickList
+        P+: MaxLength
+        P+: ReadOnly

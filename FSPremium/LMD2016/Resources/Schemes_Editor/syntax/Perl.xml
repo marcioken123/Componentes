@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SchemeList root='Main'>
+
+    <Scheme name='Text' inherit='Numbers'>                
+    
+        <Regex token0='email'>
+            [_a-zA-Z\d\-\.]{1,40}
+            @ 
+            ([_ a-z A-Z \d \-]+ 
+            (\. [_ a-z A-Z \d \-]+ )+ )
+        </Regex>
+    
+        <Regex token0='st' regex=' \/\* | \*\/   ' />                
+                
+        <SyntaxBlock capture="true">
+            <Start> st:/*  </Start>
+            <End> st:*/  </End>
+        </SyntaxBlock>              
+    </Scheme>
+
+    <Scheme name='Numbers'>
+        <Regex token0='number'>
+            \b (0x \d+ [lL]? | \d+ (e \d*)? [lLdDfF]? ) \b
+        </Regex>
+        
+        <Regex token0='number'>
+            \b [+\-]? \d+ (\. \d+)? ([eE] [+\-]? \d+) \b
+        </Regex>
+    </Scheme>
+
+    <Scheme name='Comment' inherit='Text' defaultToken='comment'  />
+
+    <Scheme name='StringInterpolation'>
+        <Regex token0='escaped' regex='\\[a-z &quot; ]' />
+        <Regex token0='escaped' regex='\\0\d+' />        
+        <Regex token0='escaped' regex='\\x[0-9A-Fa-f]+' />                
+        <Regex token0='escaped' regex='[$%]\w+' />    
+    </Scheme>
+    
+    <Scheme name='String' inherit='StringInterpolation' inherit0='Text' 
+            defaultToken='string'>
+                        
+    </Scheme>
+
+    <Scheme name='HereDoc' inherit0='Text' defaultToken='string'>
+        <SyntaxBlock capture="true">
+            <Start> blockStart  </Start>
+            <End> blockEnd  </End>
+        </SyntaxBlock>    
+    </Scheme>
+
+    <Scheme name='RegexFind' inherit='StringInterpolation' defaultToken='defaultEmbed'>
+        <Regex token0='escaped' regex='\\/' />            
+    </Scheme>
+
+    <Scheme name='RegexSubst' inherit='RegexFind' defaultToken='defaultEmbed'>
+        <Regex token0='escaped' regex='\$\d' />                
+    </Scheme>
+
+    <Scheme name='PerlDoc' defaultToken='docDefault'>
+
+        <Regex lineBound='true' token0='docBlockStart' > =begin  </Regex>
+        <Regex lineBound='true' token0='docBlockEnd' > =end  </Regex>
+        <Regex lineBound='true' token0='docInstruction' > =[a-zA-Z_]\w+  </Regex>
+
+        <SyntaxBlock capture="true">
+            <Start> docStart  </Start>
+            <End> docEnd  </End>
+        </SyntaxBlock>    
+        
+        <SyntaxBlock capture="true">
+            <Start> docBlockStart  </Start>
+            <End> docBlockEnd  </End>
+        </SyntaxBlock>    
+        
+    </Scheme>
+    
+
+    <Scheme name='ShellCommand' defaultToken='defaultEmbed'>
+        <SyntaxBlock capture="true">
+            <Start> blockStart  </Start>
+            <End> blockEnd  </End>
+        </SyntaxBlock>    
+    </Scheme>
+                    
+
+    <Scheme name='DefaultEmpty' defaultToken='default' />
+            
+    <Scheme name='BaseSyntax' inherit='Numbers'>
+        <Regex innersScheme='Comment' regex='//.*$' />
+
+        <Regex innerScheme='Comment' regex='\#.*$' />
+
+        <RegexBlock start='\/\*' end='\*\/' end_token0='comment' 
+                innerScheme='Comment'/>
+
+        <Regex token0='symbol' regex='[   \}   \{    \]    \[  \( \) &gt; &lt; ]' />
+        <Regex token0='symbol' regex='[-:?\~=+!^;,]' />
+
+        <Regex regex='\$[a-z_A-Z0-9#]+' />
+
+        <Regex regex='&lt; [^ &gt; ]+ &gt;' token0='keyword'/>
+    
+        <RegexBlock innerScheme='DefaultEmpty' 
+                start_token0='symbol'
+                end_token0='symbol' 
+                priority='100'
+                chainBlock='RegexFindEnd'
+        >
+
+            <Start> \s* ([ =( ]) \s* (?= / )  </Start>        
+            <End> (?= / )  </End>        
+        </RegexBlock>
+
+        <ChainBlock name='RegexFindEnd' 
+                innerScheme='RegexFind' 
+                end_token0='regexEnd' 
+                chainBlock='RegexFindEnd2'
+        >
+            <End> / </End>        
+        </ChainBlock>
+
+        <ChainBlock name='RegexFindEnd2' 
+                innerScheme='RegexFind' 
+                end_token0='regexEnd' 
+        >
+            <End> /[cgimosx]* </End>        
+        </ChainBlock>
+
+                
+        <RegexBlock innerScheme='RegexFind' 
+                    start_token0='regexStart' 
+                    end_token0='regexEnd' >
+
+            <Start> m/  </Start>        
+            <End> /[cgimosx]* </End>        
+        </RegexBlock>
+
+        <RegexBlock innerScheme='RegexFind' 
+                    start_token0='regexStart' 
+                    end_token0='regexEnd' >
+
+            <Start> q(q?|[xw])/  </Start>        
+            <End> / </End>        
+        </RegexBlock>
+
+        <RegexBlock innerScheme='RegexFind' 
+                    start_token0='regexStart' 
+                    end_token0='regexEnd' >
+
+            <Start> qr/  </Start>        
+            <End> /[imosx]* </End>        
+        </RegexBlock>
+
+        <RegexBlock innerScheme='RegexFind' 
+                    start_token0='regexStart' 
+                    end_token0='regexEnd' >
+
+            <Start> \?  </Start>        
+            <End> \? </End>        
+        </RegexBlock>
+
+        <ChainBlock name='RegexSubstEnd' 
+                    end_token0='regexEnd' 
+                    innerScheme='RegexSubst'  >
+            <End> /[egimosx]* </End>        
+        </ChainBlock>
+
+        <ChainBlock name='RegexSubstEnd2' 
+                    end_token0='regexEnd' 
+                    innerScheme='RegexSubst'  >
+            <End> /[cds]* </End>        
+        </ChainBlock>
+
+        <RegexBlock innerScheme='RegexFind' 
+                    start_token0='regexStart' 
+                    end_token0='regexEnd' 
+                    chainBlock='RegexSubstEnd'>
+
+            <Start> s/  </Start>        
+            <End> / </End>        
+        </RegexBlock>
+
+        <RegexBlock innerScheme='RegexFind' 
+                    start_token0='regexStart' 
+                    end_token0='regexEnd' 
+                    chainBlock='RegexSubstEnd2'>
+
+            <Start> (tr|y)/  </Start>        
+            <End> / </End>        
+        </RegexBlock>
+
+
+        <RegexBlock innerScheme='PerlDoc' 
+                    priority='100'
+                    lineBound='true'
+                    start_token0='docStart' 
+                    end_token0='docEnd'>
+
+            <Start> =[a-zA-Z_]\w+  </Start>        
+            <End> =cut </End>        
+        </RegexBlock>
+
+    </Scheme>
+    
+    <Scheme name='Main' inherit='BaseSyntax' 
+            defaultToken='default'           
+
+            keywordsIgnoreCase='false'
+    >
+        <KeywordRegex>\b[a-z()A-Z_][\w_]*\b</KeywordRegex>
+
+        <Keywords>    
+            __FILE__    __LINE__    __PACKAGE__
+            __END__     __DATA__
+            continue else elsif for foreach if last 
+            next redo sub unless until while        
+            accept alarm atan2 bind binmode bless caller chdir
+            chmod abs chomp chop chown chr chroot closedir close
+            connect cos crypt dbmclose dbmopen defined delete die do
+            dump each endgrent endhostent endnetent endprotoent endpwent
+            endservent eof eval exec exists exit exp fcntl fileno flock
+            fork format formline getc getgrent getgrgid getgrnam
+            gethostbyaddr gethostbyname gethostent getlogin getnetbyaddr
+            getnetbyname getnetent getpeername getpgrp getpriority
+            getprotobyname getprotobynumber getprotoent getpwent
+            getpwnam getpwuid getservbyname getservbyport getservent
+            getsockname getsockopt glob gmtime goto grep hex index
+            int ioctl join keys kill last lcfirst lc length link listen
+            local localtime log lstat map mkdir msgctl msgget msgrcv
+            msgsnd my next no oct open opendir ord pack package pipe
+            pop pos printf print prototype push qq quotemeta qw
+            qx q rand readdir readline readlink readpipe read recv
+            redo ref rename require reset return reverse rewinddir
+            rindex rmdir scalar seek seekdir select semctl semget
+            semop send setgrent sethostent setnetent setpgrp setpriority
+            setprotoent setpwent setservent setsockopt shift shmctl shmget
+            shmread shmwrite shutdown sin sleep socket socketpair sort splice
+            split sprintf sqrt srand stat study substr sub symlink syscall
+            sysopen sysread sysseek system syswrite s tell telldir tie tied
+            time times truncate tr ucfirst uc umask undef unlink unpack
+            unshift untie use utime values vec waitpid wait wantarray
+            warn write            
+        </Keywords>
+
+        <RegexBlock innerScheme='HereDoc' start_token0='blockStart' 
+                    priority='100'
+                    end_token0='blockEnd' >
+
+            <Start>  [^ &lt; ]? &lt; &lt; (\w+) ; </Start>        
+            <End> $1 </End>        
+        </RegexBlock>
+
+        <RegexBlock innerScheme='ShellCommand' start_token0='blockStart' 
+                    priority='100'
+                    end_token0='blockEnd' >
+
+            <Start>  [^ &lt; ]? &lt; &lt; \s? \`  (\w+) \` </Start>        
+            <End> $1 </End>        
+        </RegexBlock>
+
+        <RegexBlock innerScheme='String' start_token0='string' 
+                    end_token0='string' >
+
+            <Start> &quot;  </Start>        
+            <End> &quot; </End>        
+        </RegexBlock>
+
+        <RegexBlock innerScheme='ShellCommand'
+                    start_token0='defaultEmbed'
+                    end_token0='defaultEmbed' >
+
+            <Start> &apos;  </Start>        
+            <End> &apos; </End>        
+        </RegexBlock>
+
+        <SkipSyntaxToken token='comment' />
+
+        <SyntaxBlock capture="true">
+            <Start> kw:sub  id  
+                    
+                    sym:{
+            </Start>
+
+            <End> sym:\}  </End>
+        </SyntaxBlock>
+
+        <SyntaxBlock capture="true">
+            <Start> [ kw:do ] sym:{
+            </Start>
+
+            <End> sym:\}   </End>
+        </SyntaxBlock>
+
+        <SyntaxBlock capture="true">
+            <Start> [ kw:else kw:continue ] sym:{
+            </Start>
+
+            <End> sym:\}  </End>
+        </SyntaxBlock>
+
+        <SyntaxBlock capture="true" priority='10'>
+            <Start>                 
+                ( id sym:: )? [ kw:while  kw:if  kw:switch kw:for ]
+                                    
+                sym:( .+  sym:)   sym:\{
+            </Start>
+
+            <End> sym:}  </End>
+        </SyntaxBlock>
+
+        <SyntaxBlock capture="true" priority='10'>
+            <Start>                 
+                id sym::   sym:\{
+            </Start>
+
+            <End> sym:}  </End>
+        </SyntaxBlock>
+
+        <SyntaxBlock capture="true">
+            <Start> 
+                kw:foreach  id  sym:( .+  sym:)  sym:{
+            </Start>
+
+            <End> sym:\}  </End>
+        </SyntaxBlock>
+
+
+        <SyntaxBlock capture="false" priority='0'  >
+            <Start> sym:{  </Start>
+            <End> sym:}  </End>
+        </SyntaxBlock>
+
+    </Scheme>
+</SchemeList>

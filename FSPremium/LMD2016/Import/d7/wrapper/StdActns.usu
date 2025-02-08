@@ -1,0 +1,208 @@
+T+: THintAction
+        P+: Hint
+T+: TEditAction
+        P+: Control
+T+: TEditCut
+T+: TEditCopy
+T+: TEditPaste
+T+: TEditSelectAll
+T+: TEditUndo
+T+: TEditDelete
+T+: TWindowAction
+        P+: Form
+T+: TWindowClose
+T+: TWindowCascade
+T+: TWindowTileHorizontal
+T+: TWindowTileVertical
+T+: TWindowMinimizeAll
+T+: TWindowArrange
+T+: THelpAction
+T+: THelpContents
+T+: THelpTopicSearch
+T+: THelpOnHelp
+T+: THelpContextAction
+T+: TCommonDialogClass
+T+: TCommonDialogAction
+        P+: ExecuteResult
+        P+: BeforeExecute
+        P+: OnAccept
+        P+: OnCancel
+T+: TFileAction
+        P+: FileName
+T+: TFileOpen
+        P+: Caption
+        P+: Dialog
+        P+: Enabled
+        P+: HelpContext
+        P+: HelpKeyword
+        P+: HelpType
+        P+: Hint
+        P+: ImageIndex
+        P+: ShortCut
+        P+: SecondaryShortCuts
+        P+: UseDefaultApp
+        P+: Visible
+        P+: BeforeExecute
+        P+: OnAccept
+        P+: OnCancel
+        P+: OnHint
+T+: TFileOpenWith
+        P+: FileName
+        P+: HelpContext
+        P+: HelpKeyword
+        P+: HelpType
+        P+: BeforeExecute
+        P+: AfterOpen
+T+: TFileSaveAs
+        P+: Caption
+        P+: Dialog
+        P+: Enabled
+        P+: HelpContext
+        P+: Hint
+        P+: ImageIndex
+        P+: ShortCut
+        P+: SecondaryShortCuts
+        P+: Visible
+        P+: BeforeExecute
+        P+: OnAccept
+        P+: OnCancel
+        P+: OnHint
+T+: TFilePrintSetup
+        P+: Caption
+        P+: Dialog
+        P+: Enabled
+        P+: HelpContext
+        P+: HelpKeyword
+        P+: HelpType
+        P+: Hint
+        P+: ImageIndex
+        P+: ShortCut
+        P+: SecondaryShortCuts
+        P+: Visible
+        P+: BeforeExecute
+        P+: OnAccept
+        P+: OnCancel
+        P+: OnHint
+T+: TFilePageSetup
+        P+: Caption
+        P+: Dialog
+        P+: Enabled
+        P+: HelpContext
+        P+: HelpKeyword
+        P+: HelpType
+        P+: Hint
+        P+: ImageIndex
+        P+: ShortCut
+        P+: SecondaryShortCuts
+        P+: Visible
+        P+: BeforeExecute
+        P+: OnAccept
+        P+: OnCancel
+        P+: OnHint
+T+: TFileExit
+        P+: Caption
+        P+: Enabled
+        P+: HelpContext
+        P+: HelpKeyword
+        P+: HelpType
+        P+: Hint
+        P+: ImageIndex
+        P+: ShortCut
+        P+: SecondaryShortCuts
+        P+: Visible
+        P+: OnHint
+T+: TSearchAction
+T+: TSearchFind
+        P+: Caption
+        P+: Dialog
+        P+: Enabled
+        P+: HelpContext
+        P+: HelpKeyword
+        P+: HelpType
+        P+: Hint
+        P+: ImageIndex
+        P+: ShortCut
+        P+: SecondaryShortCuts
+        P+: Visible
+        P+: BeforeExecute
+        P+: OnAccept
+        P+: OnCancel
+        P+: OnHint
+T+: TSearchReplace
+        P+: Caption
+        P+: Dialog
+        P+: Enabled
+        P+: HelpContext
+        P+: HelpKeyword
+        P+: HelpType
+        P+: Hint
+        P+: ImageIndex
+        P+: ShortCut
+        P+: SecondaryShortCuts
+        P+: Visible
+        P+: BeforeExecute
+        P+: OnAccept
+        P+: OnCancel
+        P+: OnHint
+T+: TSearchFindFirst
+T+: TSearchFindNext
+        P+: Caption
+        P+: Enabled
+        P+: HelpContext
+        P+: HelpKeyword
+        P+: HelpType
+        P+: Hint
+        P+: ImageIndex
+        P+: SearchFind
+        P+: ShortCut
+        P+: SecondaryShortCuts
+        P+: Visible
+        P+: OnHint
+T+: TFontEdit
+        P+: Caption
+        P+: Dialog
+        P+: Enabled
+        P+: HelpContext
+        P+: HelpKeyword
+        P+: HelpType
+        P+: Hint
+        P+: ImageIndex
+        P+: ShortCut
+        P+: SecondaryShortCuts
+        P+: Visible
+        P+: BeforeExecute
+        P+: OnAccept
+        P+: OnCancel
+        P+: OnHint
+T+: TColorSelect
+        P+: Caption
+        P+: Dialog
+        P+: Enabled
+        P+: HelpContext
+        P+: HelpKeyword
+        P+: HelpType
+        P+: Hint
+        P+: ImageIndex
+        P+: ShortCut
+        P+: SecondaryShortCuts
+        P+: Visible
+        P+: BeforeExecute
+        P+: OnAccept
+        P+: OnCancel
+        P+: OnHint
+T+: TPrintDlg
+        P+: Caption
+        P+: Dialog
+        P+: Enabled
+        P+: HelpContext
+        P+: HelpKeyword
+        P+: HelpType
+        P+: Hint
+        P+: ImageIndex
+        P+: ShortCut
+        P+: SecondaryShortCuts
+        P+: Visible
+        P+: BeforeExecute
+        P+: OnAccept
+        P+: OnCancel
+        P+: OnHint

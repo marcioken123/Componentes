@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<namespace name="pLMDConfigExp" platform="Win32">
+  <class name="TLMDConfigExpert" file="..\..\units\pLMDConfigExp.pas" line="51">
+    <ancestor name="TNotifierObject" namespace="ToolsAPI">
+      <methodref name="AfterSave" visibility="protected">
+      </methodref>
+      <methodref name="BeforeSave" visibility="protected">
+      </methodref>
+      <methodref name="Destroyed" visibility="protected">
+      </methodref>
+      <methodref name="Modified" visibility="protected">
+      </methodref>
+      <ancestor name="TInterfacedObject" namespace="System">
+        <interfaces>
+          <implements name="IInterface" />
+        </interfaces>
+        <methodref name="GetRefCount" visibility="private" procflags="inline">
+        </methodref>
+        <methodref name="__MarkDestroying" visibility="protected" procflags="static inline">
+        </methodref>
+        <methodref name="QueryInterface" visibility="protected">
+        </methodref>
+        <methodref name="_AddRef" visibility="protected">
+        </methodref>
+        <methodref name="_Release" visibility="protected">
+        </methodref>
+        <methodref name="AfterConstruction" visibility="public" procflags="override">
+        </methodref>
+        <methodref name="BeforeDestruction" visibility="public" procflags="override">
+        </methodref>
+        <methodref name="NewInstance" visibility="public" procflags="class override">
+        </methodref>
+        <propertyref name="RefCount" visibility="public">
+        </propertyref>
+        <ancestor name="TObject" namespace="System">
+          <methodref name="Create" visibility="public" procflags="constructor">
+          </methodref>
+          <methodref name="Free" visibility="public">
+          </methodref>
+          <methodref name="DisposeOf" visibility="public" procflags="inline">
+          </methodref>
+          <methodref name="InitInstance" visibility="public" procflags="class">
+          </methodref>
+          <methodref name="CleanupInstance" visibility="public">
+          </methodref>
+          <methodref name="ClassType" visibility="public" procflags="inline">
+          </methodref>
+          <methodref name="ClassName" visibility="public" procflags="class">
+          </methodref>
+          <methodref name="ClassNameIs" visibility="public" procflags="class">
+          </methodref>
+          <methodref name="ClassParent" visibility="public" procflags="class">
+          </methodref>
+          <methodref name="ClassInfo" visibility="public" procflags="class inline">
+          </methodref>
+          <methodref name="InstanceSize" visibility="public" procflags="class inline">
+          </methodref>
+          <methodref name="InheritsFrom" visibility="public" procflags="class">
+          </methodref>
+          <methodref name="MethodAddress" visibility="public" procflags="class overload">
+          </methodref>
+          <methodref name="MethodAddress" visibility="public" procflags="class overload">
+          </methodref>
+          <methodref name="MethodName" visibility="public" procflags="class">
+          </methodref>
+          <methodref name="QualifiedClassName" visibility="public" procflags="class">
+          </methodref>
+          <methodref name="FieldAddress" visibility="public" procflags="overload">
+          </methodref>
+          <methodref name="FieldAddress" visibility="public" procflags="overload">
+          </methodref>
+          <methodref name="GetInterface" visibility="public">
+          </methodref>
+          <methodref name="GetInterfaceEntry" visibility="public" procflags="class">
+          </methodref>
+          <methodref name="GetInterfaceTable" visibility="public" procflags="class inline">
+          </methodref>
+          <methodref name="UnitName" visibility="public" procflags="class">
+          </methodref>
+          <methodref name="UnitScope" visibility="public" procflags="class">
+          </methodref>
+          <methodref name="Equals" visibility="public" procflags="virtual">
+          </methodref>
+          <methodref name="GetHashCode" visibility="public" procflags="virtual">
+          </methodref>
+          <methodref name="ToString" visibility="public" procflags="virtual">
+          </methodref>
+          <methodref name="SafeCallException" visibility="public" procflags="virtual">
+          </methodref>
+          <methodref name="AfterConstruction" visibility="public" procflags="virtual">
+          </methodref>
+          <methodref name="BeforeDestruction" visibility="public" procflags="virtual">
+          </methodref>
+          <methodref name="Dispatch" visibility="public" procflags="virtual">
+          </methodref>
+          <methodref name="DefaultHandler" visibility="public" procflags="virtual">
+          </methodref>
+          <methodref name="NewInstance" visibility="public" procflags="class virtual">
+          </methodref>
+          <methodref name="FreeInstance" visibility="public" procflags="virtual">
+          </methodref>
+          <methodref name="Destroy" visibility="public" procflags="destructor virtual">
+          </methodref>
+          <methodref name="GetDisposed" visibility="protected" procflags="inline">
+          </methodref>
+          <methodref name="CheckDisposed" visibility="protected" procflags="inline">
+          </methodref>
+          <propertyref name="Disposed" visibility="protected">
+          </propertyref>
+        </ancestor>
+      </ancestor>
+    </ancestor>
+    <interfaces>
+      <implements name="IOTAWizard" />
+    </interfaces>
+    <members>
+      <field name="FSeparatorItem" type="TMenuItem" visibility="private" size="4" offset="12" file="..\..\units\pLMDConfigExp.pas" line="53" />
+      <field name="FConfigItem" type="TMenuItem" visibility="private" size="4" offset="16" file="..\..\units\pLMDConfigExp.pas" line="54" />
+      <procedure name="CreateMenuItems" visibility="private" file="..\..\units\pLMDConfigExp.pas" line="55">
+      </procedure>
+      <procedure name="ConfigItemClick" visibility="private" file="..\..\units\pLMDConfigExp.pas" line="56">
+        <parameters>
+          <parameter name="Sender" type="TObject" />
+        </parameters>
+      </procedure>
+      <function name="GetNTAServices" visibility="private" file="..\..\units\pLMDConfigExp.pas" line="57">
+        <parameters>
+          <retval type="INTAServices" />
+        </parameters>
+      </function>
+      <function name="GetIDString" visibility="protected" file="..\..\units\pLMDConfigExp.pas" line="59">
+        <parameters>
+          <retval type="string" />
+        </parameters>
+      </function>
+      <function name="GetName" visibility="protected" file="..\..\units\pLMDConfigExp.pas" line="60">
+        <parameters>
+          <retval type="string" />
+        </parameters>
+      </function>
+      <function name="GetState" visibility="protected" file="..\..\units\pLMDConfigExp.pas" line="61">
+        <parameters>
+          <retval type="TWizardState" />
+        </parameters>
+      </function>
+      <constructor name="Create" visibility="public" file="..\..\units\pLMDConfigExp.pas" line="63">
+        <parameters>
+        </parameters>
+      </constructor>
+      <destructor name="Destroy" visibility="public" file="..\..\units\pLMDConfigExp.pas" line="64">
+        <parameters>
+        </parameters>
+      </destructor>
+      <procedure name="Execute" visibility="public" file="..\..\units\pLMDConfigExp.pas" line="65">
+      </procedure>
+    </members>
+  </class>
+</namespace>

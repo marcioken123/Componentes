@@ -1,0 +1,64 @@
+package lmdrtdialog;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$LIBSUFFIX '240'}
+{$DESCRIPTION 'LMD-Tools DialogPack Runtime package'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcl,
+  vclx,
+  vclie;
+
+contains
+  JSButton in '..\..\JSButton.pas',
+  JSCheckBox in '..\..\JSCheckBox.pas',
+  JSDialog in '..\..\JSDialog.pas',
+  JSDialogCheck in '..\..\JSDialogCheck.pas',
+  JSDialogs in '..\..\JSDialogs.pas',
+  JSDialogStrs in '..\..\JSDialogStrs.pas',
+  JSEditDialog in '..\..\JSEditDialog.pas',
+  JSEditDialogIntf in '..\..\JSEditDialogIntf.pas',
+  JSEditDialogs in '..\..\JSEditDialogs.pas',
+  JSEditEvents in '..\..\JSEditEvents.pas',
+  JSGraphics in '..\..\JSGraphics.pas',
+  JSGraphUtil in '..\..\JSGraphUtil.pas',
+  JSLabel in '..\..\JSLabel.pas',
+  JSMonthCal in '..\..\JSMonthCal.pas',
+  JSPasswordDialog in '..\..\JSPasswordDialog.pas',
+  JSPasswordDialogFrame in '..\..\JSPasswordDialogFrame.pas' {fmJSPasswordDialog},
+  JSProgressBar in '..\..\JSProgressBar.pas',
+  JSRichEdit in '..\..\JSRichEdit.pas',
+  JSTypes in '..\..\JSTypes.pas',
+  JSUnicode in '..\..\JSUnicode.pas',
+  JSConfirmPasswordDialogFrame in '..\..\JSConfirmPasswordDialogFrame.pas' {fmJSConfirmPasswordDialog},
+  JSChangePasswordDialogFrame in '..\..\JSChangePasswordDialogFrame.pas' {fmJSChangePasswordDialog},
+  JSDualEditDialogFrame in '..\..\JSDualEditDialogFrame.pas' {fmDualEditDialog},
+  JSDualEditDialog in '..\..\JSDualEditDialog.pas',
+  JSDialogSheet in '..\..\JSDialogSheet.pas',
+  JSDialogSheets in '..\..\JSDialogSheets.pas';
+
+end.

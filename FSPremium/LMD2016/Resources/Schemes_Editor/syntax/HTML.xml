@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SchemeList root='Main'>
+
+  <Scheme name='EmbedLang' >
+    <RegexBlock innerScheme='Tag' start_token0='tagOpen' end_token0='tagClose' >
+        <Start> &lt; [\w:]+ </Start>
+        <End> (?= /? &gt;) </End>
+    </RegexBlock>
+
+  </Scheme>
+
+  <Scheme name='Comment' defaultToken='comment'>
+  </Scheme>
+
+
+  <Scheme name='Css' inherit='EmbedLang'
+          defaultToken='defaultEmbed'  >
+
+    <RegexBlock innerScheme='CSS.Main' start_token0='tagOpen' end_token0='tagClose' >
+        <Start> &gt; </Start>
+        <End> (?i)(?= &lt; / \s* style ) </End>
+    </RegexBlock>
+
+  </Scheme>
+
+  <Scheme name='JavaScript' inherit='EmbedLang'
+          defaultToken='defaultEmbed'>
+
+
+    <RegexBlock innerScheme='JavaScript.Main' start_token0='tagOpen' end_token0='tagClose' >
+        <Start> &gt; </Start>
+        <End> (?i)(?= &lt; / \s* script ) </End>
+    </RegexBlock>
+
+  </Scheme>
+
+  <Scheme name='VBScript'
+          allIgnoreCase='true'
+          inherit='EmbedLang'
+          defaultToken='defaultEmbed'>
+
+    <RegexBlock innerScheme='VB.Main' start_token0='tagOpen' end_token0='tagClose' >
+        <Start> &gt; </Start>
+        <End> (?i)(?= &lt; / \s* script ) </End>
+    </RegexBlock>
+
+  </Scheme>
+
+  <Scheme name='PHPInScript'
+          inherit='EmbedLang'
+          defaultToken='defaultEmbed'>
+
+    <RegexBlock innerScheme='PHP.Language' start_token0='tagOpen' end_token0='tagClose' >
+        <Start> &gt; </Start>
+        <End> (?i)(?= &lt; / \s* script ) </End>
+    </RegexBlock>
+
+  </Scheme>
+
+  <Scheme name='PHP' inherit0='PHP.Language'
+          defaultToken='defaultEmbed'>
+  </Scheme>
+
+  <Scheme name='DTD' allIgnoreCase='true' defaultToken='comment'>
+
+    <KeywordRegex>\b\w+\b</KeywordRegex>
+
+    <Keywords>HTML PUBLIC</Keywords>
+
+    <Regex token0="fpi">
+        (&quot;|&apos;)
+        \s*
+        -//W3C//DTD
+        \s+ HTML
+        \s+ \d\.\d+(\s+\w+)?//EN
+        \s*
+        \1
+    </Regex>
+
+    <Regex token0="url">
+        (&quot;|&apos;)
+        \s*
+           \w+://\w+(\.\w+)+((/\w+/)+\S*)?
+        \s*
+        \1
+    </Regex>
+
+  </Scheme>
+
+  <Scheme name='AttrStringQuot'>
+    <Regex token0='attributeValue'> [^ &quot; ]+</Regex>
+  </Scheme>
+
+  <Scheme name='AttrStringApos'>
+    <Regex token0='attributeValue'> [^ &apos; ]+</Regex>
+  </Scheme>
+
+
+  <Scheme name='AttributeValue' defaultToken='attributeValue' />
+
+  <Scheme name='Tag'>
+
+    <Regex token0='attributeName' priority='10'>
+        \b[\w\-]+ \s* = \s*
+
+    </Regex>
+
+    <Regex token0='attributeValue'>
+        [^ &lt; &gt; &quot; &apos; = \s ]+
+    </Regex>
+
+    <RegexBlock innerScheme='AttrStringQuot' start_token0='attributeValue'
+        end_token0='attributeValue' >
+
+        <Start> &quot;  </Start>
+        <End> &quot; </End>
+    </RegexBlock>
+
+    <RegexBlock innerScheme='AttrStringApos' start_token0='attributeValue'
+        end_token0='attributeValue' >
+
+        <Start> &apos;  </Start>
+        <End> &apos; </End>
+    </RegexBlock>
+
+  </Scheme>
+
+  <Scheme name='My' defaultToken='string'>
+  </Scheme>
+
+  <Scheme name='Main' defaultToken='htmlText'
+          keywordsIgnoreCase='true'
+          allIgnoreCase='true'>
+
+    <Regex token0='entity'>
+        &amp;[a-zA-Z]+;
+    </Regex>
+
+    <RegexBlock innerScheme='Comment' end_token0='comment' >
+        <Start> &lt; !--  </Start>
+        <End> --&gt; </End>
+    </RegexBlock>
+
+    <RegexBlock innerScheme='DTD' start_token0='dtdTagStartEnd' end_token0='dtdTagStartEnd' >
+        <Start> &lt; !DOCTYPE  </Start>
+        <End> &gt; </End>
+    </RegexBlock>
+
+    <RegexBlock innerScheme='JavaScript'>
+		end_token0='tagClose'
+                closeInnerSchemes='true'
+		>
+        <Start>
+          &lt; script
+
+
+           (
+            \s+
+            (language \s* = \s* (&quot;|&apos;) \s* (javascript|JScript|ECMAScript) \s* \3 ) |
+            (type \s* = \s* (&quot;|&apos;) \s* text/(javascript|JScript|ECMAScript) \s* \6 )
+           )?
+
+          .*?
+          &gt;
+        </Start>
+        <End> (?i)(([^\\] | ^) / &gt;) | (&lt; / \s* script \s* &gt;)  </End>
+    </RegexBlock>
+
+    <RegexBlock innerScheme='VBScript'
+                end_token0='tagClose' priority='10'
+                closeInnerSchemes='true'
+                >
+        <Start>
+          &lt; script
+
+            \s+
+           (
+            (language \s* = \s* (&quot;|&apos;) \s* VBScript \s* \3 ) |
+            (type \s* = \s* (&quot;|&apos;) \s* text/VBScript \s* \6 )
+           )
+
+          .*?
+          &gt;
+        </Start>
+        <End> (?i)( / &gt;) | (&lt; / \s* script \s* &gt;)  </End>
+    </RegexBlock>
+
+    <RegexBlock innerScheme='PHPInScript'
+                end_token0='tagClose'
+                priority='200'
+                closeInnerSchemes='true'
+                >
+        <Start>
+          &lt; script
+
+            \s+
+           (
+            (language \s* = \s* (&quot;|&apos;) \s* php \s* \3 ) |
+            (type \s* = \s* (&quot;|&apos;) \s* text/php \s* \5 )
+           )
+
+          .*?
+          &gt;
+        </Start>
+        <End> (?i)(([^\\] | ^) / &gt;) | (&lt; / \s* script \s* &gt;)  </End>
+    </RegexBlock>
+
+    <RegexBlock innerScheme='PHP'
+                start_token0='tagOpen'
+                end_token0='tagClose'
+                priority='100'
+                closeInnerSchemes='true'
+                >
+        <Start>
+          &lt; \?php
+        </Start>
+        <End> \? &gt; </End>
+    </RegexBlock>
+
+    <RegexBlock innerScheme='Css' end_token0='tagClose' priority='100' >
+        <Start>
+          &lt; style (\s+ [^ &lt; &gt; ]*)?
+          &gt;
+        </Start>
+        <End> (?i)(([^\\] | ^) / &gt;) | (&lt; / \s* style \s* &gt;)  </End>
+    </RegexBlock>
+
+    <RegexBlock innerScheme='Tag' start_token0='tagOpen' end_token0='tagClose' >
+        <Start> &lt; [\w:]+ </Start>
+        <End> /? &gt; </End>
+    </RegexBlock>
+
+    <Regex token0='tagClose' >
+        &lt; /  [\w:]+ &gt;
+    </Regex>
+  </Scheme>
+</SchemeList>
+

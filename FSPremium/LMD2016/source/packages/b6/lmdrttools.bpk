@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="lmdrttools60.bpl"/>
+    <OBJFILES value="lmdrttools.obj ..\..\LMDBack.obj ..\..\LMDCheckListDlg.obj ..\..\LMD3DEffectButton.obj ..\..\LMDAboutDlg.obj ..\..\LMDAlarmComponent.obj ..\..\LMDAniCtrl.obj ..\..\LMDAssist.obj ..\..\LMDBaseShape.obj ..\..\LMDBufferComponent.obj ..\..\LMDButtonBar.obj ..\..\LMDButtonBarPopupMenu.obj ..\..\LMDCalendar.obj ..\..\LMDCalculator.obj ..\..\LMDCalculatorComboBox.obj ..\..\LMDCalculatorDlg.obj ..\..\LMDCalculatorEdit.obj ..\..\LMDCalendarComboBox.obj ..\..\LMDCalendarDlg.obj ..\..\LMDCalendarEdit.obj ..\..\LMDCaptionButtons.obj ..\..\LMDCaptionPanel.obj ..\..\LMDCaptionPanelGroup.obj ..\..\LMDCheckListComboBox.obj ..\..\LMDClock.obj ..\..\LMDCustom3DButton.obj ..\..\LMDCustomDateTimePicker.obj ..\..\LMDCustomFormComboBox.obj ..\..\LMDCustomGraphicLabel.obj ..\..\LMDCustomHeaderPanel.obj ..\..\LMDCustomLabelFill.obj ..\..\LMDCustomLight.obj ..\..\LMDCustomListComboBox.obj ..\..\LMDCustomMMButton.obj ..\..\LMDCustomShapeButton.obj ..\..\LMDCustomSwitch.obj ..\..\LMDDateTimePicker.obj ..\..\LMDDirDlg.obj ..\..\LMDDlgButtonPanel.obj ..\..\LMDDlgEx.obj ..\..\LMDDriveComboBox.obj ..\..\LMDEditActions.obj ..\..\LMDExpressionEval.obj ..\..\LMDFlyoutController.obj ..\..\LMDFormA.obj ..\..\LMDFormComboBox.obj ..\..\LMDFormFill.obj ..\..\LMDFormShadow.obj ..\..\LMDFormShape.obj ..\..\LMDGlobalHotkey.obj ..\..\LMDGraphicLabel.obj ..\..\LMDGrlf.obj ..\..\LMDHeader.obj ..\..\LMDHeaderListComboBox.obj ..\..\LMDHeaderPanel.obj ..\..\LMDHeaderPanelButton.obj ..\..\LMDHideNonVC.obj ..\..\LMDInputDlg.obj ..\..\LMDLabelFill.obj ..\..\LMDLED.obj ..\..\LMDLEDCustomLabel.obj ..\..\LMDLEDLabel.obj ..\..\LMDLight.obj ..\..\LMDListComboBox.obj ..\..\LMDListComponent.obj ..\..\LMDMain.obj ..\..\LMDMathParser.obj ..\..\LMDMMButton.obj ..\..\LMDMMButtonFaceController.obj ..\..\LMDMsg.obj ..\..\LMDNoteBook.obj ..\..\LMDObjectStorage.obj ..\..\LMDPanelCaptionObject.obj ..\..\LMDPanelShape.obj ..\..\LMDPopupMenu.obj ..\..\LMDQueueComponent.obj ..\..\LMDRegion.obj ..\..\LMDRegionMask.obj ..\..\LMDRepeatedShape.obj ..\..\LMDScrollText.obj ..\..\LMDSendKeys.obj ..\..\LMDShape.obj ..\..\LMDShapeBase.obj ..\..\LMDShapeButton.obj ..\..\LMDShapeButtonColor.obj ..\..\LMDShapeControl.obj ..\..\LMDSimpleBevel.obj ..\..\LMDStackComponent.obj ..\..\LMDStaticText.obj ..\..\LMDSwitch.obj ..\..\LMDSysMenu.obj ..\..\LMDTagEditor.obj ..\..\LMDTechnicalLine.obj ..\..\LMDTeeth.obj ..\..\LMDTextEditDlg.obj ..\..\LMDTextEditor.obj ..\..\LMDTipDlg.obj ..\..\LMDTrackBarComboBox.obj ..\..\LMDTreeComboBox.obj ..\..\LMDTxtPrinter.obj ..\..\LMDWindowListDlg.obj ..\..\LMDWndButtonShape.obj ..\..\LMDEditPrintTask.obj"/>
+    <RESFILES value="lmdrttools.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) ..\..\LMDTextEditor.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value="rtl.lib"/>
+    <PACKAGES value="lmdrtl.bpi rtl.bpi vcl.bpi vclx.bpi lmdrtrtlx.bpi lmdrtcore.bpi lmdrtprint.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value=""/>
+    <SYSDEFINES value="_RTLDLL;NO_STRICT;USEPACKAGES"/>
+    <MAINSOURCE value="lmdrttools.cpp"/>
+    <INCLUDEPATH value="$(BCB)\include;$(BCB)\include\vcl;"/>
+    <LIBPATH value="$(BCB)\lib\obj;$(BCB)\lib;"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I$(BCB)\include -I$(BCB)\include\vcl -src_suffix cpp -boa"/>
+    <CFLAG1 value="-O2 -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -a8 -b- -k- -vi -c -tWM"/>
+    <PFLAGS value="-N2..\..\build -N0..\..\build -NH..\..\build -$Y- -$L- -$D- -$A8 -v -JPHNE -M "/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zn"/>
+    <LFLAGS value="-I..\.. -D&quot;LMD-Tools Main Components&quot; -aa -Tpp -Gpr -x -Gn -Gl -Gi"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0pkg32.obj $(PACKAGES) Memmgr.Lib sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib "/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="lmdrttools.cpp" FORMNAME="" UNITNAME="lmdrttools" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrttools.res" FORMNAME="" UNITNAME="lmdrttools.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtl.bpi" FORMNAME="" UNITNAME="lmdrtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="rtl.bpi" FORMNAME="" UNITNAME="rtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vcl.bpi" FORMNAME="" UNITNAME="vcl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vclx.bpi" FORMNAME="" UNITNAME="vclx" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtrtlx.bpi" FORMNAME="" UNITNAME="lmdrtrtlx" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtcore.bpi" FORMNAME="" UNITNAME="lmdrtcore" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtprint.bpi" FORMNAME="" UNITNAME="lmdrtprint" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDBack.pas" FORMNAME="" UNITNAME="LMDBack" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCheckListDlg.pas" FORMNAME="" UNITNAME="LMDCheckListDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMD3DEffectButton.pas" FORMNAME="" UNITNAME="LMD3DEffectButton" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDAboutDlg.pas" FORMNAME="" UNITNAME="LMDAboutDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDAlarmComponent.pas" FORMNAME="" UNITNAME="LMDAlarmComponent" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDAniCtrl.pas" FORMNAME="" UNITNAME="LMDAniCtrl" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDAssist.pas" FORMNAME="" UNITNAME="LMDAssist" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDBaseShape.pas" FORMNAME="" UNITNAME="LMDBaseShape" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDBufferComponent.pas" FORMNAME="" UNITNAME="LMDBufferComponent" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDButtonBar.pas" FORMNAME="" UNITNAME="LMDButtonBar" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDButtonBarPopupMenu.pas" FORMNAME="" UNITNAME="LMDButtonBarPopupMenu" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCalendar.pas" FORMNAME="" UNITNAME="LMDCalendar" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCalculator.pas" FORMNAME="" UNITNAME="LMDCalculator" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCalculatorComboBox.pas" FORMNAME="" UNITNAME="LMDCalculatorComboBox" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCalculatorDlg.pas" FORMNAME="" UNITNAME="LMDCalculatorDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCalculatorEdit.pas" FORMNAME="" UNITNAME="LMDCalculatorEdit" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCalendarComboBox.pas" FORMNAME="" UNITNAME="LMDCalendarComboBox" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCalendarDlg.pas" FORMNAME="" UNITNAME="LMDCalendarDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCalendarEdit.pas" FORMNAME="" UNITNAME="LMDCalendarEdit" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCaptionButtons.pas" FORMNAME="" UNITNAME="LMDCaptionButtons" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCaptionPanel.pas" FORMNAME="" UNITNAME="LMDCaptionPanel" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCaptionPanelGroup.pas" FORMNAME="" UNITNAME="LMDCaptionPanelGroup" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCheckListComboBox.pas" FORMNAME="" UNITNAME="LMDCheckListComboBox" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDClock.pas" FORMNAME="" UNITNAME="LMDClock" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCustom3DButton.pas" FORMNAME="" UNITNAME="LMDCustom3DButton" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCustomDateTimePicker.pas" FORMNAME="" UNITNAME="LMDCustomDateTimePicker" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCustomFormComboBox.pas" FORMNAME="" UNITNAME="LMDCustomFormComboBox" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCustomGraphicLabel.pas" FORMNAME="" UNITNAME="LMDCustomGraphicLabel" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCustomHeaderPanel.pas" FORMNAME="" UNITNAME="LMDCustomHeaderPanel" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCustomLabelFill.pas" FORMNAME="" UNITNAME="LMDCustomLabelFill" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCustomLight.pas" FORMNAME="" UNITNAME="LMDCustomLight" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCustomListComboBox.pas" FORMNAME="" UNITNAME="LMDCustomListComboBox" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCustomMMButton.pas" FORMNAME="" UNITNAME="LMDCustomMMButton" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCustomShapeButton.pas" FORMNAME="" UNITNAME="LMDCustomShapeButton" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCustomSwitch.pas" FORMNAME="" UNITNAME="LMDCustomSwitch" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDateTimePicker.pas" FORMNAME="" UNITNAME="LMDDateTimePicker" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDirDlg.pas" FORMNAME="" UNITNAME="LMDDirDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDlgButtonPanel.pas" FORMNAME="" UNITNAME="LMDDlgButtonPanel" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDlgEx.pas" FORMNAME="" UNITNAME="LMDDlgEx" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDriveComboBox.pas" FORMNAME="" UNITNAME="LMDDriveComboBox" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDEditActions.pas" FORMNAME="" UNITNAME="LMDEditActions" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDExpressionEval.pas" FORMNAME="" UNITNAME="LMDExpressionEval" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDFlyoutController.pas" FORMNAME="" UNITNAME="LMDFlyoutController" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDFormA.pas" FORMNAME="" UNITNAME="LMDFormA" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDFormComboBox.pas" FORMNAME="" UNITNAME="LMDFormComboBox" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDFormFill.pas" FORMNAME="" UNITNAME="LMDFormFill" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDFormShadow.pas" FORMNAME="" UNITNAME="LMDFormShadow" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDFormShape.pas" FORMNAME="" UNITNAME="LMDFormShape" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDGlobalHotkey.pas" FORMNAME="" UNITNAME="LMDGlobalHotkey" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDGraphicLabel.pas" FORMNAME="" UNITNAME="LMDGraphicLabel" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDGrlf.pas" FORMNAME="" UNITNAME="LMDGrlf" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDHeader.pas" FORMNAME="" UNITNAME="LMDHeader" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDHeaderListComboBox.pas" FORMNAME="" UNITNAME="LMDHeaderListComboBox" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDHeaderPanel.pas" FORMNAME="" UNITNAME="LMDHeaderPanel" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDHeaderPanelButton.pas" FORMNAME="" UNITNAME="LMDHeaderPanelButton" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDHideNonVC.pas" FORMNAME="" UNITNAME="LMDHideNonVC" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDInputDlg.pas" FORMNAME="" UNITNAME="LMDInputDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDLabelFill.pas" FORMNAME="" UNITNAME="LMDLabelFill" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDLED.pas" FORMNAME="" UNITNAME="LMDLED" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDLEDCustomLabel.pas" FORMNAME="" UNITNAME="LMDLEDCustomLabel" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDLEDLabel.pas" FORMNAME="" UNITNAME="LMDLEDLabel" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDLight.pas" FORMNAME="" UNITNAME="LMDLight" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDListComboBox.pas" FORMNAME="" UNITNAME="LMDListComboBox" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDListComponent.pas" FORMNAME="" UNITNAME="LMDListComponent" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDMain.pas" FORMNAME="" UNITNAME="LMDMain" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDMathParser.pas" FORMNAME="" UNITNAME="LMDMathParser" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDMMButton.pas" FORMNAME="" UNITNAME="LMDMMButton" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDMMButtonFaceController.pas" FORMNAME="" UNITNAME="LMDMMButtonFaceController" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDMsg.pas" FORMNAME="" UNITNAME="LMDMsg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDNoteBook.pas" FORMNAME="" UNITNAME="LMDNoteBook" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDObjectStorage.pas" FORMNAME="" UNITNAME="LMDObjectStorage" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDPanelCaptionObject.pas" FORMNAME="" UNITNAME="LMDPanelCaptionObject" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDPanelShape.pas" FORMNAME="" UNITNAME="LMDPanelShape" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDPopupMenu.pas" FORMNAME="" UNITNAME="LMDPopupMenu" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDQueueComponent.pas" FORMNAME="" UNITNAME="LMDQueueComponent" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRegion.pas" FORMNAME="" UNITNAME="LMDRegion" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRegionMask.pas" FORMNAME="" UNITNAME="LMDRegionMask" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRepeatedShape.pas" FORMNAME="" UNITNAME="LMDRepeatedShape" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDScrollText.pas" FORMNAME="" UNITNAME="LMDScrollText" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSendKeys.pas" FORMNAME="" UNITNAME="LMDSendKeys" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDShape.pas" FORMNAME="" UNITNAME="LMDShape" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDShapeBase.pas" FORMNAME="" UNITNAME="LMDShapeBase" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDShapeButton.pas" FORMNAME="" UNITNAME="LMDShapeButton" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDShapeButtonColor.pas" FORMNAME="" UNITNAME="LMDShapeButtonColor" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDShapeControl.pas" FORMNAME="" UNITNAME="LMDShapeControl" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSimpleBevel.pas" FORMNAME="" UNITNAME="LMDSimpleBevel" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDStackComponent.pas" FORMNAME="" UNITNAME="LMDStackComponent" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDStaticText.pas" FORMNAME="" UNITNAME="LMDStaticText" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSwitch.pas" FORMNAME="" UNITNAME="LMDSwitch" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysMenu.pas" FORMNAME="" UNITNAME="LMDSysMenu" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTagEditor.pas" FORMNAME="" UNITNAME="LMDTagEditor" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTechnicalLine.pas" FORMNAME="" UNITNAME="LMDTechnicalLine" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTeeth.pas" FORMNAME="" UNITNAME="LMDTeeth" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTextEditDlg.pas" FORMNAME="" UNITNAME="LMDTextEditDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTextEditor.pas" FORMNAME="LMDFrmTextEditor" UNITNAME="LMDTextEditor" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTipDlg.pas" FORMNAME="" UNITNAME="LMDTipDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTrackBarComboBox.pas" FORMNAME="" UNITNAME="LMDTrackBarComboBox" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTreeComboBox.pas" FORMNAME="" UNITNAME="LMDTreeComboBox" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTxtPrinter.pas" FORMNAME="" UNITNAME="LMDTxtPrinter" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDWindowListDlg.pas" FORMNAME="" UNITNAME="LMDWindowListDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDWndButtonShape.pas" FORMNAME="" UNITNAME="LMDWndButtonShape" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDEditPrintTask.pas" FORMNAME="" UNITNAME="LMDEditPrintTask" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+  <IDEOPTIONS>
+[Version Info Keys]
+CompanyName=LMD Innovative
+FileDescription=LMD-Tools Main Components
+FileVersion=2016.5
+InternalName=
+LegalCopyright=© LMD Innovative
+LegalTrademarks=
+OriginalFilename=
+ProductName=LMD-Tools Main Components
+ProductVersion=2016.5
+Comments=
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[Linker]
+LibPrefix=
+LibSuffix=60
+LibVersion=
+  </IDEOPTIONS>
+</PROJECT>

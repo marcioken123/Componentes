@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SchemeList root='Main'>
+
+  <Scheme name='Text' inherit='Numbers'>
+        <Regex token0='email'>
+            [_a-zA-Z\d\-\.]{1,40}
+            @ 
+            ([_ a-z A-Z \d \-]+ 
+            (\. [_ a-z A-Z \d \-]+ )+ )
+        </Regex>                
+  </Scheme>
+
+  <Scheme name='Numbers'>
+    <Regex token0='number'>\b (0x \d+ [lL]? | \d+ (e \d*)? [lLdDfF]? ) \b</Regex>
+    <Regex token0='number'>\b [+\-]? \d+ (\. \d+)? ([eE] [+\-]? \d+) \b</Regex>
+  </Scheme>
+
+  <Scheme name='Comment' inherit='Text' defaultToken='comment'>
+    <Regex token0='st' regex=' \/\* | \*\/   ' />                
+            
+     <SyntaxBlock capture="true">
+        <Start> st:/*  </Start>
+        <End> st:*/  </End>
+     </SyntaxBlock>                
+  </Scheme>
+
+  <Scheme name='String' inherit='Text' defaultToken='string'>
+    <Regex token0='escaped' priority='10' regex='\\\\' />
+    <Regex token0='escaped' regex='\\[a-z &quot; ]' />    
+    <Regex token0='escaped' regex='\\0x[a-fA-F0-9]+' />
+  </Scheme>
+
+  <Scheme name='BadString' inherit='String' defaultToken='badString'>
+  </Scheme>
+
+  <Scheme name='StringFind'>
+    <Regex token0='badString'> 
+        &apos; ( [^\\] | \\[a-z &apos;] | \\0x[a-fA-F0-9]+ )?
+    </Regex>
+
+    <Regex token0='string' priority='10'> 
+        &apos; ( [^\\] | \\[a-z &apos;] | \\0x[a-fA-F0-9]+ ) &apos;
+    </Regex>
+
+    <Regex innerScheme='BadString' > 
+        &quot; (.*?\\ &quot; )*? .* $ 
+    </Regex>
+
+    <Regex innerScheme='String' priority='10'> 
+        &quot; (.*?\\ &quot; )*? &quot;
+    </Regex>
+
+    <Regex innerScheme='String' priority='20'> 
+        &quot; (.*?\\ &quot; )*? .*? [^\\] &quot;
+    </Regex>  
+
+    <Regex innerScheme='String' priority='30'> 
+        &quot; &quot;
+    </Regex>
+
+  </Scheme>
+  
+  <Scheme name='Preprocessor' defaultToken='preprocessor' inherit='BaseSyntax' >
+
+    <IdentRe>\b[a-zA-Z]+\b</IdentRe>
+
+    <Keywords>
+      if ifdef endif else using include define undef pragma
+    </Keywords>
+
+  </Scheme>
+
+  <Scheme name='BadPreprocessor' defaultToken='badPreprocessor'>
+  </Scheme>
+
+  <Scheme name='BaseSyntax' inherit='Numbers'>
+    <Regex innerScheme='Comment' regex='//.*$' />
+
+
+    <RegexBlock start='\/\*' end='\*\/' end_token0='comment' 
+                innerScheme='Comment'/>
+
+    <Regex token0='symbol' regex='[   \}   \{    \]    \[  \( \) &gt; &lt; ]' />
+    <Regex token0='symbol' regex='[-:?\~=+!^;,]' />
+
+
+  </Scheme>
+
+  <Scheme name='Main' inherit='BaseSyntax' inherit0='StringFind' 
+          defaultToken='default'           
+
+          keywordsIgnoreCase='false'
+  >
+    <KeywordRegex>\b[a-zA-Z_][\w_]*\b</KeywordRegex>
+
+    <Keywords>
+      asm auto bool break case char const continue
+      default do double else enum export
+      extern false float for goto if inline int long 
+      register return short signed sizeof static 
+      switch typedef union unsigned void volatile wchar_t while NULL
+      __try __finally __catch
+    </Keywords>
+
+
+    <Regex innerScheme='Preprocessor' innerContentGroup='1' priority='10' >
+        ^ \s* \# ([a-zA-Z]+) .* $
+    </Regex>
+
+    <Regex innerScheme='BadPreprocessor' innerContentGroup='1'>
+        ^ .*? \S .*? \# ([a-zA-Z]+) .* $
+    </Regex>
+
+    <RegexBlock innerScheme='Preprocessor' 
+                innerContentGroup='1'
+                priority='100'>
+        <Start> ^ \s* \#([a-zA-Z]+) .* \\ \s* $  </Start>
+        <End>   (^ .* [^ \\ \s ] \s* $) | (^ \s* $)  </End>
+    </RegexBlock>
+
+    
+    <SkipSyntaxToken token='comment' />
+
+    <SyntaxBlock capture="true">
+        <Start> 
+            [ preprocessor:if  preprocessor:ifdef  ]
+        </Start>
+
+        <End> [ preprocessor:ifend  preprocessor:endif ] </End>
+    </SyntaxBlock>
+
+
+        
+    <SyntaxBlock capture="true">
+        <Start> id  sym:(  [^ sym:;    sym:}   sym:{   ]*  
+                sym:) ( sym::   [^ sym:;    sym:}   sym:{   ]+   )? sym:{
+        </Start>
+
+        <End> sym:\}  </End>
+    </SyntaxBlock>
+
+    <SyntaxBlock capture="true" priority='10'>
+        <Start>                 
+            [ kw:while  kw:do kw:if  kw:else  kw:__try  kw:__finally   kw:switch ]
+                                
+            [^ sym:;  sym:}  ]*?    sym:\{
+        </Start>
+
+        <End> sym:}  </End>
+    </SyntaxBlock>
+        
+
+    <SyntaxBlock capture="true" priority='100'  startGroupUsed='1'>
+        <Start>
+                    (  [ kw:while  kw:if  ]  sym:(   [^  sym:;   sym:}    sym:{   ]+ sym:)   )    
+
+                    [^ sym:{  sym:}  sym:; ]+ sym:;
+
+             
+        </Start>
+
+        <End> sym:;  </End>
+    </SyntaxBlock>
+
+    <SyntaxBlock capture="false" priority='0'  >
+        <Start> sym:{  </Start>
+        <End> sym:}  </End>
+    </SyntaxBlock>
+
+  </Scheme>
+</SchemeList>

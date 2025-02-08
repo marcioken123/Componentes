@@ -1,0 +1,331 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{1793C65E-2EB0-412F-A144-BE823F98E3B2}</ProjectGuid>
+        <FrameworkType>VCL</FrameworkType>
+        <MainSource>lmdrtcore.dpk</MainSource>
+        <ProjectVersion>19.1</ProjectVersion>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">build</Config>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <AppType>Package</AppType>
+        <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+        <TargetedPlatforms>3</TargetedPlatforms>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android' and '$(Base)'=='true') or '$(Base_Android)'!=''">
+        <Base_Android>true</Base_Android>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android64' and '$(Base)'=='true') or '$(Base_Android64)'!=''">
+        <Base_Android64>true</Base_Android64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='build' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_HppOutput>..\..</DCC_HppOutput>
+        <RuntimeOnlyPackage>true</RuntimeOnlyPackage>
+        <DesignOnlyPackage>false</DesignOnlyPackage>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=LMD Innovative;FileDescription=LMD-Tools Core Components;FileVersion=2016.5.0;InternalName=;LegalCopyright=Copyright (c) LMD Innovative;LegalTrademarks=;OriginalFilename=;ProductName=LMD VCL Series;ProductVersion=2016.5.0;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_Namespace>Winapi;System;System.Win;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
+        <DCC_CBuilderOutput>All</DCC_CBuilderOutput>
+        <GenPackage>true</GenPackage>
+        <GenDll>true</GenDll>
+        <DllSuffix>210</DllSuffix>
+        <DCC_Description>LMD-Tools Core Components</DCC_Description>
+        <DCC_DcuOutput>..\..\build\$(Platform)</DCC_DcuOutput>
+        <DCC_ExeOutput>..\..\build\$(Platform)</DCC_ExeOutput>
+        <DCC_E>false</DCC_E>
+        <DCC_N>false</DCC_N>
+        <DCC_S>false</DCC_S>
+        <DCC_F>false</DCC_F>
+        <DCC_K>false</DCC_K>
+        <SanitizedProjectName>lmdrtcore</SanitizedProjectName>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Android)'!=''">
+        <VerInfo_IncludeVerInfo>false</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar</VerInfo_Keys>
+        <BT_BuildType>Debug</BT_BuildType>
+        <EnabledSysJars>android-support-v4.dex.jar;cloud-messaging.dex.jar;com-google-android-gms.play-services-ads-base.17.2.0.dex.jar;com-google-android-gms.play-services-ads-identifier.16.0.0.dex.jar;com-google-android-gms.play-services-ads-lite.17.2.0.dex.jar;com-google-android-gms.play-services-ads.17.2.0.dex.jar;com-google-android-gms.play-services-analytics-impl.16.0.8.dex.jar;com-google-android-gms.play-services-analytics.16.0.8.dex.jar;com-google-android-gms.play-services-base.16.0.1.dex.jar;com-google-android-gms.play-services-basement.16.2.0.dex.jar;com-google-android-gms.play-services-gass.17.2.0.dex.jar;com-google-android-gms.play-services-identity.16.0.0.dex.jar;com-google-android-gms.play-services-maps.16.1.0.dex.jar;com-google-android-gms.play-services-measurement-base.16.4.0.dex.jar;com-google-android-gms.play-services-measurement-sdk-api.16.4.0.dex.jar;com-google-android-gms.play-services-stats.16.0.1.dex.jar;com-google-android-gms.play-services-tagmanager-v4-impl.16.0.8.dex.jar;com-google-android-gms.play-services-tasks.16.0.1.dex.jar;com-google-android-gms.play-services-wallet.16.0.1.dex.jar;com-google-firebase.firebase-analytics.16.4.0.dex.jar;com-google-firebase.firebase-common.16.1.0.dex.jar;com-google-firebase.firebase-iid-interop.16.0.1.dex.jar;com-google-firebase.firebase-iid.17.1.1.dex.jar;com-google-firebase.firebase-measurement-connector.17.0.1.dex.jar;com-google-firebase.firebase-messaging.17.5.0.dex.jar;fmx.dex.jar;google-play-billing.dex.jar;google-play-licensing.dex.jar</EnabledSysJars>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Android64)'!=''">
+        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar</VerInfo_Keys>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_IncludeVerInfo>false</VerInfo_IncludeVerInfo>
+        <Base_Android>true</Base_Android>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+        <EnabledSysJars>android-support-v4.dex.jar;cloud-messaging.dex.jar;com-google-android-gms.play-services-ads-base.17.2.0.dex.jar;com-google-android-gms.play-services-ads-identifier.16.0.0.dex.jar;com-google-android-gms.play-services-ads-lite.17.2.0.dex.jar;com-google-android-gms.play-services-ads.17.2.0.dex.jar;com-google-android-gms.play-services-analytics-impl.16.0.8.dex.jar;com-google-android-gms.play-services-analytics.16.0.8.dex.jar;com-google-android-gms.play-services-base.16.0.1.dex.jar;com-google-android-gms.play-services-basement.16.2.0.dex.jar;com-google-android-gms.play-services-gass.17.2.0.dex.jar;com-google-android-gms.play-services-identity.16.0.0.dex.jar;com-google-android-gms.play-services-maps.16.1.0.dex.jar;com-google-android-gms.play-services-measurement-base.16.4.0.dex.jar;com-google-android-gms.play-services-measurement-sdk-api.16.4.0.dex.jar;com-google-android-gms.play-services-stats.16.0.1.dex.jar;com-google-android-gms.play-services-tagmanager-v4-impl.16.0.8.dex.jar;com-google-android-gms.play-services-tasks.16.0.1.dex.jar;com-google-android-gms.play-services-wallet.16.0.1.dex.jar;com-google-firebase.firebase-analytics.16.4.0.dex.jar;com-google-firebase.firebase-common.16.1.0.dex.jar;com-google-firebase.firebase-iid-interop.16.0.1.dex.jar;com-google-firebase.firebase-iid.17.1.1.dex.jar;com-google-firebase.firebase-measurement-connector.17.0.1.dex.jar;com-google-firebase.firebase-messaging.17.5.0.dex.jar;fmx.dex.jar;google-play-billing.dex.jar;google-play-licensing.dex.jar</EnabledSysJars>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="lmdrtl.dcp">
+            <CopyLocal>False</CopyLocal>
+        </DCCReference>
+        <DCCReference Include="rtl.dcp">
+            <CopyLocal>False</CopyLocal>
+        </DCCReference>
+        <DCCReference Include="vcl.dcp">
+            <CopyLocal>False</CopyLocal>
+        </DCCReference>
+        <DCCReference Include="vclx.dcp">
+            <CopyLocal>False</CopyLocal>
+        </DCCReference>
+        <DCCReference Include="lmdrtrtlx.dcp">
+            <CopyLocal>False</CopyLocal>
+        </DCCReference>
+        <DCCReference Include="..\..\LMDBackPanel.pas"/>
+        <DCCReference Include="..\..\LMDBaseDialog.pas"/>
+        <DCCReference Include="..\..\LMDBaseEdit.pas"/>
+        <DCCReference Include="..\..\LMDBaseGraphicButton.pas"/>
+        <DCCReference Include="..\..\LMDBaseImage.pas"/>
+        <DCCReference Include="..\..\LMDBaseMeter.pas"/>
+        <DCCReference Include="..\..\LMDBiTrackBar.pas"/>
+        <DCCReference Include="..\..\LMDBiProgressBar.pas"/>
+        <DCCReference Include="..\..\LMDBoundLabel.pas"/>
+        <DCCReference Include="..\..\LMDBrowseEdit.pas"/>
+        <DCCReference Include="..\..\LMDButton.pas"/>
+        <DCCReference Include="..\..\LMDButtonControl.pas"/>
+        <DCCReference Include="..\..\LMDButtonListData.pas"/>
+        <DCCReference Include="..\..\LMDButtonPanel.pas"/>
+        <DCCReference Include="..\..\LMDCaption.pas"/>
+        <DCCReference Include="..\..\LMDCaret.pas"/>
+        <DCCReference Include="..\..\LMDCheckBox.pas"/>
+        <DCCReference Include="..\..\LMDCheckGroup.pas"/>
+        <DCCReference Include="..\..\LMDCheckGroupButton.pas"/>
+        <DCCReference Include="..\..\LMDCheckListBox.pas"/>
+        <DCCReference Include="..\..\LMDColorComboBox.pas"/>
+        <DCCReference Include="..\..\LMDColorEdit.pas"/>
+        <DCCReference Include="..\..\LMDColorListBox.pas"/>
+        <DCCReference Include="..\..\LMDComboBox.pas"/>
+        <DCCReference Include="..\..\LMDCPUInfoObject.pas"/>
+        <DCCReference Include="..\..\LMDCurrencySettings.pas"/>
+        <DCCReference Include="..\..\LMDCustomBiTrackBar.pas"/>
+        <DCCReference Include="..\..\LMDCustomBrowseEdit.pas"/>
+        <DCCReference Include="..\..\LMDCustomButton.pas"/>
+        <DCCReference Include="..\..\LMDCustomButtonGroup.pas"/>
+        <DCCReference Include="..\..\LMDCustomCheckBox.pas"/>
+        <DCCReference Include="..\..\LMDCustomCheckGroup.pas"/>
+        <DCCReference Include="..\..\LMDCustomCheckListBox.pas"/>
+        <DCCReference Include="..\..\LMDCustomCheckListDlg.pas"/>
+        <DCCReference Include="..\..\LMDCustomColorComboBox.pas"/>
+        <DCCReference Include="..\..\LMDCustomColorListBox.pas"/>
+        <DCCReference Include="..\..\LMDCustomComboBox.pas"/>
+        <DCCReference Include="..\..\LMDCustomDockLabel.pas"/>
+        <DCCReference Include="..\..\LMDCustomEdit.pas"/>
+        <DCCReference Include="..\..\LMDCustomExtCombo.pas"/>
+        <DCCReference Include="..\..\LMDCustomExtSpinEdit.pas"/>
+        <DCCReference Include="..\..\LMDCustomFileEdit.pas"/>
+        <DCCReference Include="..\..\LMDCustomFormFill.pas"/>
+        <DCCReference Include="..\..\LMDCustomGlyphLabel.pas"/>
+        <DCCReference Include="..\..\LMDCustomGroupBox.pas"/>
+        <DCCReference Include="..\..\LMDCustomHint.pas"/>
+        <DCCReference Include="..\..\LMDCustomImageComboBox.pas"/>
+        <DCCReference Include="..\..\LMDCustomImageListBox.pas"/>
+        <DCCReference Include="..\..\LMDCustomLabel.pas"/>
+        <DCCReference Include="..\..\LMDCustomLImage.pas"/>
+        <DCCReference Include="..\..\LMDCustomListBox.pas"/>
+        <DCCReference Include="..\..\LMDCustomListBoxExt.pas"/>
+        <DCCReference Include="..\..\LMDCustomMaskEdit.pas"/>
+        <DCCReference Include="..\..\LMDCustomMemo.pas"/>
+        <DCCReference Include="..\..\LMDCustomNImage.pas"/>
+        <DCCReference Include="..\..\LMDCustomPanelFill.pas"/>
+        <DCCReference Include="..\..\LMDCustomParentPanel.pas"/>
+        <DCCReference Include="..\..\LMDCustomProgress.pas"/>
+        <DCCReference Include="..\..\LMDCustomProgressFill.pas"/>
+        <DCCReference Include="..\..\LMDCustomRadioGroup.pas"/>
+        <DCCReference Include="..\..\LMDCustomScrollBox.pas"/>
+        <DCCReference Include="..\..\LMDCustomScrollBoxExt.pas"/>
+        <DCCReference Include="..\..\LMDCustomShapeHint.pas"/>
+        <DCCReference Include="..\..\LMDCustomSheetControl.pas"/>
+        <DCCReference Include="..\..\LMDCustomSimpleLabel.pas"/>
+        <DCCReference Include="..\..\LMDCustomSpeedButton.pas"/>
+        <DCCReference Include="..\..\LMDCustomTrackBar.pas"/>
+        <DCCReference Include="..\..\LMDCustomToolBar.pas"/>
+        <DCCReference Include="..\..\LMDDateFormat.pas"/>
+        <DCCReference Include="..\..\LMDDockButton.pas"/>
+        <DCCReference Include="..\..\LMDDockLabel.pas"/>
+        <DCCReference Include="..\..\LMDDockSpeedButton.pas"/>
+        <DCCReference Include="..\..\LMDDrawEdge.pas"/>
+        <DCCReference Include="..\..\LMDEdit.pas"/>
+        <DCCReference Include="..\..\LMDEditAutoComplete.pas"/>
+        <DCCReference Include="..\..\LMDExtListBox.pas"/>
+        <DCCReference Include="..\..\LMDExtSpinEdit.pas"/>
+        <DCCReference Include="..\..\LMDFileOpenEdit.pas"/>
+        <DCCReference Include="..\..\LMDFileSaveEdit.pas"/>
+        <DCCReference Include="..\..\LMDFill.pas"/>
+        <DCCReference Include="..\..\LMDFlowPanel.pas"/>
+        <DCCReference Include="..\..\LMDFontComboBox.pas"/>
+        <DCCReference Include="..\..\LMDFontListBox.pas"/>
+        <DCCReference Include="..\..\LMDFontSizeComboBox.pas"/>
+        <DCCReference Include="..\..\LMDFontSizeListBox.pas"/>
+        <DCCReference Include="..\..\LMDFormDisplay.pas"/>
+        <DCCReference Include="..\..\LMDFormStyler.pas"/>
+        <DCCReference Include="..\..\LMDFormTabControl.pas"/>
+        <DCCReference Include="..\..\LMDGlyphLabel.pas"/>
+        <DCCReference Include="..\..\LMDGraphicControl.pas"/>
+        <DCCReference Include="..\..\LMDGroupBox.pas"/>
+        <DCCReference Include="..\..\LMDHeaderControl.pas"/>
+        <DCCReference Include="..\..\LMDHint.pas"/>
+        <DCCReference Include="..\..\LMDHintErrorProvider.pas"/>
+        <DCCReference Include="..\..\LMDHTMLLabel.pas"/>
+        <DCCReference Include="..\..\LMDImageComboBox.pas"/>
+        <DCCReference Include="..\..\LMDImageListBox.pas"/>
+        <DCCReference Include="..\..\LMDImageListVCLConnector.pas"/>
+        <DCCReference Include="..\..\LMDInformationLabel.pas"/>
+        <DCCReference Include="..\..\LMDLabel.pas"/>
+        <DCCReference Include="..\..\LMDLImage.pas"/>
+        <DCCReference Include="..\..\LMDListBox.pas"/>
+        <DCCReference Include="..\..\LMDListBoxExt.pas"/>
+        <DCCReference Include="..\..\LMDMaskEdit.pas"/>
+        <DCCReference Include="..\..\LMDMemo.pas"/>
+        <DCCReference Include="..\..\LMDMessageHint.pas"/>
+        <DCCReference Include="..\..\LMDMessageHintController.pas"/>
+        <DCCReference Include="..\..\LMDMouseBaseCtrl.pas"/>
+        <DCCReference Include="..\..\LMDMouseFencer.pas"/>
+        <DCCReference Include="..\..\LMDMousePositioner.pas"/>
+        <DCCReference Include="..\..\LMDMRUList.pas"/>
+        <DCCReference Include="..\..\LMDNImage.pas"/>
+        <DCCReference Include="..\..\LMDOneInstance.pas"/>
+        <DCCReference Include="..\..\LMDPageControl.pas"/>
+        <DCCReference Include="..\..\LMDPanelFill.pas"/>
+        <DCCReference Include="..\..\LMDPointList.pas"/>
+        <DCCReference Include="..\..\LMDPrinterComboBox.pas"/>
+        <DCCReference Include="..\..\LMDProgress.pas"/>
+        <DCCReference Include="..\..\LMDProgressFill.pas"/>
+        <DCCReference Include="..\..\LMDRadioButton.pas"/>
+        <DCCReference Include="..\..\LMDRadioGroup.pas"/>
+        <DCCReference Include="..\..\LMDRadioGroupButton.pas"/>
+        <DCCReference Include="..\..\LMDResWinControl.pas"/>
+        <DCCReference Include="..\..\LMDSBar.pas"/>
+        <DCCReference Include="..\..\LMDSBtn.pas"/>
+        <DCCReference Include="..\..\LMDScrollBox.pas"/>
+        <DCCReference Include="..\..\LMDScrollBoxExt.pas"/>
+        <DCCReference Include="..\..\LMDShadow.pas"/>
+        <DCCReference Include="..\..\LMDShadowFill.pas"/>
+        <DCCReference Include="..\..\LMDShapeHint.pas"/>
+        <DCCReference Include="..\..\LMDSimpleLabel.pas"/>
+        <DCCReference Include="..\..\LMDSimplePanel.pas"/>
+        <DCCReference Include="..\..\LMDSmallBar.pas"/>
+        <DCCReference Include="..\..\LMDSpeedButton.pas"/>
+        <DCCReference Include="..\..\LMDSpinButton.pas"/>
+        <DCCReference Include="..\..\LMDSpinEdit.pas"/>
+        <DCCReference Include="..\..\LMDSplt.pas"/>
+        <DCCReference Include="..\..\LMDStatusBar.pas"/>
+        <DCCReference Include="..\..\LMDStopWatch.pas"/>
+        <DCCReference Include="..\..\LMDStrList.pas"/>
+        <DCCReference Include="..\..\LMDSysInfo.pas"/>
+        <DCCReference Include="..\..\LMDThemedComboBox.pas"/>
+        <DCCReference Include="..\..\LMDComboBoxExt.pas"/>
+        <DCCReference Include="..\..\LMDTimer.pas"/>
+        <DCCReference Include="..\..\LMDTimeFormat.pas"/>
+        <DCCReference Include="..\..\LMDTrackBar.pas"/>
+        <DCCReference Include="..\..\LMDTransparent.pas"/>
+        <DCCReference Include="..\..\LMDTrayIcon.pas"/>
+        <DCCReference Include="..\..\LMDTripleClick.pas"/>
+        <DCCReference Include="..\..\LMDWaveComp.pas"/>
+        <DCCReference Include="..\..\LMDConst.pas"/>
+        <DCCReference Include="..\..\LMDBase.pas"/>
+        <DCCReference Include="..\..\LMDHTMLHeaderControl.pas"/>
+        <DCCReference Include="..\..\LMDHTMLExtListBox.pas"/>
+        <DCCReference Include="..\..\LMDHTMLComboBox.pas"/>
+        <DCCReference Include="..\..\LMDHTMLListBox.pas"/>
+        <DCCReference Include="..\..\LMDHTMLListBoxExt.pas"/>
+        <DCCReference Include="..\..\LMDToolBar.pas"/>
+        <DCCReference Include="..\..\LMDCalc.pas"/>
+        <DCCReference Include="..\..\LMDEmbeddedObject.pas"/>
+        <DCCReference Include="..\..\LMDCal.pas"/>
+        <DCCReference Include="..\..\LMDDateL.pas"/>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="build">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>Package</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+                    <VersionInfo Name="MajorVer">1</VersionInfo>
+                    <VersionInfo Name="MinorVer">0</VersionInfo>
+                    <VersionInfo Name="Release">0</VersionInfo>
+                    <VersionInfo Name="Build">0</VersionInfo>
+                    <VersionInfo Name="Debug">False</VersionInfo>
+                    <VersionInfo Name="PreRelease">False</VersionInfo>
+                    <VersionInfo Name="Special">False</VersionInfo>
+                    <VersionInfo Name="Private">False</VersionInfo>
+                    <VersionInfo Name="DLL">False</VersionInfo>
+                    <VersionInfo Name="Locale">1049</VersionInfo>
+                    <VersionInfo Name="CodePage">1251</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName">LMD Innovative</VersionInfoKeys>
+                    <VersionInfoKeys Name="FileDescription">LMD-Tools Core Components</VersionInfoKeys>
+                    <VersionInfoKeys Name="FileVersion">2016.5.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName"/>
+                    <VersionInfoKeys Name="LegalCopyright">Copyright (c) LMD Innovative</VersionInfoKeys>
+                    <VersionInfoKeys Name="LegalTrademarks"/>
+                    <VersionInfoKeys Name="OriginalFilename"/>
+                    <VersionInfoKeys Name="ProductName">LMD 2014 VCL Series</VersionInfoKeys>
+                    <VersionInfoKeys Name="ProductVersion">2016.5.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments"/>
+                </VersionInfoKeys>
+                <Source>
+                    <Source Name="MainSource">lmdrtcore.dpk</Source>
+                </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k160.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp160.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp160.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <Deployment Version="3"/>
+            <Platforms>
+                <Platform value="Android">False</Platform>
+                <Platform value="Android64">False</Platform>
+                <Platform value="iOSSimulator">False</Platform>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">True</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')" Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+    <Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+    <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
+</Project>

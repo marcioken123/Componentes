@@ -1,0 +1,49 @@
+package lmdrtsearch;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$LIBSUFFIX '170'}
+{$DESCRIPTION 'LMD SearchPack Components'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  lmdrtl,
+  rtl,
+  vcl,
+  vclx;
+
+contains
+  LMDBaseRefine in '..\..\LMDBaseRefine.pas',
+  LMDREFINELEX in '..\..\LMDREFINELEX.pas',
+  LMDRefineUnit in '..\..\LMDRefineUnit.pas',
+  LMDREFINEParser in '..\..\LMDREFINEParser.pas',
+  LMDYParser in '..\..\LMDYParser.pas',
+  LMDStrSupp in '..\..\LMDStrSupp.pas',
+  LMDWildcardUnit in '..\..\LMDWildcardUnit.pas',
+  LMDRVEFormUnit in '..\..\LMDRVEFormUnit.pas' {LMDRVEForm},
+  LMDSearchFileGrep in '..\..\LMDSearchFileGrep.pas',
+  LMDSearchBase in '..\..\LMDSearchBase.pas',
+  LMDSearchConsts in '..\..\LMDSearchConsts.pas';
+
+end.

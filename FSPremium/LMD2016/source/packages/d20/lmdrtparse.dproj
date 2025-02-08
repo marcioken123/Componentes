@@ -1,0 +1,183 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{73430B67-C24B-43D6-8E93-2E7DE5410065}</ProjectGuid>
+        <FrameworkType>VCL</FrameworkType>
+        <MainSource>lmdrtparse.dpk</MainSource>
+        <ProjectVersion>15.1</ProjectVersion>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">build</Config>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <AppType>Package</AppType>
+        <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+        <TargetedPlatforms>3</TargetedPlatforms>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android' and '$(Base)'=='true') or '$(Base_Android)'!=''">
+        <Base_Android>true</Base_Android>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='build' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_HppOutput>..\..</DCC_HppOutput>
+        <RuntimeOnlyPackage>true</RuntimeOnlyPackage>
+        <DesignOnlyPackage>false</DesignOnlyPackage>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=LMD Innovative;FileDescription=LMD-Tools ParsePack;FileVersion=2016.5.0;InternalName=;LegalCopyright=Copyright (c) LMD Innovative;LegalTrademarks=;OriginalFilename=;ProductName=LMD VCL Series;ProductVersion=2016.5.0;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_Namespace>Winapi;System;System.Win;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
+        <DCC_CBuilderOutput>All</DCC_CBuilderOutput>
+        <GenPackage>true</GenPackage>
+        <GenDll>true</GenDll>
+        <DllSuffix>200</DllSuffix>
+        <DCC_Description>LMD-Tools ParsePack</DCC_Description>
+        <DCC_DcuOutput>..\..\build\$(Platform)</DCC_DcuOutput>
+        <DCC_ExeOutput>..\..\build\$(Platform)</DCC_ExeOutput>
+        <DCC_E>false</DCC_E>
+        <DCC_N>false</DCC_N>
+        <DCC_S>false</DCC_S>
+        <DCC_F>false</DCC_F>
+        <DCC_K>false</DCC_K>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Android)'!=''">
+        <VerInfo_IncludeVerInfo>false</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar</VerInfo_Keys>
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="lmdrtl.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="rtl.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="vcl.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="vclx.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="vclimg.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+        <DCCReference Include="..\..\LMDBand.pas" />
+    <DCCReference Include="..\..\LMDCSVLex.pas" />
+    <DCCReference Include="..\..\LMDCSVParser.pas" />
+    <DCCReference Include="..\..\LMDCSVWriter.pas" />
+    <DCCReference Include="..\..\LMDDataType.pas" />
+    <DCCReference Include="..\..\LMDDBFParser.pas" />
+    <DCCReference Include="..\..\LMDDBFReader.pas" />
+    <DCCReference Include="..\..\LMDDBFWriter.pas" />
+    <DCCReference Include="..\..\LMDDeductionTree.pas" />
+    <DCCReference Include="..\..\LMDDTD.pas" />
+    <DCCReference Include="..\..\LMDEmbdControl.pas" />
+    <DCCReference Include="..\..\LMDEntryPoint.pas" />
+    <DCCReference Include="..\..\LMDExtParser.pas" />
+    <DCCReference Include="..\..\LMDHiddenText.pas" />
+    <DCCReference Include="..\..\LMDHTMLLex.pas" />
+    <DCCReference Include="..\..\LMDHTMLParser.pas" />
+    <DCCReference Include="..\..\LMDHTMLSTYLE.pas" />
+    <DCCReference Include="..\..\LMDHTMLWriter.pas" />
+    <DCCReference Include="..\..\LMDIterator.pas" />
+    <DCCReference Include="..\..\LMDLex.pas" />
+    <DCCReference Include="..\..\LMDParser.pas" />
+    <DCCReference Include="..\..\LMDParserStack.pas" />
+    <DCCReference Include="..\..\LMDPlainTextLex.pas" />
+    <DCCReference Include="..\..\LMDPlainTextParser.pas" />
+    <DCCReference Include="..\..\LMDPlainTextWriter.pas" />
+    <DCCReference Include="..\..\LMDRTFAnalyser.pas" />
+    <DCCReference Include="..\..\LMDRTFDocument.pas" />
+    <DCCReference Include="..\..\LMDRTFLookupTable.pas" />
+    <DCCReference Include="..\..\LMDRTFParser.pas" />
+    <DCCReference Include="..\..\LMDRTFScanner.pas" />
+    <DCCReference Include="..\..\LMDRTFTape.pas" />
+    <DCCReference Include="..\..\LMDRule.pas" />
+    <DCCReference Include="..\..\LMDSimpleRTFParser.pas" />
+    <DCCReference Include="..\..\LMDSimpleXMLLex.pas" />
+    <DCCReference Include="..\..\LMDSimpleXMLParser.pas" />
+    <DCCReference Include="..\..\LMDStringsList.pas" />
+    <DCCReference Include="..\..\LMDTable.pas" />
+    <DCCReference Include="..\..\LMDText.pas" />
+    <DCCReference Include="..\..\LMDTextBox.pas" />
+    <DCCReference Include="..\..\LMDTree.pas" />
+    <DCCReference Include="..\..\LMDWriter.pas" />
+    <DCCReference Include="..\..\LMDListObjects.pas" />
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="build">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>Package</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+                    <VersionInfo Name="MajorVer">1</VersionInfo>
+                    <VersionInfo Name="MinorVer">0</VersionInfo>
+                    <VersionInfo Name="Release">0</VersionInfo>
+                    <VersionInfo Name="Build">0</VersionInfo>
+                    <VersionInfo Name="Debug">False</VersionInfo>
+                    <VersionInfo Name="PreRelease">False</VersionInfo>
+                    <VersionInfo Name="Special">False</VersionInfo>
+                    <VersionInfo Name="Private">False</VersionInfo>
+                    <VersionInfo Name="DLL">False</VersionInfo>
+                    <VersionInfo Name="Locale">1049</VersionInfo>
+                    <VersionInfo Name="CodePage">1251</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName">LMD Innovative</VersionInfoKeys>
+                    <VersionInfoKeys Name="FileDescription">LMD-Tools ParsePack</VersionInfoKeys>
+                    <VersionInfoKeys Name="FileVersion">2016.5.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName"/>
+                    <VersionInfoKeys Name="LegalCopyright">Copyright (c) LMD Innovative</VersionInfoKeys>
+                    <VersionInfoKeys Name="LegalTrademarks"/>
+                    <VersionInfoKeys Name="OriginalFilename"/>
+                    <VersionInfoKeys Name="ProductName">LMD 2014 VCL Series</VersionInfoKeys>
+                    <VersionInfoKeys Name="ProductVersion">2016.5.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments"/>
+                </VersionInfoKeys>
+                <Source>
+                    <Source Name="MainSource">lmdrtparse.dpk</Source>
+                </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k160.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp160.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp160.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <Deployment/>
+            <Platforms>
+                <Platform value="Android">False</Platform>
+                <Platform value="iOSDevice">False</Platform>
+                <Platform value="iOSSimulator">False</Platform>
+                <Platform value="OSX32">False</Platform>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">True</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')" Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+    <Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+</Project>

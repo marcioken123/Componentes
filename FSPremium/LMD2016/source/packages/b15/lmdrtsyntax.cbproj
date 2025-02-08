@@ -1,0 +1,185 @@
+	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{FDFCE882-4882-4808-827F-C85FB9CEE2E7}</ProjectGuid>
+			<ProjectType>CppPackage</ProjectType>
+			<MainSource>lmdrtsyntax.cpp</MainSource>
+			<Config Condition="'$(Config)'==''">build</Config>
+			<ProjectVersion>12.0</ProjectVersion>
+		</PropertyGroup>
+                <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='build' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+                        <DCC_HppOutput>..\..\build\</DCC_HppOutput>
+			<DCC_DcuOutput>..\..\build</DCC_DcuOutput>
+			<IntermediateOutputDir>..\..\build</IntermediateOutputDir>
+			<IncludePath>w:\1;$(IncludePath)</IncludePath>
+			<DllSuffix>150</DllSuffix>
+                        <PackageImports>lmdrtl.bpi;rtl.bpi;vcl.bpi;vclx.bpi;lmdrtprint.bpi</PackageImports>
+			<RuntimeOnlyPackage>true</RuntimeOnlyPackage>
+                        <DesignOnlyPackage>false</DesignOnlyPackage>
+			<BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
+			<OutputExt>bpl</OutputExt>
+			<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
+			<DynamicRTL>true</DynamicRTL>
+			<ILINK_GenerateLibFile>true</ILINK_GenerateLibFile>
+			<ILINK_AppType>Windows</ILINK_AppType>
+			<ILINK_GenerateImportLibrary>true</ILINK_GenerateImportLibrary>
+			<DCC_DebugInformation>false</DCC_DebugInformation>
+			<UsePackages>true</UsePackages>
+			<BCC_ZeroLengthEmptyMemberFuncs>true</BCC_ZeroLengthEmptyMemberFuncs>
+			<DCC_MakeModifiedUnits>true</DCC_MakeModifiedUnits>
+			<TASM_AdditionalSwitches> /w2</TASM_AdditionalSwitches>
+			<DCC_UnitSearchPath>.\;$(BDS)\lib;$(BDS)\lib\obj</DCC_UnitSearchPath>
+			<ILINK_Description>LMD SyntaxEdit Runtime package</ILINK_Description>
+			<BCC_GenerateMultithreaded>true</BCC_GenerateMultithreaded>
+			<ILINK_WinAppType>Package</ILINK_WinAppType>
+			<BRCC_UserSuppliedOptions> -I$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware</BRCC_UserSuppliedOptions>
+			<BCC_PCHCache>true</BCC_PCHCache>
+			<BCC_IntegerSizedEnums>false</BCC_IntegerSizedEnums>
+			<BCC_IncludePath>$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware</BCC_IncludePath>
+			<TASM_IncludePath>$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware</TASM_IncludePath>
+			<BRCC_IncludePath>$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware</BRCC_IncludePath>
+			<DCC_IncludePath>.\;$(BDS)\lib;$(BDS)\lib\obj</DCC_IncludePath>
+			<BCC_ZeroLengthEmptyBaseClass>true</BCC_ZeroLengthEmptyBaseClass>
+			<ILINK_LibraryPath>w:\1;$(BDS)\lib\obj;$(BDS)\lib</ILINK_LibraryPath>
+			<BCC_Defines>NO_STRICT</BCC_Defines>
+			<BRCC_Defines>_RTLDLL;NO_STRICT;USEPACKAGES</BRCC_Defines>
+			<TASM_Defines>_RTLDLL;NO_STRICT;USEPACKAGES</TASM_Defines>
+			<Multithreaded>true</Multithreaded>
+			<DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+			<TASM_Debugging>None</TASM_Debugging>
+			<DCC_SymbolReferenceInfo>2</DCC_SymbolReferenceInfo>
+                        
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''"/>
+		<ItemGroup>
+			<CppCompile Include="lmdrtsyntax.cpp" />
+			<ResFiles Include="lmdrtsyntax.res" />
+                        <PackageImport Include="lmdrtl.bpi" />
+      <PackageImport Include="rtl.bpi" />
+      <PackageImport Include="vcl.bpi" />
+      <PackageImport Include="vclx.bpi" />
+      <PackageImport Include="lmdrtprint.bpi" />
+      <DelphiCompile Include="..\..\LMDSedUtils.pas" />
+      <DelphiCompile Include="..\..\LMDSedParser.pas" />
+      <DelphiCompile Include="..\..\LMDSedDocument.pas" />
+      <DelphiCompile Include="..\..\LMDSedView.pas" />
+      <DelphiCompile Include="..\..\LMDSedDialogs.pas" />
+      <DelphiCompile Include="..\..\LMDSedConst.pas" />
+      <DelphiCompile Include="..\..\LMDSedFindDialog.pas">
+        <Form>LMDSedFindDlg</Form>
+      </DelphiCompile>
+      <DelphiCompile Include="..\..\LMDSedGotoLineDialog.pas">
+        <Form>LMDSedGotoLineDlg</Form>
+      </DelphiCompile>
+      <DelphiCompile Include="..\..\LMDSedColorSchemeDialog.pas">
+        <Form>TLMDSedColorSchemeDlg</Form>
+      </DelphiCompile>
+      <DelphiCompile Include="..\..\LMDSedKeyBindingsDialog.pas">
+        <Form>TLMDSedKeyBindingsDlg</Form>
+      </DelphiCompile>
+      <DelphiCompile Include="..\..\LMDSedSchemeEditDialog.pas">
+        <Form>LMDSedGotoLineDlg</Form>
+      </DelphiCompile>
+      <FormResources Include="..\..\LMDSedFindDialog.dfm" />
+      <FormResources Include="..\..\LMDSedGotoLineDialog.dfm" />
+      <FormResources Include="..\..\LMDSedColorSchemeDialog.dfm" />
+      <FormResources Include="..\..\LMDSedKeyBindingsDialog.dfm" />
+      <FormResources Include="..\..\LMDSedSchemeEditDialog.dfm" />
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Release Build">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug Build">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
+			<Borland.ProjectType>CppPackage</Borland.ProjectType>
+			<BorlandProject>
+				<CPlusPlusBuilder.Personality>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName">LMD Innovative</VersionInfoKeys>
+						<VersionInfoKeys Name="FileDescription">LMD SyntaxEdit Runtime package</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">2016.5</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright">LMD Innovative</VersionInfoKeys>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName">LMD SyntaxEdit Runtime package</VersionInfoKeys>
+						<VersionInfoKeys Name="ProductVersion">2016.5</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<Debugging>
+						<Debugging Name="DebugSourceDirs">$(BCB)\source\vcl</Debugging>
+					</Debugging>
+					<Parameters>
+						<Parameters Name="RunParams"/>
+						<Parameters Name="Launcher"/>
+						<Parameters Name="UseLauncher">False</Parameters>
+						<Parameters Name="DebugCWD"/>
+						<Parameters Name="HostApplication"/>
+						<Parameters Name="RemoteHost"/>
+						<Parameters Name="RemotePath"/>
+						<Parameters Name="RemoteLauncher"/>
+						<Parameters Name="RemoteCWD"/>
+						<Parameters Name="RemoteDebug">False</Parameters>
+						<Parameters Name="RemoteParams"/>
+						<Parameters Name="UseRemoteLauncher">False</Parameters>
+						<Parameters Name="Debug Symbols Search Path"/>
+						<Parameters Name="LoadAllSymbols">True</Parameters>
+						<Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+					</Parameters>
+					<Compiler>
+						<Compiler Name="ShowInfoMsgs">0</Compiler>
+						<Compiler Name="LinkDebugVcl">0</Compiler>
+						<Compiler Name="LinkCGLIB">0</Compiler>
+					</Compiler>
+					<Source>
+						<Source Name="MainSource">lmdrtsyntax.cpp</Source>
+					</Source>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1049</VersionInfo>
+						<VersionInfo Name="CodePage">1251</VersionInfo>
+					</VersionInfo>
+					<Linker>
+						<Linker Name="LibPrefix"/>
+						<Linker Name="LibSuffix"/>
+						<Linker Name="LibVersion"/>
+					</Linker>
+					<ProjectProperties>
+						<ProjectProperties Name="AutoShowDeps">False</ProjectProperties>
+						<ProjectProperties Name="ManagePaths">True</ProjectProperties>
+						<ProjectProperties Name="VerifyPackages">True</ProjectProperties>
+					</ProjectProperties>
+					<Language>
+						<Language Name="RootDir">w:\1\</Language>
+					</Language>
+				</CPlusPlusBuilder.Personality>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+		<Import Project="$(BDS)\Bin\CodeGear.Cpp.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')"/>
+	</Project>

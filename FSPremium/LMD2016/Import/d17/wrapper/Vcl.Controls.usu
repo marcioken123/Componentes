@@ -1,0 +1,466 @@
+T+: TModalResult
+T+: TCursor
+T+: TInteractiveGestureFlag
+T+: TInteractiveGestureFlags
+T+: TInteractiveGesture
+T+: TInteractiveGestures
+T+: TInteractiveGestureOption
+T+: TInteractiveGestureOptions
+TE: TCustomData
+T+: TCustomLongData
+TE: TWindowProcPtr
+T+: TWinControlClass
+T+: THintWindowClass
+T+: TCMActivate
+T+: TCMDeactivate
+T+: TCMGotFocus
+T+: TCMLostFocus
+T+: TCMDialogKey
+T+: TCMDialogChar
+T+: TCMHitTest
+T+: TCMEnter
+T+: TCMExit
+T+: TCMDesignHitTest
+T+: TCMWantSpecialKey
+T+: TCMMouseWheel
+T+: TCMCancelMode
+T+: TCMFocusChanged
+T+: TCMControlListChange
+TE: PControlListItem
+T+: TControlListItem
+T+: TCMControlListChanging
+T+: TCMChildKey
+T+: TCMControlChange
+T+: TCMChanged
+TE: PHintInfo
+T+: THintInfo
+T+: TCMHintShow
+T+: TCMParentFontChanged
+T+: TDragMessage
+TE: PDragRec
+T+: TDragRec
+T+: TCMDrag
+TE: PDockNotifyRec
+T+: TDockNotifyRec
+T+: TCMDockClient
+T+: TCMUnDockClient
+T+: TCMFloat
+T+: TCMDockNotification
+TE: PPopupFormInfo
+T+: TPopupFormInfo
+T+: TCMPopupHWndDestroy
+T+: TCMCreatePopup
+T+: TAlign
+T+: TAlignSet
+TE: TDragTarget
+T+: TDragObject
+        P+: AlwaysShowDragImages
+        P+: Cancelling
+        P+: DragHandle
+        P+: DragPos
+        PE: DragTarget
+        P+: DragTargetPos
+        P+: Dropped
+        P+: MouseDeltaX
+        P+: MouseDeltaY
+        P+: RightClickCancels
+T+: TDragObjectClass
+T+: TDragObjectEx
+T+: TBaseDragControlObject
+        P+: Control
+T+: TDragControlObject
+T+: TDragControlObjectEx
+T+: TDragDockObject
+        P+: Brush
+        P+: DockRect
+        P+: DropAlign
+        P+: DropOnControl
+        P+: EraseDockRect
+        P+: EraseWhenMoving
+        P+: Floating
+        P+: FrameWidth
+T+: TDragDockObjectEx
+T+: TCanvasDC
+T+: TControlCanvas
+        P+: Control
+T+: TCustomControlAction
+        P+: DropdownMenu
+        P+: EnableDropdown
+        P+: PopupMenu
+T+: TControlAction
+        P+: AutoCheck
+        P+: Caption
+        P+: Checked
+        P+: DropdownMenu
+        P+: Enabled
+        P+: EnableDropdown
+        P+: GroupIndex
+        P+: HelpContext
+        P+: HelpKeyword
+        P+: HelpType
+        P+: Hint
+        P+: ImageIndex
+        P+: PopupMenu
+        P+: ShortCut
+        P+: SecondaryShortCuts
+        P+: Visible
+        P+: OnExecute
+        P+: OnHint
+        P+: OnUpdate
+T+: TControlActionLink
+T+: TControlActionLinkClass
+TE: TControlState
+TE: TControlStyle
+T+: TMouseButton
+T+: TMouseActivate
+T+: TDragMode
+T+: TDragState
+T+: TDragKind
+T+: TTabOrder
+T+: TCaption
+TE: PMouseActivateRec
+T+: TMouseActivateRec
+T+: TCMMouseActivate
+TE: TScalingFlags
+T+: TAnchorKind
+T+: TAnchors
+T+: TConstraintSize
+T+: TSizeConstraints
+        P+: Control
+        P+: OnChange
+        P+: MaxHeight
+        P+: MaxWidth
+        P+: MinHeight
+        P+: MinWidth
+T+: TMarginSize
+T+: TMargins
+        P+: Control
+        P+: ControlLeft
+        P+: ControlTop
+        P+: ControlWidth
+        P+: ControlHeight
+        P+: ExplicitLeft
+        P+: ExplicitTop
+        P+: ExplicitWidth
+        P+: ExplicitHeight
+        P+: OnChange
+        P+: Left
+        P+: Top
+        P+: Right
+        P+: Bottom
+T+: TPadding
+        P+: Left
+        P+: Top
+        P+: Right
+        P+: Bottom
+T+: TGestureID
+TE: PGestureEventInfo
+T+: TGestureEventInfo
+T+: TCMGesture
+T+: TGestureEvent
+T+: TStandardGesture
+T+: TStandardGestures
+T+: TTabletOption
+T+: TTabletOptions
+T+: TGestureType
+T+: TGestureTypes
+T+: TGestureOption
+T+: TGestureOptions
+TE: TGestureArray
+TE: TGesturePointArray
+T+: EGestureException
+T+: TCustomGestureCollectionItem
+        P+: Deviation
+        P+: ErrorMargin
+        P+: GestureID
+        P+: GestureType
+        P+: Options
+        P+: Name
+        PE: Points
+        P+: Action
+T+: TCustomGestureCollection
+        P+: GestureManager
+        P+: Items
+T+: TCustomGestureManager
+        PE: GestureList
+        P+: StandardGestures
+T+: TCustomGestureEngine
+        P+: Active
+        PW: Flags
+T+: TTouchProperty
+T+: TCustomTouchManager
+        P+: GestureEngine
+        PE: GestureList
+        P+: GestureManager
+        P+: InteractiveGestures
+        P+: InteractiveGestureOptions
+        P+: ParentTabletOptions
+        P+: StandardGestures
+        P+: TabletOptions
+T+: TTouchManager
+        P+: GestureManager
+        P+: InteractiveGestures
+        P+: InteractiveGestureOptions
+        P+: ParentTabletOptions
+        P+: TabletOptions
+TE: TStyleElements
+TE: TMouseEvent
+TE: TMouseMoveEvent
+TE: TMouseActivateEvent
+TE: TKeyEvent
+T+: TKeyPressEvent
+T+: TDragOverEvent
+T+: TDragDropEvent
+T+: TStartDragEvent
+T+: TEndDragEvent
+T+: TDockDropEvent
+T+: TDockOverEvent
+T+: TUnDockEvent
+T+: TStartDockEvent
+T+: TGetSiteInfoEvent
+T+: TCanResizeEvent
+T+: TConstrainedResizeEvent
+TE: TMouseWheelEvent
+TE: TMouseWheelUpDownEvent
+T+: TContextPopupEvent
+T+: TWndMethod
+TE: TReservedControlData
+T+: TDockOrientation
+T+: TControl
+        P+: ActionLink
+        P+: AutoSize
+        P+: Caption
+        P+: DesktopFont
+        P+: DragKind
+        P+: DragCursor
+        P+: DragMode
+        P+: IsControl
+        P+: MouseCapture
+        P+: ParentBiDiMode
+        P+: ParentColor
+        P+: ParentFont
+        P+: ParentShowHint
+        P+: PopupMenu
+        PE: ScalingFlags
+        P+: Text
+        P+: WheelAccumulator
+        P+: Color
+        P+: Font
+        PE: WindowText
+        P+: OnCanResize
+        P+: OnClick
+        P+: OnConstrainedResize
+        P+: OnContextPopup
+        P+: OnDblClick
+        P+: OnDragDrop
+        P+: OnDragOver
+        P+: OnEndDock
+        P+: OnEndDrag
+        PE: OnMouseActivate
+        PE: OnMouseDown
+        P+: OnMouseEnter
+        P+: OnMouseLeave
+        PE: OnMouseMove
+        PE: OnMouseUp
+        PE: OnMouseWheel
+        PE: OnMouseWheelDown
+        PE: OnMouseWheelUp
+        P+: OnResize
+        P+: OnStartDock
+        P+: OnStartDrag
+        P+: Enabled
+        P+: Action
+        P+: Align
+        P+: Anchors
+        P+: BiDiMode
+        P+: BoundsRect
+        P+: ClientHeight
+        P+: ClientOrigin
+        P+: ClientRect
+        P+: ClientWidth
+        P+: Constraints
+        PE: ControlState
+        PE: ControlStyle
+        P+: DockOrientation
+        P+: ExplicitLeft
+        P+: ExplicitTop
+        P+: ExplicitWidth
+        P+: ExplicitHeight
+        P+: Floating
+        P+: FloatingDockSiteClass
+        P+: HostDockSite
+        P+: LRDockWidth
+        P+: ShowHint
+        P+: TBDockHeight
+        P+: Touch
+        P+: UndockHeight
+        P+: UndockWidth
+        P+: Visible
+        P+: WindowProc
+        P+: Parent
+        PE: StyleElements
+        P+: OnGesture
+        P+: AlignWithMargins
+        P+: Left
+        P+: Top
+        P+: Width
+        P+: Height
+        P+: Cursor
+        P+: Hint
+        P+: HelpType
+        P+: HelpKeyword
+        P+: HelpContext
+        P+: Margins
+        P+: CustomHint
+        P+: ParentCustomHint
+T+: TControlClass
+T+: TCreateParams
+T+: TWinControlActionLink
+T+: TWinControlActionLinkClass
+T+: TImeMode
+T+: TImeName
+T+: TTipMode
+T+: TAlignInfo
+T+: TBorderWidth
+T+: TBevelCut
+T+: TBevelEdge
+T+: TBevelEdges
+T+: TBevelKind
+T+: TBevelWidth
+TE: IDockManager
+T+: TAlignInsertBeforeEvent
+T+: TAlignPositionEvent
+T+: TWinControl
+        P+: AlignControlList
+        P+: BevelEdges
+        P+: BevelInner
+        P+: BevelOuter
+        P+: BevelKind
+        P+: BevelWidth
+        P+: BorderWidth
+        P+: Ctl3D
+        P+: ImeMode
+        P+: ImeName
+        P+: ParentBackground
+        P+: ParentCtl3D
+        P+: TipMode
+        PE: DefWndProc
+        P+: WindowHandle
+        P+: OnAlignInsertBefore
+        P+: OnAlignPosition
+        P+: OnDockDrop
+        P+: OnDockOver
+        P+: OnEnter
+        P+: OnExit
+        P+: OnGetSiteInfo
+        PE: OnKeyDown
+        P+: OnKeyPress
+        PE: OnKeyUp
+        P+: OnUnDock
+        P+: DockClientCount
+        P+: DockClients
+        P+: DockSite
+        PE: DockManager
+        P+: DoubleBuffered
+        P+: AlignDisabled
+        P+: MouseInClient
+        P+: VisibleDockClientCount
+        P+: Brush
+        P+: Controls
+        P+: ControlCount
+        P+: Handle
+        P+: Padding
+        P+: ParentDoubleBuffered
+        P+: ParentWindow
+        P+: Showing
+        P+: TabOrder
+        P+: TabStop
+        P+: UseDockManager
+T+: TGraphicControl
+        P+: Canvas
+T+: TCustomControl
+        P+: Canvas
+T+: TCustomTransparentControl
+        P+: InterceptMouse
+T+: THintWindow
+        P+: BiDiMode
+        P+: Caption
+        P+: Color
+        P+: Canvas
+        P+: Font
+T+: TDragImageList
+        P+: DragCursor
+        P+: DragHotspot
+        P+: Dragging
+T+: TImageList
+        P+: BlendColor
+        P+: BkColor
+        P+: AllocBy
+        P+: ColorDepth
+        P+: DrawingStyle
+        P+: Height
+        P+: ImageType
+        P+: Masked
+        P+: OnChange
+        P+: ShareImages
+        P+: Width
+T+: TDockZone
+        P+: ChildCount
+        P+: ChildControl
+        P+: Height
+        P+: Left
+        P+: LimitBegin
+        P+: LimitSize
+        P+: Top
+        P+: Visible
+        P+: VisibleChildCount
+        P+: Width
+        P+: ZoneLimit
+T+: TForEachZoneProc
+T+: TDockTreeClass
+T+: TDockTree
+        P+: DockSite
+        P+: RelativeSizes
+        P+: TopZone
+T+: TPanningWindowClass
+T+: TCustomPanningWindow
+T+: TMouse
+        P+: Capture
+        P+: CursorPos
+        P+: DragImmediate
+        P+: DragThreshold
+        P+: MousePresent
+        P+: IsDragging
+        P+: IsPanning
+        P+: PanningWindow
+        P+: PanningWindowClass
+        P+: RegWheelMessage
+        P+: WheelPresent
+        P+: WheelScrollLines
+T+: TCustomListControl
+        P+: ItemIndex
+T+: TCustomMultiSelectListControl
+        P+: MultiSelect
+        P+: SelCount
+TE: TAnimateWindowProc
+T+: TBalloonHintIcon
+T+: TBalloonHintIconSize
+T+: TBalloonHintStyle
+T+: TCustomHintWindow
+        P+: HintParent
+        P+: PopAbove
+        P+: Title
+        P+: Description
+        P+: ImageIndex
+T+: TCustomHintShowHideThread
+T+: TCustomHint
+        P+: WorkComplete
+        P+: ShowingHint
+        P+: Title
+        P+: Description
+        P+: ImageIndex
+        P+: Images
+        P+: Style
+        P+: Delay
+        P+: HideAfter
+T+: TBalloonHint

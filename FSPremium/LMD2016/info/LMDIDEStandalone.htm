@@ -1,0 +1,738 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<meta http-equiv="Content-Language" content="en-us">
+<TITLE>LMD IDE-Tools Standalone Packs - ReadMe</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+</HEAD>
+<BODY>
+<STYLE>BODY {
+	FONT-SIZE: 70%; BACKGROUND: #ffffff; FONT-FAMILY: Verdana, Arial, Helvetica, MS Sans Serif
+}
+A:link {
+	COLOR: #0000ff; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #0000ff; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #ff0000; TEXT-DECORATION: underline
+}
+TABLE {
+	FONT-SIZE: 100%
+}
+HR {
+	WIDTH: 25%; COLOR: red; TEXT-ALIGN: left
+}
+</STYLE>
+<p>
+<FONT face=verdana size=+2><a name="Top"></a>LMD IDE-Tools Standalone Packs - ReadMe<br>
+</FONT>
+<FONT size=-2>
+
+(© by LMD Innovative, (<A href="http://www.lmd.de/">http://www.lmd.de</A>
+ or <A href="http://www.lmdinnovative.com/">http://www.lmdinnovative.com</A>)</font></p>
+<HR>
+
+<p>
+<FONT color=#000080 size="1"><a href="_readme.htm">[Main]</a> </FONT></p>
+<p>
+<font size="2" face="Verdana"><b>Contents<br>
+</b>&nbsp; <a href="#Documentation">Helpfile and tutorials</a><br>
+&nbsp; <a href="#Designtime">Designtime Enhancements</a><br>
+&nbsp; <a href="#Resources">Using different Language Resource File </a> <br>
+&nbsp; <i>DesignPack</i><br>
+&nbsp;
+&nbsp; <a href="#DesignPack-Introduction">Introduction</a><br>
+&nbsp;
+&nbsp; <a href="#DesignPack-Changes">History: Changes</a></font><br>
+<font face="Verdana" size="2">&nbsp; </font>
+<span lang="de">
+            <FONT color=#000080 size="2">&nbsp; <a href="#DesignPack-Update">Updating projects to DesignPack 
+2016</a></FONT></span><br>
+<font size="2" face="Verdana">&nbsp; <i>ScriptPack</i></font> <br>
+<font size="2" face="Verdana">&nbsp;
+&nbsp; <a href="#ScriptPack-Introduction">Introduction</a><br>
+&nbsp;
+&nbsp; <a href="#ScriptPack-Changes">History: Changes</a></font><br>
+<font size="2" face="Verdana">&nbsp; <i>SyntaxEdit</i></font><br>
+<font size="2" face="Verdana">&nbsp;
+&nbsp; <a href="#SyntaxEdit-Introduction">Introduction</a><br>
+&nbsp;&nbsp;&nbsp; <a href="#SyntaxEdit-Changes">History: Changes</a><br>
+&nbsp;</font></p>
+<p>
+<br>
+<b>
+
+<font SIZE="3" face="Verdana">
+<a name="Documentation"></a>Helpfile and tutorials</font></b><font size="2" face="Verdana"><br>
+By default helpfiles are usually not included with standard/trial installers. If 
+you did not already download current documentation pack, please visit
+<a href="http://www.lmd.de/download">LMD public download area</a> and get the <b>
+LMD IDE-Tools </b>documentation package. Online Tutorials for ScriptPack, 
+DesignPack etc. are available. Those tutorials and FAQs referring to other parts of LMD IDE-Tools can be found in the 
+public <a href="http://wiki.lmd.de">LMD Wiki</a>.<br>
+</font>
+<font size="1" face="Verdana"><a href="#Top">[Top]</a></font></p>
+<p>
+<font size="3" face="Verdana"><b><a name="Designtime"></a>Designtime Enhancements<br>
+</b></font><font size="2" face="Verdana">Like for all LMD 201<span lang="de">1</span> products the LMD Designtime Enhancements package is installed automatically (</font><font size="2" face="Courier New">dcllmdrtl<span lang="de">11</span>_XX.bpl</font><font size="2" face="Verdana"> 
+or
+</font><font size="2" face="Courier New">LMD.Vcl.Design.Rtl.dll</font><font size="2" face="Verdana">, 
+compiled versions only). 
+This package provides common design-time features for all LMD packages. Please 
+check About dialog of any LMD control to enable/disable design-time features. 
+For further info check <a href="LMDDesigntime.htm">LMD Designtime enhancements</a> 
+description. <br>
+</font><font size="1" face="Verdana"><a href="#Top">[Top]</a></font><br>
+<br>
+<b>
+<font size="3" face="Verdana"><a name="Resources"></a>Using different Language Resource File <br>
+</font></b>
+<font size="2" face="Verdana">Translated Resourcestrings can be found in
+</font>
+</p>
+<ul>
+  <li>
+<font size="2" face="Courier New">\Resources</font><font size="2" face="Verdana"> 
+  folder below installation directory for compiled versions and
+</font>
+  </li>
+  <li>
+<font size="2" face="Courier New">\lib\source\</font><font size="2" face="Verdana">strings 
+  folder for sourcecode versions
+</font>
+  </li>
+</ul>
+<p>
+<font size="2" face="Verdana">To change current language simply copy unit file 
+of desired language to library file and recompile your application.<br>
+Feel free to send us modified resource units for other languages!<br>
+</font><font size="1" face="Verdana"><a href="#Top">[Top]</a></font><font size="2" face="Verdana"><br>
+&nbsp;</font></p>
+<p>
+<b>
+
+<font SIZE="3">
+<a name="DesignPack-Introduction"></a>DesignPack:
+Introduction</font></b><font size="2" face="Verdana"><br>
+Welcome to <b>LMD DesignPack</b>, a collection of native VCL 
+components which help you to enhance your projects with advanced designing 
+features - either by adding object inspector like controls, extended form 
+designers or diagram like objects. Create your own IDE or add designing features 
+to your applications simply and quickly!<br>
+<br>
+To get a quick start we suggest that you check the demo projects which 
+are shipped with any version of LMD DesignPack (subfolder
+</font>
+<font size="2" face="Courier New">\lmddesign
+</font>
+<font size="2" face="Verdana">in
+</font>
+<font size="2" face="Courier New">\demos</font><font size="2" face="Verdana"> 
+directory):</p>
+</font>
+            <table border="5" cellspacing="1" width="732" bordercolor="#B0C4DE" height="360">
+              <tr>
+                <th bgcolor="#F0F4FE" width="299" height="16">
+                <p align="left"><font face="Verdana" size="2" color="#0000FF">
+                Folder</font></th>
+                <th width="412" bgcolor="#F0F4FE" height="16">
+                <p align="left"><span lang="de">
+                <font face="Verdana" size="2" color="#0000FF">Description</font></span></th>
+              </tr>
+              <tr>
+                <td width="299" height="16">
+                <font face="Courier New" size="2">\_NewInVers4</font></td>
+                <td width="412" align="left" height="16">
+                  <font size="2">This project demonstrates all new features of 
+					DesignPack 4.</font></td>
+              </tr>
+              <tr>
+                <td width="299" height="16">
+                <font face="Courier New" size="2">\DataBaseApplication (Delphi only)</font></td>
+                <td width="412" align="left" height="16">
+                  <font size="2">Small database project demonstration use of DFM files, 
+                  property filtering etc.</font></td>
+              </tr>
+              <tr>
+                <td width="299" height="16">
+                <font face="Courier New" size="2">\FormDesigner (Delphi only)</font></td>
+                <td width="412" align="left" height="16">
+                  <font face="Verdana" size="2">Extensive demo project providing 
+                  a complete DataBase Form-Designer. Load the demo form or 
+                  create your own database forms and execute them for testing!</font></td>
+              </tr>
+              <tr>
+                <td width="299" height="16">
+                <font face="Courier New" size="2">\PropertyEditor (Delphi only)</font></td>
+                <td width="412" align="left" height="16">
+                  <font size="2">Demonstrates a TPicture property editor.</font></td>
+              </tr>
+              <tr>
+                <td width="299" height="80">
+                <font face="Courier New" size="2">\ReportDesigner (Delphi only)</font></td>
+                <td width="412" align="left" height="80">
+                  <font face="Verdana" size="2">The most extensive demo project 
+                  - a sample Report Designer based on QuickReport controls (<u>Installation 
+					of QuickReport is required to run this demo</u>). Many 
+                  advanced techniques are used demonstrating how to implement a 
+                  custom designer. Demo report is available (Customers_D5.rpt 
+                  for Delphi 5, Customers_D6.rpt for Delphi 6 etc.).</font></td>
+              </tr>
+              <tr>
+                <td width="299" height="32">
+                <font face="Courier New" size="2">\ScriptEvents (Delphi only)</font></td>
+                <td width="412" align="left" height="32">
+                  <font size="2">Extended version of FormsDesigner demo, 
+					includes support for event handlers in VBScript. </font>
+                  <font face="Verdana" size="2">(<u>Installation of LMD 
+					ScriptPack is required to run this demo</u>)</font></td>
+              </tr>
+				<tr>
+                <td width="299" height="32">
+                <font face="Courier New" size="2">\ScriptEventsEx (Delphi only)</font></td>
+                <td width="412" align="left" height="32">
+                  <font size="2">Extended version of ScriptEvents demo which 
+					demonstrates use of SyntaxEdit control. As example SynEdit 
+					package was used </font>
+                  <font face="Verdana" size="2">(<u>Installation of LMD 
+					ScriptPack and
+					<a href="http://sourceforge.net/projects/synedit">SynEdit</a> 
+					packages is required to run this demo</u>)</font></td>
+              </tr>
+				<tr>
+                <td width="299" height="32">
+                <font face="Courier New" size="2">\TLMDDBDiagram</font></td>
+                <td width="412" align="left" height="32">
+                  <font face="Verdana" size="2">TLMDDBDiagram demo. Drag/Drop, 
+                  Mouse and Link events are demonstrated.</font></td>
+              </tr>
+              <tr>
+                <td width="299" height="32">
+                <font face="Courier New" size="2">\TLMDDesigner</font></td>
+                <td width="412" align="left" height="32">
+                  <font face="Verdana" size="2">Extensive project demonstrating 
+                  various features of TLMDDesigner. Also saving/restoring of 
+                  edited forms is shown (<i>does not work in Delphi 8</i>).</font></td>
+              </tr>
+              <tr>
+                <td width="299" height="32">
+                <font face="Courier New" size="2">\TLMDDesignManager (Delphi 
+                only)</font></td>
+                <td width="412" align="left" height="32">
+                  <font face="Verdana" size="2">TLMDDesigner demo. Demonstrates 
+                  setting up a design environment with almost no code.</font></td>
+              </tr>
+              <tr>
+                <td width="299" height="32">
+                <font face="Courier New" size="2">\TLMDDesignPanel</font></td>
+                <td width="412" align="left" height="32">
+                  <font face="Verdana" size="2">Small demo demonstrating the use 
+                  of TLMDDesigner in connection with TLMDDesignPanel.</font></td>
+              </tr>
+              <tr>
+                <td width="299" height="48">
+                <font face="Courier New" size="2">\TLMDDiagram</font></td>
+                <td width="412" align="left" height="48">
+                  <font face="Verdana" size="2">TLMDDiagram demo. Drag/Drop, 
+                  Mouse and Link events are demonstrated. Furthermore custom 
+                  drawing handlers for items and links are shown.</font></td>
+              </tr>
+              <tr>
+                <td width="299" height="64">
+                <font face="Courier New" size="2">\TLMDPropertyInspector</font></td>
+                <td width="412" align="left" height="64">
+                  <font face="Verdana" size="2">Example for 
+                  TLMDPropertyInspector. Assigning controls or objects for 
+                  editing at runtime via code is shown. In addition<span lang="de"> 
+                  visual styles are shhown and</span> examples for 
+                  custom events (highlighting/filtering of properties) are 
+                  available. At last sourcecode for a custom property editor is 
+                  shown.</font></td>
+              </tr>
+              </table>
+<p>
+<font size="1" face="Verdana"><a href="#Top">[Top]</a></font><font size="2" face="Verdana"><br>
+<br>
+<br>
+<a name="DesignPack-Changes"></a>
+</font><b>
+
+<font SIZE="3" face="Verdana">
+DesignPack: Changes
+</font></b></p>
+<p>
+<font size="2" face="Verdana">In release 5 much code was rewritten for a better 
+integration with LMD IDE-Tools (see new features there). Besides that following 
+specific features were added:</font></p>
+<ul>
+	<li><font size="2">It ia now possible to design forms (TCustomForm 
+	descendants) in the TLMDDesignPanel. This allows to develop BDS like IDE 
+	user interface. </font></li>
+	<li><font size="2">New designer ShowRootResizers property allows to show 
+	mouse handles to resize the root inside design panel. </font></li>
+	<li><font size="2">New global components modification notifications feature 
+	allows to synchronize shown in Design Pack controls content without any 
+	links between controls. Useful e.g. if for example you move some Vcl control 
+	by the designer, the Left and Top property values will be automatically 
+	updated in the property inspector. Or: if you rename some Vcl component in 
+	property inspector, the object combo box will automatically update shown 
+	component name. </font></li>
+	<li><font size="2">The global components modification notifications allow to 
+	detect when components located inside module root are modified. New 
+	TLMDModule.OnCompsModified event can be easily used to detect such 
+	modifications, instead of several old events of designer or property 
+	inspector. </font></li>
+	<li><font size="2">The global components modification notifications allows 
+	to provide more correct notifications, finding correct module for the 
+	modified component. Imagine that you edit by the property inspector the 
+	TClientDataSet component from one module that refers to the TDataSource 
+	component from another module. Since the property inspector can edit linked 
+	data source component properties (by expanding DataSource property) it is 
+	important that as a result of such modification a second module will receive 
+	the notification, but not the first one. </font></li>
+	<li><font size="2">All design pack controls are now closely oriented to work 
+	with designer. So, EditorWindows has been removed from all controls except 
+	the TLMDDesigner. All other controls will automatically search for the 
+	appropriate designer in cases when the editor window manager is required. 
+	There are no connection to service provider required, because it is always 
+	possible to map editing control to its module (designer). </font></li>
+	<li><font size="2">New TLMDModule.OnGetLoadingCompRef event added to allow 
+	to dynamically load modules in the presence of inter module component links. 
+	The Vcl allows to do this only starting from Delphi2005, so this event is 
+	not available in Delphi 7. </font></li>
+</ul>
+<p>
+<font size="2" face="Verdana">In release 4 many features requested by customers were added, e.g.:</font></p>
+<ul>
+	<li><font size="2">Unicode support for NT-based systems!</font></li>
+	<li><font size="2">Support for Frames and Frame children - including 
+	saving/loading roots with frame-copies and inherited from base-frame event 
+	handlers. Most notable feature is capability to load forms with frames at 
+	run-time without creation of dummy frame instances.</font></li>
+	<li><font size="2">Alignment lines support for design areas - helpful feature to align 
+	controls when they are moved or sized (even possible when controls are 
+	inserted).</font></li>
+	<li><font size="2">The Designer control supports now saving/restoring of 
+	Lock state.</font></li>
+	<li><font size="2">Component captions for non-visual controls</font></li>
+	<li><font size="2">The designer supports transparenting (grouping) of 
+	controls. to handle compound controls as single object (which can be 
+	moved/resized/deleted). </font></li>
+	<li><font size="2">The TLMDServiceProvider component represent services 
+	architecture for simplifying development of extensible applications.</font></li>
+	<li><font size="2">And other minor new helpful additions like predefined 
+	form for representing the structure of a design module or integration code 
+	for <b>LMD IDE-Tools </b>support. E.g. designer, property inspector and 
+	component tree components now have the ability to display useful default 
+	popup menus. Also they can just link popup menu components by adding 
+	default items automatically. This feature is used to fill popup menu with 
+	Delphi like component editor verbs in designer and component tree. </font>
+	</li>
+	<li><font size="2">Combined helpfile for all IDE-Tools packages (IDE 
+	Integration package, Designpack, ScriptPack and SyntaxEdit).</font></li>
+</ul>
+<p>
+<font size="2" face="Verdana">In release 3 many features requested by customers 
+were added, e.g.:</font></p>
+<ul>
+	<li><font face="Verdana" size="2">New TLMDDesignObjects collection 
+	component. Greatly simplifies interoperation between different DesignPack 
+	components in Delphi db-aware like style. </font></li>
+	<li><font face="Verdana" size="2">New TLMDModule component. Some 
+	module-related utilities and events were moved from other DesignPack 
+	components to the TLMDModule component. It actually implements all required 
+	functionality for event support and enhanced streaming. It is designed to be 
+	used not only while designing, but also at runtime e.g. for loading of forms 
+	and hooking runtime event handlers.</font></li>
+	<li><font face="Verdana" size="2">True Event support. Includes ability to 
+	work with events in property inspector, to store/load event handler 
+	references in *.dfm file in Delphi style. So, text DFMs also can be used to 
+	store forms with event handlers. Design pack relies on external source code 
+	utilities for managing event handler source code. Also external runtime 
+	event handler hooking mechanism is expected (for example from scripting 
+	library). LMD ScriptPack was prepared for working with DesignPack smoothly!</font></li>
+	<li><font face="Verdana" size="2">Property names translation was implemented 
+	in TLMDPropertyInspector control (OnTranslateProp event).</font></li>
+	<li><font face="Verdana" size="2">Collection and Menudesigner property 
+	editors were added.</font></li>
+</ul>
+<p>
+<font face="Arial"><font size="1" face="Verdana"><a href="#Top">[Top]</a></font></font><br>
+&nbsp;</p>
+<p>
+<font face="Verdana" size="3">
+            <b><a name="DesignPack-Update"></a>DesignPack: Updating existing projects
+            <span lang="de">to DesignPack 2016<br>
+</span></b></font><font face="Verdana" size="2"><span lang="de">Main changes&nbsp; 
+in <b>DesignPack 3</b> and later were caused by the new event and language/scripting host support. 
+Functionality which was previously included in TLMDDesigner or 
+TLMDPropertyInspector was sourced out to new TLMDModule and TLMDDesignObjects 
+controls. Unfortunately some code created with DesignPack 1 or 2 will be broken because of the drastic internal 
+changes, <font color="#FF0000">so please back up your projects before using 
+DesignPack 4!</font> However these changes are usually caused by the fact, that 
+e.g. certain methods or events are low located in a different control. Also 
+please refer to updated demonstration projects, where all changes were done as 
+well. Usually following changes are required:</span></font></p>
+<ul>
+	<li><font face="Verdana" size="2"><span lang="de">For any used TLMDDesigner 
+	component you must also place a TLMDModule component on the form and connect 
+	it to the designer (via <i>Module</i> property). Then place 
+	TLMDDesignObjects component, name it &quot;Selection&quot;. Connect it to designer <i>
+	Selection</i> property. Optionally, you can place another one 
+	TLMDDesignObjects component and connect it to <i>AllComps</i> designer 
+	property. </span></font></li>
+	<li><span lang="de"><font face="Verdana" size="2">Please note that 
+	DesignControl property no longer exists. Check out description of Root 
+	property in TLMDModule and read topic <i>Designable Surface - Root control
+	</i>in DesignPack Guide.</font></span></li>
+	<li><font face="Verdana" size="2"><span lang="de">If you don't use 
+	TLMDDesignManager and all synchronization tasks were performed manually: 
+	Remove corresponding code from the project. Now it is only required to share
+	<i>Selection</i> or <i>AllComps</i> (e.g. between TLMDPropertyInspector and 
+	TLMDObjectComboBox).</span></font></li>
+	<li><font face="Verdana" size="2"><span lang="de">If you use property 
+	inspector with the designer (and don't use design manager), connect also 
+	corresponding module (TLMDModule component) to TLMDPropertyInspector.</span></font></li>
+	<li><font face="Verdana" size="2"><span lang="de">If you use design manager, 
+	it will automatically connects required TLMDDesignObjects components to 
+	specified property-inspector and object-combo-box (when specific 
+	TLMDDesigner is activated).</span></font></li>
+	<li><font face="Verdana" size="2"><span lang="de">Since some methods and 
+	events were moved to TLMDModule component, you should change the code 
+	accordingly and also reassign event handlers.</span></font></li>
+</ul>
+<p>
+<font face="Arial"><font size="1" face="Verdana"><a href="#Top">[Top]</a></font></font><br>
+&nbsp;</p>
+<P><b>
+
+<font SIZE="3">
+<a name="ScriptPack-Introduction"></a>ScriptPack: Introduction</font></b><font SIZE="2"><br>
+Thank you for using LMD ScriptPack! LMD ScriptPack adds fully functional 
+support of Windows Scripting Host engine to your Delphi/CBuilder application.<br>
+TLMDScriptControl allows to run scripts from within your application and to 
+share any application object with script interpreter 
+engine. In addition it allows you to completely manage application objects 
+within script, including operating with public properties, running methods, 
+setting script procedures as event handlers etc.
+LMD ScriptPack represents also an easy way to make your application extendable 
+by external scripts - so there is no need to edit source code (or rebuild 
+projects) to change and/or enhance its functionality.
+</font>
+<P><b><font size="2">Major Update with Release 6.0!</font></b><ul>
+	<li>
+					<b><font size="2">New PascalScript Language support added.
+					</font></b><font size="2">Unlike the previously MS 
+					ActiveScripting based languages this is a 100% native VCL 
+					implementation without need of external dlls. The 
+					PascalScript engine includes an optimized byte code compiler 
+					and very fast interpreter.<br>
+					The PascalScript language is a dynamic Variant based script 
+					language that supports most of the Delphi Pascal expressions 
+					and statements like </font>
+					<ul>
+						<li><font size="2">procedure/function declarations
+						</font></li>
+						<li><font size="2">const/var/out parameters </font></li>
+						<li><font size="2">global/local variables and constants.
+						</font></li>
+						<li><font size="2">Extended support of exception 
+						handling, e.g. raise, try-except and try-finally 
+						statements; real Delphi exceptions are raised internally 
+						that allow to test an exception class in handler, e.g. 
+						on E: EZeroDivide do. </font></li>
+						<li><font size="2">The PascalScript CodeObject engine 
+						implements a secret interface (in addition to IDispatch) 
+						that allows very fast interoperations between connected 
+						script controls. Besides that execption processing can 
+						be made transparent between connected script controls.
+						</font></li>
+						<li><font size="2">Native script operators such as 'is', 
+						'in', '@' and set constructors, e.g. [akLeft,akTop] 
+						allow to work with imported Delphi objects, instead of 
+						provided to ActiveX scripts special functions (e.g. 
+						SetMake, SetEmpty, ClassIs, EventMake, ect.). Like for 
+						the ActiveScripting based languages import units of your 
+						Pascal units can be created. Import units for the VCL 
+						are shipped with each copy of ScriptPack.#+</font></li>
+					</ul>	
+<li>
+					<font size="2">New three step initialization of ScriptPack 
+					Control. Besides Prepare, Open and Close methods a State 
+					property was added. In addition the new 'Prepared' 
+					intermediate state was introduced. In this state all source 
+					code is already parsed, but no global code is executed yet (CodeObject 
+					is already acessible in this state). This new feature allows 
+					circular dependencies between script controls even in case 
+					when global code is used (hence handling several scripts at 
+					the same time is simplified enormously). In simple cases a 
+					call to Prepare method can be ommitted. Finally the 
+					ACloseOnRuntimeError parameter was added to the Open method 
+					to allow leaving script control opened in the case that 
+					runtime errors occured during global code execution.</li>
+					</font>
+<li></li><font size="2">New exception handling replaces Last ScriptError 
+					concept. Script control includes now the encoded source 
+					(reference to script control), error line and position 
+					information in exception messages (e.g. in string form). The 
+					LMDDecodeErrorMessageInfo procedure allows to decode this 
+					information for advanced applications. </font></li>
+					<li></li><font size="2">New optimized 
+					Delphi memory manager proxy allows to detect finalized 
+					object destructions. E.g. all subsequent access to IDispatch 
+					object wrapper will report 'Object has been destroyed' 
+					exceptions instead of unsafe Access Violations. This 
+					feauture is especially used by working with exceptions in 
+					PascalScript, because exception objects are automatically 
+					destroyed by the interpreter.</li>
+					<li><font size="2">New prepared expressions/statements feature was added to 
+					optimize Eval and ExecuteStatement methods. If the same 
+					expression/statement need to be executed many times then it 
+					is more efficient to Prepare it first and then use Eval and 
+					ExecuteStatement overloadeds methods that take prepared 
+					objects as parameters. <b>Note:</b> Most speed gain will be 
+					seen in native PascalScript implementation, because all 
+					other ActiveX script implementations do not support this 
+					feature internally.</li>
+	</li>
+</ul>
+<P><font size="2" face="Verdana"><br>
+To get a quick start we suggest that you review the demo projects which 
+are shipped with  LMD ScriptPack&nbsp; (subfolder </font>
+<font size="2" face="Courier New">\lmdscript
+</font>
+<font size="2" face="Verdana">in
+</font>
+<font size="2" face="Courier New">\demos</font><font size="2" face="Verdana"> 
+directory):
+</font>
+            
+            <table border="5" cellspacing="1" width="732" bordercolor="#B0C4DE">
+              <tr>
+                <th bgcolor="#F0F4FE" width="254" height="16">
+                  <p align="left"><font face="Verdana" size="2" color="#0000FF">Folder</font>
+                </th>
+                <th width="475" bgcolor="#F0F4FE" height="16">
+                  <font face="Verdana" size="2" color="#0000FF">Description</font>
+                </th>
+              </tr>
+              <tr>
+                <td width="254" height="16">
+                  <font face="Courier New" size="2">\Debugger</font></td>
+                <td width="475" align="left" height="16">
+                  <font size="2">Demonstrates new debugger support.</font></td>
+              </tr>
+              <tr>
+                <td width="254" height="16">
+                  <font face="Courier New" size="2">\DelphiMapping</font></td>
+                <td width="475" align="left" height="16">
+                  <font face="Verdana" size="2">Demonstrates how to map und use 
+					Delphi objects, functions, classes, events etc. in Script 
+					code. </font>
+                </td>
+              </tr>
+              <tr>
+                <td width="254">
+                  <font face="Courier New" size="2">\HellowWorld</font></td>
+                <td width="475" align="left">
+                  <font size="2">Example of Hello World! application, where in 
+					script code VCL Window is created and form canvas for 
+					painting operatons is used</font></td>
+              </tr>
+              <tr>
+                <td width="254" height="16">
+                  <font face="Courier New" size="2">\HostScriptInteropDemo</font></td>
+                <td width="475" align="left" height="16">
+                  <font size="2">This project demonstrates how forms created at 
+					runtime via Pascal code and Script code can interoperate 
+					with each other.</font></td>
+              </tr>
+              <tr>
+                <td width="254" height="16">
+                  <font face="Courier New" size="2">\MultiLanguageDemo</font></td>
+                <td width="475" align="left" height="16">
+                  <font size="2">Demonstrates use of different Active Scripting 
+					Engines (VBScript, JScript, Python etc.). Make sure that 
+					additional scripting engines are installed beforehand.</font></td>
+              </tr>
+              <tr>
+                <td width="254" height="16">
+                  <font face="Courier New" size="2">\ObjectModel (also BCB)</font></td>
+                <td width="475" align="left" height="16">
+                  <font size="2">Demonstrates development of applications which 
+					publish their object model to a scripting language (like MS 
+					Word, Internet Explorer etc.). Forms are not imported here, 
+					special class are created and imported which represent 
+					object model elements (like application, document) instead.</font></td>
+              </tr>
+              <tr>
+                <td width="254" height="16">
+                  <font face="Courier New" size="2">\ScriptedNotepadDemo</font></td>
+                <td width="475" align="left" height="16">
+                  <font size="2">Small example of an (unfinished) NotePad 
+					application which is created completely via Script Code 
+					(demonstrates how to create forms, menu items, use of 
+					standard dialogs etc.).</font></td>
+              </tr>
+              </table>
+
+<p><br>
+<font face="Verdana" size="2"><font color="#FF0000"><b>Important note for C++ 
+Builder users</b></font><br>
+Regarding import features: In BCB versions it is generally possible to do 
+everything you do in Delphi, except importing C++ sources. However you can 
+utilize preimported VCL wrapper-units or you can import additional Delphi units 
+(written in Pascal, e.g. third-party libraries). You can even use importing in 
+your own C++ project, adding to it one pascal unit with application object model 
+base classes. This is demonstrated in </font><font size="2" face="Courier New">ObjectModel</font><font size="2" face="Verdana"> 
+demo. Note, that in this demo only abstract-base-classes are declared in pascal 
+unit, all logic is implemented in C++, in descendant classes.
+</font></p>
+<P><font size="1" face="Verdana"><a href="#Top">[Top]</a></font><p>
+<b>
+
+<font SIZE="3" face="Verdana">
+<a name="ScriptPack-Changes"></a>ScriptPack: Changes </font></b><font SIZE="2"><br>
+New main feature in version 5 is VCL.NET support. New features in version 4 
+were:</font></p>
+<ul>
+	<li><font size="2">Unicode support for NT-based systems!</font></li>
+	<li><font size="2">New component: TLMDScriptDebugger - provides true multi-module 
+	multi-language debugging capabilities for the script controls.</font></li>
+	<li><font size="2">Other minor new helpful additions and integration code 
+	for <b>LMD IDE-Tools </b>support. </font></li>
+	<li><font size="2">Combined helpfile for all IDE-Tools packages (IDE 
+	Integration package, Designpack, ScriptPack and SyntaxEdit).</font></li>
+</ul>
+<p>
+<font SIZE="2">New features in version 3 are:<br>
+<font color="#FF0000"><b>ScriptPack 3 represented a complete rewrite! Important 
+note for user of ScriptPack packages prior version 3: Existing code will not be compatible and several changes 
+will be required!
+</b></font></font></p>
+<ul>
+	<li><font SIZE="2">Complete Delphi interface to active scripting. There is 
+	no longer need to use Script Extensions as in previous ScriptPack releases.
+	</font></li>
+	<li><font SIZE="2">Delphi wrappers for accessing Delphi objects from the 
+	script. New Import utility with heavily improved Pascal Parser is available. 
+	Import units which register almost all important VCL classes, routines and 
+	constants are already included and can be directly used within your 
+	application / scripts.</font></li>
+	<li><font SIZE="2">Complete support for event handlers:<br>- Supporting Delphi event handlers in script.<br>- Wring event handlers in script. 
+	<br>- Ability to setup (hook) event handlers based on Delphi RTTI (for design 
+	pack module support).<br>- Event handler source utilities.</font></li>
+</ul>
+<p>
+<font face="Arial"><a href="#Top"><font size="1" face="Verdana">[Top]</font></a></font></p>
+
+<p>
+<b>
+
+<font SIZE="3">
+<a name="SyntaxEdit-Introduction"></a>SyntaxEdit: Introduction</font></b><font SIZE="2"><br>
+Thank you for using LMD SyntaxEdit!&nbsp;This component set provides a powerful and fast editor with 
+syntax highlighting, customizable syntax schemes (schemes for many popular 
+programming and scripting languages are included), Unicode and Code folding 
+support. Besides that visual appearance of the editor is completely 
+customizable. Along with the controls a very powerful RegEx parsing engine and 
+predefined dialogs for a simple and fast creation of editors are shipped with the 
+package.<br>
+Main features of LMD SyntaxEdit are:</font></p>
+<ul>
+	<li><font size="2">Logical separation of Document and View, multiple views 
+	of the same text are easily possible.</font></li>
+	<li><font size="2">Syntax highlighting based on XML syntax schemes. 
+	Subschemes also supported (e.g. Javascript in HTML).</font></li>
+	<li><font size="2">15+ syntax schemes for popular languages like C++, HTML, 
+	JavaScript, PHP, TCL, Visual Basic etc. are included. </font></li>
+	<li><font size="2">Code folding feature (also based on on XML syntax 
+	schemes)</font></li>
+	<li><font size="2">Unicode support! Fast! No size limitations!</font></li>
+	<li><font size="2">All standard editor features like Word Wrap, Clipboard 
+	support etc.</font></li>
+	<li><font size="2">Multilevel Undo/Redo, compound edit feature in document.
+	</font></li>
+	<li><font size="2">Customizable 'special symbols' (spaces, tabs, line ends, 
+	line wraps)</font></li>
+	<li><font size="2">Customizable gutter with any number of bookmarks, 
+	breakpoints, line numbering, folding images, and custom bars (along with 
+	OnGutterPaint/OnGutterClick custom events).</font></li>
+	<li><font size="2">Bookmarks and breakpoints behavior as known in Delphi 
+	IDE: bookmarks never disappear when text is deleted, breakpoints will 
+	disappear when corresponding line is deleted. Different kinds of breakpoints 
+	are supported - with ability to set images for any kind of breakpoint, 
+	bookmarks and folding pictures. </font></li>
+	<li><font size="2">Supports custom collections of line markers, or just 
+	markers for any position in text. Markers positions will be updated during 
+	text editing.</font></li>
+	<li><font size="2">Document works with any kind of line ending characters 
+	(DOS ASCII, Linux, MAC etc. formats)</font></li>
+	<li><font size="2">Virtual editing in view (as known from Delphi IDE).
+	</font></li>
+	<li><font size="2">Predefined dialogs for Search (including regular 
+	expression based search), Goto Line etc. operations</font></li>
+	<li><font size="2">Property editor for syntax/color scheme editing included.</font></li>
+</ul>
+<p>
+<font size="2" face="Verdana">To get a quick start we suggest that you review the demo projects which 
+are shipped with  LMD SyntaxEdit&nbsp; (subfolder </font>
+<font size="2" face="Courier New">\lmdsyntax
+</font>
+<font size="2" face="Verdana">in
+</font>
+<font size="2" face="Courier New">\demos</font><font size="2" face="Verdana"> 
+directory):
+</font>
+            </p>
+
+            <table border="5" cellspacing="1" width="732" bordercolor="#B0C4DE">
+              <tr>
+                <th bgcolor="#F0F4FE" width="254" height="16">
+                  <p align="left"><font face="Verdana" size="2" color="#0000FF">Folder</font>
+                </th>
+                <th width="475" bgcolor="#F0F4FE" height="16">
+                  <font face="Verdana" size="2" color="#0000FF">Description</font>
+                </th>
+              </tr>
+              <tr>
+                <td width="254" height="16">
+                  <font face="Courier New" size="2">\MegaDemo</font></td>
+                <td width="475" align="left" height="16">
+                  <font size="2">Single MegaDemo which demonstrates all features 
+					of LMD SyntaxEdit.</font></td>
+              </tr>
+              </table>
+
+<p>
+<font size="1" face="Verdana"><a href="#Top">[Top]</a></font></p>
+<p>
+<b><font face="Verdana" size="3"><a name="SyntaxEdit-Changes"></a>SyntaxEdit: Changes
+</font></b><font SIZE="2"><br>
+New features in Release 2 are:</font></p>
+<ul>
+	<font SIZE="2">
+	<li>Drag and drop of text supported</li>
+	<li>Bugfixes and enourmous speed enhancements. </li>
+	<li>Auto-completion API added. Completion supported: based on document text, 
+	or custom completion, based on events. See TLMDEditView.CompletionSettings, 
+	OnFillCompletionList, OnCompletionReplace, OnCompletionCustomDraw, 
+	OnCompletionMeasureItem properties/events. </li>
+	<li>Simple text highlight API added: HighlightSettings, Add/Remove 
+	Highlight. Useful to highlight some errors or some search results. See 
+	TLMDEditView.HighlightSettings property, and TLMDEditView.AddHighlight, 
+	RemoveHighlight, ClearHighlight methods. </li>
+	<li>UTF8 text auto-detection improved: now detection of UTF8 without BOM is 
+	supported</li>
+	<li>Other improvements like Addict 4 support, themed border support, 
+	improved dialogs and much more. </li>
+	</font>
+</ul>
+<p>
+<font size="1" face="Verdana"><a href="#Top">[Top]</a></font></p>
+<HR>
+
+<P><FONT color=#000080>©&nbsp;  </FONT><FONT color=#0000FF>by</FONT><FONT color=#000080> <A 
+href="http://www.lmd.de/">LMD Innovative</A> Germany<BR>All other trademarks are 
+acknowledged.</FONT> </P></BODY></HTML>

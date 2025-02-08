@@ -1,0 +1,76 @@
+package lmdrtchart;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$LIBSUFFIX '180'}
+{$DESCRIPTION 'LMD ChartPack Components'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  lmdrtl,
+  rtl,
+  vcl,
+  vclx,
+  lmdrtrtlx,
+  lmdrtprint,
+  vclimg;
+
+contains
+  LMDXMLNodeNames in '..\..\LMDXMLNodeNames.pas',
+  LMDChart in '..\..\LMDChart.pas',
+  LMDChartArea in '..\..\LMDChartArea.pas',
+  LMDChartAxis in '..\..\LMDChartAxis.pas',
+  LMDChartScaleBreak in '..\..\LMDChartScaleBreak.pas',
+  LMDChartBackground in '..\..\LMDChartBackground.pas',
+  LMDChartCTAreaLine3D in '..\..\LMDChartCTAreaLine3D.pas',
+  LMDChartCTAreaLine in '..\..\LMDChartCTAreaLine.pas',
+  LMDChartCTAreaSpline3D in '..\..\LMDChartCTAreaSpline3D.pas',
+  LMDChartCTAreaSpline in '..\..\LMDChartCTAreaSpline.pas',
+  LMDChartCTBar3D in '..\..\LMDChartCTBar3D.pas',
+  LMDChartCTBar in '..\..\LMDChartCTBar.pas',
+  LMDChartCTColumn3D in '..\..\LMDChartCTColumn3D.pas',
+  LMDChartCTColumn in '..\..\LMDChartCTColumn.pas',
+  LMDChartCTDoughnut in '..\..\LMDChartCTDoughnut.pas',
+  LMDChartCTPie2D in '..\..\LMDChartCTPie2D.pas',
+  LMDChartData in '..\..\LMDChartData.pas',
+  LMDChartFont in '..\..\LMDChartFont.pas',
+  LMDChartLabel in '..\..\LMDChartLabel.pas',
+  LMDChartLegend in '..\..\LMDChartLegend.pas',
+  LMDChartLine in '..\..\LMDChartLine.pas',
+  LMDChartMarker in '..\..\LMDChartMarker.pas',
+  LMDChartPersistent in '..\..\LMDChartPersistent.pas',
+  LMDChartTitleBox in '..\..\LMDChartTitleBox.pas',
+  LMDChartTypes in '..\..\LMDChartTypes.pas',
+  LMDChartUtils in '..\..\LMDChartUtils.pas',
+  LMDChartValuesBase in '..\..\LMDChartValuesBase.pas',
+  LMDChartValues in '..\..\LMDChartValues.pas',
+  LMDChartValuesCollection in '..\..\LMDChartValuesCollection.pas',
+  LMDChartSeries in '..\..\LMDChartSeries.pas',
+  LMDChartSeriesCollection in '..\..\LMDChartSeriesCollection.pas',
+  LMDChartSource in '..\..\LMDChartSource.pas',
+  LMDChartRectangular2DCT in '..\..\LMDChartRectangular2DCT.pas',
+  LMDChartCTLine in '..\..\LMDChartCTLine.pas',
+  LMDChartPrintTask in '..\..\LMDChartPrintTask.pas';
+
+end.

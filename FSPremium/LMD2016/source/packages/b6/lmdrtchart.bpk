@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="lmdrtchart60.bpl"/>
+    <OBJFILES value="lmdrtchart.obj ..\..\LMDXMLNodeNames.obj ..\..\LMDChart.obj ..\..\LMDChartArea.obj ..\..\LMDChartAxis.obj ..\..\LMDChartScaleBreak.obj ..\..\LMDChartBackground.obj ..\..\LMDChartCTAreaLine3D.obj ..\..\LMDChartCTAreaLine.obj ..\..\LMDChartCTAreaSpline3D.obj ..\..\LMDChartCTAreaSpline.obj ..\..\LMDChartCTBar3D.obj ..\..\LMDChartCTBar.obj ..\..\LMDChartCTColumn3D.obj ..\..\LMDChartCTColumn.obj ..\..\LMDChartCTDoughnut.obj ..\..\LMDChartCTPie2D.obj ..\..\LMDChartData.obj ..\..\LMDChartFont.obj ..\..\LMDChartLabel.obj ..\..\LMDChartLegend.obj ..\..\LMDChartLine.obj ..\..\LMDChartMarker.obj ..\..\LMDChartPersistent.obj ..\..\LMDChartTitleBox.obj ..\..\LMDChartTypes.obj ..\..\LMDChartUtils.obj ..\..\LMDChartValuesBase.obj ..\..\LMDChartValues.obj ..\..\LMDChartValuesCollection.obj ..\..\LMDChartSeries.obj ..\..\LMDChartSeriesCollection.obj ..\..\LMDChartSource.obj ..\..\LMDChartRectangular2DCT.obj ..\..\LMDChartCTLine.obj ..\..\LMDChartPrintTask.obj"/>
+    <RESFILES value="lmdrtchart.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) "/>
+    <LIBFILES value=""/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value="rtl.lib"/>
+    <PACKAGES value="lmdrtl.bpi rtl.bpi vcl.bpi vclx.bpi lmdrtrtlx.bpi lmdrtprint.bpi vcljpg.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value=""/>
+    <SYSDEFINES value="_RTLDLL;NO_STRICT;USEPACKAGES"/>
+    <MAINSOURCE value="lmdrtchart.cpp"/>
+    <INCLUDEPATH value="$(BCB)\include;$(BCB)\include\vcl;"/>
+    <LIBPATH value="$(BCB)\lib\obj;$(BCB)\lib;"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I$(BCB)\include -I$(BCB)\include\vcl -src_suffix cpp -boa"/>
+    <CFLAG1 value="-O2 -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -a8 -b- -k- -vi -c -tWM"/>
+    <PFLAGS value="-N2..\..\build -N0..\..\build -NH..\..\build -$Y- -$L- -$D- -$A8 -v -JPHNE -M "/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zn"/>
+    <LFLAGS value="-I..\.. -D&quot;LMD ChartPack Components&quot; -aa -Tpp -Gpr -x -Gn -Gl -Gi"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0pkg32.obj $(PACKAGES) Memmgr.Lib sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib "/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="lmdrtchart.cpp" FORMNAME="" UNITNAME="lmdrtchart" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtchart.res" FORMNAME="" UNITNAME="lmdrtchart.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtl.bpi" FORMNAME="" UNITNAME="lmdrtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="rtl.bpi" FORMNAME="" UNITNAME="rtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vcl.bpi" FORMNAME="" UNITNAME="vcl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vclx.bpi" FORMNAME="" UNITNAME="vclx" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtrtlx.bpi" FORMNAME="" UNITNAME="lmdrtrtlx" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtprint.bpi" FORMNAME="" UNITNAME="lmdrtprint" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vcljpg.bpi" FORMNAME="" UNITNAME="vcljpg" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDXMLNodeNames.pas" FORMNAME="" UNITNAME="LMDXMLNodeNames" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChart.pas" FORMNAME="" UNITNAME="LMDChart" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChartArea.pas" FORMNAME="" UNITNAME="LMDChartArea" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChartAxis.pas" FORMNAME="" UNITNAME="LMDChartAxis" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChartScaleBreak.pas" FORMNAME="" UNITNAME="LMDChartScaleBreak" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChartBackground.pas" FORMNAME="" UNITNAME="LMDChartBackground" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChartCTAreaLine3D.pas" FORMNAME="" UNITNAME="LMDChartCTAreaLine3D" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChartCTAreaLine.pas" FORMNAME="" UNITNAME="LMDChartCTAreaLine" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChartCTAreaSpline3D.pas" FORMNAME="" UNITNAME="LMDChartCTAreaSpline3D" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChartCTAreaSpline.pas" FORMNAME="" UNITNAME="LMDChartCTAreaSpline" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChartCTBar3D.pas" FORMNAME="" UNITNAME="LMDChartCTBar3D" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChartCTBar.pas" FORMNAME="" UNITNAME="LMDChartCTBar" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChartCTColumn3D.pas" FORMNAME="" UNITNAME="LMDChartCTColumn3D" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChartCTColumn.pas" FORMNAME="" UNITNAME="LMDChartCTColumn" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChartCTDoughnut.pas" FORMNAME="" UNITNAME="LMDChartCTDoughnut" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChartCTPie2D.pas" FORMNAME="" UNITNAME="LMDChartCTPie2D" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChartData.pas" FORMNAME="" UNITNAME="LMDChartData" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChartFont.pas" FORMNAME="" UNITNAME="LMDChartFont" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChartLabel.pas" FORMNAME="" UNITNAME="LMDChartLabel" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChartLegend.pas" FORMNAME="" UNITNAME="LMDChartLegend" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChartLine.pas" FORMNAME="" UNITNAME="LMDChartLine" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChartMarker.pas" FORMNAME="" UNITNAME="LMDChartMarker" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChartPersistent.pas" FORMNAME="" UNITNAME="LMDChartPersistent" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChartTitleBox.pas" FORMNAME="" UNITNAME="LMDChartTitleBox" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChartTypes.pas" FORMNAME="" UNITNAME="LMDChartTypes" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChartUtils.pas" FORMNAME="" UNITNAME="LMDChartUtils" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChartValuesBase.pas" FORMNAME="" UNITNAME="LMDChartValuesBase" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChartValues.pas" FORMNAME="" UNITNAME="LMDChartValues" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChartValuesCollection.pas" FORMNAME="" UNITNAME="LMDChartValuesCollection" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChartSeries.pas" FORMNAME="" UNITNAME="LMDChartSeries" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChartSeriesCollection.pas" FORMNAME="" UNITNAME="LMDChartSeriesCollection" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChartSource.pas" FORMNAME="" UNITNAME="LMDChartSource" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChartRectangular2DCT.pas" FORMNAME="" UNITNAME="LMDChartRectangular2DCT" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChartCTLine.pas" FORMNAME="" UNITNAME="LMDChartCTLine" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDChartPrintTask.pas" FORMNAME="" UNITNAME="LMDChartPrintTask" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+  <IDEOPTIONS>
+[Version Info Keys]
+CompanyName=LMD Innovative
+FileDescription=LMD ChartPack Components
+FileVersion=2016.5
+InternalName=
+LegalCopyright=© LMD Innovative
+LegalTrademarks=
+OriginalFilename=
+ProductName=LMD ChartPack Components
+ProductVersion=2016.5
+Comments=
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[Linker]
+LibPrefix=
+LibSuffix=60
+LibVersion=
+  </IDEOPTIONS>
+</PROJECT>

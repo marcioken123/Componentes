@@ -1,0 +1,159 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{BC79B0AF-9A90-42D8-96AE-D6FED245B7A5}</ProjectGuid>
+    <MainSource>dcllmdtools.dpk</MainSource>
+    <Configuration Condition=" '$(Configuration)' == '' ">build</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+    <DCC_DependencyCheckOutputName>dcllmdtools.bpl</DCC_DependencyCheckOutputName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'build|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_CBuilderOutput>All</DCC_CBuilderOutput>
+    <DCC_Define>RELEASE</DCC_Define>
+    <DCC_DcuOutput>..\..\build</DCC_DcuOutput>
+    <DCC_HppOutput>..\..</DCC_HppOutput>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Delphi.Personality</Borland.Personality>
+    <Borland.ProjectType>Package</Borland.ProjectType>
+    <BorlandProject>
+<BorlandProject xmlns=""> <Delphi.Personality>   <Parameters>
+      <Parameters Name="UseLauncher">False</Parameters>
+      <Parameters Name="LoadAllSymbols">True</Parameters>
+      <Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+    </Parameters>
+    <Package_Options>
+      <Package_Options Name="PackageDescription">LMD 2016 - LMD-Tools Main Components</Package_Options>
+      <Package_Options Name="ImplicitBuild">False</Package_Options>
+      <Package_Options Name="DesigntimeOnly">true</Package_Options>
+      <Package_Options Name="RuntimeOnly">false</Package_Options>
+    </Package_Options>
+    <VersionInfo>
+      <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+      <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+      <VersionInfo Name="MajorVer">1</VersionInfo>
+      <VersionInfo Name="MinorVer">0</VersionInfo>
+      <VersionInfo Name="Release">0</VersionInfo>
+      <VersionInfo Name="Build">0</VersionInfo>
+      <VersionInfo Name="Debug">False</VersionInfo>
+      <VersionInfo Name="PreRelease">False</VersionInfo>
+      <VersionInfo Name="Special">False</VersionInfo>
+      <VersionInfo Name="Private">False</VersionInfo>
+      <VersionInfo Name="DLL">False</VersionInfo>
+      <VersionInfo Name="Locale">1049</VersionInfo>
+      <VersionInfo Name="CodePage">1251</VersionInfo>
+    </VersionInfo>
+    <VersionInfoKeys>
+      <VersionInfoKeys Name="CompanyName">LMD Innovative</VersionInfoKeys>
+      <VersionInfoKeys Name="FileDescription">LMD 2016 - LMD-Tools Main Components</VersionInfoKeys>
+      <VersionInfoKeys Name="FileVersion">2016.5.*</VersionInfoKeys>
+      <VersionInfoKeys Name="InternalName"></VersionInfoKeys>
+      <VersionInfoKeys Name="LegalCopyright">Copyright (c) LMD Innovative</VersionInfoKeys>
+      <VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys>
+      <VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys>
+      <VersionInfoKeys Name="ProductName">LMD 2009 VCL Series</VersionInfoKeys>
+      <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+      <VersionInfoKeys Name="Comments"></VersionInfoKeys>
+    </VersionInfoKeys>
+    <Source>
+      <Source Name="MainSource">dcllmdtools.dpk</Source>
+    </Source>
+  </Delphi.Personality> </BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <ItemGroup />
+  <ItemGroup>
+    <DelphiCompile Include="dcllmdtools.dpk">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <DCCReference Include="..\..\LMD_RegMain.pas" />
+    <DCCReference Include="..\..\LMD_RegMainEditors.pas" />
+    <DCCReference Include="..\..\pLMDCPGetMain.pas" />
+    <DCCReference Include="..\..\pLMDCstMain.pas" />
+    <DCCReference Include="..\..\pLMDCEMain.pas" />
+    <DCCReference Include="..\..\pLMDPEMain.pas" />
+    <DCCReference Include="..\..\pLMDRegOS.pas" />
+    <DCCReference Include="..\..\pLMD3DEffectEditorDlg.pas">
+      <Form>LMD3DEffectEditorDlg</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\pLMDBmpRegionEditorDlg.pas">
+      <Form>LMDfrmRegionFromBMPdlg</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\pLMDButtonBarEditorDlg.pas">
+      <Form>frmLMDButtonBarEditorDlg</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\pLMDCaptionEditorDlg.pas">
+      <Form>LMDCaptionEditorDlg</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\pLMDDlgBtnEditorDlg.pas">
+      <Form>LMDDlgButtonEditorDlg</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\pLMDFilterPropertyEditorDlg.pas">
+      <Form>LMDFilterPropsDlg</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\pLMDGraphicLabelEditorDlg.pas">
+      <Form>LMDFormGraphicLabelEditor</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\pLMDHideNonVC.pas">
+      <Form>LMDHideNonVCfrm</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\pLMDLEDEditorDlg.pas">
+      <Form>LMDLEDEditorDlg</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\pLMDLightEditorDlg.pas">
+      <Form>LMDLightEditorDlg</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\pLMDMMButtonFaceEditorDlg.pas">
+      <Form>LMDButtonFaceDlg</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\pLMDOSPropForm.pas">
+      <Form>LMDOSPropForm</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\pLMDPointListEditorDlg.pas">
+      <Form>frmTLMDPointListEditor</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\pLMDSendKeyEditorDlg.pas">
+      <Form>LMDSendKeysEditorDlg</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\pLMDShadowEditorDlg.pas">
+      <Form>LMDShadowEditorDlg</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\pLMDShapeEditorDlg.pas">
+      <Form>LMDShapeEditorDlg</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\pLMDSimpleBevelEditorDlg.pas">
+      <Form>LMDSimpleBevelEditorDlg</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\pLMDStyleManProp.pas" />
+    <DCCReference Include="..\..\pLMDTeethEditorDlg.pas">
+      <Form>LMDTeethEditorDlg</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\pLMDVldRegExpEditor.pas">
+      <Form>LMDRegExprForm</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\pLMDDateListEditorDlg.pas">
+      <Form>LMDDateListEditorDlg</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\pLMDControlFaceEditorDlg.pas">
+      <Form>frmLMDControlFaceComponentEditor</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\pLMDControlFaceEditorDlgAddState.pas">
+      <Form>frmStateAddingDlg</Form>
+    </DCCReference>
+    <DCCReference Include="lmdrtcore.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="lmdrttools.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="lmdrtl.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="dcllmdrtl.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="rtl.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="vcl.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="vclx.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="designide.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="dclstd.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="dcllmdcore.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="dcllmdprint.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+</Project>

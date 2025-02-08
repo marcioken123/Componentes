@@ -1,0 +1,10 @@
+T+: TEdgeBorder
+T+: TEdgeBorders
+T+: TEdgeStyle
+T+: TToolWindow
+        P+: EdgeBorders
+        P+: EdgeInner
+        P+: EdgeOuter
+T+: TToolDockObject
+T+: TSizingOrientation
+T+: TToolDockForm

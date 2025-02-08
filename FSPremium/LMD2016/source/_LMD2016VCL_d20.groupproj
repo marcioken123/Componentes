@@ -1,0 +1,1475 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{81400C27-CE84-455F-A392-3B2BE6D358F2}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup />
+  <ProjectExtensions>
+    <Borland.Personality>Default.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+  <BorlandProject xmlns=""> <Default.Personality> </Default.Personality> </BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Target Name="lmdrtl">
+    <MSBuild Projects="packages\d20\lmdrtl.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrtl:Clean">
+    <MSBuild Projects="packages\d20\lmdrtl.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrtl:Make">
+    <MSBuild Projects="packages\d20\lmdrtl.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dcllmdrtl">
+    <MSBuild Projects="packages\d20\dcllmdrtl.dproj" Targets="" />
+  </Target>
+  <Target Name="dcllmdrtl:Clean">
+    <MSBuild Projects="packages\d20\dcllmdrtl.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dcllmdrtl:Make">
+    <MSBuild Projects="packages\d20\dcllmdrtl.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrtrtlx">
+    <MSBuild Projects="packages\d20\lmdrtrtlx.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrtrtlx:Clean">
+    <MSBuild Projects="packages\d20\lmdrtrtlx.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrtrtlx:Make">
+    <MSBuild Projects="packages\d20\lmdrtrtlx.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dcllmdrtlx">
+    <MSBuild Projects="packages\d20\dcllmdrtlx.dproj" Targets="" />
+  </Target>
+  <Target Name="dcllmdrtlx:Clean">
+    <MSBuild Projects="packages\d20\dcllmdrtlx.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dcllmdrtlx:Make">
+    <MSBuild Projects="packages\d20\dcllmdrtlx.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrtlog">
+    <MSBuild Projects="packages\d20\lmdrtlog.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrtlog:Clean">
+    <MSBuild Projects="packages\d20\lmdrtlog.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrtlog:Make">
+    <MSBuild Projects="packages\d20\lmdrtlog.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrtthemes">
+    <MSBuild Projects="packages\d20\lmdrtthemes.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrtthemes:Clean">
+    <MSBuild Projects="packages\d20\lmdrtthemes.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrtthemes:Make">
+    <MSBuild Projects="packages\d20\lmdrtthemes.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dcllmdthemes">
+    <MSBuild Projects="packages\d20\dcllmdthemes.dproj" Targets="" />
+  </Target>
+  <Target Name="dcllmdthemes:Clean">
+    <MSBuild Projects="packages\d20\dcllmdthemes.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dcllmdthemes:Make">
+    <MSBuild Projects="packages\d20\dcllmdthemes.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrtplugin">
+    <MSBuild Projects="packages\d20\lmdrtplugin.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrtplugin:Clean">
+    <MSBuild Projects="packages\d20\lmdrtplugin.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrtplugin:Make">
+    <MSBuild Projects="packages\d20\lmdrtplugin.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dcllmdplugin">
+    <MSBuild Projects="packages\d20\dcllmdplugin.dproj" Targets="" />
+  </Target>
+  <Target Name="dcllmdplugin:Clean">
+    <MSBuild Projects="packages\d20\dcllmdplugin.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dcllmdplugin:Make">
+    <MSBuild Projects="packages\d20\dcllmdplugin.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrtprint">
+    <MSBuild Projects="packages\d20\lmdrtprint.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrtprint:Clean">
+    <MSBuild Projects="packages\d20\lmdrtprint.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrtprint:Make">
+    <MSBuild Projects="packages\d20\lmdrtprint.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dcllmdprint">
+    <MSBuild Projects="packages\d20\dcllmdprint.dproj" Targets="" />
+  </Target>
+  <Target Name="dcllmdprint:Clean">
+    <MSBuild Projects="packages\d20\dcllmdprint.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dcllmdprint:Make">
+    <MSBuild Projects="packages\d20\dcllmdprint.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrtelcore">
+    <MSBuild Projects="packages\d20\lmdrtelcore.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrtelcore:Clean">
+    <MSBuild Projects="packages\d20\lmdrtelcore.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrtelcore:Make">
+    <MSBuild Projects="packages\d20\lmdrtelcore.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dcllmdelcore">
+    <MSBuild Projects="packages\d20\dcllmdelcore.dproj" Targets="" />
+  </Target>
+  <Target Name="dcllmdelcore:Clean">
+    <MSBuild Projects="packages\d20\dcllmdelcore.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dcllmdelcore:Make">
+    <MSBuild Projects="packages\d20\dcllmdelcore.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrtelpro">
+    <MSBuild Projects="packages\d20\lmdrtelpro.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrtelpro:Clean">
+    <MSBuild Projects="packages\d20\lmdrtelpro.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrtelpro:Make">
+    <MSBuild Projects="packages\d20\lmdrtelpro.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrteldb">
+    <MSBuild Projects="packages\d20\lmdrteldb.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrteldb:Clean">
+    <MSBuild Projects="packages\d20\lmdrteldb.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrteldb:Make">
+    <MSBuild Projects="packages\d20\lmdrteldb.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dcllmdelpro">
+    <MSBuild Projects="packages\d20\dcllmdelpro.dproj" Targets="" />
+  </Target>
+  <Target Name="dcllmdelpro:Clean">
+    <MSBuild Projects="packages\d20\dcllmdelpro.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dcllmdelpro:Make">
+    <MSBuild Projects="packages\d20\dcllmdelpro.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dcllmdeldb">
+    <MSBuild Projects="packages\d20\dcllmdeldb.dproj" Targets="" />
+  </Target>
+  <Target Name="dcllmdeldb:Clean">
+    <MSBuild Projects="packages\d20\dcllmdeldb.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dcllmdeldb:Make">
+    <MSBuild Projects="packages\d20\dcllmdeldb.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrtdocking">
+    <MSBuild Projects="packages\d20\lmdrtdocking.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrtdocking:Clean">
+    <MSBuild Projects="packages\d20\lmdrtdocking.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrtdocking:Make">
+    <MSBuild Projects="packages\d20\lmdrtdocking.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dcllmddocking">
+    <MSBuild Projects="packages\d20\dcllmddocking.dproj" Targets="" />
+  </Target>
+  <Target Name="dcllmddocking:Clean">
+    <MSBuild Projects="packages\d20\dcllmddocking.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dcllmddocking:Make">
+    <MSBuild Projects="packages\d20\dcllmddocking.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrtrtf">
+    <MSBuild Projects="packages\d20\lmdrtrtf.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrtrtf:Clean">
+    <MSBuild Projects="packages\d20\lmdrtrtf.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrtrtf:Make">
+    <MSBuild Projects="packages\d20\lmdrtrtf.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrtrtfdb">
+    <MSBuild Projects="packages\d20\lmdrtrtfdb.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrtrtfdb:Clean">
+    <MSBuild Projects="packages\d20\lmdrtrtfdb.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrtrtfdb:Make">
+    <MSBuild Projects="packages\d20\lmdrtrtfdb.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dcllmdrtf">
+    <MSBuild Projects="packages\d20\dcllmdrtf.dproj" Targets="" />
+  </Target>
+  <Target Name="dcllmdrtf:Clean">
+    <MSBuild Projects="packages\d20\dcllmdrtf.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dcllmdrtf:Make">
+    <MSBuild Projects="packages\d20\dcllmdrtf.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dcllmdrtfdb">
+    <MSBuild Projects="packages\d20\dcllmdrtfdb.dproj" Targets="" />
+  </Target>
+  <Target Name="dcllmdrtfdb:Clean">
+    <MSBuild Projects="packages\d20\dcllmdrtfdb.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dcllmdrtfdb:Make">
+    <MSBuild Projects="packages\d20\dcllmdrtfdb.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrtshell">
+    <MSBuild Projects="packages\d20\lmdrtshell.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrtshell:Clean">
+    <MSBuild Projects="packages\d20\lmdrtshell.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrtshell:Make">
+    <MSBuild Projects="packages\d20\lmdrtshell.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dcllmdshell">
+    <MSBuild Projects="packages\d20\dcllmdshell.dproj" Targets="" />
+  </Target>
+  <Target Name="dcllmdshell:Clean">
+    <MSBuild Projects="packages\d20\dcllmdshell.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dcllmdshell:Make">
+    <MSBuild Projects="packages\d20\dcllmdshell.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrtsys">
+    <MSBuild Projects="packages\d20\lmdrtsys.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrtsys:Clean">
+    <MSBuild Projects="packages\d20\lmdrtsys.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrtsys:Make">
+    <MSBuild Projects="packages\d20\lmdrtsys.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dcllmdsys">
+    <MSBuild Projects="packages\d20\dcllmdsys.dproj" Targets="" />
+  </Target>
+  <Target Name="dcllmdsys:Clean">
+    <MSBuild Projects="packages\d20\dcllmdsys.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dcllmdsys:Make">
+    <MSBuild Projects="packages\d20\dcllmdsys.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrtcore">
+    <MSBuild Projects="packages\d20\lmdrtcore.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrtcore:Clean">
+    <MSBuild Projects="packages\d20\lmdrtcore.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrtcore:Make">
+    <MSBuild Projects="packages\d20\lmdrtcore.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dcllmdcore">
+    <MSBuild Projects="packages\d20\dcllmdcore.dproj" Targets="" />
+  </Target>
+  <Target Name="dcllmdcore:Clean">
+    <MSBuild Projects="packages\d20\dcllmdcore.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dcllmdcore:Make">
+    <MSBuild Projects="packages\d20\dcllmdcore.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrttools">
+    <MSBuild Projects="packages\d20\lmdrttools.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrttools:Clean">
+    <MSBuild Projects="packages\d20\lmdrttools.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrttools:Make">
+    <MSBuild Projects="packages\d20\lmdrttools.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrttoolsdb">
+    <MSBuild Projects="packages\d20\lmdrttoolsdb.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrttoolsdb:Clean">
+    <MSBuild Projects="packages\d20\lmdrttoolsdb.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrttoolsdb:Make">
+    <MSBuild Projects="packages\d20\lmdrttoolsdb.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dcllmdtools">
+    <MSBuild Projects="packages\d20\dcllmdtools.dproj" Targets="" />
+  </Target>
+  <Target Name="dcllmdtools:Clean">
+    <MSBuild Projects="packages\d20\dcllmdtools.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dcllmdtools:Make">
+    <MSBuild Projects="packages\d20\dcllmdtools.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dcllmdtoolsdb">
+    <MSBuild Projects="packages\d20\dcllmdtoolsdb.dproj" Targets="" />
+  </Target>
+  <Target Name="dcllmdtoolsdb:Clean">
+    <MSBuild Projects="packages\d20\dcllmdtoolsdb.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dcllmdtoolsdb:Make">
+    <MSBuild Projects="packages\d20\dcllmdtoolsdb.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrtdialog">
+    <MSBuild Projects="packages\d20\lmdrtdialog.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrtdialog:Clean">
+    <MSBuild Projects="packages\d20\lmdrtdialog.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrtdialog:Make">
+    <MSBuild Projects="packages\d20\lmdrtdialog.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dcllmddlgcmps">
+    <MSBuild Projects="packages\d20\dcllmddlgcmps.dproj" Targets="" />
+  </Target>
+  <Target Name="dcllmddlgcmps:Clean">
+    <MSBuild Projects="packages\d20\dcllmddlgcmps.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dcllmddlgcmps:Make">
+    <MSBuild Projects="packages\d20\dcllmddlgcmps.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dcllmddialog">
+    <MSBuild Projects="packages\d20\dcllmddialog.dproj" Targets="" />
+  </Target>
+  <Target Name="dcllmddialog:Clean">
+    <MSBuild Projects="packages\d20\dcllmddialog.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dcllmddialog:Make">
+    <MSBuild Projects="packages\d20\dcllmddialog.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrtgrid">
+    <MSBuild Projects="packages\d20\lmdrtgrid.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrtgrid:Clean">
+    <MSBuild Projects="packages\d20\lmdrtgrid.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrtgrid:Make">
+    <MSBuild Projects="packages\d20\lmdrtgrid.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dcllmdgrid">
+    <MSBuild Projects="packages\d20\dcllmdgrid.dproj" Targets="" />
+  </Target>
+  <Target Name="dcllmdgrid:Clean">
+    <MSBuild Projects="packages\d20\dcllmdgrid.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dcllmdgrid:Make">
+    <MSBuild Projects="packages\d20\dcllmdgrid.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrtparse">
+    <MSBuild Projects="packages\d20\lmdrtparse.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrtparse:Clean">
+    <MSBuild Projects="packages\d20\lmdrtparse.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrtparse:Make">
+    <MSBuild Projects="packages\d20\lmdrtparse.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrttxt">
+    <MSBuild Projects="packages\d20\lmdrttxt.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrttxt:Clean">
+    <MSBuild Projects="packages\d20\lmdrttxt.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrttxt:Make">
+    <MSBuild Projects="packages\d20\lmdrttxt.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrttxtdb">
+    <MSBuild Projects="packages\d20\lmdrttxtdb.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrttxtdb:Clean">
+    <MSBuild Projects="packages\d20\lmdrttxtdb.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrttxtdb:Make">
+    <MSBuild Projects="packages\d20\lmdrttxtdb.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dcllmdtxt">
+    <MSBuild Projects="packages\d20\dcllmdtxt.dproj" Targets="" />
+  </Target>
+  <Target Name="dcllmdtxt:Clean">
+    <MSBuild Projects="packages\d20\dcllmdtxt.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dcllmdtxt:Make">
+    <MSBuild Projects="packages\d20\dcllmdtxt.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrtweb">
+    <MSBuild Projects="packages\d20\lmdrtweb.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrtweb:Clean">
+    <MSBuild Projects="packages\d20\lmdrtweb.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrtweb:Make">
+    <MSBuild Projects="packages\d20\lmdrtweb.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dcllmdweb">
+    <MSBuild Projects="packages\d20\dcllmdweb.dproj" Targets="" />
+  </Target>
+  <Target Name="dcllmdweb:Clean">
+    <MSBuild Projects="packages\d20\dcllmdweb.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dcllmdweb:Make">
+    <MSBuild Projects="packages\d20\dcllmdweb.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrtsearch">
+    <MSBuild Projects="packages\d20\lmdrtsearch.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrtsearch:Clean">
+    <MSBuild Projects="packages\d20\lmdrtsearch.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrtsearch:Make">
+    <MSBuild Projects="packages\d20\lmdrtsearch.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrtsearchdb">
+    <MSBuild Projects="packages\d20\lmdrtsearchdb.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrtsearchdb:Clean">
+    <MSBuild Projects="packages\d20\lmdrtsearchdb.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrtsearchdb:Make">
+    <MSBuild Projects="packages\d20\lmdrtsearchdb.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dcllmdsearch">
+    <MSBuild Projects="packages\d20\dcllmdsearch.dproj" Targets="" />
+  </Target>
+  <Target Name="dcllmdsearch:Clean">
+    <MSBuild Projects="packages\d20\dcllmdsearch.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dcllmdsearch:Make">
+    <MSBuild Projects="packages\d20\dcllmdsearch.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrtbar">
+    <MSBuild Projects="packages\d20\lmdrtbar.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrtbar:Clean">
+    <MSBuild Projects="packages\d20\lmdrtbar.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrtbar:Make">
+    <MSBuild Projects="packages\d20\lmdrtbar.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dcllmdbar">
+    <MSBuild Projects="packages\d20\dcllmdbar.dproj" Targets="" />
+  </Target>
+  <Target Name="dcllmdbar:Clean">
+    <MSBuild Projects="packages\d20\dcllmdbar.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dcllmdbar:Make">
+    <MSBuild Projects="packages\d20\dcllmdbar.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrtinspector">
+    <MSBuild Projects="packages\d20\lmdrtinspector.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrtinspector:Clean">
+    <MSBuild Projects="packages\d20\lmdrtinspector.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrtinspector:Make">
+    <MSBuild Projects="packages\d20\lmdrtinspector.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dcllmdinspector">
+    <MSBuild Projects="packages\d20\dcllmdinspector.dproj" Targets="" />
+  </Target>
+  <Target Name="dcllmdinspector:Clean">
+    <MSBuild Projects="packages\d20\dcllmdinspector.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dcllmdinspector:Make">
+    <MSBuild Projects="packages\d20\dcllmdinspector.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrtdesign">
+    <MSBuild Projects="packages\d20\lmdrtdesign.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrtdesign:Clean">
+    <MSBuild Projects="packages\d20\lmdrtdesign.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrtdesign:Make">
+    <MSBuild Projects="packages\d20\lmdrtdesign.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dcllmddesign">
+    <MSBuild Projects="packages\d20\dcllmddesign.dproj" Targets="" />
+  </Target>
+  <Target Name="dcllmddesign:Clean">
+    <MSBuild Projects="packages\d20\dcllmddesign.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dcllmddesign:Make">
+    <MSBuild Projects="packages\d20\dcllmddesign.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrtscript">
+    <MSBuild Projects="packages\d20\lmdrtscript.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrtscript:Clean">
+    <MSBuild Projects="packages\d20\lmdrtscript.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrtscript:Make">
+    <MSBuild Projects="packages\d20\lmdrtscript.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrtscriptimp">
+    <MSBuild Projects="packages\d20\lmdrtscriptimp.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrtscriptimp:Clean">
+    <MSBuild Projects="packages\d20\lmdrtscriptimp.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrtscriptimp:Make">
+    <MSBuild Projects="packages\d20\lmdrtscriptimp.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dcllmdscript">
+    <MSBuild Projects="packages\d20\dcllmdscript.dproj" Targets="" />
+  </Target>
+  <Target Name="dcllmdscript:Clean">
+    <MSBuild Projects="packages\d20\dcllmdscript.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dcllmdscript:Make">
+    <MSBuild Projects="packages\d20\dcllmdscript.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrtstorage">
+    <MSBuild Projects="packages\d20\lmdrtstorage.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrtstorage:Clean">
+    <MSBuild Projects="packages\d20\lmdrtstorage.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrtstorage:Make">
+    <MSBuild Projects="packages\d20\lmdrtstorage.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dcllmdstorage">
+    <MSBuild Projects="packages\d20\dcllmdstorage.dproj" Targets="" />
+  </Target>
+  <Target Name="dcllmdstorage:Clean">
+    <MSBuild Projects="packages\d20\dcllmdstorage.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dcllmdstorage:Make">
+    <MSBuild Projects="packages\d20\dcllmdstorage.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrtfx">
+    <MSBuild Projects="packages\d20\lmdrtfx.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrtfx:Clean">
+    <MSBuild Projects="packages\d20\lmdrtfx.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrtfx:Make">
+    <MSBuild Projects="packages\d20\lmdrtfx.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dcllmdfx">
+    <MSBuild Projects="packages\d20\dcllmdfx.dproj" Targets="" />
+  </Target>
+  <Target Name="dcllmdfx:Clean">
+    <MSBuild Projects="packages\d20\dcllmdfx.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dcllmdfx:Make">
+    <MSBuild Projects="packages\d20\dcllmdfx.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrtchart">
+    <MSBuild Projects="packages\d20\lmdrtchart.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrtchart:Clean">
+    <MSBuild Projects="packages\d20\lmdrtchart.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrtchart:Make">
+    <MSBuild Projects="packages\d20\lmdrtchart.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrtchartdb">
+    <MSBuild Projects="packages\d20\lmdrtchartdb.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrtchartdb:Clean">
+    <MSBuild Projects="packages\d20\lmdrtchartdb.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrtchartdb:Make">
+    <MSBuild Projects="packages\d20\lmdrtchartdb.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dcllmdchart">
+    <MSBuild Projects="packages\d20\dcllmdchart.dproj" Targets="" />
+  </Target>
+  <Target Name="dcllmdchart:Clean">
+    <MSBuild Projects="packages\d20\dcllmdchart.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dcllmdchart:Make">
+    <MSBuild Projects="packages\d20\dcllmdchart.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dcllmdchartdb">
+    <MSBuild Projects="packages\d20\dcllmdchartdb.dproj" Targets="" />
+  </Target>
+  <Target Name="dcllmdchartdb:Clean">
+    <MSBuild Projects="packages\d20\dcllmdchartdb.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dcllmdchartdb:Make">
+    <MSBuild Projects="packages\d20\dcllmdchartdb.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrtide">
+    <MSBuild Projects="packages\d20\lmdrtide.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrtide:Clean">
+    <MSBuild Projects="packages\d20\lmdrtide.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrtide:Make">
+    <MSBuild Projects="packages\d20\lmdrtide.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dcllmdide">
+    <MSBuild Projects="packages\d20\dcllmdide.dproj" Targets="" />
+  </Target>
+  <Target Name="dcllmdide:Clean">
+    <MSBuild Projects="packages\d20\dcllmdide.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dcllmdide:Make">
+    <MSBuild Projects="packages\d20\dcllmdide.dproj" Targets="Make" />
+  </Target>
+  <Target Name="lmdrtsyntax">
+    <MSBuild Projects="packages\d20\lmdrtsyntax.dproj" Targets="" />
+  </Target>
+  <Target Name="lmdrtsyntax:Clean">
+    <MSBuild Projects="packages\d20\lmdrtsyntax.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="lmdrtsyntax:Make">
+    <MSBuild Projects="packages\d20\lmdrtsyntax.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dcllmdsyntax">
+    <MSBuild Projects="packages\d20\dcllmdsyntax.dproj" Targets="" />
+  </Target>
+  <Target Name="dcllmdsyntax:Clean">
+    <MSBuild Projects="packages\d20\dcllmdsyntax.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dcllmdsyntax:Make">
+    <MSBuild Projects="packages\d20\dcllmdsyntax.dproj" Targets="Make" />
+  </Target>
+  <Target Name="dcllmdlegacy">
+    <MSBuild Projects="packages\d20\dcllmdlegacy.dproj" Targets="" />
+  </Target>
+  <Target Name="dcllmdlegacy:Clean">
+    <MSBuild Projects="packages\d20\dcllmdlegacy.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="dcllmdlegacy:Make">
+    <MSBuild Projects="packages\d20\dcllmdlegacy.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Build">
+    <CallTarget Targets="lmdrtl;dcllmdrtl;lmdrtrtlx;dcllmdrtlx;lmdrtlog;lmdrtthemes;dcllmdthemes;lmdrtplugin;dcllmdplugin;lmdrtprint;dcllmdprint;lmdrtelcore;dcllmdelcore;lmdrtelpro;lmdrteldb;dcllmdelpro;dcllmdeldb;lmdrtdocking;dcllmddocking;lmdrtrtf;lmdrtrtfdb;dcllmdrtf;dcllmdrtfdb;lmdrtshell;dcllmdshell;lmdrtsys;dcllmdsys;lmdrtcore;dcllmdcore;lmdrttools;lmdrttoolsdb;dcllmdtools;dcllmdtoolsdb;lmdrtdialog;dcllmddlgcmps;dcllmddialog;lmdrtgrid;dcllmdgrid;lmdrtparse;lmdrttxt;lmdrttxtdb;dcllmdtxt;lmdrtweb;dcllmdweb;lmdrtsearch;lmdrtsearchdb;dcllmdsearch;lmdrtbar;dcllmdbar;lmdrtinspector;dcllmdinspector;lmdrtdesign;dcllmddesign;lmdrtscript;lmdrtscriptimp;dcllmdscript;lmdrtstorage;dcllmdstorage;lmdrtfx;dcllmdfx;lmdrtchart;lmdrtchartdb;dcllmdchart;dcllmdchartdb;lmdrtide;dcllmdide;lmdrtsyntax;dcllmdsyntax;dcllmdlegacy" />
+  </Target>
+  <Target Name="Clean">
+    <CallTarget Targets="lmdrtl:Clean;dcllmdrtl:Clean;lmdrtrtlx:Clean;dcllmdrtlx:Clean;lmdrtlog:Clean;lmdrtthemes:Clean;dcllmdthemes:Clean;lmdrtplugin:Clean;dcllmdplugin:Clean;lmdrtprint:Clean;dcllmdprint:Clean;lmdrtelcore:Clean;dcllmdelcore:Clean;lmdrtelpro:Clean;lmdrteldb:Clean;dcllmdelpro:Clean;dcllmdeldb:Clean;lmdrtdocking:Clean;dcllmddocking:Clean;lmdrtrtf:Clean;lmdrtrtfdb:Clean;dcllmdrtf:Clean;dcllmdrtfdb:Clean;lmdrtshell:Clean;dcllmdshell:Clean;lmdrtsys:Clean;dcllmdsys:Clean;lmdrtcore:Clean;dcllmdcore:Clean;lmdrttools:Clean;lmdrttoolsdb:Clean;dcllmdtools:Clean;dcllmdtoolsdb:Clean;lmdrtdialog:Clean;dcllmddlgcmps:Clean;dcllmddialog:Clean;lmdrtgrid:Clean;dcllmdgrid:Clean;lmdrtparse:Clean;lmdrttxt:Clean;lmdrttxtdb:Clean;dcllmdtxt:Clean;lmdrtweb:Clean;dcllmdweb:Clean;lmdrtsearch:Clean;lmdrtsearchdb:Clean;dcllmdsearch:Clean;lmdrtbar:Clean;dcllmdbar:Clean;lmdrtinspector:Clean;dcllmdinspector:Clean;lmdrtdesign:Clean;dcllmddesign:Clean;lmdrtscript:Clean;lmdrtscriptimp:Clean;dcllmdscript:Clean;lmdrtstorage:Clean;dcllmdstorage:Clean;lmdrtfx:Clean;dcllmdfx:Clean;lmdrtchart:Clean;lmdrtchartdb:Clean;dcllmdchart:Clean;dcllmdchartdb:Clean;lmdrtide:Clean;dcllmdide:Clean;lmdrtsyntax:Clean;dcllmdsyntax:Clean;dcllmdlegacy:Clean" />
+  </Target>
+  <Target Name="Make">
+    <CallTarget Targets="lmdrtl:Make;dcllmdrtl:Make;lmdrtrtlx:Make;dcllmdrtlx:Make;lmdrtlog:Make;lmdrtthemes:Make;dcllmdthemes:Make;lmdrtplugin:Make;dcllmdplugin:Make;lmdrtprint:Make;dcllmdprint:Make;lmdrtelcore:Make;dcllmdelcore:Make;lmdrtelpro:Make;lmdrteldb:Make;dcllmdelpro:Make;dcllmdeldb:Make;lmdrtdocking:Make;dcllmddocking:Make;lmdrtrtf:Make;lmdrtrtfdb:Make;dcllmdrtf:Make;dcllmdrtfdb:Make;lmdrtshell:Make;dcllmdshell:Make;lmdrtsys:Make;dcllmdsys:Make;lmdrtcore:Make;dcllmdcore:Make;lmdrttools:Make;lmdrttoolsdb:Make;dcllmdtools:Make;dcllmdtoolsdb:Make;lmdrtdialog:Make;dcllmddlgcmps:Make;dcllmddialog:Make;lmdrtgrid:Make;dcllmdgrid:Make;lmdrtparse:Make;lmdrttxt:Make;lmdrttxtdb:Make;dcllmdtxt:Make;lmdrtweb:Make;dcllmdweb:Make;lmdrtsearch:Make;lmdrtsearchdb:Make;dcllmdsearch:Make;lmdrtbar:Make;dcllmdbar:Make;lmdrtinspector:Make;dcllmdinspector:Make;lmdrtdesign:Make;dcllmddesign:Make;lmdrtscript:Make;lmdrtscriptimp:Make;dcllmdscript:Make;lmdrtstorage:Make;dcllmdstorage:Make;lmdrtfx:Make;dcllmdfx:Make;lmdrtchart:Make;lmdrtchartdb:Make;dcllmdchart:Make;dcllmdchartdb:Make;lmdrtide:Make;dcllmdide:Make;lmdrtsyntax:Make;dcllmdsyntax:Make;dcllmdlegacy:Make" />
+  </Target>
+  <ItemGroup Condition="'$(BuildGroup)'=='BuildAll'">
+<BuildGroupProject Include="packages\d20\lmdrtl.dproj">
+<ProjectGuid>{12B75F85-30DE-4C42-B1B6-9AF4ABE56B35}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdrtl.dproj">
+<ProjectGuid>{FAE09BBC-A7D9-479C-8AC3-6674C8765D0E}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtrtlx.dproj">
+<ProjectGuid>{454D45CC-CCF9-4536-B8A7-EAD390C5754C}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdrtlx.dproj">
+<ProjectGuid>{9DF7D69C-1C81-4ACF-A73E-8DCD7648B7F6}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtlog.dproj">
+<ProjectGuid>{D856A872-515A-4CDB-AA15-6AA62B4241A3}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtthemes.dproj">
+<ProjectGuid>{68FD60D7-35F2-4559-9E92-C3D8A0C7FEF0}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdthemes.dproj">
+<ProjectGuid>{0E2BED65-48AB-4417-88EB-CFFBF1143924}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtplugin.dproj">
+<ProjectGuid>{CC92A87B-ABC4-41C4-A241-D518B4FEE3F9}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdplugin.dproj">
+<ProjectGuid>{F189BA47-E3A1-49FB-B2D4-0057CF3675DB}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtprint.dproj">
+<ProjectGuid>{030B3B19-C6ED-4C24-86DD-8B2AED1EE713}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdprint.dproj">
+<ProjectGuid>{80340475-0CFE-47F9-9148-2D655568F743}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtelcore.dproj">
+<ProjectGuid>{52C3A694-371C-40E5-9C61-70D88242A371}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdelcore.dproj">
+<ProjectGuid>{10277C6A-36B7-47D5-88B0-CDE4F5CFEE94}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtelpro.dproj">
+<ProjectGuid>{58CD6D7C-2943-409C-BD79-0CF1C7CD2FBB}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrteldb.dproj">
+<ProjectGuid>{41753CBA-7872-4D47-BE77-A8ECE394E6BB}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdelpro.dproj">
+<ProjectGuid>{35ABA97C-86D7-4DE5-90E8-1C92E5116A2D}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdeldb.dproj">
+<ProjectGuid>{9206E2F8-A337-4023-ADA8-F59E2F553585}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtdocking.dproj">
+<ProjectGuid>{C35EF7D6-B2C9-43AE-888C-E94CCEED6793}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmddocking.dproj">
+<ProjectGuid>{63280D8B-2F9D-44B6-80E1-86AD4ED0C84C}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtrtf.dproj">
+<ProjectGuid>{9125D9F7-2089-446C-97CE-890D57ADA7FD}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtrtfdb.dproj">
+<ProjectGuid>{B2FADEA4-FB8E-4331-BA44-6D1B6AD2F61A}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdrtf.dproj">
+<ProjectGuid>{6DA3190C-8B26-4847-9D28-1AF31C35731C}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdrtfdb.dproj">
+<ProjectGuid>{1833589E-2D14-451D-B383-A2E03140DDB2}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtshell.dproj">
+<ProjectGuid>{746984A7-3057-4BF5-8ACF-E740F4F278F5}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdshell.dproj">
+<ProjectGuid>{1D87084E-CB22-4F84-9974-781CBFC56F1E}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtsys.dproj">
+<ProjectGuid>{52B99D5D-7911-4E28-A1D0-F67CAA57FE48}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdsys.dproj">
+<ProjectGuid>{DCBA5577-9D79-40C2-AF3E-091377D9556E}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtcore.dproj">
+<ProjectGuid>{1793C65E-2EB0-412F-A144-BE823F98E3B2}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdcore.dproj">
+<ProjectGuid>{E3A1B9A4-75CC-4F17-A3BE-8FCAEA39EAA7}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrttools.dproj">
+<ProjectGuid>{446BEA27-F5BF-40E6-AF4A-6912E3CFFDF3}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrttoolsdb.dproj">
+<ProjectGuid>{993E812B-7BCD-4DB0-A610-7A3CC04BE1BA}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdtools.dproj">
+<ProjectGuid>{BC79B0AF-9A90-42D8-96AE-D6FED245B7A5}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdtoolsdb.dproj">
+<ProjectGuid>{5F8CDA90-18A8-4497-8930-59F8B8C656A9}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtdialog.dproj">
+<ProjectGuid>{C77D990D-BA08-4D24-8390-EA8D4C32B333}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmddlgcmps.dproj">
+<ProjectGuid>{4D5F1B0C-8212-4FD9-B9AC-A498A6F5EB56}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmddialog.dproj">
+<ProjectGuid>{C5DA8799-0C9B-4DA9-AE31-6B2D15206425}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtgrid.dproj">
+<ProjectGuid>{F47379AD-1F0B-4B5F-BA59-5CABCF2B70FC}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdgrid.dproj">
+<ProjectGuid>{D2F73822-5EA8-4EE4-A24A-1407544A832A}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtparse.dproj">
+<ProjectGuid>{73430B67-C24B-43D6-8E93-2E7DE5410065}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrttxt.dproj">
+<ProjectGuid>{C1FD4DF5-D519-47CC-89F7-9F048F322118}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrttxtdb.dproj">
+<ProjectGuid>{07C488D6-1358-4F77-8E92-D337DE98410B}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdtxt.dproj">
+<ProjectGuid>{8539D844-DF14-47D7-B696-B8B1B92A11F2}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtweb.dproj">
+<ProjectGuid>{260B1EA8-3E3C-4FC2-873A-4FCB08FDE718}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdweb.dproj">
+<ProjectGuid>{8EAB1B94-406A-4320-8D6D-7A5C946CD91C}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtsearch.dproj">
+<ProjectGuid>{CBA456C6-3FDB-4BE2-8260-366F8B09DC3A}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtsearchdb.dproj">
+<ProjectGuid>{69BC340C-78A3-45AB-AE09-A03AEA0D2FAA}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdsearch.dproj">
+<ProjectGuid>{DEEE499C-811F-4A80-A7B3-046B4962A0DF}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtbar.dproj">
+<ProjectGuid>{8343F305-0251-46DD-8AE7-01DEBEFA244A}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdbar.dproj">
+<ProjectGuid>{8DB1CA8C-350D-4499-A317-876954C59807}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtinspector.dproj">
+<ProjectGuid>{004ADBB6-9CBA-4930-9361-E9DA80453EDB}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdinspector.dproj">
+<ProjectGuid>{1F9A353F-4BE2-4F56-9C51-C96B64D9D734}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtdesign.dproj">
+<ProjectGuid>{58796A07-A606-4699-91CF-CD2ACB4E1FE3}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmddesign.dproj">
+<ProjectGuid>{1C0E5E32-9A79-462D-A825-232F89D4CB00}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtscript.dproj">
+<ProjectGuid>{F0EDDC78-9D68-42DC-994D-FC2DCC3578B4}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtscriptimp.dproj">
+<ProjectGuid>{4F94B79A-5C26-4E04-90A5-D32BE446175D}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdscript.dproj">
+<ProjectGuid>{B1EDA855-6A12-478E-82BD-EA6FD5423683}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtstorage.dproj">
+<ProjectGuid>{470AA2EC-CF60-41CF-8068-D422A25121DE}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdstorage.dproj">
+<ProjectGuid>{D0ACFE9F-D0FE-43A5-B33B-600957E880D7}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtfx.dproj">
+<ProjectGuid>{88739184-0E0F-42A3-8068-216E6734931D}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdfx.dproj">
+<ProjectGuid>{36A86BC3-3EF9-4B9E-8A67-B25FE0D78CA0}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtchart.dproj">
+<ProjectGuid>{0B29D957-30E3-437E-AFCD-5DA05DA23F61}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtchartdb.dproj">
+<ProjectGuid>{B9B133E1-B51F-4FCA-8427-E4B2E234C8A1}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdchart.dproj">
+<ProjectGuid>{5BA74F49-C1DF-4224-A5D4-0DFB25D898F0}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdchartdb.dproj">
+<ProjectGuid>{45CCA290-6CE3-4CCB-91B7-0BFCBADD299C}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtide.dproj">
+<ProjectGuid>{A5CEBFEA-3E70-4159-AE8D-21011B473474}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdide.dproj">
+<ProjectGuid>{25C3AD1D-3ACA-4F76-BD3D-30A5FBCCFA81}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtsyntax.dproj">
+<ProjectGuid>{FDFCE882-4882-4808-827F-C85FB9CEE2E7}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32;Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdsyntax.dproj">
+<ProjectGuid>{C65EB93B-C67D-4454-B249-F7A3860D56C6}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdlegacy.dproj">
+<ProjectGuid>{C6524C5F-205C-4375-9CEB-E3B26CD0D334}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win32</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+</ItemGroup>
+<ItemGroup Condition="'$(BuildGroup)'=='X64'">
+<BuildGroupProject Include="packages\d20\lmdrtl.dproj">
+<ProjectGuid>{12B75F85-30DE-4C42-B1B6-9AF4ABE56B35}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdrtl.dproj">
+<ProjectGuid>{FAE09BBC-A7D9-479C-8AC3-6674C8765D0E}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms></Platforms>
+<Enabled>False</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtrtlx.dproj">
+<ProjectGuid>{454D45CC-CCF9-4536-B8A7-EAD390C5754C}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdrtlx.dproj">
+<ProjectGuid>{9DF7D69C-1C81-4ACF-A73E-8DCD7648B7F6}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms></Platforms>
+<Enabled>False</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtlog.dproj">
+<ProjectGuid>{D856A872-515A-4CDB-AA15-6AA62B4241A3}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtthemes.dproj">
+<ProjectGuid>{68FD60D7-35F2-4559-9E92-C3D8A0C7FEF0}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdthemes.dproj">
+<ProjectGuid>{0E2BED65-48AB-4417-88EB-CFFBF1143924}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms></Platforms>
+<Enabled>False</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtplugin.dproj">
+<ProjectGuid>{CC92A87B-ABC4-41C4-A241-D518B4FEE3F9}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdplugin.dproj">
+<ProjectGuid>{F189BA47-E3A1-49FB-B2D4-0057CF3675DB}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms></Platforms>
+<Enabled>False</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtprint.dproj">
+<ProjectGuid>{030B3B19-C6ED-4C24-86DD-8B2AED1EE713}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdprint.dproj">
+<ProjectGuid>{80340475-0CFE-47F9-9148-2D655568F743}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms></Platforms>
+<Enabled>False</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtelcore.dproj">
+<ProjectGuid>{52C3A694-371C-40E5-9C61-70D88242A371}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdelcore.dproj">
+<ProjectGuid>{10277C6A-36B7-47D5-88B0-CDE4F5CFEE94}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms></Platforms>
+<Enabled>False</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtelpro.dproj">
+<ProjectGuid>{58CD6D7C-2943-409C-BD79-0CF1C7CD2FBB}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrteldb.dproj">
+<ProjectGuid>{41753CBA-7872-4D47-BE77-A8ECE394E6BB}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdelpro.dproj">
+<ProjectGuid>{35ABA97C-86D7-4DE5-90E8-1C92E5116A2D}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms></Platforms>
+<Enabled>False</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdeldb.dproj">
+<ProjectGuid>{9206E2F8-A337-4023-ADA8-F59E2F553585}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms></Platforms>
+<Enabled>False</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtdocking.dproj">
+<ProjectGuid>{C35EF7D6-B2C9-43AE-888C-E94CCEED6793}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmddocking.dproj">
+<ProjectGuid>{63280D8B-2F9D-44B6-80E1-86AD4ED0C84C}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms></Platforms>
+<Enabled>False</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtrtf.dproj">
+<ProjectGuid>{9125D9F7-2089-446C-97CE-890D57ADA7FD}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtrtfdb.dproj">
+<ProjectGuid>{B2FADEA4-FB8E-4331-BA44-6D1B6AD2F61A}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdrtf.dproj">
+<ProjectGuid>{6DA3190C-8B26-4847-9D28-1AF31C35731C}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms></Platforms>
+<Enabled>False</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdrtfdb.dproj">
+<ProjectGuid>{1833589E-2D14-451D-B383-A2E03140DDB2}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms></Platforms>
+<Enabled>False</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtshell.dproj">
+<ProjectGuid>{746984A7-3057-4BF5-8ACF-E740F4F278F5}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdshell.dproj">
+<ProjectGuid>{1D87084E-CB22-4F84-9974-781CBFC56F1E}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms></Platforms>
+<Enabled>False</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtsys.dproj">
+<ProjectGuid>{52B99D5D-7911-4E28-A1D0-F67CAA57FE48}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdsys.dproj">
+<ProjectGuid>{DCBA5577-9D79-40C2-AF3E-091377D9556E}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms></Platforms>
+<Enabled>False</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtcore.dproj">
+<ProjectGuid>{1793C65E-2EB0-412F-A144-BE823F98E3B2}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdcore.dproj">
+<ProjectGuid>{E3A1B9A4-75CC-4F17-A3BE-8FCAEA39EAA7}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms></Platforms>
+<Enabled>False</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrttools.dproj">
+<ProjectGuid>{446BEA27-F5BF-40E6-AF4A-6912E3CFFDF3}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrttoolsdb.dproj">
+<ProjectGuid>{993E812B-7BCD-4DB0-A610-7A3CC04BE1BA}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdtools.dproj">
+<ProjectGuid>{BC79B0AF-9A90-42D8-96AE-D6FED245B7A5}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms></Platforms>
+<Enabled>False</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdtoolsdb.dproj">
+<ProjectGuid>{5F8CDA90-18A8-4497-8930-59F8B8C656A9}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms></Platforms>
+<Enabled>False</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtdialog.dproj">
+<ProjectGuid>{C77D990D-BA08-4D24-8390-EA8D4C32B333}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmddlgcmps.dproj">
+<ProjectGuid>{4D5F1B0C-8212-4FD9-B9AC-A498A6F5EB56}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms></Platforms>
+<Enabled>False</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmddialog.dproj">
+<ProjectGuid>{C5DA8799-0C9B-4DA9-AE31-6B2D15206425}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms></Platforms>
+<Enabled>False</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtgrid.dproj">
+<ProjectGuid>{F47379AD-1F0B-4B5F-BA59-5CABCF2B70FC}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdgrid.dproj">
+<ProjectGuid>{D2F73822-5EA8-4EE4-A24A-1407544A832A}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms></Platforms>
+<Enabled>False</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtparse.dproj">
+<ProjectGuid>{73430B67-C24B-43D6-8E93-2E7DE5410065}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrttxt.dproj">
+<ProjectGuid>{C1FD4DF5-D519-47CC-89F7-9F048F322118}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrttxtdb.dproj">
+<ProjectGuid>{07C488D6-1358-4F77-8E92-D337DE98410B}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdtxt.dproj">
+<ProjectGuid>{8539D844-DF14-47D7-B696-B8B1B92A11F2}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms></Platforms>
+<Enabled>False</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtweb.dproj">
+<ProjectGuid>{260B1EA8-3E3C-4FC2-873A-4FCB08FDE718}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdweb.dproj">
+<ProjectGuid>{8EAB1B94-406A-4320-8D6D-7A5C946CD91C}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms></Platforms>
+<Enabled>False</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtsearch.dproj">
+<ProjectGuid>{CBA456C6-3FDB-4BE2-8260-366F8B09DC3A}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtsearchdb.dproj">
+<ProjectGuid>{69BC340C-78A3-45AB-AE09-A03AEA0D2FAA}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdsearch.dproj">
+<ProjectGuid>{DEEE499C-811F-4A80-A7B3-046B4962A0DF}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms></Platforms>
+<Enabled>False</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtbar.dproj">
+<ProjectGuid>{8343F305-0251-46DD-8AE7-01DEBEFA244A}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdbar.dproj">
+<ProjectGuid>{8DB1CA8C-350D-4499-A317-876954C59807}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms></Platforms>
+<Enabled>False</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtinspector.dproj">
+<ProjectGuid>{004ADBB6-9CBA-4930-9361-E9DA80453EDB}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdinspector.dproj">
+<ProjectGuid>{1F9A353F-4BE2-4F56-9C51-C96B64D9D734}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms></Platforms>
+<Enabled>False</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtdesign.dproj">
+<ProjectGuid>{58796A07-A606-4699-91CF-CD2ACB4E1FE3}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmddesign.dproj">
+<ProjectGuid>{1C0E5E32-9A79-462D-A825-232F89D4CB00}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms></Platforms>
+<Enabled>False</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtscript.dproj">
+<ProjectGuid>{F0EDDC78-9D68-42DC-994D-FC2DCC3578B4}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtscriptimp.dproj">
+<ProjectGuid>{4F94B79A-5C26-4E04-90A5-D32BE446175D}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdscript.dproj">
+<ProjectGuid>{B1EDA855-6A12-478E-82BD-EA6FD5423683}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms></Platforms>
+<Enabled>False</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtstorage.dproj">
+<ProjectGuid>{470AA2EC-CF60-41CF-8068-D422A25121DE}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdstorage.dproj">
+<ProjectGuid>{D0ACFE9F-D0FE-43A5-B33B-600957E880D7}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms></Platforms>
+<Enabled>False</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtfx.dproj">
+<ProjectGuid>{88739184-0E0F-42A3-8068-216E6734931D}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdfx.dproj">
+<ProjectGuid>{36A86BC3-3EF9-4B9E-8A67-B25FE0D78CA0}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms></Platforms>
+<Enabled>False</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtchart.dproj">
+<ProjectGuid>{0B29D957-30E3-437E-AFCD-5DA05DA23F61}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtchartdb.dproj">
+<ProjectGuid>{B9B133E1-B51F-4FCA-8427-E4B2E234C8A1}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdchart.dproj">
+<ProjectGuid>{5BA74F49-C1DF-4224-A5D4-0DFB25D898F0}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms></Platforms>
+<Enabled>False</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdchartdb.dproj">
+<ProjectGuid>{45CCA290-6CE3-4CCB-91B7-0BFCBADD299C}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms></Platforms>
+<Enabled>False</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtide.dproj">
+<ProjectGuid>{A5CEBFEA-3E70-4159-AE8D-21011B473474}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdide.dproj">
+<ProjectGuid>{25C3AD1D-3ACA-4F76-BD3D-30A5FBCCFA81}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms></Platforms>
+<Enabled>False</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\lmdrtsyntax.dproj">
+<ProjectGuid>{FDFCE882-4882-4808-827F-C85FB9CEE2E7}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms>Win64</Platforms>
+<Enabled>True</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdsyntax.dproj">
+<ProjectGuid>{C65EB93B-C67D-4454-B249-F7A3860D56C6}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms></Platforms>
+<Enabled>False</Enabled>
+</BuildGroupProject>
+<BuildGroupProject Include="packages\d20\dcllmdlegacy.dproj">
+<ProjectGuid>{C6524C5F-205C-4375-9CEB-E3B26CD0D334}</ProjectGuid>
+<Configurations>build</Configurations>
+<Platforms></Platforms>
+<Enabled>False</Enabled>
+</BuildGroupProject>
+</ItemGroup>
+</Project>

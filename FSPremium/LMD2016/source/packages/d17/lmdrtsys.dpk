@@ -1,0 +1,100 @@
+package lmdrtsys;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$LIBSUFFIX '170'}
+{$DESCRIPTION 'LMD-Tools SysPack Runtime Package'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  lmdrtl,
+  rtl,
+  vcl,
+  vclx,
+  lmdrtrtlx;
+
+contains
+  LMDSysWindowsObject in '..\..\LMDSysWindowsObject.pas',
+  LMDSysDisplayObject in '..\..\LMDSysDisplayObject.pas',
+  LMDSysDrive in '..\..\LMDSysDrive.pas',
+  LMDSysDriveObject in '..\..\LMDSysDriveObject.pas',
+  LMDSysKeyboard in '..\..\LMDSysKeyboard.pas',
+  LMDSysKeyboardObject in '..\..\LMDSysKeyboardObject.pas',
+  LMDSysLocaleObject in '..\..\LMDSysLocaleObject.pas',
+  LMDSysLog in '..\..\LMDSysLog.pas',
+  LMDSysMemoryObject in '..\..\LMDSysMemoryObject.pas',
+  LMDSysMouse in '..\..\LMDSysMouse.pas',
+  LMDSysMouseObject in '..\..\LMDSysMouseObject.pas',
+  LMDSysObject in '..\..\LMDSysObject.pas',
+  LMDSysPlusObject in '..\..\LMDSysPlusObject.pas',
+  LMDSysPowerStatusObject in '..\..\LMDSysPowerStatusObject.pas',
+  LMDSysPrinterInfo in '..\..\LMDSysPrinterInfo.pas',
+  LMDSysProcessorObject in '..\..\LMDSysProcessorObject.pas',
+  LMDSysScreenSaverObject in '..\..\LMDSysScreenSaverObject.pas',
+  LMDSysSystemInfo in '..\..\LMDSysSystemInfo.pas',
+  LMDSysTimeZoneObject in '..\..\LMDSysTimeZoneObject.pas',
+  LMDSysWallpaperObject in '..\..\LMDSysWallpaperObject.pas',
+  LMDSysDisplay in '..\..\LMDSysDisplay.pas',
+  LMDSysLocale in '..\..\LMDSysLocale.pas',
+  LMDSysMemory in '..\..\LMDSysMemory.pas',
+  LMDSysPowerStatus in '..\..\LMDSysPowerStatus.pas',
+  LMDSysTimeZone in '..\..\LMDSysTimeZone.pas',
+  LMDSysWindows in '..\..\LMDSysWindows.pas',
+  LMDSysPrinters in '..\..\LMDSysPrinters.pas',
+  LMDSysProcessor in '..\..\LMDSysProcessor.pas',
+  LMDSysUninstallInfo in '..\..\LMDSysUninstallInfo.pas',
+  LMDSysUninstall in '..\..\LMDSysUninstall.pas',
+  LMDSysFontInfo in '..\..\LMDSysFontInfo.pas',
+  LMDSysFonts in '..\..\LMDSysFonts.pas',
+  LMDSysMultimediaObject in '..\..\LMDSysMultimediaObject.pas',
+  LMDSysMultimedia in '..\..\LMDSysMultimedia.pas',
+  LMDSysFileAssocInfo in '..\..\LMDSysFileAssocInfo.pas',
+  LMDSysInternetObject in '..\..\LMDSysInternetObject.pas',
+  LMDSysInternet in '..\..\LMDSysInternet.pas',
+  LMDSysFileAssoc in '..\..\LMDSysFileAssoc.pas',
+  LMDSysLogStrings in '..\..\LMDSysLogStrings.pas',
+  LMDSysModemInfo in '..\..\LMDSysModemInfo.pas',
+  LMDSysModem in '..\..\LMDSysModem.pas',
+  LMDSysNetworkObject in '..\..\LMDSysNetworkObject.pas',
+  LMDSysNetwork in '..\..\LMDSysNetwork.pas',
+  LMDSysConst in '..\..\LMDSysConst.pas',
+  LMDSysBaseComponent in '..\..\LMDSysBaseComponent.pas',
+  LMDSysBase in '..\..\LMDSysBase.pas',
+  LMDSysInfoTreeView in '..\..\LMDSysInfoTreeView.pas',
+  LMDSysPropertyDesc in '..\..\LMDSysPropertyDesc.pas',
+  LMDSysInfoListView in '..\..\LMDSysInfoListView.pas',
+  LMDSysDriveInfo in '..\..\LMDSysDriveInfo.pas',
+  LMDSysEventLog in '..\..\LMDSysEventLog.pas',
+  LMDSysNetworkEnumerator in '..\..\LMDSysNetworkEnumerator.pas',
+  LMDSysTreeView in '..\..\LMDSysTreeView.pas',
+  LMDSysNetTreeView in '..\..\LMDSysNetTreeView.pas',
+  LMDSysEventListView in '..\..\LMDSysEventListView.pas',
+  LMDSysStrsDlg in '..\..\LMDSysStrsDlg.pas' {LMDSysStringsDialog},
+  LMDSysInfoProcs in '..\..\LMDSysInfoProcs.pas',
+  LMDSysEventLogDetailsForm in '..\..\LMDSysEventLogDetailsForm.pas',
+  LMDSysService in '..\..\LMDSysService.pas',
+  LMDSysServiceInfo in '..\..\LMDSysServiceInfo.pas',
+  LMDSysServiceObject in '..\..\LMDSysServiceObject.pas';
+
+end.

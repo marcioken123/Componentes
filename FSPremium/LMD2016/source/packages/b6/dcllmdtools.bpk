@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="dcllmdtools60.bpl"/>
+    <OBJFILES value="dcllmdtools.obj ..\..\LMD_RegMain.obj ..\..\LMD_RegMainEditors.obj ..\..\pLMDCPGetMain.obj ..\..\pLMDCstMain.obj ..\..\pLMDCEMain.obj ..\..\pLMDPEMain.obj ..\..\pLMDRegOS.obj ..\..\pLMD3DEffectEditorDlg.obj ..\..\pLMDBmpRegionEditorDlg.obj ..\..\pLMDButtonBarEditorDlg.obj ..\..\pLMDCaptionEditorDlg.obj ..\..\pLMDDlgBtnEditorDlg.obj ..\..\pLMDFilterPropertyEditorDlg.obj ..\..\pLMDGraphicLabelEditorDlg.obj ..\..\pLMDHideNonVC.obj ..\..\pLMDLEDEditorDlg.obj ..\..\pLMDLightEditorDlg.obj ..\..\pLMDMMButtonFaceEditorDlg.obj ..\..\pLMDOSPropForm.obj ..\..\pLMDPointListEditorDlg.obj ..\..\pLMDSendKeyEditorDlg.obj ..\..\pLMDShadowEditorDlg.obj ..\..\pLMDShapeEditorDlg.obj ..\..\pLMDSimpleBevelEditorDlg.obj ..\..\pLMDStyleManProp.obj ..\..\pLMDTeethEditorDlg.obj ..\..\pLMDVldRegExpEditor.obj ..\..\pLMDDateListEditorDlg.obj ..\..\pLMDControlFaceEditorDlg.obj ..\..\pLMDControlFaceEditorDlgAddState.obj"/>
+    <RESFILES value="dcllmdtools.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) ..\..\pLMD3DEffectEditorDlg.dfm ..\..\pLMDBmpRegionEditorDlg.dfm ..\..\pLMDButtonBarEditorDlg.dfm ..\..\pLMDCaptionEditorDlg.dfm ..\..\pLMDDlgBtnEditorDlg.dfm ..\..\pLMDFilterPropertyEditorDlg.dfm ..\..\pLMDGraphicLabelEditorDlg.dfm ..\..\pLMDHideNonVC.dfm ..\..\pLMDLEDEditorDlg.dfm ..\..\pLMDLightEditorDlg.dfm ..\..\pLMDMMButtonFaceEditorDlg.dfm ..\..\pLMDOSPropForm.dfm ..\..\pLMDPointListEditorDlg.dfm ..\..\pLMDSendKeyEditorDlg.dfm ..\..\pLMDShadowEditorDlg.dfm ..\..\pLMDShapeEditorDlg.dfm ..\..\pLMDSimpleBevelEditorDlg.dfm ..\..\pLMDTeethEditorDlg.dfm ..\..\pLMDVldRegExpEditor.dfm ..\..\pLMDDateListEditorDlg.dfm ..\..\pLMDControlFaceEditorDlg.dfm ..\..\pLMDControlFaceEditorDlgAddState.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value="rtl.lib"/>
+    <PACKAGES value="lmdrtcore.bpi lmdrttools.bpi lmdrtl.bpi dcllmdrtl.bpi rtl.bpi vcl.bpi vclx.bpi designide.bpi dclstd.bpi dcllmdcore.bpi dcllmdprint.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value=""/>
+    <SYSDEFINES value="_RTLDLL;NO_STRICT;USEPACKAGES"/>
+    <MAINSOURCE value="dcllmdtools.cpp"/>
+    <INCLUDEPATH value="$(BCB)\include;$(BCB)\include\vcl;"/>
+    <LIBPATH value="$(BCB)\lib\obj;$(BCB)\lib;"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I$(BCB)\include -I$(BCB)\include\vcl -src_suffix cpp -boa"/>
+    <CFLAG1 value="-O2 -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -a8 -b- -k- -vi -c -tWM"/>
+    <PFLAGS value="-N2..\..\build -N0..\..\build -NH..\..\build -$Y- -$L- -$D- -$A8 -v -JPHNE -M -LUdesignide"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zn"/>
+    <LFLAGS value="-I..\.. -D&quot;LMD 2016 - LMD-Tools Main Components&quot; -aa -Tpp -Gpd -x -Gn -Gl -Gi"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0pkg32.obj $(PACKAGES) Memmgr.Lib sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib "/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="dcllmdtools.cpp" FORMNAME="" UNITNAME="dcllmdtools" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="dcllmdtools.res" FORMNAME="" UNITNAME="dcllmdtools.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtcore.bpi" FORMNAME="" UNITNAME="lmdrtcore" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrttools.bpi" FORMNAME="" UNITNAME="lmdrttools" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtl.bpi" FORMNAME="" UNITNAME="lmdrtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="dcllmdrtl.bpi" FORMNAME="" UNITNAME="dcllmdrtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="rtl.bpi" FORMNAME="" UNITNAME="rtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vcl.bpi" FORMNAME="" UNITNAME="vcl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vclx.bpi" FORMNAME="" UNITNAME="vclx" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="designide.bpi" FORMNAME="" UNITNAME="designide" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="dclstd.bpi" FORMNAME="" UNITNAME="dclstd" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="dcllmdcore.bpi" FORMNAME="" UNITNAME="dcllmdcore" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="dcllmdprint.bpi" FORMNAME="" UNITNAME="dcllmdprint" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMD_RegMain.pas" FORMNAME="" UNITNAME="LMD_RegMain" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMD_RegMainEditors.pas" FORMNAME="" UNITNAME="LMD_RegMainEditors" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDCPGetMain.pas" FORMNAME="" UNITNAME="pLMDCPGetMain" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDCstMain.pas" FORMNAME="" UNITNAME="pLMDCstMain" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDCEMain.pas" FORMNAME="" UNITNAME="pLMDCEMain" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDPEMain.pas" FORMNAME="" UNITNAME="pLMDPEMain" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDRegOS.pas" FORMNAME="" UNITNAME="pLMDRegOS" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMD3DEffectEditorDlg.pas" FORMNAME="LMD3DEffectEditorDlg" UNITNAME="pLMD3DEffectEditorDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDBmpRegionEditorDlg.pas" FORMNAME="LMDfrmRegionFromBMPdlg" UNITNAME="pLMDBmpRegionEditorDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDButtonBarEditorDlg.pas" FORMNAME="frmLMDButtonBarEditorDlg" UNITNAME="pLMDButtonBarEditorDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDCaptionEditorDlg.pas" FORMNAME="LMDCaptionEditorDlg" UNITNAME="pLMDCaptionEditorDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDDlgBtnEditorDlg.pas" FORMNAME="LMDDlgButtonEditorDlg" UNITNAME="pLMDDlgBtnEditorDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDFilterPropertyEditorDlg.pas" FORMNAME="LMDFilterPropsDlg" UNITNAME="pLMDFilterPropertyEditorDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDGraphicLabelEditorDlg.pas" FORMNAME="LMDFormGraphicLabelEditor" UNITNAME="pLMDGraphicLabelEditorDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDHideNonVC.pas" FORMNAME="LMDHideNonVCfrm" UNITNAME="pLMDHideNonVC" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDLEDEditorDlg.pas" FORMNAME="LMDLEDEditorDlg" UNITNAME="pLMDLEDEditorDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDLightEditorDlg.pas" FORMNAME="LMDLightEditorDlg" UNITNAME="pLMDLightEditorDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDMMButtonFaceEditorDlg.pas" FORMNAME="LMDButtonFaceDlg" UNITNAME="pLMDMMButtonFaceEditorDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDOSPropForm.pas" FORMNAME="LMDOSPropForm" UNITNAME="pLMDOSPropForm" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDPointListEditorDlg.pas" FORMNAME="frmTLMDPointListEditor" UNITNAME="pLMDPointListEditorDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDSendKeyEditorDlg.pas" FORMNAME="LMDSendKeysEditorDlg" UNITNAME="pLMDSendKeyEditorDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDShadowEditorDlg.pas" FORMNAME="LMDShadowEditorDlg" UNITNAME="pLMDShadowEditorDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDShapeEditorDlg.pas" FORMNAME="LMDShapeEditorDlg" UNITNAME="pLMDShapeEditorDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDSimpleBevelEditorDlg.pas" FORMNAME="LMDSimpleBevelEditorDlg" UNITNAME="pLMDSimpleBevelEditorDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDStyleManProp.pas" FORMNAME="" UNITNAME="pLMDStyleManProp" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDTeethEditorDlg.pas" FORMNAME="LMDTeethEditorDlg" UNITNAME="pLMDTeethEditorDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDVldRegExpEditor.pas" FORMNAME="LMDRegExprForm" UNITNAME="pLMDVldRegExpEditor" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDDateListEditorDlg.pas" FORMNAME="LMDDateListEditorDlg" UNITNAME="pLMDDateListEditorDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDControlFaceEditorDlg.pas" FORMNAME="frmLMDControlFaceComponentEditor" UNITNAME="pLMDControlFaceEditorDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDControlFaceEditorDlgAddState.pas" FORMNAME="frmStateAddingDlg" UNITNAME="pLMDControlFaceEditorDlgAddState" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+  <IDEOPTIONS>
+[Version Info Keys]
+CompanyName=LMD Innovative
+FileDescription=LMD 2016 - LMD-Tools Main Components
+FileVersion=2016.5
+InternalName=
+LegalCopyright=© LMD Innovative
+LegalTrademarks=
+OriginalFilename=
+ProductName=LMD 2016 - LMD-Tools Main Components
+ProductVersion=2016.5
+Comments=
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[Linker]
+LibPrefix=
+LibSuffix=60
+LibVersion=
+  </IDEOPTIONS>
+</PROJECT>

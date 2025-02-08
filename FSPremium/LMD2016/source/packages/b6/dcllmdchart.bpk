@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="dcllmdchart60.bpl"/>
+    <OBJFILES value="dcllmdchart.obj ..\..\LMD_RegChart.obj ..\..\pLMDMarginsEditor.obj ..\..\pLMDAlignmentEditor.obj ..\..\pLMDChartValuesOptionsSelDlg.obj ..\..\pLMDAreaFillEditor.obj ..\..\pLMDChartCE.obj ..\..\pLMDChartSeriesEditor.obj ..\..\pLMDAddSeriesDlg.obj ..\..\pLMDChartSeriesEditorDlg.obj ..\..\pLMDChartEditorDlg.obj ..\..\pLMDDistanceAndPositionDlg.obj ..\..\pLMDLineEditorDlg.obj"/>
+    <RESFILES value="dcllmdchart.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) ..\..\pLMDChartValuesOptionsSelDlg.dfm ..\..\pLMDAreaFillEditor.dfm ..\..\pLMDAddSeriesDlg.dfm ..\..\pLMDChartSeriesEditorDlg.dfm ..\..\pLMDChartEditorDlg.dfm ..\..\pLMDDistanceAndPositionDlg.dfm ..\..\pLMDLineEditorDlg.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value="rtl.lib"/>
+    <PACKAGES value="lmdrtl.bpi dcllmdrtl.bpi rtl.bpi vcl.bpi vclx.bpi designide.bpi dclstd.bpi lmdrtchart.bpi dcllmdprint.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value=""/>
+    <SYSDEFINES value="_RTLDLL;NO_STRICT;USEPACKAGES"/>
+    <MAINSOURCE value="dcllmdchart.cpp"/>
+    <INCLUDEPATH value="$(BCB)\include;$(BCB)\include\vcl;"/>
+    <LIBPATH value="$(BCB)\lib\obj;$(BCB)\lib;"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I$(BCB)\include -I$(BCB)\include\vcl -src_suffix cpp -boa"/>
+    <CFLAG1 value="-O2 -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -a8 -b- -k- -vi -c -tWM"/>
+    <PFLAGS value="-N2..\..\build -N0..\..\build -NH..\..\build -$Y- -$L- -$D- -$A8 -v -JPHNE -M -LUdesignide"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zn"/>
+    <LFLAGS value="-I..\.. -D&quot;LMD 2016 - LMD-Tools ChartPack Components&quot; -aa -Tpp -Gpd -x -Gn -Gl -Gi"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0pkg32.obj $(PACKAGES) Memmgr.Lib sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib "/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="dcllmdchart.cpp" FORMNAME="" UNITNAME="dcllmdchart" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="dcllmdchart.res" FORMNAME="" UNITNAME="dcllmdchart.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtl.bpi" FORMNAME="" UNITNAME="lmdrtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="dcllmdrtl.bpi" FORMNAME="" UNITNAME="dcllmdrtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="rtl.bpi" FORMNAME="" UNITNAME="rtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vcl.bpi" FORMNAME="" UNITNAME="vcl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vclx.bpi" FORMNAME="" UNITNAME="vclx" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="designide.bpi" FORMNAME="" UNITNAME="designide" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="dclstd.bpi" FORMNAME="" UNITNAME="dclstd" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtchart.bpi" FORMNAME="" UNITNAME="lmdrtchart" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="dcllmdprint.bpi" FORMNAME="" UNITNAME="dcllmdprint" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMD_RegChart.pas" FORMNAME="" UNITNAME="LMD_RegChart" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDMarginsEditor.pas" FORMNAME="" UNITNAME="pLMDMarginsEditor" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDAlignmentEditor.pas" FORMNAME="" UNITNAME="pLMDAlignmentEditor" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDChartValuesOptionsSelDlg.pas" FORMNAME="LMDChartValuesOptionsSelDlg" UNITNAME="pLMDChartValuesOptionsSelDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDAreaFillEditor.pas" FORMNAME="LMDAreaFillEditor" UNITNAME="pLMDAreaFillEditor" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDChartCE.pas" FORMNAME="" UNITNAME="pLMDChartCE" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDChartSeriesEditor.pas" FORMNAME="" UNITNAME="pLMDChartSeriesEditor" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDAddSeriesDlg.pas" FORMNAME="LMDAddSeriesDlg" UNITNAME="pLMDAddSeriesDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDChartSeriesEditorDlg.pas" FORMNAME="LMDChartSeriesEditorDlg" UNITNAME="pLMDChartSeriesEditorDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDChartEditorDlg.pas" FORMNAME="LMDChartEditor" UNITNAME="pLMDChartEditorDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDDistanceAndPositionDlg.pas" FORMNAME="LMDDistanceAndSizeEditor" UNITNAME="pLMDDistanceAndPositionDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDLineEditorDlg.pas" FORMNAME="LMDLineEditor" UNITNAME="pLMDLineEditorDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+  <IDEOPTIONS>
+[Version Info Keys]
+CompanyName=LMD Innovative
+FileDescription=LMD 2016 - LMD-Tools ChartPack Components
+FileVersion=2016.5
+InternalName=
+LegalCopyright=© LMD Innovative
+LegalTrademarks=
+OriginalFilename=
+ProductName=LMD 2016 - LMD-Tools ChartPack Components
+ProductVersion=2016.5
+Comments=
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[Linker]
+LibPrefix=
+LibSuffix=60
+LibVersion=
+  </IDEOPTIONS>
+</PROJECT>

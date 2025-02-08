@@ -1,0 +1,32 @@
+T+: TCustomActionList
+        P+: Images
+T+: TActionList
+        P+: Images
+        P+: State
+        P+: OnChange
+        P+: OnExecute
+        P+: OnStateChange
+        P+: OnUpdate
+T+: TActionLink
+T+: TActionLinkClass
+T+: TShortCutList
+T+: TCustomAction
+        P+: Images
+        P+: ActionList
+T+: TAction
+        P+: AutoCheck
+        P+: Caption
+        P+: Checked
+        P+: Enabled
+        P+: GroupIndex
+        P+: HelpContext
+        P+: HelpKeyword
+        P+: HelpType
+        P+: Hint
+        P+: ImageIndex
+        P+: SecondaryShortCuts
+        P+: ShortCut
+        P+: Visible
+        P+: OnExecute
+        P+: OnHint
+        P+: OnUpdate

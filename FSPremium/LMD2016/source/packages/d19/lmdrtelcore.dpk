@@ -1,0 +1,184 @@
+package lmdrtelcore;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$LIBSUFFIX '190'}
+{$DESCRIPTION 'LMD ElPack Core Components'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  lmdrtl,
+  rtl,
+  vcl,
+  vclx,
+  lmdrtrtlx,
+  lmdrtlog;
+
+contains
+  ElACtrls in '..\..\ElACtrls.pas',
+  ElAdvPanel in '..\..\ElAdvPanel.pas',
+  ElAppBar in '..\..\ElAppBar.pas',
+  ElAppBarForm in '..\..\ElAppBarForm.pas',
+  ElBaseComp in '..\..\ElBaseComp.pas',
+  ElBiProgr in '..\..\ElBiProgr.pas',
+  ElBtnCtl in '..\..\ElBtnCtl.pas',
+  ElBtnEdit in '..\..\ElBtnEdit.pas',
+  ElCalc in '..\..\ElCalc.pas',
+  ElCalculatorEdit in '..\..\ElCalculatorEdit.pas',
+  ElCalendar in '..\..\ElCalendar.pas',
+  ElCalendarDefs in '..\..\ElCalendarDefs.pas',
+  ElCalendDlg in '..\..\ElCalendDlg.pas' {ElCalendarForm},
+  ElCaption in '..\..\ElCaption.pas',
+  ElCGControl in '..\..\ElCGControl.pas',
+  ElCheckCtl in '..\..\ElCheckCtl.pas',
+  ElCheckItemGrp in '..\..\ElCheckItemGrp.pas',
+  ElCLabel in '..\..\ElCLabel.pas',
+  ElClipMon in '..\..\ElClipMon.pas',
+  ElClock in '..\..\ElClock.pas',
+  ElClrCmb in '..\..\ElClrCmb.pas',
+  ElCombos in '..\..\ElCombos.pas',
+  ElComponent in '..\..\ElComponent.pas',
+  ElCRC32 in '..\..\ElCRC32.pas',
+  ElCurrEdit in '..\..\ElCurrEdit.pas',
+  ElDailyTip in '..\..\ElDailyTip.pas' {ElDailyTipForm},
+  ElDragDrop in '..\..\ElDragDrop.pas',
+  ElDriveCombo in '..\..\ElDriveCombo.pas',
+  ElDTPick in '..\..\ElDTPick.pas',
+  ElEditCmds in '..\..\ElEditCmds.pas',
+  ElEdits in '..\..\ElEdits.pas',
+  ElExpBar in '..\..\ElExpBar.pas',
+  ElExpressionEval in '..\..\ElExpressionEval.pas',
+  ElFlatCtl in '..\..\ElFlatCtl.pas',
+  ElFolderDlg in '..\..\ElFolderDlg.pas',
+  ElFontCombo in '..\..\ElFontCombo.pas',
+  ElFontListBox in '..\..\ElFontListBox.pas',
+  ElFrmPers in '..\..\ElFrmPers.pas',
+  ElGauge in '..\..\ElGauge.pas',
+  ElGraphs in '..\..\ElGraphs.pas',
+  ElGroupBox in '..\..\ElGroupBox.pas',
+  ElHashList in '..\..\ElHashList.pas',
+  ElHeader in '..\..\ElHeader.pas',
+  ElHintWnd in '..\..\ElHintWnd.pas',
+  ElHook in '..\..\ElHook.pas',
+  ElHotKey in '..\..\ElHotKey.pas',
+  ElHstgrm in '..\..\ElHstgrm.pas',
+  ElHTMLContainer in '..\..\ElHTMLContainer.pas',
+  ElHTMLHint in '..\..\ElHTMLHint.pas',
+  ElHTMLLbl in '..\..\ElHTMLLbl.pas',
+  ElHTMLPanel in '..\..\ElHTMLPanel.pas',
+  ElHTMLView in '..\..\ElHTMLView.pas',
+  ElImgCombo in '..\..\ElImgCombo.pas',
+  ElImgFrm in '..\..\ElImgFrm.pas',
+  ElImgLst in '..\..\ElImgLst.pas',
+  ElIni in '..\..\ElIni.pas',
+  ElInputDlg in '..\..\ElInputDlg.pas',
+  ElInputProcessor in '..\..\ElInputProcessor.pas',
+  ElIPEdit in '..\..\ElIPEdit.pas',
+  ElLabel in '..\..\ElLabel.pas',
+  ElListBox in '..\..\ElListBox.pas',
+  ElMaskEdit in '..\..\ElMaskEdit.pas',
+  ElMathParser in '..\..\ElMathParser.pas',
+  ElMD5 in '..\..\ElMD5.pas',
+  ElMemoCombo in '..\..\ElMemoCombo.pas',
+  ElMenuBar in '..\..\ElMenuBar.pas',
+  ElMenus in '..\..\ElMenus.pas',
+  ElMouseHint in '..\..\ElMouseHint.pas',
+  ElMRU in '..\..\ElMRU.pas',
+  ElMTree in '..\..\ElMTree.pas',
+  ElNameEdits in '..\..\ElNameEdits.pas',
+  ElObjList in '..\..\ElObjList.pas',
+  ElOneInst in '..\..\ElOneInst.pas',
+  ElOpts in '..\..\ElOpts.pas',
+  ElPanel in '..\..\ElPanel.pas',
+  ElPgCtl in '..\..\ElPgCtl.pas',
+  ElPopBtn in '..\..\ElPopBtn.pas',
+  ElPowerMan in '..\..\ElPowerMan.pas',
+  ElProcessUtils in '..\..\ElProcessUtils.pas',
+  ElPromptDlg in '..\..\ElPromptDlg.pas',
+  ElPropTools in '..\..\ElPropTools.pas',
+  ElRegExpr in '..\..\ElRegExpr.pas',
+  ElRegUtils in '..\..\ElRegUtils.pas',
+  ElSBCtrl in '..\..\ElSBCtrl.pas',
+  ElSBHook in '..\..\ElSBHook.pas',
+  ElScrollBar in '..\..\ElScrollBar.pas',
+  ElScrollBox in '..\..\ElScrollBox.pas',
+  ElShellUtils in '..\..\ElShellUtils.pas',
+  ElShutdownWatcher in '..\..\ElShutdownWatcher.pas',
+  ElSideBar in '..\..\ElSideBar.pas',
+  ElSndMap in '..\..\ElSndMap.pas',
+  ElSpin in '..\..\ElSpin.pas',
+  ElSpinBtn in '..\..\ElSpinBtn.pas',
+  ElSplit in '..\..\ElSplit.pas',
+  ElStack in '..\..\ElStack.pas',
+  ElStatBar in '..\..\ElStatBar.pas',
+  ElStrArray in '..\..\ElStrArray.pas',
+  ElStrPool in '..\..\ElStrPool.pas',
+  ElStrToken in '..\..\ElStrToken.pas',
+  ElStyleMan in '..\..\ElStyleMan.pas',
+  ElSysHotKey in '..\..\ElSysHotKey.pas',
+  ElTimers in '..\..\ElTimers.pas',
+  ElToolBar in '..\..\ElToolBar.pas',
+  ElTools in '..\..\ElTools.pas',
+  ElTopmost in '..\..\ElTopmost.pas',
+  ElTrackBar in '..\..\ElTrackBar.pas',
+  ElTray in '..\..\ElTray.pas',
+  ElTrayInfo in '..\..\ElTrayInfo.pas',
+  ElXTree in '..\..\ElXTree.pas',
+  ElXTreeCell in '..\..\ElXTreeCell.pas',
+  ElXTreeCellCombo in '..\..\ElXTreeCellCombo.pas',
+  ElTree in '..\..\ElTree.pas',
+  ElTreeInplaceEditors in '..\..\ElTreeInplaceEditors.pas',
+  ElTreeAdvEdit in '..\..\ElTreeAdvEdit.pas',
+  ElTreeBtnEdit in '..\..\ElTreeBtnEdit.pas',
+  ElTreeCheckBoxEdit in '..\..\ElTreeCheckBoxEdit.pas',
+  ElTreeColorCombo in '..\..\ElTreeColorCombo.pas',
+  ElTreeCombo in '..\..\ElTreeCombo.pas',
+  ElTreeComboBox in '..\..\ElTreeComboBox.pas',
+  ElTreeCurrEdit in '..\..\ElTreeCurrEdit.pas',
+  ElTreeDTPickEdit in '..\..\ElTreeDTPickEdit.pas',
+  ElTreeGrids in '..\..\ElTreeGrids.pas',
+  ElTreeMaskEdit in '..\..\ElTreeMaskEdit.pas',
+  ElTreeMemoComboEdit in '..\..\ElTreeMemoComboEdit.pas',
+  ElTreeMemoEdit in '..\..\ElTreeMemoEdit.pas',
+  ElTreeModalEdit in '..\..\ElTreeModalEdit.pas',
+  ElTreeSpinEdit in '..\..\ElTreeSpinEdit.pas',
+  ElTreeStdEditors in '..\..\ElTreeStdEditors.pas',
+  ElTreeTreeComboEdit in '..\..\ElTreeTreeComboEdit.pas',
+  ElURLLabel in '..\..\ElURLLabel.pas',
+  ElVCLUtils in '..\..\ElVCLUtils.pas',
+  ElVerInfo in '..\..\ElVerInfo.pas',
+  ElXHeader in '..\..\ElXHeader.pas',
+  ElXPThemedControl in '..\..\ElXPThemedControl.pas',
+  ElFormContainer in '..\..\ElFormContainer.pas',
+  ElFormDisplay in '..\..\ElFormDisplay.pas',
+  ElFormPgCtl in '..\..\ElFormPgCtl.pas',
+  frmHdrStp in '..\..\frmHdrStp.pas',
+  frmTbrStp in '..\..\frmTbrStp.pas',
+  HTMLLbx in '..\..\HTMLLbx.pas',
+  LMDElConst in '..\..\LMDElConst.pas',
+  LMDGlyphs in '..\..\LMDGlyphs.pas',
+  LMDUniscribeStrings in '..\..\LMDUniscribeStrings.pas',
+  ElShadowWindow in '..\..\ElShadowWindow.pas';
+
+end.

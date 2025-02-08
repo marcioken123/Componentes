@@ -1,0 +1,56 @@
+package dcllmdrtl;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$LIBSUFFIX '70'}
+{$DESCRIPTION 'LMD 2016 - Common Designtime Enhancements'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcl,
+  vclx,
+  designide,
+  dclstd,
+  lmdrtl;
+
+contains
+  LMD_RegRtl in '..\..\LMD_RegRtl.pas',
+  pLMDCPGetBase in '..\..\pLMDCPGetBase.pas',
+  pLMDColorBox in '..\..\pLMDColorBox.pas',
+  pLMDComAboutDlg in '..\..\pLMDComAboutDlg.pas' {LMDAboutDlg},
+  pLMDComBrushDlg in '..\..\pLMDComBrushDlg.pas' {LMDComBrushEditorDlg},
+  pLMDCommon in '..\..\pLMDCommon.pas',
+  pLMDCst in '..\..\pLMDCst.pas',
+  pLMDDateTimeEditorDlg in '..\..\pLMDDateTimeEditorDlg.pas' {LMDFrmDateTimeEditor},
+  pLMDGlobalEditors in '..\..\pLMDGlobalEditors.pas',
+  pLMDImageBox in '..\..\pLMDImageBox.pas',
+  pLMDOIEnh in '..\..\pLMDOIEnh.pas',
+  pLMDURLLabel in '..\..\pLMDURLLabel.pas',
+  pLMDConfigExp in '..\..\pLMDConfigExp.pas',
+  pLMDConfigDlg in '..\..\pLMDConfigDlg.pas' {LMDConfigDlg},
+  pLMDHotkeyEditorDlg in '..\..\pLMDHotkeyEditorDlg.pas' {LMDfrmHotkeyEditor},
+  pLMDWideStringsEditDlg in '..\..\pLMDWideStringsEditDlg.pas' {FrmLMDWideStringsEditor};
+
+end.

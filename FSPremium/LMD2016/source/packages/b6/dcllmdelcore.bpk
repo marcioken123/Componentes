@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="dcllmdelcore60.bpl"/>
+    <OBJFILES value="dcllmdelcore.obj ..\..\LMD_RegElCore.obj ..\..\pLMDElCE.obj ..\..\pLMDElPE.obj ..\..\pLMDElFormPers.obj ..\..\pLMDElImgListEdit.obj ..\..\pLMDElImgListEditDlg.obj ..\..\pLMDElItemCol.obj ..\..\pLMDElItemsProp.obj ..\..\pLMDElMenuDsgn.obj ..\..\pLMDElMlCapProp.obj ..\..\pLMDElSectEdit.obj ..\..\pLMDElSectProp.obj ..\..\pLMDElSoundMap.obj ..\..\pLMDElStrPoolEdit.obj ..\..\pLMDElStyleImageSelect.obj ..\..\pLMDElStyleManProp.obj ..\..\pLMDElHTMLEditorDlg.obj ..\..\pLMDElXItemCol.obj ..\..\pLMDElXItemsProp.obj ..\..\pLMDElXSectEdit.obj ..\..\pLMDElXSectProp.obj"/>
+    <RESFILES value="dcllmdelcore.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) ..\..\pLMDElFormPers.dfm ..\..\pLMDElItemCol.dfm ..\..\pLMDElItemsProp.dfm ..\..\pLMDElMlCapProp.dfm ..\..\pLMDElSectEdit.dfm ..\..\pLMDElSectProp.dfm ..\..\pLMDElSoundMap.dfm ..\..\pLMDElHTMLEditorDlg.dfm ..\..\pLMDElXItemCol.dfm ..\..\pLMDElXItemsProp.dfm ..\..\pLMDElXSectEdit.dfm ..\..\pLMDElXSectProp.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value="rtl.lib"/>
+    <PACKAGES value="lmdrtl.bpi dcllmdrtl.bpi rtl.bpi vcl.bpi vclx.bpi designide.bpi dclstd.bpi dcllmdrtlx.bpi lmdrtelcore.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value=""/>
+    <SYSDEFINES value="_RTLDLL;NO_STRICT;USEPACKAGES"/>
+    <MAINSOURCE value="dcllmdelcore.cpp"/>
+    <INCLUDEPATH value="$(BCB)\include;$(BCB)\include\vcl;"/>
+    <LIBPATH value="$(BCB)\lib\obj;$(BCB)\lib;"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I$(BCB)\include -I$(BCB)\include\vcl -src_suffix cpp -boa"/>
+    <CFLAG1 value="-O2 -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -a8 -b- -k- -vi -c -tWM"/>
+    <PFLAGS value="-N2..\..\build -N0..\..\build -NH..\..\build -$Y- -$L- -$D- -$A8 -v -JPHNE -M -LUdesignide"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zn"/>
+    <LFLAGS value="-I..\.. -D&quot;LMD 2016 - ElPack Core Components&quot; -aa -Tpp -Gpd -x -Gn -Gl -Gi"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0pkg32.obj $(PACKAGES) Memmgr.Lib sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib "/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="dcllmdelcore.cpp" FORMNAME="" UNITNAME="dcllmdelcore" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="dcllmdelcore.res" FORMNAME="" UNITNAME="dcllmdelcore.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtl.bpi" FORMNAME="" UNITNAME="lmdrtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="dcllmdrtl.bpi" FORMNAME="" UNITNAME="dcllmdrtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="rtl.bpi" FORMNAME="" UNITNAME="rtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vcl.bpi" FORMNAME="" UNITNAME="vcl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vclx.bpi" FORMNAME="" UNITNAME="vclx" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="designide.bpi" FORMNAME="" UNITNAME="designide" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="dclstd.bpi" FORMNAME="" UNITNAME="dclstd" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="dcllmdrtlx.bpi" FORMNAME="" UNITNAME="dcllmdrtlx" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtelcore.bpi" FORMNAME="" UNITNAME="lmdrtelcore" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMD_RegElCore.pas" FORMNAME="" UNITNAME="LMD_RegElCore" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDElCE.pas" FORMNAME="" UNITNAME="pLMDElCE" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDElPE.pas" FORMNAME="" UNITNAME="pLMDElPE" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDElFormPers.pas" FORMNAME="PersPropsForm" UNITNAME="pLMDElFormPers" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDElImgListEdit.pas" FORMNAME="" UNITNAME="pLMDElImgListEdit" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDElImgListEditDlg.pas" FORMNAME="" UNITNAME="pLMDElImgListEditDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDElItemCol.pas" FORMNAME="ItemColDlg" UNITNAME="pLMDElItemCol" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDElItemsProp.pas" FORMNAME="ItemsPropDlg" UNITNAME="pLMDElItemsProp" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDElMenuDsgn.pas" FORMNAME="" UNITNAME="pLMDElMenuDsgn" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDElMlCapProp.pas" FORMNAME="MlCapEditDialog" UNITNAME="pLMDElMlCapProp" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDElSectEdit.pas" FORMNAME="SectEdit" UNITNAME="pLMDElSectEdit" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDElSectProp.pas" FORMNAME="ElSectionsPropDlg" UNITNAME="pLMDElSectProp" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDElSoundMap.pas" FORMNAME="SoundMapForm" UNITNAME="pLMDElSoundMap" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDElStrPoolEdit.pas" FORMNAME="" UNITNAME="pLMDElStrPoolEdit" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDElStyleImageSelect.pas" FORMNAME="" UNITNAME="pLMDElStyleImageSelect" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDElStyleManProp.pas" FORMNAME="" UNITNAME="pLMDElStyleManProp" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDElHTMLEditorDlg.pas" FORMNAME="frmLMDElHTMLEditor" UNITNAME="pLMDElHTMLEditorDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDElXItemCol.pas" FORMNAME="XItemColDlg" UNITNAME="pLMDElXItemCol" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDElXItemsProp.pas" FORMNAME="XItemsPropDlg" UNITNAME="pLMDElXItemsProp" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDElXSectEdit.pas" FORMNAME="XSectEdit" UNITNAME="pLMDElXSectEdit" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDElXSectProp.pas" FORMNAME="ElXSectionsPropDlg" UNITNAME="pLMDElXSectProp" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+  <IDEOPTIONS>
+[Version Info Keys]
+CompanyName=LMD Innovative
+FileDescription=LMD 2016 - ElPack Core Components
+FileVersion=2016.5
+InternalName=
+LegalCopyright=© LMD Innovative
+LegalTrademarks=
+OriginalFilename=
+ProductName=LMD 2016 - ElPack Core Components
+ProductVersion=2016.5
+Comments=
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[Linker]
+LibPrefix=
+LibSuffix=60
+LibVersion=
+  </IDEOPTIONS>
+</PROJECT>

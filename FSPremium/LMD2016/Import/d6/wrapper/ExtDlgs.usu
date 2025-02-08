@@ -1,0 +1,5 @@
+T+: TOpenPictureDialog
+        P+: ImageCtrl
+        P+: PictureLabel
+        P+: Filter
+T+: TSavePictureDialog

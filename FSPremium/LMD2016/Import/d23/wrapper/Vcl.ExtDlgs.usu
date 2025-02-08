@@ -1,0 +1,9 @@
+T+: TOpenPictureDialog
+        P+: ImageCtrl
+        P+: PictureLabel
+        P+: Filter
+T+: TSavePictureDialog
+T+: TOpenTextFileDialog
+        P+: Encodings
+        P+: EncodingIndex
+T+: TSaveTextFileDialog

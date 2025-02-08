@@ -1,0 +1,54 @@
+package lmdrtelpro;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$LIBSUFFIX '70'}
+{$DESCRIPTION 'LMD ElPack - Professional Components'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  lmdrtl,
+  rtl,
+  vcl,
+  vclx,
+  lmdrtrtlx,
+  lmdrtprint,
+  lmdrtelcore;
+
+contains
+  ElCapPropDlg in '..\..\ElCapPropDlg.pas',
+  ElIniInspector in '..\..\ElIniInspector.pas',
+  ElInspector in '..\..\ElInspector.pas',
+  ElInspectorEditors in '..\..\ElInspectorEditors.pas',
+  ElPictPropDlg in '..\..\ElPictPropDlg.pas',
+  ElPrinter in '..\..\ElPrinter.pas',
+  ElPrinterPreview in '..\..\ElPrinterPreview.pas',
+  LMDElProConst in '..\..\LMDElProConst.pas',
+  ElRTTIInspector in '..\..\ElRTTIInspector.pas',
+  ElShellCtl in '..\..\ElShellCtl.pas',
+  ElTreePrinter in '..\..\ElTreePrinter.pas',
+  ElXTreePrinter in '..\..\ElXTreePrinter.pas',
+  ElTreeMLGen in '..\..\ElTreeMLGen.pas';
+
+end.

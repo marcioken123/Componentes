@@ -1,0 +1,65 @@
+T+: TContainedAction
+        P+: ActionList
+        P+: Index
+        P+: Category
+T+: TContainedActionClass
+T+: TActionListEnumerator
+        P+: Current
+T+: TActionEvent
+T+: TActionListState
+T+: TCustomActionList
+        P+: OnChange
+        P+: OnExecute
+        P+: OnUpdate
+        P+: Actions
+        P+: ActionCount
+        P+: Images
+        P+: State
+        P+: OnStateChange
+T+: TActionList
+        P+: Images
+        P+: State
+        P+: OnChange
+        P+: OnExecute
+        P+: OnStateChange
+        P+: OnUpdate
+T+: TShortCutList
+        P+: ShortCuts
+T+: THintEvent
+T+: TCustomAction
+        P+: SavedEnabledState
+        P+: AutoCheck
+        P+: Caption
+        P+: Checked
+        P+: DisableIfNoHandler
+        P+: Enabled
+        P+: GroupIndex
+        P+: HelpContext
+        P+: HelpKeyword
+        P+: HelpType
+        P+: Hint
+        P+: ImageIndex
+        P+: ShortCut
+        P+: SecondaryShortCuts
+        P+: Visible
+        P+: OnHint
+T+: TAction
+        P+: AutoCheck
+        P+: Caption
+        P+: Checked
+        P+: Enabled
+        P+: GroupIndex
+        P+: HelpContext
+        P+: HelpKeyword
+        P+: HelpType
+        P+: Hint
+        P+: ImageIndex
+        P+: ShortCut
+        P+: SecondaryShortCuts
+        P+: Visible
+        P+: OnExecute
+        P+: OnHint
+        P+: OnUpdate
+T+: TActionLink
+T+: TActionLinkClass
+TE: TEnumActionProc

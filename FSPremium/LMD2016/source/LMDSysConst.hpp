@@ -1,0 +1,2266 @@
+﻿// CodeGear C++Builder
+// Copyright (c) 1995, 2016 by Embarcadero Technologies, Inc.
+// All rights reserved
+
+// (DO NOT EDIT: machine generated header) 'LMDSysConst.pas' rev: 31.00 (Windows)
+
+#ifndef LmdsysconstHPP
+#define LmdsysconstHPP
+
+#pragma delphiheader begin
+#pragma option push
+#pragma option -w-      // All warnings off
+#pragma option -Vx      // Zero-length empty class member 
+#pragma pack(push,8)
+#include <System.hpp>
+#include <SysInit.hpp>
+
+//-- user supplied -----------------------------------------------------------
+
+namespace Lmdsysconst
+{
+//-- forward type declarations -----------------------------------------------
+//-- type declarations -------------------------------------------------------
+//-- var, const, procedure ---------------------------------------------------
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysNOTAVAILABLE;
+#define Lmdsysconst_sLMDSysNOTAVAILABLE System::LoadResourceString(&Lmdsysconst::_sLMDSysNOTAVAILABLE)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysNone;
+#define Lmdsysconst_sLMDSysNone System::LoadResourceString(&Lmdsysconst::_sLMDSysNone)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFirst;
+#define Lmdsysconst_sLMDSysFirst System::LoadResourceString(&Lmdsysconst::_sLMDSysFirst)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysSecond;
+#define Lmdsysconst_sLMDSysSecond System::LoadResourceString(&Lmdsysconst::_sLMDSysSecond)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysThird;
+#define Lmdsysconst_sLMDSysThird System::LoadResourceString(&Lmdsysconst::_sLMDSysThird)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFourth;
+#define Lmdsysconst_sLMDSysFourth System::LoadResourceString(&Lmdsysconst::_sLMDSysFourth)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLast;
+#define Lmdsysconst_sLMDSysLast System::LoadResourceString(&Lmdsysconst::_sLMDSysLast)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysUnknown;
+#define Lmdsysconst_sLMDSysUnknown System::LoadResourceString(&Lmdsysconst::_sLMDSysUnknown)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysof;
+#define Lmdsysconst_sLMDSysof System::LoadResourceString(&Lmdsysconst::_sLMDSysof)
+extern DELPHI_PACKAGE System::ResourceString _cLMDSysInfoTitle;
+#define Lmdsysconst_cLMDSysInfoTitle System::LoadResourceString(&Lmdsysconst::_cLMDSysInfoTitle)
+extern DELPHI_PACKAGE System::ResourceString _cLMDSysInfoDesc;
+#define Lmdsysconst_cLMDSysInfoDesc System::LoadResourceString(&Lmdsysconst::_cLMDSysInfoDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysNOROOTDIR;
+#define Lmdsysconst_sLMDSysNOROOTDIR System::LoadResourceString(&Lmdsysconst::_sLMDSysNOROOTDIR)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysREMOVABLE;
+#define Lmdsysconst_sLMDSysREMOVABLE System::LoadResourceString(&Lmdsysconst::_sLMDSysREMOVABLE)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFIXEDDRIVE;
+#define Lmdsysconst_sLMDSysFIXEDDRIVE System::LoadResourceString(&Lmdsysconst::_sLMDSysFIXEDDRIVE)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysREMOTE;
+#define Lmdsysconst_sLMDSysREMOTE System::LoadResourceString(&Lmdsysconst::_sLMDSysREMOTE)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysCDROM;
+#define Lmdsysconst_sLMDSysCDROM System::LoadResourceString(&Lmdsysconst::_sLMDSysCDROM)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysRAMDISK;
+#define Lmdsysconst_sLMDSysRAMDISK System::LoadResourceString(&Lmdsysconst::_sLMDSysRAMDISK)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysElapsedTime;
+#define Lmdsysconst_sLMDSysElapsedTime System::LoadResourceString(&Lmdsysconst::_sLMDSysElapsedTime)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysNetwork;
+#define Lmdsysconst_sLMDSysNetwork System::LoadResourceString(&Lmdsysconst::_sLMDSysNetwork)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMessageDLLNOTFOUNT;
+#define Lmdsysconst_sLMDSysMessageDLLNOTFOUNT System::LoadResourceString(&Lmdsysconst::_sLMDSysMessageDLLNOTFOUNT)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysEventDlgError;
+#define Lmdsysconst_sLMDSysEventDlgError System::LoadResourceString(&Lmdsysconst::_sLMDSysEventDlgError)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysEventNotOpen;
+#define Lmdsysconst_sLMDSysEventNotOpen System::LoadResourceString(&Lmdsysconst::_sLMDSysEventNotOpen)
+extern DELPHI_PACKAGE System::ResourceString _sLMDsysEventTypeError;
+#define Lmdsysconst_sLMDsysEventTypeError System::LoadResourceString(&Lmdsysconst::_sLMDsysEventTypeError)
+extern DELPHI_PACKAGE System::ResourceString _sLMDsysEventTypeWarning;
+#define Lmdsysconst_sLMDsysEventTypeWarning System::LoadResourceString(&Lmdsysconst::_sLMDsysEventTypeWarning)
+extern DELPHI_PACKAGE System::ResourceString _sLMDsysEventTypeInformation;
+#define Lmdsysconst_sLMDsysEventTypeInformation System::LoadResourceString(&Lmdsysconst::_sLMDsysEventTypeInformation)
+extern DELPHI_PACKAGE System::ResourceString _sLMDsysEventTypeAuditSuccess;
+#define Lmdsysconst_sLMDsysEventTypeAuditSuccess System::LoadResourceString(&Lmdsysconst::_sLMDsysEventTypeAuditSuccess)
+extern DELPHI_PACKAGE System::ResourceString _sLMDsysEventTypeAuditFailure;
+#define Lmdsysconst_sLMDsysEventTypeAuditFailure System::LoadResourceString(&Lmdsysconst::_sLMDsysEventTypeAuditFailure)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysEventEvent;
+#define Lmdsysconst_sLMDSysEventEvent System::LoadResourceString(&Lmdsysconst::_sLMDSysEventEvent)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysEventDate;
+#define Lmdsysconst_sLMDSysEventDate System::LoadResourceString(&Lmdsysconst::_sLMDSysEventDate)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysEventTime;
+#define Lmdsysconst_sLMDSysEventTime System::LoadResourceString(&Lmdsysconst::_sLMDSysEventTime)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysEventType;
+#define Lmdsysconst_sLMDSysEventType System::LoadResourceString(&Lmdsysconst::_sLMDSysEventType)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysEventSource;
+#define Lmdsysconst_sLMDSysEventSource System::LoadResourceString(&Lmdsysconst::_sLMDSysEventSource)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysEventUser;
+#define Lmdsysconst_sLMDSysEventUser System::LoadResourceString(&Lmdsysconst::_sLMDSysEventUser)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysEventCategory;
+#define Lmdsysconst_sLMDSysEventCategory System::LoadResourceString(&Lmdsysconst::_sLMDSysEventCategory)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysEventComputer;
+#define Lmdsysconst_sLMDSysEventComputer System::LoadResourceString(&Lmdsysconst::_sLMDSysEventComputer)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysEventDlgCaption;
+#define Lmdsysconst_sLMDSysEventDlgCaption System::LoadResourceString(&Lmdsysconst::_sLMDSysEventDlgCaption)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysEventDlgEventIDLabel;
+#define Lmdsysconst_sLMDSysEventDlgEventIDLabel System::LoadResourceString(&Lmdsysconst::_sLMDSysEventDlgEventIDLabel)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysEventDlgDescriptionLabel;
+#define Lmdsysconst_sLMDSysEventDlgDescriptionLabel System::LoadResourceString(&Lmdsysconst::_sLMDSysEventDlgDescriptionLabel)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderDesktop;
+#define Lmdsysconst_sLMDSysFolderDesktop System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderDesktop)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderMyComputer;
+#define Lmdsysconst_sLMDSysFolderMyComputer System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderMyComputer)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderPrograms;
+#define Lmdsysconst_sLMDSysFolderPrograms System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderPrograms)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderControlPanel;
+#define Lmdsysconst_sLMDSysFolderControlPanel System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderControlPanel)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderPrinters;
+#define Lmdsysconst_sLMDSysFolderPrinters System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderPrinters)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderPersonal;
+#define Lmdsysconst_sLMDSysFolderPersonal System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderPersonal)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderFavorites;
+#define Lmdsysconst_sLMDSysFolderFavorites System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderFavorites)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderStartup;
+#define Lmdsysconst_sLMDSysFolderStartup System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderStartup)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderRecent;
+#define Lmdsysconst_sLMDSysFolderRecent System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderRecent)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderSendto;
+#define Lmdsysconst_sLMDSysFolderSendto System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderSendto)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderRecycleBin;
+#define Lmdsysconst_sLMDSysFolderRecycleBin System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderRecycleBin)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderStartMenu;
+#define Lmdsysconst_sLMDSysFolderStartMenu System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderStartMenu)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderDesktopDirectory;
+#define Lmdsysconst_sLMDSysFolderDesktopDirectory System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderDesktopDirectory)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderNetwork;
+#define Lmdsysconst_sLMDSysFolderNetwork System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderNetwork)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderNetworkNeighborhood;
+#define Lmdsysconst_sLMDSysFolderNetworkNeighborhood System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderNetworkNeighborhood)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderInternet;
+#define Lmdsysconst_sLMDSysFolderInternet System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderInternet)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderFonts;
+#define Lmdsysconst_sLMDSysFolderFonts System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderFonts)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderTemplates;
+#define Lmdsysconst_sLMDSysFolderTemplates System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderTemplates)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderCommonStartMenu;
+#define Lmdsysconst_sLMDSysFolderCommonStartMenu System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderCommonStartMenu)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderCommonPrograms;
+#define Lmdsysconst_sLMDSysFolderCommonPrograms System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderCommonPrograms)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderCommonStartup;
+#define Lmdsysconst_sLMDSysFolderCommonStartup System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderCommonStartup)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderCommonDesktopDirectory;
+#define Lmdsysconst_sLMDSysFolderCommonDesktopDirectory System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderCommonDesktopDirectory)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderAppData;
+#define Lmdsysconst_sLMDSysFolderAppData System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderAppData)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderPrintHood;
+#define Lmdsysconst_sLMDSysFolderPrintHood System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderPrintHood)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderAltStartup;
+#define Lmdsysconst_sLMDSysFolderAltStartup System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderAltStartup)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderCommonAltstartup;
+#define Lmdsysconst_sLMDSysFolderCommonAltstartup System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderCommonAltstartup)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderCommonFavorites;
+#define Lmdsysconst_sLMDSysFolderCommonFavorites System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderCommonFavorites)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderInternetCache;
+#define Lmdsysconst_sLMDSysFolderInternetCache System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderInternetCache)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderCookies;
+#define Lmdsysconst_sLMDSysFolderCookies System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderCookies)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderHistory;
+#define Lmdsysconst_sLMDSysFolderHistory System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderHistory)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderMyVideo;
+#define Lmdsysconst_sLMDSysFolderMyVideo System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderMyVideo)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderCommonVideo;
+#define Lmdsysconst_sLMDSysFolderCommonVideo System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderCommonVideo)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderMyPictures;
+#define Lmdsysconst_sLMDSysFolderMyPictures System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderMyPictures)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderCommonPictures;
+#define Lmdsysconst_sLMDSysFolderCommonPictures System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderCommonPictures)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderMyMusic;
+#define Lmdsysconst_sLMDSysFolderMyMusic System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderMyMusic)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderCommonMusic;
+#define Lmdsysconst_sLMDSysFolderCommonMusic System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderCommonMusic)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderMyDocuments;
+#define Lmdsysconst_sLMDSysFolderMyDocuments System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderMyDocuments)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderAdminTools;
+#define Lmdsysconst_sLMDSysFolderAdminTools System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderAdminTools)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderCommonAdminTools;
+#define Lmdsysconst_sLMDSysFolderCommonAdminTools System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderCommonAdminTools)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderBurnArea;
+#define Lmdsysconst_sLMDSysFolderBurnArea System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderBurnArea)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderProfile;
+#define Lmdsysconst_sLMDSysFolderProfile System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderProfile)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderProfiles;
+#define Lmdsysconst_sLMDSysFolderProfiles System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderProfiles)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderProgramFiles;
+#define Lmdsysconst_sLMDSysFolderProgramFiles System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderProgramFiles)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderCommonProgramFiles;
+#define Lmdsysconst_sLMDSysFolderCommonProgramFiles System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderCommonProgramFiles)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderWindows;
+#define Lmdsysconst_sLMDSysFolderWindows System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderWindows)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFolderSystem;
+#define Lmdsysconst_sLMDSysFolderSystem System::LoadResourceString(&Lmdsysconst::_sLMDSysFolderSystem)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMouseObjectTitle;
+#define Lmdsysconst_sLMDSysMouseObjectTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysMouseObjectTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMouseObjectDesc;
+#define Lmdsysconst_sLMDSysMouseObjectDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysMouseObjectDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitleDoubleClickTime;
+#define Lmdsysconst_sLMDSysMousePropTitleDoubleClickTime System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitleDoubleClickTime)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescDoubleClickTime;
+#define Lmdsysconst_sLMDSysMousePropDescDoubleClickTime System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescDoubleClickTime)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitleDoubleClickWidth;
+#define Lmdsysconst_sLMDSysMousePropTitleDoubleClickWidth System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitleDoubleClickWidth)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescDoubleClickWidth;
+#define Lmdsysconst_sLMDSysMousePropDescDoubleClickWidth System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescDoubleClickWidth)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitleDoubleClickHeight;
+#define Lmdsysconst_sLMDSysMousePropTitleDoubleClickHeight System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitleDoubleClickHeight)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescDoubleClickHeight;
+#define Lmdsysconst_sLMDSysMousePropDescDoubleClickHeight System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescDoubleClickHeight)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitleSpeed;
+#define Lmdsysconst_sLMDSysMousePropTitleSpeed System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitleSpeed)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescSpeed;
+#define Lmdsysconst_sLMDSysMousePropDescSpeed System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescSpeed)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitleButtons;
+#define Lmdsysconst_sLMDSysMousePropTitleButtons System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitleButtons)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescButtons;
+#define Lmdsysconst_sLMDSysMousePropDescButtons System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescButtons)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitleSwapButtons;
+#define Lmdsysconst_sLMDSysMousePropTitleSwapButtons System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitleSwapButtons)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescSwapButtons;
+#define Lmdsysconst_sLMDSysMousePropDescSwapButtons System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescSwapButtons)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitleExist;
+#define Lmdsysconst_sLMDSysMousePropTitleExist System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitleExist)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescExist;
+#define Lmdsysconst_sLMDSysMousePropDescExist System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescExist)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitleHasWheel;
+#define Lmdsysconst_sLMDSysMousePropTitleHasWheel System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitleHasWheel)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescHasWheel;
+#define Lmdsysconst_sLMDSysMousePropDescHasWheel System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescHasWheel)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitleSnapToDefault;
+#define Lmdsysconst_sLMDSysMousePropTitleSnapToDefault System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitleSnapToDefault)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescSnapToDefault;
+#define Lmdsysconst_sLMDSysMousePropDescSnapToDefault System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescSnapToDefault)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitleCursorScheme;
+#define Lmdsysconst_sLMDSysMousePropTitleCursorScheme System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitleCursorScheme)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescCursorScheme;
+#define Lmdsysconst_sLMDSysMousePropDescCursorScheme System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescCursorScheme)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitleCursorSchemes;
+#define Lmdsysconst_sLMDSysMousePropTitleCursorSchemes System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitleCursorSchemes)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescCursorSchemes;
+#define Lmdsysconst_sLMDSysMousePropDescCursorSchemes System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescCursorSchemes)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitleAvailability;
+#define Lmdsysconst_sLMDSysMousePropTitleAvailability System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitleAvailability)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescAvailability;
+#define Lmdsysconst_sLMDSysMousePropDescAvailability System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescAvailability)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitleConfigManagerErrorCode;
+#define Lmdsysconst_sLMDSysMousePropTitleConfigManagerErrorCode System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitleConfigManagerErrorCode)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescConfigManagerErrorCode;
+#define Lmdsysconst_sLMDSysMousePropDescConfigManagerErrorCode System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescConfigManagerErrorCode)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitleConfigManagerUserConfig;
+#define Lmdsysconst_sLMDSysMousePropTitleConfigManagerUserConfig System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitleConfigManagerUserConfig)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescConfigManagerUserConfig;
+#define Lmdsysconst_sLMDSysMousePropDescConfigManagerUserConfig System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescConfigManagerUserConfig)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitleDeviceID;
+#define Lmdsysconst_sLMDSysMousePropTitleDeviceID System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitleDeviceID)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescDeviceID;
+#define Lmdsysconst_sLMDSysMousePropDescDeviceID System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescDeviceID)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitleDoubleSpeedThreshold;
+#define Lmdsysconst_sLMDSysMousePropTitleDoubleSpeedThreshold System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitleDoubleSpeedThreshold)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescDoubleSpeedThreshold;
+#define Lmdsysconst_sLMDSysMousePropDescDoubleSpeedThreshold System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescDoubleSpeedThreshold)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitleErrorCleared;
+#define Lmdsysconst_sLMDSysMousePropTitleErrorCleared System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitleErrorCleared)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescErrorCleared;
+#define Lmdsysconst_sLMDSysMousePropDescErrorCleared System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescErrorCleared)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitleErrorDescription;
+#define Lmdsysconst_sLMDSysMousePropTitleErrorDescription System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitleErrorDescription)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescErrorDescription;
+#define Lmdsysconst_sLMDSysMousePropDescErrorDescription System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescErrorDescription)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitleHardwareType;
+#define Lmdsysconst_sLMDSysMousePropTitleHardwareType System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitleHardwareType)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescHardwareType;
+#define Lmdsysconst_sLMDSysMousePropDescHardwareType System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescHardwareType)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitleInfFileName;
+#define Lmdsysconst_sLMDSysMousePropTitleInfFileName System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitleInfFileName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescInfFileName;
+#define Lmdsysconst_sLMDSysMousePropDescInfFileName System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescInfFileName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitleInfSection;
+#define Lmdsysconst_sLMDSysMousePropTitleInfSection System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitleInfSection)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescInfSection;
+#define Lmdsysconst_sLMDSysMousePropDescInfSection System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescInfSection)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitleInstallDate;
+#define Lmdsysconst_sLMDSysMousePropTitleInstallDate System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitleInstallDate)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescInstallDate;
+#define Lmdsysconst_sLMDSysMousePropDescInstallDate System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescInstallDate)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitleIsLocked;
+#define Lmdsysconst_sLMDSysMousePropTitleIsLocked System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitleIsLocked)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescIsLocked;
+#define Lmdsysconst_sLMDSysMousePropDescIsLocked System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescIsLocked)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitleLastErrorCode;
+#define Lmdsysconst_sLMDSysMousePropTitleLastErrorCode System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitleLastErrorCode)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescLastErrorCode;
+#define Lmdsysconst_sLMDSysMousePropDescLastErrorCode System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescLastErrorCode)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitleManufacturer;
+#define Lmdsysconst_sLMDSysMousePropTitleManufacturer System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitleManufacturer)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescManufacturer;
+#define Lmdsysconst_sLMDSysMousePropDescManufacturer System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescManufacturer)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitleName;
+#define Lmdsysconst_sLMDSysMousePropTitleName System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitleName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescName;
+#define Lmdsysconst_sLMDSysMousePropDescName System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitlePowerManagementCapabilities;
+#define Lmdsysconst_sLMDSysMousePropTitlePowerManagementCapabilities System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitlePowerManagementCapabilities)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescPowerManagementCapabilities;
+#define Lmdsysconst_sLMDSysMousePropDescPowerManagementCapabilities System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescPowerManagementCapabilities)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitlePowerManagementSupported;
+#define Lmdsysconst_sLMDSysMousePropTitlePowerManagementSupported System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitlePowerManagementSupported)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescPowerManagementSupported;
+#define Lmdsysconst_sLMDSysMousePropDescPowerManagementSupported System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescPowerManagementSupported)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitleQuadSpeedThreshold;
+#define Lmdsysconst_sLMDSysMousePropTitleQuadSpeedThreshold System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitleQuadSpeedThreshold)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescQuadSpeedThreshold;
+#define Lmdsysconst_sLMDSysMousePropDescQuadSpeedThreshold System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescQuadSpeedThreshold)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitleResolution;
+#define Lmdsysconst_sLMDSysMousePropTitleResolution System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitleResolution)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescResolution;
+#define Lmdsysconst_sLMDSysMousePropDescResolution System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescResolution)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitleSampleRate;
+#define Lmdsysconst_sLMDSysMousePropTitleSampleRate System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitleSampleRate)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescSampleRate;
+#define Lmdsysconst_sLMDSysMousePropDescSampleRate System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescSampleRate)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitleStatus;
+#define Lmdsysconst_sLMDSysMousePropTitleStatus System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitleStatus)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescStatus;
+#define Lmdsysconst_sLMDSysMousePropDescStatus System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescStatus)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitleStatusInfo;
+#define Lmdsysconst_sLMDSysMousePropTitleStatusInfo System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitleStatusInfo)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescStatusInfo;
+#define Lmdsysconst_sLMDSysMousePropDescStatusInfo System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescStatusInfo)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropTitleSynch;
+#define Lmdsysconst_sLMDSysMousePropTitleSynch System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropTitleSynch)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMousePropDescSynch;
+#define Lmdsysconst_sLMDSysMousePropDescSynch System::LoadResourceString(&Lmdsysconst::_sLMDSysMousePropDescSynch)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayObjectTitle;
+#define Lmdsysconst_sLMDSysDisplayObjectTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayObjectTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayObjectDesc;
+#define Lmdsysconst_sLMDSysDisplayObjectDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayObjectDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayModeObjectTitle;
+#define Lmdsysconst_sLMDSysDisplayModeObjectTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayModeObjectTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayModeObjectDesc;
+#define Lmdsysconst_sLMDSysDisplayModeObjectDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayModeObjectDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayPlusObjectTitle;
+#define Lmdsysconst_sLMDSysDisplayPlusObjectTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayPlusObjectTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayPlusObjectDesc;
+#define Lmdsysconst_sLMDSysDisplayPlusObjectDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayPlusObjectDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayScreenSaverObjectTitle;
+#define Lmdsysconst_sLMDSysDisplayScreenSaverObjectTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayScreenSaverObjectTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayScreenSaverObjectDesc;
+#define Lmdsysconst_sLMDSysDisplayScreenSaverObjectDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayScreenSaverObjectDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayWallpaperObjectTitle;
+#define Lmdsysconst_sLMDSysDisplayWallpaperObjectTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayWallpaperObjectTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayWallpaperObjectDesc;
+#define Lmdsysconst_sLMDSysDisplayWallpaperObjectDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayWallpaperObjectDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayModePropTitleWidth;
+#define Lmdsysconst_sLMDSysDisplayModePropTitleWidth System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayModePropTitleWidth)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayModePropDescWidth;
+#define Lmdsysconst_sLMDSysDisplayModePropDescWidth System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayModePropDescWidth)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayModePropTitleHeight;
+#define Lmdsysconst_sLMDSysDisplayModePropTitleHeight System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayModePropTitleHeight)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayModePropDescHeight;
+#define Lmdsysconst_sLMDSysDisplayModePropDescHeight System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayModePropDescHeight)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayModePropTitleFrequency;
+#define Lmdsysconst_sLMDSysDisplayModePropTitleFrequency System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayModePropTitleFrequency)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayModePropDescFrequency;
+#define Lmdsysconst_sLMDSysDisplayModePropDescFrequency System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayModePropDescFrequency)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayModePropTitleBitsPerPixel;
+#define Lmdsysconst_sLMDSysDisplayModePropTitleBitsPerPixel System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayModePropTitleBitsPerPixel)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayModePropDescBitsPerPixel;
+#define Lmdsysconst_sLMDSysDisplayModePropDescBitsPerPixel System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayModePropDescBitsPerPixel)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayModePropTitleMonochrome;
+#define Lmdsysconst_sLMDSysDisplayModePropTitleMonochrome System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayModePropTitleMonochrome)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayModePropDescMonochrome;
+#define Lmdsysconst_sLMDSysDisplayModePropDescMonochrome System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayModePropDescMonochrome)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayModePropTitleInterlaced;
+#define Lmdsysconst_sLMDSysDisplayModePropTitleInterlaced System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayModePropTitleInterlaced)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayModePropDescInterlaced;
+#define Lmdsysconst_sLMDSysDisplayModePropDescInterlaced System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayModePropDescInterlaced)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayModePropTitleColors;
+#define Lmdsysconst_sLMDSysDisplayModePropTitleColors System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayModePropTitleColors)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayModePropDescColors;
+#define Lmdsysconst_sLMDSysDisplayModePropDescColors System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayModePropDescColors)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayPlusPropTitleAvailable;
+#define Lmdsysconst_sLMDSysDisplayPlusPropTitleAvailable System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayPlusPropTitleAvailable)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayPlusPropDescAvailable;
+#define Lmdsysconst_sLMDSysDisplayPlusPropDescAvailable System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayPlusPropDescAvailable)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayPlusPropTitleFontSmoothing;
+#define Lmdsysconst_sLMDSysDisplayPlusPropTitleFontSmoothing System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayPlusPropTitleFontSmoothing)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayPlusPropDescFontSmoothing;
+#define Lmdsysconst_sLMDSysDisplayPlusPropDescFontSmoothing System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayPlusPropDescFontSmoothing)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayPlusPropTitleWindowAnimation;
+#define Lmdsysconst_sLMDSysDisplayPlusPropTitleWindowAnimation System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayPlusPropTitleWindowAnimation)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayPlusPropDescWindowAnimation;
+#define Lmdsysconst_sLMDSysDisplayPlusPropDescWindowAnimation System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayPlusPropDescWindowAnimation)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayPlusPropTitleDragFullWindows;
+#define Lmdsysconst_sLMDSysDisplayPlusPropTitleDragFullWindows System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayPlusPropTitleDragFullWindows)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayPlusPropDescDragFullWindows;
+#define Lmdsysconst_sLMDSysDisplayPlusPropDescDragFullWindows System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayPlusPropDescDragFullWindows)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayScreenSaverPropTitleActive;
+#define Lmdsysconst_sLMDSysDisplayScreenSaverPropTitleActive System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayScreenSaverPropTitleActive)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayScreenSaverPropDescActive;
+#define Lmdsysconst_sLMDSysDisplayScreenSaverPropDescActive System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayScreenSaverPropDescActive)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayScreenSaverPropTitleDelay;
+#define Lmdsysconst_sLMDSysDisplayScreenSaverPropTitleDelay System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayScreenSaverPropTitleDelay)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayScreenSaverPropDescDelay;
+#define Lmdsysconst_sLMDSysDisplayScreenSaverPropDescDelay System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayScreenSaverPropDescDelay)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayScreenSaverPropTitleSecure;
+#define Lmdsysconst_sLMDSysDisplayScreenSaverPropTitleSecure System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayScreenSaverPropTitleSecure)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayScreenSaverPropDescSecure;
+#define Lmdsysconst_sLMDSysDisplayScreenSaverPropDescSecure System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayScreenSaverPropDescSecure)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayScreenSaverPropTitleRunning;
+#define Lmdsysconst_sLMDSysDisplayScreenSaverPropTitleRunning System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayScreenSaverPropTitleRunning)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayScreenSaverPropDescRunning;
+#define Lmdsysconst_sLMDSysDisplayScreenSaverPropDescRunning System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayScreenSaverPropDescRunning)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayScreenSaverPropTitleScreenSaver;
+#define Lmdsysconst_sLMDSysDisplayScreenSaverPropTitleScreenSaver System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayScreenSaverPropTitleScreenSaver)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayScreenSaverPropDescScreenSaver;
+#define Lmdsysconst_sLMDSysDisplayScreenSaverPropDescScreenSaver System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayScreenSaverPropDescScreenSaver)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayScreenSaverPropTitleScreenSavers;
+#define Lmdsysconst_sLMDSysDisplayScreenSaverPropTitleScreenSavers System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayScreenSaverPropTitleScreenSavers)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayScreenSaverPropDescScreenSavers;
+#define Lmdsysconst_sLMDSysDisplayScreenSaverPropDescScreenSavers System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayScreenSaverPropDescScreenSavers)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayWallpaperPropTitleFilename;
+#define Lmdsysconst_sLMDSysDisplayWallpaperPropTitleFilename System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayWallpaperPropTitleFilename)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayWallpaperPropDescFilename;
+#define Lmdsysconst_sLMDSysDisplayWallpaperPropDescFilename System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayWallpaperPropDescFilename)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayWallpaperPropTitleTile;
+#define Lmdsysconst_sLMDSysDisplayWallpaperPropTitleTile System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayWallpaperPropTitleTile)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayWallpaperPropDescTile;
+#define Lmdsysconst_sLMDSysDisplayWallpaperPropDescTile System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayWallpaperPropDescTile)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayWallpaperPropTitleStretch;
+#define Lmdsysconst_sLMDSysDisplayWallpaperPropTitleStretch System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayWallpaperPropTitleStretch)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayWallpaperPropDescStretch;
+#define Lmdsysconst_sLMDSysDisplayWallpaperPropDescStretch System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayWallpaperPropDescStretch)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayWallpaperPropTitlePatterns;
+#define Lmdsysconst_sLMDSysDisplayWallpaperPropTitlePatterns System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayWallpaperPropTitlePatterns)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayWallpaperPropDescPatterns;
+#define Lmdsysconst_sLMDSysDisplayWallpaperPropDescPatterns System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayWallpaperPropDescPatterns)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayWallpaperPropTitlePattern;
+#define Lmdsysconst_sLMDSysDisplayWallpaperPropTitlePattern System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayWallpaperPropTitlePattern)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDisplayWallpaperPropDescPattern;
+#define Lmdsysconst_sLMDSysDisplayWallpaperPropDescPattern System::LoadResourceString(&Lmdsysconst::_sLMDSysDisplayWallpaperPropDescPattern)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDriveObjectTitle;
+#define Lmdsysconst_sLMDSysDriveObjectTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysDriveObjectTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDriveObjectDesc;
+#define Lmdsysconst_sLMDSysDriveObjectDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysDriveObjectDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDrivePropTitleBytesPerSector;
+#define Lmdsysconst_sLMDSysDrivePropTitleBytesPerSector System::LoadResourceString(&Lmdsysconst::_sLMDSysDrivePropTitleBytesPerSector)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDrivePropDescBytesPerSector;
+#define Lmdsysconst_sLMDSysDrivePropDescBytesPerSector System::LoadResourceString(&Lmdsysconst::_sLMDSysDrivePropDescBytesPerSector)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDrivePropTitleDiskSize;
+#define Lmdsysconst_sLMDSysDrivePropTitleDiskSize System::LoadResourceString(&Lmdsysconst::_sLMDSysDrivePropTitleDiskSize)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDrivePropDescDiskSize;
+#define Lmdsysconst_sLMDSysDrivePropDescDiskSize System::LoadResourceString(&Lmdsysconst::_sLMDSysDrivePropDescDiskSize)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDrivePropTitleDiskFree;
+#define Lmdsysconst_sLMDSysDrivePropTitleDiskFree System::LoadResourceString(&Lmdsysconst::_sLMDSysDrivePropTitleDiskFree)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDrivePropDescDiskFree;
+#define Lmdsysconst_sLMDSysDrivePropDescDiskFree System::LoadResourceString(&Lmdsysconst::_sLMDSysDrivePropDescDiskFree)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDrivePropTitleDrive;
+#define Lmdsysconst_sLMDSysDrivePropTitleDrive System::LoadResourceString(&Lmdsysconst::_sLMDSysDrivePropTitleDrive)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDrivePropDescDrive;
+#define Lmdsysconst_sLMDSysDrivePropDescDrive System::LoadResourceString(&Lmdsysconst::_sLMDSysDrivePropDescDrive)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDrivePropTitleDriveType;
+#define Lmdsysconst_sLMDSysDrivePropTitleDriveType System::LoadResourceString(&Lmdsysconst::_sLMDSysDrivePropTitleDriveType)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDrivePropDescDriveType;
+#define Lmdsysconst_sLMDSysDrivePropDescDriveType System::LoadResourceString(&Lmdsysconst::_sLMDSysDrivePropDescDriveType)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDrivePropTitleFileSystem;
+#define Lmdsysconst_sLMDSysDrivePropTitleFileSystem System::LoadResourceString(&Lmdsysconst::_sLMDSysDrivePropTitleFileSystem)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDrivePropDescFileSystem;
+#define Lmdsysconst_sLMDSysDrivePropDescFileSystem System::LoadResourceString(&Lmdsysconst::_sLMDSysDrivePropDescFileSystem)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDrivePropTitleSectorsPerCluster;
+#define Lmdsysconst_sLMDSysDrivePropTitleSectorsPerCluster System::LoadResourceString(&Lmdsysconst::_sLMDSysDrivePropTitleSectorsPerCluster)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDrivePropDescSectorsPerCluster;
+#define Lmdsysconst_sLMDSysDrivePropDescSectorsPerCluster System::LoadResourceString(&Lmdsysconst::_sLMDSysDrivePropDescSectorsPerCluster)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDrivePropTitleMaximumLength;
+#define Lmdsysconst_sLMDSysDrivePropTitleMaximumLength System::LoadResourceString(&Lmdsysconst::_sLMDSysDrivePropTitleMaximumLength)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDrivePropDescMaximumLength;
+#define Lmdsysconst_sLMDSysDrivePropDescMaximumLength System::LoadResourceString(&Lmdsysconst::_sLMDSysDrivePropDescMaximumLength)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDrivePropTitleSerialNumber;
+#define Lmdsysconst_sLMDSysDrivePropTitleSerialNumber System::LoadResourceString(&Lmdsysconst::_sLMDSysDrivePropTitleSerialNumber)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDrivePropDescSerialNumber;
+#define Lmdsysconst_sLMDSysDrivePropDescSerialNumber System::LoadResourceString(&Lmdsysconst::_sLMDSysDrivePropDescSerialNumber)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDrivePropTitleOptions;
+#define Lmdsysconst_sLMDSysDrivePropTitleOptions System::LoadResourceString(&Lmdsysconst::_sLMDSysDrivePropTitleOptions)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDrivePropDescOptions;
+#define Lmdsysconst_sLMDSysDrivePropDescOptions System::LoadResourceString(&Lmdsysconst::_sLMDSysDrivePropDescOptions)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDrivePropTitleVolumeLabel;
+#define Lmdsysconst_sLMDSysDrivePropTitleVolumeLabel System::LoadResourceString(&Lmdsysconst::_sLMDSysDrivePropTitleVolumeLabel)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDrivePropDescVolumeLabel;
+#define Lmdsysconst_sLMDSysDrivePropDescVolumeLabel System::LoadResourceString(&Lmdsysconst::_sLMDSysDrivePropDescVolumeLabel)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDriveOptionCaseIsPreserved;
+#define Lmdsysconst_sLMDSysDriveOptionCaseIsPreserved System::LoadResourceString(&Lmdsysconst::_sLMDSysDriveOptionCaseIsPreserved)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDriveOptionCaseSensitive;
+#define Lmdsysconst_sLMDSysDriveOptionCaseSensitive System::LoadResourceString(&Lmdsysconst::_sLMDSysDriveOptionCaseSensitive)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDriveOptionSupportsUnicode;
+#define Lmdsysconst_sLMDSysDriveOptionSupportsUnicode System::LoadResourceString(&Lmdsysconst::_sLMDSysDriveOptionSupportsUnicode)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDriveOptionPersistentACLs;
+#define Lmdsysconst_sLMDSysDriveOptionPersistentACLs System::LoadResourceString(&Lmdsysconst::_sLMDSysDriveOptionPersistentACLs)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDriveOptionSupportsCompression;
+#define Lmdsysconst_sLMDSysDriveOptionSupportsCompression System::LoadResourceString(&Lmdsysconst::_sLMDSysDriveOptionSupportsCompression)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDriveOptionIsCompressed;
+#define Lmdsysconst_sLMDSysDriveOptionIsCompressed System::LoadResourceString(&Lmdsysconst::_sLMDSysDriveOptionIsCompressed)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDriveOptionSupportsQuotas;
+#define Lmdsysconst_sLMDSysDriveOptionSupportsQuotas System::LoadResourceString(&Lmdsysconst::_sLMDSysDriveOptionSupportsQuotas)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServiceObjectTitle;
+#define Lmdsysconst_sLMDSysServiceObjectTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysServiceObjectTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServiceObjectDesc;
+#define Lmdsysconst_sLMDSysServiceObjectDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysServiceObjectDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServicePropTitleDisplayName;
+#define Lmdsysconst_sLMDSysServicePropTitleDisplayName System::LoadResourceString(&Lmdsysconst::_sLMDSysServicePropTitleDisplayName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServicePropTitleServiceName;
+#define Lmdsysconst_sLMDSysServicePropTitleServiceName System::LoadResourceString(&Lmdsysconst::_sLMDSysServicePropTitleServiceName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServicePropTitleBinaryPath;
+#define Lmdsysconst_sLMDSysServicePropTitleBinaryPath System::LoadResourceString(&Lmdsysconst::_sLMDSysServicePropTitleBinaryPath)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServicePropTitleLoadOrderGroup;
+#define Lmdsysconst_sLMDSysServicePropTitleLoadOrderGroup System::LoadResourceString(&Lmdsysconst::_sLMDSysServicePropTitleLoadOrderGroup)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServicePropTitleServiceStartName;
+#define Lmdsysconst_sLMDSysServicePropTitleServiceStartName System::LoadResourceString(&Lmdsysconst::_sLMDSysServicePropTitleServiceStartName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServicePropTitleTagId;
+#define Lmdsysconst_sLMDSysServicePropTitleTagId System::LoadResourceString(&Lmdsysconst::_sLMDSysServicePropTitleTagId)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServicePropTitleServiceTypes;
+#define Lmdsysconst_sLMDSysServicePropTitleServiceTypes System::LoadResourceString(&Lmdsysconst::_sLMDSysServicePropTitleServiceTypes)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServicePropTitleCurrentState;
+#define Lmdsysconst_sLMDSysServicePropTitleCurrentState System::LoadResourceString(&Lmdsysconst::_sLMDSysServicePropTitleCurrentState)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServicePropTitleStartType;
+#define Lmdsysconst_sLMDSysServicePropTitleStartType System::LoadResourceString(&Lmdsysconst::_sLMDSysServicePropTitleStartType)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServicePropDescDisplayName;
+#define Lmdsysconst_sLMDSysServicePropDescDisplayName System::LoadResourceString(&Lmdsysconst::_sLMDSysServicePropDescDisplayName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServicePropDescServiceName;
+#define Lmdsysconst_sLMDSysServicePropDescServiceName System::LoadResourceString(&Lmdsysconst::_sLMDSysServicePropDescServiceName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServicePropDescBinaryPath;
+#define Lmdsysconst_sLMDSysServicePropDescBinaryPath System::LoadResourceString(&Lmdsysconst::_sLMDSysServicePropDescBinaryPath)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServicePropDescLoadOrderGroup;
+#define Lmdsysconst_sLMDSysServicePropDescLoadOrderGroup System::LoadResourceString(&Lmdsysconst::_sLMDSysServicePropDescLoadOrderGroup)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServicePropDescServiceStartName;
+#define Lmdsysconst_sLMDSysServicePropDescServiceStartName System::LoadResourceString(&Lmdsysconst::_sLMDSysServicePropDescServiceStartName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServicePropDescTagId;
+#define Lmdsysconst_sLMDSysServicePropDescTagId System::LoadResourceString(&Lmdsysconst::_sLMDSysServicePropDescTagId)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServicePropDescServiceTypes;
+#define Lmdsysconst_sLMDSysServicePropDescServiceTypes System::LoadResourceString(&Lmdsysconst::_sLMDSysServicePropDescServiceTypes)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServicePropDescCurrentState;
+#define Lmdsysconst_sLMDSysServicePropDescCurrentState System::LoadResourceString(&Lmdsysconst::_sLMDSysServicePropDescCurrentState)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServicePropDescStartType;
+#define Lmdsysconst_sLMDSysServicePropDescStartType System::LoadResourceString(&Lmdsysconst::_sLMDSysServicePropDescStartType)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServiceContinuePending;
+#define Lmdsysconst_sLMDSysServiceContinuePending System::LoadResourceString(&Lmdsysconst::_sLMDSysServiceContinuePending)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServicePausePending;
+#define Lmdsysconst_sLMDSysServicePausePending System::LoadResourceString(&Lmdsysconst::_sLMDSysServicePausePending)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServicePaused;
+#define Lmdsysconst_sLMDSysServicePaused System::LoadResourceString(&Lmdsysconst::_sLMDSysServicePaused)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServiceRunning;
+#define Lmdsysconst_sLMDSysServiceRunning System::LoadResourceString(&Lmdsysconst::_sLMDSysServiceRunning)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServiceStartPending;
+#define Lmdsysconst_sLMDSysServiceStartPending System::LoadResourceString(&Lmdsysconst::_sLMDSysServiceStartPending)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServiceStopPending;
+#define Lmdsysconst_sLMDSysServiceStopPending System::LoadResourceString(&Lmdsysconst::_sLMDSysServiceStopPending)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServiceStopped;
+#define Lmdsysconst_sLMDSysServiceStopped System::LoadResourceString(&Lmdsysconst::_sLMDSysServiceStopped)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServiceStartAutoStart;
+#define Lmdsysconst_sLMDSysServiceStartAutoStart System::LoadResourceString(&Lmdsysconst::_sLMDSysServiceStartAutoStart)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServiceStartBootStart;
+#define Lmdsysconst_sLMDSysServiceStartBootStart System::LoadResourceString(&Lmdsysconst::_sLMDSysServiceStartBootStart)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServiceStartDemandStart;
+#define Lmdsysconst_sLMDSysServiceStartDemandStart System::LoadResourceString(&Lmdsysconst::_sLMDSysServiceStartDemandStart)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServiceStartDisabled;
+#define Lmdsysconst_sLMDSysServiceStartDisabled System::LoadResourceString(&Lmdsysconst::_sLMDSysServiceStartDisabled)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServiceStartSystemStart;
+#define Lmdsysconst_sLMDSysServiceStartSystemStart System::LoadResourceString(&Lmdsysconst::_sLMDSysServiceStartSystemStart)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServiceTypeFileSystemDriver;
+#define Lmdsysconst_sLMDSysServiceTypeFileSystemDriver System::LoadResourceString(&Lmdsysconst::_sLMDSysServiceTypeFileSystemDriver)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServiceTypeKernelDriver;
+#define Lmdsysconst_sLMDSysServiceTypeKernelDriver System::LoadResourceString(&Lmdsysconst::_sLMDSysServiceTypeKernelDriver)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServiceTypeWin32OwnProcess;
+#define Lmdsysconst_sLMDSysServiceTypeWin32OwnProcess System::LoadResourceString(&Lmdsysconst::_sLMDSysServiceTypeWin32OwnProcess)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServiceTypeWin32ShareProcess;
+#define Lmdsysconst_sLMDSysServiceTypeWin32ShareProcess System::LoadResourceString(&Lmdsysconst::_sLMDSysServiceTypeWin32ShareProcess)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysServiceTypeInteractiveProcess;
+#define Lmdsysconst_sLMDSysServiceTypeInteractiveProcess System::LoadResourceString(&Lmdsysconst::_sLMDSysServiceTypeInteractiveProcess)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterObjectsTitle;
+#define Lmdsysconst_sLMDSysPrinterObjectsTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterObjectsTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterObjectsDesc;
+#define Lmdsysconst_sLMDSysPrinterObjectsDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterObjectsDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterObjectTitle;
+#define Lmdsysconst_sLMDSysPrinterObjectTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterObjectTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterObjectDesc;
+#define Lmdsysconst_sLMDSysPrinterObjectDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterObjectDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropTitleDeviceName;
+#define Lmdsysconst_sLMDSysPrinterPropTitleDeviceName System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropTitleDeviceName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropDescDeviceName;
+#define Lmdsysconst_sLMDSysPrinterPropDescDeviceName System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropDescDeviceName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropTitleDriver;
+#define Lmdsysconst_sLMDSysPrinterPropTitleDriver System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropTitleDriver)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropDescDriver;
+#define Lmdsysconst_sLMDSysPrinterPropDescDriver System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropDescDriver)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropTitleComment;
+#define Lmdsysconst_sLMDSysPrinterPropTitleComment System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropTitleComment)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropDescComment;
+#define Lmdsysconst_sLMDSysPrinterPropDescComment System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropDescComment)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropTitleLocation;
+#define Lmdsysconst_sLMDSysPrinterPropTitleLocation System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropTitleLocation)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropDescLocation;
+#define Lmdsysconst_sLMDSysPrinterPropDescLocation System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropDescLocation)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropTitlePort;
+#define Lmdsysconst_sLMDSysPrinterPropTitlePort System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropTitlePort)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropDescPort;
+#define Lmdsysconst_sLMDSysPrinterPropDescPort System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropDescPort)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropTitleServer;
+#define Lmdsysconst_sLMDSysPrinterPropTitleServer System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropTitleServer)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropDescServer;
+#define Lmdsysconst_sLMDSysPrinterPropDescServer System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropDescServer)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropTitleDataType;
+#define Lmdsysconst_sLMDSysPrinterPropTitleDataType System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropTitleDataType)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropDescDataType;
+#define Lmdsysconst_sLMDSysPrinterPropDescDataType System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropDescDataType)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropTitlePrintProcessor;
+#define Lmdsysconst_sLMDSysPrinterPropTitlePrintProcessor System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropTitlePrintProcessor)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropDescPrintProcessor;
+#define Lmdsysconst_sLMDSysPrinterPropDescPrintProcessor System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropDescPrintProcessor)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropTitlePrintProcessorParams;
+#define Lmdsysconst_sLMDSysPrinterPropTitlePrintProcessorParams System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropTitlePrintProcessorParams)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropDescPrintProcessorParams;
+#define Lmdsysconst_sLMDSysPrinterPropDescPrintProcessorParams System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropDescPrintProcessorParams)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropTitleSepFile;
+#define Lmdsysconst_sLMDSysPrinterPropTitleSepFile System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropTitleSepFile)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropDescSepFile;
+#define Lmdsysconst_sLMDSysPrinterPropDescSepFile System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropDescSepFile)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropTitleStartTime;
+#define Lmdsysconst_sLMDSysPrinterPropTitleStartTime System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropTitleStartTime)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropDescStartTime;
+#define Lmdsysconst_sLMDSysPrinterPropDescStartTime System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropDescStartTime)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropTitleUntilTime;
+#define Lmdsysconst_sLMDSysPrinterPropTitleUntilTime System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropTitleUntilTime)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropDescUntilTime;
+#define Lmdsysconst_sLMDSysPrinterPropDescUntilTime System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropDescUntilTime)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropTitleDriverVersion;
+#define Lmdsysconst_sLMDSysPrinterPropTitleDriverVersion System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropTitleDriverVersion)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropDescDriverVersion;
+#define Lmdsysconst_sLMDSysPrinterPropDescDriverVersion System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropDescDriverVersion)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropTitleDuplex;
+#define Lmdsysconst_sLMDSysPrinterPropTitleDuplex System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropTitleDuplex)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropDescDuplex;
+#define Lmdsysconst_sLMDSysPrinterPropDescDuplex System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropDescDuplex)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropTitleOrientation;
+#define Lmdsysconst_sLMDSysPrinterPropTitleOrientation System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropTitleOrientation)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropDescOrientation;
+#define Lmdsysconst_sLMDSysPrinterPropDescOrientation System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropDescOrientation)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropTitlePaperSize;
+#define Lmdsysconst_sLMDSysPrinterPropTitlePaperSize System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropTitlePaperSize)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropDescPaperSize;
+#define Lmdsysconst_sLMDSysPrinterPropDescPaperSize System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropDescPaperSize)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropTitleQuality;
+#define Lmdsysconst_sLMDSysPrinterPropTitleQuality System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropTitleQuality)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropDescQuality;
+#define Lmdsysconst_sLMDSysPrinterPropDescQuality System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropDescQuality)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropTitleScale;
+#define Lmdsysconst_sLMDSysPrinterPropTitleScale System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropTitleScale)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropDescScale;
+#define Lmdsysconst_sLMDSysPrinterPropDescScale System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropDescScale)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropTitleCopies;
+#define Lmdsysconst_sLMDSysPrinterPropTitleCopies System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropTitleCopies)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropDescCopies;
+#define Lmdsysconst_sLMDSysPrinterPropDescCopies System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropDescCopies)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropTitleTrueTypeOption;
+#define Lmdsysconst_sLMDSysPrinterPropTitleTrueTypeOption System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropTitleTrueTypeOption)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropDescTrueTypeOption;
+#define Lmdsysconst_sLMDSysPrinterPropDescTrueTypeOption System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropDescTrueTypeOption)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropTitleCollate;
+#define Lmdsysconst_sLMDSysPrinterPropTitleCollate System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropTitleCollate)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropDescCollate;
+#define Lmdsysconst_sLMDSysPrinterPropDescCollate System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropDescCollate)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropTitleCustomXRes;
+#define Lmdsysconst_sLMDSysPrinterPropTitleCustomXRes System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropTitleCustomXRes)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropDescCustomXRes;
+#define Lmdsysconst_sLMDSysPrinterPropDescCustomXRes System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropDescCustomXRes)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropTitleCustomYRes;
+#define Lmdsysconst_sLMDSysPrinterPropTitleCustomYRes System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropTitleCustomYRes)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropDescCustomYRes;
+#define Lmdsysconst_sLMDSysPrinterPropDescCustomYRes System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropDescCustomYRes)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropTitlePaperLength;
+#define Lmdsysconst_sLMDSysPrinterPropTitlePaperLength System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropTitlePaperLength)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropDescPaperLength;
+#define Lmdsysconst_sLMDSysPrinterPropDescPaperLength System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropDescPaperLength)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropTitlePaperWidth;
+#define Lmdsysconst_sLMDSysPrinterPropTitlePaperWidth System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropTitlePaperWidth)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropDescPaperWidth;
+#define Lmdsysconst_sLMDSysPrinterPropDescPaperWidth System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropDescPaperWidth)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropTitleValidFlags;
+#define Lmdsysconst_sLMDSysPrinterPropTitleValidFlags System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropTitleValidFlags)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropDescValidFlags;
+#define Lmdsysconst_sLMDSysPrinterPropDescValidFlags System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropDescValidFlags)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropTitleMonochrome;
+#define Lmdsysconst_sLMDSysPrinterPropTitleMonochrome System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropTitleMonochrome)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropDescMonochrome;
+#define Lmdsysconst_sLMDSysPrinterPropDescMonochrome System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropDescMonochrome)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropDefaultBin;
+#define Lmdsysconst_sLMDSysPrinterPropDefaultBin System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropDefaultBin)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropDescDefaultBin;
+#define Lmdsysconst_sLMDSysPrinterPropDescDefaultBin System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropDescDefaultBin)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropAvailableBins;
+#define Lmdsysconst_sLMDSysPrinterPropAvailableBins System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropAvailableBins)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPropDescAvailableBins;
+#define Lmdsysconst_sLMDSysPrinterPropDescAvailableBins System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPropDescAvailableBins)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterDuplexSimplex;
+#define Lmdsysconst_sLMDSysPrinterDuplexSimplex System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterDuplexSimplex)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterDuplexHorizontal;
+#define Lmdsysconst_sLMDSysPrinterDuplexHorizontal System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterDuplexHorizontal)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterDuplexVertical;
+#define Lmdsysconst_sLMDSysPrinterDuplexVertical System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterDuplexVertical)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterOrientationPortrait;
+#define Lmdsysconst_sLMDSysPrinterOrientationPortrait System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterOrientationPortrait)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterOrientationLandscape;
+#define Lmdsysconst_sLMDSysPrinterOrientationLandscape System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterOrientationLandscape)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterQualityHigh;
+#define Lmdsysconst_sLMDSysPrinterQualityHigh System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterQualityHigh)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterQualityMedium;
+#define Lmdsysconst_sLMDSysPrinterQualityMedium System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterQualityMedium)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterQualityLow;
+#define Lmdsysconst_sLMDSysPrinterQualityLow System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterQualityLow)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterQualityDraft;
+#define Lmdsysconst_sLMDSysPrinterQualityDraft System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterQualityDraft)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterQualityCustom;
+#define Lmdsysconst_sLMDSysPrinterQualityCustom System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterQualityCustom)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeCustom;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeCustom System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeCustom)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeLETTER;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeLETTER System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeLETTER)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeLEGAL;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeLEGAL System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeLEGAL)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeA4;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeA4 System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeA4)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeCSHEET;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeCSHEET System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeCSHEET)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeDSHEET;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeDSHEET System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeDSHEET)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeESHEET;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeESHEET System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeESHEET)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeLETTERSMALL;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeLETTERSMALL System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeLETTERSMALL)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeTABLOID;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeTABLOID System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeTABLOID)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeLEDGER;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeLEDGER System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeLEDGER)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeSTATEMENT;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeSTATEMENT System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeSTATEMENT)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeEXECUTIVE;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeEXECUTIVE System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeEXECUTIVE)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeA3;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeA3 System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeA3)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeA4SMALL;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeA4SMALL System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeA4SMALL)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeA5;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeA5 System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeA5)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeB4;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeB4 System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeB4)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeB5;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeB5 System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeB5)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeFOLIO;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeFOLIO System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeFOLIO)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeQUARTO;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeQUARTO System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeQUARTO)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSize10X14;
+#define Lmdsysconst_sLMDSysPrinterPaperSize10X14 System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSize10X14)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSize11X17;
+#define Lmdsysconst_sLMDSysPrinterPaperSize11X17 System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSize11X17)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeNOTE;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeNOTE System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeNOTE)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeENV_9;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeENV_9 System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeENV_9)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeENV_10;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeENV_10 System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeENV_10)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeENV_11;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeENV_11 System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeENV_11)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeENV_12;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeENV_12 System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeENV_12)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeENV_14;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeENV_14 System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeENV_14)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeENV_DL;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeENV_DL System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeENV_DL)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeENV_C5;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeENV_C5 System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeENV_C5)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeENV_C3;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeENV_C3 System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeENV_C3)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeENV_C4;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeENV_C4 System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeENV_C4)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeENV_C6;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeENV_C6 System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeENV_C6)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeENV_C65;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeENV_C65 System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeENV_C65)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeENV_B4;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeENV_B4 System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeENV_B4)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeENV_B5;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeENV_B5 System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeENV_B5)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeENV_B6;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeENV_B6 System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeENV_B6)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeENV_ITALY;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeENV_ITALY System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeENV_ITALY)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeENV_MONARCH;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeENV_MONARCH System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeENV_MONARCH)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeENV_PERSONAL;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeENV_PERSONAL System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeENV_PERSONAL)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeFANFOLD_US;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeFANFOLD_US System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeFANFOLD_US)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeFANFOLD_STD_GERMAN;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeFANFOLD_STD_GERMAN System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeFANFOLD_STD_GERMAN)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterPaperSizeFANFOLD_LGL_GERMAN;
+#define Lmdsysconst_sLMDSysPrinterPaperSizeFANFOLD_LGL_GERMAN System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterPaperSizeFANFOLD_LGL_GERMAN)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterOptionBitmap;
+#define Lmdsysconst_sLMDSysPrinterOptionBitmap System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterOptionBitmap)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterOptionDownload;
+#define Lmdsysconst_sLMDSysPrinterOptionDownload System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterOptionDownload)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterOptionSubDev;
+#define Lmdsysconst_sLMDSysPrinterOptionSubDev System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterOptionSubDev)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterValidFlagORIENTATION;
+#define Lmdsysconst_sLMDSysPrinterValidFlagORIENTATION System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterValidFlagORIENTATION)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterValidFlagPAPERSIZE;
+#define Lmdsysconst_sLMDSysPrinterValidFlagPAPERSIZE System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterValidFlagPAPERSIZE)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterValidFlagPAPERLENGTH;
+#define Lmdsysconst_sLMDSysPrinterValidFlagPAPERLENGTH System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterValidFlagPAPERLENGTH)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterValidFlagPAPERWIDTH;
+#define Lmdsysconst_sLMDSysPrinterValidFlagPAPERWIDTH System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterValidFlagPAPERWIDTH)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterValidFlagSCALE;
+#define Lmdsysconst_sLMDSysPrinterValidFlagSCALE System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterValidFlagSCALE)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterValidFlagCOPIES;
+#define Lmdsysconst_sLMDSysPrinterValidFlagCOPIES System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterValidFlagCOPIES)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterValidFlagPRINTQUALITY;
+#define Lmdsysconst_sLMDSysPrinterValidFlagPRINTQUALITY System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterValidFlagPRINTQUALITY)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterValidFlagCOLOR;
+#define Lmdsysconst_sLMDSysPrinterValidFlagCOLOR System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterValidFlagCOLOR)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterValidFlagDUPLEX;
+#define Lmdsysconst_sLMDSysPrinterValidFlagDUPLEX System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterValidFlagDUPLEX)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterValidFlagYRESOLUTION;
+#define Lmdsysconst_sLMDSysPrinterValidFlagYRESOLUTION System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterValidFlagYRESOLUTION)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterValidFlagTTOPTION;
+#define Lmdsysconst_sLMDSysPrinterValidFlagTTOPTION System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterValidFlagTTOPTION)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPrinterValidFlagCOLLATE;
+#define Lmdsysconst_sLMDSysPrinterValidFlagCOLLATE System::LoadResourceString(&Lmdsysconst::_sLMDSysPrinterValidFlagCOLLATE)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWindowsObjectsTitle;
+#define Lmdsysconst_sLMDSysWindowsObjectsTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysWindowsObjectsTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWindowsObjectsDesc;
+#define Lmdsysconst_sLMDSysWindowsObjectsDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysWindowsObjectsDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropTitleRegisteredOwner;
+#define Lmdsysconst_sLMDSysWinPropTitleRegisteredOwner System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropTitleRegisteredOwner)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropDescRegisteredOwner;
+#define Lmdsysconst_sLMDSysWinPropDescRegisteredOwner System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropDescRegisteredOwner)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropTitleRegisteredCompany;
+#define Lmdsysconst_sLMDSysWinPropTitleRegisteredCompany System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropTitleRegisteredCompany)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropDescRegisteredCompany;
+#define Lmdsysconst_sLMDSysWinPropDescRegisteredCompany System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropDescRegisteredCompany)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropTitleProductName;
+#define Lmdsysconst_sLMDSysWinPropTitleProductName System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropTitleProductName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropDescProductName;
+#define Lmdsysconst_sLMDSysWinPropDescProductName System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropDescProductName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropTitleProductID;
+#define Lmdsysconst_sLMDSysWinPropTitleProductID System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropTitleProductID)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropDescProductID;
+#define Lmdsysconst_sLMDSysWinPropDescProductID System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropDescProductID)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropTitleProductType;
+#define Lmdsysconst_sLMDSysWinPropTitleProductType System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropTitleProductType)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropDescProductType;
+#define Lmdsysconst_sLMDSysWinPropDescProductType System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropDescProductType)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropTitleProductSuite;
+#define Lmdsysconst_sLMDSysWinPropTitleProductSuite System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropTitleProductSuite)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropDescProductSuite;
+#define Lmdsysconst_sLMDSysWinPropDescProductSuite System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropDescProductSuite)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropTitleProductVersion;
+#define Lmdsysconst_sLMDSysWinPropTitleProductVersion System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropTitleProductVersion)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropDescProductVersion;
+#define Lmdsysconst_sLMDSysWinPropDescProductVersion System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropDescProductVersion)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropTitleVersionName;
+#define Lmdsysconst_sLMDSysWinPropTitleVersionName System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropTitleVersionName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropDescVersionName;
+#define Lmdsysconst_sLMDSysWinPropDescVersionName System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropDescVersionName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropTitleServicePackMajor;
+#define Lmdsysconst_sLMDSysWinPropTitleServicePackMajor System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropTitleServicePackMajor)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropDescServicePackMajor;
+#define Lmdsysconst_sLMDSysWinPropDescServicePackMajor System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropDescServicePackMajor)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropTitleServicePackMinor;
+#define Lmdsysconst_sLMDSysWinPropTitleServicePackMinor System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropTitleServicePackMinor)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropDescServicePackMinor;
+#define Lmdsysconst_sLMDSysWinPropDescServicePackMinor System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropDescServicePackMinor)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropTitleUpTimeString;
+#define Lmdsysconst_sLMDSysWinPropTitleUpTimeString System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropTitleUpTimeString)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropDescUpTimeString;
+#define Lmdsysconst_sLMDSysWinPropDescUpTimeString System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropDescUpTimeString)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropTitleLastBoot;
+#define Lmdsysconst_sLMDSysWinPropTitleLastBoot System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropTitleLastBoot)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropDescLastBoot;
+#define Lmdsysconst_sLMDSysWinPropDescLastBoot System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropDescLastBoot)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropTitleSystemFolders;
+#define Lmdsysconst_sLMDSysWinPropTitleSystemFolders System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropTitleSystemFolders)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropDescSystemFolders;
+#define Lmdsysconst_sLMDSysWinPropDescSystemFolders System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropDescSystemFolders)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropTitleWinDir;
+#define Lmdsysconst_sLMDSysWinPropTitleWinDir System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropTitleWinDir)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropDescWinDir;
+#define Lmdsysconst_sLMDSysWinPropDescWinDir System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropDescWinDir)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropTitleSysDir;
+#define Lmdsysconst_sLMDSysWinPropTitleSysDir System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropTitleSysDir)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropDescSysDir;
+#define Lmdsysconst_sLMDSysWinPropDescSysDir System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropDescSysDir)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropTitleTempDir;
+#define Lmdsysconst_sLMDSysWinPropTitleTempDir System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropTitleTempDir)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropDescTempDir;
+#define Lmdsysconst_sLMDSysWinPropDescTempDir System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropDescTempDir)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropTitleEnvironment;
+#define Lmdsysconst_sLMDSysWinPropTitleEnvironment System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropTitleEnvironment)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropDescEnvironment;
+#define Lmdsysconst_sLMDSysWinPropDescEnvironment System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropDescEnvironment)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropTitleInstallDate;
+#define Lmdsysconst_sLMDSysWinPropTitleInstallDate System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropTitleInstallDate)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropDescInstallDate;
+#define Lmdsysconst_sLMDSysWinPropDescInstallDate System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropDescInstallDate)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropTitleCSDVersion;
+#define Lmdsysconst_sLMDSysWinPropTitleCSDVersion System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropTitleCSDVersion)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropDescCSDVersion;
+#define Lmdsysconst_sLMDSysWinPropDescCSDVersion System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropDescCSDVersion)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropTitlePlatformID;
+#define Lmdsysconst_sLMDSysWinPropTitlePlatformID System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropTitlePlatformID)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropDescPlatformID;
+#define Lmdsysconst_sLMDSysWinPropDescPlatformID System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropDescPlatformID)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropTitleBuildNumber;
+#define Lmdsysconst_sLMDSysWinPropTitleBuildNumber System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropTitleBuildNumber)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropDescBuildNumber;
+#define Lmdsysconst_sLMDSysWinPropDescBuildNumber System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropDescBuildNumber)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropTitleMajorVersion;
+#define Lmdsysconst_sLMDSysWinPropTitleMajorVersion System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropTitleMajorVersion)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropDescMajorVersion;
+#define Lmdsysconst_sLMDSysWinPropDescMajorVersion System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropDescMajorVersion)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropTitleMinorVersion;
+#define Lmdsysconst_sLMDSysWinPropTitleMinorVersion System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropTitleMinorVersion)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysWinPropDescMinorVersion;
+#define Lmdsysconst_sLMDSysWinPropDescMinorVersion System::LoadResourceString(&Lmdsysconst::_sLMDSysWinPropDescMinorVersion)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysKeyboardObjectsTitle;
+#define Lmdsysconst_sLMDSysKeyboardObjectsTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysKeyboardObjectsTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysKeyboardObjectsDesc;
+#define Lmdsysconst_sLMDSysKeyboardObjectsDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysKeyboardObjectsDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDKeyboard1;
+#define Lmdsysconst_sLMDKeyboard1 System::LoadResourceString(&Lmdsysconst::_sLMDKeyboard1)
+extern DELPHI_PACKAGE System::ResourceString _sLMDKeyboard2;
+#define Lmdsysconst_sLMDKeyboard2 System::LoadResourceString(&Lmdsysconst::_sLMDKeyboard2)
+extern DELPHI_PACKAGE System::ResourceString _sLMDKeyboard3;
+#define Lmdsysconst_sLMDKeyboard3 System::LoadResourceString(&Lmdsysconst::_sLMDKeyboard3)
+extern DELPHI_PACKAGE System::ResourceString _sLMDKeyboard4;
+#define Lmdsysconst_sLMDKeyboard4 System::LoadResourceString(&Lmdsysconst::_sLMDKeyboard4)
+extern DELPHI_PACKAGE System::ResourceString _sLMDKeyboard5;
+#define Lmdsysconst_sLMDKeyboard5 System::LoadResourceString(&Lmdsysconst::_sLMDKeyboard5)
+extern DELPHI_PACKAGE System::ResourceString _sLMDKeyboard6;
+#define Lmdsysconst_sLMDKeyboard6 System::LoadResourceString(&Lmdsysconst::_sLMDKeyboard6)
+extern DELPHI_PACKAGE System::ResourceString _sLMDKeyboard7;
+#define Lmdsysconst_sLMDKeyboard7 System::LoadResourceString(&Lmdsysconst::_sLMDKeyboard7)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysKeyboardPropTitleDelay;
+#define Lmdsysconst_sLMDSysKeyboardPropTitleDelay System::LoadResourceString(&Lmdsysconst::_sLMDSysKeyboardPropTitleDelay)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysKeyboardPropDescDelay;
+#define Lmdsysconst_sLMDSysKeyboardPropDescDelay System::LoadResourceString(&Lmdsysconst::_sLMDSysKeyboardPropDescDelay)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysKeyboardPropTitleSpeed;
+#define Lmdsysconst_sLMDSysKeyboardPropTitleSpeed System::LoadResourceString(&Lmdsysconst::_sLMDSysKeyboardPropTitleSpeed)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysKeyboardPropDescSpeed;
+#define Lmdsysconst_sLMDSysKeyboardPropDescSpeed System::LoadResourceString(&Lmdsysconst::_sLMDSysKeyboardPropDescSpeed)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysKeyboardPropTitleNumLock;
+#define Lmdsysconst_sLMDSysKeyboardPropTitleNumLock System::LoadResourceString(&Lmdsysconst::_sLMDSysKeyboardPropTitleNumLock)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysKeyboardPropDescNumLock;
+#define Lmdsysconst_sLMDSysKeyboardPropDescNumLock System::LoadResourceString(&Lmdsysconst::_sLMDSysKeyboardPropDescNumLock)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysKeyboardPropTitleCapsLock;
+#define Lmdsysconst_sLMDSysKeyboardPropTitleCapsLock System::LoadResourceString(&Lmdsysconst::_sLMDSysKeyboardPropTitleCapsLock)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysKeyboardPropDescCapsLock;
+#define Lmdsysconst_sLMDSysKeyboardPropDescCapsLock System::LoadResourceString(&Lmdsysconst::_sLMDSysKeyboardPropDescCapsLock)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysKeyboardPropTitleCaretBlinkTime;
+#define Lmdsysconst_sLMDSysKeyboardPropTitleCaretBlinkTime System::LoadResourceString(&Lmdsysconst::_sLMDSysKeyboardPropTitleCaretBlinkTime)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysKeyboardPropDescCaretBlinkTime;
+#define Lmdsysconst_sLMDSysKeyboardPropDescCaretBlinkTime System::LoadResourceString(&Lmdsysconst::_sLMDSysKeyboardPropDescCaretBlinkTime)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysKeyboardPropTitleScrollLock;
+#define Lmdsysconst_sLMDSysKeyboardPropTitleScrollLock System::LoadResourceString(&Lmdsysconst::_sLMDSysKeyboardPropTitleScrollLock)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysKeyboardPropDescScrollLock;
+#define Lmdsysconst_sLMDSysKeyboardPropDescScrollLock System::LoadResourceString(&Lmdsysconst::_sLMDSysKeyboardPropDescScrollLock)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysKeyboardPropTitleTypeString;
+#define Lmdsysconst_sLMDSysKeyboardPropTitleTypeString System::LoadResourceString(&Lmdsysconst::_sLMDSysKeyboardPropTitleTypeString)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysKeyboardPropDescTypeString;
+#define Lmdsysconst_sLMDSysKeyboardPropDescTypeString System::LoadResourceString(&Lmdsysconst::_sLMDSysKeyboardPropDescTypeString)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysKeyboardPropTitleType;
+#define Lmdsysconst_sLMDSysKeyboardPropTitleType System::LoadResourceString(&Lmdsysconst::_sLMDSysKeyboardPropTitleType)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysKeyboardPropDescType;
+#define Lmdsysconst_sLMDSysKeyboardPropDescType System::LoadResourceString(&Lmdsysconst::_sLMDSysKeyboardPropDescType)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysKeyboardPropTitleSubType;
+#define Lmdsysconst_sLMDSysKeyboardPropTitleSubType System::LoadResourceString(&Lmdsysconst::_sLMDSysKeyboardPropTitleSubType)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysKeyboardPropDescSubType;
+#define Lmdsysconst_sLMDSysKeyboardPropDescSubType System::LoadResourceString(&Lmdsysconst::_sLMDSysKeyboardPropDescSubType)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysKeyboardPropTitleFunctionKeys;
+#define Lmdsysconst_sLMDSysKeyboardPropTitleFunctionKeys System::LoadResourceString(&Lmdsysconst::_sLMDSysKeyboardPropTitleFunctionKeys)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysKeyboardPropDescFunctionKeys;
+#define Lmdsysconst_sLMDSysKeyboardPropDescFunctionKeys System::LoadResourceString(&Lmdsysconst::_sLMDSysKeyboardPropDescFunctionKeys)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysKeyboardPropTitleLayout;
+#define Lmdsysconst_sLMDSysKeyboardPropTitleLayout System::LoadResourceString(&Lmdsysconst::_sLMDSysKeyboardPropTitleLayout)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysKeyboardPropDescLayout;
+#define Lmdsysconst_sLMDSysKeyboardPropDescLayout System::LoadResourceString(&Lmdsysconst::_sLMDSysKeyboardPropDescLayout)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMemoryObjectsTitle;
+#define Lmdsysconst_sLMDSysMemoryObjectsTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysMemoryObjectsTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMemoryObjectsDesc;
+#define Lmdsysconst_sLMDSysMemoryObjectsDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysMemoryObjectsDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMemoryPropTitleMemoryLoad;
+#define Lmdsysconst_sLMDSysMemoryPropTitleMemoryLoad System::LoadResourceString(&Lmdsysconst::_sLMDSysMemoryPropTitleMemoryLoad)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMemoryPropDescMemoryLoad;
+#define Lmdsysconst_sLMDSysMemoryPropDescMemoryLoad System::LoadResourceString(&Lmdsysconst::_sLMDSysMemoryPropDescMemoryLoad)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMemoryPropTitleTotalPhysicalMemory;
+#define Lmdsysconst_sLMDSysMemoryPropTitleTotalPhysicalMemory System::LoadResourceString(&Lmdsysconst::_sLMDSysMemoryPropTitleTotalPhysicalMemory)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMemoryPropDescTotalPhysicalMemory;
+#define Lmdsysconst_sLMDSysMemoryPropDescTotalPhysicalMemory System::LoadResourceString(&Lmdsysconst::_sLMDSysMemoryPropDescTotalPhysicalMemory)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMemoryPropTitleAvailablePhysicalMemory;
+#define Lmdsysconst_sLMDSysMemoryPropTitleAvailablePhysicalMemory System::LoadResourceString(&Lmdsysconst::_sLMDSysMemoryPropTitleAvailablePhysicalMemory)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMemoryPropDescAvailablePhysicalMemory;
+#define Lmdsysconst_sLMDSysMemoryPropDescAvailablePhysicalMemory System::LoadResourceString(&Lmdsysconst::_sLMDSysMemoryPropDescAvailablePhysicalMemory)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMemoryPropTitleTotalPageFile;
+#define Lmdsysconst_sLMDSysMemoryPropTitleTotalPageFile System::LoadResourceString(&Lmdsysconst::_sLMDSysMemoryPropTitleTotalPageFile)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMemoryPropDescTotalPageFile;
+#define Lmdsysconst_sLMDSysMemoryPropDescTotalPageFile System::LoadResourceString(&Lmdsysconst::_sLMDSysMemoryPropDescTotalPageFile)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMemoryPropTitleAvailablePageFile;
+#define Lmdsysconst_sLMDSysMemoryPropTitleAvailablePageFile System::LoadResourceString(&Lmdsysconst::_sLMDSysMemoryPropTitleAvailablePageFile)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMemoryPropDescAvailablePageFile;
+#define Lmdsysconst_sLMDSysMemoryPropDescAvailablePageFile System::LoadResourceString(&Lmdsysconst::_sLMDSysMemoryPropDescAvailablePageFile)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMemoryPropTitleTotalVirtual;
+#define Lmdsysconst_sLMDSysMemoryPropTitleTotalVirtual System::LoadResourceString(&Lmdsysconst::_sLMDSysMemoryPropTitleTotalVirtual)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMemoryPropDescTotalVirtual;
+#define Lmdsysconst_sLMDSysMemoryPropDescTotalVirtual System::LoadResourceString(&Lmdsysconst::_sLMDSysMemoryPropDescTotalVirtual)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMemoryPropTitleAvailableVirtual;
+#define Lmdsysconst_sLMDSysMemoryPropTitleAvailableVirtual System::LoadResourceString(&Lmdsysconst::_sLMDSysMemoryPropTitleAvailableVirtual)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMemoryPropDescAvailableVirtual;
+#define Lmdsysconst_sLMDSysMemoryPropDescAvailableVirtual System::LoadResourceString(&Lmdsysconst::_sLMDSysMemoryPropDescAvailableVirtual)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMemoryPropTitlePageSize;
+#define Lmdsysconst_sLMDSysMemoryPropTitlePageSize System::LoadResourceString(&Lmdsysconst::_sLMDSysMemoryPropTitlePageSize)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMemoryPropDescPageSize;
+#define Lmdsysconst_sLMDSysMemoryPropDescPageSize System::LoadResourceString(&Lmdsysconst::_sLMDSysMemoryPropDescPageSize)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMemoryPropTitleAllocationGranularity;
+#define Lmdsysconst_sLMDSysMemoryPropTitleAllocationGranularity System::LoadResourceString(&Lmdsysconst::_sLMDSysMemoryPropTitleAllocationGranularity)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMemoryPropDescAllocationGranularity;
+#define Lmdsysconst_sLMDSysMemoryPropDescAllocationGranularity System::LoadResourceString(&Lmdsysconst::_sLMDSysMemoryPropDescAllocationGranularity)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMemoryPropTitleMinAppAddress;
+#define Lmdsysconst_sLMDSysMemoryPropTitleMinAppAddress System::LoadResourceString(&Lmdsysconst::_sLMDSysMemoryPropTitleMinAppAddress)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMemoryPropDescMinAppAddress;
+#define Lmdsysconst_sLMDSysMemoryPropDescMinAppAddress System::LoadResourceString(&Lmdsysconst::_sLMDSysMemoryPropDescMinAppAddress)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMemoryPropTitleMaxAppAddress;
+#define Lmdsysconst_sLMDSysMemoryPropTitleMaxAppAddress System::LoadResourceString(&Lmdsysconst::_sLMDSysMemoryPropTitleMaxAppAddress)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMemoryPropDescMaxAppAddress;
+#define Lmdsysconst_sLMDSysMemoryPropDescMaxAppAddress System::LoadResourceString(&Lmdsysconst::_sLMDSysMemoryPropDescMaxAppAddress)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMemoryPropTitleAvailableExtendedVirtual;
+#define Lmdsysconst_sLMDSysMemoryPropTitleAvailableExtendedVirtual System::LoadResourceString(&Lmdsysconst::_sLMDSysMemoryPropTitleAvailableExtendedVirtual)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMemoryPropDescAvailableExtendedVirtual;
+#define Lmdsysconst_sLMDSysMemoryPropDescAvailableExtendedVirtual System::LoadResourceString(&Lmdsysconst::_sLMDSysMemoryPropDescAvailableExtendedVirtual)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorObjectsTitle;
+#define Lmdsysconst_sLMDSysProcessorObjectsTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorObjectsTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorObjectsDesc;
+#define Lmdsysconst_sLMDSysProcessorObjectsDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorObjectsDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropTitleProcessorUsage;
+#define Lmdsysconst_sLMDSysProcessorPropTitleProcessorUsage System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropTitleProcessorUsage)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropDescProcessorUsage;
+#define Lmdsysconst_sLMDSysProcessorPropDescProcessorUsage System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropDescProcessorUsage)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropTitleIDString;
+#define Lmdsysconst_sLMDSysProcessorPropTitleIDString System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropTitleIDString)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropDescIDString;
+#define Lmdsysconst_sLMDSysProcessorPropDescIDString System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropDescIDString)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropTitleCPUName;
+#define Lmdsysconst_sLMDSysProcessorPropTitleCPUName System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropTitleCPUName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropDescCPUName;
+#define Lmdsysconst_sLMDSysProcessorPropDescCPUName System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropDescCPUName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropTitleCount;
+#define Lmdsysconst_sLMDSysProcessorPropTitleCount System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropTitleCount)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropDescCount;
+#define Lmdsysconst_sLMDSysProcessorPropDescCount System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropDescCount)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropTitleStepping;
+#define Lmdsysconst_sLMDSysProcessorPropTitleStepping System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropTitleStepping)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropDescStepping;
+#define Lmdsysconst_sLMDSysProcessorPropDescStepping System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropDescStepping)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropTitleModel;
+#define Lmdsysconst_sLMDSysProcessorPropTitleModel System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropTitleModel)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropDescModel;
+#define Lmdsysconst_sLMDSysProcessorPropDescModel System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropDescModel)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropTitleFamily;
+#define Lmdsysconst_sLMDSysProcessorPropTitleFamily System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropTitleFamily)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropDescFamily;
+#define Lmdsysconst_sLMDSysProcessorPropDescFamily System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropDescFamily)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropTitleFPU;
+#define Lmdsysconst_sLMDSysProcessorPropTitleFPU System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropTitleFPU)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropDescFPU;
+#define Lmdsysconst_sLMDSysProcessorPropDescFPU System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropDescFPU)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropTitleVirtualModeExtensions;
+#define Lmdsysconst_sLMDSysProcessorPropTitleVirtualModeExtensions System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropTitleVirtualModeExtensions)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropDescVirtualModeExtensions;
+#define Lmdsysconst_sLMDSysProcessorPropDescVirtualModeExtensions System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropDescVirtualModeExtensions)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropTitleDebuggingExtensions;
+#define Lmdsysconst_sLMDSysProcessorPropTitleDebuggingExtensions System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropTitleDebuggingExtensions)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropDescDebuggingExtensions;
+#define Lmdsysconst_sLMDSysProcessorPropDescDebuggingExtensions System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropDescDebuggingExtensions)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropTitlePageSizeExtensions;
+#define Lmdsysconst_sLMDSysProcessorPropTitlePageSizeExtensions System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropTitlePageSizeExtensions)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropDescPageSizeExtensions;
+#define Lmdsysconst_sLMDSysProcessorPropDescPageSizeExtensions System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropDescPageSizeExtensions)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropTitleTimeStampCounter;
+#define Lmdsysconst_sLMDSysProcessorPropTitleTimeStampCounter System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropTitleTimeStampCounter)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropDescTimeStampCounter;
+#define Lmdsysconst_sLMDSysProcessorPropDescTimeStampCounter System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropDescTimeStampCounter)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropTitleK86_ModelSpecificRegisters;
+#define Lmdsysconst_sLMDSysProcessorPropTitleK86_ModelSpecificRegisters System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropTitleK86_ModelSpecificRegisters)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropDescK86_ModelSpecificRegisters;
+#define Lmdsysconst_sLMDSysProcessorPropDescK86_ModelSpecificRegisters System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropDescK86_ModelSpecificRegisters)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropTitleMachineCheckException;
+#define Lmdsysconst_sLMDSysProcessorPropTitleMachineCheckException System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropTitleMachineCheckException)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropDescMachineCheckException;
+#define Lmdsysconst_sLMDSysProcessorPropDescMachineCheckException System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropDescMachineCheckException)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropTitleCMP_XCHG_8B;
+#define Lmdsysconst_sLMDSysProcessorPropTitleCMP_XCHG_8B System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropTitleCMP_XCHG_8B)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropDescCMP_XCHG_8B;
+#define Lmdsysconst_sLMDSysProcessorPropDescCMP_XCHG_8B System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropDescCMP_XCHG_8B)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropTitleAPIC;
+#define Lmdsysconst_sLMDSysProcessorPropTitleAPIC System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropTitleAPIC)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropDescAPIC;
+#define Lmdsysconst_sLMDSysProcessorPropDescAPIC System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropDescAPIC)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropTitleMemoryTypeRangeRegisters;
+#define Lmdsysconst_sLMDSysProcessorPropTitleMemoryTypeRangeRegisters System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropTitleMemoryTypeRangeRegisters)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropDescMemoryTypeRangeRegisters;
+#define Lmdsysconst_sLMDSysProcessorPropDescMemoryTypeRangeRegisters System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropDescMemoryTypeRangeRegisters)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropTitleGlobalPaging;
+#define Lmdsysconst_sLMDSysProcessorPropTitleGlobalPaging System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropTitleGlobalPaging)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropDescGlobalPaging;
+#define Lmdsysconst_sLMDSysProcessorPropDescGlobalPaging System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropDescGlobalPaging)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropTitleCond_MOVE_Instruct;
+#define Lmdsysconst_sLMDSysProcessorPropTitleCond_MOVE_Instruct System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropTitleCond_MOVE_Instruct)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropDescCond_MOVE_Instruct;
+#define Lmdsysconst_sLMDSysProcessorPropDescCond_MOVE_Instruct System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropDescCond_MOVE_Instruct)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropTitleMMX;
+#define Lmdsysconst_sLMDSysProcessorPropTitleMMX System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropTitleMMX)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropDescMMX;
+#define Lmdsysconst_sLMDSysProcessorPropDescMMX System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropDescMMX)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropTitleSYSCALLandSYSRET;
+#define Lmdsysconst_sLMDSysProcessorPropTitleSYSCALLandSYSRET System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropTitleSYSCALLandSYSRET)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropDescSYSCALLandSYSRET;
+#define Lmdsysconst_sLMDSysProcessorPropDescSYSCALLandSYSRET System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropDescSYSCALLandSYSRET)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropTitleFPCond_MOVE_Instruct;
+#define Lmdsysconst_sLMDSysProcessorPropTitleFPCond_MOVE_Instruct System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropTitleFPCond_MOVE_Instruct)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropDescFPCond_MOVE_Instruct;
+#define Lmdsysconst_sLMDSysProcessorPropDescFPCond_MOVE_Instruct System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropDescFPCond_MOVE_Instruct)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropTitleAMD3DNow;
+#define Lmdsysconst_sLMDSysProcessorPropTitleAMD3DNow System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropTitleAMD3DNow)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropDescAMD3DNow;
+#define Lmdsysconst_sLMDSysProcessorPropDescAMD3DNow System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropDescAMD3DNow)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropTitleIdentifier;
+#define Lmdsysconst_sLMDSysProcessorPropTitleIdentifier System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropTitleIdentifier)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropDescIdentifier;
+#define Lmdsysconst_sLMDSysProcessorPropDescIdentifier System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropDescIdentifier)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropTitleVendorIdentifier;
+#define Lmdsysconst_sLMDSysProcessorPropTitleVendorIdentifier System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropTitleVendorIdentifier)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropDescVendorIdentifier;
+#define Lmdsysconst_sLMDSysProcessorPropDescVendorIdentifier System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropDescVendorIdentifier)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropTitleMHz;
+#define Lmdsysconst_sLMDSysProcessorPropTitleMHz System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropTitleMHz)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProcessorPropDescMHz;
+#define Lmdsysconst_sLMDSysProcessorPropDescMHz System::LoadResourceString(&Lmdsysconst::_sLMDSysProcessorPropDescMHz)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPowerStatusObjectsTitle;
+#define Lmdsysconst_sLMDSysPowerStatusObjectsTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysPowerStatusObjectsTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPowerStatusObjectsDesc;
+#define Lmdsysconst_sLMDSysPowerStatusObjectsDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysPowerStatusObjectsDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPowerStatusPropTitleACLineStatus;
+#define Lmdsysconst_sLMDSysPowerStatusPropTitleACLineStatus System::LoadResourceString(&Lmdsysconst::_sLMDSysPowerStatusPropTitleACLineStatus)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPowerStatusPropDescACLineStatus;
+#define Lmdsysconst_sLMDSysPowerStatusPropDescACLineStatus System::LoadResourceString(&Lmdsysconst::_sLMDSysPowerStatusPropDescACLineStatus)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPowerStatusPropTitleBatteryFlags;
+#define Lmdsysconst_sLMDSysPowerStatusPropTitleBatteryFlags System::LoadResourceString(&Lmdsysconst::_sLMDSysPowerStatusPropTitleBatteryFlags)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPowerStatusPropDescBatteryFlags;
+#define Lmdsysconst_sLMDSysPowerStatusPropDescBatteryFlags System::LoadResourceString(&Lmdsysconst::_sLMDSysPowerStatusPropDescBatteryFlags)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPowerStatusPropTitleBatteryLifePercent;
+#define Lmdsysconst_sLMDSysPowerStatusPropTitleBatteryLifePercent System::LoadResourceString(&Lmdsysconst::_sLMDSysPowerStatusPropTitleBatteryLifePercent)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPowerStatusPropDescBatteryLifePercent;
+#define Lmdsysconst_sLMDSysPowerStatusPropDescBatteryLifePercent System::LoadResourceString(&Lmdsysconst::_sLMDSysPowerStatusPropDescBatteryLifePercent)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPowerStatusPropTitleBatteryLifeTime;
+#define Lmdsysconst_sLMDSysPowerStatusPropTitleBatteryLifeTime System::LoadResourceString(&Lmdsysconst::_sLMDSysPowerStatusPropTitleBatteryLifeTime)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPowerStatusPropDescBatteryLifeTime;
+#define Lmdsysconst_sLMDSysPowerStatusPropDescBatteryLifeTime System::LoadResourceString(&Lmdsysconst::_sLMDSysPowerStatusPropDescBatteryLifeTime)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPowerStatusPropTitleBatteryFullLifeTime;
+#define Lmdsysconst_sLMDSysPowerStatusPropTitleBatteryFullLifeTime System::LoadResourceString(&Lmdsysconst::_sLMDSysPowerStatusPropTitleBatteryFullLifeTime)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPowerStatusPropDescBatteryFullLifeTime;
+#define Lmdsysconst_sLMDSysPowerStatusPropDescBatteryFullLifeTime System::LoadResourceString(&Lmdsysconst::_sLMDSysPowerStatusPropDescBatteryFullLifeTime)
+extern DELPHI_PACKAGE System::ResourceString _sACLineStatusOffline;
+#define Lmdsysconst_sACLineStatusOffline System::LoadResourceString(&Lmdsysconst::_sACLineStatusOffline)
+extern DELPHI_PACKAGE System::ResourceString _sACLineStatusOnline;
+#define Lmdsysconst_sACLineStatusOnline System::LoadResourceString(&Lmdsysconst::_sACLineStatusOnline)
+extern DELPHI_PACKAGE System::ResourceString _sACLineStatusUnknown;
+#define Lmdsysconst_sACLineStatusUnknown System::LoadResourceString(&Lmdsysconst::_sACLineStatusUnknown)
+extern DELPHI_PACKAGE System::ResourceString _sBatteryFlagHigh;
+#define Lmdsysconst_sBatteryFlagHigh System::LoadResourceString(&Lmdsysconst::_sBatteryFlagHigh)
+extern DELPHI_PACKAGE System::ResourceString _sBatteryFlagLow;
+#define Lmdsysconst_sBatteryFlagLow System::LoadResourceString(&Lmdsysconst::_sBatteryFlagLow)
+extern DELPHI_PACKAGE System::ResourceString _sBatteryFlagCritical;
+#define Lmdsysconst_sBatteryFlagCritical System::LoadResourceString(&Lmdsysconst::_sBatteryFlagCritical)
+extern DELPHI_PACKAGE System::ResourceString _sBatteryFlagCharging;
+#define Lmdsysconst_sBatteryFlagCharging System::LoadResourceString(&Lmdsysconst::_sBatteryFlagCharging)
+extern DELPHI_PACKAGE System::ResourceString _sBatteryFlagNoSystemBat;
+#define Lmdsysconst_sBatteryFlagNoSystemBat System::LoadResourceString(&Lmdsysconst::_sBatteryFlagNoSystemBat)
+extern DELPHI_PACKAGE System::ResourceString _sBatteryFlagUnkown;
+#define Lmdsysconst_sBatteryFlagUnkown System::LoadResourceString(&Lmdsysconst::_sBatteryFlagUnkown)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysTimeZoneObjectsTitle;
+#define Lmdsysconst_sLMDSysTimeZoneObjectsTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysTimeZoneObjectsTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysTimeZoneStatusObjectsDesc;
+#define Lmdsysconst_sLMDSysTimeZoneStatusObjectsDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysTimeZoneStatusObjectsDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysTimeZoneStart;
+#define Lmdsysconst_sLMDSysTimeZoneStart System::LoadResourceString(&Lmdsysconst::_sLMDSysTimeZoneStart)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysTimeZoneStandard;
+#define Lmdsysconst_sLMDSysTimeZoneStandard System::LoadResourceString(&Lmdsysconst::_sLMDSysTimeZoneStandard)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysTimeZoneDayLight;
+#define Lmdsysconst_sLMDSysTimeZoneDayLight System::LoadResourceString(&Lmdsysconst::_sLMDSysTimeZoneDayLight)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysTimeZonePropTitleTimeZoneID;
+#define Lmdsysconst_sLMDSysTimeZonePropTitleTimeZoneID System::LoadResourceString(&Lmdsysconst::_sLMDSysTimeZonePropTitleTimeZoneID)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysTimeZonePropDescTimezoneID;
+#define Lmdsysconst_sLMDSysTimeZonePropDescTimezoneID System::LoadResourceString(&Lmdsysconst::_sLMDSysTimeZonePropDescTimezoneID)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysTimeZonePropTitleBias;
+#define Lmdsysconst_sLMDSysTimeZonePropTitleBias System::LoadResourceString(&Lmdsysconst::_sLMDSysTimeZonePropTitleBias)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysTimeZonePropDescBias;
+#define Lmdsysconst_sLMDSysTimeZonePropDescBias System::LoadResourceString(&Lmdsysconst::_sLMDSysTimeZonePropDescBias)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysTimeZonePropTitleDayLightBias;
+#define Lmdsysconst_sLMDSysTimeZonePropTitleDayLightBias System::LoadResourceString(&Lmdsysconst::_sLMDSysTimeZonePropTitleDayLightBias)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysTimeZonePropDescDayLightBias;
+#define Lmdsysconst_sLMDSysTimeZonePropDescDayLightBias System::LoadResourceString(&Lmdsysconst::_sLMDSysTimeZonePropDescDayLightBias)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysTimeZonePropTitleStandardBias;
+#define Lmdsysconst_sLMDSysTimeZonePropTitleStandardBias System::LoadResourceString(&Lmdsysconst::_sLMDSysTimeZonePropTitleStandardBias)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysTimeZonePropDescStandardBias;
+#define Lmdsysconst_sLMDSysTimeZonePropDescStandardBias System::LoadResourceString(&Lmdsysconst::_sLMDSysTimeZonePropDescStandardBias)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysTimeZonePropTitleDayLightName;
+#define Lmdsysconst_sLMDSysTimeZonePropTitleDayLightName System::LoadResourceString(&Lmdsysconst::_sLMDSysTimeZonePropTitleDayLightName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysTimeZonePropDescDayLightName;
+#define Lmdsysconst_sLMDSysTimeZonePropDescDayLightName System::LoadResourceString(&Lmdsysconst::_sLMDSysTimeZonePropDescDayLightName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysTimeZonePropTitleStandardName;
+#define Lmdsysconst_sLMDSysTimeZonePropTitleStandardName System::LoadResourceString(&Lmdsysconst::_sLMDSysTimeZonePropTitleStandardName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysTimeZonePropDescStandardName;
+#define Lmdsysconst_sLMDSysTimeZonePropDescStandardName System::LoadResourceString(&Lmdsysconst::_sLMDSysTimeZonePropDescStandardName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysTimeZonePropTitleDayLightDate;
+#define Lmdsysconst_sLMDSysTimeZonePropTitleDayLightDate System::LoadResourceString(&Lmdsysconst::_sLMDSysTimeZonePropTitleDayLightDate)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysTimeZonePropDescDayLightDate;
+#define Lmdsysconst_sLMDSysTimeZonePropDescDayLightDate System::LoadResourceString(&Lmdsysconst::_sLMDSysTimeZonePropDescDayLightDate)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysTimeZonePropTitleStandardDate;
+#define Lmdsysconst_sLMDSysTimeZonePropTitleStandardDate System::LoadResourceString(&Lmdsysconst::_sLMDSysTimeZonePropTitleStandardDate)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysTimeZonePropDescStandardDate;
+#define Lmdsysconst_sLMDSysTimeZonePropDescStandardDate System::LoadResourceString(&Lmdsysconst::_sLMDSysTimeZonePropDescStandardDate)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocaleObjectsTitle;
+#define Lmdsysconst_sLMDSysLocaleObjectsTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysLocaleObjectsTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocaleObjectsDesc;
+#define Lmdsysconst_sLMDSysLocaleObjectsDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysLocaleObjectsDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleCalendarType;
+#define Lmdsysconst_sLMDSysLocalePropTitleCalendarType System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleCalendarType)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescCalendarType;
+#define Lmdsysconst_sLMDSysLocalePropDescCalendarType System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescCalendarType)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleCurrencyDigits;
+#define Lmdsysconst_sLMDSysLocalePropTitleCurrencyDigits System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleCurrencyDigits)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescCurrencyDigits;
+#define Lmdsysconst_sLMDSysLocalePropDescCurrencyDigits System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescCurrencyDigits)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitlePositiveCurrencyFormat;
+#define Lmdsysconst_sLMDSysLocalePropTitlePositiveCurrencyFormat System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitlePositiveCurrencyFormat)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescPositiveCurrencyFormat;
+#define Lmdsysconst_sLMDSysLocalePropDescPositiveCurrencyFormat System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescPositiveCurrencyFormat)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleDigits;
+#define Lmdsysconst_sLMDSysLocalePropTitleDigits System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleDigits)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescDigits;
+#define Lmdsysconst_sLMDSysLocalePropDescDigits System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescDigits)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleFirstDayOfWeek;
+#define Lmdsysconst_sLMDSysLocalePropTitleFirstDayOfWeek System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleFirstDayOfWeek)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescFirstDayOfWeek;
+#define Lmdsysconst_sLMDSysLocalePropDescFirstDayOfWeek System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescFirstDayOfWeek)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleFirstWeekOfYear;
+#define Lmdsysconst_sLMDSysLocalePropTitleFirstWeekOfYear System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleFirstWeekOfYear)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescFirstWeekOfYear;
+#define Lmdsysconst_sLMDSysLocalePropDescFirstWeekOfYear System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescFirstWeekOfYear)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleShowLeadingZero;
+#define Lmdsysconst_sLMDSysLocalePropTitleShowLeadingZero System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleShowLeadingZero)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescShowLeadingZero;
+#define Lmdsysconst_sLMDSysLocalePropDescShowLeadingZero System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescShowLeadingZero)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleMeasurement;
+#define Lmdsysconst_sLMDSysLocalePropTitleMeasurement System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleMeasurement)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescMeasurement;
+#define Lmdsysconst_sLMDSysLocalePropDescMeasurement System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescMeasurement)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleNegativeCurrencyFormat;
+#define Lmdsysconst_sLMDSysLocalePropTitleNegativeCurrencyFormat System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleNegativeCurrencyFormat)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescNegativeCurrencyFormat;
+#define Lmdsysconst_sLMDSysLocalePropDescNegativeCurrencyFormat System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescNegativeCurrencyFormat)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleNegativeFormat;
+#define Lmdsysconst_sLMDSysLocalePropTitleNegativeFormat System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleNegativeFormat)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescNegativeFormat;
+#define Lmdsysconst_sLMDSysLocalePropDescNegativeFormat System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescNegativeFormat)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleClockMode;
+#define Lmdsysconst_sLMDSysLocalePropTitleClockMode System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleClockMode)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescClockMode;
+#define Lmdsysconst_sLMDSysLocalePropDescClockMode System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescClockMode)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleMorningSymbol;
+#define Lmdsysconst_sLMDSysLocalePropTitleMorningSymbol System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleMorningSymbol)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescMorningSymbol;
+#define Lmdsysconst_sLMDSysLocalePropDescMorningSymbol System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescMorningSymbol)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleAfternoonSymbol;
+#define Lmdsysconst_sLMDSysLocalePropTitleAfternoonSymbol System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleAfternoonSymbol)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescAfternoonSymbol;
+#define Lmdsysconst_sLMDSysLocalePropDescAfternoonSymbol System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescAfternoonSymbol)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleCurrencySymbol;
+#define Lmdsysconst_sLMDSysLocalePropTitleCurrencySymbol System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleCurrencySymbol)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescCurrencySymbol;
+#define Lmdsysconst_sLMDSysLocalePropDescCurrencySymbol System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescCurrencySymbol)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleDateSeparator;
+#define Lmdsysconst_sLMDSysLocalePropTitleDateSeparator System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleDateSeparator)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescDateSeparator;
+#define Lmdsysconst_sLMDSysLocalePropDescDateSeparator System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescDateSeparator)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleDecimalSeparator;
+#define Lmdsysconst_sLMDSysLocalePropTitleDecimalSeparator System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleDecimalSeparator)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescDecimalSeparator;
+#define Lmdsysconst_sLMDSysLocalePropDescDecimalSeparator System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescDecimalSeparator)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleGrouping;
+#define Lmdsysconst_sLMDSysLocalePropTitleGrouping System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleGrouping)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescGrouping;
+#define Lmdsysconst_sLMDSysLocalePropDescGrouping System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescGrouping)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleListSeparator;
+#define Lmdsysconst_sLMDSysLocalePropTitleListSeparator System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleListSeparator)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescListSeparator;
+#define Lmdsysconst_sLMDSysLocalePropDescListSeparator System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescListSeparator)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleLongDateFormat;
+#define Lmdsysconst_sLMDSysLocalePropTitleLongDateFormat System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleLongDateFormat)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescLongDateFormat;
+#define Lmdsysconst_sLMDSysLocalePropDescLongDateFormat System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescLongDateFormat)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleCurrencyDecimalSeparator;
+#define Lmdsysconst_sLMDSysLocalePropTitleCurrencyDecimalSeparator System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleCurrencyDecimalSeparator)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescCurrencyDecimalSeparator;
+#define Lmdsysconst_sLMDSysLocalePropDescCurrencyDecimalSeparator System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescCurrencyDecimalSeparator)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleCurrencyGrouping;
+#define Lmdsysconst_sLMDSysLocalePropTitleCurrencyGrouping System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleCurrencyGrouping)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescCurrencyGrouping;
+#define Lmdsysconst_sLMDSysLocalePropDescCurrencyGrouping System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescCurrencyGrouping)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleCurrencyGroupingSign;
+#define Lmdsysconst_sLMDSysLocalePropTitleCurrencyGroupingSign System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleCurrencyGroupingSign)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescCurrencyGroupingSign;
+#define Lmdsysconst_sLMDSysLocalePropDescCurrencyGroupingSign System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescCurrencyGroupingSign)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleNegativeSign;
+#define Lmdsysconst_sLMDSysLocalePropTitleNegativeSign System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleNegativeSign)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescNegativeSign;
+#define Lmdsysconst_sLMDSysLocalePropDescNegativeSign System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescNegativeSign)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitlePositiveSign;
+#define Lmdsysconst_sLMDSysLocalePropTitlePositiveSign System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitlePositiveSign)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescPositiveSign;
+#define Lmdsysconst_sLMDSysLocalePropDescPositiveSign System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescPositiveSign)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleShortDateFormat;
+#define Lmdsysconst_sLMDSysLocalePropTitleShortDateFormat System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleShortDateFormat)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescShortDateFormat;
+#define Lmdsysconst_sLMDSysLocalePropDescShortDateFormat System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescShortDateFormat)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleThousandSeparator;
+#define Lmdsysconst_sLMDSysLocalePropTitleThousandSeparator System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleThousandSeparator)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescThousandSeparator;
+#define Lmdsysconst_sLMDSysLocalePropDescThousandSeparator System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescThousandSeparator)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleTimeSeparator;
+#define Lmdsysconst_sLMDSysLocalePropTitleTimeSeparator System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleTimeSeparator)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescTimeSeparator;
+#define Lmdsysconst_sLMDSysLocalePropDescTimeSeparator System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescTimeSeparator)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleTimeFormat;
+#define Lmdsysconst_sLMDSysLocalePropTitleTimeFormat System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleTimeFormat)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescTimeFormat;
+#define Lmdsysconst_sLMDSysLocalePropDescTimeFormat System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescTimeFormat)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleShortDateOrder;
+#define Lmdsysconst_sLMDSysLocalePropTitleShortDateOrder System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleShortDateOrder)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescShortDateOrder;
+#define Lmdsysconst_sLMDSysLocalePropDescShortDateOrder System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescShortDateOrder)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleLongDateOrder;
+#define Lmdsysconst_sLMDSysLocalePropTitleLongDateOrder System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleLongDateOrder)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescLongDateOrder;
+#define Lmdsysconst_sLMDSysLocalePropDescLongDateOrder System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescLongDateOrder)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleYearDigits;
+#define Lmdsysconst_sLMDSysLocalePropTitleYearDigits System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleYearDigits)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescYearDigits;
+#define Lmdsysconst_sLMDSysLocalePropDescYearDigits System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescYearDigits)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleInternationalCurrencySymbol;
+#define Lmdsysconst_sLMDSysLocalePropTitleInternationalCurrencySymbol System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleInternationalCurrencySymbol)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescInternationalCurrencySymbol;
+#define Lmdsysconst_sLMDSysLocalePropDescInternationalCurrencySymbol System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescInternationalCurrencySymbol)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleLanguage;
+#define Lmdsysconst_sLMDSysLocalePropTitleLanguage System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleLanguage)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescLanguage;
+#define Lmdsysconst_sLMDSysLocalePropDescLanguage System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescLanguage)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleLanguageEnglish;
+#define Lmdsysconst_sLMDSysLocalePropTitleLanguageEnglish System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleLanguageEnglish)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescLanguageEnglish;
+#define Lmdsysconst_sLMDSysLocalePropDescLanguageEnglish System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescLanguageEnglish)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleLanguageSymbol;
+#define Lmdsysconst_sLMDSysLocalePropTitleLanguageSymbol System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleLanguageSymbol)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescLanguageSymbol;
+#define Lmdsysconst_sLMDSysLocalePropDescLanguageSymbol System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescLanguageSymbol)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleCountryCode;
+#define Lmdsysconst_sLMDSysLocalePropTitleCountryCode System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleCountryCode)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescCountryCode;
+#define Lmdsysconst_sLMDSysLocalePropDescCountryCode System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescCountryCode)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleCountry;
+#define Lmdsysconst_sLMDSysLocalePropTitleCountry System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleCountry)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescCountry;
+#define Lmdsysconst_sLMDSysLocalePropDescCountry System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescCountry)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropTitleCountrySymbol;
+#define Lmdsysconst_sLMDSysLocalePropTitleCountrySymbol System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropTitleCountrySymbol)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysLocalePropDescCountrySymbol;
+#define Lmdsysconst_sLMDSysLocalePropDescCountrySymbol System::LoadResourceString(&Lmdsysconst::_sLMDSysLocalePropDescCountrySymbol)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysUninstallGroupTitle;
+#define Lmdsysconst_sLMDSysUninstallGroupTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysUninstallGroupTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysUninstallGroupDesc;
+#define Lmdsysconst_sLMDSysUninstallGroupDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysUninstallGroupDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysUninstallPropTitleProgramName;
+#define Lmdsysconst_sLMDSysUninstallPropTitleProgramName System::LoadResourceString(&Lmdsysconst::_sLMDSysUninstallPropTitleProgramName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysUninstallPropDescProgramName;
+#define Lmdsysconst_sLMDSysUninstallPropDescProgramName System::LoadResourceString(&Lmdsysconst::_sLMDSysUninstallPropDescProgramName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysUninstallPropTitleUninstallPath;
+#define Lmdsysconst_sLMDSysUninstallPropTitleUninstallPath System::LoadResourceString(&Lmdsysconst::_sLMDSysUninstallPropTitleUninstallPath)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysUninstallPropDescUninstallPath;
+#define Lmdsysconst_sLMDSysUninstallPropDescUninstallPath System::LoadResourceString(&Lmdsysconst::_sLMDSysUninstallPropDescUninstallPath)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysUninstallPropTitlePublisher;
+#define Lmdsysconst_sLMDSysUninstallPropTitlePublisher System::LoadResourceString(&Lmdsysconst::_sLMDSysUninstallPropTitlePublisher)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysUninstallPropDescPublisher;
+#define Lmdsysconst_sLMDSysUninstallPropDescPublisher System::LoadResourceString(&Lmdsysconst::_sLMDSysUninstallPropDescPublisher)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysUninstallPropTitlePublisherURL;
+#define Lmdsysconst_sLMDSysUninstallPropTitlePublisherURL System::LoadResourceString(&Lmdsysconst::_sLMDSysUninstallPropTitlePublisherURL)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysUninstallPropDescPublisherURL;
+#define Lmdsysconst_sLMDSysUninstallPropDescPublisherURL System::LoadResourceString(&Lmdsysconst::_sLMDSysUninstallPropDescPublisherURL)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysUninstallPropTitleVersion;
+#define Lmdsysconst_sLMDSysUninstallPropTitleVersion System::LoadResourceString(&Lmdsysconst::_sLMDSysUninstallPropTitleVersion)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysUninstallPropDescVersion;
+#define Lmdsysconst_sLMDSysUninstallPropDescVersion System::LoadResourceString(&Lmdsysconst::_sLMDSysUninstallPropDescVersion)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysUninstallPropTitleHelpLink;
+#define Lmdsysconst_sLMDSysUninstallPropTitleHelpLink System::LoadResourceString(&Lmdsysconst::_sLMDSysUninstallPropTitleHelpLink)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysUninstallPropDescHelpLink;
+#define Lmdsysconst_sLMDSysUninstallPropDescHelpLink System::LoadResourceString(&Lmdsysconst::_sLMDSysUninstallPropDescHelpLink)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysUninstallPropTitleUpdateInfoURL;
+#define Lmdsysconst_sLMDSysUninstallPropTitleUpdateInfoURL System::LoadResourceString(&Lmdsysconst::_sLMDSysUninstallPropTitleUpdateInfoURL)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysUninstallPropDescUpdateInfoURL;
+#define Lmdsysconst_sLMDSysUninstallPropDescUpdateInfoURL System::LoadResourceString(&Lmdsysconst::_sLMDSysUninstallPropDescUpdateInfoURL)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysUninstallPropTitleRegCompany;
+#define Lmdsysconst_sLMDSysUninstallPropTitleRegCompany System::LoadResourceString(&Lmdsysconst::_sLMDSysUninstallPropTitleRegCompany)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysUninstallPropDescRegCompany;
+#define Lmdsysconst_sLMDSysUninstallPropDescRegCompany System::LoadResourceString(&Lmdsysconst::_sLMDSysUninstallPropDescRegCompany)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysUninstallPropTitleRegOwner;
+#define Lmdsysconst_sLMDSysUninstallPropTitleRegOwner System::LoadResourceString(&Lmdsysconst::_sLMDSysUninstallPropTitleRegOwner)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysUninstallPropDescRegOwner;
+#define Lmdsysconst_sLMDSysUninstallPropDescRegOwner System::LoadResourceString(&Lmdsysconst::_sLMDSysUninstallPropDescRegOwner)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontGroupTitle;
+#define Lmdsysconst_sLMDSysFontGroupTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysFontGroupTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontGroupDesc;
+#define Lmdsysconst_sLMDSysFontGroupDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysFontGroupDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitleFontType;
+#define Lmdsysconst_sLMDSysFontPropTitleFontType System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitleFontType)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDescFontType;
+#define Lmdsysconst_sLMDSysFontPropDescFontType System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDescFontType)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitleFullName;
+#define Lmdsysconst_sLMDSysFontPropTitleFullName System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitleFullName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDescFullName;
+#define Lmdsysconst_sLMDSysFontPropDescFullName System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDescFullName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitleStyle;
+#define Lmdsysconst_sLMDSysFontPropTitleStyle System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitleStyle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDescStyle;
+#define Lmdsysconst_sLMDSysFontPropDescStyle System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDescStyle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitleScript;
+#define Lmdsysconst_sLMDSysFontPropTitleScript System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitleScript)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDescScript;
+#define Lmdsysconst_sLMDSysFontPropDescScript System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDescScript)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitleLogHeight;
+#define Lmdsysconst_sLMDSysFontPropTitleLogHeight System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitleLogHeight)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDescLogHeight;
+#define Lmdsysconst_sLMDSysFontPropDescLogHeight System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDescLogHeight)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitleLogWidth;
+#define Lmdsysconst_sLMDSysFontPropTitleLogWidth System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitleLogWidth)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDescLogWidth;
+#define Lmdsysconst_sLMDSysFontPropDescLogWidth System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDescLogWidth)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitleLogEscapement;
+#define Lmdsysconst_sLMDSysFontPropTitleLogEscapement System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitleLogEscapement)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDescLogEscapement;
+#define Lmdsysconst_sLMDSysFontPropDescLogEscapement System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDescLogEscapement)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitleLogOrientation;
+#define Lmdsysconst_sLMDSysFontPropTitleLogOrientation System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitleLogOrientation)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDescLogOrientation;
+#define Lmdsysconst_sLMDSysFontPropDescLogOrientation System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDescLogOrientation)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitleLogWeight;
+#define Lmdsysconst_sLMDSysFontPropTitleLogWeight System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitleLogWeight)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDescLogWeight;
+#define Lmdsysconst_sLMDSysFontPropDescLogWeight System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDescLogWeight)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitleLogItalic;
+#define Lmdsysconst_sLMDSysFontPropTitleLogItalic System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitleLogItalic)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDescLogItalic;
+#define Lmdsysconst_sLMDSysFontPropDescLogItalic System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDescLogItalic)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitleLogUnderline;
+#define Lmdsysconst_sLMDSysFontPropTitleLogUnderline System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitleLogUnderline)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDescLogUnderline;
+#define Lmdsysconst_sLMDSysFontPropDescLogUnderline System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDescLogUnderline)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitleLogStikeOut;
+#define Lmdsysconst_sLMDSysFontPropTitleLogStikeOut System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitleLogStikeOut)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDescLogStikeOut;
+#define Lmdsysconst_sLMDSysFontPropDescLogStikeOut System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDescLogStikeOut)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitleLogCharSet;
+#define Lmdsysconst_sLMDSysFontPropTitleLogCharSet System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitleLogCharSet)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDescLogCharSet;
+#define Lmdsysconst_sLMDSysFontPropDescLogCharSet System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDescLogCharSet)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitleLogOutPrecision;
+#define Lmdsysconst_sLMDSysFontPropTitleLogOutPrecision System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitleLogOutPrecision)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDescLogOutPrecision;
+#define Lmdsysconst_sLMDSysFontPropDescLogOutPrecision System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDescLogOutPrecision)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitleLogClipPrecision;
+#define Lmdsysconst_sLMDSysFontPropTitleLogClipPrecision System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitleLogClipPrecision)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDescLogClipPrecision;
+#define Lmdsysconst_sLMDSysFontPropDescLogClipPrecision System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDescLogClipPrecision)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitleLogQuality;
+#define Lmdsysconst_sLMDSysFontPropTitleLogQuality System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitleLogQuality)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDescLogQuality;
+#define Lmdsysconst_sLMDSysFontPropDescLogQuality System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDescLogQuality)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitleLogPitch;
+#define Lmdsysconst_sLMDSysFontPropTitleLogPitch System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitleLogPitch)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDescLogPitch;
+#define Lmdsysconst_sLMDSysFontPropDescLogPitch System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDescLogPitch)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitleLogFamily;
+#define Lmdsysconst_sLMDSysFontPropTitleLogFamily System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitleLogFamily)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDescLogFamily;
+#define Lmdsysconst_sLMDSysFontPropDescLogFamily System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDescLogFamily)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitleLogFaceName;
+#define Lmdsysconst_sLMDSysFontPropTitleLogFaceName System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitleLogFaceName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDescLogFaceName;
+#define Lmdsysconst_sLMDSysFontPropDescLogFaceName System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDescLogFaceName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitletmHeight;
+#define Lmdsysconst_sLMDSysFontPropTitletmHeight System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitletmHeight)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDesctmHeight;
+#define Lmdsysconst_sLMDSysFontPropDesctmHeight System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDesctmHeight)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitletmAscent;
+#define Lmdsysconst_sLMDSysFontPropTitletmAscent System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitletmAscent)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDesctmAscent;
+#define Lmdsysconst_sLMDSysFontPropDesctmAscent System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDesctmAscent)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitletmDescent;
+#define Lmdsysconst_sLMDSysFontPropTitletmDescent System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitletmDescent)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDesctmDescent;
+#define Lmdsysconst_sLMDSysFontPropDesctmDescent System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDesctmDescent)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitletmInternalLeading;
+#define Lmdsysconst_sLMDSysFontPropTitletmInternalLeading System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitletmInternalLeading)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDesctmInternalLeading;
+#define Lmdsysconst_sLMDSysFontPropDesctmInternalLeading System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDesctmInternalLeading)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitletmExternalLeading;
+#define Lmdsysconst_sLMDSysFontPropTitletmExternalLeading System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitletmExternalLeading)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDesctmExternalLeading;
+#define Lmdsysconst_sLMDSysFontPropDesctmExternalLeading System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDesctmExternalLeading)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitletmAveCharWidth;
+#define Lmdsysconst_sLMDSysFontPropTitletmAveCharWidth System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitletmAveCharWidth)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDesctmAveCharWidth;
+#define Lmdsysconst_sLMDSysFontPropDesctmAveCharWidth System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDesctmAveCharWidth)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitletmMaxCharWidth;
+#define Lmdsysconst_sLMDSysFontPropTitletmMaxCharWidth System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitletmMaxCharWidth)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDesctmMaxCharWidth;
+#define Lmdsysconst_sLMDSysFontPropDesctmMaxCharWidth System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDesctmMaxCharWidth)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitletmWeight;
+#define Lmdsysconst_sLMDSysFontPropTitletmWeight System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitletmWeight)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDesctmWeight;
+#define Lmdsysconst_sLMDSysFontPropDesctmWeight System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDesctmWeight)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitletmOverhang;
+#define Lmdsysconst_sLMDSysFontPropTitletmOverhang System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitletmOverhang)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDesctmOverhang;
+#define Lmdsysconst_sLMDSysFontPropDesctmOverhang System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDesctmOverhang)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitletmDigitizedAspectX;
+#define Lmdsysconst_sLMDSysFontPropTitletmDigitizedAspectX System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitletmDigitizedAspectX)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDesctmDigitizedAspectX;
+#define Lmdsysconst_sLMDSysFontPropDesctmDigitizedAspectX System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDesctmDigitizedAspectX)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitletmDigitizedAspectY;
+#define Lmdsysconst_sLMDSysFontPropTitletmDigitizedAspectY System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitletmDigitizedAspectY)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDesctmDigitizedAspectY;
+#define Lmdsysconst_sLMDSysFontPropDesctmDigitizedAspectY System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDesctmDigitizedAspectY)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitletmFirstChar;
+#define Lmdsysconst_sLMDSysFontPropTitletmFirstChar System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitletmFirstChar)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDesctmFirstChar;
+#define Lmdsysconst_sLMDSysFontPropDesctmFirstChar System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDesctmFirstChar)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitletmLastChar;
+#define Lmdsysconst_sLMDSysFontPropTitletmLastChar System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitletmLastChar)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDesctmLastChar;
+#define Lmdsysconst_sLMDSysFontPropDesctmLastChar System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDesctmLastChar)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitletmDefaultChar;
+#define Lmdsysconst_sLMDSysFontPropTitletmDefaultChar System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitletmDefaultChar)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDesctmDefaultChar;
+#define Lmdsysconst_sLMDSysFontPropDesctmDefaultChar System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDesctmDefaultChar)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitletmBreakChar;
+#define Lmdsysconst_sLMDSysFontPropTitletmBreakChar System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitletmBreakChar)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDesctmBreakChar;
+#define Lmdsysconst_sLMDSysFontPropDesctmBreakChar System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDesctmBreakChar)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitletmItalic;
+#define Lmdsysconst_sLMDSysFontPropTitletmItalic System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitletmItalic)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDesctmItalic;
+#define Lmdsysconst_sLMDSysFontPropDesctmItalic System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDesctmItalic)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitletmUnderline;
+#define Lmdsysconst_sLMDSysFontPropTitletmUnderline System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitletmUnderline)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDesctmUnderline;
+#define Lmdsysconst_sLMDSysFontPropDesctmUnderline System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDesctmUnderline)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitletmStikeOut;
+#define Lmdsysconst_sLMDSysFontPropTitletmStikeOut System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitletmStikeOut)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDesctmStikeOut;
+#define Lmdsysconst_sLMDSysFontPropDesctmStikeOut System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDesctmStikeOut)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitletmPitch;
+#define Lmdsysconst_sLMDSysFontPropTitletmPitch System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitletmPitch)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDesctmPitch;
+#define Lmdsysconst_sLMDSysFontPropDesctmPitch System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDesctmPitch)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitletmFamily;
+#define Lmdsysconst_sLMDSysFontPropTitletmFamily System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitletmFamily)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDesctmFamily;
+#define Lmdsysconst_sLMDSysFontPropDesctmFamily System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDesctmFamily)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitletmCharSet;
+#define Lmdsysconst_sLMDSysFontPropTitletmCharSet System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitletmCharSet)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDesctmCharSet;
+#define Lmdsysconst_sLMDSysFontPropDesctmCharSet System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDesctmCharSet)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitletmFlags;
+#define Lmdsysconst_sLMDSysFontPropTitletmFlags System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitletmFlags)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDesctmFlags;
+#define Lmdsysconst_sLMDSysFontPropDesctmFlags System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDesctmFlags)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitletmSizeEM;
+#define Lmdsysconst_sLMDSysFontPropTitletmSizeEM System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitletmSizeEM)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDesctmSizeEM;
+#define Lmdsysconst_sLMDSysFontPropDesctmSizeEM System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDesctmSizeEM)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitletmCellHeight;
+#define Lmdsysconst_sLMDSysFontPropTitletmCellHeight System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitletmCellHeight)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDesctmCellHeight;
+#define Lmdsysconst_sLMDSysFontPropDesctmCellHeight System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDesctmCellHeight)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropTitletmAvgWidth;
+#define Lmdsysconst_sLMDSysFontPropTitletmAvgWidth System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropTitletmAvgWidth)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFontPropDesctmAvgWidth;
+#define Lmdsysconst_sLMDSysFontPropDesctmAvgWidth System::LoadResourceString(&Lmdsysconst::_sLMDSysFontPropDesctmAvgWidth)
+extern DELPHI_PACKAGE System::ResourceString _sFontTypeDEVICE;
+#define Lmdsysconst_sFontTypeDEVICE System::LoadResourceString(&Lmdsysconst::_sFontTypeDEVICE)
+extern DELPHI_PACKAGE System::ResourceString _sFontTypeRASTER;
+#define Lmdsysconst_sFontTypeRASTER System::LoadResourceString(&Lmdsysconst::_sFontTypeRASTER)
+extern DELPHI_PACKAGE System::ResourceString _sFontTypeTRUETYPE;
+#define Lmdsysconst_sFontTypeTRUETYPE System::LoadResourceString(&Lmdsysconst::_sFontTypeTRUETYPE)
+extern DELPHI_PACKAGE System::ResourceString _sCharSetANSI_CHARSET;
+#define Lmdsysconst_sCharSetANSI_CHARSET System::LoadResourceString(&Lmdsysconst::_sCharSetANSI_CHARSET)
+extern DELPHI_PACKAGE System::ResourceString _sCharSetDEFAULT_CHARSET;
+#define Lmdsysconst_sCharSetDEFAULT_CHARSET System::LoadResourceString(&Lmdsysconst::_sCharSetDEFAULT_CHARSET)
+extern DELPHI_PACKAGE System::ResourceString _sCharSetSYMBOL_CHARSET;
+#define Lmdsysconst_sCharSetSYMBOL_CHARSET System::LoadResourceString(&Lmdsysconst::_sCharSetSYMBOL_CHARSET)
+extern DELPHI_PACKAGE System::ResourceString _sCharSetMAC_CHARSET;
+#define Lmdsysconst_sCharSetMAC_CHARSET System::LoadResourceString(&Lmdsysconst::_sCharSetMAC_CHARSET)
+extern DELPHI_PACKAGE System::ResourceString _sCharSetSHIFTJIS_CHARSET;
+#define Lmdsysconst_sCharSetSHIFTJIS_CHARSET System::LoadResourceString(&Lmdsysconst::_sCharSetSHIFTJIS_CHARSET)
+extern DELPHI_PACKAGE System::ResourceString _sCharSetHANGEUL_CHARSET;
+#define Lmdsysconst_sCharSetHANGEUL_CHARSET System::LoadResourceString(&Lmdsysconst::_sCharSetHANGEUL_CHARSET)
+extern DELPHI_PACKAGE System::ResourceString _sCharSetJOHAB_CHARSET;
+#define Lmdsysconst_sCharSetJOHAB_CHARSET System::LoadResourceString(&Lmdsysconst::_sCharSetJOHAB_CHARSET)
+extern DELPHI_PACKAGE System::ResourceString _sCharSetGB2312_CHARSET;
+#define Lmdsysconst_sCharSetGB2312_CHARSET System::LoadResourceString(&Lmdsysconst::_sCharSetGB2312_CHARSET)
+extern DELPHI_PACKAGE System::ResourceString _sCharSetCHINESEBIG5_CHARSET;
+#define Lmdsysconst_sCharSetCHINESEBIG5_CHARSET System::LoadResourceString(&Lmdsysconst::_sCharSetCHINESEBIG5_CHARSET)
+extern DELPHI_PACKAGE System::ResourceString _sCharSetGREEK_CHARSET;
+#define Lmdsysconst_sCharSetGREEK_CHARSET System::LoadResourceString(&Lmdsysconst::_sCharSetGREEK_CHARSET)
+extern DELPHI_PACKAGE System::ResourceString _sCharSetTURKISH_CHARSET;
+#define Lmdsysconst_sCharSetTURKISH_CHARSET System::LoadResourceString(&Lmdsysconst::_sCharSetTURKISH_CHARSET)
+extern DELPHI_PACKAGE System::ResourceString _sCharSetVIETNAMESE_CHARSET;
+#define Lmdsysconst_sCharSetVIETNAMESE_CHARSET System::LoadResourceString(&Lmdsysconst::_sCharSetVIETNAMESE_CHARSET)
+extern DELPHI_PACKAGE System::ResourceString _sCharSetHEBREW_CHARSET;
+#define Lmdsysconst_sCharSetHEBREW_CHARSET System::LoadResourceString(&Lmdsysconst::_sCharSetHEBREW_CHARSET)
+extern DELPHI_PACKAGE System::ResourceString _sCharSetARABIC_CHARSET;
+#define Lmdsysconst_sCharSetARABIC_CHARSET System::LoadResourceString(&Lmdsysconst::_sCharSetARABIC_CHARSET)
+extern DELPHI_PACKAGE System::ResourceString _sCharSetBALTIC_CHARSET;
+#define Lmdsysconst_sCharSetBALTIC_CHARSET System::LoadResourceString(&Lmdsysconst::_sCharSetBALTIC_CHARSET)
+extern DELPHI_PACKAGE System::ResourceString _sCharSetRUSSIAN_CHARSET;
+#define Lmdsysconst_sCharSetRUSSIAN_CHARSET System::LoadResourceString(&Lmdsysconst::_sCharSetRUSSIAN_CHARSET)
+extern DELPHI_PACKAGE System::ResourceString _sCharSetTHAI_CHARSET;
+#define Lmdsysconst_sCharSetTHAI_CHARSET System::LoadResourceString(&Lmdsysconst::_sCharSetTHAI_CHARSET)
+extern DELPHI_PACKAGE System::ResourceString _sCharSetEASTEUROPE_CHARSET;
+#define Lmdsysconst_sCharSetEASTEUROPE_CHARSET System::LoadResourceString(&Lmdsysconst::_sCharSetEASTEUROPE_CHARSET)
+extern DELPHI_PACKAGE System::ResourceString _sCharSetOEM_CHARSET;
+#define Lmdsysconst_sCharSetOEM_CHARSET System::LoadResourceString(&Lmdsysconst::_sCharSetOEM_CHARSET)
+extern DELPHI_PACKAGE System::ResourceString _sFontPitchDefault;
+#define Lmdsysconst_sFontPitchDefault System::LoadResourceString(&Lmdsysconst::_sFontPitchDefault)
+extern DELPHI_PACKAGE System::ResourceString _sFontPitchVariable;
+#define Lmdsysconst_sFontPitchVariable System::LoadResourceString(&Lmdsysconst::_sFontPitchVariable)
+extern DELPHI_PACKAGE System::ResourceString _sFontPitchFixed;
+#define Lmdsysconst_sFontPitchFixed System::LoadResourceString(&Lmdsysconst::_sFontPitchFixed)
+extern DELPHI_PACKAGE System::ResourceString _sTM_ITALIC;
+#define Lmdsysconst_sTM_ITALIC System::LoadResourceString(&Lmdsysconst::_sTM_ITALIC)
+extern DELPHI_PACKAGE System::ResourceString _sTM_BOLD;
+#define Lmdsysconst_sTM_BOLD System::LoadResourceString(&Lmdsysconst::_sTM_BOLD)
+extern DELPHI_PACKAGE System::ResourceString _sTM_REGULAR;
+#define Lmdsysconst_sTM_REGULAR System::LoadResourceString(&Lmdsysconst::_sTM_REGULAR)
+extern DELPHI_PACKAGE System::ResourceString _sTM_NONNEGATIVE_AC;
+#define Lmdsysconst_sTM_NONNEGATIVE_AC System::LoadResourceString(&Lmdsysconst::_sTM_NONNEGATIVE_AC)
+extern DELPHI_PACKAGE System::ResourceString _sTM_PS_OPENTYPE;
+#define Lmdsysconst_sTM_PS_OPENTYPE System::LoadResourceString(&Lmdsysconst::_sTM_PS_OPENTYPE)
+extern DELPHI_PACKAGE System::ResourceString _sTM_TT_OPENTYPE;
+#define Lmdsysconst_sTM_TT_OPENTYPE System::LoadResourceString(&Lmdsysconst::_sTM_TT_OPENTYPE)
+extern DELPHI_PACKAGE System::ResourceString _sTM_MULTIPLEMASTER;
+#define Lmdsysconst_sTM_MULTIPLEMASTER System::LoadResourceString(&Lmdsysconst::_sTM_MULTIPLEMASTER)
+extern DELPHI_PACKAGE System::ResourceString _sTM_TYPE1;
+#define Lmdsysconst_sTM_TYPE1 System::LoadResourceString(&Lmdsysconst::_sTM_TYPE1)
+extern DELPHI_PACKAGE System::ResourceString _sTM_DSIG;
+#define Lmdsysconst_sTM_DSIG System::LoadResourceString(&Lmdsysconst::_sTM_DSIG)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMultimediaGroupTitle;
+#define Lmdsysconst_sLMDSysMultimediaGroupTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysMultimediaGroupTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMultimediaGroupDesc;
+#define Lmdsysconst_sLMDSysMultimediaGroupDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysMultimediaGroupDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickGroupTitle;
+#define Lmdsysconst_sLMDSysJoystickGroupTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickGroupTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickGroupDesc;
+#define Lmdsysconst_sLMDSysJoystickGroupDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickGroupDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysmidiOutAudioGroupTitle;
+#define Lmdsysconst_sLMDSysmidiOutAudioGroupTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysmidiOutAudioGroupTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysmidiOutAudioGroupDesc;
+#define Lmdsysconst_sLMDSysmidiOutAudioGroupDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysmidiOutAudioGroupDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysmidiInAudioGroupTitle;
+#define Lmdsysconst_sLMDSysmidiInAudioGroupTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysmidiInAudioGroupTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysmidiInAudioGroupDesc;
+#define Lmdsysconst_sLMDSysmidiInAudioGroupDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysmidiInAudioGroupDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSyswaveOutAudioGroupTitle;
+#define Lmdsysconst_sLMDSyswaveOutAudioGroupTitle System::LoadResourceString(&Lmdsysconst::_sLMDSyswaveOutAudioGroupTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSyswaveOutAudioGroupDesc;
+#define Lmdsysconst_sLMDSyswaveOutAudioGroupDesc System::LoadResourceString(&Lmdsysconst::_sLMDSyswaveOutAudioGroupDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSyswaveInAudioGroupTitle;
+#define Lmdsysconst_sLMDSyswaveInAudioGroupTitle System::LoadResourceString(&Lmdsysconst::_sLMDSyswaveInAudioGroupTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSyswaveInAudioGroupDesc;
+#define Lmdsysconst_sLMDSyswaveInAudioGroupDesc System::LoadResourceString(&Lmdsysconst::_sLMDSyswaveInAudioGroupDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDauxAudioGroupTitle;
+#define Lmdsysconst_sLMDSysDauxAudioGroupTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysDauxAudioGroupTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDauxAudioGroupDesc;
+#define Lmdsysconst_sLMDSysDauxAudioGroupDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysDauxAudioGroupDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMixerGroupTitle;
+#define Lmdsysconst_sLMDSysMixerGroupTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysMixerGroupTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMixerGroupDesc;
+#define Lmdsysconst_sLMDSysMixerGroupDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysMixerGroupDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMultimediaCmnPropTitleDeviceID;
+#define Lmdsysconst_sLMDSysMultimediaCmnPropTitleDeviceID System::LoadResourceString(&Lmdsysconst::_sLMDSysMultimediaCmnPropTitleDeviceID)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMultimediaCmnPropDescDeviceID;
+#define Lmdsysconst_sLMDSysMultimediaCmnPropDescDeviceID System::LoadResourceString(&Lmdsysconst::_sLMDSysMultimediaCmnPropDescDeviceID)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMultimediaCmnPropTitleManufacturerID;
+#define Lmdsysconst_sLMDSysMultimediaCmnPropTitleManufacturerID System::LoadResourceString(&Lmdsysconst::_sLMDSysMultimediaCmnPropTitleManufacturerID)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMultimediaCmnPropDescManufacturerID;
+#define Lmdsysconst_sLMDSysMultimediaCmnPropDescManufacturerID System::LoadResourceString(&Lmdsysconst::_sLMDSysMultimediaCmnPropDescManufacturerID)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMultimediaCmnPropTitleProductID;
+#define Lmdsysconst_sLMDSysMultimediaCmnPropTitleProductID System::LoadResourceString(&Lmdsysconst::_sLMDSysMultimediaCmnPropTitleProductID)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMultimediaCmnPropDescProductID;
+#define Lmdsysconst_sLMDSysMultimediaCmnPropDescProductID System::LoadResourceString(&Lmdsysconst::_sLMDSysMultimediaCmnPropDescProductID)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMultimediaCmnPropTitleMajorVer;
+#define Lmdsysconst_sLMDSysMultimediaCmnPropTitleMajorVer System::LoadResourceString(&Lmdsysconst::_sLMDSysMultimediaCmnPropTitleMajorVer)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMultimediaCmnPropDescMajorVer;
+#define Lmdsysconst_sLMDSysMultimediaCmnPropDescMajorVer System::LoadResourceString(&Lmdsysconst::_sLMDSysMultimediaCmnPropDescMajorVer)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMultimediaCmnPropTitleMinorVer;
+#define Lmdsysconst_sLMDSysMultimediaCmnPropTitleMinorVer System::LoadResourceString(&Lmdsysconst::_sLMDSysMultimediaCmnPropTitleMinorVer)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMultimediaCmnPropDescMinorVer;
+#define Lmdsysconst_sLMDSysMultimediaCmnPropDescMinorVer System::LoadResourceString(&Lmdsysconst::_sLMDSysMultimediaCmnPropDescMinorVer)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMultimediaCmnPropTitleName;
+#define Lmdsysconst_sLMDSysMultimediaCmnPropTitleName System::LoadResourceString(&Lmdsysconst::_sLMDSysMultimediaCmnPropTitleName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMultimediaCmnPropDescName;
+#define Lmdsysconst_sLMDSysMultimediaCmnPropDescName System::LoadResourceString(&Lmdsysconst::_sLMDSysMultimediaCmnPropDescName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropTitleXmin;
+#define Lmdsysconst_sLMDSysJoystickPropTitleXmin System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropTitleXmin)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropDescXmin;
+#define Lmdsysconst_sLMDSysJoystickPropDescXmin System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropDescXmin)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropTitleXmax;
+#define Lmdsysconst_sLMDSysJoystickPropTitleXmax System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropTitleXmax)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropDescXmax;
+#define Lmdsysconst_sLMDSysJoystickPropDescXmax System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropDescXmax)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropTitleYmin;
+#define Lmdsysconst_sLMDSysJoystickPropTitleYmin System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropTitleYmin)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropDescYmin;
+#define Lmdsysconst_sLMDSysJoystickPropDescYmin System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropDescYmin)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropTitleYmax;
+#define Lmdsysconst_sLMDSysJoystickPropTitleYmax System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropTitleYmax)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropDescYmax;
+#define Lmdsysconst_sLMDSysJoystickPropDescYmax System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropDescYmax)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropTitleZmin;
+#define Lmdsysconst_sLMDSysJoystickPropTitleZmin System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropTitleZmin)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropDescZmin;
+#define Lmdsysconst_sLMDSysJoystickPropDescZmin System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropDescZmin)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropTitleZmax;
+#define Lmdsysconst_sLMDSysJoystickPropTitleZmax System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropTitleZmax)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropDescZmax;
+#define Lmdsysconst_sLMDSysJoystickPropDescZmax System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropDescZmax)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropTitleNumButtons;
+#define Lmdsysconst_sLMDSysJoystickPropTitleNumButtons System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropTitleNumButtons)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropDescNumButtons;
+#define Lmdsysconst_sLMDSysJoystickPropDescNumButtons System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropDescNumButtons)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropTitlePeriodMin;
+#define Lmdsysconst_sLMDSysJoystickPropTitlePeriodMin System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropTitlePeriodMin)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropDescPeriodMin;
+#define Lmdsysconst_sLMDSysJoystickPropDescPeriodMin System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropDescPeriodMin)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropTitlePeriodMax;
+#define Lmdsysconst_sLMDSysJoystickPropTitlePeriodMax System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropTitlePeriodMax)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropDescPeriodMax;
+#define Lmdsysconst_sLMDSysJoystickPropDescPeriodMax System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropDescPeriodMax)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropTitleRmin;
+#define Lmdsysconst_sLMDSysJoystickPropTitleRmin System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropTitleRmin)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropDescRmin;
+#define Lmdsysconst_sLMDSysJoystickPropDescRmin System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropDescRmin)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropTitleRmax;
+#define Lmdsysconst_sLMDSysJoystickPropTitleRmax System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropTitleRmax)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropDescRmax;
+#define Lmdsysconst_sLMDSysJoystickPropDescRmax System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropDescRmax)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropTitleUmin;
+#define Lmdsysconst_sLMDSysJoystickPropTitleUmin System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropTitleUmin)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropDescUmin;
+#define Lmdsysconst_sLMDSysJoystickPropDescUmin System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropDescUmin)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropTitleUmax;
+#define Lmdsysconst_sLMDSysJoystickPropTitleUmax System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropTitleUmax)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropDescUmax;
+#define Lmdsysconst_sLMDSysJoystickPropDescUmax System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropDescUmax)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropTitleVmin;
+#define Lmdsysconst_sLMDSysJoystickPropTitleVmin System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropTitleVmin)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropDescVmin;
+#define Lmdsysconst_sLMDSysJoystickPropDescVmin System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropDescVmin)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropTitleVmax;
+#define Lmdsysconst_sLMDSysJoystickPropTitleVmax System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropTitleVmax)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropDescVmax;
+#define Lmdsysconst_sLMDSysJoystickPropDescVmax System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropDescVmax)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropTitleCaps;
+#define Lmdsysconst_sLMDSysJoystickPropTitleCaps System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropTitleCaps)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropDescCaps;
+#define Lmdsysconst_sLMDSysJoystickPropDescCaps System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropDescCaps)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropTitleMaxAxes;
+#define Lmdsysconst_sLMDSysJoystickPropTitleMaxAxes System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropTitleMaxAxes)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropDescMaxAxes;
+#define Lmdsysconst_sLMDSysJoystickPropDescMaxAxes System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropDescMaxAxes)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropTitleNumAxes;
+#define Lmdsysconst_sLMDSysJoystickPropTitleNumAxes System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropTitleNumAxes)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropDescNumAxes;
+#define Lmdsysconst_sLMDSysJoystickPropDescNumAxes System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropDescNumAxes)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropTitleMaxButtons;
+#define Lmdsysconst_sLMDSysJoystickPropTitleMaxButtons System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropTitleMaxButtons)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropDescMaxButtons;
+#define Lmdsysconst_sLMDSysJoystickPropDescMaxButtons System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropDescMaxButtons)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropTitleRegKey;
+#define Lmdsysconst_sLMDSysJoystickPropTitleRegKey System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropTitleRegKey)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropDescRegKey;
+#define Lmdsysconst_sLMDSysJoystickPropDescRegKey System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropDescRegKey)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropTitleOEMVxD;
+#define Lmdsysconst_sLMDSysJoystickPropTitleOEMVxD System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropTitleOEMVxD)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysJoystickPropDescOEMVxD;
+#define Lmdsysconst_sLMDSysJoystickPropDescOEMVxD System::LoadResourceString(&Lmdsysconst::_sLMDSysJoystickPropDescOEMVxD)
+extern DELPHI_PACKAGE System::ResourceString _sJoyCapHASZ;
+#define Lmdsysconst_sJoyCapHASZ System::LoadResourceString(&Lmdsysconst::_sJoyCapHASZ)
+extern DELPHI_PACKAGE System::ResourceString _sJoyCapHASR;
+#define Lmdsysconst_sJoyCapHASR System::LoadResourceString(&Lmdsysconst::_sJoyCapHASR)
+extern DELPHI_PACKAGE System::ResourceString _sJoyCapHASU;
+#define Lmdsysconst_sJoyCapHASU System::LoadResourceString(&Lmdsysconst::_sJoyCapHASU)
+extern DELPHI_PACKAGE System::ResourceString _sJoyCapHASV;
+#define Lmdsysconst_sJoyCapHASV System::LoadResourceString(&Lmdsysconst::_sJoyCapHASV)
+extern DELPHI_PACKAGE System::ResourceString _sJoyCapHASPOV;
+#define Lmdsysconst_sJoyCapHASPOV System::LoadResourceString(&Lmdsysconst::_sJoyCapHASPOV)
+extern DELPHI_PACKAGE System::ResourceString _sJoyCapPOV4DIR;
+#define Lmdsysconst_sJoyCapPOV4DIR System::LoadResourceString(&Lmdsysconst::_sJoyCapPOV4DIR)
+extern DELPHI_PACKAGE System::ResourceString _sJoyCapPOVCTS;
+#define Lmdsysconst_sJoyCapPOVCTS System::LoadResourceString(&Lmdsysconst::_sJoyCapPOVCTS)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysmidiOutAudioPropTitleTechnology;
+#define Lmdsysconst_sLMDSysmidiOutAudioPropTitleTechnology System::LoadResourceString(&Lmdsysconst::_sLMDSysmidiOutAudioPropTitleTechnology)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysmidiOutAudioPropDescTechnology;
+#define Lmdsysconst_sLMDSysmidiOutAudioPropDescTechnology System::LoadResourceString(&Lmdsysconst::_sLMDSysmidiOutAudioPropDescTechnology)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysmidiOutAudioPropTitleVoices;
+#define Lmdsysconst_sLMDSysmidiOutAudioPropTitleVoices System::LoadResourceString(&Lmdsysconst::_sLMDSysmidiOutAudioPropTitleVoices)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysmidiOutAudioPropDescVoices;
+#define Lmdsysconst_sLMDSysmidiOutAudioPropDescVoices System::LoadResourceString(&Lmdsysconst::_sLMDSysmidiOutAudioPropDescVoices)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysmidiOutAudioPropTitleNotes;
+#define Lmdsysconst_sLMDSysmidiOutAudioPropTitleNotes System::LoadResourceString(&Lmdsysconst::_sLMDSysmidiOutAudioPropTitleNotes)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysmidiOutAudioPropDescNotes;
+#define Lmdsysconst_sLMDSysmidiOutAudioPropDescNotes System::LoadResourceString(&Lmdsysconst::_sLMDSysmidiOutAudioPropDescNotes)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysmidiOutAudioPropTitleChannelMask;
+#define Lmdsysconst_sLMDSysmidiOutAudioPropTitleChannelMask System::LoadResourceString(&Lmdsysconst::_sLMDSysmidiOutAudioPropTitleChannelMask)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysmidiOutAudioPropDescChannelMask;
+#define Lmdsysconst_sLMDSysmidiOutAudioPropDescChannelMask System::LoadResourceString(&Lmdsysconst::_sLMDSysmidiOutAudioPropDescChannelMask)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysmidiOutAudioPropTitleSupport;
+#define Lmdsysconst_sLMDSysmidiOutAudioPropTitleSupport System::LoadResourceString(&Lmdsysconst::_sLMDSysmidiOutAudioPropTitleSupport)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysmidiOutAudioPropDescSupport;
+#define Lmdsysconst_sLMDSysmidiOutAudioPropDescSupport System::LoadResourceString(&Lmdsysconst::_sLMDSysmidiOutAudioPropDescSupport)
+extern DELPHI_PACKAGE System::ResourceString _sLMDMIDITechnologyMIDIPORT;
+#define Lmdsysconst_sLMDMIDITechnologyMIDIPORT System::LoadResourceString(&Lmdsysconst::_sLMDMIDITechnologyMIDIPORT)
+extern DELPHI_PACKAGE System::ResourceString _sLMDMIDITechnologySYNTH;
+#define Lmdsysconst_sLMDMIDITechnologySYNTH System::LoadResourceString(&Lmdsysconst::_sLMDMIDITechnologySYNTH)
+extern DELPHI_PACKAGE System::ResourceString _sLMDMIDITechnologySQSYNTH;
+#define Lmdsysconst_sLMDMIDITechnologySQSYNTH System::LoadResourceString(&Lmdsysconst::_sLMDMIDITechnologySQSYNTH)
+extern DELPHI_PACKAGE System::ResourceString _sLMDMIDITechnologyFMSYNTH;
+#define Lmdsysconst_sLMDMIDITechnologyFMSYNTH System::LoadResourceString(&Lmdsysconst::_sLMDMIDITechnologyFMSYNTH)
+extern DELPHI_PACKAGE System::ResourceString _sLMDMIDITechnologyMAPPER;
+#define Lmdsysconst_sLMDMIDITechnologyMAPPER System::LoadResourceString(&Lmdsysconst::_sLMDMIDITechnologyMAPPER)
+extern DELPHI_PACKAGE System::ResourceString _sLMDMIDITechnologyWAVETABLE;
+#define Lmdsysconst_sLMDMIDITechnologyWAVETABLE System::LoadResourceString(&Lmdsysconst::_sLMDMIDITechnologyWAVETABLE)
+extern DELPHI_PACKAGE System::ResourceString _sLMDMIDITechnologySWSYNTH;
+#define Lmdsysconst_sLMDMIDITechnologySWSYNTH System::LoadResourceString(&Lmdsysconst::_sLMDMIDITechnologySWSYNTH)
+extern DELPHI_PACKAGE System::ResourceString _sLMDMIDIChannel0;
+#define Lmdsysconst_sLMDMIDIChannel0 System::LoadResourceString(&Lmdsysconst::_sLMDMIDIChannel0)
+extern DELPHI_PACKAGE System::ResourceString _sLMDMIDIChannel1;
+#define Lmdsysconst_sLMDMIDIChannel1 System::LoadResourceString(&Lmdsysconst::_sLMDMIDIChannel1)
+extern DELPHI_PACKAGE System::ResourceString _sLMDMIDIChannel2;
+#define Lmdsysconst_sLMDMIDIChannel2 System::LoadResourceString(&Lmdsysconst::_sLMDMIDIChannel2)
+extern DELPHI_PACKAGE System::ResourceString _sLMDMIDIChannel3;
+#define Lmdsysconst_sLMDMIDIChannel3 System::LoadResourceString(&Lmdsysconst::_sLMDMIDIChannel3)
+extern DELPHI_PACKAGE System::ResourceString _sLMDMIDIChannel4;
+#define Lmdsysconst_sLMDMIDIChannel4 System::LoadResourceString(&Lmdsysconst::_sLMDMIDIChannel4)
+extern DELPHI_PACKAGE System::ResourceString _sLMDMIDIChannel5;
+#define Lmdsysconst_sLMDMIDIChannel5 System::LoadResourceString(&Lmdsysconst::_sLMDMIDIChannel5)
+extern DELPHI_PACKAGE System::ResourceString _sLMDMIDIChannel6;
+#define Lmdsysconst_sLMDMIDIChannel6 System::LoadResourceString(&Lmdsysconst::_sLMDMIDIChannel6)
+extern DELPHI_PACKAGE System::ResourceString _sLMDMIDIChannel7;
+#define Lmdsysconst_sLMDMIDIChannel7 System::LoadResourceString(&Lmdsysconst::_sLMDMIDIChannel7)
+extern DELPHI_PACKAGE System::ResourceString _sLMDMIDIChannel8;
+#define Lmdsysconst_sLMDMIDIChannel8 System::LoadResourceString(&Lmdsysconst::_sLMDMIDIChannel8)
+extern DELPHI_PACKAGE System::ResourceString _sLMDMIDIChannel9;
+#define Lmdsysconst_sLMDMIDIChannel9 System::LoadResourceString(&Lmdsysconst::_sLMDMIDIChannel9)
+extern DELPHI_PACKAGE System::ResourceString _sLMDMIDIChannel10;
+#define Lmdsysconst_sLMDMIDIChannel10 System::LoadResourceString(&Lmdsysconst::_sLMDMIDIChannel10)
+extern DELPHI_PACKAGE System::ResourceString _sLMDMIDIChannel11;
+#define Lmdsysconst_sLMDMIDIChannel11 System::LoadResourceString(&Lmdsysconst::_sLMDMIDIChannel11)
+extern DELPHI_PACKAGE System::ResourceString _sLMDMIDIChannel12;
+#define Lmdsysconst_sLMDMIDIChannel12 System::LoadResourceString(&Lmdsysconst::_sLMDMIDIChannel12)
+extern DELPHI_PACKAGE System::ResourceString _sLMDMIDIChannel13;
+#define Lmdsysconst_sLMDMIDIChannel13 System::LoadResourceString(&Lmdsysconst::_sLMDMIDIChannel13)
+extern DELPHI_PACKAGE System::ResourceString _sLMDMIDIChannel14;
+#define Lmdsysconst_sLMDMIDIChannel14 System::LoadResourceString(&Lmdsysconst::_sLMDMIDIChannel14)
+extern DELPHI_PACKAGE System::ResourceString _sLMDMIDIChannel15;
+#define Lmdsysconst_sLMDMIDIChannel15 System::LoadResourceString(&Lmdsysconst::_sLMDMIDIChannel15)
+extern DELPHI_PACKAGE System::ResourceString _sLMDMIDIOutSupportCACHE;
+#define Lmdsysconst_sLMDMIDIOutSupportCACHE System::LoadResourceString(&Lmdsysconst::_sLMDMIDIOutSupportCACHE)
+extern DELPHI_PACKAGE System::ResourceString _sLMDMIDIOutSupportLRVOLUME;
+#define Lmdsysconst_sLMDMIDIOutSupportLRVOLUME System::LoadResourceString(&Lmdsysconst::_sLMDMIDIOutSupportLRVOLUME)
+extern DELPHI_PACKAGE System::ResourceString _sLMDMIDIOutSupportSTREAM;
+#define Lmdsysconst_sLMDMIDIOutSupportSTREAM System::LoadResourceString(&Lmdsysconst::_sLMDMIDIOutSupportSTREAM)
+extern DELPHI_PACKAGE System::ResourceString _sLMDMIDIOutSupportVOLUME;
+#define Lmdsysconst_sLMDMIDIOutSupportVOLUME System::LoadResourceString(&Lmdsysconst::_sLMDMIDIOutSupportVOLUME)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSyswaveOutAudioPropTitlewaweFormats;
+#define Lmdsysconst_sLMDSyswaveOutAudioPropTitlewaweFormats System::LoadResourceString(&Lmdsysconst::_sLMDSyswaveOutAudioPropTitlewaweFormats)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSyswaveOutAudioPropDescwaweFormats;
+#define Lmdsysconst_sLMDSyswaveOutAudioPropDescwaweFormats System::LoadResourceString(&Lmdsysconst::_sLMDSyswaveOutAudioPropDescwaweFormats)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSyswaveOutAudioPropTitlewaweChannels;
+#define Lmdsysconst_sLMDSyswaveOutAudioPropTitlewaweChannels System::LoadResourceString(&Lmdsysconst::_sLMDSyswaveOutAudioPropTitlewaweChannels)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSyswaveOutAudioPropDescwaweChannels;
+#define Lmdsysconst_sLMDSyswaveOutAudioPropDescwaweChannels System::LoadResourceString(&Lmdsysconst::_sLMDSyswaveOutAudioPropDescwaweChannels)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSyswaveOutAudioPropTitlewaweSupport;
+#define Lmdsysconst_sLMDSyswaveOutAudioPropTitlewaweSupport System::LoadResourceString(&Lmdsysconst::_sLMDSyswaveOutAudioPropTitlewaweSupport)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSyswaveOutAudioPropDescwaweSupport;
+#define Lmdsysconst_sLMDSyswaveOutAudioPropDescwaweSupport System::LoadResourceString(&Lmdsysconst::_sLMDSyswaveOutAudioPropDescwaweSupport)
+extern DELPHI_PACKAGE System::ResourceString _sLMDWaveFormat1M08;
+#define Lmdsysconst_sLMDWaveFormat1M08 System::LoadResourceString(&Lmdsysconst::_sLMDWaveFormat1M08)
+extern DELPHI_PACKAGE System::ResourceString _sLMDWaveFormat1M16;
+#define Lmdsysconst_sLMDWaveFormat1M16 System::LoadResourceString(&Lmdsysconst::_sLMDWaveFormat1M16)
+extern DELPHI_PACKAGE System::ResourceString _sLMDWaveFormat1S08;
+#define Lmdsysconst_sLMDWaveFormat1S08 System::LoadResourceString(&Lmdsysconst::_sLMDWaveFormat1S08)
+extern DELPHI_PACKAGE System::ResourceString _sLMDWaveFormat1S16;
+#define Lmdsysconst_sLMDWaveFormat1S16 System::LoadResourceString(&Lmdsysconst::_sLMDWaveFormat1S16)
+extern DELPHI_PACKAGE System::ResourceString _sLMDWaveFormat2M08;
+#define Lmdsysconst_sLMDWaveFormat2M08 System::LoadResourceString(&Lmdsysconst::_sLMDWaveFormat2M08)
+extern DELPHI_PACKAGE System::ResourceString _sLMDWaveFormat2M16;
+#define Lmdsysconst_sLMDWaveFormat2M16 System::LoadResourceString(&Lmdsysconst::_sLMDWaveFormat2M16)
+extern DELPHI_PACKAGE System::ResourceString _sLMDWaveFormat2S08;
+#define Lmdsysconst_sLMDWaveFormat2S08 System::LoadResourceString(&Lmdsysconst::_sLMDWaveFormat2S08)
+extern DELPHI_PACKAGE System::ResourceString _sLMDWaveFormat2S16;
+#define Lmdsysconst_sLMDWaveFormat2S16 System::LoadResourceString(&Lmdsysconst::_sLMDWaveFormat2S16)
+extern DELPHI_PACKAGE System::ResourceString _sLMDWaveFormat4M08;
+#define Lmdsysconst_sLMDWaveFormat4M08 System::LoadResourceString(&Lmdsysconst::_sLMDWaveFormat4M08)
+extern DELPHI_PACKAGE System::ResourceString _sLMDWaveFormat4M16;
+#define Lmdsysconst_sLMDWaveFormat4M16 System::LoadResourceString(&Lmdsysconst::_sLMDWaveFormat4M16)
+extern DELPHI_PACKAGE System::ResourceString _sLMDWaveFormat4S08;
+#define Lmdsysconst_sLMDWaveFormat4S08 System::LoadResourceString(&Lmdsysconst::_sLMDWaveFormat4S08)
+extern DELPHI_PACKAGE System::ResourceString _sLMDWaveFormat4S16;
+#define Lmdsysconst_sLMDWaveFormat4S16 System::LoadResourceString(&Lmdsysconst::_sLMDWaveFormat4S16)
+extern DELPHI_PACKAGE System::ResourceString _sLMDWaveOutSupportLRVOLUME;
+#define Lmdsysconst_sLMDWaveOutSupportLRVOLUME System::LoadResourceString(&Lmdsysconst::_sLMDWaveOutSupportLRVOLUME)
+extern DELPHI_PACKAGE System::ResourceString _sLMDWaveOutSupportVOLUME;
+#define Lmdsysconst_sLMDWaveOutSupportVOLUME System::LoadResourceString(&Lmdsysconst::_sLMDWaveOutSupportVOLUME)
+extern DELPHI_PACKAGE System::ResourceString _sLMDWaveOutSupportPITCH;
+#define Lmdsysconst_sLMDWaveOutSupportPITCH System::LoadResourceString(&Lmdsysconst::_sLMDWaveOutSupportPITCH)
+extern DELPHI_PACKAGE System::ResourceString _sLMDWaveOutSupportPLAYBACKRATE;
+#define Lmdsysconst_sLMDWaveOutSupportPLAYBACKRATE System::LoadResourceString(&Lmdsysconst::_sLMDWaveOutSupportPLAYBACKRATE)
+extern DELPHI_PACKAGE System::ResourceString _sLMDWaveOutSupportSYNC;
+#define Lmdsysconst_sLMDWaveOutSupportSYNC System::LoadResourceString(&Lmdsysconst::_sLMDWaveOutSupportSYNC)
+extern DELPHI_PACKAGE System::ResourceString _sLMDWaveOutSupportSAMPLEACCURATE;
+#define Lmdsysconst_sLMDWaveOutSupportSAMPLEACCURATE System::LoadResourceString(&Lmdsysconst::_sLMDWaveOutSupportSAMPLEACCURATE)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysVolumPropTitleVolumeL;
+#define Lmdsysconst_sLMDSysVolumPropTitleVolumeL System::LoadResourceString(&Lmdsysconst::_sLMDSysVolumPropTitleVolumeL)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysVolumPropDescVolumeL;
+#define Lmdsysconst_sLMDSysVolumPropDescVolumeL System::LoadResourceString(&Lmdsysconst::_sLMDSysVolumPropDescVolumeL)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysVolumPropTitleVolumeR;
+#define Lmdsysconst_sLMDSysVolumPropTitleVolumeR System::LoadResourceString(&Lmdsysconst::_sLMDSysVolumPropTitleVolumeR)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysVolumPropDescVolumeR;
+#define Lmdsysconst_sLMDSysVolumPropDescVolumeR System::LoadResourceString(&Lmdsysconst::_sLMDSysVolumPropDescVolumeR)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDauxAudioPropTitledauxTechnology;
+#define Lmdsysconst_sLMDSysDauxAudioPropTitledauxTechnology System::LoadResourceString(&Lmdsysconst::_sLMDSysDauxAudioPropTitledauxTechnology)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDauxAudioPropDescdauxTechnology;
+#define Lmdsysconst_sLMDSysDauxAudioPropDescdauxTechnology System::LoadResourceString(&Lmdsysconst::_sLMDSysDauxAudioPropDescdauxTechnology)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDauxAudioPropTitledauxSupport;
+#define Lmdsysconst_sLMDSysDauxAudioPropTitledauxSupport System::LoadResourceString(&Lmdsysconst::_sLMDSysDauxAudioPropTitledauxSupport)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysDauxAudioPropDescdauxSupport;
+#define Lmdsysconst_sLMDSysDauxAudioPropDescdauxSupport System::LoadResourceString(&Lmdsysconst::_sLMDSysDauxAudioPropDescdauxSupport)
+extern DELPHI_PACKAGE System::ResourceString _sLMDDauxSupportNone;
+#define Lmdsysconst_sLMDDauxSupportNone System::LoadResourceString(&Lmdsysconst::_sLMDDauxSupportNone)
+extern DELPHI_PACKAGE System::ResourceString _sLMDDauxSupportVolume;
+#define Lmdsysconst_sLMDDauxSupportVolume System::LoadResourceString(&Lmdsysconst::_sLMDDauxSupportVolume)
+extern DELPHI_PACKAGE System::ResourceString _sLMDDauxSupportLRVolume;
+#define Lmdsysconst_sLMDDauxSupportLRVolume System::LoadResourceString(&Lmdsysconst::_sLMDDauxSupportLRVolume)
+extern DELPHI_PACKAGE System::ResourceString _sLMDDauxTechNone;
+#define Lmdsysconst_sLMDDauxTechNone System::LoadResourceString(&Lmdsysconst::_sLMDDauxTechNone)
+extern DELPHI_PACKAGE System::ResourceString _sLMDDauxTechAUXIN;
+#define Lmdsysconst_sLMDDauxTechAUXIN System::LoadResourceString(&Lmdsysconst::_sLMDDauxTechAUXIN)
+extern DELPHI_PACKAGE System::ResourceString _sLMDDauxTechCDAUDIO;
+#define Lmdsysconst_sLMDDauxTechCDAUDIO System::LoadResourceString(&Lmdsysconst::_sLMDDauxTechCDAUDIO)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMixerPropTitleDestinations;
+#define Lmdsysconst_sLMDSysMixerPropTitleDestinations System::LoadResourceString(&Lmdsysconst::_sLMDSysMixerPropTitleDestinations)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysMixerPropDescDestinations;
+#define Lmdsysconst_sLMDSysMixerPropDescDestinations System::LoadResourceString(&Lmdsysconst::_sLMDSysMixerPropDescDestinations)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFileActionTitle;
+#define Lmdsysconst_sLMDSysFileActionTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysFileActionTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFileActionDesc;
+#define Lmdsysconst_sLMDSysFileActionDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysFileActionDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFileActionGroupTitle;
+#define Lmdsysconst_sLMDSysFileActionGroupTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysFileActionGroupTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFileActionGroupDesc;
+#define Lmdsysconst_sLMDSysFileActionGroupDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysFileActionGroupDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFileAssocTitle;
+#define Lmdsysconst_sLMDSysFileAssocTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysFileAssocTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFileAssocDesc;
+#define Lmdsysconst_sLMDSysFileAssocDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysFileAssocDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFileAssocGroupTitle;
+#define Lmdsysconst_sLMDSysFileAssocGroupTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysFileAssocGroupTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFileAssocGroupDesc;
+#define Lmdsysconst_sLMDSysFileAssocGroupDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysFileAssocGroupDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFileActionPropTitleActionName;
+#define Lmdsysconst_sLMDSysFileActionPropTitleActionName System::LoadResourceString(&Lmdsysconst::_sLMDSysFileActionPropTitleActionName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFileActionPropDescActionName;
+#define Lmdsysconst_sLMDSysFileActionPropDescActionName System::LoadResourceString(&Lmdsysconst::_sLMDSysFileActionPropDescActionName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFileActionPropTitleActionFile;
+#define Lmdsysconst_sLMDSysFileActionPropTitleActionFile System::LoadResourceString(&Lmdsysconst::_sLMDSysFileActionPropTitleActionFile)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFileActionPropDescActionFile;
+#define Lmdsysconst_sLMDSysFileActionPropDescActionFile System::LoadResourceString(&Lmdsysconst::_sLMDSysFileActionPropDescActionFile)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFileAssocPropTitleassocExt;
+#define Lmdsysconst_sLMDSysFileAssocPropTitleassocExt System::LoadResourceString(&Lmdsysconst::_sLMDSysFileAssocPropTitleassocExt)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFileAssocPropDescassocExt;
+#define Lmdsysconst_sLMDSysFileAssocPropDescassocExt System::LoadResourceString(&Lmdsysconst::_sLMDSysFileAssocPropDescassocExt)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFileAssocPropTitleassocDescription;
+#define Lmdsysconst_sLMDSysFileAssocPropTitleassocDescription System::LoadResourceString(&Lmdsysconst::_sLMDSysFileAssocPropTitleassocDescription)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFileAssocPropDescassocDescription;
+#define Lmdsysconst_sLMDSysFileAssocPropDescassocDescription System::LoadResourceString(&Lmdsysconst::_sLMDSysFileAssocPropDescassocDescription)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFileAssocPropTitleassocDefaultIconStr;
+#define Lmdsysconst_sLMDSysFileAssocPropTitleassocDefaultIconStr System::LoadResourceString(&Lmdsysconst::_sLMDSysFileAssocPropTitleassocDefaultIconStr)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysFileAssocPropDescassocDefaultIconStr;
+#define Lmdsysconst_sLMDSysFileAssocPropDescassocDefaultIconStr System::LoadResourceString(&Lmdsysconst::_sLMDSysFileAssocPropDescassocDefaultIconStr)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetPropTitleBrowser;
+#define Lmdsysconst_sLMDSysInetPropTitleBrowser System::LoadResourceString(&Lmdsysconst::_sLMDSysInetPropTitleBrowser)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetPropDescBrowser;
+#define Lmdsysconst_sLMDSysInetPropDescBrowser System::LoadResourceString(&Lmdsysconst::_sLMDSysInetPropDescBrowser)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetAdvPropGroupTitle;
+#define Lmdsysconst_sLMDSysInetAdvPropGroupTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysInetAdvPropGroupTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetAdvPropGroupDesc;
+#define Lmdsysconst_sLMDSysInetAdvPropGroupDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysInetAdvPropGroupDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetAdvPropTitle;
+#define Lmdsysconst_sLMDSysInetAdvPropTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysInetAdvPropTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetAdvPropDesc;
+#define Lmdsysconst_sLMDSysInetAdvPropDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysInetAdvPropDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetZoneGroupTitle;
+#define Lmdsysconst_sLMDSysInetZoneGroupTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysInetZoneGroupTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetZoneGroupDesc;
+#define Lmdsysconst_sLMDSysInetZoneGroupDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysInetZoneGroupDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetZoneTitle;
+#define Lmdsysconst_sLMDSysInetZoneTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysInetZoneTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetZoneDesc;
+#define Lmdsysconst_sLMDSysInetZoneDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysInetZoneDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInternetTitle;
+#define Lmdsysconst_sLMDSysInternetTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysInternetTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInternetDesc;
+#define Lmdsysconst_sLMDSysInternetDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysInternetDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetPropTitleName;
+#define Lmdsysconst_sLMDSysInetPropTitleName System::LoadResourceString(&Lmdsysconst::_sLMDSysInetPropTitleName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetPropDescName;
+#define Lmdsysconst_sLMDSysInetPropDescName System::LoadResourceString(&Lmdsysconst::_sLMDSysInetPropDescName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetPropTitleValue;
+#define Lmdsysconst_sLMDSysInetPropTitleValue System::LoadResourceString(&Lmdsysconst::_sLMDSysInetPropTitleValue)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetPropDescValue;
+#define Lmdsysconst_sLMDSysInetPropDescValue System::LoadResourceString(&Lmdsysconst::_sLMDSysInetPropDescValue)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetPropTitleZoneName;
+#define Lmdsysconst_sLMDSysInetPropTitleZoneName System::LoadResourceString(&Lmdsysconst::_sLMDSysInetPropTitleZoneName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetPropDescZoneName;
+#define Lmdsysconst_sLMDSysInetPropDescZoneName System::LoadResourceString(&Lmdsysconst::_sLMDSysInetPropDescZoneName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetPropTitleZoneDescription;
+#define Lmdsysconst_sLMDSysInetPropTitleZoneDescription System::LoadResourceString(&Lmdsysconst::_sLMDSysInetPropTitleZoneDescription)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetPropDescZoneDescription;
+#define Lmdsysconst_sLMDSysInetPropDescZoneDescription System::LoadResourceString(&Lmdsysconst::_sLMDSysInetPropDescZoneDescription)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetPropTitleZoneSites;
+#define Lmdsysconst_sLMDSysInetPropTitleZoneSites System::LoadResourceString(&Lmdsysconst::_sLMDSysInetPropTitleZoneSites)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetPropDescZoneSites;
+#define Lmdsysconst_sLMDSysInetPropDescZoneSites System::LoadResourceString(&Lmdsysconst::_sLMDSysInetPropDescZoneSites)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetPropTitlePath;
+#define Lmdsysconst_sLMDSysInetPropTitlePath System::LoadResourceString(&Lmdsysconst::_sLMDSysInetPropTitlePath)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetPropDescPath;
+#define Lmdsysconst_sLMDSysInetPropDescPath System::LoadResourceString(&Lmdsysconst::_sLMDSysInetPropDescPath)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetPropTitleMaxSize;
+#define Lmdsysconst_sLMDSysInetPropTitleMaxSize System::LoadResourceString(&Lmdsysconst::_sLMDSysInetPropTitleMaxSize)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetPropDescMaxSize;
+#define Lmdsysconst_sLMDSysInetPropDescMaxSize System::LoadResourceString(&Lmdsysconst::_sLMDSysInetPropDescMaxSize)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetPropTitleHomePage;
+#define Lmdsysconst_sLMDSysInetPropTitleHomePage System::LoadResourceString(&Lmdsysconst::_sLMDSysInetPropTitleHomePage)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetPropDescHomePage;
+#define Lmdsysconst_sLMDSysInetPropDescHomePage System::LoadResourceString(&Lmdsysconst::_sLMDSysInetPropDescHomePage)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetPropTitleHTMLEditor;
+#define Lmdsysconst_sLMDSysInetPropTitleHTMLEditor System::LoadResourceString(&Lmdsysconst::_sLMDSysInetPropTitleHTMLEditor)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetPropDescHTMLEditor;
+#define Lmdsysconst_sLMDSysInetPropDescHTMLEditor System::LoadResourceString(&Lmdsysconst::_sLMDSysInetPropDescHTMLEditor)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetPropTitleEMailClient;
+#define Lmdsysconst_sLMDSysInetPropTitleEMailClient System::LoadResourceString(&Lmdsysconst::_sLMDSysInetPropTitleEMailClient)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetPropDescEMailClient;
+#define Lmdsysconst_sLMDSysInetPropDescEMailClient System::LoadResourceString(&Lmdsysconst::_sLMDSysInetPropDescEMailClient)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetPropTitleNewsClient;
+#define Lmdsysconst_sLMDSysInetPropTitleNewsClient System::LoadResourceString(&Lmdsysconst::_sLMDSysInetPropTitleNewsClient)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetPropDescNewsClient;
+#define Lmdsysconst_sLMDSysInetPropDescNewsClient System::LoadResourceString(&Lmdsysconst::_sLMDSysInetPropDescNewsClient)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetPropTitleCalendar;
+#define Lmdsysconst_sLMDSysInetPropTitleCalendar System::LoadResourceString(&Lmdsysconst::_sLMDSysInetPropTitleCalendar)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetPropDescCalendar;
+#define Lmdsysconst_sLMDSysInetPropDescCalendar System::LoadResourceString(&Lmdsysconst::_sLMDSysInetPropDescCalendar)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetPropTitleInetCall;
+#define Lmdsysconst_sLMDSysInetPropTitleInetCall System::LoadResourceString(&Lmdsysconst::_sLMDSysInetPropTitleInetCall)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetPropDescInetCall;
+#define Lmdsysconst_sLMDSysInetPropDescInetCall System::LoadResourceString(&Lmdsysconst::_sLMDSysInetPropDescInetCall)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetPropTitleContacts;
+#define Lmdsysconst_sLMDSysInetPropTitleContacts System::LoadResourceString(&Lmdsysconst::_sLMDSysInetPropTitleContacts)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysInetPropDescContacts;
+#define Lmdsysconst_sLMDSysInetPropDescContacts System::LoadResourceString(&Lmdsysconst::_sLMDSysInetPropDescContacts)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysModemGroupTitle;
+#define Lmdsysconst_sLMDSysModemGroupTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysModemGroupTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysModemGroupDesc;
+#define Lmdsysconst_sLMDSysModemGroupDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysModemGroupDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysModemTitle;
+#define Lmdsysconst_sLMDSysModemTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysModemTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysModemDesc;
+#define Lmdsysconst_sLMDSysModemDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysModemDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysModemTitleName;
+#define Lmdsysconst_sLMDSysModemTitleName System::LoadResourceString(&Lmdsysconst::_sLMDSysModemTitleName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysModemDescName;
+#define Lmdsysconst_sLMDSysModemDescName System::LoadResourceString(&Lmdsysconst::_sLMDSysModemDescName)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysModemTitleAttachedTo;
+#define Lmdsysconst_sLMDSysModemTitleAttachedTo System::LoadResourceString(&Lmdsysconst::_sLMDSysModemTitleAttachedTo)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysModemDescAttachedTo;
+#define Lmdsysconst_sLMDSysModemDescAttachedTo System::LoadResourceString(&Lmdsysconst::_sLMDSysModemDescAttachedTo)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysModemTitleUserInit;
+#define Lmdsysconst_sLMDSysModemTitleUserInit System::LoadResourceString(&Lmdsysconst::_sLMDSysModemTitleUserInit)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysModemDescUserInit;
+#define Lmdsysconst_sLMDSysModemDescUserInit System::LoadResourceString(&Lmdsysconst::_sLMDSysModemDescUserInit)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysModemTitlePortSpeed;
+#define Lmdsysconst_sLMDSysModemTitlePortSpeed System::LoadResourceString(&Lmdsysconst::_sLMDSysModemTitlePortSpeed)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysModemDescPortSpeed;
+#define Lmdsysconst_sLMDSysModemDescPortSpeed System::LoadResourceString(&Lmdsysconst::_sLMDSysModemDescPortSpeed)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysNetServiceNameTitle;
+#define Lmdsysconst_sLMDSysNetServiceNameTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysNetServiceNameTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysNetServiceNameDesc;
+#define Lmdsysconst_sLMDSysNetServiceNameDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysNetServiceNameDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysNetDescriptionTitle;
+#define Lmdsysconst_sLMDSysNetDescriptionTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysNetDescriptionTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysNetDescriptionDesc;
+#define Lmdsysconst_sLMDSysNetDescriptionDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysNetDescriptionDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysNetUserNameTitle;
+#define Lmdsysconst_sLMDSysNetUserNameTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysNetUserNameTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysNetUserNameDesc;
+#define Lmdsysconst_sLMDSysNetUserNameDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysNetUserNameDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysNetComputerNameTitle;
+#define Lmdsysconst_sLMDSysNetComputerNameTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysNetComputerNameTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysNetComputerNameDesc;
+#define Lmdsysconst_sLMDSysNetComputerNameDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysNetComputerNameDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysTCPIPTitle;
+#define Lmdsysconst_sLMDSysTCPIPTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysTCPIPTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysTCPIPDesc;
+#define Lmdsysconst_sLMDSysTCPIPDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysTCPIPDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysIPXTitle;
+#define Lmdsysconst_sLMDSysIPXTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysIPXTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysIPXDesc;
+#define Lmdsysconst_sLMDSysIPXDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysIPXDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysNetBEUITitle;
+#define Lmdsysconst_sLMDSysNetBEUITitle System::LoadResourceString(&Lmdsysconst::_sLMDSysNetBEUITitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysNetBEUIDesc;
+#define Lmdsysconst_sLMDSysNetBEUIDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysNetBEUIDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysNetworkTitle;
+#define Lmdsysconst_sLMDSysNetworkTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysNetworkTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysNetworkDesc;
+#define Lmdsysconst_sLMDSysNetworkDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysNetworkDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysNetworkCardTitle;
+#define Lmdsysconst_sLMDSysNetworkCardTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysNetworkCardTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysNetworkCardDesc;
+#define Lmdsysconst_sLMDSysNetworkCardDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysNetworkCardDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysNetworkCardGroupTitle;
+#define Lmdsysconst_sLMDSysNetworkCardGroupTitle System::LoadResourceString(&Lmdsysconst::_sLMDSysNetworkCardGroupTitle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysNetworkCardGroupDesc;
+#define Lmdsysconst_sLMDSysNetworkCardGroupDesc System::LoadResourceString(&Lmdsysconst::_sLMDSysNetworkCardGroupDesc)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProtocolPropTitleInstalled;
+#define Lmdsysconst_sLMDSysProtocolPropTitleInstalled System::LoadResourceString(&Lmdsysconst::_sLMDSysProtocolPropTitleInstalled)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysProtocolPropDescInstalled;
+#define Lmdsysconst_sLMDSysProtocolPropDescInstalled System::LoadResourceString(&Lmdsysconst::_sLMDSysProtocolPropDescInstalled)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysTCPIPPropTitleIPAddress;
+#define Lmdsysconst_sLMDSysTCPIPPropTitleIPAddress System::LoadResourceString(&Lmdsysconst::_sLMDSysTCPIPPropTitleIPAddress)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysTCPIPPropDescIPAddress;
+#define Lmdsysconst_sLMDSysTCPIPPropDescIPAddress System::LoadResourceString(&Lmdsysconst::_sLMDSysTCPIPPropDescIPAddress)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysTCPIPPropTitleIPSubnetMask;
+#define Lmdsysconst_sLMDSysTCPIPPropTitleIPSubnetMask System::LoadResourceString(&Lmdsysconst::_sLMDSysTCPIPPropTitleIPSubnetMask)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysTCPIPPropDescIPSubnetMask;
+#define Lmdsysconst_sLMDSysTCPIPPropDescIPSubnetMask System::LoadResourceString(&Lmdsysconst::_sLMDSysTCPIPPropDescIPSubnetMask)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysTCPIPPropTitleDefaultGateway;
+#define Lmdsysconst_sLMDSysTCPIPPropTitleDefaultGateway System::LoadResourceString(&Lmdsysconst::_sLMDSysTCPIPPropTitleDefaultGateway)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysTCPIPPropDescDefaultGateway;
+#define Lmdsysconst_sLMDSysTCPIPPropDescDefaultGateway System::LoadResourceString(&Lmdsysconst::_sLMDSysTCPIPPropDescDefaultGateway)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysIPXPropTitleNetworkNumber;
+#define Lmdsysconst_sLMDSysIPXPropTitleNetworkNumber System::LoadResourceString(&Lmdsysconst::_sLMDSysIPXPropTitleNetworkNumber)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysIPXPropDescNetworkNumber;
+#define Lmdsysconst_sLMDSysIPXPropDescNetworkNumber System::LoadResourceString(&Lmdsysconst::_sLMDSysIPXPropDescNetworkNumber)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysTCPIPPropTitleDHCPEnabled;
+#define Lmdsysconst_sLMDSysTCPIPPropTitleDHCPEnabled System::LoadResourceString(&Lmdsysconst::_sLMDSysTCPIPPropTitleDHCPEnabled)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysTCPIPPropDescDHCPEnabled;
+#define Lmdsysconst_sLMDSysTCPIPPropDescDHCPEnabled System::LoadResourceString(&Lmdsysconst::_sLMDSysTCPIPPropDescDHCPEnabled)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysAvailabilityUnDefined;
+#define Lmdsysconst_sLMDSysAvailabilityUnDefined System::LoadResourceString(&Lmdsysconst::_sLMDSysAvailabilityUnDefined)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysAvailabilityOther;
+#define Lmdsysconst_sLMDSysAvailabilityOther System::LoadResourceString(&Lmdsysconst::_sLMDSysAvailabilityOther)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysAvailabilityUnknown;
+#define Lmdsysconst_sLMDSysAvailabilityUnknown System::LoadResourceString(&Lmdsysconst::_sLMDSysAvailabilityUnknown)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysAvailabilityRunning;
+#define Lmdsysconst_sLMDSysAvailabilityRunning System::LoadResourceString(&Lmdsysconst::_sLMDSysAvailabilityRunning)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysAvailabilityWarning;
+#define Lmdsysconst_sLMDSysAvailabilityWarning System::LoadResourceString(&Lmdsysconst::_sLMDSysAvailabilityWarning)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysAvailabilityInTest;
+#define Lmdsysconst_sLMDSysAvailabilityInTest System::LoadResourceString(&Lmdsysconst::_sLMDSysAvailabilityInTest)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysAvailabilityNotApplicable;
+#define Lmdsysconst_sLMDSysAvailabilityNotApplicable System::LoadResourceString(&Lmdsysconst::_sLMDSysAvailabilityNotApplicable)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysAvailabilityPowerOff;
+#define Lmdsysconst_sLMDSysAvailabilityPowerOff System::LoadResourceString(&Lmdsysconst::_sLMDSysAvailabilityPowerOff)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysAvailabilityOffLine;
+#define Lmdsysconst_sLMDSysAvailabilityOffLine System::LoadResourceString(&Lmdsysconst::_sLMDSysAvailabilityOffLine)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysAvailabilityOffDuty;
+#define Lmdsysconst_sLMDSysAvailabilityOffDuty System::LoadResourceString(&Lmdsysconst::_sLMDSysAvailabilityOffDuty)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysAvailabilityDegraded;
+#define Lmdsysconst_sLMDSysAvailabilityDegraded System::LoadResourceString(&Lmdsysconst::_sLMDSysAvailabilityDegraded)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysAvailabilityNotInstalled;
+#define Lmdsysconst_sLMDSysAvailabilityNotInstalled System::LoadResourceString(&Lmdsysconst::_sLMDSysAvailabilityNotInstalled)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysAvailabilityInstallError;
+#define Lmdsysconst_sLMDSysAvailabilityInstallError System::LoadResourceString(&Lmdsysconst::_sLMDSysAvailabilityInstallError)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysAvailabilityPowerSaveUnknown;
+#define Lmdsysconst_sLMDSysAvailabilityPowerSaveUnknown System::LoadResourceString(&Lmdsysconst::_sLMDSysAvailabilityPowerSaveUnknown)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysAvailabilityPowerSaveLowPowerMode;
+#define Lmdsysconst_sLMDSysAvailabilityPowerSaveLowPowerMode System::LoadResourceString(&Lmdsysconst::_sLMDSysAvailabilityPowerSaveLowPowerMode)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysAvailabilityPowerSaveStandby;
+#define Lmdsysconst_sLMDSysAvailabilityPowerSaveStandby System::LoadResourceString(&Lmdsysconst::_sLMDSysAvailabilityPowerSaveStandby)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysAvailabilityPowerCycle;
+#define Lmdsysconst_sLMDSysAvailabilityPowerCycle System::LoadResourceString(&Lmdsysconst::_sLMDSysAvailabilityPowerCycle)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysAvailabilityPowerSaveWarning;
+#define Lmdsysconst_sLMDSysAvailabilityPowerSaveWarning System::LoadResourceString(&Lmdsysconst::_sLMDSysAvailabilityPowerSaveWarning)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPMCpmUnknown;
+#define Lmdsysconst_sLMDSysPMCpmUnknown System::LoadResourceString(&Lmdsysconst::_sLMDSysPMCpmUnknown)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPMCpmNotSupported;
+#define Lmdsysconst_sLMDSysPMCpmNotSupported System::LoadResourceString(&Lmdsysconst::_sLMDSysPMCpmNotSupported)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPMCpmDisabled;
+#define Lmdsysconst_sLMDSysPMCpmDisabled System::LoadResourceString(&Lmdsysconst::_sLMDSysPMCpmDisabled)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPMCpmEnabled;
+#define Lmdsysconst_sLMDSysPMCpmEnabled System::LoadResourceString(&Lmdsysconst::_sLMDSysPMCpmEnabled)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPMCpmPowerSavingModesEnteredAutomatically;
+#define Lmdsysconst_sLMDSysPMCpmPowerSavingModesEnteredAutomatically System::LoadResourceString(&Lmdsysconst::_sLMDSysPMCpmPowerSavingModesEnteredAutomatically)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPMCpmPowerStateSettable;
+#define Lmdsysconst_sLMDSysPMCpmPowerStateSettable System::LoadResourceString(&Lmdsysconst::_sLMDSysPMCpmPowerStateSettable)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPMCpmPowerCyclingSupported;
+#define Lmdsysconst_sLMDSysPMCpmPowerCyclingSupported System::LoadResourceString(&Lmdsysconst::_sLMDSysPMCpmPowerCyclingSupported)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysPMCpmTimedPowerOnSupported;
+#define Lmdsysconst_sLMDSysPMCpmTimedPowerOnSupported System::LoadResourceString(&Lmdsysconst::_sLMDSysPMCpmTimedPowerOnSupported)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysSIUndefined;
+#define Lmdsysconst_sLMDSysSIUndefined System::LoadResourceString(&Lmdsysconst::_sLMDSysSIUndefined)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysSIOther;
+#define Lmdsysconst_sLMDSysSIOther System::LoadResourceString(&Lmdsysconst::_sLMDSysSIOther)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysSIUnknown;
+#define Lmdsysconst_sLMDSysSIUnknown System::LoadResourceString(&Lmdsysconst::_sLMDSysSIUnknown)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysSIEnabled;
+#define Lmdsysconst_sLMDSysSIEnabled System::LoadResourceString(&Lmdsysconst::_sLMDSysSIEnabled)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysSIDisabled;
+#define Lmdsysconst_sLMDSysSIDisabled System::LoadResourceString(&Lmdsysconst::_sLMDSysSIDisabled)
+extern DELPHI_PACKAGE System::ResourceString _sLMDSysSINotApplicable;
+#define Lmdsysconst_sLMDSysSINotApplicable System::LoadResourceString(&Lmdsysconst::_sLMDSysSINotApplicable)
+}	/* namespace Lmdsysconst */
+#if !defined(DELPHIHEADER_NO_IMPLICIT_NAMESPACE_USE) && !defined(NO_USING_NAMESPACE_LMDSYSCONST)
+using namespace Lmdsysconst;
+#endif
+#pragma pack(pop)
+#pragma option pop
+
+#pragma delphiheader end.
+//-- end unit ----------------------------------------------------------------
+#endif	// LmdsysconstHPP

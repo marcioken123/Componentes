@@ -1,0 +1,1 @@
+-+S:\ip4000vcl7\source\wwrichedspell.obj -+C:\Program Files\Borland\Delphi7\lib\SysInit.obj 

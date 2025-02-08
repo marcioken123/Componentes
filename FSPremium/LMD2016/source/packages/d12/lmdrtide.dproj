@@ -1,0 +1,131 @@
+	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{A5CEBFEA-3E70-4159-AE8D-21011B473474}</ProjectGuid>
+			<MainSource>lmdrtide.dpk</MainSource>
+			<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+			<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+			<DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+			<DCC_DependencyCheckOutputName>lmdrtide.bpl</DCC_DependencyCheckOutputName>
+			<ProjectVersion>12.0</ProjectVersion>
+			<Config Condition="'$(Config)'==''">build</Config>
+		</PropertyGroup>
+                <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='build' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<DCC_DcuOutput>..\..\build</DCC_DcuOutput>
+			<DllSuffix>120</DllSuffix>
+			<DCC_CBuilderOutput>All</DCC_CBuilderOutput>
+			<DCC_HppOutput>..\..</DCC_HppOutput>
+			<DCC_DependencyCheckOutputName>lmdrtide.bpl</DCC_DependencyCheckOutputName>
+			<DCC_ImageBase>00400000</DCC_ImageBase>
+			<DCC_Description>LMD IDE-Tools run-time package.</DCC_Description>
+			<RuntimeOnlyPackage>true</RuntimeOnlyPackage>
+			<DesignOnlyPackage>false</DesignOnlyPackage>
+			<DCC_OutputNeverBuildDcps>true</DCC_OutputNeverBuildDcps>
+			<GenDll>true</GenDll>
+			<DCC_SymbolReferenceInfo>1</DCC_SymbolReferenceInfo>
+			<GenPackage>true</GenPackage>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<Version>7.0</Version>
+		</PropertyGroup>
+		<ItemGroup>
+			<DelphiCompile Include="lmdrtide.dpk">
+				<MainSource>MainSource</MainSource>
+			</DelphiCompile>
+			<DCCReference Include="lmdrtl.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="rtl.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="vcl.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="vclx.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="lmdrtdesign.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="lmdrtscript.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+                        <DCCReference Include="..\..\LMDIdeCst.pas" />
+    <DCCReference Include="..\..\LMDIdeClass.pas" />
+    <DCCReference Include="..\..\LMDIdeUtils.pas" />
+    <DCCReference Include="..\..\LMDIdeManager.pas" />
+    <DCCReference Include="..\..\LMDIdeCompPltte.pas" />
+    <DCCReference Include="..\..\LMDIdeCompBar.pas" />
+    <DCCReference Include="..\..\LMDIdeObjEdrMgr.pas" />
+    <DCCReference Include="..\..\LMDIdeObjEditors.pas" />
+    <DCCReference Include="..\..\LMDIdeCompTree.pas" />
+    <DCCReference Include="..\..\LMDIdeSprigs.pas" />
+    <DCCReference Include="..\..\LMDIdeProjMgr.pas" />
+    <DCCReference Include="..\..\LMDIdeProjNodes.pas" />
+    <DCCReference Include="..\..\LMDIdeAlignPltte.pas">
+      <Form>LMDAlignPaletteForm</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\LMDIdeTabOrderDlg.pas">
+      <Form>LMDTabOrderForm</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\LMDIdeCreationOrderDlg.pas">
+      <Form>LMDCreationOrderForm</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\LMDIdeActListEditor.pas">
+      <Form>LMDActionListEditorDialog</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\LMDIdeActns.pas" />
+    <DCCReference Include="..\..\LMDIdeDebugCtrls.pas" />
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+		<ProjectExtensions>
+			<Borland.Personality>Delphi.Personality.12</Borland.Personality>
+			<Borland.ProjectType>Package</Borland.ProjectType>
+			<BorlandProject>
+				<Delphi.Personality>
+					<Parameters>
+						<Parameters Name="UseLauncher">False</Parameters>
+						<Parameters Name="LoadAllSymbols">True</Parameters>
+						<Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+					</Parameters>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1049</VersionInfo>
+						<VersionInfo Name="CodePage">1251</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName">LMD Innovative</VersionInfoKeys>
+						<VersionInfoKeys Name="FileDescription">LMD IDE-Tools run-time package.</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">2016.5.*</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright">Copyright (c) LMD Innovative</VersionInfoKeys>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName">LMD 2009 VCL Series</VersionInfoKeys>
+						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<Source>
+						<Source Name="MainSource">lmdrtide.dpk</Source>
+					</Source>
+				</Delphi.Personality>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>

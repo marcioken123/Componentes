@@ -1,0 +1,29 @@
+T+: TObjectList
+        P+: OwnsObjects
+        P+: Items
+T+: TComponentList
+        P+: Items
+T+: TClassList
+        P+: Items
+T+: TOrderedList
+        P+: List
+T+: TStack
+T+: TObjectStack
+T+: TQueue
+T+: TObjectQueue
+T+: TBucketItem
+TE: TBucketItemArray
+T+: TBucket
+TE: TBucketArray
+TE: TBucketProc
+TE: TBucketEvent
+T+: TCustomBucketList
+        PE: Buckets
+        P+: BucketCount
+        PE: Data
+T+: TBucketListSizes
+T+: TBucketList
+T+: TObjectBucketList
+        P+: Data
+T+: TIntegerBucketList
+        P+: Data

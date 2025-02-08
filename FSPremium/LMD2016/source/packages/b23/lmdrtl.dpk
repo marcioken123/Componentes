@@ -1,0 +1,81 @@
+package lmdrtl;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$LIBSUFFIX '230'}
+{$DESCRIPTION 'LMD 2016 - Runtime Library'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcl,
+  vclx;
+
+contains
+  intfLMDBase in '..\..\intfLMDBase.pas',
+  LMDArray in '..\..\LMDArray.pas',
+  LMDArrayUtils in '..\..\LMDArrayUtils.pas',
+  LMDBitmap in '..\..\LMDBitmap.pas',
+  LMDBuffer in '..\..\LMDBuffer.pas',
+  LMDBinaryTree in '..\..\LMDBinaryTree.pas',
+  LMDClass in '..\..\LMDClass.pas',
+  LMDCustomComponent in '..\..\LMDCustomComponent.pas',
+  LMDCustomIniComponent in '..\..\LMDCustomIniComponent.pas',
+  LMDDateTime in '..\..\LMDDateTime.pas',
+  LMDDebugUnit in '..\..\LMDDebugUnit.pas',
+  LMDDynFIFOBuffer in '..\..\LMDDynFIFOBuffer.pas',
+  LMDDynLIFOBuffer in '..\..\LMDDynLIFOBuffer.pas',
+  LMDIniCtrl in '..\..\LMDIniCtrl.pas',
+  LMDList in '..\..\LMDList.pas',
+  LMDHashTable in '..\..\LMDHashTable.pas',
+  LMDMemoryMappedStream in '..\..\LMDMemoryMappedStream.pas',
+  LMDObject in '..\..\LMDObject.pas',
+  LMDObjectList in '..\..\LMDObjectList.pas',
+  LMDProcs in '..\..\LMDProcs.pas',
+  LMDQueue in '..\..\LMDQueue.pas',
+  LMDRTLConst in '..\..\LMDRTLConst.pas',
+  LMDShSpinEdit in '..\..\LMDShSpinEdit.pas',
+  LMDShUtils in '..\..\LMDShUtils.pas',
+  LMDStack in '..\..\LMDStack.pas',
+  LMDStrings in '..\..\LMDStrings.pas',
+  LMDSysIn in '..\..\LMDSysIn.pas',
+  LMDThreads in '..\..\LMDThreads.pas',
+  LMDTypes in '..\..\LMDTypes.pas',
+  LMDUnicode in '..\..\LMDUnicode.pas',
+  LMDUnicodeControl in '..\..\LMDUnicodeControl.pas',
+  LMDUnicodeStrings in '..\..\LMDUnicodeStrings.pas',
+  LMDUnicodeEncodings in '..\..\LMDUnicodeEncodings.pas',
+  LMDUtils in '..\..\LMDUtils.pas',
+  LMDDateUtils in '..\..\LMDDateUtils.pas',
+  LMDFiles in '..\..\LMDFiles.pas',
+  LMDRegExpr in '..\..\LMDRegExpr.pas',
+  LMDInprocHookAPI in '..\..\LMDInprocHookAPI.pas',
+  LMDXML in '..\..\LMDXML.pas',
+  LMDZLib in '..\..\LMDZLib.pas',
+  LMDZCommonUnit in '..\..\LMDZCommonUnit.pas',
+  LMDZCompressUnit in '..\..\LMDZCompressUnit.pas',
+  LMDZUnCompressUnit in '..\..\LMDZUnCompressUnit.pas',
+  LMDSvcPvdr in '..\..\LMDSvcPvdr.pas';
+
+end.

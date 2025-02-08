@@ -1,0 +1,58 @@
+package lmdrtide;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$LIBSUFFIX '150'}
+{$DESCRIPTION 'LMD IDE-Tools run-time package.'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  lmdrtl,
+  rtl,
+  vcl,
+  vclx,
+  lmdrtdesign,
+  lmdrtscript;
+
+contains
+  LMDIdeCst in '..\..\LMDIdeCst.pas',
+  LMDIdeClass in '..\..\LMDIdeClass.pas',
+  LMDIdeUtils in '..\..\LMDIdeUtils.pas',
+  LMDIdeManager in '..\..\LMDIdeManager.pas',
+  LMDIdeCompPltte in '..\..\LMDIdeCompPltte.pas',
+  LMDIdeCompBar in '..\..\LMDIdeCompBar.pas',
+  LMDIdeObjEdrMgr in '..\..\LMDIdeObjEdrMgr.pas',
+  LMDIdeObjEditors in '..\..\LMDIdeObjEditors.pas',
+  LMDIdeCompTree in '..\..\LMDIdeCompTree.pas',
+  LMDIdeSprigs in '..\..\LMDIdeSprigs.pas',
+  LMDIdeProjMgr in '..\..\LMDIdeProjMgr.pas',
+  LMDIdeProjNodes in '..\..\LMDIdeProjNodes.pas',
+  LMDIdeAlignPltte in '..\..\LMDIdeAlignPltte.pas' {LMDAlignPaletteForm},
+  LMDIdeTabOrderDlg in '..\..\LMDIdeTabOrderDlg.pas' {LMDTabOrderForm},
+  LMDIdeCreationOrderDlg in '..\..\LMDIdeCreationOrderDlg.pas' {LMDCreationOrderForm},
+  LMDIdeActListEditor in '..\..\LMDIdeActListEditor.pas' {LMDActionListEditorDialog},
+  LMDIdeActns in '..\..\LMDIdeActns.pas',
+  LMDIdeDebugCtrls in '..\..\LMDIdeDebugCtrls.pas';
+
+end.

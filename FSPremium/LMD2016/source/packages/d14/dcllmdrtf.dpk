@@ -1,0 +1,55 @@
+package dcllmdrtf;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$LIBSUFFIX '140'}
+{$DESCRIPTION 'LMD 2016 - LMD-Tools RichPack Components'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  lmdrtl,
+  dcllmdrtl,
+  rtl,
+  vcl,
+  vclx,
+  designide,
+  dclstd,
+  dclact,
+  vclactnband,
+  lmdrtrtf,
+  dcllmdprint;
+
+contains
+  LMD_RegRtf in '..\..\LMD_RegRtf.pas',
+  pLMDRTFPE in '..\..\pLMDRTFPE.pas',
+  pLMDRTFCE in '..\..\pLMDRTFCE.pas',
+  pLMDRTFGenerateToolbar in '..\..\pLMDRTFGenerateToolbar.pas',
+  pLMDRTFEditor in '..\..\pLMDRTFEditor.pas',
+  pLMDRTFSyntaxDefEditor in '..\..\pLMDRTFSyntaxDefEditor.pas' {frmSyntaxDefEditor},
+  pLMDRTFHyperTextEditor in '..\..\pLMDRTFHyperTextEditor.pas' {frmLMDRTFHyperTextEditor},
+  pLMDRTFToolbarOptions in '..\..\pLMDRTFToolbarOptions.pas' {ToolbarOptionsForm},
+  pLMDRTFRichEditor in '..\..\pLMDRTFRichEditor.pas' {frmLMDRichDialogForm},
+  pLMDRTFActDescr in '..\..\pLMDRTFActDescr.pas';
+
+end.

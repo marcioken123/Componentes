@@ -1,0 +1,49 @@
+package lmdrtinspector;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$LIBSUFFIX '150'}
+{$DESCRIPTION 'LMD-Tools InspectorPack Runtime package'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  lmdrtl,
+  rtl,
+  vcl,
+  vclx;
+
+contains
+  LMDInsCst in '..\..\LMDInsCst.pas',
+  LMDInsClass in '..\..\LMDInsClass.pas',
+  LMDInsPropPage in '..\..\LMDInsPropPage.pas',
+  LMDInsPropInsp in '..\..\LMDInsPropInsp.pas',
+  LMDInsEditorUtils in '..\..\LMDInsEditorUtils.pas',
+  LMDInsEditorWnds in '..\..\LMDInsEditorWnds.pas',
+  LMDInsStrsEditor in '..\..\LMDInsStrsEditor.pas' {LMDStringsEditorDialog},
+  LMDInsWideStrsEditor in '..\..\LMDInsWideStrsEditor.pas' {LMDWideStringsEditorDialog},
+  LMDInsCollectionEditor in '..\..\LMDInsCollectionEditor.pas' {LMDCollectionEditorDialog},
+  LMDInsMenuEditor in '..\..\LMDInsMenuEditor.pas' {LMDMenuEditorDialog},
+  LMDInsPropEditors in '..\..\LMDInsPropEditors.pas';
+
+end.

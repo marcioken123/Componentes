@@ -1,0 +1,44 @@
+package lmdrtplugin;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$LIBSUFFIX '140'}
+{$DESCRIPTION 'LMD Plug-In Library'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcl,
+  vclx,
+  lmdrtl;
+
+contains
+  LMDPluginImpl in '..\..\LMDPluginImpl.pas',
+  LMDPluginManager in '..\..\LMDPluginManager.pas',
+  LMDCustomPluginManager in '..\..\LMDCustomPluginManager.pas',
+  LMDPluginModule in '..\..\LMDPluginModule.pas',
+  LMDPluginVarType in '..\..\LMDPluginVarType.pas',
+  LMDVariants in '..\..\LMDVariants.pas';
+
+end.

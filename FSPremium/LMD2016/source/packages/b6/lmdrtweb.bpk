@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="lmdrtweb60.bpl"/>
+    <OBJFILES value="lmdrtweb.obj ..\..\LMDClassLib.obj ..\..\LMDDownload.obj ..\..\LMDFSSupport.obj ..\..\LMDFtpSupport.obj ..\..\LMDHASHList.obj ..\..\LMDHTMLObjectUnit.obj ..\..\LMDHTMLSupp.obj ..\..\LMDHTTPSupp.obj ..\..\LMDInetConst.obj ..\..\LMDMapi.obj ..\..\LMDNews.obj ..\..\LMDRAS.obj ..\..\LMDRASCF.obj ..\..\LMDRASSupport.obj ..\..\LMDStringsSupport.obj ..\..\LMDSyncUnit.obj ..\..\LMDURLSupp.obj ..\..\LMDWebBase.obj ..\..\LMDWebConfig.obj ..\..\LMDWebConst.obj ..\..\LMDWebDownloadFormUnit.obj ..\..\LMDWebHTMLLex.obj ..\..\LMDWebHTMLScan.obj ..\..\LMDWebHTTPGet.obj ..\..\LMDWebHTTPScan.obj ..\..\LMDWebInfo.obj ..\..\LMDWebLex.obj ..\..\LMDWebNewsView.obj ..\..\LMDWebNewsViewForm.obj ..\..\LMDWebTree.obj ..\..\LMDWebUpdate.obj ..\..\LMDWebXML.obj ..\..\LMDWebXMLParser.obj ..\..\LMDWebXMLParserLite.obj ..\..\LMDNewsAdapters.obj ..\..\LMDUpdateAdapter.obj ..\..\LMDAutoUpdateFrm.obj ..\..\LMDUpdateFrm.obj ..\..\LMDUpdateInternetOptionsUnit.obj ..\..\LMDUpdateMessage.obj"/>
+    <RESFILES value="lmdrtweb.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) ..\..\LMDRASCF.dfm ..\..\LMDWebDownloadFormUnit.dfm ..\..\LMDWebNewsViewForm.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value="rtl.lib"/>
+    <PACKAGES value="lmdrtl.bpi rtl.bpi vcl.bpi vclx.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value=""/>
+    <SYSDEFINES value="_RTLDLL;NO_STRICT;USEPACKAGES"/>
+    <MAINSOURCE value="lmdrtweb.cpp"/>
+    <INCLUDEPATH value="$(BCB)\include;$(BCB)\include\vcl;"/>
+    <LIBPATH value="$(BCB)\lib\obj;$(BCB)\lib;"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I$(BCB)\include -I$(BCB)\include\vcl -src_suffix cpp -boa"/>
+    <CFLAG1 value="-O2 -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -a8 -b- -k- -vi -c -tWM"/>
+    <PFLAGS value="-N2..\..\build -N0..\..\build -NH..\..\build -$Y- -$L- -$D- -$A8 -v -JPHNE -M "/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zn"/>
+    <LFLAGS value="-I..\.. -D&quot;LMD-Tools WebPack Components&quot; -aa -Tpp -Gpr -x -Gn -Gl -Gi"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0pkg32.obj $(PACKAGES) Memmgr.Lib sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib wininet.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="lmdrtweb.cpp" FORMNAME="" UNITNAME="lmdrtweb" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtweb.res" FORMNAME="" UNITNAME="lmdrtweb.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtl.bpi" FORMNAME="" UNITNAME="lmdrtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="rtl.bpi" FORMNAME="" UNITNAME="rtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vcl.bpi" FORMNAME="" UNITNAME="vcl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vclx.bpi" FORMNAME="" UNITNAME="vclx" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDClassLib.pas" FORMNAME="" UNITNAME="LMDClassLib" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDownload.pas" FORMNAME="" UNITNAME="LMDDownload" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDFSSupport.pas" FORMNAME="" UNITNAME="LMDFSSupport" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDFtpSupport.pas" FORMNAME="" UNITNAME="LMDFtpSupport" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDHASHList.pas" FORMNAME="" UNITNAME="LMDHASHList" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDHTMLObjectUnit.pas" FORMNAME="" UNITNAME="LMDHTMLObjectUnit" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDHTMLSupp.pas" FORMNAME="" UNITNAME="LMDHTMLSupp" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDHTTPSupp.pas" FORMNAME="" UNITNAME="LMDHTTPSupp" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDInetConst.pas" FORMNAME="" UNITNAME="LMDInetConst" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDMapi.pas" FORMNAME="" UNITNAME="LMDMapi" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDNews.pas" FORMNAME="" UNITNAME="LMDNews" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRAS.pas" FORMNAME="" UNITNAME="LMDRAS" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRASCF.pas" FORMNAME="LMDRASConnectionForm" UNITNAME="LMDRASCF" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRASSupport.pas" FORMNAME="" UNITNAME="LMDRASSupport" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDStringsSupport.pas" FORMNAME="" UNITNAME="LMDStringsSupport" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSyncUnit.pas" FORMNAME="" UNITNAME="LMDSyncUnit" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDURLSupp.pas" FORMNAME="" UNITNAME="LMDURLSupp" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDWebBase.pas" FORMNAME="" UNITNAME="LMDWebBase" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDWebConfig.pas" FORMNAME="" UNITNAME="LMDWebConfig" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDWebConst.pas" FORMNAME="" UNITNAME="LMDWebConst" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDWebDownloadFormUnit.pas" FORMNAME="LMDWebDownload" UNITNAME="LMDWebDownloadFormUnit" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDWebHTMLLex.pas" FORMNAME="" UNITNAME="LMDWebHTMLLex" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDWebHTMLScan.pas" FORMNAME="" UNITNAME="LMDWebHTMLScan" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDWebHTTPGet.pas" FORMNAME="" UNITNAME="LMDWebHTTPGet" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDWebHTTPScan.pas" FORMNAME="" UNITNAME="LMDWebHTTPScan" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDWebInfo.pas" FORMNAME="" UNITNAME="LMDWebInfo" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDWebLex.pas" FORMNAME="" UNITNAME="LMDWebLex" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDWebNewsView.pas" FORMNAME="" UNITNAME="LMDWebNewsView" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDWebNewsViewForm.pas" FORMNAME="LMDWebNewsViewForm_" UNITNAME="LMDWebNewsViewForm" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDWebTree.pas" FORMNAME="" UNITNAME="LMDWebTree" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDWebUpdate.pas" FORMNAME="" UNITNAME="LMDWebUpdate" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDWebXML.pas" FORMNAME="" UNITNAME="LMDWebXML" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDWebXMLParser.pas" FORMNAME="" UNITNAME="LMDWebXMLParser" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDWebXMLParserLite.pas" FORMNAME="" UNITNAME="LMDWebXMLParserLite" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDNewsAdapters.pas" FORMNAME="" UNITNAME="LMDNewsAdapters" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDUpdateAdapter.pas" FORMNAME="" UNITNAME="LMDUpdateAdapter" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDAutoUpdateFrm.pas" FORMNAME="" UNITNAME="LMDAutoUpdateFrm" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDUpdateFrm.pas" FORMNAME="" UNITNAME="LMDUpdateFrm" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDUpdateInternetOptionsUnit.pas" FORMNAME="" UNITNAME="LMDUpdateInternetOptionsUnit" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDUpdateMessage.pas" FORMNAME="" UNITNAME="LMDUpdateMessage" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+  <IDEOPTIONS>
+[Version Info Keys]
+CompanyName=LMD Innovative
+FileDescription=LMD-Tools WebPack Components
+FileVersion=2016.5
+InternalName=
+LegalCopyright=© LMD Innovative
+LegalTrademarks=
+OriginalFilename=
+ProductName=LMD-Tools WebPack Components
+ProductVersion=2016.5
+Comments=
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[Linker]
+LibPrefix=
+LibSuffix=60
+LibVersion=
+  </IDEOPTIONS>
+</PROJECT>

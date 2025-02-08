@@ -1,0 +1,51 @@
+package dcllmdtxt;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$LIBSUFFIX '60'}
+{$DESCRIPTION 'LMD 2016 - LMD-Tools TextPack Components'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  lmdrtl,
+  rtl,
+  vcl,
+  vclx,
+  dcllmdrtl,
+  designide,
+  dclstd,
+  dbrtl,
+  vcldb,
+  lmdrttxtdb,
+  dcllmdcore,
+  lmdrttools,
+  lmdrttxt;
+
+contains
+  LMD_RegText in '..\..\LMD_RegText.pas',
+  LMD_RegTextDB in '..\..\LMD_RegTextDB.pas',
+  pLMDText_PE in '..\..\pLMDText_PE.pas',
+  pLMDHTMLEditorDlg in '..\..\pLMDHTMLEditorDlg.pas' {frmTLMDHTMLEditor};
+
+end.

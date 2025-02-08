@@ -1,0 +1,54 @@
+package ip4000dcl7;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'Woll2Woll InfoPower 4000'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  ip4000v7,
+  designide;
+
+contains
+  infopowr,
+  ipabout,
+  ipdsgn,
+  wwprpds,
+  wwprpedt,
+  wwpiced2,
+  wwfltfld,
+  wwselfld,
+  wwprppic,
+  wwpicdb,
+  wwprpfld,
+  wwaddlk,
+  wwgttbl,
+  wwprpcom,
+  wwDBNavEdt,
+  wwcollectioneditor,
+  wwInspectorPrpEdt,
+  wwinspectorprop,
+  wwedtpic;
+
+end.

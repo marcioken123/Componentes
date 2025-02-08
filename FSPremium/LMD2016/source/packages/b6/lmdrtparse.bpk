@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="lmdrtparse60.bpl"/>
+    <OBJFILES value="lmdrtparse.obj ..\..\LMDBand.obj ..\..\LMDCSVLex.obj ..\..\LMDCSVParser.obj ..\..\LMDCSVWriter.obj ..\..\LMDDataType.obj ..\..\LMDDBFParser.obj ..\..\LMDDBFReader.obj ..\..\LMDDBFWriter.obj ..\..\LMDDeductionTree.obj ..\..\LMDDTD.obj ..\..\LMDEmbdControl.obj ..\..\LMDEntryPoint.obj ..\..\LMDExtParser.obj ..\..\LMDHiddenText.obj ..\..\LMDHTMLLex.obj ..\..\LMDHTMLParser.obj ..\..\LMDHTMLSTYLE.obj ..\..\LMDHTMLWriter.obj ..\..\LMDIterator.obj ..\..\LMDLex.obj ..\..\LMDParser.obj ..\..\LMDParserStack.obj ..\..\LMDPlainTextLex.obj ..\..\LMDPlainTextParser.obj ..\..\LMDPlainTextWriter.obj ..\..\LMDRTFAnalyser.obj ..\..\LMDRTFDocument.obj ..\..\LMDRTFLookupTable.obj ..\..\LMDRTFParser.obj ..\..\LMDRTFScanner.obj ..\..\LMDRTFTape.obj ..\..\LMDRule.obj ..\..\LMDSimpleRTFParser.obj ..\..\LMDSimpleXMLLex.obj ..\..\LMDSimpleXMLParser.obj ..\..\LMDStringsList.obj ..\..\LMDTable.obj ..\..\LMDText.obj ..\..\LMDTextBox.obj ..\..\LMDTree.obj ..\..\LMDWriter.obj ..\..\LMDListObjects.obj"/>
+    <RESFILES value="lmdrtparse.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) "/>
+    <LIBFILES value=""/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value="rtl.lib"/>
+    <PACKAGES value="lmdrtl.bpi rtl.bpi vcl.bpi vclx.bpi vcljpg.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value=""/>
+    <SYSDEFINES value="_RTLDLL;NO_STRICT;USEPACKAGES"/>
+    <MAINSOURCE value="lmdrtparse.cpp"/>
+    <INCLUDEPATH value="$(BCB)\include;$(BCB)\include\vcl;"/>
+    <LIBPATH value="$(BCB)\lib\obj;$(BCB)\lib;"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I$(BCB)\include -I$(BCB)\include\vcl -src_suffix cpp -boa"/>
+    <CFLAG1 value="-O2 -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -a8 -b- -k- -vi -c -tWM"/>
+    <PFLAGS value="-N2..\..\build -N0..\..\build -NH..\..\build -$Y- -$L- -$D- -$A8 -v -JPHNE -M "/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zn"/>
+    <LFLAGS value="-I..\.. -D&quot;LMD-Tools ParsePack&quot; -aa -Tpp -Gpr -x -Gn -Gl -Gi"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0pkg32.obj $(PACKAGES) Memmgr.Lib sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib "/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="lmdrtparse.cpp" FORMNAME="" UNITNAME="lmdrtparse" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtparse.res" FORMNAME="" UNITNAME="lmdrtparse.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtl.bpi" FORMNAME="" UNITNAME="lmdrtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="rtl.bpi" FORMNAME="" UNITNAME="rtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vcl.bpi" FORMNAME="" UNITNAME="vcl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vclx.bpi" FORMNAME="" UNITNAME="vclx" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vcljpg.bpi" FORMNAME="" UNITNAME="vcljpg" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDBand.pas" FORMNAME="" UNITNAME="LMDBand" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCSVLex.pas" FORMNAME="" UNITNAME="LMDCSVLex" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCSVParser.pas" FORMNAME="" UNITNAME="LMDCSVParser" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCSVWriter.pas" FORMNAME="" UNITNAME="LMDCSVWriter" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDataType.pas" FORMNAME="" UNITNAME="LMDDataType" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBFParser.pas" FORMNAME="" UNITNAME="LMDDBFParser" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBFReader.pas" FORMNAME="" UNITNAME="LMDDBFReader" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBFWriter.pas" FORMNAME="" UNITNAME="LMDDBFWriter" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDeductionTree.pas" FORMNAME="" UNITNAME="LMDDeductionTree" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDTD.pas" FORMNAME="" UNITNAME="LMDDTD" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDEmbdControl.pas" FORMNAME="" UNITNAME="LMDEmbdControl" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDEntryPoint.pas" FORMNAME="" UNITNAME="LMDEntryPoint" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDExtParser.pas" FORMNAME="" UNITNAME="LMDExtParser" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDHiddenText.pas" FORMNAME="" UNITNAME="LMDHiddenText" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDHTMLLex.pas" FORMNAME="" UNITNAME="LMDHTMLLex" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDHTMLParser.pas" FORMNAME="" UNITNAME="LMDHTMLParser" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDHTMLSTYLE.pas" FORMNAME="" UNITNAME="LMDHTMLSTYLE" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDHTMLWriter.pas" FORMNAME="" UNITNAME="LMDHTMLWriter" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDIterator.pas" FORMNAME="" UNITNAME="LMDIterator" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDLex.pas" FORMNAME="" UNITNAME="LMDLex" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDParser.pas" FORMNAME="" UNITNAME="LMDParser" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDParserStack.pas" FORMNAME="" UNITNAME="LMDParserStack" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDPlainTextLex.pas" FORMNAME="" UNITNAME="LMDPlainTextLex" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDPlainTextParser.pas" FORMNAME="" UNITNAME="LMDPlainTextParser" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDPlainTextWriter.pas" FORMNAME="" UNITNAME="LMDPlainTextWriter" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTFAnalyser.pas" FORMNAME="" UNITNAME="LMDRTFAnalyser" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTFDocument.pas" FORMNAME="" UNITNAME="LMDRTFDocument" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTFLookupTable.pas" FORMNAME="" UNITNAME="LMDRTFLookupTable" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTFParser.pas" FORMNAME="" UNITNAME="LMDRTFParser" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTFScanner.pas" FORMNAME="" UNITNAME="LMDRTFScanner" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTFTape.pas" FORMNAME="" UNITNAME="LMDRTFTape" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRule.pas" FORMNAME="" UNITNAME="LMDRule" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSimpleRTFParser.pas" FORMNAME="" UNITNAME="LMDSimpleRTFParser" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSimpleXMLLex.pas" FORMNAME="" UNITNAME="LMDSimpleXMLLex" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSimpleXMLParser.pas" FORMNAME="" UNITNAME="LMDSimpleXMLParser" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDStringsList.pas" FORMNAME="" UNITNAME="LMDStringsList" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTable.pas" FORMNAME="" UNITNAME="LMDTable" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDText.pas" FORMNAME="" UNITNAME="LMDText" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTextBox.pas" FORMNAME="" UNITNAME="LMDTextBox" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDTree.pas" FORMNAME="" UNITNAME="LMDTree" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDWriter.pas" FORMNAME="" UNITNAME="LMDWriter" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDListObjects.pas" FORMNAME="" UNITNAME="LMDListObjects" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+  <IDEOPTIONS>
+[Version Info Keys]
+CompanyName=LMD Innovative
+FileDescription=LMD-Tools ParsePack
+FileVersion=2016.5
+InternalName=
+LegalCopyright=© LMD Innovative
+LegalTrademarks=
+OriginalFilename=
+ProductName=LMD-Tools ParsePack
+ProductVersion=2016.5
+Comments=
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[Linker]
+LibPrefix=
+LibSuffix=60
+LibVersion=
+  </IDEOPTIONS>
+</PROJECT>

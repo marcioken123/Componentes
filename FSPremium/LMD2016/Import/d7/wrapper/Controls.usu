@@ -1,0 +1,283 @@
+T+: TModalResult
+T+: TCursor
+T+: TWinControlClass
+T+: TCMActivate
+T+: TCMDeactivate
+T+: TCMGotFocus
+T+: TCMLostFocus
+T+: TCMDialogKey
+T+: TCMDialogChar
+T+: TCMHitTest
+T+: TCMEnter
+T+: TCMExit
+T+: TCMDesignHitTest
+T+: TCMWantSpecialKey
+T+: TCMMouseWheel
+T+: TCMCancelMode
+T+: TCMFocusChanged
+T+: TCMControlListChange
+T+: TCMChildKey
+T+: TCMControlChange
+T+: TCMChanged
+T+: TDragMessage
+TE: PDragRec
+T+: TDragRec
+T+: TCMDrag
+T+: TCMDockClient
+T+: TCMUnDockClient
+T+: TCMFloat
+TE: PDockNotifyRec
+T+: TDockNotifyRec
+T+: TCMDockNotification
+T+: TAlign
+T+: TAlignSet
+T+: TDragObject
+        P+: Cancelling
+        P+: DragHandle
+        P+: DragPos
+        P+: DragTargetPos
+        PE: DragTarget
+        P+: Dropped
+        P+: MouseDeltaX
+        P+: MouseDeltaY
+T+: TDragObjectClass
+T+: TDragObjectEx
+T+: TBaseDragControlObject
+        P+: Control
+T+: TDragControlObject
+T+: TDragControlObjectEx
+T+: TDragDockObject
+        P+: Brush
+        P+: DockRect
+        P+: DropAlign
+        P+: DropOnControl
+        P+: Floating
+        P+: FrameWidth
+T+: TDragDockObjectEx
+T+: TControlCanvas
+        P+: Control
+T+: TControlActionLink
+T+: TControlActionLinkClass
+TE: TControlState
+TE: TControlStyle
+T+: TMouseButton
+T+: TDragMode
+T+: TDragState
+T+: TDragKind
+T+: TTabOrder
+T+: TCaption
+T+: TDate
+T+: TTime
+TE: TScalingFlags
+T+: TAnchorKind
+T+: TAnchors
+T+: TConstraintSize
+T+: TSizeConstraints
+        P+: Control
+        P+: OnChange
+        P+: MaxHeight
+        P+: MaxWidth
+        P+: MinHeight
+        P+: MinWidth
+TE: TMouseEvent
+TE: TMouseMoveEvent
+TE: TKeyEvent
+T+: TKeyPressEvent
+T+: TDragOverEvent
+T+: TDragDropEvent
+T+: TStartDragEvent
+T+: TEndDragEvent
+T+: TDockDropEvent
+T+: TDockOverEvent
+T+: TUnDockEvent
+T+: TStartDockEvent
+T+: TGetSiteInfoEvent
+T+: TCanResizeEvent
+T+: TConstrainedResizeEvent
+TE: TMouseWheelEvent
+TE: TMouseWheelUpDownEvent
+T+: TContextPopupEvent
+T+: TWndMethod
+T+: TDockOrientation
+T+: TControl
+        P+: ActionLink
+        P+: AutoSize
+        P+: Caption
+        P+: Color
+        P+: DesktopFont
+        P+: DragKind
+        P+: DragCursor
+        P+: DragMode
+        P+: Font
+        P+: IsControl
+        P+: MouseCapture
+        P+: ParentBiDiMode
+        P+: ParentColor
+        P+: ParentFont
+        P+: ParentShowHint
+        P+: PopupMenu
+        PE: ScalingFlags
+        P+: Text
+        P+: WheelAccumulator
+        PE: WindowText
+        P+: OnCanResize
+        P+: OnClick
+        P+: OnConstrainedResize
+        P+: OnContextPopup
+        P+: OnDblClick
+        P+: OnDragDrop
+        P+: OnDragOver
+        P+: OnEndDock
+        P+: OnEndDrag
+        PE: OnMouseDown
+        PE: OnMouseMove
+        PE: OnMouseUp
+        PE: OnMouseWheel
+        PE: OnMouseWheelDown
+        PE: OnMouseWheelUp
+        P+: OnResize
+        P+: OnStartDock
+        P+: OnStartDrag
+        P+: Enabled
+        P+: Action
+        P+: Align
+        P+: Anchors
+        P+: BiDiMode
+        P+: BoundsRect
+        P+: ClientHeight
+        P+: ClientOrigin
+        P+: ClientRect
+        P+: ClientWidth
+        P+: Constraints
+        PE: ControlState
+        PE: ControlStyle
+        P+: DockOrientation
+        P+: Floating
+        P+: FloatingDockSiteClass
+        P+: HostDockSite
+        P+: LRDockWidth
+        P+: Parent
+        P+: ShowHint
+        P+: TBDockHeight
+        P+: UndockHeight
+        P+: UndockWidth
+        P+: Visible
+        P+: WindowProc
+        P+: Left
+        P+: Top
+        P+: Width
+        P+: Height
+        P+: Cursor
+        P+: Hint
+        P+: HelpType
+        P+: HelpKeyword
+        P+: HelpContext
+T+: TControlClass
+T+: TCreateParams
+T+: TWinControlActionLink
+T+: TWinControlActionLinkClass
+T+: TImeMode
+T+: TImeName
+T+: TAlignInfo
+T+: TBorderWidth
+T+: TBevelCut
+T+: TBevelEdge
+T+: TBevelEdges
+T+: TBevelKind
+T+: TBevelWidth
+TE: IDockManager
+T+: TWinControl
+        P+: BevelEdges
+        P+: BevelInner
+        P+: BevelOuter
+        P+: BevelKind
+        P+: BevelWidth
+        P+: BorderWidth
+        P+: Ctl3D
+        PE: DefWndProc
+        P+: DockSite
+        PE: DockManager
+        P+: ImeMode
+        P+: ImeName
+        P+: ParentBackground
+        P+: ParentCtl3D
+        P+: UseDockManager
+        P+: WindowHandle
+        P+: OnDockDrop
+        P+: OnDockOver
+        P+: OnEnter
+        P+: OnExit
+        P+: OnGetSiteInfo
+        PE: OnKeyDown
+        P+: OnKeyPress
+        PE: OnKeyUp
+        P+: OnUnDock
+        P+: DockClientCount
+        P+: DockClients
+        P+: DoubleBuffered
+        P+: AlignDisabled
+        P+: VisibleDockClientCount
+        P+: Brush
+        P+: Controls
+        P+: ControlCount
+        P+: Handle
+        P+: ParentWindow
+        P+: Showing
+        P+: TabOrder
+        P+: TabStop
+T+: TGraphicControl
+        P+: Canvas
+T+: TCustomControl
+        P+: Canvas
+T+: THintWindow
+        P+: BiDiMode
+        P+: Caption
+        P+: Color
+        P+: Canvas
+        P+: Font
+T+: THintWindowClass
+T+: TDragImageList
+        P+: DragCursor
+        P+: Dragging
+T+: TImageList
+        P+: BlendColor
+        P+: BkColor
+        P+: AllocBy
+        P+: DrawingStyle
+        P+: Height
+        P+: ImageType
+        P+: Masked
+        P+: OnChange
+        P+: ShareImages
+        P+: Width
+T+: TDockZone
+        P+: ChildCount
+        P+: Height
+        P+: Left
+        P+: LimitBegin
+        P+: LimitSize
+        P+: Top
+        P+: Visible
+        P+: VisibleChildCount
+        P+: Width
+        P+: ZoneLimit
+T+: TForEachZoneProc
+T+: TDockTreeClass
+T+: TDockTree
+        P+: DockSite
+T+: TMouse
+        P+: Capture
+        P+: CursorPos
+        P+: DragImmediate
+        P+: DragThreshold
+        P+: MousePresent
+        P+: IsDragging
+        P+: RegWheelMessage
+        P+: WheelPresent
+        P+: WheelScrollLines
+T+: TCustomListControl
+        P+: ItemIndex
+T+: TCustomMultiSelectListControl
+        P+: MultiSelect
+        P+: SelCount
+TE: TAnimateWindowProc

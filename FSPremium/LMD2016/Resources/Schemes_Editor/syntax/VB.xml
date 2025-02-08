@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SchemeList root='Main'>
+
+  <Scheme name='Text' inherit='Numbers'>
+        <Regex token0='email'>
+            [_a-zA-Z\d\-\.]{1,40}
+            @ 
+            ([_ a-z A-Z \d \-]+ 
+            (\. [_ a-z A-Z \d \-]+ )+ )
+        </Regex>
+  </Scheme>
+
+  <Scheme name='Numbers'>
+    <Regex token0='number'>\b (0x \d+ [lL]? | \d+ (e \d*)? [lLdDfF]? ) \b</Regex>
+    <Regex token0='number'>\b [+\-]? \d+ (\. \d+)? ([eE] [+\-]? \d+) \b</Regex>
+  </Scheme>
+
+  <Scheme name='Comment' inherit='Text' defaultToken='comment'  />
+
+  <Scheme name='String' inherit='Text' defaultToken='string'>
+  </Scheme>
+
+  <Scheme name='BadString' inherit='String' defaultToken='badString'>
+  </Scheme>
+
+  <Scheme name='StringFind'>
+    <Regex innerScheme='BadString' > 
+        &quot; (.*?\\ &quot; )*? .* $ 
+    </Regex>
+
+    <Regex innerScheme='String' priority='10'> 
+        &quot; (.*?\\ &quot; )*? &quot; c?
+    </Regex>
+
+    <Regex innerScheme='String' priority='20'> 
+        &quot; (.*?\\ &quot; )*? .*? [^\\] &quot; c?
+    </Regex>  
+
+    <Regex innerScheme='String' priority='30'> 
+        &quot;  &quot; c?
+    </Regex>    
+  </Scheme>
+
+
+
+  <Scheme name='Main' inherit='Numbers' inherit0='StringFind'
+          defaultToken='default'           
+
+          allIgnoreCase='true'
+  >
+    <KeywordRegex moreWordChars='.'>\b[a-zA-Z_][\w_]*\b</KeywordRegex>
+
+    <Keywords>
+            Empty False Nothing Null True
+            Initialize Terminate
+            Call Class End
+            Public  Private
+            Const
+            Dim
+            
+            Exit
+            Do While Until   
+            Loop 
+            Erase 
+            Execute 
+            ExecuteGlobal 
+            For Each  In   To
+            Next 
+            Default
+            
+            If  Then  ElseIf Else   End 
+            
+            On Error Resume Next GoTo 
+            Option Explicit 
+            Property Get  Set Let
+            Randomize ReDim  Preserve
+            Select Case  Else
+            Sub
+            While Wend  With 
+            CreateObject
+            
+            Not Or And Xor Eqv Imp Is Mod 
+            
+    </Keywords>
+
+
+    <Regex innerScheme='Comment' regex='Rem.*$' />
+    <Regex innerScheme='Comment' regex=" '.*$ " />
+
+    <Regex token0='symbol' regex='[    \]    \[  \( \) &gt; &lt;  &amp; ]' />
+    <Regex token0='symbol' regex='[-=+^;,]' />
+
+    <SkipSyntaxToken token='comment' />
+
+    <SyntaxBlock capture="true">
+        <Start> 
+            [ kw:sub kw:class kw:if kw:function kw:property  kw:select kw:with ]  
+        </Start>      
+        <End> kw:end  $0 </End>
+    </SyntaxBlock>
+        
+    <SyntaxBlock capture="true">
+        <Start>   [ kw:do ]    </Start>
+
+        <End> kw:loop  </End>
+    </SyntaxBlock>
+
+    <SyntaxBlock capture="true">
+        <Start>   [ kw:for ]    </Start>
+
+        <End> kw:next  </End>
+    </SyntaxBlock>
+
+    <SyntaxBlock capture="true">
+        <Start>   [ kw:while ]    </Start>
+
+        <End> kw:wend  </End>
+    </SyntaxBlock>
+  </Scheme>
+</SchemeList>

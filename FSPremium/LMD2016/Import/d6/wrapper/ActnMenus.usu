@@ -1,0 +1,90 @@
+T+: TMenuStack
+        P+: Bars
+T+: TAnimationStyle
+T+: TMenuPopupEvent
+T+: TCustomPopupClass
+TE: TGetPopupClassEvent
+T+: TCustomActionMenuBar
+        P+: PopupStack
+        P+: DelayItem
+        P+: Expandable
+        P+: Expanded
+        P+: ParentMenu
+        P+: Selected
+        P+: AnimationStyle
+        P+: ExpandDelay
+        P+: InMenuLoop
+        P+: ParentControl
+        P+: RootMenu
+        PE: OnGetPopupClass
+        P+: OnPopup
+T+: TCustomMenuExpandBtn
+T+: TCustomActionPopupMenu
+        P+: ExpandBtn
+T+: TCustomizeActionToolBarClass
+T+: TCustomizeActionToolBar
+T+: TCustomizeActionLink
+T+: TCustomizeActionClientItem
+T+: TCustomActionMainMenuBar
+        P+: Inactive
+        P+: PersistentHotKeys
+T+: TActionMainMenuBar
+        P+: ActionManager
+        P+: Align
+        P+: AllowHiding
+        P+: Anchors
+        P+: AnimationStyle
+        P+: BiDiMode
+        P+: Caption
+        P+: Color
+        P+: Constraints
+        P+: EdgeBorders
+        P+: EdgeInner
+        P+: EdgeOuter
+        P+: Enabled
+        P+: ExpandDelay
+        P+: Font
+        P+: HorzMargin
+        P+: ParentBiDiMode
+        P+: ParentColor
+        P+: ParentFont
+        P+: ParentShowHint
+        P+: ShowHint
+        P+: Spacing
+        P+: VertMargin
+        P+: Visible
+        P+: OnCanResize
+        P+: OnClick
+        P+: OnControlCreated
+        P+: OnConstrainedResize
+        P+: OnContextPopup
+        P+: OnDockDrop
+        P+: OnDockOver
+        P+: OnDblClick
+        P+: OnDragDrop
+        P+: OnDragOver
+        P+: OnEndDock
+        P+: OnEndDrag
+        P+: OnEnter
+        P+: OnExit
+        P+: OnGetControlClass
+        P+: OnGetSiteInfo
+        P+: OnMouseDown
+        P+: OnMouseMove
+        P+: OnMouseUp
+        P+: OnPaint
+        P+: OnResize
+        P+: OnStartDock
+        P+: OnStartDrag
+        P+: OnUnDock
+T+: TMenuEdges
+T+: TCustomMenuItem
+        P+: Menu
+        P+: MouseSelected
+        P+: ShortCutBounds
+        P+: Edges
+T+: TCustomMenuButton
+T+: TCustomAddRemoveItem
+T+: TMenuItemControlClass
+T+: TAddRemoveItemClass
+T+: TMenuButtonControlClass

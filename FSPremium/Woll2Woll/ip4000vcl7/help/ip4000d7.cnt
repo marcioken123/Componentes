@@ -1,0 +1,184 @@
+:Base ip3000d6.hlp
+:Title InfoPower 3000 Online Help
+:Index Delphi 6 VCL =del6vcl.hlp
+1 InfoPower Contents=InfoPower_Contents>main
+1 Data Access
+2 TwwDataSource
+3 TwwDataSource=TwwDataSource>main
+3 How To Use the TwwDataSource Component=TwwDataSource_component>main
+3 Properties=TwwDataSourcePropertiesByObject>w95sec
+3 Methods=TwwDataSourceMethodsByObject>w95sec
+3 Events=TwwDataSourceEventsByObject>w95sec
+2 TwwTable
+3 TwwTable=TwwTable>main
+3 How to use the TwwTable component=TwwTable_component>main
+3 Properties=TwwTablePropertiesByObject>w95sec
+3 Methods=TwwTableMethodsByObject>w95sec
+3 Events=TwwTableEventsByObject>w95sec
+2 TwwQuery
+3 TwwQuery=TwwQuery>main
+3 How to use the TwwQuery component=TwwQuery_component>main
+3 Properties=TwwQueryPropertiesByObject>w95sec
+3 Methods=TwwQueryMethodsByObject>w95sec
+3 Events=TwwQueryEventsByObject>w95sec
+2 TwwQBE
+3 TwwQBE=TwwQBE>main
+3 How to use the TwwQBE component=TwwQBE_component>main
+3 Properties=TwwQBEPropertiesByObject>w95sec
+3 Methods=TwwQBEMethodsByObject>w95sec
+3 Events=TwwQBEEventsByObject>w95sec
+2 TwwStoredProc
+3 TwwStoredProc=TwwStoredProc>main
+3 How to use the TwwStoredProc component=TwwStoredProc_component>main
+3 Properties=TwwStoredProcPropertiesByObject>w95sec
+3 Methods=TwwStoredProcMethodsByObject>w95sec
+3 Events=TwwStoredProcEventsByObject>w95sec
+2 TwwClientDataSet (C/S Version Only)
+3 TwwClientDataSet=TwwClientDataSet>main
+3 How to use the TwwClientDataSet component=TwwClientDataSet_component>main
+3 Properties=TwwClientDataSetPropertiesByObject>w95sec
+3 Methods=TwwClientDataSetMethodsByObject>w95sec
+3 Events=TwwClientDataSetEventsByObject>w95sec
+1 Controls
+2 TwwCheckBox
+3 TwwCheckbox=TwwCheckbox
+3 How to use the TwwCheckBox=TwwCheckBox_component
+3 Properties=TwwCheckBoxPropertiesByObject
+3 Methods=TwwCheckBoxMethodsByObject
+3 Events=TwwCheckBoxEventsByObject
+2 TwwDataInspector
+3 TwwDataInspector=TwwDataInspector>main
+2 TwwDBComboBox
+3 TwwDBComboBox=TwwDBComboBox>main
+3 How to use the TwwDBComboBox component=TwwDBComboBox_component>main
+3 Properties=TwwDBComboBoxPropertiesByObject>w95sec
+3 Methods=TwwDBComboBoxMethodsByObject>w95sec
+3 Events=TwwDBComboBoxEventsByObject>w95sec
+2 TwwDBComboDlg
+3 TwwDBComboDlg=TwwDBComboDlg>main
+3 Properties=TwwDBComboDlgPropertiesByObject>w95sec
+3 Methods=TwwDBComboDlgMethodsByObject>w95sec
+3 Events=TwwDBComboDlgEventsByObject>w95sec
+2 TwwDBDateTimePicker
+3 TwwDBDateTimePicker=TwwDBDateTimePicker>main
+3 Properties=TwwDBDateTimePickerPropertiesByObject>w95sec
+3 Methods=TwwDBDateTimePickerMethodsByObject>w95sec
+3 Events=TwwDBDateTimePickerEventsByObject>w95sec
+2 TwwDBEdit
+3 TwwDBEdit=TwwDBEdit>main
+3 How to use the TwwDBEdit component=TwwDBEdit_component>main
+3 Properties=TwwDBEditPropertiesByObject>w95sec
+3 Methods=TwwDBEditMethodsByObject>w95sec
+3 Events=TwwDBEditEventsByObject>w95sec
+2 TwwDBGrid
+3 TwwDBGrid=TwwDBGrid>main
+3 How to use the TwwDBGrid component=TwwDBGrid_component>main
+3 Properties=TwwDBGridPropertiesByObject>w95sec
+3 Methods=TwwDBGridMethodsByObject>w95sec
+3 Events=TwwDBGridEventsByObject>w95sec
+2 TwwDBLookupCombo
+3 TwwDBLookupCombo=TwwDBLookupCombo>main
+3 How to use the TwwDBLookupCombo component=TwwDBLookupCombo_component>main
+3 Properties=TwwDBLookupComboPropertiesByObject>w95sec
+3 Methods=TwwDBLookupComboMethodsByObject>w95sec
+3 Events=TwwDBLookupComboEventsByObject>w95sec
+2 TwwDBLookupComboDlg
+3 TwwDBLookupComboDlg=TwwDBLookupComboDlg>main
+3 How to use the TwwDBLookupComboDlg component=TwwDBLookupComboDlg_component>main
+3 Properties=TwwDBLookupComboDlgPropertiesByObject>w95sec
+3 Methods=TwwDBLookupComboDlgMethodsByObject>w95sec
+3 Events=TwwDBLookupComboDlgEventsByObject>w95sec
+2 TwwDBMonthCalendar
+3 TwwDBMonthCalendar=TwwDBMonthCalendar>main
+3 How to use the TwwDBMonthCalendar component=TwwDBMonthCalendar_component>main
+3 Properties=TwwDBMonthCalendarPropertiesByObject>w95sec
+3 Methods=TwwDBMonthCalendarMethodsByObject>w95sec
+3 Events=TwwDBMonthCalendarEventsByObject>w95sec
+2 TwwDBNavigator
+3 TwwDBNavigator=TwwDBNavigator>main
+3 How to use the TwwDBNavigator component=TwwDBNavigator_component>main
+3 Properties=TwwDBNavigatorPropertiesByObject>w95sec
+3 Methods=TwwDBNavigatorMethodsByObject>w95sec
+3 Events=TwwDBNavigatorEventsByObject>w95sec
+2 TwwDBRichEdit
+3 TwwDBRichEdit=TwwDBRichEdit>main
+3 How to use the TwwDBRichEdit component=TwwDBRichEdit_component>main
+3 Properties=TwwDBRichEditPropertiesByObject>w95sec
+3 Methods=TwwDBRichEditMethodsByObject>w95sec
+3 Events=TwwDBRichEditEventsByObject>w95sec
+2 TwwDBSpinEdit
+3 TwwDBSpinEdit=TwwDBSpinEdit>main
+3 How to use the TwwDBSpinEdit component=TwwDBSpinEdit_component>main
+3 Properties=TwwDBSpinEditPropertiesByObject>w95sec
+3 Methods=TwwDBSpinEditMethodsByObject>w95sec
+3 Events=TwwDBSpinEditEventsByObject>w95sec
+2 TwwKeyCombo
+3 TwwKeyCombo=TwwKeyCombo>main
+3 How to use the TwwKeyCombo component=TwwKeyCombo_component>main
+3 Properties=TwwKeyComboPropertiesByObject>w95sec
+3 Methods=TwwKeyComboMethodsByObject>w95sec
+3 Events=TwwKeyComboEventsByObject>w95sec
+2 TwwIncrementalSearch
+3 TwwIncrementalSearch=TwwIncrementalSearch>main
+3 How to use the TwwIncrementalSearch component=TwwIncrementalSearch_component>main
+3 Properties=TwwIncrementalSearchPropertiesByObject>w95sec
+3 Events=TwwIncrementalSearchEventsByObject>w95sec
+2 TwwExpandButton
+3 TwwExpandButton=TwwExpandButton
+3 Properties=TwwExpandButtonPropertiesByObject
+3 Methods=TwwExpandButtonMethodsByObject
+3 Events=TwwExpandButtonEventsByObject
+3 How to use the TwwExpandButton component=TwwExpandButton_component
+2 TwwRadioGroup
+3 TwwRadioGroup=TwwRadioGroup
+3 Properties=TwwRadioGroupPropertiesByObject
+3 Methods=TwwRadioGroupMethodsByObject
+3 Events=TwwRadioGroupEventsByObject
+2 TwwRecordViewPanel
+3 TwwRecordViewPanel=TwwRecordViewPanel>main
+3 How to use the TwwRecordViewPanel component=TwwRecordViewPanel_component>main
+3 Properties=TwwRecordViewPanelPropertiesByObject>w95sec
+3 Methods=TwwRecordViewPanelMethodsByObject>w95sec
+3 Events=TwwRecordViewPanelEventsByObject>w95sec
+1 Dialogs
+2 TwwMemoDialog
+3 TwwMemoDialog=TwwMemoDialog>main
+3 How to use the TwwMemoDialog component=TwwMemoDialog_component>main
+3 Properties=TwwMemoDialogPropertiesByObject>w95sec
+3 Methods=TwwMemoDialogMethodsByObject>w95sec
+3 Events=TwwMemoDialogEventsByObject>w95sec
+2 TwwSearchDialog
+3 TwwSearchDialog=TwwSearchDialog>main
+3 How to use the TwwSearchDialog component=TwwSearchDialog_component>main
+3 Properties=TwwSearchDialogPropertiesByObject>w95sec
+3 Methods=TwwSearchDialogMethodsByObject>w95sec
+3 Events=TwwSearchDialogEventsByObject>w95sec
+2 TwwLocateDialog
+3 TwwLocateDialog=TwwLocateDialog>main
+3 How to use the TwwLocateDialog component=TwwLocateDialog_component>main
+3 Properties=TwwLocateDialogPropertiesByObject>w95sec
+3 Methods=TwwLocateDialogMethodsByObject>w95sec
+3 Events=TwwLocateDialogEventsByObject>w95sec
+2 TwwLookupDialog
+3 TwwLookupDialog=TwwLookupDialog>main
+3 How to use the TwwLookupDialog component=TwwLookupDialog_component>main
+3 Properties=TwwLookupDialogPropertiesByObject>w95sec
+3 Methods=TwwLookupDialogMethodsByObject>w95sec
+3 Events=TwwLookupDialogEventsByObject>w95sec
+2 TwwFilterDialog
+3 TwwFilterDialog=TwwFilterDialog>main
+3 How to use the TwwFilterDialog component=TwwFilterDialog_component>main
+3 Properties=TwwFilterDialogPropertiesByObject>w95sec
+3 Methods=TwwFilterDialogMethodsByObject>w95sec
+3 Events=TwwFilterDialogEventsByObject>w95sec
+2 TwwRecordViewDialog
+3 TwwRecordViewDialog=TwwRecordViewDialog>main
+3 How to use the TwwRecordViewDialog component=TwwRecordViewDialog_component>main
+3 Properties=TwwRecordViewDialogPropertiesByObject>w95sec
+3 Methods=TwwRecordViewDialogMethodsByObject>w95sec
+3 Events=TwwRecordViewDialogEventsByObject>w95sec
+2 TwwIntl
+3 TwwIntl=TwwIntl>main
+3 How to use the TwwIntl component=TwwIntl_component>main
+3 Properties=TwwIntlPropertiesByObject>w95sec
+3 Methods=TwwIntlMethodsByObject>w95sec

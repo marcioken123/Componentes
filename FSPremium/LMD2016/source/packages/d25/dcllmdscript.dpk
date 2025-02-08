@@ -1,0 +1,56 @@
+package dcllmdscript;
+
+{$R *.res}
+{$R *.otares}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'LMD 2016 - IDE-Tools ScriptPack Components and Expert'}
+{$LIBSUFFIX '250'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  lmdrtl,
+  dcllmdrtl,
+  rtl,
+  vcl,
+  vclx,
+  designide,
+  dclstd,
+  lmdrtscript,
+  lmdrtscriptimp;
+
+contains
+  LMD_RegScript in '..\..\LMD_RegScript.pas',
+  pLMDSctPE in '..\..\pLMDSctPE.pas',
+  LMDSctDialects in '..\..\LMDSctDialects.pas',
+  LMDSctExpertUnit in '..\..\LMDSctExpertUnit.pas',
+  LMDSctEmbeddedView in '..\..\LMDSctEmbeddedView.pas',
+  LMDSctFloatingView in '..\..\LMDSctFloatingView.pas',
+  LMDSctUnitFrame in '..\..\LMDSctUnitFrame.pas' {LMDUnitFrame},
+  LMDSctBatchFrame in '..\..\LMDSctBatchFrame.pas' {LMDBatchFrame},
+  LMDSctUnitOptionsForm in '..\..\LMDSctUnitOptionsForm.pas' {LMDUnitOptionsFrm};
+
+end.

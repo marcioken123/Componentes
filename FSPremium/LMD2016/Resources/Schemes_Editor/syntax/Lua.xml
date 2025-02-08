@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SchemeList root='Main'>
+
+    <Scheme name='Text' inherit='Numbers'>                
+    
+        <Regex token0='email'>
+            [_a-zA-Z\d\-\.]{1,40}
+            @ 
+            ([_ a-z A-Z \d \-]+ 
+            (\. [_ a-z A-Z \d \-]+ )+ )
+        </Regex>
+    </Scheme>
+
+    <Scheme name='Numbers'>
+        <Regex token0='number'>
+            \b (0x \d+ [lL]? | \d+ (e \d*)? [lLdDfF]? ) \b
+        </Regex>
+        
+        <Regex token0='number'>
+            \b [+\-]? \d+ (\. \d+)? ([eE] [+\-]? \d+) \b
+        </Regex>
+    </Scheme>
+
+    <Scheme name='Comment' inherit='Text' defaultToken='comment'  />
+
+    <Scheme name='String' inherit='Text' defaultToken='string'>
+    </Scheme>
+
+    <Scheme name='StringInterpolation' inherit='String' defaultToken='string'>
+        <Regex token0='escaped' regex='\\[a-z 0 &quot; &apos; ]' />
+        <Regex token0='escaped' regex='\\ \d{1,3}' />
+    </Scheme>
+
+    <Scheme name='Main' inherit='Numbers' 
+            defaultToken='default'           
+
+            keywordsIgnoreCase='true'
+    >
+        <KeywordRegex>\b[a-zA-Z_]\w*\b</KeywordRegex>
+
+        <Keywords>    
+             and       break     do        else      elseif
+             end       false     for       function  if
+             in        local     nil       not       or
+             repeat    return    then      true      until     while            
+        </Keywords>
+
+        <RegexBlock innerScheme='StringInterpolation' start_token0='string' 
+                    end_token0='string' >
+
+            <Start> &quot; | &apos;  </Start>        
+            <End> $0 </End>        
+        </RegexBlock>
+
+        <RegexBlock innerScheme='String' start_token0='string' priority='100'
+                    end_token0='string' >
+
+            <Start> \[ (\=*) \[  </Start>        
+            <End> \] $1 \] </End>        
+        </RegexBlock>
+
+
+        <RegexBlock innerScheme='Comment' start_token0='comment' priority='100'
+                    end_token0='comment' >
+
+            <Start> --\[ (\=*) \[  </Start>        
+            <End> \] $1 \] </End>        
+        </RegexBlock>
+
+        <Regex innerScheme='Comment' priority='1000' regex='--([^ \[ ].*)?$' />
+        
+        <RegexBlock start='\/\*' end='\*\/' end_token0='comment' 
+                innerScheme='Comment'/>
+
+        <Regex token0='symbol' regex='[   \}   \{    \]  \#  \[  \( \) &gt; &lt; ]' />
+        <Regex token0='symbol' regex='[-:?\~=+!^;,]' />
+
+        <SkipSyntaxToken token='comment' />
+
+
+        <SyntaxBlock capture="true">
+            <Start> ( kw:local )? kw:function  </Start>
+            <End> kw:end  </End>
+        </SyntaxBlock>
+
+        <SyntaxBlock capture="true">
+            <Start> kw:if </Start>
+            <End> kw:end  </End>
+        </SyntaxBlock>
+
+        <SyntaxBlock capture="true">
+            <Start> kw:repeat </Start>
+            <End> kw:until  </End>
+        </SyntaxBlock>
+
+        <SyntaxBlock capture="true">
+            <Start> [ kw:while kw:for ] .+? kw:do  </Start>
+            <End> kw:end  </End>
+        </SyntaxBlock>
+
+        <SyntaxBlock capture="true">
+            <Start> kw:do  </Start>
+            <End> kw:end  </End>
+        </SyntaxBlock>
+    </Scheme>
+</SchemeList>

@@ -1,0 +1,33 @@
+TE: IWideStringsAdapter
+T+: TWideStringsEnumerator
+        P+: Current
+T+: TWideStrings
+        P+: UpdateCount
+        P+: Capacity
+        P+: CommaText
+        P+: Count
+        P+: Delimiter
+        P+: DelimitedText
+        P+: LineBreak
+        P+: Names
+        P+: Objects
+        P+: QuoteChar
+        P+: Values
+        P+: ValueFromIndex
+        P+: NameValueSeparator
+        P+: StrictDelimiter
+        P+: Strings
+        P+: Text
+        PE: StringsAdapter
+TE: PWideStringItem
+T+: TWideStringItem
+TE: PWideStringItemList
+TE: TWideStringItemList
+TE: TWideStringListSortCompare
+T+: TWideStringList
+        P+: Duplicates
+        P+: Sorted
+        P+: CaseSensitive
+        P+: OnChange
+        P+: OnChanging
+        P+: OwnsObjects

@@ -1,0 +1,81 @@
+T+: TCommonDialog
+        PE: Template
+        P+: Handle
+        P+: Ctl3D
+        P+: HelpContext
+        P+: OnClose
+        P+: OnShow
+T+: TOpenOption
+T+: TOpenOptions
+T+: TOpenOptionEx
+T+: TOpenOptionsEx
+T+: TFileEditStyle
+T+: TOFNotifyEx
+T+: TIncludeItemEvent
+T+: TOpenDialog
+        P+: FileEditStyle
+        P+: Files
+        P+: HistoryList
+        P+: DefaultExt
+        P+: FileName
+        P+: Filter
+        P+: FilterIndex
+        P+: InitialDir
+        P+: Options
+        P+: OptionsEx
+        P+: Title
+        P+: OnCanClose
+        P+: OnFolderChange
+        P+: OnSelectionChange
+        P+: OnTypeChange
+        P+: OnIncludeItem
+T+: TSaveDialog
+T+: TColorDialogOption
+T+: TColorDialogOptions
+TE: TCustomColors
+T+: TColorDialog
+        P+: Color
+        P+: Ctl3D
+        P+: CustomColors
+        P+: Options
+T+: TFontDialogOption
+T+: TFontDialogOptions
+T+: TFontDialogDevice
+T+: TFDApplyEvent
+T+: TFontDialog
+        P+: Font
+        P+: Device
+        P+: MinFontSize
+        P+: MaxFontSize
+        P+: Options
+        P+: OnApply
+T+: TPrinterSetupDialog
+T+: TPrintRange
+T+: TPrintDialogOption
+T+: TPrintDialogOptions
+T+: TPrintDialog
+        P+: Collate
+        P+: Copies
+        P+: FromPage
+        P+: MinPage
+        P+: MaxPage
+        P+: Options
+        P+: PrintToFile
+        P+: PrintRange
+        P+: ToPage
+T+: TFindOption
+T+: TFindOptions
+TE: TFindReplaceFunc
+T+: TFindDialog
+        P+: Left
+        P+: Position
+        P+: Top
+        P+: FindText
+        P+: Options
+        P+: OnFind
+T+: TReplaceDialog
+        P+: ReplaceText
+        P+: OnReplace
+T+: TMsgDlgType
+T+: TMsgDlgBtn
+T+: TMsgDlgButtons

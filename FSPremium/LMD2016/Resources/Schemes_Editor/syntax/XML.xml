@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<SchemeList root = 'Main'>
+
+  <Scheme name='BaseSyntax'>
+    <Regex token0='entity'>
+        &amp;[a-zA-Z]+;
+    </Regex>
+
+    <RegexBlock innerScheme='Comment' end_token0='comment' >
+        <Start> &lt; !--  </Start>        
+        <End> --&gt; </End>        
+    </RegexBlock>
+
+  </Scheme>
+
+  <Scheme name='InsideTag' inherit='BaseSyntax'>
+    <RegexBlock innerScheme='CDATA' start_token0='cdataTagStart' end_token0='cdataTagEnd' >
+        <Start> &lt; !\[\[CDATA  </Start>
+        <End> \]\] &gt; </End>        
+    </RegexBlock>
+  </Scheme>
+  
+  <Scheme name='WithTags' inherit='Tag' inherit0='BaseSyntax'>
+  
+    <RegexBlock innerScheme='WithTags' start_token0='tagOpen' end_token0='tagClose' >
+        <Start> &lt; ([\w:]+) </Start>        
+        <End> ( / &gt; ) | ( &lt; / $1 &gt; ) </End>        
+    </RegexBlock>  
+
+    <RegexBlock innerScheme='InsideTag' start_token0='tagOpen' end_token0='tagClose' >
+        <Start> &gt;  </Start>        
+        <End> (?= &lt; [^ ! ] ) </End>        
+    </RegexBlock>  
+
+
+    <SyntaxBlock capture='true'>
+        <Start> tagOpen </Start>
+        <End> tagClose </End>
+    </SyntaxBlock>
+    
+  </Scheme>
+
+  <Scheme name='Comment' defaultToken='comment'>
+  </Scheme>
+
+  <Scheme name='XmlDecl' inherit='Tag'>
+  </Scheme>
+
+  <Scheme name='CDATA' defaultToken='xmlCdata'>
+    <SyntaxBlock capture='true'>
+        <Start> cdataTagStart </Start>
+        <End> cdataTagEnd </End>
+    </SyntaxBlock>  
+  </Scheme>    
+    
+  <Scheme name='DTD' defaultToken='comment'>               
+  </Scheme>
+    
+  <Scheme name='AttrStringQuot'>
+    <Regex token0='attributeValue'> [^ &quot; ]+</Regex>
+  </Scheme>
+
+  <Scheme name='AttrStringApos'>
+    <Regex token0='attributeValue'> [^ &apos; ]+</Regex>
+  </Scheme>
+    
+  <Scheme name='Tag'>  
+  
+    <Regex token0='attributeName' priority='10'>
+        \b[\w+\-] \s* = \s*        
+    </Regex>
+
+    <Regex token0='attributeValue'>
+        [^ &lt; &gt; &quot; &apos; = \s ]+         
+    </Regex>
+
+    <RegexBlock innerScheme='AttrStringQuot' start_token0='attributeValue' 
+        end_token0='attributeValue' >
+
+        <Start> &quot;  </Start>        
+        <End> &quot; </End>        
+    </RegexBlock>
+
+    <RegexBlock innerScheme='AttrStringApos' start_token0='attributeValue' 
+        end_token0='attributeValue' >
+
+        <Start> &apos;  </Start>        
+        <End> &apos; </End>        
+    </RegexBlock>
+
+  </Scheme>
+  
+  <TokenAlias name='htmlText' baseToken='default'/>
+  
+  <Scheme name='Main' defaultToken='htmlText'
+          inherit='BaseSyntax'        
+          inherit0='WithTags'      
+          keywordsIgnoreCase='true' >
+                    
+
+    <RegexBlock innerScheme='DTD' start_token0='dtdTagStartEnd' end_token0='dtdTagStartEnd' >
+        <Start> &lt; !\w+  </Start>        
+        <End> &gt; </End>        
+    </RegexBlock>
+                    
+    <Regex token0='tagClose'>
+        &lt; / [\w:]+ \s* &gt;
+    </Regex>
+
+    <RegexBlock innerScheme='XmlDecl' start_token0='xmlDeclStart' end_token0='xmlDeclEnd' >
+        <Start> &lt; \? xml  </Start>
+        <End> \? &gt; </End>        
+    </RegexBlock>
+
+
+  </Scheme>
+</SchemeList>
+
+
+
+
+               

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <PersonalityInfo>
+    <Option>
+      <Option Name="Personality">Default.Personality</Option>
+      <Option Name="ProjectType"></Option>
+      <Option Name="Version">1.0</Option>
+      <Option Name="GUID">{03DC8EAB-C802-42DA-88E0-69436D9172C2}</Option>
+    </Option>
+  </PersonalityInfo>
+  <Default.Personality>
+    
+    <Projects>
+      <Projects Name="lmdrtl.bpl"  Type="String">packages\d10\lmdrtl.bdsproj</Projects>
+      <Projects Name="dcllmdrtl.bpl"  Type="String">packages\d10\dcllmdrtl.bdsproj</Projects>
+      <Projects Name="lmdrtrtlx.bpl"  Type="String">packages\d10\lmdrtrtlx.bdsproj</Projects>
+      <Projects Name="dcllmdrtlx.bpl"  Type="String">packages\d10\dcllmdrtlx.bdsproj</Projects>
+      <Projects Name="lmdrtlog.bpl"  Type="String">packages\d10\lmdrtlog.bdsproj</Projects>
+      <Projects Name="lmdrtthemes.bpl"  Type="String">packages\d10\lmdrtthemes.bdsproj</Projects>
+      <Projects Name="dcllmdthemes.bpl"  Type="String">packages\d10\dcllmdthemes.bdsproj</Projects>
+      <Projects Name="lmdrtplugin.bpl"  Type="String">packages\d10\lmdrtplugin.bdsproj</Projects>
+      <Projects Name="dcllmdplugin.bpl"  Type="String">packages\d10\dcllmdplugin.bdsproj</Projects>
+      <Projects Name="lmdrtprint.bpl"  Type="String">packages\d10\lmdrtprint.bdsproj</Projects>
+      <Projects Name="dcllmdprint.bpl"  Type="String">packages\d10\dcllmdprint.bdsproj</Projects>
+      <Projects Name="lmdrtelcore.bpl"  Type="String">packages\d10\lmdrtelcore.bdsproj</Projects>
+      <Projects Name="dcllmdelcore.bpl"  Type="String">packages\d10\dcllmdelcore.bdsproj</Projects>
+      <Projects Name="lmdrtelpro.bpl"  Type="String">packages\d10\lmdrtelpro.bdsproj</Projects>
+      <Projects Name="lmdrteldb.bpl"  Type="String">packages\d10\lmdrteldb.bdsproj</Projects>
+      <Projects Name="dcllmdelpro.bpl"  Type="String">packages\d10\dcllmdelpro.bdsproj</Projects>
+      <Projects Name="dcllmdeldb.bpl"  Type="String">packages\d10\dcllmdeldb.bdsproj</Projects>
+      <Projects Name="lmdrtdocking.bpl"  Type="String">packages\d10\lmdrtdocking.bdsproj</Projects>
+      <Projects Name="dcllmddocking.bpl"  Type="String">packages\d10\dcllmddocking.bdsproj</Projects>
+      <Projects Name="lmdrtrtf.bpl"  Type="String">packages\d10\lmdrtrtf.bdsproj</Projects>
+      <Projects Name="lmdrtrtfdb.bpl"  Type="String">packages\d10\lmdrtrtfdb.bdsproj</Projects>
+      <Projects Name="dcllmdrtf.bpl"  Type="String">packages\d10\dcllmdrtf.bdsproj</Projects>
+      <Projects Name="dcllmdrtfdb.bpl"  Type="String">packages\d10\dcllmdrtfdb.bdsproj</Projects>
+      <Projects Name="lmdrtshell.bpl"  Type="String">packages\d10\lmdrtshell.bdsproj</Projects>
+      <Projects Name="dcllmdshell.bpl"  Type="String">packages\d10\dcllmdshell.bdsproj</Projects>
+      <Projects Name="lmdrtsys.bpl"  Type="String">packages\d10\lmdrtsys.bdsproj</Projects>
+      <Projects Name="dcllmdsys.bpl"  Type="String">packages\d10\dcllmdsys.bdsproj</Projects>
+      <Projects Name="lmdrtcore.bpl"  Type="String">packages\d10\lmdrtcore.bdsproj</Projects>
+      <Projects Name="dcllmdcore.bpl"  Type="String">packages\d10\dcllmdcore.bdsproj</Projects>
+      <Projects Name="lmdrttools.bpl"  Type="String">packages\d10\lmdrttools.bdsproj</Projects>
+      <Projects Name="lmdrttoolsdb.bpl"  Type="String">packages\d10\lmdrttoolsdb.bdsproj</Projects>
+      <Projects Name="dcllmdtools.bpl"  Type="String">packages\d10\dcllmdtools.bdsproj</Projects>
+      <Projects Name="dcllmdtoolsdb.bpl"  Type="String">packages\d10\dcllmdtoolsdb.bdsproj</Projects>
+      <Projects Name="lmdrtdialog.bpl"  Type="String">packages\d10\lmdrtdialog.bdsproj</Projects>
+      <Projects Name="dcllmddlgcmps.bpl"  Type="String">packages\d10\dcllmddlgcmps.bdsproj</Projects>
+      <Projects Name="dcllmddialog.bpl"  Type="String">packages\d10\dcllmddialog.bdsproj</Projects>
+      <Projects Name="lmdrtgrid.bpl"  Type="String">packages\d10\lmdrtgrid.bdsproj</Projects>
+      <Projects Name="dcllmdgrid.bpl"  Type="String">packages\d10\dcllmdgrid.bdsproj</Projects>
+      <Projects Name="lmdrtparse.bpl"  Type="String">packages\d10\lmdrtparse.bdsproj</Projects>
+      <Projects Name="lmdrttxt.bpl"  Type="String">packages\d10\lmdrttxt.bdsproj</Projects>
+      <Projects Name="lmdrttxtdb.bpl"  Type="String">packages\d10\lmdrttxtdb.bdsproj</Projects>
+      <Projects Name="dcllmdtxt.bpl"  Type="String">packages\d10\dcllmdtxt.bdsproj</Projects>
+      <Projects Name="lmdrtweb.bpl"  Type="String">packages\d10\lmdrtweb.bdsproj</Projects>
+      <Projects Name="dcllmdweb.bpl"  Type="String">packages\d10\dcllmdweb.bdsproj</Projects>
+      <Projects Name="lmdrtsearch.bpl"  Type="String">packages\d10\lmdrtsearch.bdsproj</Projects>
+      <Projects Name="lmdrtsearchdb.bpl"  Type="String">packages\d10\lmdrtsearchdb.bdsproj</Projects>
+      <Projects Name="dcllmdsearch.bpl"  Type="String">packages\d10\dcllmdsearch.bdsproj</Projects>
+      <Projects Name="lmdrtbar.bpl"  Type="String">packages\d10\lmdrtbar.bdsproj</Projects>
+      <Projects Name="dcllmdbar.bpl"  Type="String">packages\d10\dcllmdbar.bdsproj</Projects>
+      <Projects Name="lmdrtinspector.bpl"  Type="String">packages\d10\lmdrtinspector.bdsproj</Projects>
+      <Projects Name="dcllmdinspector.bpl"  Type="String">packages\d10\dcllmdinspector.bdsproj</Projects>
+      <Projects Name="lmdrtdesign.bpl"  Type="String">packages\d10\lmdrtdesign.bdsproj</Projects>
+      <Projects Name="dcllmddesign.bpl"  Type="String">packages\d10\dcllmddesign.bdsproj</Projects>
+      <Projects Name="lmdrtscript.bpl"  Type="String">packages\d10\lmdrtscript.bdsproj</Projects>
+      <Projects Name="lmdrtscriptimp.bpl"  Type="String">packages\d10\lmdrtscriptimp.bdsproj</Projects>
+      <Projects Name="dcllmdscript.bpl"  Type="String">packages\d10\dcllmdscript.bdsproj</Projects>
+      <Projects Name="lmdrtstorage.bpl"  Type="String">packages\d10\lmdrtstorage.bdsproj</Projects>
+      <Projects Name="dcllmdstorage.bpl"  Type="String">packages\d10\dcllmdstorage.bdsproj</Projects>
+      <Projects Name="lmdrtfx.bpl"  Type="String">packages\d10\lmdrtfx.bdsproj</Projects>
+      <Projects Name="dcllmdfx.bpl"  Type="String">packages\d10\dcllmdfx.bdsproj</Projects>
+      <Projects Name="lmdrtchart.bpl"  Type="String">packages\d10\lmdrtchart.bdsproj</Projects>
+      <Projects Name="lmdrtchartdb.bpl"  Type="String">packages\d10\lmdrtchartdb.bdsproj</Projects>
+      <Projects Name="dcllmdchart.bpl"  Type="String">packages\d10\dcllmdchart.bdsproj</Projects>
+      <Projects Name="dcllmdchartdb.bpl"  Type="String">packages\d10\dcllmdchartdb.bdsproj</Projects>
+      <Projects Name="lmdrtide.bpl"  Type="String">packages\d10\lmdrtide.bdsproj</Projects>
+      <Projects Name="dcllmdide.bpl"  Type="String">packages\d10\dcllmdide.bdsproj</Projects>
+      <Projects Name="lmdrtsyntax.bpl"  Type="String">packages\d10\lmdrtsyntax.bdsproj</Projects>
+      <Projects Name="dcllmdsyntax.bpl"  Type="String">packages\d10\dcllmdsyntax.bdsproj</Projects>
+      <Projects Name="dcllmdlegacy.bpl"  Type="String">packages\d10\dcllmdlegacy.bdsproj</Projects>
+      <Projects Name="Targets">lmdrtl.bpl dcllmdrtl.bpl lmdrtrtlx.bpl dcllmdrtlx.bpl lmdrtlog.bpl lmdrtthemes.bpl dcllmdthemes.bpl lmdrtplugin.bpl dcllmdplugin.bpl lmdrtprint.bpl dcllmdprint.bpl lmdrtelcore.bpl dcllmdelcore.bpl lmdrtelpro.bpl lmdrteldb.bpl dcllmdelpro.bpl dcllmdeldb.bpl lmdrtdocking.bpl dcllmddocking.bpl lmdrtrtf.bpl lmdrtrtfdb.bpl dcllmdrtf.bpl dcllmdrtfdb.bpl lmdrtshell.bpl dcllmdshell.bpl lmdrtsys.bpl dcllmdsys.bpl lmdrtcore.bpl dcllmdcore.bpl lmdrttools.bpl lmdrttoolsdb.bpl dcllmdtools.bpl dcllmdtoolsdb.bpl lmdrtdialog.bpl dcllmddlgcmps.bpl dcllmddialog.bpl lmdrtgrid.bpl dcllmdgrid.bpl lmdrtparse.bpl lmdrttxt.bpl lmdrttxtdb.bpl dcllmdtxt.bpl lmdrtweb.bpl dcllmdweb.bpl lmdrtsearch.bpl lmdrtsearchdb.bpl dcllmdsearch.bpl lmdrtbar.bpl dcllmdbar.bpl lmdrtinspector.bpl dcllmdinspector.bpl lmdrtdesign.bpl dcllmddesign.bpl lmdrtscript.bpl lmdrtscriptimp.bpl dcllmdscript.bpl lmdrtstorage.bpl dcllmdstorage.bpl lmdrtfx.bpl dcllmdfx.bpl lmdrtchart.bpl lmdrtchartdb.bpl dcllmdchart.bpl dcllmdchartdb.bpl lmdrtide.bpl dcllmdide.bpl lmdrtsyntax.bpl dcllmdsyntax.bpl dcllmdlegacy.bpl</Projects>
+    </Projects>
+    <Dependencies/>
+  </Default.Personality>
+</BorlandProject>

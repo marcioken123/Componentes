@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SchemeList root='Main'>
+
+    <Scheme name='Main' defaultToken='htmlText' 
+            inherit='HTML.Main' 
+            allIgnoreCase='true'>
+    
+        <RegexBlock innerScheme='VB.Main'
+                    start_token0='tagOpen' 
+                    end_token0='tagClose' 
+                    defaultToken='defaultEmbed'                    
+                    >
+            <Start> 
+              &lt; %
+            </Start>        
+            <End> % &gt; </End>        
+        </RegexBlock>
+
+    </Scheme>
+</SchemeList>

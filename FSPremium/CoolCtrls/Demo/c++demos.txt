@@ -1,0 +1,10 @@
+Although all Demos provided here were created and saved in Delphi you
+can easily try them with your BCB. Just follow these instructions:
+
+1. Create new project in BCB: "File" -> "New Project".
+2. Remove Unit1 from project, it is the only unit project currently 
+   contains: "Project" -> "Remove" -> "Unit1.cpp" -> "Ok"
+3. Add demo unit form you would like to try: "Project" -> "Add" - > 
+   "Files of type" - "Pascal unit" -> "Unit#.pas"
+                              
+That's all now you can compile and try demo.

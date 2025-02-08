@@ -1,0 +1,172 @@
+	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{C6524C5F-205C-4375-9CEB-E3B26CD0D334}</ProjectGuid>
+			<ProjectVersion>13.4</ProjectVersion>
+			<FrameworkType>VCL</FrameworkType>
+			<MainSource>dcllmdlegacy.cpp</MainSource>
+			<Base>True</Base>
+			<Config Condition="'$(Config)'==''">build</Config>
+			<Platform Condition="'$(Platform)'==''">Win32</Platform>
+			<TargetedPlatforms>3</TargetedPlatforms>
+			<AppType>Library</AppType>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+			<Base_Win32>true</Base_Win32>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+                <PropertyGroup Condition="'$(Config)'=='build' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+			<Cfg_1_Win32>true</Cfg_1_Win32>
+			<CfgParent>Cfg_1</CfgParent>
+			<Cfg_1>true</Cfg_1>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+                        <DllSuffix>170</DllSuffix>
+                        <RuntimeOnlyPackage>false</RuntimeOnlyPackage>
+                        <DesignOnlyPackage>true</DesignOnlyPackage>
+                        <PackageImports>lmdrtl.bpi;rtl.bpi;vcl.bpi;vclx.bpi;dcllmdrtl.bpi;designide.bpi;dclstd.bpi;dbrtl.bpi;vcldb.bpi;bdertl.bpi;dcllmdcore.bpi;lmdrttools.bpi;lmdrttoolsdb.bpi</PackageImports>
+                        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+			<VerInfo_Keys>CompanyName=LMD Innovative;FileDescription=LMD 2016 - LMD-Tools Legacy Components;FileVersion=2016.5.0;InternalName=;LegalCopyright=Copyright (c) LMD Innovative;LegalTrademarks=;OriginalFilename=;ProductName=LMD VCL Series;ProductVersion=2016.5.0;Comments=</VerInfo_Keys>
+			<VerInfo_Locale>1033</VerInfo_Locale>
+			<DCC_HppOutput>..\..\build\$(Platform)</DCC_HppOutput>
+			<IncludePath>..\..\;$(IncludePath)</IncludePath>
+			<ILINK_LibraryPath>..\..\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<ProjectType>CppPackage</ProjectType>
+			<ILINK_GenerateImportLibrary>true</ILINK_GenerateImportLibrary>
+			<DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
+			<ILINK_GenerateLibFile>true</ILINK_GenerateLibFile>
+			<Multithreaded>true</Multithreaded>
+			<_TCHARMapping>char</_TCHARMapping>
+			<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
+			<DynamicRTL>true</DynamicRTL>
+			<UsePackages>true</UsePackages>
+			<IntermediateOutputDir>..\..\build\$(Platform)</IntermediateOutputDir>
+			<BCC_wpar>false</BCC_wpar>
+			<BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
+			<BCC_ExtendedErrorInfo>true</BCC_ExtendedErrorInfo>
+			<ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\release\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
+                        <DCC_UsePackage>designide;dclstd</DCC_UsePackage>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base_Win32)'!=''">
+			<IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
+			<DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+		</PropertyGroup>
+		<ItemGroup>
+			<CppCompile Include="dcllmdlegacy.cpp">
+				<BuildOrder>0</BuildOrder>
+			</CppCompile>
+			<PackageImport Include="lmdrtl.bpi" />
+      <PackageImport Include="rtl.bpi" />
+      <PackageImport Include="vcl.bpi" />
+      <PackageImport Include="vclx.bpi" />
+      <PackageImport Include="dcllmdrtl.bpi" />
+      <PackageImport Include="designide.bpi" />
+      <PackageImport Include="dclstd.bpi" />
+      <PackageImport Include="dbrtl.bpi" />
+      <PackageImport Include="vcldb.bpi" />
+      <PackageImport Include="bdertl.bpi" />
+      <PackageImport Include="dcllmdcore.bpi" />
+      <PackageImport Include="lmdrttools.bpi" />
+      <PackageImport Include="lmdrttoolsdb.bpi" />
+      <DelphiCompile Include="..\..\LMD_RegV1.pas" />
+      <DelphiCompile Include="..\..\LMD_RegV3.pas" />
+      <DelphiCompile Include="..\..\LMD3DCaptionButton.pas" />
+      <DelphiCompile Include="..\..\LMD3DShapeButton.pas" />
+      <DelphiCompile Include="..\..\LMD3DShapeLabelButton.pas" />
+      <DelphiCompile Include="..\..\LMDDBFilter.pas" />
+      <DelphiCompile Include="..\..\LMDDBShapeLabel.pas" />
+      <DelphiCompile Include="..\..\LMDDockOfficeButton.pas" />
+      <DelphiCompile Include="..\..\LMDExplorerButton.pas" />
+      <DelphiCompile Include="..\..\LMDFile.pas" />
+      <DelphiCompile Include="..\..\LMDJoy.pas" />
+      <DelphiCompile Include="..\..\LMDObj.pas" />
+      <DelphiCompile Include="..\..\LMDOfficeButton.pas" />
+      <DelphiCompile Include="..\..\LMDRuler.pas" />
+      <DelphiCompile Include="..\..\LMDScrsv.pas" />
+      <DelphiCompile Include="..\..\LMDShapeLabel.pas" />
+      <DelphiCompile Include="..\..\LMDShapeLabelButton.pas" />
+      <DelphiCompile Include="..\..\LMDSpltA.pas" />
+      <DelphiCompile Include="..\..\LMDTeethShape.pas" />
+      <DelphiCompile Include="..\..\LMDTeethShapeLabel.pas" />
+      <DelphiCompile Include="..\..\LMDDBAliasNamesComboBox.pas" />
+      <DelphiCompile Include="..\..\LMDDBDriverComboBox.pas" />
+      <DelphiCompile Include="..\..\LMDDBTablesComboBox.pas" />
+      <DelphiCompile Include="..\..\pLMDPeAcp.pas" />
+      <DelphiCompile Include="..\..\pLMDPeClp.pas" />
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
+			<Borland.ProjectType>CppPackage</Borland.ProjectType>
+			<BorlandProject>
+				<CPlusPlusBuilder.Personality>
+					<Source>
+						<Source Name="MainSource">dcllmdlegacy.cpp</Source>
+					</Source>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1049</VersionInfo>
+						<VersionInfo Name="CodePage">1251</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName">LMD Innovative</VersionInfoKeys>
+						<VersionInfoKeys Name="FileDescription">LMD 2016 - LMD-Tools Legacy Components</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">2016.5</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright">LMD Innovative</VersionInfoKeys>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName">LMD 2016 - LMD-Tools Legacy Components</VersionInfoKeys>
+						<VersionInfoKeys Name="ProductVersion">2016.5</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<ProjectProperties>
+						<ProjectProperties Name="AutoShowDeps">False</ProjectProperties>
+						<ProjectProperties Name="ManagePaths">True</ProjectProperties>
+						<ProjectProperties Name="VerifyPackages">True</ProjectProperties>
+					</ProjectProperties>
+				</CPlusPlusBuilder.Personality>
+				<Deployment/>
+				<Platforms>
+					<Platform value="OSX32">False</Platform>
+					<Platform value="Win32">True</Platform>
+				</Platforms>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')" Project="$(BDS)\Bin\CodeGear.Cpp.Targets"/>
+		<Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+	</Project>

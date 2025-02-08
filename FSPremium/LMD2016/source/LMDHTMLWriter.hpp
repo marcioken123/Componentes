@@ -1,0 +1,106 @@
+﻿// CodeGear C++Builder
+// Copyright (c) 1995, 2016 by Embarcadero Technologies, Inc.
+// All rights reserved
+
+// (DO NOT EDIT: machine generated header) 'LMDHTMLWriter.pas' rev: 31.00 (Windows)
+
+#ifndef LmdhtmlwriterHPP
+#define LmdhtmlwriterHPP
+
+#pragma delphiheader begin
+#pragma option push
+#pragma option -w-      // All warnings off
+#pragma option -Vx      // Zero-length empty class member 
+#pragma pack(push,8)
+#include <System.hpp>
+#include <SysInit.hpp>
+#include <System.Classes.hpp>
+#include <Vcl.Graphics.hpp>
+#include <System.SysUtils.hpp>
+#include <LMDWriter.hpp>
+#include <System.UITypes.hpp>
+
+//-- user supplied -----------------------------------------------------------
+
+namespace Lmdhtmlwriter
+{
+//-- forward type declarations -----------------------------------------------
+class DELPHICLASS TLMDHTMLWriter;
+//-- type declarations -------------------------------------------------------
+#pragma pack(push,4)
+class PASCALIMPLEMENTATION TLMDHTMLWriter : public Lmdwriter::TLMDWriter
+{
+	typedef Lmdwriter::TLMDWriter inherited;
+	
+private:
+	bool FMustClose;
+	bool FOnlyCheck;
+	System::Classes::TList* FOrderHandler;
+	bool FLink;
+	System::UnicodeString FHREF;
+	System::UnicodeString FFontFace;
+	System::UnicodeString FFontSize;
+	System::Uitypes::TColor FFontColor;
+	System::Uitypes::TFontStyles FFontStyle;
+	int FSubscriptStyle;
+	int FTextStyle;
+	System::Uitypes::TColor FLightColor;
+	int FLightDepth;
+	System::Uitypes::TColor FShadowColor;
+	int FShadowDepth;
+	void __fastcall ClearTextState(void);
+	void __fastcall CloseText(void);
+	bool __fastcall CloseSubscriptStyle(int aSubscriptStyle);
+	void __fastcall OpenSubscriptStyle(int aSubscriptStyle);
+	bool __fastcall CloseLink(bool aLink);
+	void __fastcall OpenLink(bool aLink, System::UnicodeString aHREF);
+	bool __fastcall CloseTextStyle(int aTextStyle, System::Uitypes::TColor aShadowColor, int aShadowDepth, System::Uitypes::TColor aLightColor, int aLightDepth);
+	void __fastcall OpenTextStyle(int aTextStyle, System::Uitypes::TColor aShadowColor, int aShadowDepth, System::Uitypes::TColor aLightColor, int aLightDepth);
+	bool __fastcall CloseFontAttr(System::UnicodeString aFontFace, System::UnicodeString aFontSize, System::Uitypes::TColor aFontColor);
+	void __fastcall OpenFontAttr(System::UnicodeString aFontFace, System::UnicodeString aFontSize, System::Uitypes::TColor aFontColor);
+	bool __fastcall CloseFontStyle(System::Uitypes::TFontStyles aFontStyle, System::Uitypes::TFontStyle aStyle);
+	void __fastcall OpenFontStyle(System::Uitypes::TFontStyles aFontStyle, System::Uitypes::TFontStyle aStyle);
+	System::UnicodeString __fastcall ColorToHTML(System::Uitypes::TColor aValue);
+	
+public:
+	__fastcall virtual TLMDHTMLWriter(System::Classes::TStream* aStream)/* overload */;
+	__fastcall virtual ~TLMDHTMLWriter(void);
+	virtual void __fastcall WriteDocumentStart(void);
+	virtual void __fastcall WriteDocumentEnd(void);
+	virtual void __fastcall WriteOpenTable(int aWidth, int aAlign, int aVAlign, int aCellspacing, int aCellpadding, int aBorder, System::Uitypes::TColor aBgColor);
+	virtual void __fastcall WriteCloseTable(void);
+	virtual void __fastcall WriteOpenTableRow(void);
+	virtual void __fastcall WriteCloseTableRow(void);
+	virtual void __fastcall WriteOpenTableData(int aWidth, int aHeight, int aRowspan, int aColspan, int aAlign, int aVAlign, System::Uitypes::TColor BgColor);
+	virtual void __fastcall WriteCloseTableData(void);
+	virtual void __fastcall WriteImage(const System::UnicodeString aSrc, int aWidth, int aHeight);
+	virtual void __fastcall WriteHLine(void);
+	virtual void __fastcall WriteLineBreak(void);
+	virtual void __fastcall WriteOpenList(int aListType);
+	virtual void __fastcall WriteCloseList(int aListType);
+	virtual void __fastcall WriterListBullet(int aListType, int aNo);
+	virtual void __fastcall WriteOpenLink(const System::UnicodeString aHREF);
+	virtual void __fastcall WriteCloseLink(void);
+	virtual void __fastcall WriteText(const System::UnicodeString aText, bool aLink, const System::UnicodeString aHREF, const System::UnicodeString aFontFace, const System::UnicodeString aFontSize, System::Uitypes::TColor aFontColor, System::Uitypes::TFontStyles aFontStyle, int aSubscriptStyle, int aTextStyle, System::Uitypes::TColor aLightColor, int aLightDepth, System::Uitypes::TColor aShadowColor, int aShadowDepth);
+	virtual void __fastcall WriteOpenParagraph(void);
+	virtual void __fastcall WriteCloseParagraph(void);
+	virtual void __fastcall WriteOpenTree(void);
+	virtual void __fastcall WriteCloseTree(void);
+	virtual void __fastcall WriterOpenTreeItem(void);
+	virtual void __fastcall WriterCloseTreeItem(void);
+	virtual void __fastcall WriteEmbdControl(const System::UnicodeString aControlClass, const System::UnicodeString aControlName, int aHeight, int aWidth);
+};
+
+#pragma pack(pop)
+
+//-- var, const, procedure ---------------------------------------------------
+}	/* namespace Lmdhtmlwriter */
+#if !defined(DELPHIHEADER_NO_IMPLICIT_NAMESPACE_USE) && !defined(NO_USING_NAMESPACE_LMDHTMLWRITER)
+using namespace Lmdhtmlwriter;
+#endif
+#pragma pack(pop)
+#pragma option pop
+
+#pragma delphiheader end.
+//-- end unit ----------------------------------------------------------------
+#endif	// LmdhtmlwriterHPP

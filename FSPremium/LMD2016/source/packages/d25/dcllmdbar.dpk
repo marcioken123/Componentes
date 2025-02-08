@@ -1,0 +1,52 @@
+package dcllmdbar;
+
+{$R *.res}
+{$R *.otares}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'LMD 2016 - LMD-Tools BarPack Components'}
+{$LIBSUFFIX '250'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  lmdrtl,
+  dcllmdrtl,
+  rtl,
+  vcl,
+  vclx,
+  designide,
+  dclstd,
+  dcllmdrtlx,
+  lmdrtbar;
+
+contains
+  LMD_RegBar in '..\..\LMD_RegBar.pas',
+  pLMDSectionBarEditorDlg in '..\..\pLMDSectionBarEditorDlg.pas' {LMDfrmSectionBarEditorDlg},
+  pLMDBarCE in '..\..\pLMDBarCE.pas',
+  pLMDBarSelectIMLDlg in '..\..\pLMDBarSelectIMLDlg.pas' {LMDfrmBarSelectIMLDlg},
+  pLMDBarPE in '..\..\pLMDBarPE.pas';
+
+end.

@@ -1,0 +1,46 @@
+package dcllmdplugin;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$LIBSUFFIX '60'}
+{$DESCRIPTION 'LMD 2016 - Common PlugIn Components'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcl,
+  vclx,
+  lmdrtl,
+  dcllmdrtl,
+  designide,
+  dclstd,
+  lmdrtplugin;
+
+contains
+  LMD_RegPlugin in '..\..\LMD_RegPlugin.pas',
+  pLMDPluginWizard in '..\..\pLMDPluginWizard.pas',
+  pLMDPluginWizardInfo in '..\..\pLMDPluginWizardInfo.pas' {LMDPluginWizardInfo},
+  LMDPluginModuleEditor in '..\..\LMDPluginModuleEditor.pas';
+
+end.

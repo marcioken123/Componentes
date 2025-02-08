@@ -1,0 +1,953 @@
+***  Installation Started 03/07/2022 12:41  ***
+Title: InfoPower 4000 Professional for Delphi 7
+Source: E:\Projetos\Componentes\Infopower4000Pro\InfoPower4000Pro_vcl7.exe | 10-08-2002 | 10:55:02 | 6906286
+INI New: Created INI
+INI File: E:\Projetos\Componentes\Infopower4000Pro\CUSTDATA.INI
+INI Sect: Registration
+INI Item: NAME
+INI Val: m
+INI File: E:\Projetos\Componentes\Infopower4000Pro\CUSTDATA.INI
+INI Sect: Registration
+INI Item: COMPANY
+INI Val: m
+Made Dir: C:\Program Files (x86)\Woll2Woll
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\UNWISE.EXE | 06-25-1999 | 10:55:30 | | 149504 | 30fdd633
+RegDB Key: Software\Microsoft\Windows\CurrentVersion\Uninstall\InfoPower 4000 Professional for Delphi 7/Builder 7
+RegDB Val: InfoPower 4000 Professional for Delphi 7/Builder 7
+RegDB Name: DisplayName
+RegDB Root: 2
+RegDB Key: Software\Microsoft\Windows\CurrentVersion\Uninstall\InfoPower 4000 Professional for Delphi 7/Builder 7
+RegDB Val: C:\PROGRA~2\WOLL2W~1\IP4000~1\UNWISE.EXE C:\PROGRA~2\WOLL2W~1\IP4000~1\INSTALL.LOG
+RegDB Name: UninstallString
+RegDB Root: 2
+RegDB Key: Software\Microsoft\Windows\CurrentVersion\Uninstall\InfoPower 4000 Professional for Delphi 7/Builder 7
+RegDB Val: m
+RegDB Name: RegCompany
+RegDB Root: 2
+RegDB Key: Software\Microsoft\Windows\CurrentVersion\Uninstall\InfoPower 4000 Professional for Delphi 7/Builder 7
+RegDB Val: m
+RegDB Name: RegOwner
+RegDB Root: 2
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\gridmast
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\gridmast\gridmasterdetailpanel.pas | 09-10-2002 | 15:50:02 | | 4760 | 8b6191bd
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\gridmast\gridmasterdetailpanel.dfm | 09-10-2002 | 15:49:04 | | 49578 | fd16340e
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\Pdatagroup.res | 08-29-2002 | 15:01:10 | | 876 | dd75daa5
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\Pdatagroup.dpr | 08-29-2002 | 15:35:54 | | 206 | 869a1b74
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\Pdatagroup.dof | 08-30-2002 | 19:26:38 | | 2641 | 3037e6bb
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\Pdatagroup.cfg | 08-30-2002 | 19:26:32 | | 386 | feb78bdd
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\gridlargeedit.pas | 09-10-2002 | 14:34:46 | | 1190 | f18b7b0d
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\gridlargeedit.dfm | 09-10-2002 | 14:36:16 | | 5070 | 17357ca8
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\griddatagroup.pas | 09-10-2002 | 15:52:08 | | 2443 | 1418848e
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\griddatagroup.dfm | 09-10-2002 | 15:52:18 | | 2424 | 8cddb7d2
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\gridexpandpanel.dfm | 09-06-2002 | 14:49:50 | | 12962 | 62aed203
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\gridexpandpanel.pas | 09-09-2002 | 17:52:50 | | 3242 | de51467a
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000wordxpvcl7.lsp | 09-24-2002 | 14:48:50 | | 96 | 59e30edf
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000wordxpvcl7.dpk | 09-22-2002 | 19:33:54 | | 655 | 1bd3f697
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000wordxpvcl7.dof | 09-22-2002 | 19:49:30 | | 2606 | 42072e99
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000wordxpvcl7.res | 09-22-2002 | 19:33:52 | | 1684 | 22e21e7b
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000wordxpvcl7.dcp | 09-24-2002 | 14:48:50 | | 12792 | bb1dd6a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000wordxpvcl7.cfg | 09-22-2002 | 19:49:30 | | 454 | 5476ed7a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000wordxpvcl7.bpl | 09-24-2002 | 15:43:48 | 4000.0.0.2 | 37376 | c9cb4094
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000wordxpvcl7.bpi | 09-24-2002 | 14:48:50 | | 996 | 6d251a42
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwrichedspellxp.dcu | 09-24-2002 | 14:48:50 | | 9263 | 470f1f86
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwrichedspellxp.pas | 09-03-2002 | 08:01:10 | | 4542 | c7d0e390
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\richedit
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\richedit\prjimport.dpr | 08-15-2002 | 13:26:18 | | 197 | 8a682c5e
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\richedit\prjimport.dof | 08-15-2002 | 23:06:08 | | 2434 | aebfe467
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\richedit\prjimport.cfg | 08-15-2002 | 23:06:08 | | 386 | eb5a98a2
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\richedit\converter.pas | 09-10-2002 | 16:14:44 | | 3303 | 986c4e00
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\richedit\converter.dfm | 09-10-2002 | 16:14:44 | | 2180 | be695c95
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\richedit\prjimport.res | 08-15-2002 | 11:10:16 | | 876 | dd75daa5
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwcombobutton.hpp | 09-24-2002 | 14:48:28 | | 9919 | 28fb7568
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwrtfconverter.dcu | 09-24-2002 | 14:48:36 | | 11630 | 64c89c00
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwcombobutton.dcu | 09-24-2002 | 14:48:36 | | 30560 | f33870c4
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwcombobutton.pas | 09-03-2002 | 09:05:32 | | 42097 | 527d7767
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwrtfconverter.pas | 09-09-2002 | 07:00:50 | | 17558 | de3a3272
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\help
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\help\ip4000c7.cnt | 02-25-2002 | 17:23:40 | | 8049 | c10cb510
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Wwsavflt.h | 09-12-1997 | 10:57:34 | | 1830 | 16e98fc0
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Wwsavflt.cpp | 01-08-1998 | 11:16:52 | | 7410 | 41340320
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Selfilt.h | 09-12-1997 | 10:21:54 | | 1001 | 96fec68b
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Selfilt.dfm | 09-12-1997 | 10:21:00 | | 639 | dd911404
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Selfilt.cpp | 09-12-1997 | 11:11:34 | | 1020 | 7c05cd22
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Search.h | 10-20-1999 | 17:26:32 | | 1478 | 313c2f81
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Search.dfm | 10-20-1999 | 17:26:30 | | 4053 | 49a8fa1
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Search.cpp | 10-20-1999 | 17:26:32 | | 854 | 4ba458ca
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\SaveFlt.txt | 02-06-1997 | 23:13:56 | | 80 | a5cd83eb
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\SaveFilt.txt | 09-12-1997 | 13:51:28 | | 192 | cf17eabf
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\savefilt.h | 07-21-1998 | 16:13:00 | | 1766 | 3a85cb28
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\savefilt.dfm | 10-20-1999 | 17:26:16 | | 3349 | e63dc646
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\savefilt.cpp | 07-21-1998 | 16:13:00 | | 3203 | b761d0ad
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\rcdvw.h | 07-21-1998 | 16:12:06 | | 2540 | 72d47877
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\rcdvw.dfm | 10-20-1999 | 17:25:44 | | 7077 | def0a404
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\rcdvw.cpp | 07-21-1998 | 16:12:06 | | 4721 | ee036fc5
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\rcdpnldemo2.h | 10-20-1999 | 15:49:38 | | 2540 | 828db474
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\rcdpnldemo2.dfm | 10-20-1999 | 15:51:16 | | 6599 | 61e12586
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\rcdpnldemo2.cpp | 10-20-1999 | 15:50:30 | | 6014 | fd45e867
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Rcdpnldemo.h | 10-20-1999 | 17:25:10 | | 2698 | d39fb46a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Rcdpnldemo.dfm | 10-20-1999 | 17:25:04 | | 7883 | 6174a5de
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Rcdpnldemo.cpp | 01-18-2000 | 14:02:32 | | 3405 | a097a8ea
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Qbe.h | 07-21-1998 | 16:12:22 | | 1768 | 5531e453
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Qbe.dfm | 10-20-1999 | 17:24:42 | | 4249 | e5878e20
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Qbe.cpp | 02-05-1997 | 19:53:38 | | 757 | 6e77345f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\ptest.~bpr | 06-06-2001 | 15:26:14 | | 3309 | e641c9ab
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\ptest.res | 06-06-2001 | 16:02:36 | | 876 | a7b29daf
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\ptest.cpp | 06-06-2001 | 16:03:10 | | 707 | 9d7c6370
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\ptest.bpr | 06-06-2001 | 15:26:24 | | 3370 | be51ac60
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Pictures.h | 07-21-1998 | 16:11:32 | | 2864 | 3b3c12a4
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Pictures.dfm | 10-20-1999 | 17:24:32 | | 9982 | 8db3e131
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Pictures.cpp | 07-25-1998 | 22:32:20 | | 3009 | bec2f589
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Pdemo.~bpr | 06-06-2001 | 15:48:42 | | 3497 | 5556bd7a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Pdemo.res | 02-25-2002 | 15:57:20 | | 876 | 40fef06c
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Pdemo.cpp | 06-06-2001 | 15:50:08 | | 2010 | d9069581
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Pdemo.bpr | 02-25-2002 | 16:47:24 | | 8569 | 994bb818
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Packtest.h | 07-21-1998 | 16:11:04 | | 1561 | 5fa7102
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Packtest.dfm | 10-20-1999 | 17:23:56 | | 2579 | acda13a0
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Packtest.cpp | 02-05-1997 | 19:50:56 | | 2836 | d6417350
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\packrslt.db | 08-06-1998 | 11:17:54 | | 2048 | e8cd2a10
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Packdlgs.h | 11-22-1996 | 15:38:40 | | 1880 | 180e8e30
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Packdlgs.dfm | 01-18-2000 | 15:00:44 | | 2224 | bb40048a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Packdlgs.cpp | 03-03-1998 | 15:05:44 | | 6506 | 67b73e77
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\navmany.h | 10-20-1999 | 17:23:38 | | 4845 | 9e15bdab
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\navmany.dfm | 10-20-1999 | 17:23:36 | | 45367 | d62aac2f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\navmany.cpp | 10-20-1999 | 17:23:38 | | 767 | 4eb719ae
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\navigatorcomb.h | 10-20-1999 | 17:23:26 | | 2436 | 1ba87176
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\navigatorcomb.dfm | 10-20-1999 | 17:23:22 | | 18623 | 5d2572c6
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\navigatorcomb.cpp | 10-20-1999 | 17:23:26 | | 1938 | cb7720f7
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\multi.h | 07-21-1998 | 16:09:44 | | 2059 | 98f1ee70
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\multi.dfm | 01-18-2000 | 14:53:42 | | 4538 | 8459cc8b
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\multi.cpp | 10-20-1999 | 17:23:06 | | 4895 | b35c7e87
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\monthcalu.h | 07-25-1998 | 11:33:16 | | 3064 | 8605609a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\monthcalu.dfm | 07-29-1998 | 08:42:02 | | 6061 | 944ae57a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\monthcalu.cpp | 07-25-1998 | 13:02:22 | | 9536 | 255d3525
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\mnthyear.h | 07-29-1998 | 08:43:20 | | 947 | 601ee679
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\mnthyear.dfm | 07-29-1998 | 08:43:14 | | 784 | 7f454ba6
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\mnthyear.cpp | 07-25-1998 | 11:29:34 | | 579 | e7159dfe
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Lkquery.h | 07-25-1998 | 17:54:34 | | 2226 | 7ec1244
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Lkquery.dfm | 10-20-1999 | 17:22:24 | | 7226 | 219b3ee7
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Lkquery.cpp | 09-11-1997 | 15:36:58 | | 1075 | c03ac47c
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Lkdtl.h | 07-25-1998 | 17:53:42 | | 1432 | e28b6731
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Lkdtl.dfm | 01-18-2000 | 18:48:28 | | 4499 | 1ac67a5a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Lkdtl.cpp | 07-25-1998 | 17:53:42 | | 1184 | 1661d404
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\isearch.h | 07-21-1998 | 16:06:08 | | 2153 | 19aec041
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\isearch.dfm | 10-20-1999 | 17:21:38 | | 10307 | c58f61e6
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\isearch.cpp | 07-21-1998 | 16:06:08 | | 2216 | 2f75fcb1
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\GridMasterDetail.h | 06-06-2001 | 14:27:42 | | 3561 | 6647ba08
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\GridMasterDetail.dfm | 06-06-2001 | 14:27:42 | | 46187 | f099e326
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\GridMasterDetail.cpp | 06-06-2001 | 14:34:54 | | 2151 | c2368e5e
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\GridExpand.~dfm | 06-06-2001 | 14:38:12 | | 11905 | dd09608c
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\GridExpand.~cpp | 06-06-2001 | 14:39:48 | | 1272 | 4bd554b7
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\GridExpand.h | 06-06-2001 | 14:39:48 | | 2440 | 54657d44
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\GridExpand.dfm | 07-18-2001 | 13:24:30 | | 11961 | ffd96a4
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\GridExpand.cpp | 06-06-2001 | 14:39:48 | | 1272 | 4bd554b7
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\gridctrl.~dfm | 06-06-2001 | 10:16:36 | | 50772 | 3368ebc1
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\gridctrl.~cpp | 06-06-2001 | 10:17:16 | | 740 | 6ae67ca1
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\gridctrl.h | 06-06-2001 | 10:55:44 | | 2459 | b35dc5ce
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\gridctrl.dfm | 07-18-2001 | 13:53:38 | | 50799 | 5f97584f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\gridctrl.cpp | 06-06-2001 | 10:17:16 | | 740 | 6ae67ca1
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Grdmemo.h | 10-28-1999 | 10:49:16 | | 1341 | 1f0ca5c8
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Grdmemo.dfm | 10-28-1999 | 10:49:12 | | 4541 | 15ba47c2
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Grdmemo.cpp | 10-28-1999 | 10:49:16 | | 1023 | be0ce542
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Grdlook.h | 07-21-1998 | 16:19:04 | | 2666 | e23c9e5e
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Grdlook.dfm | 10-20-1999 | 17:20:46 | | 9421 | 55a153c0
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Grdlook.cpp | 07-21-1998 | 16:19:04 | | 2811 | 66d07b0c
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Grdbttn.h | 01-18-1999 | 14:49:32 | | 1627 | 77d3fd6e
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Grdbttn.dfm | 10-28-1999 | 10:44:22 | | 17449 | cb8d6ace
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Grdbttn.cpp | 01-18-1999 | 14:49:32 | | 1521 | 60019346
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Grdbitmp.h | 10-28-1999 | 10:54:12 | | 3894 | 887c963f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Grdbitmp.dfm | 01-18-2000 | 14:52:54 | | 43619 | b52cc851
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Grdbitmp.cpp | 10-20-1999 | 17:20:00 | | 5620 | e41991ab
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Filtdlg.h | 07-21-1998 | 15:49:12 | | 3793 | 92f2d0d
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Filtdlg.dfm | 11-12-1999 | 15:08:10 | | 17188 | 851e2627
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Filtdlg.cpp | 07-21-1998 | 15:48:32 | | 6935 | 9ad813e0
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\dtpicker.h | 10-20-1999 | 17:18:32 | | 2764 | 1ec75cd6
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\dtpicker.dfm | 10-20-1999 | 17:18:26 | | 12249 | f7c5e74d
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\dtpicker.cpp | 10-20-1999 | 17:18:32 | | 6018 | b88859ea
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\DemoLoc.h | 07-21-1998 | 15:46:54 | | 1981 | 1646409f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\DemoLoc.dfm | 10-20-1999 | 17:18:08 | | 7208 | a65ae3f9
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\DemoLoc.cpp | 07-21-1998 | 15:46:54 | | 1916 | f4cf1689
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Demo.h | 06-06-2001 | 14:44:26 | | 5808 | e85d9077
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Demo.dfm | 06-06-2001 | 14:44:26 | | 1460403 | 9bb8d3de
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Demo.cpp | 06-06-2001 | 14:44:26 | | 11784 | b03b2a77
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\dbchecku.h | 10-28-1999 | 10:38:38 | | 2115 | 2d2c823e
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\dbchecku.dfm | 10-28-1999 | 10:42:20 | | 90579 | e9562846
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\dbchecku.cpp | 10-28-1999 | 10:41:42 | | 1095 | cb8edea9
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\DataInspectorU.h | 10-20-1999 | 17:55:04 | | 4747 | 14552f33
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\DataInspectorU.dfm | 10-20-1999 | 17:55:04 | | 82424 | 91371e5c
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\DataInspectorU.cpp | 10-20-1999 | 17:55:18 | | 5512 | fac690b8
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Combos.h | 03-03-1998 | 14:58:22 | | 2604 | a9ecc55d
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Combos.dfm | 10-20-1999 | 17:17:30 | | 6044 | f496bb22
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\Combos.cpp | 03-03-1998 | 14:59:24 | | 4875 | 62a964c8
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\cdemos\bad.bpr | 06-06-2001 | 14:54:20 | | 4419 | 5f95ee28
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwframe.obj | 09-24-2002 | 14:48:28 | | 11989 | cc3afa7f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwhistorylist.obj | 09-24-2002 | 14:48:30 | | 9641 | 6915b1d5
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwidlg.obj | 09-24-2002 | 14:48:34 | | 39497 | 4c808080
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwintl.obj | 09-24-2002 | 14:48:26 | | 44852 | 6c0a8683
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwkeycb.obj | 09-24-2002 | 14:48:32 | | 47230 | c21d98f7
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwlocate.obj | 09-24-2002 | 14:48:32 | | 25944 | 600cc9d0
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwmemo.obj | 09-24-2002 | 14:48:30 | | 11376 | 77f3e1c4
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwmidas.obj | 09-24-2002 | 14:48:44 | | 898 | 3506694b
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwmonthcalendar.obj | 09-24-2002 | 14:48:28 | | 51137 | 15a27542
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwpaintoptions.obj | 09-24-2002 | 14:48:28 | | 8596 | 483bd045
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwpict.obj | 09-24-2002 | 14:48:28 | | 7532 | f65acd5e
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwprovider.obj | 09-24-2002 | 14:48:44 | | 9089 | d15a76c2
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwqbe.obj | 09-24-2002 | 14:48:28 | | 21743 | 391ccab5
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwQuery.obj | 09-24-2002 | 14:48:28 | | 18755 | c35d3d18
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwradiobutton.obj | 09-24-2002 | 14:48:30 | | 30040 | fecca0cb
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwradiogroup.obj | 09-24-2002 | 14:48:30 | | 45344 | 2dfa280d
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwrcdpnl.obj | 09-24-2002 | 14:48:36 | | 40446 | 5c92f4fc
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwrcdvw.obj | 09-24-2002 | 14:48:34 | | 60618 | 22da94b6
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwrchdlg.obj | 09-24-2002 | 14:48:32 | | 12526 | 652f101a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwrich.obj | 09-24-2002 | 14:48:32 | | 39148 | 515e9f00
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwriched.obj | 09-24-2002 | 14:48:32 | | 104857 | ccdc9e1e
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwrichedspell.obj | 09-24-2002 | 14:48:46 | | 12146 | a5e00311
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwrichedspell2000.obj | 09-24-2002 | 14:48:48 | | 12313 | 7ebde51
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwrichobjinfo.obj | 09-24-2002 | 14:48:32 | | 10949 | 654dc135
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwrichole.obj | 09-24-2002 | 14:48:28 | | 1718 | 70f3f067
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwricholecallback.obj | 09-24-2002 | 14:48:32 | | 8617 | 9b1a298e
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwrichtb.obj | 09-24-2002 | 14:48:32 | | 9687 | b5209725
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwspeedbutton.obj | 09-24-2002 | 14:48:34 | | 12747 | f177d436
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwspin.obj | 09-24-2002 | 14:48:34 | | 13901 | 90cb836f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\Wwstacks.obj | 09-24-2002 | 14:48:28 | | 3053 | ea39d732
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwstorep.obj | 09-24-2002 | 14:48:32 | | 17552 | 1ebc697b
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwstr.obj | 09-24-2002 | 14:48:26 | | 6786 | 55461915
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwsystem.obj | 09-24-2002 | 14:48:28 | | 9729 | fc30baf8
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwtable.obj | 09-24-2002 | 14:48:32 | | 37139 | 947d89db
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwtrackicon.obj | 09-24-2002 | 14:48:28 | | 7085 | 954cc027
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwtypes.obj | 09-24-2002 | 14:48:26 | | 8843 | 7b5e763e
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000wordvcl7.res | 09-22-2002 | 19:34:22 | | 1684 | 22e21e7b
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000wordvcl7.lsp | 09-24-2002 | 14:48:46 | | 94 | bc3f92e1
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000wordvcl7.dpk | 09-22-2002 | 19:34:24 | | 616 | 59405f6f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000wordvcl7.dof | 09-22-2002 | 19:49:28 | | 2810 | 861346ef
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000wordvcl7.dcp | 09-24-2002 | 14:48:48 | | 12676 | b00e9dc9
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000wordvcl7.cfg | 09-22-2002 | 19:49:28 | | 454 | 5476ed7a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000wordvcl7.bpl | 09-24-2002 | 15:43:44 | 4000.0.0.2 | 37376 | 1e51693f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000word2000vcl7.res | 09-22-2002 | 19:34:08 | | 1684 | 22e21e7b
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000word2000vcl7.dpk | 09-22-2002 | 19:34:10 | | 661 | 6c1f4ed0
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000word2000vcl7.dof | 09-22-2002 | 19:49:30 | | 2606 | 42072e99
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000word2000vcl7.dcp | 09-24-2002 | 14:48:48 | | 12870 | 91cba616
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000word2000vcl7.cfg | 09-22-2002 | 19:49:30 | | 454 | 5476ed7a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000word2000vcl7.bpl | 09-24-2002 | 15:43:46 | 4000.0.0.2 | 37376 | 5d47a266
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000v7.res | 09-22-2002 | 19:33:18 | | 1704 | 67a5de7f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000v7.hpp | 09-24-2002 | 14:48:36 | | 6414 | ad3b64a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000v7.dpk | 09-22-2002 | 19:33:20 | | 1444 | 82aecdbc
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000v7.dof | 09-22-2002 | 19:49:32 | | 2540 | 971b2c17
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000v7.dcp | 09-24-2002 | 14:48:40 | | 1430292 | 317c0a47
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000v7.cfg | 09-22-2002 | 19:49:32 | | 454 | 5476ed7a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000v7.bpl | 09-24-2002 | 15:43:38 | 4000.0.0.2 | 1364480 | 8e74c4bc
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000v7.bpi | 09-24-2002 | 14:48:36 | | 308724 | aae441f1
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000dcl7.res | 09-22-2002 | 19:33:12 | | 1704 | 67a5de7f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000dcl7.dpk | 09-22-2002 | 19:33:14 | | 855 | 63d8aee9
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000dcl7.dof | 09-22-2002 | 19:49:36 | | 2537 | 5015ec36
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000dcl7.dcp | 09-24-2002 | 14:48:52 | | 181943 | 831c9dde
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000dcl7.cfg | 09-22-2002 | 19:49:32 | | 406 | a11963a9
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000dcl7.bpl | 09-24-2002 | 15:43:48 | 4000.0.0.2 | 237056 | 64dd703a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000clientvcl7.res | 09-22-2002 | 19:33:38 | | 1684 | 20fadc70
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000clientvcl7.hpp | 09-24-2002 | 14:48:44 | | 6172 | 40c8c935
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000clientvcl7.dpk | 09-22-2002 | 19:33:40 | | 624 | 9798f5da
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000clientvcl7.dof | 09-22-2002 | 19:49:30 | | 2582 | 428397fe
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000clientvcl7.dcp | 09-24-2002 | 14:48:44 | | 22627 | 9a7302
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000clientvcl7.cfg | 09-22-2002 | 19:49:30 | | 454 | d16f8bc9
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000clientvcl7.bpl | 09-24-2002 | 15:43:42 | 4000.0.0.2 | 50176 | 956d50d9
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000clientvcl7.bpi | 09-24-2002 | 14:48:44 | | 3236 | 54bc33f2
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwfltvw.obj | 09-24-2002 | 14:48:34 | | 9864 | 7aaf2c8c
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwfltdum.obj | 09-24-2002 | 14:48:34 | | 17168 | 8ed19024
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwfltdlg.obj | 09-24-2002 | 14:48:34 | | 81984 | af3eea98
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwfilter.obj | 09-24-2002 | 14:48:28 | | 19776 | 4456b93d
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwexport.obj | 09-24-2002 | 14:48:30 | | 50769 | 213116df
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwdotdot.obj | 09-24-2002 | 14:48:30 | | 30554 | 6d6b15ef
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwdialog.obj | 09-24-2002 | 14:48:28 | | 2364 | d4d051bf
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwdbspin.obj | 09-24-2002 | 14:48:34 | | 26793 | 720de27
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwdbnavigator.obj | 09-24-2002 | 14:48:34 | | 48023 | 1e22441
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwdblook.obj | 09-24-2002 | 14:48:30 | | 123981 | fa564d79
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwdbigrd.obj | 09-24-2002 | 14:48:32 | | 170513 | 99ebaa01
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwdbgrid.obj | 09-24-2002 | 14:48:30 | | 75509 | 721eaf31
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwdbedit.obj | 09-24-2002 | 14:48:32 | | 62467 | 7d21a68c
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwdbdlg.obj | 09-24-2002 | 14:48:34 | | 21469 | 9e11c720
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwdbdatetimepicker.obj | 09-24-2002 | 14:48:28 | | 111454 | 2a099dde
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwdbcomb.obj | 09-24-2002 | 14:48:30 | | 48390 | 4479cb53
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwdatsrc.obj | 09-24-2002 | 14:48:28 | | 2487 | a031b903
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwdatainspector.obj | 09-24-2002 | 14:48:36 | | 145872 | b8a2658
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwcommon.obj | 09-24-2002 | 14:48:32 | | 78605 | 79bfee68
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwcollection.obj | 09-24-2002 | 14:48:34 | | 4147 | dbb4ec3d
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwclient.obj | 09-24-2002 | 14:48:44 | | 16140 | 47ca3dc4
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwclearpanel.obj | 09-24-2002 | 14:48:34 | | 9088 | 7b65e2ad
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwclearbuttongroup.obj | 09-24-2002 | 14:48:30 | | 7951 | 50ae8934
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwcheckbox.obj | 09-24-2002 | 14:48:30 | | 66352 | 47565374
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwchangelink.obj | 09-24-2002 | 14:48:28 | | 1600 | 1a239d0f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\obj\wwbitmap.obj | 09-24-2002 | 14:48:28 | | 23994 | 2cde7d12
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwtypes.hpp | 09-24-2002 | 14:48:26 | | 4793 | 483fc0c5
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwtrackicon.hpp | 09-24-2002 | 14:48:28 | | 2342 | 813e0441
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwtable.hpp | 09-24-2002 | 14:48:32 | | 8566 | fe7ac16f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwsystem.hpp | 09-24-2002 | 14:48:28 | | 2973 | 6f0421ff
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwstr.hpp | 09-24-2002 | 14:48:26 | | 2538 | 8a138704
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwstorep.hpp | 09-24-2002 | 14:48:32 | | 4590 | 16607df6
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\Wwstacks.hpp | 09-24-2002 | 14:48:28 | | 1701 | a0716ce8
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwspin.hpp | 09-24-2002 | 14:48:34 | | 4803 | faadb161
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwspeedbutton.hpp | 09-24-2002 | 14:48:34 | | 5034 | 3e3b9bdc
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwrichtb.hpp | 09-24-2002 | 14:48:32 | | 3237 | d1c8b7b8
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwricholecallback.hpp | 09-24-2002 | 14:48:32 | | 2957 | 7f6fb2d
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwrichole.hpp | 09-24-2002 | 14:48:28 | | 5712 | bb224231
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwrichobjinfo.hpp | 09-24-2002 | 14:48:32 | | 4335 | f971fd24
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwrichedspell2000.hpp | 09-24-2002 | 14:48:48 | | 2042 | 2afe4c62
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwrichedspell.hpp | 09-24-2002 | 14:48:46 | | 2010 | 93fed991
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwriched.hpp | 09-24-2002 | 14:48:32 | | 29864 | 497eb57e
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwrich.hpp | 09-24-2002 | 14:48:32 | | 11114 | f2f24905
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwrchdlg.hpp | 09-24-2002 | 14:48:32 | | 4043 | 8746c566
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwrcdvw.hpp | 09-24-2002 | 14:48:34 | | 20722 | be848bc4
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwrcdpnl.hpp | 09-24-2002 | 14:48:36 | | 8407 | 9fd76566
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwradiogroup.hpp | 09-24-2002 | 14:48:30 | | 14240 | 3f96f8f9
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwradiobutton.hpp | 09-24-2002 | 14:48:30 | | 10655 | 276602a1
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwQuery.hpp | 09-24-2002 | 14:48:28 | | 4888 | 66d02e8e
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwqbe.hpp | 09-24-2002 | 14:48:28 | | 5577 | 6d859c9d
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwprovider.hpp | 09-24-2002 | 14:48:44 | | 2029 | 3def9379
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwpict.hpp | 09-24-2002 | 14:48:28 | | 1669 | b585cf0f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwpaintoptions.hpp | 09-24-2002 | 14:48:28 | | 4715 | 822c9fd
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwmonthcalendar.hpp | 09-24-2002 | 14:48:28 | | 14643 | 16558811
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwmidas.hpp | 09-24-2002 | 14:48:44 | | 1103 | c9c5acdf
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwmemo.hpp | 09-24-2002 | 14:48:30 | | 3669 | bba10938
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwlocate.hpp | 09-24-2002 | 14:48:32 | | 7184 | c7f3c9fc
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwkeycb.hpp | 09-24-2002 | 14:48:32 | | 10688 | 7057d8d2
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwintl.hpp | 09-24-2002 | 14:48:26 | | 40051 | 9c4fc596
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwidlg.hpp | 09-24-2002 | 14:48:34 | | 13851 | 86c3e451
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwhistorylist.hpp | 09-24-2002 | 14:48:30 | | 3558 | d468a7aa
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwframe.hpp | 09-24-2002 | 14:48:28 | | 6907 | 25a65c43
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwfltvw.hpp | 09-24-2002 | 14:48:34 | | 2785 | ffa88f94
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwfltdum.hpp | 09-24-2002 | 14:48:34 | | 2807 | 78177ec6
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwfltdlg.hpp | 09-24-2002 | 14:48:34 | | 21970 | 801eda11
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwfilter.hpp | 09-24-2002 | 14:48:28 | | 1929 | 61c65469
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwexport.hpp | 09-24-2002 | 14:48:30 | | 3683 | f68ead6
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwdotdot.hpp | 09-24-2002 | 14:48:28 | | 9392 | 6d8b2383
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwdialog.hpp | 09-24-2002 | 14:48:28 | | 1668 | 90c98355
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwdbspin.hpp | 09-24-2002 | 14:48:34 | | 6473 | 9e41c285
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwdbnavigator.hpp | 09-24-2002 | 14:48:34 | | 16821 | 2e58e3fe
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwdblook.hpp | 09-24-2002 | 14:48:30 | | 28846 | 2a8d000d
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwdbigrd.hpp | 09-24-2002 | 14:48:32 | | 41771 | 950bcc22
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwdbgrid.hpp | 09-24-2002 | 14:48:30 | | 19083 | 790a2f9d
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwdbedit.hpp | 09-24-2002 | 14:48:32 | | 15487 | 6d54dcfb
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwdbdlg.hpp | 09-24-2002 | 14:48:34 | | 7233 | ed5a6f1f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwdbdatetimepicker.hpp | 09-24-2002 | 14:48:28 | | 20954 | 6d43843f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwdbcomb.hpp | 09-24-2002 | 14:48:30 | | 12526 | 46e39d48
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwdatsrc.hpp | 09-24-2002 | 14:48:28 | | 1808 | e70a9a3a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwdatainspector.hpp | 09-24-2002 | 14:48:36 | | 42948 | 8e15639b
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwcommon.hpp | 09-24-2002 | 14:48:32 | | 16455 | a3b2c008
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwcollection.hpp | 09-24-2002 | 14:48:34 | | 4589 | c3746865
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwclient.hpp | 09-24-2002 | 14:48:44 | | 3426 | 670238dc
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwclearpanel.hpp | 09-24-2002 | 14:48:34 | | 3966 | ecdb6f28
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwclearbuttongroup.hpp | 09-24-2002 | 14:48:30 | | 3033 | b257282
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwcheckbox.hpp | 09-24-2002 | 14:48:30 | | 21144 | b27b6ada
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwchangelink.hpp | 09-24-2002 | 14:48:28 | | 2036 | ffa03708
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\include\wwbitmap.hpp | 09-24-2002 | 14:48:28 | | 7432 | 7e4cf72b
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\graphics
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\graphics\tiles
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\graphics\tiles\Tile7.BMP | 02-16-1999 | 11:55:04 | | 3318 | d684bbff
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\graphics\tiles\Tile6.BMP | 02-16-1999 | 11:54:46 | | 3318 | 122f27ee
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\graphics\tiles\Tile5.BMP | 02-16-1999 | 11:54:26 | | 3318 | 539628d6
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\graphics\tiles\Tile4.BMP | 02-16-1999 | 11:53:54 | | 3318 | 99d941b4
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\graphics\tiles\Tile3.BMP | 02-16-1999 | 11:53:32 | | 3318 | 8b673f47
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\graphics\tiles\Tile2.BMP | 02-16-1999 | 11:52:20 | | 3318 | 3345a566
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\graphics\tiles\Tile1.BMP | 02-16-1999 | 11:52:02 | | 3318 | f93d381c
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\graphics\tiles\parchmentsmall.bmp | 04-13-2001 | 16:33:58 | | 598 | 1bffbcc5
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\PGridExpand.res | 06-04-2001 | 15:01:00 | | 876 | 483416c3
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\PGridExpand.dpr | 05-29-2001 | 12:53:22 | | 228 | 6b20560b
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\PGridExpand.dof | 06-04-2001 | 15:01:10 | | 1769 | df0967e3
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\PGridExpand.cfg | 06-04-2001 | 14:24:28 | | 386 | 5f5a970f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\PGridControls.res | 06-04-2001 | 15:00:48 | | 876 | 483416c3
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\PGridControls.dpr | 04-27-2001 | 16:12:14 | | 240 | 3b4e3ca9
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\PGridControls.dof | 07-18-2001 | 10:18:24 | | 1846 | ab2eb2ca
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\PGridControls.cfg | 07-18-2001 | 09:36:42 | | 386 | 5f5a970f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\Gridlook.res | 06-04-2001 | 15:00:36 | | 1580 | 5de89442
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\Gridlook.opt | 07-24-1995 | 23:17:54 | | 279 | 37e808b9
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\Gridlook.dpr | 04-20-1995 | 17:42:26 | | 174 | 4942cd62
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\Gridlook.dof | 06-04-2001 | 15:00:42 | | 1991 | ee873a9f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\Gridlook.cfg | 06-04-2001 | 14:24:00 | | 391 | c11b79a3
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\GridIniHint.res | 06-04-2001 | 15:00:24 | | 876 | c901118b
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\GridIniHint.dpr | 10-19-1999 | 13:01:56 | | 231 | 3f0aa7ad
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\GridIniHint.dof | 06-04-2001 | 15:00:30 | | 1749 | 6c79c124
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\GridIniHint.cfg | 06-04-2001 | 14:23:46 | | 437 | f8c58bb
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\gridexpand.pas | 09-05-2002 | 16:58:18 | | 2377 | 4f3e197c
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\gridexpand.dfm | 09-05-2002 | 16:57:50 | | 12228 | 59d26999
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\gridcontrols.pas | 09-10-2002 | 11:20:38 | | 2448 | f0659525
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\gridcontrols.dfm | 09-10-2002 | 11:20:38 | | 51034 | 577901e8
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\Gridbtmp.res | 06-04-2001 | 15:00:12 | | 1580 | 5de89442
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\GRIDBTMP.opt | 07-28-1996 | 02:34:58 | | 279 | 37e808b9
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\Gridbtmp.dpr | 07-28-1996 | 02:34:40 | | 177 | c1c0e73d
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\Gridbtmp.dof | 06-04-2001 | 15:00:18 | | 1991 | ee873a9f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\Gridbtmp.cfg | 06-04-2001 | 14:23:36 | | 391 | c11b79a3
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\Grdlook.pas | 07-02-1998 | 15:03:16 | | 5436 | d0e63a64
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\GRDLOOK.dfm | 07-30-2001 | 16:56:32 | | 10268 | 3aed39d5
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\GrdIniHint.pas | 10-19-1999 | 13:38:44 | | 2143 | 39e2cca2
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\GrdIniHint.dfm | 10-19-1999 | 17:50:30 | | 7897 | 97f3e4ae
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\Grdbttn.pas | 08-31-1999 | 09:58:54 | | 1558 | b378b966
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\GRDBTTN.dfm | 05-31-2001 | 11:55:02 | | 17168 | e553b999
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\Grdbtn.res | 06-04-2001 | 14:59:56 | | 1776 | dab56813
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\Grdbtn.opt | 07-20-1996 | 21:09:00 | | 279 | 37e808b9
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\Grdbtn.dpr | 07-20-1996 | 21:07:44 | | 181 | f00622c
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\Grdbtn.dof | 06-04-2001 | 15:00:02 | | 1991 | ee873a9f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\Grdbtn.cfg | 06-04-2001 | 14:23:20 | | 391 | c11b79a3
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\Grdbitmp.res | 06-21-1996 | 02:03:12 | | 794 | c5a8372c
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\Grdbitmp.pas | 08-31-1999 | 09:58:54 | | 6507 | 3a4ac6d8
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\Grdbitmp.opt | 06-21-1996 | 02:03:12 | | 279 | 37e808b9
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Grid\GRDBITMP.dfm | 05-07-2001 | 03:45:10 | | 42610 | 3fb4275f
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Combos
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Combos\prjcustom.res | 06-04-2001 | 14:57:42 | | 1580 | ec18526b
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Combos\prjcustom.dpr | 05-29-2001 | 13:46:46 | | 225 | b81f1842
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Combos\prjcustom.dof | 06-04-2001 | 14:57:48 | | 2070 | 7b2b435e
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Combos\prjcustom.cfg | 06-04-2001 | 14:21:06 | | 391 | c11b79a3
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Combos\lkcustom.pas | 05-29-2001 | 14:00:44 | | 3217 | 71d16db8
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Combos\lkcustom.dfm | 05-29-2001 | 14:19:14 | | 9457 | 5ed4a187
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\richedit\richlabelu.pas | 05-07-2001 | 03:15:56 | | 429 | 8347d06f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\richedit\richlabelu.dfm | 05-07-2001 | 03:27:28 | | 28988 | b58a1704
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Combos\pmruhistory.res | 07-31-2001 | 11:57:38 | | 876 | c901118b
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Combos\pmruhistory.dpr | 06-07-2001 | 13:55:54 | | 225 | c26337eb
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Combos\combodemou.pas | 07-31-2001 | 11:56:34 | | 2120 | 74f970ab
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Combos\combodemou.dfm | 07-31-2001 | 11:57:26 | | 2056970 | 38edfc7d
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\checkbox
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\checkbox\pcheckbox.res | 06-04-2001 | 14:56:04 | | 876 | c901118b
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\checkbox\pcheckbox.dpr | 05-06-2001 | 22:32:58 | | 218 | fc7999bd
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\checkbox\checkboxu.pas | 05-06-2001 | 22:32:58 | | 3316 | 65e1af9e
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\checkbox\checkboxu.dfm | 05-31-2001 | 17:25:54 | | 212258 | 5e2ac3e5
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Picture.yg1 | 07-12-1996 | 00:01:54 | | 8192 | 1b1b305a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Picture.yg0 | 07-12-1996 | 00:01:54 | | 8192 | 3d62bd78
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Picture.xg1 | 07-12-1996 | 00:01:54 | | 12288 | 2c417054
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Picture.xg0 | 07-12-1996 | 00:01:54 | | 12288 | 9749f46d
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Picture.px | 07-12-1996 | 00:01:54 | | 4096 | a693b9e6
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Picture.db | 07-12-1996 | 00:01:54 | | 16384 | edec06c5
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\orders.y02 | 04-30-2001 | 16:19:44 | | 4096 | 5878aa0
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\orders.x02 | 04-30-2001 | 16:19:44 | | 6144 | c24abf00
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\orders.VAL | 04-30-2001 | 16:19:44 | | 483 | 8ee98dfb
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\orders.px | 04-30-2001 | 16:19:44 | | 4096 | e6c3dabd
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\orders.db | 04-30-2001 | 16:19:44 | | 71680 | 62efe29a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Master.yg2 | 04-07-1995 | 00:10:36 | | 4096 | e6d006a4
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Master.yg1 | 04-07-1995 | 00:10:36 | | 4096 | d19f0fe6
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Master.yg0 | 04-07-1995 | 00:10:36 | | 4096 | d4cd01fa
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Master.xg2 | 04-27-1995 | 23:40:26 | | 4096 | abdd6c6f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Master.xg1 | 04-27-1995 | 23:40:26 | | 6144 | 6b1b8d28
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Master.xg0 | 04-27-1995 | 23:40:26 | | 4096 | 6d416bc
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Master.px | 04-27-1995 | 23:40:26 | | 4096 | 988de6f1
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Master.db | 04-27-1995 | 23:40:26 | | 16384 | b48b720c
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\items.yg0 | 04-30-2001 | 16:19:06 | | 4096 | c35105f6
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\items.y03 | 04-30-2001 | 16:19:06 | | 4096 | 67b8250b
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\items.xg0 | 04-30-2001 | 16:19:06 | | 28672 | 68546d66
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\items.x03 | 04-30-2001 | 16:19:06 | | 38912 | a342c12e
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\items.px | 04-30-2001 | 16:19:06 | | 4096 | 9205be28
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\items.db | 04-30-2001 | 16:19:06 | | 38912 | b125337d
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Ip4zip.yg0 | 06-14-1996 | 15:40:48 | | 8192 | 9d320e0e
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Ip4zip.xg0 | 06-14-1996 | 15:40:48 | | 174080 | 34bd43b7
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Ip4zip.px | 06-14-1996 | 15:40:48 | | 4096 | 393dde5c
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Ip4zip.db | 06-14-1996 | 15:40:48 | | 174080 | 49127917
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Ip4inv.PX | 07-02-1998 | 15:30:22 | | 4096 | 8d750978
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Ip4inv.DB | 07-09-1998 | 10:25:06 | | 12288 | 6d83f9a0
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Ip4cust.YG5 | 07-05-1998 | 15:33:00 | | 4096 | 835b70b8
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Ip4cust.YG4 | 07-09-1998 | 10:19:54 | | 4096 | eb876418
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Ip4cust.YG3 | 07-05-1998 | 15:32:58 | | 4096 | ab14399
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Ip4cust.YG2 | 07-05-1998 | 15:32:58 | | 4096 | eb68d015
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Ip4cust.YG1 | 07-05-1998 | 15:32:58 | | 4096 | 85fc2fc8
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Ip4cust.YG0 | 07-08-1998 | 15:08:42 | | 4096 | 9b2723b2
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Ip4cust.XG5 | 07-09-1998 | 10:19:54 | | 6144 | 6a0455ff
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Ip4cust.XG4 | 07-09-1998 | 10:19:54 | | 6144 | 2e80ae11
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Ip4cust.XG3 | 07-09-1998 | 10:19:54 | | 10240 | a19a5944
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Ip4cust.XG2 | 07-09-1998 | 10:19:54 | | 10240 | 2123e9c5
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Ip4cust.XG1 | 07-09-1998 | 10:19:54 | | 10240 | c7adb85d
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Ip4cust.XG0 | 07-09-1998 | 10:19:54 | | 6144 | 22f6dbd6
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Ip4cust.PX | 07-09-1998 | 10:19:54 | | 4096 | 83a7f789
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Ip4cust.MB | 10-19-1999 | 13:02:52 | | 8192 | bfa0cf1a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Ip4cust.DB | 10-19-1999 | 13:02:52 | | 51200 | a9e7b315
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Industry.qbe | 04-23-1995 | 23:28:58 | | 576 | cb6dbb3a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Industry.px | 04-07-1995 | 00:11:12 | | 4096 | 6cb76f76
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Industry.db | 04-07-1995 | 00:11:12 | | 4096 | d75f294f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Employee.MB | 08-26-1999 | 15:40:04 | | 8192 | b7e466fd
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\Employee.DB | 08-17-2000 | 14:07:42 | | 6144 | 5be6b871
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\datetime.YG1 | 07-09-1998 | 10:41:14 | | 4096 | b3d25d2b
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\datetime.YG0 | 07-09-1998 | 10:41:14 | | 4096 | 728c22be
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\datetime.XG1 | 07-09-1998 | 10:41:14 | | 4096 | 9322ddfc
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\datetime.XG0 | 07-09-1998 | 10:41:14 | | 4096 | a06fef6d
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\datetime.PX | 07-09-1998 | 10:41:14 | | 4096 | 2b96b77c
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\datetime.DB | 07-09-1998 | 10:41:14 | | 4096 | 9f63a6f0
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\customer.yg0 | 04-30-2001 | 16:18:44 | | 4096 | 59a20761
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\customer.xg0 | 04-30-2001 | 16:18:44 | | 8192 | 9d6f904a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\customer.px | 04-30-2001 | 16:18:44 | | 4096 | d19b2f1f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\customer.db | 04-30-2001 | 16:18:44 | | 18432 | ecad0970
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\clients.MDX | 04-30-2001 | 16:04:58 | | 4096 | 65be3890
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\clients.DBT | 04-30-2001 | 16:04:58 | | 119808 | 85580904
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\clients.DBF | 04-30-2001 | 16:04:54 | | 3455 | b28b1d12
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\checks.px | 08-24-1999 | 16:55:28 | | 4096 | 56098b05
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\checks.mb | 08-27-1999 | 17:21:12 | | 8192 | 939b65cc
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\db\checks.db | 08-27-1999 | 17:21:12 | | 6144 | 6f61e8be
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\rcdvw
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\rcdvw\rcdvw2.pas | 04-30-2001 | 11:28:56 | | 2402 | 98bef236
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\rcdvw\rcdvw2.dfm | 04-30-2001 | 15:22:00 | | 29554 | b0e6e5ab
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\rcdvw\prcdvw2.res | 06-04-2001 | 15:17:54 | | 876 | 483416c3
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\rcdvw\prcdvw2.dpr | 04-30-2001 | 11:28:56 | | 234 | 41ffb546
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\rcdvw\prcdvw2.dof | 06-04-2001 | 14:41:24 | | 1846 | ab2eb2ca
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\rcdvw\prcdvw2.cfg | 06-04-2001 | 14:41:24 | | 386 | 5f5a970f
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\export
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\export\pexportdemo.cfg | 06-04-2001 | 14:21:34 | | 414 | 52b5c4be
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\export\pexportdemo.res | 06-04-2001 | 14:58:08 | | 876 | c901118b
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\export\pexportdemo.dpr | 04-30-2001 | 10:01:30 | | 218 | bbcd8a9a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\export\exportdemou.pas | 06-05-2001 | 15:10:52 | | 8048 | 51ab5a83
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\export\exportdemou.dfm | 06-15-2001 | 16:38:00 | | 30047 | 7cb53f83
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\export\pexportdemo.dof | 06-04-2001 | 14:58:16 | | 2156 | 5cdf4f0a
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Tblpack
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Tblpack\Packtest.pas | 01-13-1997 | 01:50:10 | | 2892 | f898a956
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Tblpack\PACKTEST.dfm | 04-30-2001 | 16:20:12 | | 2623 | 6981c0f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Tblpack\Packprj.res | 06-04-2001 | 15:19:04 | | 1580 | 5de89442
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Tblpack\Packprj.opt | 04-28-1995 | 01:50:52 | | 279 | 37e808b9
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Tblpack\Packprj.dpr | 03-30-1995 | 03:23:34 | | 222 | caf600fb
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Tblpack\Packdlgs.pas | 01-13-1997 | 01:49:36 | | 6494 | 97c59ea3
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Tblpack\Packdlgs.dfm | 04-03-1995 | 09:37:26 | | 2164 | 353c7535
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Search
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Search\Search.pas | 04-30-2001 | 16:20:02 | | 1038 | 94c903a4
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Search\SEARCH.dfm | 08-31-1999 | 10:02:36 | | 3773 | 208a16c9
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Search\Demosrch.res | 06-04-2001 | 15:18:38 | | 1580 | 5de89442
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Search\Demosrch.opt | 04-20-1995 | 17:16:34 | | 279 | 37e808b9
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Search\Demosrch.dpr | 04-18-1995 | 00:49:06 | | 178 | d1afbea1
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\savefilt
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\savefilt\wwsavflt.pas | 12-22-1997 | 13:04:50 | | 8836 | 1cba7a89
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\savefilt\selfilt.pas | 06-13-1997 | 12:47:16 | | 905 | 4e805365
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\savefilt\selfilt.dfm | 06-13-1997 | 12:47:48 | | 609 | 2e9881d0
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\savefilt\savefilt.txt | 12-22-1997 | 12:58:06 | | 293 | ff032159
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\savefilt\savefilt.pas | 07-03-1998 | 15:11:14 | | 3695 | a666676a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\savefilt\savefilt.dfm | 08-31-1999 | 10:02:28 | | 2681 | 4a0dab66
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\savefilt\psaveflt.res | 06-04-2001 | 15:18:24 | | 876 | f81c4ea
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\savefilt\psaveflt.dpr | 12-22-1997 | 12:52:44 | | 355 | 116bfd62
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\savefilt\psaveflt.dof | 06-04-2001 | 14:41:46 | | 1728 | d391eb0b
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\rcdvw\rcdvw.pas | 06-29-1998 | 22:06:54 | | 4903 | 8588e5cb
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\rcdvw\rcdvw.dfm | 08-31-1999 | 10:02:16 | | 6398 | 73e873aa
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\rcdvw\prcdvw.res | 06-04-2001 | 15:17:42 | | 876 | 5d70f2a3
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\rcdvw\prcdvw.dpr | 06-16-1997 | 09:48:28 | | 225 | d50ddb81
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\rcdvw\prcdvw.dof | 06-04-2001 | 14:41:06 | | 1728 | ba5af8d
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\rcdpanel
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\rcdpanel\rcdpnldemo2.pas | 03-16-2001 | 11:07:38 | | 6155 | 9e7d8598
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\rcdpanel\rcdpnldemo2.dfm | 03-16-2000 | 14:57:24 | | 6608 | 2d00b4c3
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\rcdpanel\rcdpnldemo.pas | 08-31-1999 | 13:40:10 | | 4408 | 65a23e9c
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\rcdpanel\rcdpnldemo.dfm | 04-30-2001 | 16:17:40 | | 7915 | 2866dbb6
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\rcdpanel\prcdpnldemo2.res | 06-04-2001 | 15:17:12 | | 876 | 483416c3
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\rcdpanel\prcdpnldemo2.dpr | 06-07-2001 | 09:09:34 | | 249 | 438976ff
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\rcdpanel\prcdpnldemo2.dof | 06-04-2001 | 15:17:36 | | 2000 | 3e9d941
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\rcdpanel\prcdpnldemo2.cfg | 06-04-2001 | 14:40:52 | | 566 | 57fdd97a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\rcdpanel\prcdpnldemo.res | 06-04-2001 | 15:16:48 | | 876 | 5d70f2a3
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\rcdpanel\prcdpnldemo.dpr | 06-12-1998 | 10:53:04 | | 231 | f014623d
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\rcdpanel\prcdpnldemo.dof | 06-04-2001 | 15:16:54 | | 1938 | 3a656aa
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\radio
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\radio\radiou.pas | 05-29-2001 | 03:36:30 | | 2364 | bf92db42
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\radio\radiou.dfm | 05-29-2001 | 03:36:30 | | 308594 | 57b08672
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\radio\pradio.res | 06-04-2001 | 15:16:34 | | 876 | c901118b
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\radio\pradio.dpr | 05-24-2001 | 12:35:42 | | 204 | 81f3556c
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\radio\pradio.dof | 06-04-2001 | 14:40:00 | | 1919 | aa68be19
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\radio\pradio.CWS | 04-23-2001 | 16:20:54 | | 726 | 30efc10b
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\radio\pradio.cfg | 06-04-2001 | 14:40:00 | | 386 | ae92af2a
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Qbe
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Qbe\Qbe.pas | 05-01-1995 | 20:53:12 | | 1265 | 6f051e57
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Qbe\QBE.dfm | 08-31-1999 | 10:01:54 | | 4323 | 90bf92d3
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Qbe\Prjqbe.res | 06-04-2001 | 15:16:20 | | 1580 | 5de89442
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Qbe\Prjqbe.opt | 05-01-1995 | 20:54:42 | | 279 | 37e808b9
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Qbe\Prjqbe.dpr | 04-25-1995 | 11:52:46 | | 161 | c10bf018
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Picmask
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Picmask\Pictures.pas | 07-03-1998 | 11:19:42 | | 4852 | c3d1d89c
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Picmask\PICTURES.dfm | 08-31-1999 | 10:01:44 | | 6826 | a928ebaa
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Picmask\Picmask.res | 06-04-2001 | 15:16:04 | | 1580 | 5de89442
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Picmask\Picmask.opt | 06-26-1996 | 15:28:16 | | 279 | 37e808b9
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Picmask\Picmask.dpr | 06-21-1996 | 12:14:58 | | 184 | 88558ec4
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\numerics
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\numerics\pformat.res | 06-04-2001 | 15:15:34 | | 876 | c901118b
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\numerics\pformat.dpr | 04-30-2001 | 15:55:22 | | 206 | f680e5a8
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\numerics\pformat.dof | 06-04-2001 | 14:39:08 | | 1727 | 1201b52
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\numerics\pformat.cfg | 06-04-2001 | 14:39:08 | | 386 | ae92af2a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\numerics\formatu.pas | 04-30-2001 | 15:55:30 | | 1298 | 98a363fe
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\numerics\formatu.dfm | 04-30-2001 | 15:55:22 | | 218391 | 7a2954c2
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Navigator
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Navigator\NavManyProj.res | 06-04-2001 | 15:03:12 | | 876 | cb4d809
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Navigator\NavManyProj.dpr | 07-08-1998 | 02:15:50 | | 213 | d8d03528
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Navigator\NavManyProj.dof | 06-04-2001 | 15:03:20 | | 1919 | fb5c94d4
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Navigator\NavManyProj.cfg | 06-04-2001 | 14:26:36 | | 391 | 62c039e2
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Navigator\NavMany.pas | 08-31-1999 | 10:03:12 | | 4211 | e777e3c
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Navigator\NavMany.dfm | 08-31-1999 | 09:59:54 | | 30073 | 401cacd2
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Navigator\NavigatorComb.pas | 08-31-1999 | 10:03:14 | | 3147 | 91c40db4
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Navigator\NavigatorComb.dfm | 08-31-1999 | 09:59:40 | | 12195 | 343be6c3
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Multidel
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Multidel\Prjmulti.res | 06-04-2001 | 15:02:58 | | 876 | 9f1269
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Multidel\Prjmulti.opt | 06-16-1996 | 20:30:22 | | 279 | b86b9d31
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Multidel\Prjmulti.dpr | 05-27-1997 | 12:24:34 | | 181 | dd0262b8
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Multidel\Prjmulti.dof | 06-04-2001 | 14:26:24 | | 1737 | d2882462
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Multidel\Multi.pas | 08-31-1999 | 11:04:54 | | 5024 | 64874e6f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Multidel\MULTI.dfm | 08-31-1999 | 09:59:28 | | 4620 | 38a43ef9
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\maindemo
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\maindemo\SaveFilt.txt | 06-14-1997 | 00:19:58 | | 114 | 22f2c028
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\maindemo\Prjdemo.str | 02-15-1997 | 15:21:56 | | 32 | 245d8dcd
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\maindemo\Prjdemo.res | 09-10-2002 | 16:14:14 | | 876 | 795a70c1
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\maindemo\PRJDEMO.opt | 08-04-1998 | 00:29:28 | | 280 | c0ffaa42
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\maindemo\Prjdemo.dpr | 09-10-2002 | 16:14:44 | | 2976 | 55db68
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\maindemo\Prjdemo.dof | 09-10-2002 | 15:37:24 | | 2265 | 436356c1
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\maindemo\Prjdemo.cfg | 09-10-2002 | 15:37:24 | | 434 | efb7d0ae
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\maindemo\packrslt.db | 09-07-1999 | 11:56:34 | | 2048 | 223f8cfb
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\maindemo\demo.pas | 09-10-2002 | 16:15:42 | | 17638 | 9dcf50a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\maindemo\demo.dfm | 09-10-2002 | 16:30:12 | | 1463757 | 224a0747
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Locate
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Locate\Prjlocat.res | 06-04-2001 | 15:02:40 | | 1580 | 5de89442
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Locate\Prjlocat.opt | 04-20-1995 | 17:15:12 | | 279 | 37e808b9
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Locate\Prjlocat.dpr | 04-20-1995 | 17:14:34 | | 168 | cfd5bf3
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Locate\Demoloc.pas | 04-30-2001 | 15:33:08 | | 2530 | 5d9a5ea4
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Locate\DEMOLOC.dfm | 04-30-2001 | 15:33:08 | | 6459 | 6a947e91
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Isrchdlg
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Isrchdlg\Srchdlg.res | 06-04-2001 | 15:02:26 | | 1580 | 5de89442
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Isrchdlg\Srchdlg.opt | 04-28-1995 | 01:50:10 | | 279 | 37e808b9
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Isrchdlg\Srchdlg.dpr | 04-24-1995 | 21:39:40 | | 179 | 3e697a72
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Isrchdlg\Isearch.pas | 07-03-1998 | 11:16:14 | | 3072 | 433ddee2
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Isrchdlg\ISEARCH.dfm | 08-31-1999 | 13:49:42 | | 8007 | b1fec47
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\inspector
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\inspector\w2wtext6.BMP | 08-20-1999 | 13:46:56 | | 36566 | 98b98ea4
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\inspector\prjDataInspector.res | 06-04-2001 | 15:02:10 | | 876 | cb4d809
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\inspector\prjDataInspector.dpr | 11-08-1999 | 16:09:30 | | 238 | 8a9cfa1f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\inspector\prjDataInspector.dof | 06-04-2001 | 15:02:20 | | 2003 | 24d11555
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\inspector\prjDataInspector.cfg | 06-04-2001 | 14:25:38 | | 386 | 5f5a970f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\inspector\pinspectormulti.res | 06-04-2001 | 15:01:58 | | 876 | 483416c3
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\inspector\pinspectormulti.dpr | 06-13-2001 | 15:58:38 | | 239 | 3f598d36
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\inspector\pinspectormulti.dof | 06-13-2001 | 15:58:48 | | 1846 | ab2eb2ca
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\inspector\pinspectormulti.cfg | 06-13-2001 | 15:21:04 | | 386 | 5f5a970f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\inspector\inspectormulti.pas | 04-30-2001 | 15:03:30 | | 3767 | c7fa9e1f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\inspector\inspectormulti.dfm | 05-29-2001 | 17:36:42 | | 158350 | e85648d6
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\inspector\DataInspectorU.pas | 10-31-2001 | 17:43:14 | | 13024 | 3892ebac
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\inspector\DataInspectorU.dfm | 10-18-1999 | 15:38:06 | | 83158 | 27c774e0
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\gridmemo
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\gridmemo\Gridmemo.res | 06-04-2001 | 15:01:44 | | 1580 | 5de89442
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\gridmemo\Gridmemo.opt | 04-20-1995 | 17:11:54 | | 279 | 37e808b9
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\gridmemo\Gridmemo.dpr | 04-20-1995 | 17:11:24 | | 183 | be6daed0
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\gridmemo\Grdmemo.pas | 10-28-1999 | 10:49:54 | | 1582 | 7a144d92
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\gridmemo\GRDMEMO.dfm | 05-07-2001 | 03:49:18 | | 3799 | d13ea15d
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\gridmast\pgridmaster.res | 06-04-2001 | 15:01:16 | | 1580 | ec18526b
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\gridmast\pgridmaster.dpr | 04-27-2001 | 14:10:06 | | 258 | 98b76d09
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\gridmast\pgridmaster.dof | 06-04-2001 | 15:01:26 | | 1991 | ee873a9f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\gridmast\pgridmaster.cfg | 06-04-2001 | 14:24:44 | | 391 | c11b79a3
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\gridmast\gridmasterdetail.pas | 04-30-2001 | 17:42:34 | | 5577 | 19688275
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\gridmast\gridmasterdetail.dfm | 05-29-2001 | 17:36:26 | | 46522 | f766922a
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\framing
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\framing\dbchecku.pas | 10-18-1999 | 12:18:54 | | 1643 | 1e708ca0
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\framing\dbchecku.dfm | 10-18-1999 | 12:18:36 | | 90595 | defc0f43
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\framing\dbchecks.res | 06-04-2001 | 14:59:36 | | 876 | 5d70f2a3
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\framing\dbchecks.dpr | 10-18-1999 | 15:59:10 | | 210 | 20fea2c
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\framing\dbchecks.dof | 06-04-2001 | 14:59:50 | | 2176 | 7ecba77f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\framing\dbchecks.cfg | 06-04-2001 | 14:23:08 | | 566 | 57fdd97a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\framing\background2.bmp | 10-18-1999 | 16:20:40 | | 91766 | 9f9b9d39
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\framing\background.bmp | 09-20-1999 | 12:03:30 | | 83030 | d90b288c
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Fltdlg
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Fltdlg\Pfltdlg.res | 07-31-2001 | 11:58:14 | | 1580 | 5de89442
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Fltdlg\Pfltdlg.opt | 07-01-1996 | 12:40:16 | | 279 | 37e808b9
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Fltdlg\Pfltdlg.dpr | 07-01-1996 | 12:39:52 | | 197 | 127e2e88
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Fltdlg\filtdlg.PAS | 07-30-2001 | 17:13:50 | | 8048 | 72b02293
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Fltdlg\filtdlg.dfm | 07-30-2001 | 17:18:38 | | 17792 | 56adef63
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Filters
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Filters\Prjfltev.res | 06-04-2001 | 14:58:44 | | 1580 | 5de89442
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Filters\Prjfltev.opt | 07-01-1996 | 13:39:24 | | 279 | 37e808b9
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Filters\Prjfltev.dpr | 07-01-1996 | 13:38:38 | | 197 | e56efe31
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Filters\Fltevent.pas | 05-05-1997 | 01:41:24 | | 2367 | 55a39b30
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Filters\FLTEVENT.dfm | 08-31-1999 | 09:56:14 | | 5152 | 204f4f2
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\DtPicker
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\DtPicker\monthcalu.pas | 07-25-1998 | 10:38:40 | | 10768 | 6084a05f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\DtPicker\monthcalu.dfm | 07-29-1998 | 08:17:00 | | 6061 | b0258622
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\DtPicker\mnthyear.pas | 07-03-1998 | 17:02:30 | | 459 | 8c3a2f01
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\DtPicker\mnthyear.dfm | 07-29-1998 | 08:35:44 | | 836 | bdbbdb8e
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\DtPicker\dtpick.pas | 08-31-1999 | 09:58:54 | | 8209 | fcba3da8
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\DtPicker\dtpick.dfm | 10-19-1999 | 15:08:14 | | 12000 | eaf1e2a3
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Combos\Prjcombo.res | 06-04-2001 | 14:57:30 | | 1580 | ec18526b
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Combos\Prjcombo.opt | 02-26-1996 | 11:29:42 | | 279 | 37e808b9
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Combos\Prjcombo.dpr | 04-30-2001 | 15:13:28 | | 205 | 706ef1f8
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Combos\Prjcombo.dof | 06-04-2001 | 14:57:34 | | 1991 | ee873a9f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Combos\Plkquery.res | 06-04-2001 | 14:56:46 | | 1580 | 5de89442
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Combos\Plkquery.opt | 07-11-1996 | 22:46:38 | | 279 | 37e808b9
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Combos\Plkquery.dpr | 07-11-1996 | 22:46:28 | | 192 | 3942a084
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Combos\Plkdtl.res | 06-04-2001 | 14:56:24 | | 1580 | 5de89442
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Combos\Plkdtl.opt | 07-01-1996 | 02:09:18 | | 279 | 37e808b9
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Combos\Plkdtl.dpr | 06-30-1996 | 23:10:16 | | 189 | c0260288
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Combos\lkquery.pas | 05-27-1997 | 15:29:08 | | 1985 | 22c3172c
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Combos\lkquery.dfm | 08-31-1999 | 09:58:40 | | 7327 | d67aaf12
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Combos\lkdtl.pas | 07-08-1998 | 16:42:24 | | 1376 | 7aa2c015
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Combos\lkdtl.dfm | 08-31-1999 | 09:57:52 | | 2903 | 6b1f6958
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Combos\Combos.pas | 04-30-2001 | 15:41:52 | | 5575 | 62f73b3c
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\demos\Combos\COMBOS.dfm | 08-31-1999 | 09:54:34 | | 5250 | f84483e7
+Made Dir: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\pictdb
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\pictdb\InfoPowerMasks.ini | 11-17-2000 | 13:10:40 | | 3669 | b8f59e3b
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwtypes.pas | 08-21-2002 | 11:26:48 | | 2505 | e9f2664d
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwtrackicon.pas | 04-26-2001 | 16:53:20 | | 4386 | 194e771f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\help\ip4000d7.cnt | 07-19-2001 | 13:03:38 | | 8044 | 9db43836
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\help\ip4000d7.hlp | 02-26-2002 | 17:37:42 | | 1636791 | 813f2d5a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\Info32.res | 04-18-2001 | 10:04:46 | | 13980 | 551fb024
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\infopowr.dcu | 09-24-2002 | 14:48:50 | | 9852 | 842c9ee1
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\ip4000dcl7.dcu | 09-24-2002 | 14:48:50 | | 9521 | d66a5c72
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\ip4000v7.dcu | 09-24-2002 | 14:48:40 | | 8745 | 72a40da1
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\ip4000word2000vcl7.dcu | 09-24-2002 | 14:48:48 | | 7348 | 4e510b9c
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\ip4000wordvcl7.dcu | 09-24-2002 | 14:48:46 | | 7318 | d37c7e8d
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\ipabout.dcu | 09-24-2002 | 14:48:50 | | 3960 | b3d61e48
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\ipabout.dfm | 04-11-2001 | 09:36:34 | | 1216 | 381d5e01
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\ipdsgn.dcu | 09-24-2002 | 14:48:50 | | 2077 | 3a6e62e4
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwaddlk.dcu | 09-24-2002 | 14:48:50 | | 14932 | 46d89a3e
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwaddlk.dfm | 11-27-2000 | 10:38:18 | | 3093 | 122ac190
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwbitmap.dcu | 09-24-2002 | 14:48:36 | | 26674 | f12628e4
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwchangelink.dcu | 09-24-2002 | 14:48:36 | | 1276 | dbfe50aa
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwcheckbox.dcu | 09-24-2002 | 14:48:38 | | 66313 | a3180acb
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwclearbuttongroup.dcu | 09-24-2002 | 14:48:38 | | 6610 | d479733f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwclearpanel.dcu | 09-24-2002 | 14:48:40 | | 7594 | 15acaec4
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwclient.dcu | 09-24-2002 | 14:48:44 | | 12604 | 54f4544d
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwcollection.dcu | 09-24-2002 | 14:48:40 | | 4007 | 7f02e173
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwcollectioneditor.dcu | 09-24-2002 | 14:48:50 | | 12501 | b4115c4c
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwcollectioneditor.dfm | 06-01-2001 | 10:08:54 | | 21654 | f214a07d
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwcommon.dcu | 09-24-2002 | 14:48:38 | | 75314 | bdceae55
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwdatain.res | 02-06-2001 | 17:50:46 | | 796 | bc04d945
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwdatainspector.dcu | 09-24-2002 | 14:48:40 | | 151185 | f86ca189
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwdatsrc.dcu | 09-24-2002 | 14:48:36 | | 1657 | d4882086
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwdbcomb.dcu | 09-24-2002 | 14:48:38 | | 46957 | 77427e20
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\Wwdbd32.res | 11-27-2000 | 10:38:18 | | 272 | db270c1e
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwdbdatetimepicker.dcu | 09-24-2002 | 14:48:36 | | 110106 | f42094d9
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwdbdlg.dcu | 09-24-2002 | 14:48:40 | | 19765 | 12da00f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwdbedit.dcu | 09-24-2002 | 14:48:38 | | 63235 | 288d12c0
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwdbgrid.dcu | 09-24-2002 | 14:48:38 | | 75983 | be188185
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\Wwdbi32.res | 04-10-2001 | 18:59:58 | | 3000 | 33192b1e
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwdbigrd.dcu | 09-24-2002 | 14:48:38 | | 185005 | 754f24f3
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwdblook.dcu | 09-24-2002 | 14:48:38 | | 123036 | 8d24ae86
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwdbnav.res | 11-27-2000 | 10:38:18 | | 14372 | 18ce1dee
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwDBNavEdit.res | 11-27-2000 | 10:38:18 | | 408 | 24636ef1
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwdbnavedt.dcu | 09-24-2002 | 14:48:50 | | 8041 | 24a79b01
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwdbnavigator.dcu | 09-24-2002 | 14:48:40 | | 47542 | d6847f53
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwdbspin.dcu | 09-24-2002 | 14:48:40 | | 24500 | 96ac5519
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwdialog.dcu | 09-24-2002 | 14:48:36 | | 1530 | 5a215020
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwdotdot.dcu | 09-24-2002 | 14:48:38 | | 27956 | 9950f6
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwedtpic.dcu | 09-24-2002 | 14:48:50 | | 6152 | c141a97d
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwedtpic.dfm | 11-27-2000 | 10:38:18 | | 1132 | 334cd656
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwexport.dcu | 09-24-2002 | 14:48:38 | | 47095 | f2e62965
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwfilter.dcu | 09-24-2002 | 14:48:36 | | 21091 | a65a1af7
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwfltdlg.dcu | 09-24-2002 | 14:48:40 | | 82397 | 94b4c623
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwfltdlg.dfm | 08-14-2002 | 15:28:02 | | 5742 | 64c9dc7b
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwfltdum.dcu | 09-24-2002 | 14:48:40 | | 14479 | 73a2e361
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwfltfld.dcu | 09-24-2002 | 14:48:50 | | 13172 | a3dcfc96
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwfltfld.dfm | 06-04-2001 | 10:04:14 | | 1951 | 1c3d47c1
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwfltvw.dcu | 09-24-2002 | 14:48:40 | | 8089 | 2c342ee3
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwfltvw.dfm | 09-04-2001 | 15:02:16 | | 967 | 58859042
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwframe.dcu | 09-24-2002 | 14:48:36 | | 13314 | 823efa91
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\Wwgttbl.dcu | 09-24-2002 | 14:48:50 | | 6500 | 47d0f352
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\Wwgttbl.dfm | 11-27-2000 | 10:38:18 | | 1171 | 9eab7c51
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwhistorylist.dcu | 09-24-2002 | 14:48:38 | | 8971 | 1fa73bba
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwidlg.dcu | 09-24-2002 | 14:48:40 | | 38924 | 4cb7a71e
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwidlg.dfm | 11-27-2000 | 10:38:18 | | 2091 | 3c8934bf
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwinspectorprop.dcu | 09-24-2002 | 14:48:50 | | 20220 | df1e97b7
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwinspectorprop.dfm | 05-29-2001 | 10:52:16 | | 1114 | 1e048d5
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwInspectorPrpEdt.dcu | 09-24-2002 | 14:48:50 | | 7014 | 18c51ed3
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwintl.dcu | 09-24-2002 | 14:48:36 | | 56066 | 67d214cf
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwkeycb.dcu | 09-24-2002 | 14:48:40 | | 44670 | e0c75155
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwlocate.dcu | 09-24-2002 | 14:48:38 | | 25033 | 6502eeb4
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwlocate.dfm | 05-14-2001 | 00:03:16 | | 2286 | 3ca801a6
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwmemo.dcu | 09-24-2002 | 14:48:38 | | 10040 | 204d62eb
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwmemo.dfm | 11-27-2000 | 10:38:18 | | 976 | fb6de50a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwmidas.dcu | 09-24-2002 | 14:48:44 | | 578 | 7a9a79d5
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwmonthcalendar.dcu | 09-24-2002 | 14:48:36 | | 50682 | 8794a6fe
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwpaintoptions.dcu | 09-24-2002 | 14:48:36 | | 8826 | c473a33f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\Wwpicdb.dcu | 09-24-2002 | 14:48:50 | | 4482 | f1cf3d9d
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\Wwpicdb.dfm | 11-27-2000 | 10:38:18 | | 1335 | 35e1805e
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwpiced2.dcu | 09-24-2002 | 14:48:50 | | 10893 | 40bdea9a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwpiced2.dfm | 11-27-2000 | 10:38:18 | | 1865 | b7b046bc
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwpict.dcu | 09-24-2002 | 14:48:36 | | 7625 | c383c63
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwprovider.dcu | 09-24-2002 | 14:48:44 | | 6810 | d44524bd
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwprpcom.dcu | 09-24-2002 | 14:48:50 | | 10751 | d59c3483
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwprpcom.dfm | 11-27-2000 | 10:38:18 | | 1647 | b8722c8f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwprpds.dcu | 09-24-2002 | 14:48:50 | | 2567 | 390719c5
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwprpedt.dcu | 09-24-2002 | 14:48:50 | | 32749 | a6f04909
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwprpfld.dcu | 09-24-2002 | 14:48:50 | | 6185 | 9070b593
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwprpfld.dfm | 11-27-2000 | 10:38:18 | | 1014 | da2dd410
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwprppic.dcu | 09-24-2002 | 14:48:50 | | 11828 | d24534b7
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwprppic.dfm | 11-27-2000 | 10:38:18 | | 2196 | 7be778ec
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwqbe.dcu | 09-24-2002 | 14:48:36 | | 19419 | 72219488
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwQuery.dcu | 09-24-2002 | 14:48:36 | | 16010 | 1087b1a7
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwradiobutton.dcu | 09-24-2002 | 14:48:38 | | 30068 | 124c664a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwradiogroup.dcu | 09-24-2002 | 14:48:38 | | 42385 | b7f2b17c
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwrcdpnl.dcu | 09-24-2002 | 14:48:40 | | 39333 | 6a02ee17
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwrcdvw.dcu | 09-24-2002 | 14:48:40 | | 58561 | ebb882cd
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwrcdvw.dfm | 04-17-2001 | 22:19:26 | | 351 | 22bfac6f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwrchdlg.dcu | 09-24-2002 | 14:48:38 | | 11467 | a9668138
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwrchdlg.dfm | 04-23-2001 | 12:03:06 | | 2842 | 97f9a15
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwrich.dcu | 09-24-2002 | 14:48:38 | | 40555 | bc784d7b
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwrich.dfm | 05-29-2001 | 09:36:08 | | 31332 | 70bbe5a1
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwriched.dcu | 09-24-2002 | 14:48:38 | | 114398 | c8ea9a6b
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwrichedspell.pas | 04-26-2001 | 16:49:18 | | 4066 | 54aa2a4c
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwrichedspell2000.dcu | 09-24-2002 | 14:48:48 | | 9277 | 55f0ef1
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwrichobjinfo.dcu | 09-24-2002 | 14:48:38 | | 11641 | 3feecd27
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwrichole.dcu | 09-24-2002 | 14:48:36 | | 3940 | f86e873b
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwricholecallback.dcu | 09-24-2002 | 14:48:38 | | 7292 | a1f4d83e
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\Wwrichsp.res | 11-27-2000 | 10:38:18 | | 492 | 8b68ca74
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwrichtb.dcu | 09-24-2002 | 14:48:38 | | 8116 | 644a2a1c
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwrichtb.dfm | 11-27-2000 | 10:38:18 | | 1159 | 636ea086
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\Wwruler.res | 11-27-2000 | 10:38:18 | | 516 | ae38022f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwselfld.dcu | 09-24-2002 | 14:48:50 | | 36156 | 7e67c7e3
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwselfld.dfm | 05-14-2001 | 15:48:52 | | 8032 | 6c1498d5
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwspeedbutton.dcu | 09-24-2002 | 14:48:40 | | 11636 | 23fe3315
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwspin.dcu | 09-24-2002 | 14:48:40 | | 12336 | 4ebe0bbb
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\Wwspin32.res | 11-27-2000 | 10:38:18 | | 420 | 63292224
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\Wwstacks.dcu | 09-24-2002 | 14:48:36 | | 2499 | ca6a5073
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwstorep.dcu | 09-24-2002 | 14:48:38 | | 14830 | 3cf535a3
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwstr.dcu | 09-24-2002 | 14:48:36 | | 6313 | 4b6dbda5
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwsystem.dcu | 09-24-2002 | 14:48:36 | | 9753 | 9d94ccba
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwtable.dcu | 09-24-2002 | 14:48:38 | | 35311 | 62ba958d
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwtrackicon.dcu | 09-24-2002 | 14:48:36 | | 5869 | 356896e5
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\lib\wwtypes.dcu | 09-24-2002 | 14:48:36 | | 6990 | d099d9ed
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\changes.txt | 11-27-2000 | 10:38:18 | | 2756 | 37308a90
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\Info32.res | 04-18-2001 | 10:04:46 | | 13980 | 551fb024
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\infopowr.pas | 07-17-2001 | 01:49:18 | | 14768 | c23c7fbc
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\ipabout.dfm | 04-11-2001 | 09:36:34 | | 1216 | 381d5e01
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\ipabout.pas | 04-26-2001 | 16:25:36 | | 822 | 1f2b53ac
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\ipdsgn.pas | 04-26-2001 | 16:27:08 | | 1965 | b85ee399
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwaddlk.dfm | 11-27-2000 | 10:38:18 | | 3093 | 122ac190
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwaddlk.pas | 04-26-2001 | 16:27:48 | | 12096 | be4f24e6
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwbitmap.pas | 05-24-2001 | 15:26:08 | | 44522 | c5d3a73
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwblend.pas | 04-26-2001 | 16:28:52 | | 5128 | bc70942e
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwchangelink.pas | 04-26-2001 | 16:29:02 | | 1043 | 6f9cf697
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwcheckbox.pas | 09-24-2002 | 15:37:40 | | 77343 | b382ada3
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwclearbuttongroup.pas | 04-26-2001 | 16:30:18 | | 6500 | 150439d7
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwclearpanel.pas | 11-27-2000 | 10:38:18 | | 5249 | a86be23e
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwclient.pas | 04-26-2001 | 16:30:38 | | 6128 | 633d39ec
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwcollection.pas | 11-27-2000 | 10:38:18 | | 4176 | 4b7d5d95
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwcollectioneditor.dfm | 06-01-2001 | 10:08:54 | | 21654 | f214a07d
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwcollectioneditor.pas | 05-25-2001 | 00:25:40 | | 13367 | b611bd97
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwcommon.pas | 09-03-2002 | 08:59:12 | | 128764 | 590a558
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwdatain.res | 02-06-2001 | 17:50:46 | | 796 | bc04d945
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwdatainspector.pas | 09-03-2002 | 09:06:28 | | 262372 | 6ed7fc29
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwdatsrc.pas | 11-27-2000 | 10:38:18 | | 613 | 483a8136
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwdbcomb.pas | 09-18-2002 | 03:42:56 | | 59016 | 96b5a748
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\Wwdbd32.res | 11-27-2000 | 10:38:18 | | 272 | db270c1e
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwdbdatetimepicker.pas | 09-03-2002 | 09:05:42 | | 186651 | 7a32737a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwdbdlg.pas | 09-03-2002 | 08:48:54 | | 15741 | 8d331fa9
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwdbedit.pas | 09-11-2002 | 15:07:36 | | 91115 | b518291f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwdbgrid.pas | 09-10-2002 | 14:05:12 | | 117343 | 283914c8
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\Wwdbi32.res | 04-10-2001 | 18:59:58 | | 3000 | 33192b1e
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwdbigrd.pas | 09-24-2002 | 15:40:34 | | 382326 | a4d11afb
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwdblook.pas | 09-03-2002 | 09:04:24 | | 194793 | d8dd01cf
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwdbnav.res | 11-27-2000 | 10:38:18 | | 14372 | 18ce1dee
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwDBNavEdit.res | 11-27-2000 | 10:38:18 | | 408 | 24636ef1
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwdbnavedt.pas | 06-01-2001 | 10:08:40 | | 6000 | e80ce7cb
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwdbnavigator.pas | 08-01-2001 | 17:07:22 | | 68950 | 7148975
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwdbspin.pas | 09-03-2002 | 08:56:16 | | 24856 | 7ca8404a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwdialog.pas | 04-26-2001 | 16:33:50 | | 592 | 55203b9a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwdotdot.pas | 09-03-2002 | 08:46:42 | | 27650 | 6733a4be
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwedtpic.dfm | 11-27-2000 | 10:38:18 | | 1132 | 334cd656
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwedtpic.pas | 04-26-2001 | 16:35:22 | | 2919 | acde3a32
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwexport.pas | 07-16-2002 | 16:36:34 | | 62044 | f8ef46a7
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwfilter.pas | 04-26-2001 | 16:36:12 | | 33542 | d95433b0
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwfltdlg.dfm | 08-14-2002 | 15:28:02 | | 5742 | 64c9dc7b
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwfltdlg.pas | 09-06-2002 | 00:44:24 | | 144153 | 88c81e6b
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwfltdum.pas | 07-16-2002 | 16:39:28 | | 26329 | f9fbc299
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwfltfld.dfm | 06-04-2001 | 10:04:14 | | 1951 | 1c3d47c1
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwfltfld.pas | 05-24-2001 | 23:23:30 | | 11935 | 314e0055
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwfltvw.dfm | 09-04-2001 | 15:02:16 | | 967 | 58859042
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwfltvw.pas | 04-26-2001 | 16:37:16 | | 5930 | c9cac88a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwframe.pas | 08-01-2001 | 16:41:32 | | 26029 | cfc828de
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\Wwgttbl.dfm | 11-27-2000 | 10:38:18 | | 1171 | 9eab7c51
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\Wwgttbl.pas | 04-26-2001 | 16:38:52 | | 3542 | dcb8aa1c
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwhistorylist.pas | 05-16-2002 | 11:48:46 | | 10245 | ac0b947a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwidlg.dfm | 11-27-2000 | 10:38:18 | | 2091 | 3c8934bf
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwidlg.pas | 08-22-2002 | 15:31:14 | | 46044 | 550ec639
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwifdef.pas | 06-20-2002 | 01:36:46 | | 796 | af29017c
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwinspectorprop.dfm | 05-29-2001 | 10:52:16 | | 1114 | 1e048d5
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwinspectorprop.pas | 08-28-2002 | 03:19:58 | | 23882 | 25d23551
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwInspectorPrpEdt.pas | 05-25-2001 | 00:21:06 | | 5149 | f6e08a5
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwintl.pas | 09-22-2002 | 19:32:08 | | 71163 | e00b9380
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwkeycb.pas | 08-21-2002 | 12:49:04 | | 49247 | b2336442
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwlocate.dfm | 05-14-2001 | 00:03:16 | | 2286 | 3ca801a6
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwlocate.pas | 07-10-2002 | 17:33:30 | | 33344 | bc222644
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwmemo.dfm | 11-27-2000 | 10:38:18 | | 976 | fb6de50a
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwmemo.pas | 04-26-2001 | 16:42:02 | | 12133 | 79bd273d
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwmidas.pas | 11-27-2000 | 10:38:18 | | 320 | 69541e5b
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwmonthcalendar.pas | 03-12-2002 | 16:32:26 | | 69979 | 71074353
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwpaintoptions.pas | 05-02-2001 | 09:15:18 | | 14412 | be984f5
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\Wwpicdb.dfm | 11-27-2000 | 10:38:18 | | 1335 | 35e1805e
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\Wwpicdb.pas | 04-26-2001 | 16:43:50 | | 1214 | e92fb31
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwpiced2.dfm | 11-27-2000 | 10:38:18 | | 1865 | b7b046bc
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwpiced2.pas | 04-26-2001 | 16:44:00 | | 9498 | 7bf842a2
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwpict.pas | 06-12-2001 | 14:19:38 | | 15760 | 9b53d491
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwprovider.pas | 05-31-2001 | 16:44:46 | | 6126 | af81a506
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwprpcom.dfm | 11-27-2000 | 10:38:18 | | 1647 | b8722c8f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwprpcom.pas | 04-26-2001 | 16:44:40 | | 9954 | effda83d
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwprpds.pas | 05-24-2001 | 23:29:40 | | 1743 | b0a3d76d
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwprpedt.pas | 01-29-2001 | 14:04:22 | | 34408 | 1c6e8f25
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwprpfld.dfm | 11-27-2000 | 10:38:18 | | 1014 | da2dd410
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwprpfld.pas | 04-26-2001 | 16:45:22 | | 3357 | 613cfb87
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwprppic.dfm | 11-27-2000 | 10:38:18 | | 2196 | 7be778ec
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwprppic.pas | 04-26-2001 | 16:45:38 | | 9525 | f1ad542
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwqbe.pas | 05-24-2001 | 12:15:16 | | 20493 | 8fbb83bb
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwQuery.pas | 05-24-2001 | 12:13:24 | | 14706 | dd1db563
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwradiobutton.pas | 09-03-2002 | 09:05:52 | | 34417 | e4ae77ca
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwradiogroup.pas | 09-03-2002 | 08:57:46 | | 37568 | c849808e
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwrcdpnl.pas | 09-09-2002 | 15:28:06 | | 74399 | dabc6178
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwrcdvw.dfm | 04-17-2001 | 22:19:26 | | 351 | 22bfac6f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwrcdvw.pas | 09-09-2002 | 15:28:16 | | 88011 | 890848f0
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwrchdlg.dfm | 04-23-2001 | 12:03:06 | | 2842 | 97f9a15
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwrchdlg.pas | 04-26-2001 | 16:48:26 | | 11337 | 84244ca5
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwrich.dfm | 05-29-2001 | 09:36:08 | | 31332 | 70bbe5a1
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwrich.pas | 10-02-2001 | 11:18:04 | | 52510 | 621c8d77
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwriched.pas | 09-12-2002 | 17:39:40 | | 185967 | 8da6a266
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwrichedspell.pas | 04-26-2001 | 16:49:18 | | 4066 | 54aa2a4c
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwrichedspell2000.pas | 05-10-2001 | 11:58:24 | | 4301 | d26177e
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwrichobjinfo.pas | 04-26-2001 | 16:50:04 | | 14421 | e5a8c56
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwrichole.pas | 11-27-2000 | 10:38:18 | | 6195 | 42a6d1f6
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwricholecallback.pas | 04-26-2001 | 16:50:50 | | 5366 | 7ea4d82d
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\Wwrichsp.res | 11-27-2000 | 10:38:18 | | 492 | 8b68ca74
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwrichspell.pas | 11-27-2000 | 10:38:18 | | 3403 | 3ac2edd
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwrichtb.dfm | 11-27-2000 | 10:38:18 | | 1159 | 636ea086
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwrichtb.pas | 04-26-2001 | 16:51:14 | | 5865 | a5d26868
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\Wwruler.res | 11-27-2000 | 10:38:18 | | 516 | ae38022f
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwselfld.dfm | 05-14-2001 | 15:48:52 | | 8032 | 6c1498d5
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwselfld.pas | 01-29-2001 | 14:03:24 | | 45851 | 1a68fd1b
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwspeedbutton.pas | 04-26-2001 | 16:51:44 | | 11115 | 3090c3c0
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwspin.pas | 08-15-2002 | 18:10:40 | | 12890 | fff83d81
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\Wwspin32.res | 11-27-2000 | 10:38:18 | | 420 | 63292224
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\Wwstacks.pas | 04-26-2001 | 16:52:10 | | 1731 | d1b799a6
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwstorep.pas | 05-24-2001 | 15:56:38 | | 12386 | 4e32ebd3
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwstr.pas | 04-26-2001 | 16:52:40 | | 9994 | 67c0acd8
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwsystem.pas | 08-15-2001 | 11:14:16 | | 17934 | ec5ee414
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\source\wwtable.pas | 05-24-2001 | 16:00:00 | | 45549 | ca2f306e
+File Copy: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\readme.htm | 09-22-2002 | 20:30:16 | | 15172 | a490fa2a
+RegDB Key: Software\Woll2Woll\InfoPower
+RegDB Val: IP4013487442
+RegDB Name: Reg. No.
+RegDB Root: 1
+RegDB Key: Software\Woll2Woll\InfoPower
+RegDB Val: 
+RegDB Name: Masks IniFile
+RegDB Root: 1
+File Copy: C:\Windows\System32\ip4000v7.bpl
+File Copy: C:\Windows\InfoPowerMasks.ini
+File Copy: C:\Windows\System32\ip4000wordvcl7.bpl
+File Copy: C:\Windows\System32\ip4000word2000vcl7.bpl
+File Copy: C:\Windows\System32\ip4000wordxpvcl7.bpl
+File Copy: C:\Windows\System32\ip4000clientvcl7.bpl
+RegDB Key: Software\Borland\delphi\7.0\Known Packages
+RegDB Val: Woll2Woll InfoPower 4000 for Midas
+RegDB Name: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000clientvcl7.bpl
+RegDB Root: 1
+RegDB Key: Software\Borland\delphi\7.0\Known Packages
+RegDB Val: Woll2Woll InfoPower 4000
+RegDB Name: C:\Program Files (x86)\Woll2Woll\ip4000vcl7\package\ip4000dcl7.bpl
+RegDB Root: 1
+File Copy: C:\Program Files (x86)\Borland\Delphi7\\Lib\ip4000v7.dcp
+File Copy: C:\Program Files (x86)\Borland\Delphi7\\Lib\ip4000dcl7.dcp
+File Copy: C:\Program Files (x86)\Borland\Delphi7\\Lib\ip4000wordvcl7.dcp
+File Copy: C:\Program Files (x86)\Borland\Delphi7\\Lib\ip4000word2000vcl7.dcp
+File Copy: C:\Program Files (x86)\Borland\Delphi7\\Lib\ip4000wordxpvcl7.dcp
+File Copy: C:\Program Files (x86)\Borland\Delphi7\\Lib\ip4000clientvcl7.dcp
+File Copy: C:\Program Files (x86)\Borland\Delphi7\\Help\ip4000d7.hlp
+File Copy: C:\Program Files (x86)\Borland\Delphi7\\Help\ip4000d7.cnt
+RegDB Key: Software\Borland\delphi\7.0\Palette
+RegDB Val: TwwDBGrid;TwwDBNavigator;TwwDBEdit;TwwDBComboBox;TwwDBSpinEdit;TwwDBComboDlg;TwwDBLookupCombo;TwwDBLookupComboDlg;TwwKeyCombo;TwwIncrementalSearch;TwwDBRichEdit;TwwDBRichEditMSWord;TwwDBMonthCalendar;TwwDBDateTimePicker;TwwRecordViewPanel;TwwDataInspector;TwwRadioGroup;TwwCheckbox;TwwExpandButton
+RegDB Name: IP Controls
+RegDB Root: 1
+RegDB Key: SOFTWARE\Microsoft\Windows\Help
+RegDB Val: 
+RegDB Name: ip4000d7.HLP
+RegDB Root: 2
+RegDB Root: 1

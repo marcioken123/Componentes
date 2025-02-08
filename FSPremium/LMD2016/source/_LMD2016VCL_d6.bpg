@@ -1,0 +1,237 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = lmdrtl.bpl dcllmdrtl.bpl lmdrtrtlx.bpl dcllmdrtlx.bpl lmdrtlog.bpl lmdrtthemes.bpl \
+dcllmdthemes.bpl lmdrtplugin.bpl dcllmdplugin.bpl lmdrtprint.bpl dcllmdprint.bpl lmdrtelcore.bpl \
+dcllmdelcore.bpl lmdrtelpro.bpl lmdrteldb.bpl dcllmdelpro.bpl dcllmdeldb.bpl lmdrtdocking.bpl \
+dcllmddocking.bpl lmdrtrtf.bpl lmdrtrtfdb.bpl dcllmdrtf.bpl dcllmdrtfdb.bpl lmdrtshell.bpl \
+dcllmdshell.bpl lmdrtsys.bpl dcllmdsys.bpl lmdrtcore.bpl dcllmdcore.bpl lmdrttools.bpl \
+lmdrttoolsdb.bpl dcllmdtools.bpl dcllmdtoolsdb.bpl lmdrtdialog.bpl dcllmddlgcmps.bpl dcllmddialog.bpl \
+lmdrtgrid.bpl dcllmdgrid.bpl lmdrtparse.bpl lmdrttxt.bpl lmdrttxtdb.bpl dcllmdtxt.bpl \
+lmdrtweb.bpl dcllmdweb.bpl lmdrtsearch.bpl lmdrtsearchdb.bpl dcllmdsearch.bpl lmdrtbar.bpl \
+dcllmdbar.bpl lmdrtinspector.bpl dcllmdinspector.bpl lmdrtdesign.bpl dcllmddesign.bpl lmdrtscript.bpl \
+lmdrtscriptimp.bpl dcllmdscript.bpl lmdrtstorage.bpl dcllmdstorage.bpl lmdrtfx.bpl dcllmdfx.bpl \
+lmdrtchart.bpl lmdrtchartdb.bpl dcllmdchart.bpl dcllmdchartdb.bpl lmdrtide.bpl dcllmdide.bpl \
+lmdrtsyntax.bpl dcllmdsyntax.bpl dcllmdlegacy.bpl
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+lmdrtl.bpl: packages\d6\lmdrtl.dpk
+  $(DCC)
+
+dcllmdrtl.bpl: packages\d6\dcllmdrtl.dpk
+  $(DCC)
+
+lmdrtrtlx.bpl: packages\d6\lmdrtrtlx.dpk
+  $(DCC)
+
+dcllmdrtlx.bpl: packages\d6\dcllmdrtlx.dpk
+  $(DCC)
+
+lmdrtlog.bpl: packages\d6\lmdrtlog.dpk
+  $(DCC)
+
+lmdrtthemes.bpl: packages\d6\lmdrtthemes.dpk
+  $(DCC)
+
+dcllmdthemes.bpl: packages\d6\dcllmdthemes.dpk
+  $(DCC)
+
+lmdrtplugin.bpl: packages\d6\lmdrtplugin.dpk
+  $(DCC)
+
+dcllmdplugin.bpl: packages\d6\dcllmdplugin.dpk
+  $(DCC)
+
+lmdrtprint.bpl: packages\d6\lmdrtprint.dpk
+  $(DCC)
+
+dcllmdprint.bpl: packages\d6\dcllmdprint.dpk
+  $(DCC)
+
+lmdrtelcore.bpl: packages\d6\lmdrtelcore.dpk
+  $(DCC)
+
+dcllmdelcore.bpl: packages\d6\dcllmdelcore.dpk
+  $(DCC)
+
+lmdrtelpro.bpl: packages\d6\lmdrtelpro.dpk
+  $(DCC)
+
+lmdrteldb.bpl: packages\d6\lmdrteldb.dpk
+  $(DCC)
+
+dcllmdelpro.bpl: packages\d6\dcllmdelpro.dpk
+  $(DCC)
+
+dcllmdeldb.bpl: packages\d6\dcllmdeldb.dpk
+  $(DCC)
+
+lmdrtdocking.bpl: packages\d6\lmdrtdocking.dpk
+  $(DCC)
+
+dcllmddocking.bpl: packages\d6\dcllmddocking.dpk
+  $(DCC)
+
+lmdrtrtf.bpl: packages\d6\lmdrtrtf.dpk
+  $(DCC)
+
+lmdrtrtfdb.bpl: packages\d6\lmdrtrtfdb.dpk
+  $(DCC)
+
+dcllmdrtf.bpl: packages\d6\dcllmdrtf.dpk
+  $(DCC)
+
+dcllmdrtfdb.bpl: packages\d6\dcllmdrtfdb.dpk
+  $(DCC)
+
+lmdrtshell.bpl: packages\d6\lmdrtshell.dpk
+  $(DCC)
+
+dcllmdshell.bpl: packages\d6\dcllmdshell.dpk
+  $(DCC)
+
+lmdrtsys.bpl: packages\d6\lmdrtsys.dpk
+  $(DCC)
+
+dcllmdsys.bpl: packages\d6\dcllmdsys.dpk
+  $(DCC)
+
+lmdrtcore.bpl: packages\d6\lmdrtcore.dpk
+  $(DCC)
+
+dcllmdcore.bpl: packages\d6\dcllmdcore.dpk
+  $(DCC)
+
+lmdrttools.bpl: packages\d6\lmdrttools.dpk
+  $(DCC)
+
+lmdrttoolsdb.bpl: packages\d6\lmdrttoolsdb.dpk
+  $(DCC)
+
+dcllmdtools.bpl: packages\d6\dcllmdtools.dpk
+  $(DCC)
+
+dcllmdtoolsdb.bpl: packages\d6\dcllmdtoolsdb.dpk
+  $(DCC)
+
+lmdrtdialog.bpl: packages\d6\lmdrtdialog.dpk
+  $(DCC)
+
+dcllmddlgcmps.bpl: packages\d6\dcllmddlgcmps.dpk
+  $(DCC)
+
+dcllmddialog.bpl: packages\d6\dcllmddialog.dpk
+  $(DCC)
+
+lmdrtgrid.bpl: packages\d6\lmdrtgrid.dpk
+  $(DCC)
+
+dcllmdgrid.bpl: packages\d6\dcllmdgrid.dpk
+  $(DCC)
+
+lmdrtparse.bpl: packages\d6\lmdrtparse.dpk
+  $(DCC)
+
+lmdrttxt.bpl: packages\d6\lmdrttxt.dpk
+  $(DCC)
+
+lmdrttxtdb.bpl: packages\d6\lmdrttxtdb.dpk
+  $(DCC)
+
+dcllmdtxt.bpl: packages\d6\dcllmdtxt.dpk
+  $(DCC)
+
+lmdrtweb.bpl: packages\d6\lmdrtweb.dpk
+  $(DCC)
+
+dcllmdweb.bpl: packages\d6\dcllmdweb.dpk
+  $(DCC)
+
+lmdrtsearch.bpl: packages\d6\lmdrtsearch.dpk
+  $(DCC)
+
+lmdrtsearchdb.bpl: packages\d6\lmdrtsearchdb.dpk
+  $(DCC)
+
+dcllmdsearch.bpl: packages\d6\dcllmdsearch.dpk
+  $(DCC)
+
+lmdrtbar.bpl: packages\d6\lmdrtbar.dpk
+  $(DCC)
+
+dcllmdbar.bpl: packages\d6\dcllmdbar.dpk
+  $(DCC)
+
+lmdrtinspector.bpl: packages\d6\lmdrtinspector.dpk
+  $(DCC)
+
+dcllmdinspector.bpl: packages\d6\dcllmdinspector.dpk
+  $(DCC)
+
+lmdrtdesign.bpl: packages\d6\lmdrtdesign.dpk
+  $(DCC)
+
+dcllmddesign.bpl: packages\d6\dcllmddesign.dpk
+  $(DCC)
+
+lmdrtscript.bpl: packages\d6\lmdrtscript.dpk
+  $(DCC)
+
+lmdrtscriptimp.bpl: packages\d6\lmdrtscriptimp.dpk
+  $(DCC)
+
+dcllmdscript.bpl: packages\d6\dcllmdscript.dpk
+  $(DCC)
+
+lmdrtstorage.bpl: packages\d6\lmdrtstorage.dpk
+  $(DCC)
+
+dcllmdstorage.bpl: packages\d6\dcllmdstorage.dpk
+  $(DCC)
+
+lmdrtfx.bpl: packages\d6\lmdrtfx.dpk
+  $(DCC)
+
+dcllmdfx.bpl: packages\d6\dcllmdfx.dpk
+  $(DCC)
+
+lmdrtchart.bpl: packages\d6\lmdrtchart.dpk
+  $(DCC)
+
+lmdrtchartdb.bpl: packages\d6\lmdrtchartdb.dpk
+  $(DCC)
+
+dcllmdchart.bpl: packages\d6\dcllmdchart.dpk
+  $(DCC)
+
+dcllmdchartdb.bpl: packages\d6\dcllmdchartdb.dpk
+  $(DCC)
+
+lmdrtide.bpl: packages\d6\lmdrtide.dpk
+  $(DCC)
+
+dcllmdide.bpl: packages\d6\dcllmdide.dpk
+  $(DCC)
+
+lmdrtsyntax.bpl: packages\d6\lmdrtsyntax.dpk
+  $(DCC)
+
+dcllmdsyntax.bpl: packages\d6\dcllmdsyntax.dpk
+  $(DCC)
+
+dcllmdlegacy.bpl: packages\d6\dcllmdlegacy.dpk
+  $(DCC)
+
+
+
+

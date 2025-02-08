@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SchemeList root='Main'>
+
+    <Scheme name='Text' inherit='Numbers'>                
+    
+        <Regex token0='email'>
+            [_a-zA-Z\d\-\.]{1,40}
+            @ 
+            ([_ a-z A-Z \d \-]+ 
+            (\. [_ a-z A-Z \d \-]+ )+ )
+        </Regex>
+    </Scheme>
+
+    <Scheme name='Numbers'>
+        <Regex token0='number'>
+            \b (0x \d+ [lL]? | \d+ (e \d*)? [lLdDfF]? ) \b
+        </Regex>
+        
+        <!-- [jJ] are Python imaginary literals -->
+        <Regex token0='number'>
+            \b [+\-]? \d+ (\. \d+)? ([eE] [+\-]? \d+)? [jJ]? \b
+        </Regex>
+    </Scheme>
+
+    <Scheme name='Comment' inherit='Text' defaultToken='comment'  />
+
+    <Scheme name='String' inherit='Text' defaultToken='string'>
+        <Regex token0='escaped' regex='\\[a-zA-Z0-9 &quot; ]' />
+        <Regex token0='escaped' regex='\\N\{[a-zA-Z_]+\}' priority='10' />
+        <Regex token0='escaped' regex='\\u[0-9a-fA-F]{4}' priority='10' />        
+        <Regex token0='escaped' regex='\\U[0-9a-fA-F]{8}' priority='10' />                
+        <Regex token0='escaped' regex='\\x[0-9a-fA-F]{2}' priority='10' />
+        <Regex token0='escaped' regex='\\o[0-7]{2}' priority='10' />
+    </Scheme>
+
+    <Scheme name='BadString' inherit='String' defaultToken='badString'>
+    </Scheme>
+
+    <Scheme name='BaseSyntax' inherit='Numbers'>
+        <Regex innerScheme='Comment' regex='\#.*$' />
+        
+        <Regex token0='privateSymbol' regex='\b_\w+\b' />        
+        <Regex token0='privateSymbol' regex='\b__\w+(__)?\b' />        
+        <Regex token0='keyword' priority='10' regex='\b__\w+__\b' />        
+
+        <Regex token0='symbol' regex='[   \}   \{    \]    \[  \( \) &gt; &lt; ]' />
+        <Regex token0='symbol' regex='[-:?\~=+!^;,]' />
+
+
+        <Regex innerScheme='BadString' > 
+            (u|ur)? (&quot;|&apos;) (.*?\\ \2 )*? .* $ 
+        </Regex>
+
+        <Regex innerScheme='String' priority='10'> 
+            (u|ur)? (&quot;|&apos;) (.*?\\ \2 )*? \2 
+        </Regex>
+
+        <Regex innerScheme='String' priority='20'> 
+            (u|ur)? (&quot;|&apos;) (.*?\\ \2 )*? .*? [^\\] \2 
+        </Regex>
+        
+        <Regex innerScheme='String' priority='30'> 
+            (u|ur)? (&quot;|&apos;)  \2 
+        </Regex>
+
+        
+        <RegexBlock innerScheme='String' 
+                    priority='100'
+                    start_token0='string'                         
+                    end_token0='string' >
+
+            <Start> (u|ur)? ( &quot;{3} | &apos;{3} ) </Start>        
+            <End> $2 </End>        
+        </RegexBlock>
+
+    </Scheme>
+    
+    <Scheme name='Main' inherit='BaseSyntax' 
+            defaultToken='default'           
+
+            keywordsIgnoreCase='false'
+    >
+        <KeywordRegex>\b[a-zA-Z_][\w_]*\b</KeywordRegex>
+
+        <Keywords>    
+            and       del       from      not       while    
+            as        elif      global    or        with     
+            assert    else      if        pass      yield    
+            break     except    import    print              
+            class     exec      in        raise              
+            continue  finally   is        return             
+            def       for       lambda    try      
+        </Keywords>
+
+    </Scheme>
+</SchemeList>

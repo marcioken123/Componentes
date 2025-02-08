@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SchemeList root='Main'>
+
+    <Scheme name='Text' inherit='Numbers'>
+
+        <Regex token0='email'>
+            [_a-zA-Z\d\-\.]{1,40}
+            @
+            ([_ a-z A-Z \d \-]+
+            (\. [_ a-z A-Z \d \-]+ )+ )
+        </Regex>
+
+        <Regex token0='st' regex=' \/\* | \*\/   ' />
+
+        <SyntaxBlock capture="true">
+            <Start> st:/*  </Start>
+            <End> st:*/  </End>
+        </SyntaxBlock>
+    </Scheme>
+
+    <Scheme name='Numbers'>
+        <Regex token0='number'>
+            \b (0x \d+ [lL]? | \d+ (e \d*)? [lLdDfF]? ) \b
+        </Regex>
+
+        <Regex token0='number'>
+            \b [+\-]? \d+ (\. \d+)? ([eE] [+\-]? \d+) \b
+        </Regex>
+    </Scheme>
+
+    <Scheme name='Comment' inherit='Text' defaultToken='comment'  />
+
+    <Scheme name='String' inherit='Text' defaultToken='string'>
+        <Regex token0='escaped' priority='10' regex='\\\\' />
+        <Regex token0='escaped' regex='\\[a-z &quot; &apos; ]' />
+        <Regex token0='escaped' regex='\\x[a-fA-F0-9 ]{1,2}' priority='10'/>
+    </Scheme>
+
+    <Scheme name='StringInterpolation' inherit='String' defaultToken='string'>
+        <Regex token0='escaped' regex='\$ \w[ \w - &gt; ]*' />
+    </Scheme>
+
+
+      <Scheme name='StringFind'>
+
+        <RegexBlock innerScheme='StringInterpolation' start_token0='string'
+                   end_token0='string' >
+
+           <Start>  &quot;  </Start>
+           <End>   &quot; </End>
+        </RegexBlock>
+
+        <RegexBlock innerScheme='String' start_token0='string'
+                   end_token0='string' >
+
+           <Start>  &apos;  </Start>
+           <End>   &apos; </End>
+        </RegexBlock>
+
+      </Scheme>
+
+
+    <Scheme name='HereDoc' inherit0='StringInterpolation' defaultToken='string'>
+        <SyntaxBlock capture="true">
+            <Start> blockStart  </Start>
+            <End> blockEnd  </End>
+        </SyntaxBlock>
+    </Scheme>
+
+    <Scheme name='Language' inherit='Numbers' inherit0='StringFind'
+            defaultToken='default'
+
+            keywordsIgnoreCase='false'
+    >
+        <KeywordRegex>\b[a-z()A-Z_][\w_]*\b</KeywordRegex>
+
+        <Keywords>
+            __LINE__            __FILE__
+            __FUNCTION__        __CLASS__
+            __METHOD__
+            and     or  xor     exception
+            array   as  break   case
+            class   const       continue
+            declare default     die()       do
+            echo    else        elseif      empty()
+            enddeclare          endfor      endforeach
+            endif   endswitch   endwhile    eval()
+            exit()  extends     for         foreach
+            function            global      if          include()
+            include_once()      isset()     list()
+            new     print()     require()   require_once()
+            return()            static      switch
+            unset() use         var         while
+            final   php_user_filter         interface
+            implements          extends     public
+            private protected   abstract    clone
+            try     catch       throw       cfunction
+            old_function
+            E_WARNING           E_ERROR                 E_PARSE
+            E_NOTICE            E_CORE_ERROR
+            E_CORE_WARNING      E_COMPILE_ERROR         E_COMPILE_WARNING
+            E_USER_ERROR        E_USER_WARNING          E_USER_NOTICE
+            E_STRICT            E_RECOVERABLE_ERROR     E_ALL
+        </Keywords>
+
+        <Regex innerScheme='Comment' regex='//.*$' />
+
+        <RegexBlock start='\/\*' end='\*\/' end_token0='comment'
+                innerScheme='Comment'/>
+
+        <Regex token0='symbol' regex='[   \}   \{    \]    \[  \( \) &gt; &lt; ]' />
+        <Regex token0='symbol' regex='[-:?\~=+!^;,]' />
+
+
+        <RegexBlock innerScheme='HereDoc' start_token0='blockStart'
+                    priority='100'
+                    end_token0='blockEnd' >
+
+            <Start>  [^ &lt; ]? &lt; &lt; &lt; (\w+)  </Start>
+            <End> ^ $1 ; </End>
+        </RegexBlock>
+
+        <SkipSyntaxToken token='comment' />
+
+        <SyntaxBlock capture="true">
+            <Start> kw:function  id  sym:(
+                    [^ sym:;    sym:}   sym:{   ]*
+                    sym:) ( sym::
+                    [^ sym:;    sym:}   sym:{   ]+
+                    )? sym:{
+            </Start>
+
+            <End> sym:\}  </End>
+        </SyntaxBlock>
+
+        <SyntaxBlock capture="true" priority='10'>
+            <Start>
+                [ kw:while  kw:do kw:if  kw:else  kw:try kw:catch  kw:finally  kw:switch ]
+
+                [^ sym:;  sym:}  ]*?    sym:\{
+            </Start>
+
+            <End> sym:}  </End>
+        </SyntaxBlock>
+
+
+        <SyntaxBlock capture="true" priority='100'  startGroupUsed='1'>
+            <Start>
+                        (  [ kw:while  kw:if  kw:with ]  sym:(   [^  sym:;   sym:}    sym:{   ]+ sym:)   )
+
+                        [^ sym:{  sym:}  sym:; ]+ sym:;
+
+
+            </Start>
+
+            <End> sym:;  </End>
+        </SyntaxBlock>
+
+        <SyntaxBlock capture="true">
+            <Start> kw:else sym:{  </Start>
+            <End> sym:}  </End>
+        </SyntaxBlock>
+
+        <SyntaxBlock capture="false" priority='0'  >
+            <Start> sym:{  </Start>
+            <End> sym:}  </End>
+        </SyntaxBlock>
+
+    </Scheme>
+
+    <Scheme name='LanguageEmbed' inherit='Language' defaultToken='defaultEmbed'>
+    </Scheme>
+
+    <TokenAlias name='htmlText' baseToken='default'/>
+
+    <Scheme name='Main' defaultToken='htmlText' inherit='HTML.Main'>
+
+        <RegexBlock innerScheme='LanguageEmbed'
+                    start_token0='tagOpen'
+                    end_token0='tagClose'>
+            <Start>
+              &lt; \?(php)?
+            </Start>
+            <End> \? &gt; </End>
+        </RegexBlock>
+
+        <RegexBlock innerScheme='LanguageEmbed'
+                    start_token0='tagOpen'
+                    end_token0='tagClose'
+                    >
+            <Start>
+              &lt; %
+            </Start>
+            <End> % &gt; </End>
+        </RegexBlock>
+
+    </Scheme>
+</SchemeList>
+
+

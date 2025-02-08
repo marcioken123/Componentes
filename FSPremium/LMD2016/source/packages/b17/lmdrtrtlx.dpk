@@ -1,0 +1,136 @@
+package lmdrtrtlx;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$LIBSUFFIX '170'}
+{$DESCRIPTION 'LMD Extended Runtime Library'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  lmdrtl,
+  rtl,
+  vcl,
+  vclx;
+
+contains
+  intfLMDBackGround in '..\..\intfLMDBackGround.pas',
+  intfLMDControlPosSize in '..\..\intfLMDControlPosSize.pas',
+  intfLMDFaceController in '..\..\intfLMDFaceController.pas',
+  intfLMDFaceControllerEditable in '..\..\intfLMDFaceControllerEditable.pas',
+  intfLMDFaceControllerPressable in '..\..\intfLMDFaceControllerPressable.pas',
+  intfLMDFileDialog in '..\..\intfLMDFileDialog.pas',
+  LMDActnList in '..\..\LMDActnList.pas',
+  LMDStdActns in '..\..\LMDStdActns.pas',
+  LMDApplicationCtrl in '..\..\LMDApplicationCtrl.pas',
+  LMD3DCaption in '..\..\LMD3DCaption.pas',
+  LMDAlphaObject in '..\..\LMDAlphaObject.pas',
+  LMDBaseControl in '..\..\LMDBaseControl.pas',
+  LMDBaseController in '..\..\LMDBaseController.pas',
+  LMDBaseGraphicControl in '..\..\LMDBaseGraphicControl.pas',
+  LMDBaseLabel in '..\..\LMDBaseLabel.pas',
+  LMDBaseMRUList in '..\..\LMDBaseMRUList.pas',
+  LMDBevel in '..\..\LMDBevel.pas',
+  LMDBitmapEffectObject in '..\..\LMDBitmapEffectObject.pas',
+  LMDBitmapList in '..\..\LMDBitmapList.pas',
+  LMDBmp in '..\..\LMDBmp.pas',
+  LMDBrowseDlg in '..\..\LMDBrowseDlg.pas',
+  LMDButtonBase in '..\..\LMDButtonBase.pas',
+  LMDButtonLayout in '..\..\LMDButtonLayout.pas',
+  LMDCabSupport in '..\..\LMDCabSupport.pas',
+  LMDCFCSettingObject in '..\..\LMDCFCSettingObject.pas',
+  LMDCFCStateObject in '..\..\LMDCFCStateObject.pas',
+  LMDCompareValidator in '..\..\LMDCompareValidator.pas',
+  LMDCont in '..\..\LMDCont.pas',
+  LMDContainerComponent in '..\..\LMDContainerComponent.pas',
+  LMDControl in '..\..\LMDControl.pas',
+  LMDControlErrorProvider in '..\..\LMDControlErrorProvider.pas',
+  LMDConversion in '..\..\LMDConversion.pas',
+  LMDCustomContainer in '..\..\LMDCustomContainer.pas',
+  LMDCustomControl in '..\..\LMDCustomControl.pas',
+  LMDCustomImageList in '..\..\LMDCustomImageList.pas',
+  LMDCustomStatusBar in '..\..\LMDCustomStatusBar.pas',
+  LMDCustomPanel in '..\..\LMDCustomPanel.pas',
+  LMDCustomBevelPanel in '..\..\LMDCustomBevelPanel.pas',
+  LMDDateTimeRangeValidator in '..\..\LMDDateTimeRangeValidator.pas',
+  LMDDwmAPI in '..\..\LMDDwmAPI.pas',
+  LMDErrorProvider in '..\..\LMDErrorProvider.pas',
+  LMDErrorProvidersGroup in '..\..\LMDErrorProvidersGroup.pas',
+  LMDExtDialogs in '..\..\LMDExtDialogs.pas',
+  LMDFaceController in '..\..\LMDFaceController.pas',
+  LMDFigures in '..\..\LMDFigures.pas',
+  LMDFillers in '..\..\LMDFillers.pas',
+  LMDFormPersistent in '..\..\LMDFormPersistent.pas',
+  LMDForms in '..\..\LMDForms.pas',
+  LMDFillObject in '..\..\LMDFillObject.pas',
+  LMDFloatRangeValidator in '..\..\LMDFloatRangeValidator.pas',
+  LMDFMDrop in '..\..\LMDFMDrop.pas',
+  LMDFormVista in '..\..\LMDFormVista.pas',
+  LMDFXCaption in '..\..\LMDFXCaption.pas',
+  LMDGenericList in '..\..\LMDGenericList.pas',
+  LMDGlyph in '..\..\LMDGlyph.pas',
+  LMDGlyphTextLayout in '..\..\LMDGlyphTextLayout.pas',
+  LMDGradient in '..\..\LMDGradient.pas',
+  LMDGradientFrames in '..\..\LMDGradientFrames.pas',
+  LMDGraph in '..\..\LMDGraph.pas',
+  LMDGraphUtils in '..\..\LMDGraphUtils.pas',
+  LMDGraphicList in '..\..\LMDGraphicList.pas',
+  LMDHTMLUnit in '..\..\LMDHTMLUnit.pas',
+  LMDHookComponent in '..\..\LMDHookComponent.pas',
+  LMDIconErrorProvider in '..\..\LMDIconErrorProvider.pas',
+  LMDInPlaceErrorProvider in '..\..\LMDInPlaceErrorProvider.pas',
+  LMDImageList in '..\..\LMDImageList.pas',
+  LMDImageListConnector in '..\..\LMDImageListConnector.pas',
+  LMDInteropServices in '..\..\LMDInteropServices.pas',
+  LMDIntRangeValidator in '..\..\LMDIntRangeValidator.pas',
+  LMDMessageBoxErrorProvider in '..\..\LMDMessageBoxErrorProvider.pas',
+  LMDNativeHint in '..\..\LMDNativeHint.pas',
+  LMDPNGImage in '..\..\LMDPNGImage.pas',
+  LMDPNGImageFilters in '..\..\LMDPNGImageFilters.pas',
+  LMDPNGImageList in '..\..\LMDPNGImageList.pas',
+  LMDRangeValidator in '..\..\LMDRangeValidator.pas',
+  LMDRegExpValidator in '..\..\LMDRegExpValidator.pas',
+  LMDRequiredFieldValidator in '..\..\LMDRequiredFieldValidator.pas',
+  LMDRTLXConst in '..\..\LMDRTLXConst.pas',
+  LMDShapeFill in '..\..\LMDShapeFill.pas',
+  LMDStreamUtils in '..\..\LMDStreamUtils.pas',
+  LMDStringList in '..\..\LMDStringList.pas',
+  LMDStringRangeValidator in '..\..\LMDStringRangeValidator.pas',
+  LMDStyleMan in '..\..\LMDStyleMan.pas',
+  LMDWave in '..\..\LMDWave.pas',
+  LMDWaveList in '..\..\LMDWaveList.pas',
+  LMDVistaDialogs in '..\..\LMDVistaDialogs.pas',
+  LMDTaskDialog in '..\..\LMDTaskDialog.pas',
+  LMDTaskDialogTemplate in '..\..\LMDTaskDialogTemplate.pas',
+  LMDTaskDialogButtonDsgn in '..\..\LMDTaskDialogButtonDsgn.pas',
+  LMDTaskDialogDsgn in '..\..\LMDTaskDialogDsgn.pas',
+  LMDTaskDlg in '..\..\LMDTaskDlg.pas',
+  LMDThemes in '..\..\LMDThemes.pas',
+  LMDUnicodeCtrls in '..\..\LMDUnicodeCtrls.pas',
+  LMDUnicodeDialogs in '..\..\LMDUnicodeDialogs.pas',
+  LMDVldBase in '..\..\LMDVldBase.pas',
+  LMDWndProcComponent in '..\..\LMDWndProcComponent.pas',
+  LMDUsp10 in '..\..\LMDUsp10.pas',
+  LMDDropdownForm in '..\..\LMDDropdownForm.pas';
+
+end.

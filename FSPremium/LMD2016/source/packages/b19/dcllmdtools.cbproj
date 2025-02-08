@@ -1,0 +1,241 @@
+	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{BC79B0AF-9A90-42D8-96AE-D6FED245B7A5}</ProjectGuid>
+			<ProjectVersion>13.4</ProjectVersion>
+			<FrameworkType>VCL</FrameworkType>
+			<MainSource>dcllmdtools.cpp</MainSource>
+			<Base>True</Base>
+			<Config Condition="'$(Config)'==''">build</Config>
+			<Platform Condition="'$(Platform)'==''">Win32</Platform>
+			<TargetedPlatforms>3</TargetedPlatforms>
+			<AppType>Library</AppType>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+			<Base_Win32>true</Base_Win32>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+                <PropertyGroup Condition="'$(Config)'=='build' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+			<Cfg_1_Win32>true</Cfg_1_Win32>
+			<CfgParent>Cfg_1</CfgParent>
+			<Cfg_1>true</Cfg_1>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+                        <DllSuffix>190</DllSuffix>
+                        <RuntimeOnlyPackage>false</RuntimeOnlyPackage>
+                        <DesignOnlyPackage>true</DesignOnlyPackage>
+                        <PackageImports>lmdrtcore.bpi;lmdrttools.bpi;lmdrtl.bpi;dcllmdrtl.bpi;rtl.bpi;vcl.bpi;vclx.bpi;designide.bpi;dclstd.bpi;dcllmdcore.bpi;dcllmdprint.bpi</PackageImports>
+                        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+			<VerInfo_Keys>CompanyName=LMD Innovative;FileDescription=LMD 2016 - LMD-Tools Main Components;FileVersion=2016.5.0;InternalName=;LegalCopyright=Copyright (c) LMD Innovative;LegalTrademarks=;OriginalFilename=;ProductName=LMD VCL Series;ProductVersion=2016.5.0;Comments=</VerInfo_Keys>
+			<VerInfo_Locale>1033</VerInfo_Locale>
+			<DCC_HppOutput>..\..\build\$(Platform)</DCC_HppOutput>
+			<IncludePath>..\..\;$(IncludePath)</IncludePath>
+			<ILINK_LibraryPath>..\..\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<ProjectType>CppPackage</ProjectType>
+			<ILINK_GenerateImportLibrary>true</ILINK_GenerateImportLibrary>
+			<DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
+			<ILINK_GenerateLibFile>true</ILINK_GenerateLibFile>
+			<Multithreaded>true</Multithreaded>
+			<_TCHARMapping>char</_TCHARMapping>
+			<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
+			<DynamicRTL>true</DynamicRTL>
+			<UsePackages>true</UsePackages>
+			<IntermediateOutputDir>..\..\build\$(Platform)</IntermediateOutputDir>
+			<BCC_wpar>false</BCC_wpar>
+			<BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
+			<BCC_ExtendedErrorInfo>true</BCC_ExtendedErrorInfo>
+			<ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\release\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
+                        <DCC_UsePackage>designide;dclstd</DCC_UsePackage>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base_Win32)'!=''">
+			<IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
+			<DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+		</PropertyGroup>
+		<ItemGroup>
+			<CppCompile Include="dcllmdtools.cpp">
+				<BuildOrder>0</BuildOrder>
+			</CppCompile>
+			<PackageImport Include="lmdrtcore.bpi" />
+      <PackageImport Include="lmdrttools.bpi" />
+      <PackageImport Include="lmdrtl.bpi" />
+      <PackageImport Include="dcllmdrtl.bpi" />
+      <PackageImport Include="rtl.bpi" />
+      <PackageImport Include="vcl.bpi" />
+      <PackageImport Include="vclx.bpi" />
+      <PackageImport Include="designide.bpi" />
+      <PackageImport Include="dclstd.bpi" />
+      <PackageImport Include="dcllmdcore.bpi" />
+      <PackageImport Include="dcllmdprint.bpi" />
+      <DelphiCompile Include="..\..\LMD_RegMain.pas" />
+      <DelphiCompile Include="..\..\LMD_RegMainEditors.pas" />
+      <DelphiCompile Include="..\..\pLMDCPGetMain.pas" />
+      <DelphiCompile Include="..\..\pLMDCstMain.pas" />
+      <DelphiCompile Include="..\..\pLMDCEMain.pas" />
+      <DelphiCompile Include="..\..\pLMDPEMain.pas" />
+      <DelphiCompile Include="..\..\pLMDRegOS.pas" />
+      <DelphiCompile Include="..\..\pLMD3DEffectEditorDlg.pas">
+        <Form>LMD3DEffectEditorDlg</Form>
+      </DelphiCompile>
+      <DelphiCompile Include="..\..\pLMDBmpRegionEditorDlg.pas">
+        <Form>LMDfrmRegionFromBMPdlg</Form>
+      </DelphiCompile>
+      <DelphiCompile Include="..\..\pLMDButtonBarEditorDlg.pas">
+        <Form>frmLMDButtonBarEditorDlg</Form>
+      </DelphiCompile>
+      <DelphiCompile Include="..\..\pLMDCaptionEditorDlg.pas">
+        <Form>LMDCaptionEditorDlg</Form>
+      </DelphiCompile>
+      <DelphiCompile Include="..\..\pLMDDlgBtnEditorDlg.pas">
+        <Form>LMDDlgButtonEditorDlg</Form>
+      </DelphiCompile>
+      <DelphiCompile Include="..\..\pLMDFilterPropertyEditorDlg.pas">
+        <Form>LMDFilterPropsDlg</Form>
+      </DelphiCompile>
+      <DelphiCompile Include="..\..\pLMDGraphicLabelEditorDlg.pas">
+        <Form>LMDFormGraphicLabelEditor</Form>
+      </DelphiCompile>
+      <DelphiCompile Include="..\..\pLMDHideNonVC.pas">
+        <Form>LMDHideNonVCfrm</Form>
+      </DelphiCompile>
+      <DelphiCompile Include="..\..\pLMDLEDEditorDlg.pas">
+        <Form>LMDLEDEditorDlg</Form>
+      </DelphiCompile>
+      <DelphiCompile Include="..\..\pLMDLightEditorDlg.pas">
+        <Form>LMDLightEditorDlg</Form>
+      </DelphiCompile>
+      <DelphiCompile Include="..\..\pLMDMMButtonFaceEditorDlg.pas">
+        <Form>LMDButtonFaceDlg</Form>
+      </DelphiCompile>
+      <DelphiCompile Include="..\..\pLMDOSPropForm.pas">
+        <Form>LMDOSPropForm</Form>
+      </DelphiCompile>
+      <DelphiCompile Include="..\..\pLMDPointListEditorDlg.pas">
+        <Form>frmTLMDPointListEditor</Form>
+      </DelphiCompile>
+      <DelphiCompile Include="..\..\pLMDSendKeyEditorDlg.pas">
+        <Form>LMDSendKeysEditorDlg</Form>
+      </DelphiCompile>
+      <DelphiCompile Include="..\..\pLMDShadowEditorDlg.pas">
+        <Form>LMDShadowEditorDlg</Form>
+      </DelphiCompile>
+      <DelphiCompile Include="..\..\pLMDShapeEditorDlg.pas">
+        <Form>LMDShapeEditorDlg</Form>
+      </DelphiCompile>
+      <DelphiCompile Include="..\..\pLMDSimpleBevelEditorDlg.pas">
+        <Form>LMDSimpleBevelEditorDlg</Form>
+      </DelphiCompile>
+      <DelphiCompile Include="..\..\pLMDStyleManProp.pas" />
+      <DelphiCompile Include="..\..\pLMDTeethEditorDlg.pas">
+        <Form>LMDTeethEditorDlg</Form>
+      </DelphiCompile>
+      <DelphiCompile Include="..\..\pLMDVldRegExpEditor.pas">
+        <Form>LMDRegExprForm</Form>
+      </DelphiCompile>
+      <DelphiCompile Include="..\..\pLMDDateListEditorDlg.pas">
+        <Form>LMDDateListEditorDlg</Form>
+      </DelphiCompile>
+      <DelphiCompile Include="..\..\pLMDControlFaceEditorDlg.pas">
+        <Form>frmLMDControlFaceComponentEditor</Form>
+      </DelphiCompile>
+      <DelphiCompile Include="..\..\pLMDControlFaceEditorDlgAddState.pas">
+        <Form>frmStateAddingDlg</Form>
+      </DelphiCompile>
+      <FormResources Include="..\..\pLMD3DEffectEditorDlg.dfm" />
+      <FormResources Include="..\..\pLMDBmpRegionEditorDlg.dfm" />
+      <FormResources Include="..\..\pLMDButtonBarEditorDlg.dfm" />
+      <FormResources Include="..\..\pLMDCaptionEditorDlg.dfm" />
+      <FormResources Include="..\..\pLMDDlgBtnEditorDlg.dfm" />
+      <FormResources Include="..\..\pLMDFilterPropertyEditorDlg.dfm" />
+      <FormResources Include="..\..\pLMDGraphicLabelEditorDlg.dfm" />
+      <FormResources Include="..\..\pLMDHideNonVC.dfm" />
+      <FormResources Include="..\..\pLMDLEDEditorDlg.dfm" />
+      <FormResources Include="..\..\pLMDLightEditorDlg.dfm" />
+      <FormResources Include="..\..\pLMDMMButtonFaceEditorDlg.dfm" />
+      <FormResources Include="..\..\pLMDOSPropForm.dfm" />
+      <FormResources Include="..\..\pLMDPointListEditorDlg.dfm" />
+      <FormResources Include="..\..\pLMDSendKeyEditorDlg.dfm" />
+      <FormResources Include="..\..\pLMDShadowEditorDlg.dfm" />
+      <FormResources Include="..\..\pLMDShapeEditorDlg.dfm" />
+      <FormResources Include="..\..\pLMDSimpleBevelEditorDlg.dfm" />
+      <FormResources Include="..\..\pLMDTeethEditorDlg.dfm" />
+      <FormResources Include="..\..\pLMDVldRegExpEditor.dfm" />
+      <FormResources Include="..\..\pLMDDateListEditorDlg.dfm" />
+      <FormResources Include="..\..\pLMDControlFaceEditorDlg.dfm" />
+      <FormResources Include="..\..\pLMDControlFaceEditorDlgAddState.dfm" />
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
+			<Borland.ProjectType>CppPackage</Borland.ProjectType>
+			<BorlandProject>
+				<CPlusPlusBuilder.Personality>
+					<Source>
+						<Source Name="MainSource">dcllmdtools.cpp</Source>
+					</Source>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1049</VersionInfo>
+						<VersionInfo Name="CodePage">1251</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName">LMD Innovative</VersionInfoKeys>
+						<VersionInfoKeys Name="FileDescription">LMD 2016 - LMD-Tools Main Components</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">2016.5</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright">LMD Innovative</VersionInfoKeys>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName">LMD 2016 - LMD-Tools Main Components</VersionInfoKeys>
+						<VersionInfoKeys Name="ProductVersion">2016.5</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<ProjectProperties>
+						<ProjectProperties Name="AutoShowDeps">False</ProjectProperties>
+						<ProjectProperties Name="ManagePaths">True</ProjectProperties>
+						<ProjectProperties Name="VerifyPackages">True</ProjectProperties>
+					</ProjectProperties>
+				</CPlusPlusBuilder.Personality>
+				<Deployment/>
+				<Platforms>
+					<Platform value="OSX32">False</Platform>
+					<Platform value="Win32">True</Platform>
+				</Platforms>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')" Project="$(BDS)\Bin\CodeGear.Cpp.Targets"/>
+		<Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+	</Project>

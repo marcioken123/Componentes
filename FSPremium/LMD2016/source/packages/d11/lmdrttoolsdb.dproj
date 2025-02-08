@@ -1,0 +1,130 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{993E812B-7BCD-4DB0-A610-7A3CC04BE1BA}</ProjectGuid>
+    <MainSource>lmdrttoolsdb.dpk</MainSource>
+    <Configuration Condition=" '$(Configuration)' == '' ">build</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+    <DCC_DependencyCheckOutputName>lmdrttoolsdb.bpl</DCC_DependencyCheckOutputName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'build|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_CBuilderOutput>All</DCC_CBuilderOutput>
+    <DCC_Define>RELEASE</DCC_Define>
+    <DCC_DcuOutput>..\..\build</DCC_DcuOutput>
+    <DCC_HppOutput>..\..</DCC_HppOutput>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Delphi.Personality</Borland.Personality>
+    <Borland.ProjectType>Package</Borland.ProjectType>
+    <BorlandProject>
+<BorlandProject xmlns=""> <Delphi.Personality>   <Parameters>
+      <Parameters Name="UseLauncher">False</Parameters>
+      <Parameters Name="LoadAllSymbols">True</Parameters>
+      <Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+    </Parameters>
+    <Package_Options>
+      <Package_Options Name="PackageDescription">LMD-Tools Main Database Components</Package_Options>
+      <Package_Options Name="ImplicitBuild">False</Package_Options>
+      <Package_Options Name="DesigntimeOnly">false</Package_Options>
+      <Package_Options Name="RuntimeOnly">true</Package_Options>
+    </Package_Options>
+    <VersionInfo>
+      <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+      <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+      <VersionInfo Name="MajorVer">1</VersionInfo>
+      <VersionInfo Name="MinorVer">0</VersionInfo>
+      <VersionInfo Name="Release">0</VersionInfo>
+      <VersionInfo Name="Build">0</VersionInfo>
+      <VersionInfo Name="Debug">False</VersionInfo>
+      <VersionInfo Name="PreRelease">False</VersionInfo>
+      <VersionInfo Name="Special">False</VersionInfo>
+      <VersionInfo Name="Private">False</VersionInfo>
+      <VersionInfo Name="DLL">False</VersionInfo>
+      <VersionInfo Name="Locale">1049</VersionInfo>
+      <VersionInfo Name="CodePage">1251</VersionInfo>
+    </VersionInfo>
+    <VersionInfoKeys>
+      <VersionInfoKeys Name="CompanyName">LMD Innovative</VersionInfoKeys>
+      <VersionInfoKeys Name="FileDescription">LMD-Tools Main Database Components</VersionInfoKeys>
+      <VersionInfoKeys Name="FileVersion">2016.5.*</VersionInfoKeys>
+      <VersionInfoKeys Name="InternalName"></VersionInfoKeys>
+      <VersionInfoKeys Name="LegalCopyright">Copyright (c) LMD Innovative</VersionInfoKeys>
+      <VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys>
+      <VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys>
+      <VersionInfoKeys Name="ProductName">LMD 2009 VCL Series</VersionInfoKeys>
+      <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+      <VersionInfoKeys Name="Comments"></VersionInfoKeys>
+    </VersionInfoKeys>
+    <Source>
+      <Source Name="MainSource">lmdrttoolsdb.dpk</Source>
+    </Source>
+  </Delphi.Personality> </BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <ItemGroup />
+  <ItemGroup>
+    <DelphiCompile Include="lmdrttoolsdb.dpk">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <DCCReference Include="..\..\LMDDBBase.pas" />
+    <DCCReference Include="..\..\LMDBookmarkCont.pas" />
+    <DCCReference Include="..\..\LMDBookmarkList.pas" />
+    <DCCReference Include="..\..\LMDCSV2DBImport.pas" />
+    <DCCReference Include="..\..\LMDCSVImport.pas" />
+    <DCCReference Include="..\..\LMDDBBtn.pas" />
+    <DCCReference Include="..\..\LMDDBCal.pas" />
+    <DCCReference Include="..\..\LMDDBCalculatorComboBox.pas" />
+    <DCCReference Include="..\..\LMDDBCalendarComboBox.pas" />
+    <DCCReference Include="..\..\LMDDBCheckBox.pas" />
+    <DCCReference Include="..\..\LMDDBCheckGroup.pas" />
+    <DCCReference Include="..\..\LMDDBColorCombobox.pas" />
+    <DCCReference Include="..\..\LMDDBConst.pas" />
+    <DCCReference Include="..\..\LMDDBEdit.pas" />
+    <DCCReference Include="..\..\LMDDBEditDBLookup.pas" />
+    <DCCReference Include="..\..\LMDDBExport.pas" />
+    <DCCReference Include="..\..\LMDDBExtSpinEdit.pas" />
+    <DCCReference Include="..\..\LMDDBFieldComboBox.pas" />
+    <DCCReference Include="..\..\LMDDBGlyphInfoLabel.pas" />
+    <DCCReference Include="..\..\LMDDBGraphicLabel.pas" />
+    <DCCReference Include="..\..\LMDDBImageComboBox.pas" />
+    <DCCReference Include="..\..\LMDDBImageListBox.pas" />
+    <DCCReference Include="..\..\LMDDBInformationLabel.pas" />
+    <DCCReference Include="..\..\LMDDBLabel.pas" />
+    <DCCReference Include="..\..\LMDDBHTMLLabel.pas" />
+    <DCCReference Include="..\..\LMDDBLabelFill.pas" />
+    <DCCReference Include="..\..\LMDDBLEDLabel.pas" />
+    <DCCReference Include="..\..\LMDDBLight.pas" />
+    <DCCReference Include="..\..\LMDDBListComboBox.pas" />
+    <DCCReference Include="..\..\LMDDBLookupCtrls.pas" />
+    <DCCReference Include="..\..\LMDDBMaskEdit.pas" />
+    <DCCReference Include="..\..\LMDDBMemo.pas" />
+    <DCCReference Include="..\..\LMDDBNImage.pas" />
+    <DCCReference Include="..\..\LMDDBProgress.pas" />
+    <DCCReference Include="..\..\LMDDBProgressFill.pas" />
+    <DCCReference Include="..\..\LMDDBRadioButton.pas" />
+    <DCCReference Include="..\..\LMDDBRadioGroup.pas" />
+    <DCCReference Include="..\..\LMDDBRestoreGrid.pas" />
+    <DCCReference Include="..\..\LMDDBShapeControl.pas" />
+    <DCCReference Include="..\..\LMDDBSimpleLabel.pas" />
+    <DCCReference Include="..\..\LMDDBSpeedButton.pas" />
+    <DCCReference Include="..\..\LMDDBSpinEdit.pas" />
+    <DCCReference Include="..\..\LMDDBSwitch.pas" />
+    <DCCReference Include="..\..\LMDDBTrackBar.pas" />
+    <DCCReference Include="..\..\LMDDBTreeComboBox.pas" />
+    <DCCReference Include="..\..\LMDEditDBLookup.pas" />
+    <DCCReference Include="..\..\LMDImport.pas" />
+    <DCCReference Include="lmdrtl.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="rtl.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="vcl.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="vclx.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="dbrtl.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="vcldb.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="lmdrtrtlx.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="lmdrtcore.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="lmdrttools.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+</Project>

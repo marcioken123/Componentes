@@ -1,0 +1,302 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<meta http-equiv="Content-Language" content="en-us">
+<TITLE>LMD IDETools - ReadMe</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+</HEAD>
+<BODY>
+<STYLE>BODY {
+	FONT-SIZE: 70%; BACKGROUND: #ffffff; FONT-FAMILY: Verdana, Arial, Helvetica, MS Sans Serif
+}
+A:link {
+	COLOR: #0000ff; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #0000ff; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #ff0000; TEXT-DECORATION: underline
+}
+TABLE {
+	FONT-SIZE: 100%
+}
+HR {
+	WIDTH: 25%; COLOR: red; TEXT-ALIGN: left
+}
+</STYLE>
+<p>
+<FONT face=verdana size=+2><a name="Top"></a>LMD IDE-Tools - ReadMe<br>
+</FONT>
+<FONT size=-2>
+
+(© by LMD Innovative, (<A href="http://www.lmd.de/">http://www.lmd.de</A>
+ or <A href="http://www.lmdinnovative.com/">http://www.lmdinnovative.com</A>)</font></p>
+<HR>
+
+<p>
+<FONT color=#000080 size="1"><a href="_readme.htm">[Main]</a> </FONT></p>
+<p>
+<font size="2" face="Verdana"><b>Contents<br>
+</b>&nbsp; <a href="#Introduction">Introduction</a><br>
+&nbsp; <a href="#WhatsNew">Main Features</a><br>
+&nbsp; <a href="#Documentation">Helpfile and tutorials</a><br>
+&nbsp; <a href="#Demos">SyntaxEdit demos</a><br>
+&nbsp; <a href="#Resources">Using different Language Resource File </a> <br>
+&nbsp; <a href="#Designtime">Designtime Enhancements</a><br>
+<br>
+</font><br>
+<font size="2" face="Verdana"><a name="Introduction"></a>
+</font><b>
+
+<font SIZE="3">
+Introduction</font></b><font size="2" face="Verdana"><br>
+<b>LMD IDE-Tools</b> is collection of native VCL components which help you to 
+set up a complete IDE environment in a quick and easy way. Extend your 
+applications by providing your customers enhanced possibilities - either by 
+custom scripts or even complete dialogs or additional forms.<br>
+This package includes
+<a href="LMDIDEStandalone.htm">LMD DesignPack</a>, 
+<a href="LMDIDEStandalone.htm">LMD 
+ScriptPack</a> and <a href="LMDIDEStandalone.htm">LMD SyntaxEdit</a>. Besides that 
+LMD IDE-Tools adds an additional integration package which combines the 
+abilities and features of the standalone packages and adds high level features 
+like IDE services (component palette, IDE manager, synchronizing services), 
+project manager tools (handling of different documents, project view), advanced 
+designing features (alignment palette, support for component editors, 
+object/component view) and so on.<br>
+An example IDE project (supporting the script languages included in LMD 
+ScriptPack) is shipped with the complete package which demonstrates how to set 
+up a complete IDE project.</font></p>
+<p>
+<font size="1" face="Verdana"><a href="#Top">[Top]</a></font><font size="2" face="Verdana"><br>
+<br>
+<br>
+</font><b>
+
+<font SIZE="3" face="Verdana">
+<a name="WhatsNew"></a>Main Features</font></b><font size="2" face="Verdana"><br>
+The IDE-Tools integration package provides following main features:</font></p>
+<ul>
+	<li><font SIZE="2"><span LANG="EN">The design features are represented by
+	</span><span LANG="RU">object inspector like controls, extended form 
+	designers</span><span LANG="EN">, </span><span LANG="RU">diagram like 
+	objects</span><span lang="de"> (LMD DesignPack).</span><span LANG="RU">
+	</span></font></li>
+	<li><font SIZE="2"><span LANG="EN">The scripting features include script 
+	control, script source management helpers and multi-module script debugger 
+	component (LMD ScriptPack) </span></li>
+	<li>Editor features are provided by the SyntaxEdit control which supports 
+	syntax highlighting, code folding and ultra fast text-handling (LMD 
+	SyntaxEdit)</li>
+	<li><span LANG="EN">The high level components of the IDE integration package 
+	provide solutions for common IDE like applications. Examples are component 
+	palette, Delphi like object tree, project manager, support for component and 
+	property editors, helpers for design/code handling etc.</span></li>
+</ul>
+<p><font face="Verdana" size="2">New features in IDE-Tools 2:</font></p>
+<div id="globalWrapper">
+	<div id="column-content">
+		<div id="content">
+			<div id="bodyContent">
+				<ul>
+					<li>New TLMDSimplePropertyInspector control. The property 
+					inspector has been splitted from the Design Pack into 
+					separated LMD Inspector Pack. The 
+					TLMDSimplePropertyInspector represents a new designer 
+					independed simple property editor, which can be used for 
+					objects without designer. This lightweight control can be 
+					used, for example, to organize application Options dialogs. 
+					The existing TLMDPropertyInspector control in the Design 
+					Pack is now fully designer oriented. 
+
+					</li>
+					<li>New TLMDComponentBar control. BDS like component 
+					palette. Works even in Delphi7. 
+					</li>
+					<li>Updated TLMDComponentPalette control. Delphi 7 like 
+					drop-down list can be shown in cases when there are too many 
+					components on the page. 
+					</li>
+					<li>It is now possible to design forms (TCustomForm 
+					descendants) in the TLMDDesignPanel. This allows to develop 
+					BDS like IDE user interface. 
+					</li>
+					<li>New designer ShowRootResizers property allows to show 
+					mouse handles to resize the root inside design panel. 
+					</li>
+					<li>New global components modification notifications feature 
+					allows to synchronize shown in Design Pack controls content 
+					without any links between controls. Useful e.g. if for 
+					example you move some Vcl control by the designer, the Left 
+					and Top property values will be automatically updated in the 
+					property inspector. Or: if you rename some Vcl component in 
+					property inspector, the object combo box will automatically 
+					update shown component name. 
+					</li>
+					<li>The global components modification notifications allow 
+					to detect when components located inside module root are 
+					modified. New TLMDModule.OnCompsModified event can be easily 
+					used to detect such modifications, instead of several old 
+					events of designer or property inspector. 
+					</li>
+					<li>The global components modification notifications allows 
+					to provide more correct notifications, finding correct 
+					module for the modified component. Imagine that you edit by 
+					the property inspector the TClientDataSet component from one 
+					module that refers to the TDataSource component from another 
+					module. Since the property inspector can edit linked data 
+					source component properties (by expanding DataSource 
+					property) it is important that as a result of such 
+					modification a second module will receive the notification, 
+					but not the first one. 
+					</li>
+					<li>All design pack controls are now closely oriented to 
+					work with designer. So, EditorWindows has been removed from 
+					all controls except the TLMDDesigner. All other controls 
+					will automatically search for the appropriate designer in 
+					cases when the editor window manager is required. There are 
+					no connection to service provider required, because it is 
+					always possible to map editing control to its module 
+					(designer). 
+					</li>
+					<li>User request: New TLMDModule.OnGetLoadingCompRef event 
+					added to allow to dynamically load modules in the presence 
+					of inter module component links. The Vcl allows to do this 
+					only starting from Delphi2005, so this event is not 
+					available in Delphi7. 
+					</li>
+					<li>New TLMDProjectManagerView control: delphi project 
+					manager like control. Links to TLMDProjectManager component 
+					and shows current project's content. 
+					</li>
+					<li>New TLMDDocEditorsView control: Delphi 7 like tabbed 
+					control that shows document editors. The control 
+					automatically interoperate with linked TLMDProjectManager. 
+					The document editors should be developed as a frames, and 
+					the only required code is to provide editor frame instance 
+					for opening document in the OnCreateEditor event handler. 
+					</li>
+					<li>ScriptPack: VCL.NET support added</li>
+					<li>SyntaxEdit: Drag and drop text support. </li>
+					<li>Bugfixes and enourmous speed enhancements. </li>
+					<li>Auto-completion API added. Completion supported: based 
+					on document text, or custom completion, based on events. See 
+					TLMDEditView.CompletionSettings, OnFillCompletionList, 
+					OnCompletionReplace, OnCompletionCustomDraw, 
+					OnCompletionMeasureItem properties/events. </li>
+					<li>Simple text highlight API added: HighlightSettings, 
+					Add/Remove Highlight. Useful to highlight some errors or 
+					some search results. See TLMDEditView.HighlightSettings 
+					property, and TLMDEditView.AddHighlight, RemoveHighlight, 
+					ClearHighlight methods. </li>
+					<li>UTF8 text auto-detection improved: now detection of UTF8 
+					without BOM is supported</li>
+					<li>Other improvements like Addict 4 support, themed border 
+					support, improved dialogs and much more. </li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+	</font>
+<p>
+<font size="1" face="Verdana"><a href="#Top">[Top]</a></font><font size="2" face="Verdana"><br>
+<br>
+<br>
+</font><b>
+
+<font SIZE="3" face="Verdana">
+<a name="Documentation"></a>Helpfile and tutorials</font></b><font size="2" face="Verdana"><br>
+By default helpfiles are usually not included with standard/trial installers. If 
+you did not already download current documentation pack, please visit
+<a href="http://www.lmd.de/download">LMD public download area</a> and get the <b>
+LMD IDE-Tools </b>documentation package.<br>
+Tutorials and FAQs referring to all parts of LMD IDE-Tools can be found in the 
+public <a href="http://wiki.lmd.de">LMD Wiki</a>.</font><br>
+<font size="1" face="Verdana"><a href="#Top">[Top]</a></font><font size="2" face="Verdana"><br>
+&nbsp;</font></p>
+<p>
+<b>
+
+<font SIZE="3" face="Verdana">
+<a name="Demos"></a>LMD IDE-Tools <span lang="de">demos</span></font></b></p>
+
+<p>
+<font size="2" face="Verdana">To get a quick start we suggest that you check the demo projects which 
+are shipped with any version of LMD IDE-Tools (subfolder
+</font>
+<font size="2" face="Courier New">\lmdide
+</font>
+<font size="2" face="Verdana">in
+</font>
+<font size="2" face="Courier New">\demos</font><font size="2" face="Verdana"> 
+directory):</p>
+</font>
+            <table border="5" cellspacing="1" width="732" bordercolor="#B0C4DE">
+              <tr>
+                <th bgcolor="#F0F4FE" width="254" height="16">
+                <p align="left"><font face="Verdana" size="2" color="#0000FF">
+                Folder</font></th>
+                <th width="475" bgcolor="#F0F4FE" height="16">
+                <p align="left"><span lang="de">
+                <font face="Verdana" size="2" color="#0000FF">Description</font></span></th>
+              </tr>
+              <tr>
+                <td width="254" height="16">
+                <font face="Courier New" size="2">\IDE</font></td>
+                <td width="475" align="left" height="16">
+                  <font size="2">This project demonstrates features of LMD 
+					IDE-Tools by providing a complete IDE for scripting 
+					languages 
+					supported by LMD ScriptPack. Please note that for VCL.NET 
+					this demo is limited, because ScriptPack is not available 
+					for this platform.</font></td>
+              </tr>
+              </table>
+<p>
+<font size="1" face="Verdana"><a href="#Top">[Top]</a></font><font size="2" face="Verdana"><br>
+<br>
+<br>
+</font>
+<b>
+<font size="3" face="Verdana"><a name="Resources"></a>Using different Language Resource File <br>
+</font></b>
+<font size="2" face="Verdana">Translated Resourcestrings can be found in
+</font>
+</p>
+<ul>
+  <li>
+<font size="2" face="Courier New">\Resources</font><font size="2" face="Verdana"> 
+  folder below installation directory for compiled versions and
+</font>
+  </li>
+  <li>
+<font size="2" face="Courier New">\lib\source\</font><font size="2" face="Verdana">strings 
+  folder for sourcecode versions
+</font>
+  </li>
+</ul>
+<p>
+<font size="2" face="Verdana">To change current language simply copy unit file 
+of desired language to library file and recompile your application.<br>
+Feel free to send us modified resource units for other languages!<br>
+</font><font size="1" face="Verdana"><a href="#Top">[Top]</a></font><font size="2" face="Verdana"><br>
+&nbsp;</font></p>
+<p>
+<font size="3" face="Verdana"><b><a name="Designtime"></a>Designtime Enhancements<br>
+</b></font><font size="2" face="Verdana">Like for all LMD 2016 products the LMD Designtime Enhancements package is installed automatically (</font><font size="2" face="Courier New">dcllmdrtl10_XX.bpl</font><font size="2" face="Verdana"> 
+or
+</font><font size="2" face="Courier New">LMD.Vcl.Design.Rtl.dll</font><font size="2" face="Verdana">, 
+compiled versions only). 
+This package provides common design-time features for all LMD packages. Please 
+check About dialog of any LMD control to enable/disable design-time features. 
+For further info check <a href="LMDDesigntime.htm">LMD Designtime enhancements</a> 
+description. <br>
+</font><font size="1" face="Verdana"><a href="#Top">[Top]</a></font><br>
+&nbsp;</p>
+<P> 
+<HR>
+
+<P><FONT color=#000080>©&nbsp;  </FONT><FONT color=#0000FF>by</FONT><FONT color=#000080> <A 
+href="http://www.lmd.de/">LMD Innovative</A> Germany<BR>All other trademarks are 
+acknowledged.</FONT> </P></BODY></HTML>

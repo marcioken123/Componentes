@@ -1,0 +1,54 @@
+package lmdrtsyntax;
+
+{$R *.res}
+{$R *.otares}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'LMD SyntaxEdit Runtime package'}
+{$LIBSUFFIX '250'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  lmdrtl,
+  rtl,
+  vcl,
+  vclx,
+  lmdrtprint;
+
+contains
+  LMDSedUtils in '..\..\LMDSedUtils.pas',
+  LMDSedParser in '..\..\LMDSedParser.pas',
+  LMDSedDocument in '..\..\LMDSedDocument.pas',
+  LMDSedView in '..\..\LMDSedView.pas',
+  LMDSedDialogs in '..\..\LMDSedDialogs.pas',
+  LMDSedConst in '..\..\LMDSedConst.pas',
+  LMDSedFindDialog in '..\..\LMDSedFindDialog.pas' {LMDSedFindDlg},
+  LMDSedGotoLineDialog in '..\..\LMDSedGotoLineDialog.pas' {LMDSedGotoLineDlg},
+  LMDSedColorSchemeDialog in '..\..\LMDSedColorSchemeDialog.pas' {TLMDSedColorSchemeDlg},
+  LMDSedKeyBindingsDialog in '..\..\LMDSedKeyBindingsDialog.pas' {TLMDSedKeyBindingsDlg},
+  LMDSedSchemeEditDialog in '..\..\LMDSedSchemeEditDialog.pas' {LMDSedGotoLineDlg};
+
+end.

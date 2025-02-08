@@ -1,0 +1,160 @@
+T+: EInvalidGridOperation
+T+: TGetExtentsFunc
+T+: TGridAxisDrawInfo
+T+: TGridDrawInfo
+T+: TGridState
+T+: TGridMovement
+T+: TInplaceEdit
+        P+: Grid
+T+: TGridOption
+T+: TGridOptions
+TE: TGridDrawState
+TE: TGridScrollDirection
+T+: TGridCoord
+T+: TGridRect
+T+: TEditStyle
+T+: TSelectCellEvent
+TE: TDrawCellEvent
+T+: TCustomGrid
+        P+: BorderStyle
+        P+: Col
+        P+: ColCount
+        P+: ColWidths
+        P+: DefaultColWidth
+        P+: DefaultDrawing
+        P+: DefaultRowHeight
+        P+: EditorMode
+        P+: FixedColor
+        P+: FixedCols
+        P+: FixedRows
+        P+: GridHeight
+        P+: GridLineWidth
+        P+: GridWidth
+        P+: HitTest
+        P+: InplaceEditor
+        P+: LeftCol
+        P+: Options
+        P+: Row
+        P+: RowCount
+        P+: RowHeights
+        P+: ScrollBars
+        P+: Selection
+        P+: TabStops
+        P+: TopRow
+        P+: VisibleColCount
+        P+: VisibleRowCount
+        P+: TabStop
+T+: TGetEditEvent
+T+: TSetEditEvent
+T+: TMovedEvent
+T+: TCustomDrawGrid
+        P+: OnColumnMoved
+        PE: OnDrawCell
+        P+: OnGetEditMask
+        P+: OnGetEditText
+        P+: OnRowMoved
+        P+: OnSelectCell
+        P+: OnSetEditText
+        P+: OnTopLeftChanged
+        P+: Canvas
+        P+: Col
+        P+: ColWidths
+        P+: EditorMode
+        P+: GridHeight
+        P+: GridWidth
+        P+: LeftCol
+        P+: Selection
+        P+: Row
+        P+: RowHeights
+        P+: TabStops
+        P+: TopRow
+T+: TDrawGrid
+        P+: Align
+        P+: Anchors
+        P+: BevelEdges
+        P+: BevelInner
+        P+: BevelKind
+        P+: BevelOuter
+        P+: BevelWidth
+        P+: BiDiMode
+        P+: BorderStyle
+        P+: Color
+        P+: ColCount
+        P+: Constraints
+        P+: Ctl3D
+        P+: DefaultColWidth
+        P+: DefaultRowHeight
+        P+: DefaultDrawing
+        P+: DoubleBuffered
+        P+: DragCursor
+        P+: DragKind
+        P+: DragMode
+        P+: Enabled
+        P+: FixedColor
+        P+: FixedCols
+        P+: RowCount
+        P+: FixedRows
+        P+: Font
+        P+: GridLineWidth
+        P+: Options
+        P+: ParentBiDiMode
+        P+: ParentColor
+        P+: ParentCtl3D
+        P+: ParentDoubleBuffered
+        P+: ParentFont
+        P+: ParentShowHint
+        P+: PopupMenu
+        P+: ScrollBars
+        P+: ShowHint
+        P+: TabOrder
+        P+: Visible
+        P+: VisibleColCount
+        P+: VisibleRowCount
+        P+: OnClick
+        P+: OnColumnMoved
+        P+: OnContextPopup
+        P+: OnDblClick
+        P+: OnDragDrop
+        P+: OnDragOver
+        P+: OnDrawCell
+        P+: OnEndDock
+        P+: OnEndDrag
+        P+: OnEnter
+        P+: OnExit
+        P+: OnGetEditMask
+        P+: OnGetEditText
+        P+: OnKeyDown
+        P+: OnKeyPress
+        P+: OnKeyUp
+        P+: OnMouseActivate
+        P+: OnMouseDown
+        P+: OnMouseEnter
+        P+: OnMouseLeave
+        P+: OnMouseMove
+        P+: OnMouseUp
+        P+: OnMouseWheelDown
+        P+: OnMouseWheelUp
+        P+: OnRowMoved
+        P+: OnSelectCell
+        P+: OnSetEditText
+        P+: OnStartDock
+        P+: OnStartDrag
+        P+: OnTopLeftChanged
+T+: TStringGridStrings
+T+: TStringGrid
+        P+: Cells
+        P+: Cols
+        P+: Objects
+        P+: Rows
+T+: TOnGetPickListItems
+T+: TInplaceEditList
+        P+: ActiveList
+        P+: ButtonWidth
+        P+: DropDownRows
+        P+: EditStyle
+        P+: ListVisible
+        P+: PickList
+        P+: PickListLoaded
+        P+: Pressed
+        P+: OnEditButtonClick
+        P+: OnGetPickListitems

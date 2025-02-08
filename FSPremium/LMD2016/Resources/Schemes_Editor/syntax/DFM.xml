@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SchemeList root='Main'>
+
+
+    <Scheme name='Numbers'>
+        <Regex token0='number'>
+            \b (0x \d+ [lL]? | \d+ (e \d*)? [lLdDfF]? ) \b
+        </Regex>
+        
+        <Regex token0='number'>
+            \b [+\-]? \d+ (\. \d+)? ([eE] [+\-]? \d+) \b
+        </Regex>
+    </Scheme>
+
+    <Scheme name='String' defaultToken='string'>
+    </Scheme>
+
+    <Scheme name='Binary' defaultToken='comment'>        
+        <SyntaxBlock capture="true">
+            <Start> commentStart  </Start>
+            <End> commentEnd  </End>
+        </SyntaxBlock>        
+    </Scheme>
+
+    <Scheme name='Main' inherit='Numbers' 
+            defaultToken='default'           
+
+            keywordsIgnoreCase='true'
+    >
+        <KeywordRegex>\b[a-zA-Z_]\w*\b</KeywordRegex>
+
+        <Keywords>    
+            object  end item
+        </Keywords>
+
+        <RegexBlock innerScheme='String' start_token0='string' 
+                    end_token0='string' >
+
+            <Start> &apos;  </Start>        
+            <End> &apos; </End>        
+        </RegexBlock>
+
+        <RegexBlock innerScheme='Binary' start_token0='commentStart' 
+                    end_token0='commentEnd' >
+            <Start> \{  </Start>        
+            <End> \} </End>        
+        </RegexBlock>
+
+        <Regex token0='symbol' regex='[   \]  \#  \[  \( \) &gt; &lt; ]' />
+        <Regex token0='symbol' regex='[-:?\~=+!^;,]' />
+        
+        <SyntaxBlock capture="true">
+            <Start> [ kw:item kw:object ] </Start>
+            <End> kw:end  </End>
+        </SyntaxBlock>
+
+        <SyntaxBlock capture="true">
+            <Start> sym:&lt;  </Start>
+            <End> sym:&gt;  </End>
+        </SyntaxBlock>
+
+        <SyntaxBlock capture="true">
+            <Start> sym:(  </Start>
+            <End> sym:)  </End>
+        </SyntaxBlock>
+
+    </Scheme>
+</SchemeList>

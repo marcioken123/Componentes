@@ -1,0 +1,5 @@
+TE: TColorArray
+T+: TScrollDirection
+T+: TArrowType
+T+: TGradientDirection
+T+: TColorArraySortType

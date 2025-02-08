@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="dcllmdrtlx60.bpl"/>
+    <OBJFILES value="dcllmdrtlx.obj ..\..\LMD_RegRtlX.obj ..\..\pLMDActionsData.obj ..\..\pLMDActnList.obj ..\..\pLMDActnListEditor.obj ..\..\pLMDStdActnList.obj ..\..\pLMDCEBase.obj ..\..\pLMDCEX.obj ..\..\pLMDPeX.obj ..\..\pLMDPeCst.obj ..\..\pLMDDsgnCPGetX.obj ..\..\pLMDWizardsX.obj ..\..\pLMDHTMLEditDlg.obj ..\..\pLMDTaskDialogEditor.obj ..\..\pLMDStdListEditorDlg.obj ..\..\pLMDStdItemPropertiesEditorDlg.obj ..\..\pLMDExtImageListEditorDlg.obj ..\..\pLMDCustomImageListSelectDlg.obj ..\..\pLMDPicturePropertyEditor.obj"/>
+    <RESFILES value="dcllmdrtlx.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) ..\..\pLMDActnListEditor.dfm ..\..\pLMDStdActnList.dfm ..\..\pLMDHTMLEditDlg.dfm ..\..\pLMDStdListEditorDlg.dfm ..\..\pLMDStdItemPropertiesEditorDlg.dfm ..\..\pLMDExtImageListEditorDlg.dfm ..\..\pLMDCustomImageListSelectDlg.dfm ..\..\pLMDPicturePropertyEditor.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value="rtl.lib"/>
+    <PACKAGES value="lmdrtl.bpi dcllmdrtl.bpi rtl.bpi vcl.bpi vclx.bpi designide.bpi dclstd.bpi vcljpg.bpi lmdrtrtlx.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value=""/>
+    <SYSDEFINES value="_RTLDLL;NO_STRICT;USEPACKAGES"/>
+    <MAINSOURCE value="dcllmdrtlx.cpp"/>
+    <INCLUDEPATH value="$(BCB)\include;$(BCB)\include\vcl;"/>
+    <LIBPATH value="$(BCB)\lib\obj;$(BCB)\lib;"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I$(BCB)\include -I$(BCB)\include\vcl -src_suffix cpp -boa"/>
+    <CFLAG1 value="-O2 -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -a8 -b- -k- -vi -c -tWM"/>
+    <PFLAGS value="-N2..\..\build -N0..\..\build -NH..\..\build -$Y- -$L- -$D- -$A8 -v -JPHNE -M -LUdesignide"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zn"/>
+    <LFLAGS value="-I..\.. -D&quot;LMD 2016 - Common Shared Components&quot; -aa -Tpp -Gpd -x -Gn -Gl -Gi"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0pkg32.obj $(PACKAGES) Memmgr.Lib sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib "/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="dcllmdrtlx.cpp" FORMNAME="" UNITNAME="dcllmdrtlx" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="dcllmdrtlx.res" FORMNAME="" UNITNAME="dcllmdrtlx.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtl.bpi" FORMNAME="" UNITNAME="lmdrtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="dcllmdrtl.bpi" FORMNAME="" UNITNAME="dcllmdrtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="rtl.bpi" FORMNAME="" UNITNAME="rtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vcl.bpi" FORMNAME="" UNITNAME="vcl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vclx.bpi" FORMNAME="" UNITNAME="vclx" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="designide.bpi" FORMNAME="" UNITNAME="designide" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="dclstd.bpi" FORMNAME="" UNITNAME="dclstd" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vcljpg.bpi" FORMNAME="" UNITNAME="vcljpg" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtrtlx.bpi" FORMNAME="" UNITNAME="lmdrtrtlx" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMD_RegRtlX.pas" FORMNAME="" UNITNAME="LMD_RegRtlX" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDActionsData.pas" FORMNAME="" UNITNAME="pLMDActionsData" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDActnList.pas" FORMNAME="" UNITNAME="pLMDActnList" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDActnListEditor.pas" FORMNAME="frmActionListEditor" UNITNAME="pLMDActnListEditor" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDStdActnList.pas" FORMNAME="frmStdActionList" UNITNAME="pLMDStdActnList" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDCEBase.pas" FORMNAME="" UNITNAME="pLMDCEBase" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDCEX.pas" FORMNAME="" UNITNAME="pLMDCEX" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDPeX.pas" FORMNAME="" UNITNAME="pLMDPeX" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDPeCst.pas" FORMNAME="" UNITNAME="pLMDPeCst" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDDsgnCPGetX.pas" FORMNAME="" UNITNAME="pLMDDsgnCPGetX" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDWizardsX.pas" FORMNAME="" UNITNAME="pLMDWizardsX" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDHTMLEditDlg.pas" FORMNAME="frmLMDMiniHTMLEditor" UNITNAME="pLMDHTMLEditDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDTaskDialogEditor.pas" FORMNAME="" UNITNAME="pLMDTaskDialogEditor" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDStdListEditorDlg.pas" FORMNAME="TLMDStdListEditorDlg" UNITNAME="pLMDStdListEditorDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDStdItemPropertiesEditorDlg.pas" FORMNAME="TLMDStdItemForm" UNITNAME="pLMDStdItemPropertiesEditorDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDExtImageListEditorDlg.pas" FORMNAME="LMDExtImageListEditorDlg" UNITNAME="pLMDExtImageListEditorDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDCustomImageListSelectDlg.pas" FORMNAME="LMDCustImgListSelectDlg" UNITNAME="pLMDCustomImageListSelectDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\pLMDPicturePropertyEditor.pas" FORMNAME="LMDPicturePropertyEditorDlg" UNITNAME="pLMDPicturePropertyEditor" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+  <IDEOPTIONS>
+[Version Info Keys]
+CompanyName=LMD Innovative
+FileDescription=LMD 2016 - Common Shared Components
+FileVersion=2016.5
+InternalName=
+LegalCopyright=© LMD Innovative
+LegalTrademarks=
+OriginalFilename=
+ProductName=LMD 2016 - Common Shared Components
+ProductVersion=2016.5
+Comments=
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[Linker]
+LibPrefix=
+LibSuffix=60
+LibVersion=
+  </IDEOPTIONS>
+</PROJECT>

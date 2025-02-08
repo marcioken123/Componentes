@@ -1,0 +1,53 @@
+package dcllmdsys;
+
+{$R *.res}
+{$R *.otares}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'LMD 2016 - LMD-Tools SysPack Components'}
+{$LIBSUFFIX '250'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  lmdrtl,
+  dcllmdrtl,
+  rtl,
+  vcl,
+  vclx,
+  designide,
+  dclstd,
+  dcllmdrtlx,
+  lmdrtsys;
+
+contains
+  LMD_RegSys in '..\..\LMD_RegSys.pas',
+  pLMDSys_PE in '..\..\pLMDSys_PE.pas',
+  pLMDSys_CE in '..\..\pLMDSys_CE.pas',
+  pLMDSysCheckListDlg in '..\..\pLMDSysCheckListDlg.pas' {frmLMDSysOptionsEditor},
+  pLMDSysViewDlg in '..\..\pLMDSysViewDlg.pas' {frmLMDSysViewDlg},
+  pLMDSysNetEnumDlg in '..\..\pLMDSysNetEnumDlg.pas' {frmLMDSysEnumDlg};
+
+end.

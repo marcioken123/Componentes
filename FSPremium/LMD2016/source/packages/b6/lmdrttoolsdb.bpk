@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="lmdrttoolsdb60.bpl"/>
+    <OBJFILES value="lmdrttoolsdb.obj ..\..\LMDDBBase.obj ..\..\LMDBookmarkCont.obj ..\..\LMDBookmarkList.obj ..\..\LMDCSV2DBImport.obj ..\..\LMDCSVImport.obj ..\..\LMDDBBtn.obj ..\..\LMDDBCal.obj ..\..\LMDDBCalculatorComboBox.obj ..\..\LMDDBCalendarComboBox.obj ..\..\LMDDBCheckBox.obj ..\..\LMDDBCheckGroup.obj ..\..\LMDDBColorCombobox.obj ..\..\LMDDBConst.obj ..\..\LMDDBEdit.obj ..\..\LMDDBEditDBLookup.obj ..\..\LMDDBExport.obj ..\..\LMDDBExtSpinEdit.obj ..\..\LMDDBFieldComboBox.obj ..\..\LMDDBGlyphInfoLabel.obj ..\..\LMDDBGraphicLabel.obj ..\..\LMDDBImageComboBox.obj ..\..\LMDDBImageListBox.obj ..\..\LMDDBInformationLabel.obj ..\..\LMDDBLabel.obj ..\..\LMDDBHTMLLabel.obj ..\..\LMDDBLabelFill.obj ..\..\LMDDBLEDLabel.obj ..\..\LMDDBLight.obj ..\..\LMDDBListComboBox.obj ..\..\LMDDBLookupCtrls.obj ..\..\LMDDBMaskEdit.obj ..\..\LMDDBMemo.obj ..\..\LMDDBNImage.obj ..\..\LMDDBProgress.obj ..\..\LMDDBProgressFill.obj ..\..\LMDDBRadioButton.obj ..\..\LMDDBRadioGroup.obj ..\..\LMDDBRestoreGrid.obj ..\..\LMDDBShapeControl.obj ..\..\LMDDBSimpleLabel.obj ..\..\LMDDBSpeedButton.obj ..\..\LMDDBSpinEdit.obj ..\..\LMDDBSwitch.obj ..\..\LMDDBTrackBar.obj ..\..\LMDDBTreeComboBox.obj ..\..\LMDEditDBLookup.obj ..\..\LMDImport.obj"/>
+    <RESFILES value="lmdrttoolsdb.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) "/>
+    <LIBFILES value=""/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value="rtl.lib"/>
+    <PACKAGES value="lmdrtl.bpi rtl.bpi vcl.bpi vclx.bpi dbrtl.bpi vcldb.bpi lmdrtrtlx.bpi lmdrtcore.bpi lmdrttools.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value=""/>
+    <SYSDEFINES value="_RTLDLL;NO_STRICT;USEPACKAGES"/>
+    <MAINSOURCE value="lmdrttoolsdb.cpp"/>
+    <INCLUDEPATH value="$(BCB)\include;$(BCB)\include\vcl;"/>
+    <LIBPATH value="$(BCB)\lib\obj;$(BCB)\lib;"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I$(BCB)\include -I$(BCB)\include\vcl -src_suffix cpp -boa"/>
+    <CFLAG1 value="-O2 -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -a8 -b- -k- -vi -c -tWM"/>
+    <PFLAGS value="-N2..\..\build -N0..\..\build -NH..\..\build -$Y- -$L- -$D- -$A8 -v -JPHNE -M "/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zn"/>
+    <LFLAGS value="-I..\.. -D&quot;LMD-Tools Main Database Components&quot; -aa -Tpp -Gpr -x -Gn -Gl -Gi"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0pkg32.obj $(PACKAGES) Memmgr.Lib sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib "/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="lmdrttoolsdb.cpp" FORMNAME="" UNITNAME="lmdrttoolsdb" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrttoolsdb.res" FORMNAME="" UNITNAME="lmdrttoolsdb.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtl.bpi" FORMNAME="" UNITNAME="lmdrtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="rtl.bpi" FORMNAME="" UNITNAME="rtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vcl.bpi" FORMNAME="" UNITNAME="vcl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vclx.bpi" FORMNAME="" UNITNAME="vclx" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="dbrtl.bpi" FORMNAME="" UNITNAME="dbrtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vcldb.bpi" FORMNAME="" UNITNAME="vcldb" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtrtlx.bpi" FORMNAME="" UNITNAME="lmdrtrtlx" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtcore.bpi" FORMNAME="" UNITNAME="lmdrtcore" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrttools.bpi" FORMNAME="" UNITNAME="lmdrttools" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBBase.pas" FORMNAME="" UNITNAME="LMDDBBase" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDBookmarkCont.pas" FORMNAME="" UNITNAME="LMDBookmarkCont" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDBookmarkList.pas" FORMNAME="" UNITNAME="LMDBookmarkList" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCSV2DBImport.pas" FORMNAME="" UNITNAME="LMDCSV2DBImport" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDCSVImport.pas" FORMNAME="" UNITNAME="LMDCSVImport" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBBtn.pas" FORMNAME="" UNITNAME="LMDDBBtn" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBCal.pas" FORMNAME="" UNITNAME="LMDDBCal" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBCalculatorComboBox.pas" FORMNAME="" UNITNAME="LMDDBCalculatorComboBox" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBCalendarComboBox.pas" FORMNAME="" UNITNAME="LMDDBCalendarComboBox" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBCheckBox.pas" FORMNAME="" UNITNAME="LMDDBCheckBox" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBCheckGroup.pas" FORMNAME="" UNITNAME="LMDDBCheckGroup" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBColorCombobox.pas" FORMNAME="" UNITNAME="LMDDBColorCombobox" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBConst.pas" FORMNAME="" UNITNAME="LMDDBConst" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBEdit.pas" FORMNAME="" UNITNAME="LMDDBEdit" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBEditDBLookup.pas" FORMNAME="" UNITNAME="LMDDBEditDBLookup" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBExport.pas" FORMNAME="" UNITNAME="LMDDBExport" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBExtSpinEdit.pas" FORMNAME="" UNITNAME="LMDDBExtSpinEdit" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBFieldComboBox.pas" FORMNAME="" UNITNAME="LMDDBFieldComboBox" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBGlyphInfoLabel.pas" FORMNAME="" UNITNAME="LMDDBGlyphInfoLabel" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBGraphicLabel.pas" FORMNAME="" UNITNAME="LMDDBGraphicLabel" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBImageComboBox.pas" FORMNAME="" UNITNAME="LMDDBImageComboBox" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBImageListBox.pas" FORMNAME="" UNITNAME="LMDDBImageListBox" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBInformationLabel.pas" FORMNAME="" UNITNAME="LMDDBInformationLabel" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBLabel.pas" FORMNAME="" UNITNAME="LMDDBLabel" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBHTMLLabel.pas" FORMNAME="" UNITNAME="LMDDBHTMLLabel" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBLabelFill.pas" FORMNAME="" UNITNAME="LMDDBLabelFill" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBLEDLabel.pas" FORMNAME="" UNITNAME="LMDDBLEDLabel" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBLight.pas" FORMNAME="" UNITNAME="LMDDBLight" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBListComboBox.pas" FORMNAME="" UNITNAME="LMDDBListComboBox" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBLookupCtrls.pas" FORMNAME="" UNITNAME="LMDDBLookupCtrls" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBMaskEdit.pas" FORMNAME="" UNITNAME="LMDDBMaskEdit" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBMemo.pas" FORMNAME="" UNITNAME="LMDDBMemo" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBNImage.pas" FORMNAME="" UNITNAME="LMDDBNImage" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBProgress.pas" FORMNAME="" UNITNAME="LMDDBProgress" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBProgressFill.pas" FORMNAME="" UNITNAME="LMDDBProgressFill" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBRadioButton.pas" FORMNAME="" UNITNAME="LMDDBRadioButton" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBRadioGroup.pas" FORMNAME="" UNITNAME="LMDDBRadioGroup" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBRestoreGrid.pas" FORMNAME="" UNITNAME="LMDDBRestoreGrid" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBShapeControl.pas" FORMNAME="" UNITNAME="LMDDBShapeControl" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBSimpleLabel.pas" FORMNAME="" UNITNAME="LMDDBSimpleLabel" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBSpeedButton.pas" FORMNAME="" UNITNAME="LMDDBSpeedButton" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBSpinEdit.pas" FORMNAME="" UNITNAME="LMDDBSpinEdit" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBSwitch.pas" FORMNAME="" UNITNAME="LMDDBSwitch" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBTrackBar.pas" FORMNAME="" UNITNAME="LMDDBTrackBar" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDDBTreeComboBox.pas" FORMNAME="" UNITNAME="LMDDBTreeComboBox" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDEditDBLookup.pas" FORMNAME="" UNITNAME="LMDEditDBLookup" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDImport.pas" FORMNAME="" UNITNAME="LMDImport" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+  <IDEOPTIONS>
+[Version Info Keys]
+CompanyName=LMD Innovative
+FileDescription=LMD-Tools Main Database Components
+FileVersion=2016.5
+InternalName=
+LegalCopyright=© LMD Innovative
+LegalTrademarks=
+OriginalFilename=
+ProductName=LMD-Tools Main Database Components
+ProductVersion=2016.5
+Comments=
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[Linker]
+LibPrefix=
+LibSuffix=60
+LibVersion=
+  </IDEOPTIONS>
+</PROJECT>

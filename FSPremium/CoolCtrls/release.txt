@@ -1,0 +1,479 @@
+Release history:
+
++ News
+* Fixes.
+
+  Version 3.04h 12-Jan-2003
+    * CoolWindock now uses Desktop area for docking, not whole screen
+    * Fixed scrolling text hanging
+    * Fixed TCoolFormHook option setting at runtime
+    * CoolFileFinder now searches in directories whose name contains the dot (.) character
+    * Fixed memory leak in TCoolCheckRadioBox 
+    * Fixed TCoolTrackBar maxvalue/minvalue problem with divizon by zero
+    * Fixed problem with scroller in TCoolPopupBox
+    * Fixed problem with setting TCoolFormHook.Option in runtime  
+
+  Version 3.04g 7-Oct-2002
+    + TCoolSpotSplitter class added. All the functionality to support it.
+      Thanks to Felix Zemlyakov (felix.z@mailcity.com).
+    + Delphi7 compatible version released.
+    * Minor updates and fixes.
+
+  Version 3.04b 23-Apr-2002
+    * Fixes and improvements for several classes: TCoolLocker, 
+      TCoolScrollingText, TCoolButtonPanel
+
+  Version 3.04a 24-Mar-2002
+    + C++Builder6 compatible version of the package added.
+
+  Version 3.04 14-Jan-2002
+    + TCoolScrollbar component added. Originally written for Invers B.V. (The Netherlands)
+      component is included into the CoolControls package now. Advanced scrollbar
+      control with the wallpapers, transparency and other fancy features.
+    + TDBCoolScrollbar component added. Originally written for Invers B.V. (The Netherlands)
+      component is included into the CoolControls package now. Data aware version
+      of the TCoolScrollbar control.
+    + TCoolProgrLock component added. Non visual component that you can use to block the
+      access to the certain processes or terminate the particular processes.
+    + TCoolWinDock component added. Non visual component that enables developers
+      to create the docking form interfaces similar to those you can find in the
+      well-known WinAmp application.
+    + TCoolImages component accepts now not only bitmaps but jpegs and other graphic
+      formats. That is it works with the TPicture now! NOTE: There's no backward 
+      compatibility here but this feture improves the package so much that we
+      decided to add it. Hope you will find it worth spending some time on fixing
+      of the existing projects of yours.
+    + OnGlyphDraw event for TCoolListBox and TCoolComboBox components. You can use 
+      it to control what glyph will be painted for the particular item.
+    + TCoolCheckRadioBox component was improved and fixed.
+
+  Version 3.03b 23-Jul-2001
+    + Delphi6 compatible version of the package released.
+    * Fixes and improvenments.
+
+  Version 3.03a 8-Apr-2001
+    * Fixes and improvements from the last release. Maintenance release.
+
+  Version 3.03 11-March-2001
+    + TCoolListView control added. Enhanced list view control. Wallpapers,
+      transparency and other features.
+    + TCoolExplorerListView control added. Provides functionality similar
+      to explorer. Allows to preview files and folders from the current 
+      folder, accepts sdrag-and-drop from explorer, more functionality.
+    + TCoolKeyboardSpy component added. Global application keyboard hook
+      component, allows to preview, monitor and collecwt user's input in
+      all the forms and controls.
+    + ocTileWallpaper flag removed (Options property of the most controls). 
+      It was useless flag. The default behaviour is paint tiled wallpapers
+      anyway.
+    + ocStretchWallpaper flag added (Options property of the most controls). 
+      When specified wallpapers will be stretched to fit the client area of
+      the control.
+    + TCoolBitmapButton and TCoolManyBitmapsButton controls have Caption
+      property now.
+    + There's new help system for the package. Help not just was rewritten 
+      but rewritten completely. There're three variants of the help now:
+      RTF style windows help, compiled HTML help and HTML help. You can even
+      browse help on-line at http://www.cooldev.com/cc/help/
+    + Sources were commented as well. That was done with the CoolDocumenter
+      tool.
+    * Many fixes and improvements for many controls and components.      
+
+  Version 3.02  15-Dec-2000
+    + TCoolCaptionEffects component added. Easy way to scroll or blink the 
+      text within form's caption or application's title. More.
+    + TCoolShadow control added. Shadow that can be attached to any VCL or
+      third party.
+    + DisplayFrequency property of the TCoolDesktop. Mind you the property
+      does not display currently selected frequency, rather used to change 
+      its value and set the new one. Performs all the necessary checkings 
+      before applying new value though.   
+    * TDBCoolCheckRadioGroup problem fixed. Changed checked button incorrectly
+      under certain circumances.
+    * Problem with color displaying style controls fixed.
+    * Edges are painted more accurately now.
+
+  Version 3.01 1-Nov-2000
+    + TCoolTransparentArea component added. You can define transparent areas
+      within the form. Can be any shape (not only rectngular). You define 
+      polygones yourself.
+    + TDBCoolCheckRadioGroup component added. Data aware component with the 
+      functionality similar to that of TDBRadioGroup.
+    + CoolUtils.pas included into main package and main package file(s) 
+      renamed.
+    * TDBCoolLookupListBox and TDBCoolLookupComboBox not linked controls 
+      problem fixed.
+
+  Version 3.0 24-Oct-2000
+    + TCoolScrollBox component added. One more control to extend CoolControls
+      products family. All traditional properties and features.
+    + TCoolLoupePolygones component . Crate non rectangular loupes. Any shape. 
+      One or more. Also component editor for TPolygones class.
+    + TCoolManyBitmapsButton component. TCoolBitmapButton like class but 
+      separate bitmap for every state of the control can be specified.
+    + Semi-transparency for forms. Win2K obly. New Options flag for this
+      purpose has beed added.
+    + TCoolLoupe extended with extra properties and functionality.
+    + TCoolBitmapButton improved.
+    * TCoolClipboardViewer general icon problem fixed.
+    * TCoolStringGrid individual cells parameters change problem fixed.
+    * TCoolStringGrid efit mode wallpaper drawing fixed.
+    * TMDICoolFormHook hooking client window routine fixed.
+
+  Version 2.09 12-Oct-2000
+    + Version comes with the new look and feel of the visual controls. They 
+      all can be painted with highlighted borders now. Bottom, top, right, 
+      left border or combination. Similar to these in all modern packages.
+    + Quite a few properties to support technology mentioned above: BorderPen,
+      EdgeBorders and more.
+    + New TDBCoolLookupListBox control. One more visual component to extend 
+      the CoolControls family. D4/D5/BCB4/BCB5 only.
+    + New TDBCoolLookupComboBox control. Yet another component to extend 
+      the CoolControls. D4/D5/BCB4/BCB5 only.
+    + Painting speed increased significantly especially for grids, listboxes 
+      and comboboxes.
+    + TCoolClipboardComponent. Non visual component provided with the methods
+      to save/load Windows clipboard contents to/from disk/stream.
+    + TCoolStringGrid extended with useful methods - its content can be saved 
+      to any stream, disk AND clipboard. The whole contents or particular 
+      cell as you like.
+    + TCoolThermomitor improved in serious way. Many new properties, can be 
+      resized, adjusted etc.    
+    + New properties and features for many controls.
+    * TCoolAnimateEffects termination bug fixed.
+    * Problems and shortcomings reported from previous releases fixed.
+
+  Version 2.08 12-Aug-2000
+    + New TCoolThermomitor class. Graphic progress meter control. Displays
+      progress of an operation using thermomitor. Custom labels etc.
+    + New TCoolClipboardViewer class. Allow to preview Windows system
+      clipboard content and save/load the content to stream or disk file.
+      Handles all formats of the data. Including custom formats.
+    + TCoolBevel, TCoolButton and other components improved.
+
+  Version 2.07 1-Jun-2000
+    + New TCoolPageControl class. Transparency, wallpapers and more 
+      advanced features for this control.
+    + New TCoolFileFinder class. Allows to find the files which contains
+      specified sub string. Also helper thread classes available. Can be 
+      used separately.
+    + CBuilder5 version added.
+    + Setup program with install/uninstall capabilities.
+    * Improvenments and fixes for many components.
+
+  Version 2.06 21-Feb-2000
+    + New TCoolBitmapButton class. Button that is bitmap and bitmap that
+      is button. Takes form of attached bitmap image also few effects for
+      up/down states.
+    + New TCoolDBGrid class. Data aware grid control with enhancements
+      common for CoolControls package.
+    + Layered transparency. All visual controls have TransparentLevel 
+      property now. 
+    + New properties and improvenments for TCoolDesktop, TCoolListBox, 
+      TCoolComboBox, TCoolStringGrid.
+    + Right-to-left charsets support for list and comboboxes.
+    + Items of TCoolListBox and TCoolComboBox drawn with 3D captions by
+      default and have all the properties to support 3D captions.
+    * Fixed problem with the files navigation style list (combo) boxes.
+      They did not display correctly files with no attributes specified.
+    * Fixed problem with TCoolImageShape in Windows95 (Thanks to Bernt
+      Levinsson).
+    * Number of other imprvenments and fixes.  
+
+  Version 2.05a 21-Nov-1999
+    * Fixed nasty bug with TCoolListbox and TCoolComboBox that appeared when
+      you used tiled wallpapers in color mode different than True Color.
+    * Fixed number of minor problems (not as serious as one mentioned above).
+
+  Version 2.05 9-Nov-1999
+    + TCoolImageShape control. Allows create form of any shape based on the
+      color information taken from the specified bitmap. Unlike other 
+      this type controls this one allows to select more than one color 
+      for mask (as much as you need). Allows include or exclude selected 
+      colors.
+    + TCoolAnimateEffects control. Allows to display set of bitmaps with 
+      number of special effects. Thanks to Bernt Levinsson.
+    + TCoolDisksInformant non visual system component. Useful to obtain (and
+      sometimes set) variety of information about the drives (HDD, FDD, CDROM 
+      etc) installed in your system.
+    + BtnPaintOptions property of TCoolBtn and descendants. More control over
+      the painting of the button.
+    + Transparent property to support transparency for TSCrollingText  
+      control.
+    + New appearance of the package (new about box etc).
+    + No bugs from previous release were found thus none fixed. :-)
+
+  Version 2.04 23-Oct-1999
+    + TCoolInstancesChecker component added. Make sire you will be using only
+      one instance of the application.
+    + TCoolPolygones control added. Easily paint and edit any type of 
+      geometrical figure. Create and edit image maps in just few seconds 
+      directly in form designer. Save,load and modify list of polygones.
+    + TCoolPolyRegions. Easiest way to create most weird shaped forms. Design 
+      time creation and design time preview. Change the shape of your forms 
+      easily. More featiures.
+    + Realization of SaveToFile/LoadFromFile methods of the TCoolStringGrid 
+      changed. It is more object oriented now.
+    + TCoolPopupBox (TCoolPopupBox2) ItemIndex property added. Use it to set 
+      and obtain selected item in dropdown part of the control. 
+    + TCoolPopupBox (TCoolPopupBox2) OnChanged event added. Fired when 
+      selection is changed.
+    * TCoolMDIHook child windows painting problem fixed (OnPaint event was 
+      lost somewhere).
+    * TCoolFormHook and other controls' that used TWndHook Delphi5 problem 
+      fixed.
+    * TCoolEdit and descendants and TCoolMemo and descendants, when 
+      BorderStyle bsNone and transparenc used painting fixed.
+
+  Version 2.03 27-Sep-1999
+    + TCoolPopupButton class added. Derived from TGrpahicControl this 
+      control can be used in ToolBars and gives and ability to use popup
+      menus with buttons (menu becomes active when button clicked and 
+      disappears when it is released). 
+    + TCoolPopupButton2 class added. The same as TCoolPopupButton but 
+      derived from TCoolBtn.
+    + TCoolPopupBox control added. Button and listbox within same control.
+    + TCoolPopupBox2 control added. The same as TCoolPopupBox but derived 
+      from TWinControl.
+    + TDBCoolListBox has component editor that allows to fill its Item 
+      from dataset in design time.
+    + Package Delphi 5 compatible now.
+    * Few problems fixed.
+
+
+  Version 2.02  29-Jun-1999
+    + TCoolTrayIcon class added. Tray icon component. Can be used together 
+      with TImageList and display inimated icons.
+    + TCoolLoupe class added. Visual control that can display part of the 
+      screen underneath cursor. Can display image with any rate and copy mode.
+    + TCoolBevel class added. Bevel control that can be displayed with any 
+      color and wallpapers.
+    + TCoolAnimate class added. Using together with TCoolImages can display 
+      set of bitmaps as complete animation. You do not have to create "long" 
+      bitmap contained all frames, add them as is instead.
+    + TCoolCheckRadioGroup class added. Supports all tange of properties 
+      CoolControls coming with. Can contain both check boxes and radio 
+      buttons.Can use wallpapers, transparency, custom images etc.  
+    + Wallpaper property added. TCoolScrollingText control.
+    + TCoolCapture improved and handles maximized windows correctly now.
+    + FontAutoUpdate property (TCoolListBox, TCoolComboBox) when True and 
+      controls have ctFontControl style will display each line with the 
+      appropriate font style.
+    + TCoolDesktop works with desktop using interfaces rather than file 
+      functions now.
+    + BuildItems() method for TDBCoolListBox and TDBCoolComboBox. Fills
+      control with values taken from DataSet.
+    * TCoolTrackBar bug fixed (when MaxValue was bigger than 100 it was 
+      impossible to change value by dragging of the slider).
+    * TCoolScrollingText Windows95 bug fixed.
+    * Few more minor improvenments and fixes for some controls and 
+      components.
+
+  Version 2.0.1  2-Jun-1999
+    + TCoolTrackBar, added OnChange event occurs when Position changed.
+    + TCoolScrollingText thread problem fixed. Works more stable now.
+    + TCoolComboBox property Alignment added. When ListBoxWidth is greater 
+      than control's width you can specify align of the control's list box
+      part (right, top or center).
+    + Painting of TCoolTrackBar improved. Better speed and no flickers.
+    + TCoolScrollingText AutoSize property added.
+    * TCoolLabel and TCoolScrollingText Alignment handled properly now.
+    * TCoolLabel AutoSize works ok in Delphi3 / BCB3.
+    * Fixed bugs in TCoolTrackBar. It was impossible to change Enabled state 
+      of the component in run-time. In TCoolTrackBar when slider been moved 
+      and MaxValue was big enough (MaxInt) there sometimes exception has been 
+      risen. Fixed.
+    * Fixed bug in TDBCoolCheckRadioBox control did not post changes to 
+      dataset properly.
+
+  Version 2.0  8-May-1999
+    + Added new TCoolImages class, it is analog of the TImageList and is
+      depository of the images you planning to use as controls wallpapers.
+      From now on you can easily manipulate your wallpapers by changing
+      idWallpaper, idSelWallpaper and idCaptionWallpaper properties of the
+      controls. CoolImages property of all controls should be assigned
+      to TCoolImages class. Besides you will save resources (controls which
+      share the same image dont have to keep it in each's Wallaper 
+      property). Plus changing of bitmap in the TCoolImageList will 
+      automatically refresh all involved controls.
+    + Added new TCoolMemo class. Memo control that supports all the range 
+      of properties CoolControls comes with. Transparency, wallpaper, flat
+      borders, formatting etc.
+    + Added new TDBCoolMemo class. Data aware version of TCoolMemo. All 
+      its features plus work with data.
+    + Added new TCoolTrackBar class. All properties supported, including
+      transparency, wallpapers and custom thumbsfully customable control.
+    + Added new TCoolThumbTab class. Control can be placed to one of the 
+      TWinControl descendant's corners so it is possible to resize it.
+      Useful fo touch screens, if you develop softwre for people with 
+      disabilities and just like additional functionality for an 
+      application.
+    + Added new TCoolCaptionBtn class. Button that can be added anywhere in
+      form and gives ability to use caption buttons right there.
+    + TCoolBtn improved in the serious way. Glyps can be used with the control
+      as well as animation. Bitmaps to use in animated sets loaded from 
+      imagelist.
+    + New type of TCoolListBox and TCoolComboBox added - ocFolderControl. 
+      When ExStyle has this value control will display c ontent of the 
+      selected folder.
+    + Now when paint tiled wallpapers for TCoolListBox and TCoolComboBox,
+      wallpaper will be tiled accordingly to client recct of the whole 
+      control, not its items rects. It is more logica and looks better.
+    * TCoolBtn, TCoolStringGrid, TCoolEdit controls being painted with no 
+      flickering now.
+    * Disabled and ReadOnly states of TCoolEdit now handled in the 
+      correct way.
+
+  Version 1.09 2-Apr-1999
+    + Added new class TCoolBtn. Visual component with wide range of 
+      properties and features. Transparency, gradiency, wallpapers, shapes
+      3D captions and more effects for your buttons.
+    + Added new class TCoolWindowsInformant. Non visible system component. 
+      Provides complete information about all system windows, or windows 
+      which are children of specified.
+    + Added new class TCoolCapture. Non visible system component. You can 
+      capture any window or any part of window from your screen (you can use 
+      ratios) and screen shoot can be saved to file and / or clipboard.
+    + Custom images for TCoolCheckRadiobox component. For both states (checked
+      and unchecked). OwnerDraw property.
+    + TCoolLabel may be painted with the leading glyph now. Very cool effect.
+    + TCoolScrollingText may be painted with the leading glyph now. 
+    + TCoolListBox and TCoolCommboBox work with glyphs more correctly now.
+    + New flag for TCoolLocker.
+    + Version for Borland C++Builder 4.
+    + New design of the package (you gonna like).
+    * TCoolStringGrid draws disabled text in common way. 
+    * TCoolScrollingText's disabled state handed properly.
+    * Some components have been renamed (TCoolDesktop and TCoolLocker)...
+    * As usually fixed few minor problems found from previous releases. 
+
+  Version 1.08 27-Feb-1999
+    + New class TCoolScrollingText. Useful for "about" dialogs, long
+      labels etc.
+    + New class TDBCoolScrollingText. This class is data aware version 
+      of TCoolScrollingText.
+    + New class TLocker. Basically provides modal window functionality 
+      to any form. But can do MUCH MORE (hide, show, autohide taskbar,
+      lock cursor, keyboard and so on). System level component.
+    + More methods of TDesktop component and more procedures/functions
+      added to CoolUtils...
+    * TCoolCheckRadioBox fixed and improved. Added flat view, and new 
+      properties. Drawing improved.
+    + TCoolStringGrid's drawing improved.
+    * Fixed few minor problems found from previous releases. Nothing 
+      serious.
+
+  Version 1.07 12-Jan-1999
+    + Added new TCoolPanel component. Provides features similar to
+      vertical toolbar that can be found in Outlook Express and some 
+      other modern programs. Plus common CooControls features like 
+      wallpaper, transparency etc. Also TCoolSpeedButton component
+      used in TCoolPanel.
+    + Added new TCoolCheckRadioBox control. Incapsulates features of 
+      both TCheckBox and TRadioButton controls among with some advanced
+      features. 3D captions, transparency etc.
+    + TDBCoolCheckRadioBox is data aware version of TCoolCheckRadioBox 
+      added.
+    + Added new TCoolGroupBox control provides with the set of advanced
+      properties. Supports wallpaper, transparency etc.
+    + New methods of TDesktop component.
+    * All classes use much less resources now. Actually if you do not plan
+      to use wallpapers these highly advanced controls use as much resources 
+      as standard ones.  
+    * Transparency realisation rewritten. Transparent controls painted
+      faster now and do not use additional resources to support 
+      transparency.
+    * Fixed few minor problems found from previous releases. Nothing 
+      serious.
+
+  Version 1.06 6-Nov-1998
+    + LightColorControl property of TCoolListBox / TCoolComboBox. 
+      If False all Delphi predefined colors will be used.
+    + TColorDialog added when color control style selected. 
+      Ctrl+Enter will call dialog and selected color will be added
+      to the control.
+    + TFontDialog added when font control style selected. 
+      Ctrl+Enter will call dialog and selected font will be set to
+      FontValue property.
+    + FontAutoUpdate property of TCoolListBox / TCoolComboBox. 
+      When true and control if font select one after specifying
+      FontValue controls font will be changed to match FontValue.
+    + Disabled state of all contros handled properly now. For both
+      text and images.
+    + AutoLoad property of TMessageTracer. If True then component's
+      form will be loaded by default on startup and there is no need
+      to call Execute method.
+    + New methods of TDesktop. For registering / removing file types
+      in Windows.
+    + New package CoolUtilities added. Should be installed before
+      CoolControls. It was added because CoolUtilities being shared
+      between CoolControl and CoolMenus now.
+    * Some minor bugs fixed.
+
+  Version 1.05a 19-Oct-98
+    + Printer control added. (I.e. Coollistbox/CoolCombobox will
+      show all installed printers.
+    + Fixed bug with painting in 256 color/High color mode.
+    + Fixed bug with transparency (when tansparent control was 
+      not initially visible it used wrong background).
+    + Number of minor bug fixes and inprovenments.
+ 
+  Version 1.05 12-Oct-98
+    + Drawing speed increased. Now advanced controls will be drawn
+      almost as fast as standard ones.
+    + Transparency for all controls including forms.
+    + More methods of TCoolStringGrid.
+    + More methods of TDesktop.
+    * Some minor problems fixed.
+
+  Version 1.04 21-Sep-98
+    + TCoolListBox and TCoolComboBox when Columns value is "0" have 
+      horizontal scroll bar now. It is visible when width of some 
+      items' text is greater than width of control itself.
+    + TCoolComboBox has ListBoxWidth property that controls width of the
+      list box part of control.
+    + Wallpaper for TCoolStringGrid control. For all and selected rows etc.
+    + TCoolForm become TCoolFormHook component and so did TMDICoolForm.
+    + New classes TCoolLabel and TDBCoolText. With all range of properties
+      include 3D view, bevels and wallpaper.
+    + TDesktop has properties for changing color mode, display resolution 
+      and Windows restarting.
+    * Fixed bug in TCoolComboBox when it caused exception while being 
+      removed from form in design time.     
+
+  Version 1.03a 25-Aug-98
+    * Fixed small problem with font selection control from previous 
+      release.
+
+  Version 1.03 23-Aug-98
+    + Many changes in this release: Wallpaper in list and comboboxes
+      will not flick anymore.
+    + Added color selection type controls
+    + Added font selection type controls
+    + Added checkmarks type controls
+    + Added TCoolStringGrid control - advanced string grid with lots of
+      useful features.
+    + TCoolListBox and TCoolStringGrid may have caption and can be 
+      dragged even in run-time using these captions.
+    + Wallpaper, color and text color for caption can be selected.
+    + Hot tray for listboxes.
+    + New Options flags and properties.
+
+  Version 1.02 9-Jun-98
+    + Added new Options' flags:
+      ocFlatBorder, ocHighlightFlat.
+    + Added new classes:
+      TCoolEdit, TCoolEditBtn, TDesktop.
+    + Added database versions of all classes.
+    + Added TMessageTracer component.
+
+  Version 1.01 15-Jan-98
+    + Added new flas to Options property:
+      oc3dMDIForm, ocWallpaperForMDIChildren, ocNoFormCaption, 
+      ocNoMDIChildrensCaptions, ocDragUsingClientArea.
+      Read help to learn what they been added for.
+    * Code speeded up. And rewriten TCoolForm's implementation.
+    * Changed options flags' names (for compatibility with CoolMenus).
+
+  Version 1.0   2-Jan-98
+      Initial release

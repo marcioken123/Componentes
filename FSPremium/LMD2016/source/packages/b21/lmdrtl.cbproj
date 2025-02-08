@@ -1,0 +1,181 @@
+	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{12B75F85-30DE-4C42-B1B6-9AF4ABE56B35}</ProjectGuid>
+			<ProjectVersion>13.4</ProjectVersion>
+			<FrameworkType>VCL</FrameworkType>
+			<MainSource>lmdrtl.cpp</MainSource>
+			<Base>True</Base>
+			<Config Condition="'$(Config)'==''">build</Config>
+			<Platform Condition="'$(Platform)'==''">Win32</Platform>
+			<TargetedPlatforms>3</TargetedPlatforms>
+			<AppType>Library</AppType>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+			<Base_Win32>true</Base_Win32>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+                <PropertyGroup Condition="'$(Config)'=='build' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+			<Cfg_1_Win32>true</Cfg_1_Win32>
+			<CfgParent>Cfg_1</CfgParent>
+			<Cfg_1>true</Cfg_1>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+                        <DllSuffix>210</DllSuffix>
+                        <RuntimeOnlyPackage>true</RuntimeOnlyPackage>
+                        <DesignOnlyPackage>false</DesignOnlyPackage>
+                        <PackageImports>rtl.bpi;vcl.bpi;vclx.bpi</PackageImports>
+                        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+			<VerInfo_Keys>CompanyName=LMD Innovative;FileDescription=LMD 2016 - Runtime Library;FileVersion=2016.5.0;InternalName=;LegalCopyright=Copyright (c) LMD Innovative;LegalTrademarks=;OriginalFilename=;ProductName=LMD VCL Series;ProductVersion=2016.5.0;Comments=</VerInfo_Keys>
+			<VerInfo_Locale>1033</VerInfo_Locale>
+			<DCC_HppOutput>..\..\build\$(Platform)</DCC_HppOutput>
+			<IncludePath>..\..\;$(IncludePath)</IncludePath>
+			<ILINK_LibraryPath>..\..\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<ProjectType>CppPackage</ProjectType>
+			<ILINK_GenerateImportLibrary>true</ILINK_GenerateImportLibrary>
+			<DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
+			<ILINK_GenerateLibFile>true</ILINK_GenerateLibFile>
+			<Multithreaded>true</Multithreaded>
+			<_TCHARMapping>char</_TCHARMapping>
+			<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
+			<DynamicRTL>true</DynamicRTL>
+			<UsePackages>true</UsePackages>
+			<IntermediateOutputDir>..\..\build\$(Platform)</IntermediateOutputDir>
+			<BCC_wpar>false</BCC_wpar>
+			<BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
+			<BCC_ExtendedErrorInfo>true</BCC_ExtendedErrorInfo>
+			<ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\release\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
+                        
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base_Win32)'!=''">
+			<IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
+			<DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+		</PropertyGroup>
+		<ItemGroup>
+			<CppCompile Include="lmdrtl.cpp">
+				<BuildOrder>0</BuildOrder>
+			</CppCompile>
+			<PackageImport Include="rtl.bpi" />
+      <PackageImport Include="vcl.bpi" />
+      <PackageImport Include="vclx.bpi" />
+      <DelphiCompile Include="..\..\intfLMDBase.pas" />
+      <DelphiCompile Include="..\..\LMDArray.pas" />
+      <DelphiCompile Include="..\..\LMDArrayUtils.pas" />
+      <DelphiCompile Include="..\..\LMDBitmap.pas" />
+      <DelphiCompile Include="..\..\LMDBuffer.pas" />
+      <DelphiCompile Include="..\..\LMDBinaryTree.pas" />
+      <DelphiCompile Include="..\..\LMDClass.pas" />
+      <DelphiCompile Include="..\..\LMDCustomComponent.pas" />
+      <DelphiCompile Include="..\..\LMDCustomIniComponent.pas" />
+      <DelphiCompile Include="..\..\LMDDateTime.pas" />
+      <DelphiCompile Include="..\..\LMDDebugUnit.pas" />
+      <DelphiCompile Include="..\..\LMDDynFIFOBuffer.pas" />
+      <DelphiCompile Include="..\..\LMDDynLIFOBuffer.pas" />
+      <DelphiCompile Include="..\..\LMDIniCtrl.pas" />
+      <DelphiCompile Include="..\..\LMDList.pas" />
+      <DelphiCompile Include="..\..\LMDHashTable.pas" />
+      <DelphiCompile Include="..\..\LMDMemoryMappedStream.pas" />
+      <DelphiCompile Include="..\..\LMDObject.pas" />
+      <DelphiCompile Include="..\..\LMDObjectList.pas" />
+      <DelphiCompile Include="..\..\LMDProcs.pas" />
+      <DelphiCompile Include="..\..\LMDQueue.pas" />
+      <DelphiCompile Include="..\..\LMDRTLConst.pas" />
+      <DelphiCompile Include="..\..\LMDShSpinEdit.pas" />
+      <DelphiCompile Include="..\..\LMDShUtils.pas" />
+      <DelphiCompile Include="..\..\LMDStack.pas" />
+      <DelphiCompile Include="..\..\LMDStrings.pas" />
+      <DelphiCompile Include="..\..\LMDSysIn.pas" />
+      <DelphiCompile Include="..\..\LMDThreads.pas" />
+      <DelphiCompile Include="..\..\LMDTypes.pas" />
+      <DelphiCompile Include="..\..\LMDUnicode.pas" />
+      <DelphiCompile Include="..\..\LMDUnicodeControl.pas" />
+      <DelphiCompile Include="..\..\LMDUnicodeStrings.pas" />
+      <DelphiCompile Include="..\..\LMDUnicodeEncodings.pas" />
+      <DelphiCompile Include="..\..\LMDUtils.pas" />
+      <DelphiCompile Include="..\..\LMDDateUtils.pas" />
+      <DelphiCompile Include="..\..\LMDFiles.pas" />
+      <DelphiCompile Include="..\..\LMDRegExpr.pas" />
+      <DelphiCompile Include="..\..\LMDInprocHookAPI.pas" />
+      <DelphiCompile Include="..\..\LMDXML.pas" />
+      <DelphiCompile Include="..\..\LMDZLib.pas" />
+      <DelphiCompile Include="..\..\LMDZCommonUnit.pas" />
+      <DelphiCompile Include="..\..\LMDZCompressUnit.pas" />
+      <DelphiCompile Include="..\..\LMDZUnCompressUnit.pas" />
+      <DelphiCompile Include="..\..\LMDSvcPvdr.pas" />
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
+			<Borland.ProjectType>CppPackage</Borland.ProjectType>
+			<BorlandProject>
+				<CPlusPlusBuilder.Personality>
+					<Source>
+						<Source Name="MainSource">lmdrtl.cpp</Source>
+					</Source>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1049</VersionInfo>
+						<VersionInfo Name="CodePage">1251</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName">LMD Innovative</VersionInfoKeys>
+						<VersionInfoKeys Name="FileDescription">LMD 2016 - Runtime Library</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">2016.5</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright">LMD Innovative</VersionInfoKeys>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName">LMD 2016 - Runtime Library</VersionInfoKeys>
+						<VersionInfoKeys Name="ProductVersion">2016.5</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<ProjectProperties>
+						<ProjectProperties Name="AutoShowDeps">False</ProjectProperties>
+						<ProjectProperties Name="ManagePaths">True</ProjectProperties>
+						<ProjectProperties Name="VerifyPackages">True</ProjectProperties>
+					</ProjectProperties>
+				</CPlusPlusBuilder.Personality>
+				<Deployment/>
+				<Platforms>
+					<Platform value="OSX32">False</Platform>
+					<Platform value="Win32">True</Platform>
+				</Platforms>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')" Project="$(BDS)\Bin\CodeGear.Cpp.Targets"/>
+		<Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+	</Project>

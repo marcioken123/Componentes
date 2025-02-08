@@ -1,0 +1,4 @@
+T+: TControlSide
+T+: TShadowWindow
+        P+: Control
+        P+: Side

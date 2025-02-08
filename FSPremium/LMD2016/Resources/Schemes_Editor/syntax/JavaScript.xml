@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SchemeList root='Main'>
+
+      <Scheme name='Text' inherit='Numbers'>
+            <Regex token0='email'>
+                [_a-zA-Z\d\-\.]{1,40}
+                @ 
+                ([_ a-z A-Z \d \-]+ 
+                (\. [_ a-z A-Z \d \-]+ )+ )
+            </Regex>                
+      </Scheme>
+
+      <Scheme name='Numbers'>
+        <Regex token0='number'>\b (0x \d+ [lL]? | \d+ (e \d*)? [lLdDfF]? ) \b</Regex>
+        <Regex token0='number'>\b [+\-]? \d+ (\. \d+)? ([eE] [+\-]? \d+) \b</Regex>
+      </Scheme>
+
+      <Scheme name='Comment' inherit='Text' defaultToken='comment'>
+        <Regex token0='st' regex=' \/\* | \*\/   ' />                
+                
+         <SyntaxBlock capture="true">
+            <Start> st:/*  </Start>
+            <End> st:*/  </End>
+         </SyntaxBlock>                
+      </Scheme>
+
+      <Scheme name='String' inherit='Text' defaultToken='string'>
+        <Regex token0='escaped' priority='10' regex='\\\\' />      
+        <Regex token0='escaped' regex='\\[a-z &quot; ]' />    
+        <Regex token0='escaped' regex='\\0x[a-fA-F0-9]+' />
+      </Scheme>
+
+      <Scheme name='BadString' inherit='String' defaultToken='badString'>
+      </Scheme>
+
+      <Scheme name='StringFind'>
+        <Regex innerScheme='BadString' > 
+            (&quot;|&apos;) ([^\\] | \\ .)*? $ 
+        </Regex>
+        
+        <Regex innerScheme='String' priority='30'> 
+            (&quot;|&apos;) ([^\\] | \\ .)*? \1
+        </Regex>
+        
+      </Scheme>
+
+    <Scheme name='RegexFind' defaultToken='defaultEmbed'>
+        <Regex token0='escaped' regex='\\/' />            
+    </Scheme>
+    
+    <Scheme name='RegexSubst' inherit='RegexFind' defaultToken='defaultEmbed'>
+        <Regex token0='escaped' regex='\$\d' />                
+    </Scheme>
+
+    <Scheme name='DefaultEmpty' defaultToken='default' />
+    
+    <Scheme name='Main' inherit='StringFind' 
+            defaultToken='default'           
+
+            keywordsIgnoreCase='false'
+    >
+    <KeywordRegex>\b[a-zA-Z_][\w_]*\b</KeywordRegex>
+
+    <Keywords>
+            Boolean
+            Array
+            join length reverse sort
+            NaN 
+            null 
+            true false 
+            Infinity 
+            undefined 
+            Break 		continue 			for  in  if else return  while 
+            
+            function new this var with  arguments 
+            
+            Global escape unescape eval Number 
+            Object new instanceof  delete typeof void 			
+            throw  try catch finally with
+    </Keywords>
+
+
+    <Regex innerScheme='Comment' regex='//.*$' />
+
+
+    <RegexBlock start='\/\*' end='\*\/' end_token0='comment' 
+                innerScheme='Comment'/>
+
+    <Regex token0='symbol' regex='[   \}   \{    \]    \[  \( \) &gt; &lt; ]' />
+    <Regex token0='symbol' regex='[-:?\~=+!^;,]' />
+
+    <RegexBlock innerScheme='DefaultEmpty' 
+                start_token0='symbol'
+                end_token0='symbol' 
+                priority='100'
+                chainBlock='RegexFindEnd'
+    >
+
+        <Start> \s* ([ =( ]) \s* (?= / )  </Start>        
+        <End> (?= / )  </End>        
+    </RegexBlock>
+    
+    <ChainBlock name='RegexFindEnd' 
+                innerScheme='RegexFind' 
+                end_token0='regexEnd' 
+                chainBlock='RegexFindEnd2'
+    >
+        <End> / </End>        
+    </ChainBlock>
+
+    <ChainBlock name='RegexFindEnd2' 
+                innerScheme='RegexFind' 
+                end_token0='regexEnd' 
+    >
+        <End> /[igmx]* </End>        
+    </ChainBlock>
+        
+    <ChainBlock name='RegexSubstEnd' 
+                end_token0='regexEnd' 
+                innerScheme='RegexSubst'  >
+        <End> /[igmx]* </End>        
+    </ChainBlock>
+    
+    <RegexBlock innerScheme='RegexFind' 
+                start_token0='regexStart' 
+                end_token0='regexEnd' 
+                chainBlock='RegexSubstEnd'>
+
+        <Start> s/  </Start>        
+        <End> /[igmx]* </End>        
+    </RegexBlock>
+
+
+    <SkipSyntaxToken token='comment' />
+
+    <SyntaxBlock capture="true">
+        <Start> kw:function  id  
+                sym:(  
+                        [^ sym:;    sym:}   sym:{   ]*  
+                sym:) 
+                sym:{
+        </Start>
+
+        <End> sym:\}  </End>
+    </SyntaxBlock>
+
+    <SyntaxBlock capture="true" priority='10'>
+        <Start>                 
+            [ kw:while  kw:do kw:if  kw:else  kw:try kw:catch  kw:finally  kw:switch ]
+                                
+            [^ sym:;  sym:}  ]*?    sym:\{
+        </Start>
+
+        <End> sym:}  </End>
+    </SyntaxBlock>
+        
+
+    <SyntaxBlock capture="true" priority='100'  startGroupUsed='1'>
+        <Start>
+                    (  [ kw:while  kw:if  kw:with ]  sym:(   [^  sym:;   sym:}    sym:{   ]+ sym:)   )    
+
+                    [^ sym:{  sym:}  sym:; ]+ sym:;
+
+            
+        </Start>
+
+        <End> sym:;  </End>
+    </SyntaxBlock>
+
+    <SyntaxBlock capture="false" priority='0'  >
+        <Start> sym:{  </Start>
+        <End> sym:}  </End>
+    </SyntaxBlock>
+
+    </Scheme>
+</SchemeList>

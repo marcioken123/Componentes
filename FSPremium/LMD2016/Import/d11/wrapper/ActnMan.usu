@@ -1,0 +1,205 @@
+T+: TActionClientItemClass
+T+: TActionClientsClass
+T+: TActionBarsClass
+T+: TActionBarItemClass
+T+: TGetBarsClassEvent
+T+: TGetBarItemClassEvent
+T+: TGetClientsClassEvent
+T+: TGetClientItemClassEvent
+T+: TStyleChanged
+T+: TActionProc
+T+: TCustomActionControlClass
+T+: TCustomColorMapClass
+T+: TActionBarStyle
+T+: TCustomActionManager
+        P+: Loading
+        P+: OnGetBarItemClass
+        P+: OnGetBarsClass
+        P+: OnGetClientsClass
+        P+: OnGetClientItemClass
+        P+: ActionBars
+        P+: DefaultActionBars
+        P+: LinkedActionLists
+        P+: FileName
+        P+: Images
+        P+: PrioritySchedule
+        P+: Style
+        P+: OnStyleChanged
+T+: TActionManager
+        P+: FileName
+        P+: ActionBars
+        P+: LinkedActionLists
+        P+: Images
+        P+: PrioritySchedule
+        P+: State
+        P+: Style
+        P+: OnChange
+        P+: OnExecute
+        P+: OnGetBarItemClass
+        P+: OnGetBarsClass
+        P+: OnGetClientsClass
+        P+: OnGetClientItemClass
+        P+: OnUpdate
+        P+: OnStateChange
+        P+: OnStyleChanged
+T+: TActionListItem
+        P+: ActionList
+        P+: Caption
+T+: TActionListCollection
+        P+: ActionManager
+        P+: ListItems
+T+: TActionClientsCollection
+        P+: ActionClients
+        P+: ParentItem
+        P+: ActionManager
+        P+: AutoHotKeys
+        P+: Customizable
+T+: TBackgroundLayout
+T+: TChangesAllowed
+T+: TChangesAllowedSet
+T+: TActionClient
+        P+: ActionBar
+        PW: Accessible
+        P+: ChildActionBar
+        P+: HasItems
+        P+: OwningCollection
+        P+: ChangesAllowed
+        P+: Color
+        P+: ContextItems
+        P+: Background
+        P+: BackgroundLayout
+        P+: Items
+        P+: Tag
+        P+: Visible
+T+: TActionBarItem
+        P+: ActionBars
+        P+: ActionBar
+        P+: AutoSize
+        P+: GlyphLayout
+T+: TActionBars
+        P+: ActionBars
+        P+: Customizable
+        P+: HintShortCuts
+        P+: SessionCount
+        P+: ShowHints
+T+: TActionClientClass
+T+: TCaptionOptions
+T+: TActionClients
+        P+: ActionClients
+        P+: ActionManager
+        P+: AutoHotKeys
+        P+: Customizable
+        P+: HideUnused
+        P+: CaptionOptions
+        P+: SmallIcons
+T+: TActionClientLinkClass
+T+: TActionClientLink
+T+: TMergeRange
+T+: TActionClientItem
+        P+: ActionClients
+        P+: ActionLink
+        P+: CheckUnused
+        P+: Control
+        P+: ParentItem
+        P+: Separator
+        P+: ShortCutText
+        P+: Action
+        P+: Caption
+        P+: HelpContext
+        P+: ImageIndex
+        P+: MergeIndex
+        P+: LastSession
+        P+: ShowCaption
+        P+: ShowGlyph
+        P+: ShowShortCut
+        P+: ShortCut
+        P+: UsageCount
+T+: TActionDragBaseClass
+        P+: ActionManager
+T+: TCustomActionClass
+T+: TActionDragObject
+        P+: ActionCount
+        P+: Actions
+T+: TCategoryDragObject
+        P+: Category
+T+: TActionItemDragObject
+        P+: ClientItem
+TE: TColorMapUpdateProc
+T+: TCustomActionBarColorMap
+        P+: BtnFrameColor
+        P+: BtnSelectedColor
+        P+: BtnSelectedFont
+        P+: Color
+        P+: DesignFocus
+        P+: DisabledColor
+        P+: DisabledFontColor
+        P+: DisabledFontShadow
+        P+: FontColor
+        P+: FrameTopLeftInner
+        P+: FrameTopLeftOuter
+        P+: FrameBottomRightInner
+        P+: FrameBottomRightOuter
+        P+: HighlightColor
+        P+: HotColor
+        P+: HotFontColor
+        P+: MenuColor
+        P+: SelectedColor
+        P+: SelectedFontColor
+        P+: ShadowColor
+        P+: UnusedColor
+        P+: OnColorChange
+T+: TCustomActionBarClass
+T+: TBarOrientation
+T+: TControlCreatedEvent
+T+: TGetControlClassEvent
+T+: TBarEdge
+T+: TCustomActionBar
+        P+: HRowCount
+        P+: Items
+        P+: VRowCount
+        P+: Widest
+        P+: ActionManager
+        P+: ActionClient
+        P+: AllowHiding
+        P+: AutoSizing
+        P+: Caption
+        P+: Canvas
+        P+: Color
+        P+: ColorMap
+        P+: ContextBar
+        P+: Designable
+        P+: Font
+        P+: DesignMode
+        P+: HorzMargin
+        P+: HorzSeparator
+        P+: Orientation
+        P+: PersistentHotKeys
+        P+: ActionControls
+        P+: Spacing
+        P+: VertMargin
+        P+: VertSeparator
+        P+: OnControlCreated
+        P+: OnGetControlClass
+        P+: OnPaint
+T+: TCMItemMsg
+T+: TCustomActionControl
+        P+: GlyphPos
+        P+: ActionBar
+        P+: ActionClient
+        P+: Caption
+        P+: DropPoint
+        P+: GlyphLayout
+        P+: Margins
+        P+: Selected
+        P+: Separator
+        P+: ShowCaption
+        P+: ShowShortCut
+        P+: SmallIcon
+        P+: Spacing
+        P+: TextBounds
+        P+: Transparent
+        P+: OnClick
+TE: IActionBarDesigner
+T+: TXToolDockForm
+T+: TActionBarStyleList
+        P+: Style

@@ -1,0 +1,26 @@
+T+: TChangeLink
+        P+: OnChange
+        P+: Sender
+T+: TImageListHandle
+T+: TDrawingStyle
+T+: TImageType
+T+: TResType
+T+: TOverlay
+T+: TLoadResource
+T+: TLoadResources
+T+: TImageIndex
+T+: TColorDepth
+T+: TCustomImageList
+        P+: Count
+        P+: Handle
+        P+: AllocBy
+        P+: BlendColor
+        P+: BkColor
+        P+: DrawingStyle
+        P+: Height
+        P+: ImageType
+        P+: Masked
+        P+: ShareImages
+        P+: Width
+        P+: OnChange
+        P+: ColorDepth

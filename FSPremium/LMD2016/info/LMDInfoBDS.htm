@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<meta http-equiv="Content-Language" content="en-us">
+<TITLE>LMD VCL&nbsp; - Additional Infos (C++ User)</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+</HEAD>
+<BODY>
+<STYLE>BODY {
+	FONT-SIZE: 70%; BACKGROUND: #ffffff; FONT-FAMILY: Verdana, Arial, Helvetica, MS Sans Serif
+}
+A:link {
+	COLOR: #0000ff; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #0000ff; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #ff0000; TEXT-DECORATION: underline
+}
+TABLE {
+	FONT-SIZE: 100%
+}
+HR {
+	WIDTH: 25%; COLOR: red; TEXT-ALIGN: left
+}
+</STYLE>
+<p>
+<FONT face=verdana size=+2><a name="Top"></a>LMD 2016 VCL - Additional Infos 
+(C++ User)<br>
+</FONT>
+<FONT size=-2>
+
+(© by LMD Innovative, (<A href="http://www.lmd.de/">http://www.lmd.de</A>
+ or <A href="http://www.lmdinnovative.com/">http://www.lmdinnovative.com</A>)</font></p>
+<HR>
+
+<p>
+<FONT color=#000080 size="1"><a href="_readme.htm">[Main]</a></FONT><br>
+<font size="2" face="Verdana"><br>
+<br>
+<a href="#HowTo">How to use LMD VCL packages in C++ personality </a><br>
+</font>
+<font size="2" face="Verdana"><a href="#Webpack">WebPack / TextPack notes</a></font><br>
+<font face="Verdana" size="3"><b><br>
+&nbsp;</b></font></p>
+<p><b>
+<font size="3" face="Verdana"><a name="HowTo"></a>How to use LMD VCL packages in 
+C++ Builder <br>
+</font></b><font size="2" face="Verdana">Please make sure that following 
+conditions are valid:</font></p>
+<ul>
+	<li><font face="Verdana" size="2">IDE has knowledge of location of LMD 
+	*.hpp files. In C++ options within Tools|Environment options-dialog 
+	Search/Include path settings must contain location of LMD VCL lib/source 
+	files. If this condition is not met, compiler/linker can not access header 
+	files (this is e.g. cause of problem, when IDE adds only *.h files to header 
+	files of your units when LMD-Tools components are added onto your forms).</font></li>
+	<li><font face="Verdana" size="2">Because of the fact that no longer <b>*.obj
+	</b>files are shipped in precompiled packages, you have to make sure that 
+	*.lib file of the packages you want to use can be referenced by the IDE. <br>
+	If you get a &quot;<b>Can't find XXXXX.obj&quot;</b> linker error, IDE has NO access 
+	to required lib file (error message does NOT mean, that actually *.obj files 
+	are required. Simply make sure that LIB files can be accessed by IDE. This 
+	can be done by specifying correct project option settings OR adding the 
+	corresponding *.lib file to your project).</font></li>
+</ul>
+<p><FONT color=#000080 size="1" face="Verdana"><a href="#Top">[Top]</a></FONT></p>
+<p><br>
+<b><font size="3" face="Verdana"><a name="Webpack"></a>WebPack and TextPack 
+notes</font></b></p>
+<ul>
+	<li><font face="Verdana" size="2"><b>WebPack:</b> If you encounter linker 
+	errors like </font><font size="2" face="Courier New">[Linker Error] 
+	Unresolved external &quot;InternetCloseHandle&quot; referenced from...</font><font face="Verdana" size="2"><br>
+	Simply add wininet.lib to your project (file can be found in \lib directory 
+	of your C++ Builder / BDS / CRS installation). In recent IDEs you can also 
+	add <br>
+	</font><font face="Courier New" size="2">#pragma link &quot;wininet.lib&quot; </font>
+	<font face="Verdana" size="2">in your code.</font></li>
+	<li><font face="Verdana" size="2"><b>TextPack:</b> When Runtime Packages are 
+	used (Project options, &quot;Build with runtime packages&quot;), it must be assured 
+	that lmdparse4rt_XX (XX represents the compiler version) is mentioned before 
+	the TextPack packages. Otherwise an exception during application start will 
+	occur.</font><br>
+	<b><font size="3" face="Verdana"><br>&nbsp;</font></b></li>
+</ul>
+<HR>
+
+<P><FONT color=#000080>©&nbsp;  </FONT><FONT color=#0000FF>by</FONT><FONT color=#000080> <A 
+href="http://www.lmd.de/">LMD Innovative</A> Germany<BR>All other trademarks are 
+acknowledged.</FONT> </P></BODY></HTML>

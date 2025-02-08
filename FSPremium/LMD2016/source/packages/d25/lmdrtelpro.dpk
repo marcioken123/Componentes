@@ -1,0 +1,58 @@
+package lmdrtelpro;
+
+{$R *.res}
+{$R *.otares}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'LMD ElPack - Professional Components'}
+{$LIBSUFFIX '250'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  lmdrtl,
+  rtl,
+  vcl,
+  vclx,
+  lmdrtrtlx,
+  lmdrtprint,
+  lmdrtelcore;
+
+contains
+  ElCapPropDlg in '..\..\ElCapPropDlg.pas',
+  ElIniInspector in '..\..\ElIniInspector.pas',
+  ElInspector in '..\..\ElInspector.pas',
+  ElInspectorEditors in '..\..\ElInspectorEditors.pas',
+  ElPictPropDlg in '..\..\ElPictPropDlg.pas',
+  ElPrinter in '..\..\ElPrinter.pas',
+  ElPrinterPreview in '..\..\ElPrinterPreview.pas',
+  LMDElProConst in '..\..\LMDElProConst.pas',
+  ElRTTIInspector in '..\..\ElRTTIInspector.pas',
+  ElShellCtl in '..\..\ElShellCtl.pas',
+  ElTreePrinter in '..\..\ElTreePrinter.pas',
+  ElXTreePrinter in '..\..\ElXTreePrinter.pas',
+  ElTreeMLGen in '..\..\ElTreeMLGen.pas';
+
+end.

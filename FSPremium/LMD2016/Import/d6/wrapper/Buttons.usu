@@ -1,0 +1,61 @@
+T+: TButtonLayout
+T+: TButtonState
+T+: TButtonStyle
+T+: TNumGlyphs
+T+: TSpeedButtonActionLink
+T+: TSpeedButton
+        P+: MouseInControl
+        P+: Action
+        P+: AllowAllUp
+        P+: Anchors
+        P+: BiDiMode
+        P+: Constraints
+        P+: GroupIndex
+        P+: Down
+        P+: Caption
+        P+: Enabled
+        P+: Flat
+        P+: Font
+        P+: Glyph
+        P+: Layout
+        P+: Margin
+        P+: NumGlyphs
+        P+: ParentFont
+        P+: ParentShowHint
+        P+: ParentBiDiMode
+        P+: PopupMenu
+        P+: ShowHint
+        P+: Spacing
+        P+: Transparent
+        P+: Visible
+        P+: OnClick
+        P+: OnDblClick
+        P+: OnMouseDown
+        P+: OnMouseMove
+        P+: OnMouseUp
+T+: TBitBtnKind
+T+: TBitBtn
+        P+: Action
+        P+: Anchors
+        P+: BiDiMode
+        P+: Cancel
+        P+: Caption
+        P+: Constraints
+        P+: Default
+        P+: Enabled
+        P+: Glyph
+        P+: Kind
+        P+: Layout
+        P+: Margin
+        P+: ModalResult
+        P+: NumGlyphs
+        P+: ParentShowHint
+        P+: ParentBiDiMode
+        P+: ShowHint
+        P+: Style
+        P+: Spacing
+        P+: TabOrder
+        P+: TabStop
+        P+: Visible
+        P+: OnEnter
+        P+: OnExit

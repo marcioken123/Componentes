@@ -1,0 +1,56 @@
+Release history:
+
++ News
+* Fixes.
+
+  Version 1.05  16-Oct-2002
+    + TCoolDBComparer component added. Can be used to compare the tables or
+      do the intelligent search.
+    + C++Builder6 version of the package added.
+    + Delphi7 version of the package added.
+
+  Version 1.04  12-Apr-2001
+    + TCoolDSort component added. Easy way to sort tables or entire database
+      at once.
+    + TCoolBDEInformant component added. Get the information about BDE version
+      you have.
+    + Documentation rewritten. RTF, HTML formats. On-line help available at
+      http://www.cooldev.com/db/help/      
+    * Fixes and improvements in many components. Indexes updating routines
+      optimized.
+   
+  Version 1.03  1-Oct-2000
+    + Added TCoolDBUtility component. Verifies and rebuilds Paradox table(s). 
+      Requires TUTIL32.DLL
+    + Fixed problems with the primary index in the indexes rebuilding routines. 
+      Thanks to Deniel Meure.
+
+  Version 1.02 12-Jun-2000
+    + Added TCoolDBTablesCompare component. Compares two tables in many 
+      ways. Returns information about the differences and similarities.
+    + Added TCoolDBDatabasesCompare component. Compares two databases in 
+      many ways. Returns information about the differencies and similarities.
+    + TCoolDBUpdater2 now supports Referential Integrity. It will be changed
+      for a target database to match that of source.
+    + TCoolDBUpdater2 now adds (inserts) fields into table in exactly the 
+      same order they appears in source table. So no more problems with
+      the key fields in Paradox tables.
+    + TCoolDBUpdater2 now can update database based on options specified.
+    + Changed format of the file TCoolDBStructureExporter saves database
+      structure in. 
+    + CBuilder5 version added.
+    + New setup program.
+    * Few problems fixed.
+
+  Version 1.01 29-Sep-1999
+    + Speed improved in serious way and some parts rewritten completely.
+    + New TCoolDBPack component. Allows to compress entire database (all
+      its tables).
+    + PackOnProgress property of TCoolDBBackup. Allows to pack table while 
+      backup process in progress.
+    + Delphi 5 version added and structure of the package changed.
+    * Number of problems related to work with the indexes fixed. They are 
+      updated in such a way that target structure matches source one exactly.
+
+  Version 1.0  29-Jun-1999
+    + Initial release.

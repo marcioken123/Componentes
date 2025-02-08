@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="lmdrtrtf60.bpl"/>
+    <OBJFILES value="lmdrtrtf.obj ..\..\LMDRTFActions.obj ..\..\LMDRTFBase.obj ..\..\LMDRTFBookMarkDialog.obj ..\..\LMDRTFCharmapDialog.obj ..\..\LMDRTFConst.obj ..\..\LMDRTFFontComboBox.obj ..\..\LMDRTFFontDialog.obj ..\..\LMDRTFHyperText.obj ..\..\LMDRTFHyperTextStorage.obj ..\..\LMDRTFInt.obj ..\..\LMDRTFLabel.obj ..\..\LMDRTFLinkDialog.obj ..\..\LMDRTFPageDialog.obj ..\..\LMDRTFOleContainer.obj ..\..\LMDRTFParagraphProp.obj ..\..\LMDRTFPrintPreview.obj ..\..\LMDRTFPrintPreviewMode.obj ..\..\LMDRTFRichEdit.obj ..\..\LMDRTFRuler.obj ..\..\LMDRTFStatisticsDialog.obj ..\..\LMDRTFStorage.obj ..\..\LMDRTFSyntaxEdit.obj ..\..\LMDRTFTabsProp.obj ..\..\LMDRTFRichDialog.obj ..\..\LMDRTFRichDialogForm.obj ..\..\LMDRTFInsertDateTimeDlg.obj ..\..\LMDRTFImageDataObject.obj ..\..\LMDRichEditPrintTask.obj"/>
+    <RESFILES value="lmdrtrtf.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) ..\..\LMDRTFBookMarkDialog.dfm ..\..\LMDRTFCharmapDialog.dfm ..\..\LMDRTFLinkDialog.dfm ..\..\LMDRTFParagraphProp.dfm ..\..\LMDRTFPrintPreview.dfm ..\..\LMDRTFPrintPreviewMode.dfm ..\..\LMDRTFStatisticsDialog.dfm ..\..\LMDRTFTabsProp.dfm ..\..\LMDRTFInsertDateTimeDlg.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value="rtl.lib"/>
+    <PACKAGES value="lmdrtl.bpi rtl.bpi vcl.bpi vclx.bpi lmdrtrtlx.bpi lmdrtprint.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value=""/>
+    <SYSDEFINES value="_RTLDLL;NO_STRICT;USEPACKAGES"/>
+    <MAINSOURCE value="lmdrtrtf.cpp"/>
+    <INCLUDEPATH value="$(BCB)\include;$(BCB)\include\vcl;"/>
+    <LIBPATH value="$(BCB)\lib\obj;$(BCB)\lib;"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I$(BCB)\include -I$(BCB)\include\vcl -src_suffix cpp -boa"/>
+    <CFLAG1 value="-O2 -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -a8 -b- -k- -vi -c -tWM"/>
+    <PFLAGS value="-N2..\..\build -N0..\..\build -NH..\..\build -$Y- -$L- -$D- -$A8 -v -JPHNE -M "/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zn"/>
+    <LFLAGS value="-I..\.. -D&quot;LMD-Tools RichPack Components&quot; -aa -Tpp -Gpr -x -Gn -Gl -Gi"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0pkg32.obj $(PACKAGES) Memmgr.Lib sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib "/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="lmdrtrtf.cpp" FORMNAME="" UNITNAME="lmdrtrtf" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtrtf.res" FORMNAME="" UNITNAME="lmdrtrtf.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtl.bpi" FORMNAME="" UNITNAME="lmdrtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="rtl.bpi" FORMNAME="" UNITNAME="rtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vcl.bpi" FORMNAME="" UNITNAME="vcl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vclx.bpi" FORMNAME="" UNITNAME="vclx" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtrtlx.bpi" FORMNAME="" UNITNAME="lmdrtrtlx" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtprint.bpi" FORMNAME="" UNITNAME="lmdrtprint" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTFActions.pas" FORMNAME="" UNITNAME="LMDRTFActions" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTFBase.pas" FORMNAME="" UNITNAME="LMDRTFBase" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTFBookMarkDialog.pas" FORMNAME="LMDRTFBookMarkDialog" UNITNAME="LMDRTFBookMarkDialog" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTFCharmapDialog.pas" FORMNAME="LMDRTFCharmapDialog" UNITNAME="LMDRTFCharmapDialog" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTFConst.pas" FORMNAME="" UNITNAME="LMDRTFConst" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTFFontComboBox.pas" FORMNAME="" UNITNAME="LMDRTFFontComboBox" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTFFontDialog.pas" FORMNAME="" UNITNAME="LMDRTFFontDialog" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTFHyperText.pas" FORMNAME="" UNITNAME="LMDRTFHyperText" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTFHyperTextStorage.pas" FORMNAME="" UNITNAME="LMDRTFHyperTextStorage" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTFInt.pas" FORMNAME="" UNITNAME="LMDRTFInt" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTFLabel.pas" FORMNAME="" UNITNAME="LMDRTFLabel" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTFLinkDialog.pas" FORMNAME="LMDRichfrmLinkDialog" UNITNAME="LMDRTFLinkDialog" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTFPageDialog.pas" FORMNAME="" UNITNAME="LMDRTFPageDialog" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTFOleContainer.pas" FORMNAME="" UNITNAME="LMDRTFOleContainer" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTFParagraphProp.pas" FORMNAME="LMDRichfrmParagraph" UNITNAME="LMDRTFParagraphProp" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTFPrintPreview.pas" FORMNAME="LMDRichfrmPrintPreview" UNITNAME="LMDRTFPrintPreview" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTFPrintPreviewMode.pas" FORMNAME="RTFPrintPreviewMode" UNITNAME="LMDRTFPrintPreviewMode" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTFRichEdit.pas" FORMNAME="" UNITNAME="LMDRTFRichEdit" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTFRuler.pas" FORMNAME="" UNITNAME="LMDRTFRuler" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTFStatisticsDialog.pas" FORMNAME="LMDRTFStatisticsDlg" UNITNAME="LMDRTFStatisticsDialog" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTFStorage.pas" FORMNAME="" UNITNAME="LMDRTFStorage" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTFSyntaxEdit.pas" FORMNAME="" UNITNAME="LMDRTFSyntaxEdit" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTFTabsProp.pas" FORMNAME="LMDRichfrmTabs" UNITNAME="LMDRTFTabsProp" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTFRichDialog.pas" FORMNAME="" UNITNAME="LMDRTFRichDialog" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTFRichDialogForm.pas" FORMNAME="" UNITNAME="LMDRTFRichDialogForm" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTFInsertDateTimeDlg.pas" FORMNAME="frmLMDRichInsertDateTimeDlg" UNITNAME="LMDRTFInsertDateTimeDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRTFImageDataObject.pas" FORMNAME="" UNITNAME="LMDRTFImageDataObject" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDRichEditPrintTask.pas" FORMNAME="" UNITNAME="LMDRichEditPrintTask" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+  <IDEOPTIONS>
+[Version Info Keys]
+CompanyName=LMD Innovative
+FileDescription=LMD-Tools RichPack Components
+FileVersion=2016.5
+InternalName=
+LegalCopyright=© LMD Innovative
+LegalTrademarks=
+OriginalFilename=
+ProductName=LMD-Tools RichPack Components
+ProductVersion=2016.5
+Comments=
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[Linker]
+LibPrefix=
+LibSuffix=60
+LibVersion=
+  </IDEOPTIONS>
+</PROJECT>

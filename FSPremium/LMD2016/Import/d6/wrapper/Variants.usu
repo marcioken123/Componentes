@@ -1,0 +1,11 @@
+T+: TVariantRelationship
+T+: TVarCompareResult
+T+: TCustomVariantType
+        P+: VarType
+T+: TCustomVariantTypeClass
+TE: TVarDataArray
+TE: IVarInvokeable
+T+: TInvokeableVariantType
+TE: IVarInstanceReference
+TE: TAnyProc
+TE: TVarDispProc

@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="lmdrtsys60.bpl"/>
+    <OBJFILES value="lmdrtsys.obj ..\..\LMDSysWindowsObject.obj ..\..\LMDSysDisplayObject.obj ..\..\LMDSysDrive.obj ..\..\LMDSysDriveObject.obj ..\..\LMDSysKeyboard.obj ..\..\LMDSysKeyboardObject.obj ..\..\LMDSysLocaleObject.obj ..\..\LMDSysLog.obj ..\..\LMDSysMemoryObject.obj ..\..\LMDSysMouse.obj ..\..\LMDSysMouseObject.obj ..\..\LMDSysObject.obj ..\..\LMDSysPlusObject.obj ..\..\LMDSysPowerStatusObject.obj ..\..\LMDSysPrinterInfo.obj ..\..\LMDSysProcessorObject.obj ..\..\LMDSysScreenSaverObject.obj ..\..\LMDSysSystemInfo.obj ..\..\LMDSysTimeZoneObject.obj ..\..\LMDSysWallpaperObject.obj ..\..\LMDSysDisplay.obj ..\..\LMDSysLocale.obj ..\..\LMDSysMemory.obj ..\..\LMDSysPowerStatus.obj ..\..\LMDSysTimeZone.obj ..\..\LMDSysWindows.obj ..\..\LMDSysPrinters.obj ..\..\LMDSysProcessor.obj ..\..\LMDSysUninstallInfo.obj ..\..\LMDSysUninstall.obj ..\..\LMDSysFontInfo.obj ..\..\LMDSysFonts.obj ..\..\LMDSysMultimediaObject.obj ..\..\LMDSysMultimedia.obj ..\..\LMDSysFileAssocInfo.obj ..\..\LMDSysInternetObject.obj ..\..\LMDSysInternet.obj ..\..\LMDSysFileAssoc.obj ..\..\LMDSysLogStrings.obj ..\..\LMDSysModemInfo.obj ..\..\LMDSysModem.obj ..\..\LMDSysNetworkObject.obj ..\..\LMDSysNetwork.obj ..\..\LMDSysConst.obj ..\..\LMDSysBaseComponent.obj ..\..\LMDSysBase.obj ..\..\LMDSysInfoTreeView.obj ..\..\LMDSysPropertyDesc.obj ..\..\LMDSysInfoListView.obj ..\..\LMDSysDriveInfo.obj ..\..\LMDSysEventLog.obj ..\..\LMDSysNetworkEnumerator.obj ..\..\LMDSysTreeView.obj ..\..\LMDSysNetTreeView.obj ..\..\LMDSysEventListView.obj ..\..\LMDSysStrsDlg.obj ..\..\LMDSysInfoProcs.obj ..\..\LMDSysEventLogDetailsForm.obj ..\..\LMDSysService.obj ..\..\LMDSysServiceInfo.obj ..\..\LMDSysServiceObject.obj"/>
+    <RESFILES value="lmdrtsys.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) ..\..\LMDSysStrsDlg.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value="rtl.lib"/>
+    <PACKAGES value="lmdrtl.bpi rtl.bpi vcl.bpi vclx.bpi lmdrtrtlx.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value=""/>
+    <SYSDEFINES value="_RTLDLL;NO_STRICT;USEPACKAGES"/>
+    <MAINSOURCE value="lmdrtsys.cpp"/>
+    <INCLUDEPATH value="$(BCB)\include;$(BCB)\include\vcl;"/>
+    <LIBPATH value="$(BCB)\lib\obj;$(BCB)\lib;"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I$(BCB)\include -I$(BCB)\include\vcl -src_suffix cpp -boa"/>
+    <CFLAG1 value="-O2 -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -a8 -b- -k- -vi -c -tWM"/>
+    <PFLAGS value="-N2..\..\build -N0..\..\build -NH..\..\build -$Y- -$L- -$D- -$A8 -v -JPHNE -M "/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zn"/>
+    <LFLAGS value="-I..\.. -D&quot;LMD-Tools SysPack Runtime Package&quot; -aa -Tpp -Gpr -x -Gn -Gl -Gi"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0pkg32.obj $(PACKAGES) Memmgr.Lib sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib "/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="lmdrtsys.cpp" FORMNAME="" UNITNAME="lmdrtsys" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtsys.res" FORMNAME="" UNITNAME="lmdrtsys.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtl.bpi" FORMNAME="" UNITNAME="lmdrtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="rtl.bpi" FORMNAME="" UNITNAME="rtl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vcl.bpi" FORMNAME="" UNITNAME="vcl" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="vclx.bpi" FORMNAME="" UNITNAME="vclx" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="lmdrtrtlx.bpi" FORMNAME="" UNITNAME="lmdrtrtlx" CONTAINERID="BPITool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysWindowsObject.pas" FORMNAME="" UNITNAME="LMDSysWindowsObject" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysDisplayObject.pas" FORMNAME="" UNITNAME="LMDSysDisplayObject" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysDrive.pas" FORMNAME="" UNITNAME="LMDSysDrive" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysDriveObject.pas" FORMNAME="" UNITNAME="LMDSysDriveObject" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysKeyboard.pas" FORMNAME="" UNITNAME="LMDSysKeyboard" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysKeyboardObject.pas" FORMNAME="" UNITNAME="LMDSysKeyboardObject" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysLocaleObject.pas" FORMNAME="" UNITNAME="LMDSysLocaleObject" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysLog.pas" FORMNAME="" UNITNAME="LMDSysLog" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysMemoryObject.pas" FORMNAME="" UNITNAME="LMDSysMemoryObject" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysMouse.pas" FORMNAME="" UNITNAME="LMDSysMouse" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysMouseObject.pas" FORMNAME="" UNITNAME="LMDSysMouseObject" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysObject.pas" FORMNAME="" UNITNAME="LMDSysObject" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysPlusObject.pas" FORMNAME="" UNITNAME="LMDSysPlusObject" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysPowerStatusObject.pas" FORMNAME="" UNITNAME="LMDSysPowerStatusObject" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysPrinterInfo.pas" FORMNAME="" UNITNAME="LMDSysPrinterInfo" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysProcessorObject.pas" FORMNAME="" UNITNAME="LMDSysProcessorObject" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysScreenSaverObject.pas" FORMNAME="" UNITNAME="LMDSysScreenSaverObject" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysSystemInfo.pas" FORMNAME="" UNITNAME="LMDSysSystemInfo" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysTimeZoneObject.pas" FORMNAME="" UNITNAME="LMDSysTimeZoneObject" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysWallpaperObject.pas" FORMNAME="" UNITNAME="LMDSysWallpaperObject" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysDisplay.pas" FORMNAME="" UNITNAME="LMDSysDisplay" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysLocale.pas" FORMNAME="" UNITNAME="LMDSysLocale" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysMemory.pas" FORMNAME="" UNITNAME="LMDSysMemory" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysPowerStatus.pas" FORMNAME="" UNITNAME="LMDSysPowerStatus" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysTimeZone.pas" FORMNAME="" UNITNAME="LMDSysTimeZone" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysWindows.pas" FORMNAME="" UNITNAME="LMDSysWindows" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysPrinters.pas" FORMNAME="" UNITNAME="LMDSysPrinters" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysProcessor.pas" FORMNAME="" UNITNAME="LMDSysProcessor" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysUninstallInfo.pas" FORMNAME="" UNITNAME="LMDSysUninstallInfo" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysUninstall.pas" FORMNAME="" UNITNAME="LMDSysUninstall" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysFontInfo.pas" FORMNAME="" UNITNAME="LMDSysFontInfo" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysFonts.pas" FORMNAME="" UNITNAME="LMDSysFonts" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysMultimediaObject.pas" FORMNAME="" UNITNAME="LMDSysMultimediaObject" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysMultimedia.pas" FORMNAME="" UNITNAME="LMDSysMultimedia" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysFileAssocInfo.pas" FORMNAME="" UNITNAME="LMDSysFileAssocInfo" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysInternetObject.pas" FORMNAME="" UNITNAME="LMDSysInternetObject" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysInternet.pas" FORMNAME="" UNITNAME="LMDSysInternet" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysFileAssoc.pas" FORMNAME="" UNITNAME="LMDSysFileAssoc" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysLogStrings.pas" FORMNAME="" UNITNAME="LMDSysLogStrings" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysModemInfo.pas" FORMNAME="" UNITNAME="LMDSysModemInfo" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysModem.pas" FORMNAME="" UNITNAME="LMDSysModem" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysNetworkObject.pas" FORMNAME="" UNITNAME="LMDSysNetworkObject" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysNetwork.pas" FORMNAME="" UNITNAME="LMDSysNetwork" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysConst.pas" FORMNAME="" UNITNAME="LMDSysConst" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysBaseComponent.pas" FORMNAME="" UNITNAME="LMDSysBaseComponent" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysBase.pas" FORMNAME="" UNITNAME="LMDSysBase" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysInfoTreeView.pas" FORMNAME="" UNITNAME="LMDSysInfoTreeView" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysPropertyDesc.pas" FORMNAME="" UNITNAME="LMDSysPropertyDesc" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysInfoListView.pas" FORMNAME="" UNITNAME="LMDSysInfoListView" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysDriveInfo.pas" FORMNAME="" UNITNAME="LMDSysDriveInfo" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysEventLog.pas" FORMNAME="" UNITNAME="LMDSysEventLog" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysNetworkEnumerator.pas" FORMNAME="" UNITNAME="LMDSysNetworkEnumerator" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysTreeView.pas" FORMNAME="" UNITNAME="LMDSysTreeView" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysNetTreeView.pas" FORMNAME="" UNITNAME="LMDSysNetTreeView" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysEventListView.pas" FORMNAME="" UNITNAME="LMDSysEventListView" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysStrsDlg.pas" FORMNAME="LMDSysStringsDialog" UNITNAME="LMDSysStrsDlg" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysInfoProcs.pas" FORMNAME="" UNITNAME="LMDSysInfoProcs" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysEventLogDetailsForm.pas" FORMNAME="" UNITNAME="LMDSysEventLogDetailsForm" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysService.pas" FORMNAME="" UNITNAME="LMDSysService" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysServiceInfo.pas" FORMNAME="" UNITNAME="LMDSysServiceInfo" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\LMDSysServiceObject.pas" FORMNAME="" UNITNAME="LMDSysServiceObject" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+  <IDEOPTIONS>
+[Version Info Keys]
+CompanyName=LMD Innovative
+FileDescription=LMD-Tools SysPack Runtime Package
+FileVersion=2016.5
+InternalName=
+LegalCopyright=© LMD Innovative
+LegalTrademarks=
+OriginalFilename=
+ProductName=LMD-Tools SysPack Runtime Package
+ProductVersion=2016.5
+Comments=
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[Linker]
+LibPrefix=
+LibSuffix=60
+LibVersion=
+  </IDEOPTIONS>
+</PROJECT>

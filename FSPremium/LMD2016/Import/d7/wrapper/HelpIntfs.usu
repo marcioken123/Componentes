@@ -1,0 +1,7 @@
+TE: IHelpSelector
+TE: IHelpSystem
+TE: ICustomHelpViewer
+TE: IExtendedHelpViewer
+TE: ISpecialWinHelpViewer
+TE: IHelpManager
+T-: EHelpSystemException

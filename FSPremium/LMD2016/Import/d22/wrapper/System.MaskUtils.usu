@@ -1,0 +1,4 @@
+T-: TMaskCharType
+TE: TMaskDirectives
+T+: TMaskedText
+T+: TEditMask

@@ -1,0 +1,72 @@
+package dcllmdlegacy;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$LIBSUFFIX '180'}
+{$DESCRIPTION 'LMD 2016 - LMD-Tools Legacy Components'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  lmdrtl,
+  rtl,
+  vcl,
+  vclx,
+  dcllmdrtl,
+  designide,
+  dclstd,
+  dbrtl,
+  vcldb,
+  bdertl,
+  dcllmdcore,
+  lmdrttools,
+  lmdrttoolsdb;
+
+contains
+  LMD_RegV1 in '..\..\LMD_RegV1.pas',
+  LMD_RegV3 in '..\..\LMD_RegV3.pas',
+  LMD3DCaptionButton in '..\..\LMD3DCaptionButton.pas',
+  LMD3DShapeButton in '..\..\LMD3DShapeButton.pas',
+  LMD3DShapeLabelButton in '..\..\LMD3DShapeLabelButton.pas',
+  LMDDBFilter in '..\..\LMDDBFilter.pas',
+  LMDDBShapeLabel in '..\..\LMDDBShapeLabel.pas',
+  LMDDockOfficeButton in '..\..\LMDDockOfficeButton.pas',
+  LMDExplorerButton in '..\..\LMDExplorerButton.pas',
+  LMDFile in '..\..\LMDFile.pas',
+  LMDJoy in '..\..\LMDJoy.pas',
+  LMDObj in '..\..\LMDObj.pas',
+  LMDOfficeButton in '..\..\LMDOfficeButton.pas',
+  LMDRuler in '..\..\LMDRuler.pas',
+  LMDScrsv in '..\..\LMDScrsv.pas',
+  LMDShapeLabel in '..\..\LMDShapeLabel.pas',
+  LMDShapeLabelButton in '..\..\LMDShapeLabelButton.pas',
+  LMDSpltA in '..\..\LMDSpltA.pas',
+  LMDTeethShape in '..\..\LMDTeethShape.pas',
+  LMDTeethShapeLabel in '..\..\LMDTeethShapeLabel.pas',
+  LMDDBAliasNamesComboBox in '..\..\LMDDBAliasNamesComboBox.pas',
+  LMDDBDriverComboBox in '..\..\LMDDBDriverComboBox.pas',
+  LMDDBTablesComboBox in '..\..\LMDDBTablesComboBox.pas',
+  pLMDPeAcp in '..\..\pLMDPeAcp.pas',
+  pLMDPeClp in '..\..\pLMDPeClp.pas';
+
+end.

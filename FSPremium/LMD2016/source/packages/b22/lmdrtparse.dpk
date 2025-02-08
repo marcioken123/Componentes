@@ -1,0 +1,81 @@
+package lmdrtparse;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$LIBSUFFIX '220'}
+{$DESCRIPTION 'LMD-Tools ParsePack'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  lmdrtl,
+  rtl,
+  vcl,
+  vclx,
+  vclimg;
+
+contains
+  LMDBand in '..\..\LMDBand.pas',
+  LMDCSVLex in '..\..\LMDCSVLex.pas',
+  LMDCSVParser in '..\..\LMDCSVParser.pas',
+  LMDCSVWriter in '..\..\LMDCSVWriter.pas',
+  LMDDataType in '..\..\LMDDataType.pas',
+  LMDDBFParser in '..\..\LMDDBFParser.pas',
+  LMDDBFReader in '..\..\LMDDBFReader.pas',
+  LMDDBFWriter in '..\..\LMDDBFWriter.pas',
+  LMDDeductionTree in '..\..\LMDDeductionTree.pas',
+  LMDDTD in '..\..\LMDDTD.pas',
+  LMDEmbdControl in '..\..\LMDEmbdControl.pas',
+  LMDEntryPoint in '..\..\LMDEntryPoint.pas',
+  LMDExtParser in '..\..\LMDExtParser.pas',
+  LMDHiddenText in '..\..\LMDHiddenText.pas',
+  LMDHTMLLex in '..\..\LMDHTMLLex.pas',
+  LMDHTMLParser in '..\..\LMDHTMLParser.pas',
+  LMDHTMLSTYLE in '..\..\LMDHTMLSTYLE.pas',
+  LMDHTMLWriter in '..\..\LMDHTMLWriter.pas',
+  LMDIterator in '..\..\LMDIterator.pas',
+  LMDLex in '..\..\LMDLex.pas',
+  LMDParser in '..\..\LMDParser.pas',
+  LMDParserStack in '..\..\LMDParserStack.pas',
+  LMDPlainTextLex in '..\..\LMDPlainTextLex.pas',
+  LMDPlainTextParser in '..\..\LMDPlainTextParser.pas',
+  LMDPlainTextWriter in '..\..\LMDPlainTextWriter.pas',
+  LMDRTFAnalyser in '..\..\LMDRTFAnalyser.pas',
+  LMDRTFDocument in '..\..\LMDRTFDocument.pas',
+  LMDRTFLookupTable in '..\..\LMDRTFLookupTable.pas',
+  LMDRTFParser in '..\..\LMDRTFParser.pas',
+  LMDRTFScanner in '..\..\LMDRTFScanner.pas',
+  LMDRTFTape in '..\..\LMDRTFTape.pas',
+  LMDRule in '..\..\LMDRule.pas',
+  LMDSimpleRTFParser in '..\..\LMDSimpleRTFParser.pas',
+  LMDSimpleXMLLex in '..\..\LMDSimpleXMLLex.pas',
+  LMDSimpleXMLParser in '..\..\LMDSimpleXMLParser.pas',
+  LMDStringsList in '..\..\LMDStringsList.pas',
+  LMDTable in '..\..\LMDTable.pas',
+  LMDText in '..\..\LMDText.pas',
+  LMDTextBox in '..\..\LMDTextBox.pas',
+  LMDTree in '..\..\LMDTree.pas',
+  LMDWriter in '..\..\LMDWriter.pas',
+  LMDListObjects in '..\..\LMDListObjects.pas';
+
+end.

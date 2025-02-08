@@ -1,0 +1,19 @@
+T+: TCANOperator
+T+: NODEClass
+T+: IDENTIFIEROption
+TE: TExprData
+TE: TFieldMap
+T+: TParserOption
+T+: TParserOptions
+T+: TExprNodeKind
+T+: TExprScopeKind
+TE: PExprNode
+T+: TExprNode
+T+: TFilterExpr
+        P+: DataSet
+T+: TExprToken
+T+: TExprParser
+        PE: FilterData
+        P+: DataSize
+T+: TFieldInfo
+T+: TSQLToken

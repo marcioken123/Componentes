@@ -1,0 +1,290 @@
+	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{52C3A694-371C-40E5-9C61-70D88242A371}</ProjectGuid>
+			<ProjectVersion>13.4</ProjectVersion>
+			<FrameworkType>VCL</FrameworkType>
+			<MainSource>lmdrtelcore.cpp</MainSource>
+			<Base>True</Base>
+			<Config Condition="'$(Config)'==''">build</Config>
+			<Platform Condition="'$(Platform)'==''">Win32</Platform>
+			<TargetedPlatforms>3</TargetedPlatforms>
+			<AppType>Library</AppType>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+			<Base_Win32>true</Base_Win32>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+                <PropertyGroup Condition="'$(Config)'=='build' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+			<Cfg_1_Win32>true</Cfg_1_Win32>
+			<CfgParent>Cfg_1</CfgParent>
+			<Cfg_1>true</Cfg_1>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+                        <DllSuffix>220</DllSuffix>
+                        <RuntimeOnlyPackage>true</RuntimeOnlyPackage>
+                        <DesignOnlyPackage>false</DesignOnlyPackage>
+                        <PackageImports>lmdrtl.bpi;rtl.bpi;vcl.bpi;vclx.bpi;lmdrtrtlx.bpi;lmdrtlog.bpi</PackageImports>
+                        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+			<VerInfo_Keys>CompanyName=LMD Innovative;FileDescription=LMD ElPack Core Components;FileVersion=2016.5.0;InternalName=;LegalCopyright=Copyright (c) LMD Innovative;LegalTrademarks=;OriginalFilename=;ProductName=LMD VCL Series;ProductVersion=2016.5.0;Comments=</VerInfo_Keys>
+			<VerInfo_Locale>1033</VerInfo_Locale>
+			<DCC_HppOutput>..\..\build\$(Platform)</DCC_HppOutput>
+			<IncludePath>..\..\;$(IncludePath)</IncludePath>
+			<ILINK_LibraryPath>..\..\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<ProjectType>CppPackage</ProjectType>
+			<ILINK_GenerateImportLibrary>true</ILINK_GenerateImportLibrary>
+			<DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
+			<ILINK_GenerateLibFile>true</ILINK_GenerateLibFile>
+			<Multithreaded>true</Multithreaded>
+			<_TCHARMapping>char</_TCHARMapping>
+			<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
+			<DynamicRTL>true</DynamicRTL>
+			<UsePackages>true</UsePackages>
+			<IntermediateOutputDir>..\..\build\$(Platform)</IntermediateOutputDir>
+			<BCC_wpar>false</BCC_wpar>
+			<BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
+			<BCC_ExtendedErrorInfo>true</BCC_ExtendedErrorInfo>
+			<ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\release\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
+                        
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base_Win32)'!=''">
+			<IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
+			<DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+		</PropertyGroup>
+		<ItemGroup>
+			<CppCompile Include="lmdrtelcore.cpp">
+				<BuildOrder>0</BuildOrder>
+			</CppCompile>
+			<PackageImport Include="lmdrtl.bpi" />
+      <PackageImport Include="rtl.bpi" />
+      <PackageImport Include="vcl.bpi" />
+      <PackageImport Include="vclx.bpi" />
+      <PackageImport Include="lmdrtrtlx.bpi" />
+      <PackageImport Include="lmdrtlog.bpi" />
+      <DelphiCompile Include="..\..\ElACtrls.pas" />
+      <DelphiCompile Include="..\..\ElAdvPanel.pas" />
+      <DelphiCompile Include="..\..\ElAppBar.pas" />
+      <DelphiCompile Include="..\..\ElAppBarForm.pas" />
+      <DelphiCompile Include="..\..\ElBaseComp.pas" />
+      <DelphiCompile Include="..\..\ElBiProgr.pas" />
+      <DelphiCompile Include="..\..\ElBtnCtl.pas" />
+      <DelphiCompile Include="..\..\ElBtnEdit.pas" />
+      <DelphiCompile Include="..\..\ElCalc.pas" />
+      <DelphiCompile Include="..\..\ElCalculatorEdit.pas" />
+      <DelphiCompile Include="..\..\ElCalendar.pas" />
+      <DelphiCompile Include="..\..\ElCalendarDefs.pas" />
+      <DelphiCompile Include="..\..\ElCalendDlg.pas">
+        <Form>ElCalendarForm</Form>
+      </DelphiCompile>
+      <DelphiCompile Include="..\..\ElCaption.pas" />
+      <DelphiCompile Include="..\..\ElCGControl.pas" />
+      <DelphiCompile Include="..\..\ElCheckCtl.pas" />
+      <DelphiCompile Include="..\..\ElCheckItemGrp.pas" />
+      <DelphiCompile Include="..\..\ElCLabel.pas" />
+      <DelphiCompile Include="..\..\ElClipMon.pas" />
+      <DelphiCompile Include="..\..\ElClock.pas" />
+      <DelphiCompile Include="..\..\ElClrCmb.pas" />
+      <DelphiCompile Include="..\..\ElCombos.pas" />
+      <DelphiCompile Include="..\..\ElComponent.pas" />
+      <DelphiCompile Include="..\..\ElCRC32.pas" />
+      <DelphiCompile Include="..\..\ElCurrEdit.pas" />
+      <DelphiCompile Include="..\..\ElDailyTip.pas">
+        <Form>ElDailyTipForm</Form>
+      </DelphiCompile>
+      <DelphiCompile Include="..\..\ElDragDrop.pas" />
+      <DelphiCompile Include="..\..\ElDriveCombo.pas" />
+      <DelphiCompile Include="..\..\ElDTPick.pas" />
+      <DelphiCompile Include="..\..\ElEditCmds.pas" />
+      <DelphiCompile Include="..\..\ElEdits.pas" />
+      <DelphiCompile Include="..\..\ElExpBar.pas" />
+      <DelphiCompile Include="..\..\ElExpressionEval.pas" />
+      <DelphiCompile Include="..\..\ElFlatCtl.pas" />
+      <DelphiCompile Include="..\..\ElFolderDlg.pas" />
+      <DelphiCompile Include="..\..\ElFontCombo.pas" />
+      <DelphiCompile Include="..\..\ElFontListBox.pas" />
+      <DelphiCompile Include="..\..\ElFrmPers.pas" />
+      <DelphiCompile Include="..\..\ElGauge.pas" />
+      <DelphiCompile Include="..\..\ElGraphs.pas" />
+      <DelphiCompile Include="..\..\ElGroupBox.pas" />
+      <DelphiCompile Include="..\..\ElHashList.pas" />
+      <DelphiCompile Include="..\..\ElHeader.pas" />
+      <DelphiCompile Include="..\..\ElHintWnd.pas" />
+      <DelphiCompile Include="..\..\ElHook.pas" />
+      <DelphiCompile Include="..\..\ElHotKey.pas" />
+      <DelphiCompile Include="..\..\ElHstgrm.pas" />
+      <DelphiCompile Include="..\..\ElHTMLContainer.pas" />
+      <DelphiCompile Include="..\..\ElHTMLHint.pas" />
+      <DelphiCompile Include="..\..\ElHTMLLbl.pas" />
+      <DelphiCompile Include="..\..\ElHTMLPanel.pas" />
+      <DelphiCompile Include="..\..\ElHTMLView.pas" />
+      <DelphiCompile Include="..\..\ElImgCombo.pas" />
+      <DelphiCompile Include="..\..\ElImgFrm.pas" />
+      <DelphiCompile Include="..\..\ElImgLst.pas" />
+      <DelphiCompile Include="..\..\ElIni.pas" />
+      <DelphiCompile Include="..\..\ElInputDlg.pas" />
+      <DelphiCompile Include="..\..\ElInputProcessor.pas" />
+      <DelphiCompile Include="..\..\ElIPEdit.pas" />
+      <DelphiCompile Include="..\..\ElLabel.pas" />
+      <DelphiCompile Include="..\..\ElListBox.pas" />
+      <DelphiCompile Include="..\..\ElMaskEdit.pas" />
+      <DelphiCompile Include="..\..\ElMathParser.pas" />
+      <DelphiCompile Include="..\..\ElMD5.pas" />
+      <DelphiCompile Include="..\..\ElMemoCombo.pas" />
+      <DelphiCompile Include="..\..\ElMenuBar.pas" />
+      <DelphiCompile Include="..\..\ElMenus.pas" />
+      <DelphiCompile Include="..\..\ElMouseHint.pas" />
+      <DelphiCompile Include="..\..\ElMRU.pas" />
+      <DelphiCompile Include="..\..\ElMTree.pas" />
+      <DelphiCompile Include="..\..\ElNameEdits.pas" />
+      <DelphiCompile Include="..\..\ElObjList.pas" />
+      <DelphiCompile Include="..\..\ElOneInst.pas" />
+      <DelphiCompile Include="..\..\ElOpts.pas" />
+      <DelphiCompile Include="..\..\ElPanel.pas" />
+      <DelphiCompile Include="..\..\ElPgCtl.pas" />
+      <DelphiCompile Include="..\..\ElPopBtn.pas" />
+      <DelphiCompile Include="..\..\ElPowerMan.pas" />
+      <DelphiCompile Include="..\..\ElProcessUtils.pas" />
+      <DelphiCompile Include="..\..\ElPromptDlg.pas" />
+      <DelphiCompile Include="..\..\ElPropTools.pas" />
+      <DelphiCompile Include="..\..\ElRegExpr.pas" />
+      <DelphiCompile Include="..\..\ElRegUtils.pas" />
+      <DelphiCompile Include="..\..\ElSBCtrl.pas" />
+      <DelphiCompile Include="..\..\ElSBHook.pas" />
+      <DelphiCompile Include="..\..\ElScrollBar.pas" />
+      <DelphiCompile Include="..\..\ElScrollBox.pas" />
+      <DelphiCompile Include="..\..\ElShellUtils.pas" />
+      <DelphiCompile Include="..\..\ElShutdownWatcher.pas" />
+      <DelphiCompile Include="..\..\ElSideBar.pas" />
+      <DelphiCompile Include="..\..\ElSndMap.pas" />
+      <DelphiCompile Include="..\..\ElSpin.pas" />
+      <DelphiCompile Include="..\..\ElSpinBtn.pas" />
+      <DelphiCompile Include="..\..\ElSplit.pas" />
+      <DelphiCompile Include="..\..\ElStack.pas" />
+      <DelphiCompile Include="..\..\ElStatBar.pas" />
+      <DelphiCompile Include="..\..\ElStrArray.pas" />
+      <DelphiCompile Include="..\..\ElStrPool.pas" />
+      <DelphiCompile Include="..\..\ElStrToken.pas" />
+      <DelphiCompile Include="..\..\ElStyleMan.pas" />
+      <DelphiCompile Include="..\..\ElSysHotKey.pas" />
+      <DelphiCompile Include="..\..\ElTimers.pas" />
+      <DelphiCompile Include="..\..\ElToolBar.pas" />
+      <DelphiCompile Include="..\..\ElTools.pas" />
+      <DelphiCompile Include="..\..\ElTopmost.pas" />
+      <DelphiCompile Include="..\..\ElTrackBar.pas" />
+      <DelphiCompile Include="..\..\ElTray.pas" />
+      <DelphiCompile Include="..\..\ElTrayInfo.pas" />
+      <DelphiCompile Include="..\..\ElXTree.pas" />
+      <DelphiCompile Include="..\..\ElXTreeCell.pas" />
+      <DelphiCompile Include="..\..\ElXTreeCellCombo.pas" />
+      <DelphiCompile Include="..\..\ElTree.pas" />
+      <DelphiCompile Include="..\..\ElTreeInplaceEditors.pas" />
+      <DelphiCompile Include="..\..\ElTreeAdvEdit.pas" />
+      <DelphiCompile Include="..\..\ElTreeBtnEdit.pas" />
+      <DelphiCompile Include="..\..\ElTreeCheckBoxEdit.pas" />
+      <DelphiCompile Include="..\..\ElTreeColorCombo.pas" />
+      <DelphiCompile Include="..\..\ElTreeCombo.pas" />
+      <DelphiCompile Include="..\..\ElTreeComboBox.pas" />
+      <DelphiCompile Include="..\..\ElTreeCurrEdit.pas" />
+      <DelphiCompile Include="..\..\ElTreeDTPickEdit.pas" />
+      <DelphiCompile Include="..\..\ElTreeGrids.pas" />
+      <DelphiCompile Include="..\..\ElTreeMaskEdit.pas" />
+      <DelphiCompile Include="..\..\ElTreeMemoComboEdit.pas" />
+      <DelphiCompile Include="..\..\ElTreeMemoEdit.pas" />
+      <DelphiCompile Include="..\..\ElTreeModalEdit.pas" />
+      <DelphiCompile Include="..\..\ElTreeSpinEdit.pas" />
+      <DelphiCompile Include="..\..\ElTreeStdEditors.pas" />
+      <DelphiCompile Include="..\..\ElTreeTreeComboEdit.pas" />
+      <DelphiCompile Include="..\..\ElURLLabel.pas" />
+      <DelphiCompile Include="..\..\ElVCLUtils.pas" />
+      <DelphiCompile Include="..\..\ElVerInfo.pas" />
+      <DelphiCompile Include="..\..\ElXHeader.pas" />
+      <DelphiCompile Include="..\..\ElXPThemedControl.pas" />
+      <DelphiCompile Include="..\..\ElFormContainer.pas" />
+      <DelphiCompile Include="..\..\ElFormDisplay.pas" />
+      <DelphiCompile Include="..\..\ElFormPgCtl.pas" />
+      <DelphiCompile Include="..\..\frmHdrStp.pas" />
+      <DelphiCompile Include="..\..\frmTbrStp.pas" />
+      <DelphiCompile Include="..\..\HTMLLbx.pas" />
+      <DelphiCompile Include="..\..\LMDElConst.pas" />
+      <DelphiCompile Include="..\..\LMDGlyphs.pas" />
+      <DelphiCompile Include="..\..\LMDUniscribeStrings.pas" />
+      <DelphiCompile Include="..\..\ElShadowWindow.pas" />
+      <FormResources Include="..\..\ElCalendDlg.dfm" />
+      <FormResources Include="..\..\ElDailyTip.dfm" />
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
+			<Borland.ProjectType>CppPackage</Borland.ProjectType>
+			<BorlandProject>
+				<CPlusPlusBuilder.Personality>
+					<Source>
+						<Source Name="MainSource">lmdrtelcore.cpp</Source>
+					</Source>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1049</VersionInfo>
+						<VersionInfo Name="CodePage">1251</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName">LMD Innovative</VersionInfoKeys>
+						<VersionInfoKeys Name="FileDescription">LMD ElPack Core Components</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">2016.5</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright">LMD Innovative</VersionInfoKeys>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName">LMD ElPack Core Components</VersionInfoKeys>
+						<VersionInfoKeys Name="ProductVersion">2016.5</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<ProjectProperties>
+						<ProjectProperties Name="AutoShowDeps">False</ProjectProperties>
+						<ProjectProperties Name="ManagePaths">True</ProjectProperties>
+						<ProjectProperties Name="VerifyPackages">True</ProjectProperties>
+					</ProjectProperties>
+				</CPlusPlusBuilder.Personality>
+				<Deployment/>
+				<Platforms>
+					<Platform value="OSX32">False</Platform>
+					<Platform value="Win32">True</Platform>
+				</Platforms>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')" Project="$(BDS)\Bin\CodeGear.Cpp.Targets"/>
+		<Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+	</Project>

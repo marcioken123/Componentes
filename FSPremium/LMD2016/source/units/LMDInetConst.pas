@@ -1,0 +1,210 @@
+unit LMDInetConst;
+{$I LMDCmps.inc}
+
+{###############################################################################
+
+LMD VCL Series 2016
+© by LMD Innovative
+-------------------
+
+For support or information contact us at:
+
+email              : mail@lmdsupport.com
+WWW                : http://www.lmdinnovative.com
+SupportSite        : http://www.lmdsupport.com
+Wiki               : http://wiki.lmd.de
+Fax                : ++49 6131 4984372
+
+This code is for reference purposes only and may not be copied
+or distributed in any format electronic or otherwise except one
+copy for backup purposes.
+
+No Component Kit or Component individually or in a collection,
+subclassed or otherwise from the code in this unit, or associated
+.pas, .dfm, .dcu, .ocx, .dll or ActiveX files may be sold or
+distributed without express permission from LMD Innovative.
+
+For further license information please refer to the associated
+license html file in \info folder.
+
+################################################################################
+
+LMDInetConst unit (DD)
+----------------------
+
+Changes
+-------
+Release 4.0 (October 2006)
+ - Initial Release
+
+###############################################################################}
+
+interface
+
+uses
+  SysUtils, Windows, WinInet,
+  LMDWebConst;
+
+const
+  MAX_INET_ERRORS = 33;
+  MAX_HTTP_ERRORS = 20;
+  DE_HTTP_ERROR = 2;
+  HTTP_ERROR_STRINGS: array[1..MAX_HTTP_ERRORS] of string =
+    (SHTTP_ERROR_HTTP_STATUS_GATEWAY_TIMEOUT,
+    SHTTP_ERROR_HTTP_STATUS_SERVICE_UNAVAIL,
+    SHTTP_ERROR_HTTP_STATUS_BAD_GATEWAY,
+    SHTTP_ERROR_HTTP_STATUS_NOT_SUPPORTED,
+    SHTTP_ERROR_HTTP_STATUS_SERVER_ERROR,
+    SHTTP_ERROR_HTTP_STATUS_UNSUPPORTED_MEDIA,
+    SHTTP_ERROR_HTTP_STATUS_URI_TOO_LONG,
+    SHTTP_ERROR_HTTP_STATUS_REQUEST_TOO_LARGE,
+    SHTTP_ERROR_HTTP_STATUS_PRECOND_FAILED,
+    SHTTP_ERROR_HTTP_STATUS_AUTH_REFUSED,
+    SHTTP_ERROR_HTTP_STATUS_GONE,
+    SHTTP_ERROR_HTTP_STATUS_CONFLICT,
+    SHTTP_ERROR_HTTP_STATUS_REQUEST_TIMEOUT,
+    SHTTP_ERROR_HTTP_STATUS_PROXY_AUTH_REQ,
+    SHTTP_ERROR_HTTP_STATUS_NONE_ACCEPTABLE,
+    SHTTP_ERROR_HTTP_STATUS_BAD_METHOD,
+    SHTTP_ERROR_HTTP_STATUS_NOT_FOUND,
+    SHTTP_ERROR_HTTP_STATUS_FORBIDDEN,
+    SHTTP_ERROR_HTTP_STATUS_DENIED,
+    SHTTP_ERROR_HTTP_STATUS_BAD_REQUEST
+    );
+  HTTP_ERROR_CODES: array[1..MAX_HTTP_ERRORS] of DWORD =
+    (HTTP_STATUS_GATEWAY_TIMEOUT,
+    HTTP_STATUS_SERVICE_UNAVAIL,
+    HTTP_STATUS_BAD_GATEWAY,
+    HTTP_STATUS_NOT_SUPPORTED,
+    HTTP_STATUS_SERVER_ERROR,
+    HTTP_STATUS_UNSUPPORTED_MEDIA,
+    HTTP_STATUS_URI_TOO_LONG,
+    HTTP_STATUS_REQUEST_TOO_LARGE,
+    HTTP_STATUS_PRECOND_FAILED,
+    {$ifdef LMDCOMP16}
+    HTTP_STATUS_LENGTH_REQUIRED,
+    {$else}
+    HTTP_STATUS_AUTH_REFUSED,
+    {$endif}
+    HTTP_STATUS_GONE,
+    HTTP_STATUS_CONFLICT,
+    HTTP_STATUS_REQUEST_TIMEOUT,
+    HTTP_STATUS_PROXY_AUTH_REQ,
+    HTTP_STATUS_NONE_ACCEPTABLE,
+    HTTP_STATUS_BAD_METHOD,
+    HTTP_STATUS_NOT_FOUND,
+    HTTP_STATUS_FORBIDDEN,
+    HTTP_STATUS_DENIED,
+    HTTP_STATUS_BAD_REQUEST
+    );
+  INET_ERROR_CODES: array[0..MAX_INET_ERRORS] of DWORD =
+    (ERROR_INTERNET_OUT_OF_HANDLES,
+    ERROR_INTERNET_TIMEOUT,
+    ERROR_INTERNET_EXTENDED_ERROR,
+    ERROR_INTERNET_INTERNAL_ERROR,
+    ERROR_INTERNET_INVALID_URL,
+    ERROR_INTERNET_UNRECOGNIZED_SCHEME,
+    ERROR_INTERNET_NAME_NOT_RESOLVED,
+    ERROR_INTERNET_PROTOCOL_NOT_FOUND,
+    ERROR_INTERNET_INVALID_OPTION,
+    ERROR_INTERNET_BAD_OPTION_LENGTH,
+    ERROR_INTERNET_OPTION_NOT_SETTABLE,
+    ERROR_INTERNET_SHUTDOWN,
+    ERROR_INTERNET_INCORRECT_USER_NAME,
+    ERROR_INTERNET_INCORRECT_PASSWORD,
+    ERROR_INTERNET_LOGIN_FAILURE,
+    ERROR_INTERNET_INVALID_OPERATION,
+    ERROR_INTERNET_OPERATION_CANCELLED,
+    ERROR_INTERNET_INCORRECT_HANDLE_TYPE,
+    ERROR_INTERNET_INCORRECT_HANDLE_STATE,
+    ERROR_INTERNET_NOT_PROXY_REQUEST,
+    ERROR_INTERNET_REGISTRY_VALUE_NOT_FOUND,
+    ERROR_INTERNET_BAD_REGISTRY_PARAMETER,
+    ERROR_INTERNET_NO_DIRECT_ACCESS,
+    ERROR_INTERNET_NO_CONTEXT,
+    ERROR_INTERNET_NO_CALLBACK,
+    ERROR_INTERNET_REQUEST_PENDING,
+    ERROR_INTERNET_INCORRECT_FORMAT,
+    ERROR_INTERNET_ITEM_NOT_FOUND,
+    ERROR_INTERNET_CANNOT_CONNECT,
+    ERROR_INTERNET_CONNECTION_ABORTED,
+    ERROR_INTERNET_CONNECTION_RESET,
+    ERROR_INTERNET_FORCE_RETRY,
+    ERROR_INTERNET_INVALID_PROXY_REQUEST,
+    6
+    );
+  INET_ERROR_STRINGS: array[0..MAX_INET_ERRORS] of string =
+    (SERROR_INTERNET_OUT_OF_HANDLES,
+    SERROR_INTERNET_TIMEOUT,
+    SERROR_INTERNET_EXTENDED_ERROR,
+    SERROR_INTERNET_INTERNAL_ERROR,
+    SERROR_INTERNET_INVALID_URL,
+    SERROR_INTERNET_UNRECOGNIZED_SCHEME,
+    SERROR_INTERNET_NAME_NOT_RESOLVED,
+    SERROR_INTERNET_PROTOCOL_NOT_FOUND,
+    SERROR_INTERNET_INVALID_OPTION,
+    SERROR_INTERNET_BAD_OPTION_LENGTH,
+    SERROR_INTERNET_OPTION_NOT_SETTABLE,
+    SERROR_INTERNET_SHUTDOWN,
+    SERROR_INTERNET_INCORRECT_USER_NAME,
+    SERROR_INTERNET_INCORRECT_PASSWORD,
+    SERROR_INTERNET_LOGIN_FAILURE,
+    SERROR_INTERNET_INVALID_OPERATION,
+    SERROR_INTERNET_OPERATION_CANCELLED,
+    SERROR_INTERNET_INCORRECT_HANDLE_TYPE,
+    SERROR_INTERNET_INCORRECT_HANDLE_STATE,
+    SERROR_INTERNET_NOT_PROXY_REQUEST,
+    SERROR_INTERNET_REGISTRY_VALUE_NOT_FOUND,
+    SERROR_INTERNET_BAD_REGISTRY_PARAMETER,
+    SERROR_INTERNET_NO_DIRECT_ACCESS,
+    SERROR_INTERNET_NO_CONTEXT,
+    SERROR_INTERNET_NO_CALLBACK,
+    SERROR_INTERNET_REQUEST_PENDING,
+    SERROR_INTERNET_INCORRECT_FORMAT,
+    SERROR_INTERNET_ITEM_NOT_FOUND,
+    SERROR_INTERNET_CANNOT_CONNECT,
+    SERROR_INTERNET_CONNECTION_ABORTED,
+    SERROR_INTERNET_CONNECTION_RESET,
+    SERROR_INTERNET_FORCE_RETRY,
+    SERROR_INTERNET_INVALID_PROXY_REQUEST,
+    SERROR_STOPPED
+    );
+
+function GetInternetError(dwError: DWORD): string;
+function GetHTTPError(dwError: DWORD): string;
+
+implementation
+
+{-----------------------------------------------------------------------------}
+function GetInternetError(dwError: DWORD): string;
+var
+  i: integer;
+begin
+  Result:= '';
+  for i:= 0 to MAX_INET_ERRORS do
+    if INET_ERROR_CODES[i] = dwError then
+      begin
+        Result:= Format(SERROR_INTERNET, [INET_ERROR_STRINGS[i]]);
+        break;
+      end;
+  if Result = '' then
+    Result:= Format(SERROR_INTERNET_UNKNOWN, [dwError]);
+end;
+
+{-----------------------------------------------------------------------------}
+function GetHTTPError(dwError: DWORD): string;
+var
+  i: integer;
+begin
+  Result:= '';
+  for i:= Low(HTTP_ERROR_CODES) to High(HTTP_ERROR_CODES) do
+    if HTTP_ERROR_CODES[i] = dwError then
+      begin
+        Result:= Format(SERROR_HTTP, [HTTP_ERROR_STRINGS[i]]);
+        break;
+      end;
+  if Result = '' then
+    Result:= Format(SERROR_HTTP_UNKNOWN, [dwError]);
+end;
+
+end.

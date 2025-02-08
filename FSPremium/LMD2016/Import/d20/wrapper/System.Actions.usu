@@ -1,0 +1,44 @@
+T+: EActionError
+T+: TStatusAction
+T+: TContainedActionListClass
+T+: TCustomShortCutList
+        P+: ShortCuts
+T+: TContainedAction
+        P+: SavedEnabledState
+        P+: ActionList
+        P+: Index
+        P+: DisableIfNoHandler
+        P+: AutoCheck
+        P+: Caption
+        P+: Checked
+        P+: Enabled
+        P+: GroupIndex
+        P+: HelpContext
+        P+: HelpKeyword
+        P+: HelpType
+        P+: Hint
+        P+: Visible
+        P+: ShortCut
+        P+: SecondaryShortCuts
+        P+: ImageIndex
+        P+: OnHint
+        P+: StatusAction
+        P+: Category
+T+: TContainedActionLink
+T+: TContainedActionLinkClass
+T+: TContainedActionClass
+T+: TActionListState
+T+: TActionListEnumerator
+        P+: Current
+T+: TEnumActionListEvent
+TE: TEnumActionListRef
+T+: TContainedActionList
+        P+: OnChange
+        P+: OnExecute
+        P+: OnUpdate
+        P+: Actions
+        P+: ActionCount
+        P+: State
+        P+: OnStateChange
+TE: TEnumActionProcInfo
+TE: TEnumActionProc

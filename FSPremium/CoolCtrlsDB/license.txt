@@ -1,0 +1,60 @@
+License agreement:
+
+  Copyright:
+  ==========
+  The CoolDBUtilities (software) and everything that comes with it is 
+  Copyright (C) 1999-2002, by Artem A. Berman. All rights reserved.
+
+  Liability disclaimer:
+  =====================
+  THIS SOFTWARE IS DISTRIBUTED "AS IS" AND WITHOUT WARRANTIES AS TO 
+  PERFORMANCE  OF MERCHANTABILITY OR ANY OTHER WARRANTIES WHETHER EXPRESSED 
+  OR IMPLIED. YOU USE IT AT YOUR OWN RISK. THE AUTHOR WILL NOT BE LIABLE FOR 
+  DATA LOSS, DAMAGES,  LOSS OF PROFITS OR ANY OTHER KIND OF LOSS WHILE USING 
+  OR MISUSING THIS SOFTWARE.
+
+  
+  Restrictions:
+  =============
+  You may not attempt to reverse compile, modify, translate or disassemble 
+  the software in whole or in part. You may not remove or modify any copyright 
+  notice or the method by which it may be invoked.
+
+  Operating license:
+  ==================
+  Unregistered version. You may distribute the unregistered version of 
+  software freely, provided that all files are included and remain unmodified 
+  and that no extra files have been added to the package. You may not ask any 
+  money for the distribution.
+  You may use the unregistered version of CoolCtrls free of charge for testing 
+  purposes, but if you want to use it for other purposes than testing - you 
+  have to register it with the author.
+
+  Registered version. Once you have registered, you will receive a personal 
+  registered copy via email. This copy may not be copied or lend.
+  You have the non-exclusive right to use registered version of the software 
+  only by a single person, on a single computer at a time. You may physically 
+  transfer the software from one computer to another, provided that the 
+  software is used only by a single person, on a single computer at a time. 
+  In group projects where multiple persons will use the software, you must 
+  purchase an individual license for each member of the group. Use over a 
+  "local area network" (within the same locale) is permitted provided that 
+  the software is used only by a single person, on a single computer at a 
+  time. Use over a "wide area network" (outside the same locale) is strictly 
+  prohibited under any and all circumstances.  
+
+
+  Back-up and transfer:
+  =====================
+  You may make one copy of the software solely for "back-up" purposes, as 
+  prescribed by international copyright laws. You must reproduce and include 
+  the copyright notice on the back-up copy. 
+
+  Terms:
+  ======
+  This license is effective until terminated. You may terminate it by 
+  destroying the program, the documentation and copies thereof. This license 
+  will also terminate if you fail to comply with any terms or conditions of 
+  this agreement. You agree upon such termination to destroy all copies of the 
+  program and of the documentation, or return them to author
+

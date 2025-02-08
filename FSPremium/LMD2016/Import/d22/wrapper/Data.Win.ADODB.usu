@@ -1,0 +1,282 @@
+TW: _Connection
+TW: _Command
+TW: _Recordset
+TW: Error
+TW: Errors
+TW: _Parameter
+TW: Parameters
+TW: Property_
+TW: Properties
+T+: EADOError
+T+: TConnectMode
+T+: TConnectOption
+T+: TCursorLocation
+T+: TCursorType
+T+: TEventStatus
+T+: TExecuteOption
+T+: TExecuteOptions
+T+: TIsolationLevel
+T+: TADOLockType
+T+: TObjectState
+T+: TObjectStates
+T+: TSchemaInfo
+T+: TXactAttribute
+T+: TXactAttributes
+TE: TBeginTransCompleteEvent
+T+: TCommandType
+TE: TConnectErrorEvent
+T+: TDisconnectEvent
+TE: TExecuteCompleteEvent
+T+: TWillConnectEvent
+TE: TWillExecuteEvent
+TE: TInfoMessageEvent
+T+: TADOConnection
+        PE: ConnectionObject
+        P+: CommandCount
+        P+: Commands
+        P+: DataSets
+        PE: Errors
+        P+: InTransaction
+        PE: Properties
+        P+: State
+        P+: Version
+        P+: Attributes
+        P+: CommandTimeout
+        P+: Connected
+        P+: ConnectionString
+        P+: ConnectionTimeout
+        P+: ConnectOptions
+        P+: CursorLocation
+        P+: DefaultDatabase
+        P+: IsolationLevel
+        P+: KeepConnection
+        P+: LoginPrompt
+        P+: Mode
+        P+: Provider
+        P+: AfterConnect
+        P+: BeforeConnect
+        P+: AfterDisconnect
+        P+: BeforeDisconnect
+        P+: OnDisconnect
+        PE: OnInfoMessage
+        PE: OnBeginTransComplete
+        PE: OnCommitTransComplete
+        PE: OnRollbackTransComplete
+        PE: OnConnectComplete
+        P+: OnWillConnect
+        PE: OnExecuteComplete
+        PE: OnWillExecute
+        P+: OnLogin
+T+: TRDSConnection
+        P+: AppServer
+        PW: DataSpaceObject
+        P+: ComputerName
+        P+: Connected
+        P+: InternetTimeout
+        P+: ServerName
+        P+: AfterConnect
+        P+: AfterDisconnect
+        P+: BeforeConnect
+        P+: BeforeDisconnect
+T+: TDataType
+T+: TParameterAttribute
+T+: TParameterAttributes
+T+: TParameterDirection
+T+: TParameter
+        PE: ParameterObject
+        P+: Parameters
+        PE: Properties
+        P+: Name
+        P+: Attributes
+        P+: DataType
+        P+: Direction
+        P+: NumericScale
+        P+: Precision
+        P+: Size
+        P+: Value
+TE: TPropList
+T+: TParameters
+        P+: Modified
+        P+: ParamValues
+        P+: Command
+        P+: Items
+        PE: ParameterCollection
+T+: TADOCommand
+        PE: ActiveConnection
+        P+: CommandTextAlias
+        P+: ComponentRef
+        PE: CommandObject
+        PE: Properties
+        P+: States
+        P+: CommandText
+        P+: CommandTimeout
+        P+: CommandType
+        P+: Connection
+        P+: ConnectionString
+        P+: ExecuteOptions
+        P+: Prepared
+        P+: Parameters
+        P+: ParamCheck
+T+: TCursorOption
+T+: TCursorOptions
+T+: TEventReason
+T+: TFilterGroup
+T+: TMarshalOption
+T+: TRecordStatus
+T+: TRecordStatusSet
+T+: TAffectRecords
+T+: TPersistFormat
+T+: TSeekOption
+TE: PVariantList
+TE: TVariantList
+T+: TWillChangeFieldEvent
+TE: TFieldChangeCompleteEvent
+T+: TWillChangeRecordEvent
+TE: TRecordChangeCompleteEvent
+T+: TEndOfRecordsetEvent
+T+: TFetchProgressEvent
+TE: TRecordsetErrorEvent
+T+: TRecordsetReasonEvent
+TE: TRecordsetEvent
+TE: TRecordsetCreate
+T+: TCustomADODataSet
+        P+: MasterDataLink
+        P+: Command
+        P+: CommandText
+        P+: CommandTimeout
+        P+: CommandType
+        P+: DataSource
+        P+: IndexDefs
+        P+: IndexFieldNames
+        P+: MasterFields
+        P+: ParamCheck
+        P+: Parameters
+        P+: Prepared
+        PE: Reserved
+        P+: StoreDefs
+        P+: EnableBCD
+        P+: DesignerData
+        P+: IndexName
+        P+: IndexFieldCount
+        P+: IndexFields
+        P+: FilterGroup
+        PE: Properties
+        PE: Recordset
+        P+: RecordsetState
+        P+: RecordStatus
+        P+: Sort
+        P+: Active
+        P+: AutoCalcFields
+        P+: CacheSize
+        P+: Connection
+        P+: ConnectionString
+        P+: CursorLocation
+        P+: CursorType
+        P+: ExecuteOptions
+        P+: Filter
+        P+: Filtered
+        P+: LockType
+        P+: MarshalOptions
+        P+: MaxRecords
+        P+: BeforeOpen
+        P+: AfterOpen
+        P+: BeforeClose
+        P+: AfterClose
+        P+: BeforeInsert
+        P+: AfterInsert
+        P+: BeforeEdit
+        P+: AfterEdit
+        P+: BeforePost
+        P+: AfterPost
+        P+: BeforeCancel
+        P+: AfterCancel
+        P+: BeforeDelete
+        P+: AfterDelete
+        P+: BeforeScroll
+        P+: AfterScroll
+        P+: BeforeRefresh
+        P+: AfterRefresh
+        P+: OnCalcFields
+        P+: OnDeleteError
+        P+: OnEditError
+        P+: OnFilterRecord
+        P+: OnNewRecord
+        P+: OnPostError
+        P+: OnWillChangeField
+        PE: OnFieldChangeComplete
+        P+: OnWillChangeRecord
+        PE: OnRecordChangeComplete
+        P+: OnWillChangeRecordset
+        PE: OnRecordsetChangeComplete
+        P+: OnWillMove
+        PE: OnMoveComplete
+        P+: OnEndOfRecordset
+        PE: OnFetchComplete
+        P+: OnFetchProgress
+        PE: OnRecordsetCreate
+T+: TADODataSet
+        P+: IndexDefs
+        P+: CommandText
+        P+: CommandTimeout
+        P+: CommandType
+        P+: DataSetField
+        P+: DataSource
+        P+: EnableBCD
+        P+: FieldDefs
+        P+: IndexName
+        P+: IndexFieldNames
+        P+: MasterFields
+        P+: ParamCheck
+        P+: Parameters
+        P+: Prepared
+        P+: RDSConnection
+        P+: StoreDefs
+        P+: BeforeOpen
+        P+: AfterOpen
+        P+: BeforeClose
+        P+: AfterClose
+        P+: BeforeInsert
+        P+: AfterInsert
+        P+: BeforeEdit
+        P+: AfterEdit
+        P+: BeforePost
+        P+: AfterPost
+        P+: BeforeCancel
+        P+: AfterCancel
+        P+: BeforeDelete
+        P+: AfterDelete
+        P+: BeforeScroll
+        P+: AfterScroll
+        P+: OnCalcFields
+        P+: OnDeleteError
+        P+: OnEditError
+        P+: OnNewRecord
+        P+: OnPostError
+T+: TADOTable
+        P+: IndexDefs
+        P+: CommandTimeout
+        P+: EnableBCD
+        P+: IndexFieldNames
+        P+: IndexName
+        P+: MasterFields
+        P+: MasterSource
+        P+: ReadOnly
+        P+: TableDirect
+        P+: TableName
+T+: TADOQuery
+        P+: RowsAffected
+        P+: CommandTimeout
+        P+: DataSource
+        P+: EnableBCD
+        P+: ParamCheck
+        P+: Parameters
+        P+: Prepared
+        P+: SQL
+T+: TADOStoredProc
+        P+: CommandTimeout
+        P+: DataSource
+        P+: EnableBCD
+        P+: ProcedureName
+        P+: Parameters
+        P+: Prepared
+T+: TADOBlobStream

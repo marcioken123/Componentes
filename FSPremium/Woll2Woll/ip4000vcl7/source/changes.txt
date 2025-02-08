@@ -1,0 +1,66 @@
+2000.05 - Fix grid title painting problem when scrolling grid.  This problem was
+          introduced in 2000.04.
+
+2000.04
+TwwDBRichEditMSWord
+   Addressed comipiling issues when using TwwDBRichEditMSWord in the Delphi 5
+   update patch 1 environment.
+
+   Improved performance of searches when using ADOExpress dataset components
+
+TwwLookupDlg, TwwSearchDialog
+   Prevented clearing of the embedded incremental search control's text property.  This was
+   a problem in some cases, if you set the incremntal search's text property in the
+   OnInitDialog event.
+
+   Fixed problem where escape was not closing form (problem was introduced in 2000.03)
+
+TwwDBNavigator
+   When using form inheritance with the navigator, it would crash in the ide if you tried
+   to delete the ancestor buttons.  Deletion is now automatically prevented to avoid this issue.
+
+   Fixed problem where navigator thought its button was still pressed when the mouse
+   was moved over the button.  This problem occurred when an exception was 
+   thrown executing the button's functionality.
+
+TwwDBComboDlg
+   Published wordwrap property
+
+TwwFilterDialog 
+   When using fdByQueryModify, the filterdialog will modify the sql of your dataset. 
+   With some tdataset objects that support sql, the dataset may use another property name
+   instead of 'SQL'.  In these cases, you can set the new property SQLPropertyName.
+   The data type still must be a TStringList.
+
+   Support sql alias names in filterdialog when using FieldsFetchMethod of fmUseTfields
+
+   Fixed exception thrown when the dataset contains a lookupfield.  This would occur if
+   FieldsFetchMethod was set to fmUseTfields and a lookupfield existed in the dataset.
+
+
+TwwDataInspector
+   When the inspector was the only control contained by its parent object, the tab
+   key would not exit the control. This problem is now fixed.
+
+   OnItemChanged was not fired when exiting inspector.  This event is now fired in this
+   case as well.
+
+   When using design time inspector editor, the inspector was not repainted after
+   moving an item to a new location.
+
+TwwDBedit
+  Did not property display readonly memo fields. This problem is now fixed.
+
+TwwDBGrid
+   Fix problem where multiline hints in some cases had the last hint line cutoff. 
+
+TwwDBLookupCombo - Fixed exception thrown with Delphi updatepatch 1 when using ADO datasets
+  with this control.
+
+TwwIncrementalSearch - Tab/Escape keys not passed to form.  This problem is fixed.
+
+TwwDBRichEdit - Fixed problem where the print function would print more copies than requested.
+   When right-clicking a URL link, the component will not open the url link.  This allows
+   pop-up menus to work as expected.
+
+

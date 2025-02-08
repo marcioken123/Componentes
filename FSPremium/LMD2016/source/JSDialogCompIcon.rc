@@ -1,0 +1,39 @@
+TJSDialog16 BITMAP "special\icons\\TJSDialog16.bmp"
+TJSDialog BITMAP "special\icons\\TJSDialog24.bmp"
+TJSDialog32 BITMAP "special\icons\\TJSDialog32.bmp"
+
+TJSEditDialog16 BITMAP "special\icons\\TJSEditDialog16.bmp"
+TJSEditDialog BITMAP "special\icons\\TJSEditDialog24.bmp"
+TJSEditDialog32 BITMAP "special\icons\\TJSEditDialog32.bmp"
+
+TJSPasswordDialog16 BITMAP "special\icons\\TJSPasswordDialog16.bmp"
+TJSPasswordDialog BITMAP "special\icons\\TJSPasswordDialog24.bmp"
+TJSPasswordDialog32 BITMAP "special\icons\\TJSPasswordDialog32.bmp"
+
+TJSDualEditDialog16 BITMAP "special\icons\\TJSDualEditDialog16.bmp"
+TJSDualEditDialog BITMAP "special\icons\\TJSDualEditDialog24.bmp"
+TJSDualEditDialog32 BITMAP "special\icons\\TJSDualEditDialog32.bmp"
+
+TJSConfirmPasswordDialog16 BITMAP "special\icons\\TJSConfirmPasswordDialog16.bmp"
+TJSConfirmPasswordDialog BITMAP "special\icons\\TJSConfirmPasswordDialog24.bmp"
+TJSConfirmPasswordDialog32 BITMAP "special\icons\\TJSConfirmPasswordDialog32.bmp"
+
+TJSChangePasswordDialog16 BITMAP "special\icons\\TJSChangePasswordDialog16.bmp"
+TJSChangePasswordDialog BITMAP "special\icons\\TJSChangePasswordDialog24.bmp"
+TJSChangePasswordDialog32 BITMAP "special\icons\\TJSChangePasswordDialog32.bmp"
+
+TJSDialogCheck16 BITMAP "special\icons\\TJSDialogCheck16.bmp"
+TJSDialogCheck BITMAP "special\icons\\TJSDialogCheck24.bmp"
+TJSDialogCheck32 BITMAP "special\icons\\TJSDialogCheck32.bmp"
+
+TJSDialogSheet16 BITMAP "special\icons\\TJSDialogSheet16.bmp"
+TJSDialogSheet BITMAP "special\icons\\TJSDialogSheet24.bmp"
+TJSDialogSheet32 BITMAP "special\icons\\TJSDialogSheet32.bmp"
+
+TJSCommandLinkButton16 BITMAP "special\icons\\TJSCommandLinkButton16.bmp"
+TJSCommandLinkButton BITMAP "special\icons\\TJSCommandLinkButton24.bmp"
+TJSCommandLinkButton32 BITMAP "special\icons\\TJSCommandLinkButton32.bmp"
+
+TJSMoreLabel16 BITMAP "special\icons\\TJSMoreLabel16.bmp"
+TJSMoreLabel BITMAP "special\icons\\TJSMoreLabel24.bmp"
+TJSMoreLabel32 BITMAP "special\icons\\TJSMoreLabel32.bmp"

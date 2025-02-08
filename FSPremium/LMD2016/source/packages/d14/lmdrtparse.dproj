@@ -1,0 +1,146 @@
+	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{73430B67-C24B-43D6-8E93-2E7DE5410065}</ProjectGuid>
+			<MainSource>lmdrtparse.dpk</MainSource>
+			<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+			<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+			<DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+			<DCC_DependencyCheckOutputName>lmdrtparse.bpl</DCC_DependencyCheckOutputName>
+			<ProjectVersion>12.0</ProjectVersion>
+			<Config Condition="'$(Config)'==''">build</Config>
+		</PropertyGroup>
+                <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='build' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<DCC_DcuOutput>..\..\build</DCC_DcuOutput>
+			<DllSuffix>140</DllSuffix>
+			<DCC_CBuilderOutput>All</DCC_CBuilderOutput>
+			<DCC_HppOutput>..\..</DCC_HppOutput>
+			<DCC_DependencyCheckOutputName>lmdrtparse.bpl</DCC_DependencyCheckOutputName>
+			<DCC_ImageBase>00400000</DCC_ImageBase>
+			<DCC_Description>LMD-Tools ParsePack</DCC_Description>
+			<RuntimeOnlyPackage>true</RuntimeOnlyPackage>
+			<DesignOnlyPackage>false</DesignOnlyPackage>
+			<DCC_OutputNeverBuildDcps>true</DCC_OutputNeverBuildDcps>
+			<GenDll>true</GenDll>
+			<DCC_SymbolReferenceInfo>1</DCC_SymbolReferenceInfo>
+			<GenPackage>true</GenPackage>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<Version>7.0</Version>
+		</PropertyGroup>
+		<ItemGroup>
+			<DelphiCompile Include="lmdrtparse.dpk">
+				<MainSource>MainSource</MainSource>
+			</DelphiCompile>
+			<DCCReference Include="lmdrtl.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="rtl.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="vcl.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="vclx.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="vclimg.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+                        <DCCReference Include="..\..\LMDBand.pas" />
+    <DCCReference Include="..\..\LMDCSVLex.pas" />
+    <DCCReference Include="..\..\LMDCSVParser.pas" />
+    <DCCReference Include="..\..\LMDCSVWriter.pas" />
+    <DCCReference Include="..\..\LMDDataType.pas" />
+    <DCCReference Include="..\..\LMDDBFParser.pas" />
+    <DCCReference Include="..\..\LMDDBFReader.pas" />
+    <DCCReference Include="..\..\LMDDBFWriter.pas" />
+    <DCCReference Include="..\..\LMDDeductionTree.pas" />
+    <DCCReference Include="..\..\LMDDTD.pas" />
+    <DCCReference Include="..\..\LMDEmbdControl.pas" />
+    <DCCReference Include="..\..\LMDEntryPoint.pas" />
+    <DCCReference Include="..\..\LMDExtParser.pas" />
+    <DCCReference Include="..\..\LMDHiddenText.pas" />
+    <DCCReference Include="..\..\LMDHTMLLex.pas" />
+    <DCCReference Include="..\..\LMDHTMLParser.pas" />
+    <DCCReference Include="..\..\LMDHTMLSTYLE.pas" />
+    <DCCReference Include="..\..\LMDHTMLWriter.pas" />
+    <DCCReference Include="..\..\LMDIterator.pas" />
+    <DCCReference Include="..\..\LMDLex.pas" />
+    <DCCReference Include="..\..\LMDParser.pas" />
+    <DCCReference Include="..\..\LMDParserStack.pas" />
+    <DCCReference Include="..\..\LMDPlainTextLex.pas" />
+    <DCCReference Include="..\..\LMDPlainTextParser.pas" />
+    <DCCReference Include="..\..\LMDPlainTextWriter.pas" />
+    <DCCReference Include="..\..\LMDRTFAnalyser.pas" />
+    <DCCReference Include="..\..\LMDRTFDocument.pas" />
+    <DCCReference Include="..\..\LMDRTFLookupTable.pas" />
+    <DCCReference Include="..\..\LMDRTFParser.pas" />
+    <DCCReference Include="..\..\LMDRTFScanner.pas" />
+    <DCCReference Include="..\..\LMDRTFTape.pas" />
+    <DCCReference Include="..\..\LMDRule.pas" />
+    <DCCReference Include="..\..\LMDSimpleRTFParser.pas" />
+    <DCCReference Include="..\..\LMDSimpleXMLLex.pas" />
+    <DCCReference Include="..\..\LMDSimpleXMLParser.pas" />
+    <DCCReference Include="..\..\LMDStringsList.pas" />
+    <DCCReference Include="..\..\LMDTable.pas" />
+    <DCCReference Include="..\..\LMDText.pas" />
+    <DCCReference Include="..\..\LMDTextBox.pas" />
+    <DCCReference Include="..\..\LMDTree.pas" />
+    <DCCReference Include="..\..\LMDWriter.pas" />
+    <DCCReference Include="..\..\LMDListObjects.pas" />
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+		<ProjectExtensions>
+			<Borland.Personality>Delphi.Personality.12</Borland.Personality>
+			<Borland.ProjectType>Package</Borland.ProjectType>
+			<BorlandProject>
+				<Delphi.Personality>
+					<Parameters>
+						<Parameters Name="UseLauncher">False</Parameters>
+						<Parameters Name="LoadAllSymbols">True</Parameters>
+						<Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+					</Parameters>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1049</VersionInfo>
+						<VersionInfo Name="CodePage">1251</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName">LMD Innovative</VersionInfoKeys>
+						<VersionInfoKeys Name="FileDescription">LMD-Tools ParsePack</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">2016.5.*</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright">Copyright (c) LMD Innovative</VersionInfoKeys>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName">LMD 2009 VCL Series</VersionInfoKeys>
+						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<Source>
+						<Source Name="MainSource">lmdrtparse.dpk</Source>
+					</Source>
+				</Delphi.Personality>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>

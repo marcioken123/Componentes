@@ -1,0 +1,78 @@
+package lmdrtweb;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$LIBSUFFIX '180'}
+{$DESCRIPTION 'LMD-Tools WebPack Components'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  lmdrtl,
+  rtl,
+  vcl,
+  vclx;
+
+contains
+  LMDClassLib in '..\..\LMDClassLib.pas',
+  LMDDownload in '..\..\LMDDownload.pas',
+  LMDFSSupport in '..\..\LMDFSSupport.pas',
+  LMDFtpSupport in '..\..\LMDFtpSupport.pas',
+  LMDHASHList in '..\..\LMDHASHList.pas',
+  LMDHTMLObjectUnit in '..\..\LMDHTMLObjectUnit.pas',
+  LMDHTMLSupp in '..\..\LMDHTMLSupp.pas',
+  LMDHTTPSupp in '..\..\LMDHTTPSupp.pas',
+  LMDInetConst in '..\..\LMDInetConst.pas',
+  LMDMapi in '..\..\LMDMapi.pas',
+  LMDNews in '..\..\LMDNews.pas',
+  LMDRAS in '..\..\LMDRAS.pas',
+  LMDRASCF in '..\..\LMDRASCF.pas' {LMDRASConnectionForm},
+  LMDRASSupport in '..\..\LMDRASSupport.pas',
+  LMDStringsSupport in '..\..\LMDStringsSupport.pas',
+  LMDSyncUnit in '..\..\LMDSyncUnit.pas',
+  LMDURLSupp in '..\..\LMDURLSupp.pas',
+  LMDWebBase in '..\..\LMDWebBase.pas',
+  LMDWebConfig in '..\..\LMDWebConfig.pas',
+  LMDWebConst in '..\..\LMDWebConst.pas',
+  LMDWebDownloadFormUnit in '..\..\LMDWebDownloadFormUnit.pas' {LMDWebDownload},
+  LMDWebHTMLLex in '..\..\LMDWebHTMLLex.pas',
+  LMDWebHTMLScan in '..\..\LMDWebHTMLScan.pas',
+  LMDWebHTTPGet in '..\..\LMDWebHTTPGet.pas',
+  LMDWebHTTPScan in '..\..\LMDWebHTTPScan.pas',
+  LMDWebInfo in '..\..\LMDWebInfo.pas',
+  LMDWebLex in '..\..\LMDWebLex.pas',
+  LMDWebNewsView in '..\..\LMDWebNewsView.pas',
+  LMDWebNewsViewForm in '..\..\LMDWebNewsViewForm.pas' {LMDWebNewsViewForm_},
+  LMDWebTree in '..\..\LMDWebTree.pas',
+  LMDWebUpdate in '..\..\LMDWebUpdate.pas',
+  LMDWebXML in '..\..\LMDWebXML.pas',
+  LMDWebXMLParser in '..\..\LMDWebXMLParser.pas',
+  LMDWebXMLParserLite in '..\..\LMDWebXMLParserLite.pas',
+  LMDNewsAdapters in '..\..\LMDNewsAdapters.pas',
+  LMDUpdateAdapter in '..\..\LMDUpdateAdapter.pas',
+  LMDAutoUpdateFrm in '..\..\LMDAutoUpdateFrm.pas',
+  LMDUpdateFrm in '..\..\LMDUpdateFrm.pas',
+  LMDUpdateInternetOptionsUnit in '..\..\LMDUpdateInternetOptionsUnit.pas',
+  LMDUpdateMessage in '..\..\LMDUpdateMessage.pas';
+
+end.

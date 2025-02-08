@@ -1,0 +1,88 @@
+T+: EMenuError
+T+: TMenuBreak
+T+: TMenuChangeEvent
+T+: TMenuDrawItemEvent
+TE: TAdvancedMenuDrawItemEvent
+T+: TMenuMeasureItemEvent
+T+: TMenuItemAutoFlag
+T+: TMenuAutoFlag
+T+: TMenuActionLink
+T+: TMenuActionLinkClass
+T+: TMenuHandle
+T+: TMenuItemEnumerator
+        P+: Current
+T+: TMenuItem
+        P+: ActionLink
+        P+: Command
+        P+: Handle
+        P+: Count
+        P+: Items
+        P+: MenuIndex
+        P+: Parent
+        P+: Action
+        P+: AutoCheck
+        P+: AutoHotkeys
+        P+: AutoLineReduction
+        P+: Bitmap
+        P+: Break
+        P+: Caption
+        P+: Checked
+        P+: SubMenuImages
+        P+: Default
+        P+: Enabled
+        P+: GroupIndex
+        P+: HelpContext
+        P+: Hint
+        P+: ImageIndex
+        P+: RadioItem
+        P+: ShortCut
+        P+: Visible
+        P+: OnClick
+        P+: OnDrawItem
+        PE: OnAdvancedDrawItem
+        P+: OnMeasureItem
+T+: TFindItemKind
+T+: TMenu
+        P+: OnChange
+        P+: Images
+        P+: AutoHotkeys
+        P+: AutoLineReduction
+        P+: BiDiMode
+        P+: Handle
+        P+: OwnerDraw
+        P+: ParentBiDiMode
+        P+: WindowHandle
+        P+: Items
+T+: TMainMenu
+        P+: AutoHotkeys
+        P+: AutoLineReduction
+        P+: AutoMerge
+        P+: BiDiMode
+        P+: Images
+        P+: OwnerDraw
+        P+: ParentBiDiMode
+        P+: OnChange
+T+: TPopupAlignment
+T+: TTrackButton
+T+: TMenuAnimations
+T+: TMenuAnimation
+T+: TPopupMenu
+        P+: PopupComponent
+        P+: PopupPoint
+        P+: Alignment
+        P+: AutoHotkeys
+        P+: AutoLineReduction
+        P+: AutoPopup
+        P+: BiDiMode
+        P+: HelpContext
+        P+: Images
+        P+: MenuAnimation
+        P+: OwnerDraw
+        P+: ParentBiDiMode
+        P+: TrackButton
+        P+: OnChange
+        P+: OnPopup
+T+: TPopupList
+        P+: Window
+TE: PMenuItem
+T+: TMenuItemStack

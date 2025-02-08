@@ -1,0 +1,238 @@
+T+: EDBEngineError
+        P+: ErrorCount
+        P+: Errors
+T+: ENoResultSet
+T+: TDBError
+        P+: Category
+        PW: ErrorCode
+        P+: SubCode
+        P+: Message
+        P+: NativeError
+TE: TLocale
+TE: TBDECallbackEvent
+T+: TBDECallback
+T+: TSessionList
+        P+: CurrentSession
+        P+: Count
+        P+: Sessions
+        P+: List
+T+: TConfigModes
+T+: TConfigMode
+T+: TPasswordEvent
+T+: TDatabaseEvent
+TE: TDatabaseNotifyEvent
+TE: TBDEInitProc
+T+: TTraceFlag
+T+: TTraceFlags
+T+: TSession
+        PE: OnDBNotify
+        P+: BDEOwnsLoginCbDb
+        P+: ConfigMode
+        P+: DatabaseCount
+        P+: Databases
+        PW: Handle
+        PE: Locale
+        P+: TraceFlags
+        P+: Active
+        P+: AutoSessionName
+        P+: KeepConnections
+        P+: NetFileDir
+        P+: PrivateDir
+        P+: SessionName
+        P+: SQLHourGlass
+        P+: OnPassword
+        P+: OnStartup
+TE: TFieldDescList
+T+: TParamList
+        PE: Buffer
+        P+: FieldCount
+        PE: FieldDescs
+T+: TTransIsolation
+T+: TDatabaseLoginEvent
+T+: TDatabase
+        P+: DataSets
+        P+: Directory
+        PW: Handle
+        P+: IsSQLBased
+        P+: InTransaction
+        PE: Locale
+        P+: Session
+        P+: Temporary
+        P+: SessionAlias
+        P+: TraceFlags
+        P+: AliasName
+        P+: Connected
+        P+: DatabaseName
+        P+: DriverName
+        P+: Exclusive
+        P+: HandleShared
+        P+: KeepConnection
+        P+: LoginPrompt
+        P+: Params
+        P+: ReadOnly
+        P+: SessionName
+        P+: TransIsolation
+        P+: AfterConnect
+        P+: AfterDisconnect
+        P+: BeforeConnect
+        P+: BeforeDisconnect
+        P+: OnLogin
+T+: TRecNoStatus
+T+: TDataSetUpdateObject
+        P+: DataSet
+T+: TSQLUpdateObject
+TE: PKeyBuffer
+T+: TBDEKeyBuffer
+TE: PRecInfo
+T+: TBDERecInfo
+TE: TBlobDataArray
+T+: TBDEDataSet
+        PW: StmtHandle
+        P+: CacheBlobs
+        P+: ExpIndex
+        PW: Handle
+        P+: KeySize
+        PE: Locale
+        P+: UpdateObject
+        P+: UpdatesPending
+        PE: UpdateRecordTypes
+        P+: Active
+        P+: AutoCalcFields
+        P+: CachedUpdates
+        P+: ObjectView
+        P+: BeforeOpen
+        P+: AfterOpen
+        P+: BeforeClose
+        P+: AfterClose
+        P+: BeforeInsert
+        P+: AfterInsert
+        P+: BeforeEdit
+        P+: AfterEdit
+        P+: BeforePost
+        P+: AfterPost
+        P+: BeforeCancel
+        P+: AfterCancel
+        P+: BeforeDelete
+        P+: AfterDelete
+        P+: BeforeScroll
+        P+: AfterScroll
+        P+: BeforeRefresh
+        P+: AfterRefresh
+        P+: OnCalcFields
+        P+: OnDeleteError
+        P+: OnEditError
+        P+: OnNewRecord
+        P+: OnPostError
+        P+: OnUpdateError
+        P+: OnUpdateRecord
+T+: TNestedTable
+        P+: DataSetField
+        P+: ObjectView
+TE: TDBFlags
+T+: TDBDataSet
+        PE: DBFlags
+        P+: UpdateMode
+        P+: Database
+        PW: DBHandle
+        PE: DBLocale
+        P+: DBSession
+        PW: Handle
+        P+: AutoRefresh
+        P+: DatabaseName
+        P+: Filter
+        P+: Filtered
+        P+: FilterOptions
+        P+: SessionName
+        P+: OnFilterRecord
+T+: TBatchMode
+T+: TTableType
+T+: TLockType
+T+: TIndexName
+TE: TIndexDescList
+TE: TValCheckList
+T+: TIndexFiles
+T+: TTable
+        P+: MasterLink
+        P+: Exists
+        P+: IndexFieldCount
+        P+: IndexFields
+        P+: KeyExclusive
+        P+: KeyFieldCount
+        P+: TableLevel
+        P+: Constraints
+        P+: DefaultIndex
+        P+: Exclusive
+        P+: FieldDefs
+        P+: IndexDefs
+        P+: IndexFieldNames
+        P+: IndexFiles
+        P+: IndexName
+        P+: MasterFields
+        P+: MasterSource
+        P+: ReadOnly
+        P+: StoreDefs
+        P+: TableName
+        P+: TableType
+        P+: UpdateMode
+        P+: UpdateObject
+        P+: Ranged
+T+: TBatchMove
+        P+: ChangedCount
+        P+: KeyViolCount
+        P+: MovedCount
+        P+: ProblemCount
+        P+: AbortOnKeyViol
+        P+: AbortOnProblem
+        P+: CommitCount
+        P+: ChangedTableName
+        P+: Destination
+        P+: KeyViolTableName
+        P+: Mappings
+        P+: Mode
+        P+: ProblemTableName
+        P+: RecordCount
+        P+: Source
+        P+: Transliterate
+T+: TParamBindMode
+T+: TServerDesc
+TE: TServerDescList
+TE: TSPParamDescList
+T+: TStoredProc
+        PW: Handle
+        P+: ParamCount
+        P+: StmtHandle
+        P+: Prepared
+        P+: StoredProcName
+        P+: Overload
+        P+: Params
+        P+: ParamBindMode
+        P+: UpdateObject
+T+: TQuery
+        P+: DataLink
+        P+: Prepared
+        P+: ParamCount
+        P+: Local
+        P+: StmtHandle
+        P+: Text
+        P+: RowsAffected
+        PE: SQLBinary
+        P+: Constrained
+        P+: Constraints
+        P+: DataSource
+        P+: ParamCheck
+        P+: RequestLive
+        P+: SQL
+        P+: Params
+        P+: UniDirectional
+        P+: UpdateMode
+        P+: UpdateObject
+T+: TUpdateSQL
+        P+: DatabaseName
+        P+: DataSet
+        P+: Query
+        P+: SQL
+        P+: SessionName
+        P+: ModifySQL
+        P+: InsertSQL
+        P+: DeleteSQL
+T+: TBlobStream

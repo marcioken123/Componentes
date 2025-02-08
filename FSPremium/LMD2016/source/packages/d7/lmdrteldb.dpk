@@ -1,0 +1,62 @@
+package lmdrteldb;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$LIBSUFFIX '70'}
+{$DESCRIPTION 'LMD ElPack - Database Components'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  lmdrtl,
+  rtl,
+  vcl,
+  vclx,
+  dbrtl,
+  vcldb,
+  lmdrtelpro,
+  lmdrtelcore;
+
+contains
+  ElDBBoxes in '..\..\ElDBBoxes.pas',
+  ElDBBtnEdit in '..\..\ElDBBtnEdit.pas',
+  LMDElDBConst in '..\..\LMDElDBConst.pas',
+  ElDBCtrls in '..\..\ElDBCtrls.pas',
+  ElDBCurrEdit in '..\..\ElDBCurrEdit.pas',
+  ElDBDTPick in '..\..\ElDBDTPick.pas',
+  ElDBHTMLView in '..\..\ElDBHTMLView.pas',
+  ElDBInspector in '..\..\ElDBInspector.pas',
+  ElDBLbl in '..\..\ElDBLbl.pas',
+  ElDBLookupCtrls in '..\..\ElDBLookupCtrls.pas',
+  ElDBSpin in '..\..\ElDBSpin.pas',
+  ElDBTree in '..\..\ElDBTree.pas',
+  ElDBTreeEditors in '..\..\ElDBTreeEditors.pas',
+  ElDBTreeGrids in '..\..\ElDBTreeGrids.pas',
+  ElDBTreeNavigator in '..\..\ElDBTreeNavigator.pas',
+  ElDBWideComboBox in '..\..\ElDBWideComboBox.pas',
+  ElDBWideLookupComboGrid in '..\..\ElDBWideLookupComboGrid.pas',
+  ElDBWidelookupControls in '..\..\ElDBWidelookupControls.pas',
+  ElDBXTree in '..\..\ElDBXTree.pas',
+  ElDBXTreeGrids in '..\..\ElDBXTreeGrids.pas';
+
+end.

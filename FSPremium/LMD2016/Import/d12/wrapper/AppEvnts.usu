@@ -1,0 +1,34 @@
+T+: TCustomApplicationEvents
+        P+: OnActionExecute
+        P+: OnActionUpdate
+        P+: OnActivate
+        P+: OnDeactivate
+        P+: OnException
+        P+: OnIdle
+        P+: OnHelp
+        P+: OnHint
+        P+: OnMessage
+        P+: OnMinimize
+        P+: OnRestore
+        P+: OnShowHint
+        P+: OnShortCut
+        P+: OnSettingChange
+        P+: OnModalBegin
+        P+: OnModalEnd
+T+: TApplicationEvents
+        P+: OnActionExecute
+        P+: OnActionUpdate
+        P+: OnActivate
+        P+: OnDeactivate
+        P+: OnException
+        P+: OnIdle
+        P+: OnHelp
+        P+: OnHint
+        P+: OnMessage
+        P+: OnMinimize
+        P+: OnModalBegin
+        P+: OnModalEnd
+        P+: OnRestore
+        P+: OnShowHint
+        P+: OnShortCut
+        P+: OnSettingChange

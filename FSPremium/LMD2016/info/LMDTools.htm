@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+	<HEAD>
+		<TITLE>LMD-Tools ReadMe</TITLE>
+		<meta http-equiv="Content-Language" content="en-us">
+		<META http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	</HEAD>
+	<BODY>
+		<STYLE>BODY { FONT-SIZE: 70%; BACKGROUND: #ffffff; FONT-FAMILY: Verdana, Arial, Helvetica, MS Sans Serif }
+	A:link { COLOR: #0000ff; TEXT-DECORATION: none }
+	A:visited { COLOR: #0000ff; TEXT-DECORATION: none }
+	A:hover { COLOR: #ff0000; TEXT-DECORATION: underline }
+	TABLE { FONT-SIZE: 100% }
+	HR { WIDTH: 25%; COLOR: red; TEXT-ALIGN: left }
+	    </STYLE>
+		<p>
+			<FONT face="verdana" size="+2"><a name="Top"></a>LMD<span lang="de">-Tools
+            </span>ReadMe<br>
+			</FONT><FONT size="-2">(© by LMD Innovative, (<A href="http://www.lmd.de/">http://www.lmd.de</A>
+				or <A href="http://www.lmdinnovative.com/">http://www.lmdinnovative.com</A>)</FONT></p>
+		<HR>
+		<p>
+			<FONT color="#000080" size="1"><a href="_readme.htm">[Main]</a><span lang="de">&nbsp;&nbsp;&nbsp;</span></FONT><br>
+			<font size="2" face="Verdana">
+				<br>
+			<b>Contents<br>
+</b>&nbsp; <a href="#Introduction">Introduction</a><br>
+&nbsp; <a href="#Documentation">Helpfile and tutorials</a><br>
+&nbsp; <a href="#Resources">Using different Language Resource File </a> <br>
+&nbsp; <a href="#Designtime">Designtime Enhancements</a><br>
+&nbsp; </font>
+			<FONT color="#000080" size="2"><span lang="de">
+            <a href="#Update">Updating projects to LMD-Tools 2016</a></span></FONT><font size="2" face="Verdana"><br>
+				<br>
+				<br>
+			<a name="Introduction"></a>
+			</font><b>
+
+<font SIZE="3">
+Introduction</font></b><font size="2" face="Verdana"><br>
+				Welcome to <b>LMD-Tools</b>! The latest
+release of this component suite provides more than 400 components<span lang="de">. <br>
+            <br>
+			</span>
+</font><span lang="de"><font face="Verdana" size="2"><i>First steps<br></i>If you encounter any problems during installation review the
+			<a href="LMDInstallWin32.htm">Installation notes (WIN32)</a> or
+			<a href="LMDInstallNET.htm">(VCL.NET)</a>. <b>C++ user of BDS 
+			2006 or later should read the corresponding <a href="LMDInfoBDS.htm">special notes</a></b>.<br>Check end of this document to get info about updating existing 
+            projects to LMD-Tools 2016.</font></span><font face="Verdana" size="2"><br>
+			<br>
+			<span lang="de"><i>Location of demos<br></i>Demo projects can be found in the</span></font><span lang="de"><font face="Courier New" size="2"> \lmdrtlx, 
+			\lmdcore and \lmdtools </font><font face="Verdana" size="2"> folders 
+			in </font><font face="Courier New" size="2"> \demos </font>
+			<font face="Verdana" size="2"> below 
+            the installation directory. Please review </font><font face="Courier New" size="2">demos.txt</font><font face="Verdana" size="2"> 
+            for more info about included demonstration projects for CBuilder and 
+            Delphi.</font></span><font face="Verdana" size="2"> <br>
+			<br>
+			<i><span lang="de">Support </span><br></i><span lang="de">If you require technical support or if you want 
+            to report problems review the </span><a href="LMD2K7Support.htm">Reporting Problems</a> section.
+		</font></p>
+		<p>
+<b><font color="#ff0000" face="Verdana" size="2">Important Note for C++ Builder user</font></b><span lang="de"><font face="Verdana" size="2"><br>
+Speed up compile time 
+            by including the </font><font size="2" face="Courier New">LMDMAX.H</font><font face="Verdana" size="2"> 
+            header file into one of your projects file. <br>
+Certain demonstration projects (especially in the LMD3\LMD Old, usually projects 
+claim that some components like TLMDShapeLabel etc.are not installed) can't be 
+compiled without installing the dcllmdlegacy_XX.bpl package (in trialversions they 
+can not be compiled at all).</font></span><br>
+<font size="1" face="Verdana"><a href="#Top">[Top]</a></font><font size="2" face="Verdana"><br>
+&nbsp;</font></p>
+		<p><b>
+
+<font SIZE="3" face="Verdana">
+<a name="Documentation"></a>Helpfile and tutorials</font></b><font size="2" face="Verdana"><br>
+By default helpfiles are usually not included with standard/trial installers. If 
+you did not already download current documentation pack, please visit
+<a href="http://www.lmd.de/download">LMD public download area</a> and get the <b>
+LMD-Tools&nbsp; Packs </b>documentation package. If you are using any LMD 
+		Standalone or IDE-Tools packages, get the corresponding Help packages or 
+		download the LMD VCL Complete Help installer.<br>
+Tutorials/FAQs and other product resources can be found in the 
+public <a href="http://wiki.lmd.de">LMD Wiki</a>.</font><br>
+<font size="1" face="Verdana"><a href="#Top">[Top]</a></font><font size="2" face="Verdana"><br>
+		</font><span lang="de"><font face="Verdana" size="2"> 
+            <i><br>&nbsp;</i></font></span></p>
+
+<p>
+<b>
+<font size="3" face="Verdana"><a name="Resources"></a>Using different Language Resource File <br>
+</font></b>
+<font size="2" face="Verdana">Translated Resourcestrings can be found in
+</font>
+</p>
+<ul>
+  <li>
+<font size="2" face="Courier New">\Resources</font><font size="2" face="Verdana"> 
+  folder below installation directory for compiled versions and
+</font>
+  </li>
+  <li>
+<font size="2" face="Courier New">\lib\source\</font><font size="2" face="Verdana">strings 
+  folder for sourcecode versions
+</font>
+  </li>
+</ul>
+<p>
+<font size="2" face="Verdana">To change current language simply copy unit file 
+of desired language to library file and recompile your application.<br>
+Feel free to send us modified resource units for other languages!<br>
+</font><font size="1" face="Verdana">
+<a href="#Top" style="color: #0000ff; text-decoration: none">[Top]</a></font><font size="2" face="Verdana"><br>
+&nbsp;</font></p>
+<p>
+<font size="3" face="Verdana"><b><a name="Designtime"></a>Designtime Enhancements<br>
+</b></font><font size="2" face="Verdana">Like for all LMD 2016</span> products the LMD Designtime Enhancements package is installed automatically (</font><font size="2" face="Courier New">dcllmdrtl<span lang="de">11</span>_XX.bpl</font><font size="2" face="Verdana"> 
+or
+</font><font size="2" face="Courier New">LMD.Vcl.Design.Rtl.dll</font><font size="2" face="Verdana">, 
+compiled versions only). 
+This package provides common design-time features for all LMD packages. Please 
+check About dialog of any LMD control to enable/disable design-time features. 
+For further info check 
+<a href="LMDDesigntime.htm" style="color: #0000ff; text-decoration: none">LMD Designtime enhancements</a> 
+description. <br>
+</font><font size="1" face="Verdana">
+<a href="#Top" style="color: #0000ff; text-decoration: none">[Top]</a></font></p>
+		<p>
+			<br>
+            <b><font face="Verdana" size="3"><a name="Update"></a>Updating existing projects
+            <span lang="de">to LMD-Tools 2016</span></font></b><span lang="de"><font face="Verdana" size="2"><i><br>
+            </i>Latest information about this topic an be found at LMD Wiki in 
+			the <a href="http://wiki.lmd.de/index.php/LMD_VCL_2007_-_Updating">
+			Updating existing projects</a> document.<br>
+			<i><br>
+            Compatibility 
+            components no installed by default<br>
+            </i>The compatibility package (now called
+</font>
+
+            <font face="Courier" size="2">dcllmdlegacy.dpk</font><font face="Verdana" size="2">) 
+            is no longer installed by default (those controls which were located 
+            in the LMD Free and LMD 3.X tabs). Reason is to avoid that new 
+            LMD-Tools customers use outdated controls<i>. </i>On the other hand 
+            we moved on user request popular controls like TLMDSwitch back to 
+            the standard packages. <br>
+            If you used any of these controls in your projects: <u>All controls 
+            are still available</u> - simply switch on the compatbility controls 
+            checkbox in installer.<br>
+            <br>
+			<b>If you upgrade from LMD-Tools 7 or earlier:</b></font></span></p>
+		<p>
+<span lang="de"><font face="Verdana" size="2"><i>Unit changes <br>
+            </i>Several units were reorganized and removed from the packages. So 
+            you might encounter following problems when trying to compile an 
+            existing project:</font></span></p>
+		<ol>
+          <li><span lang="de"><font face="Verdana" size="2"><b>File not found 
+          errors for certain units</b><br>
+          Following units are no longer required in LMD-Tools:<br>
+          </font><font size="2" face="Courier New">lmdbredt.pas, lmdbtn.pas, 
+          lmdcctrl.pas, lmdcombo.pas, lmdcompo.pas, LMDComponent.pas, 
+          LMDCtrl.pas, lmdctrlA.pas, lmddbctA.pas, lmddbctr.pas, lmddlgS.pas, 
+          lmdeditb.pas, lmdeditc.pas, LMDEditM.pas, lmdextcA.pas, lmdextcS.pas, 
+          LMDGrapA.pas, lmdgroup.pas, LMDMemoC.pas, lmdmmS.pas, lmdnonvA.pas, 
+          lmdnonvS.pas, lmdnwgui.pas, lmdrctrl.pas, lmdrectutils.pas, 
+          lmdshapA.pas, LMDStdCA.pas, lmdstdcS.pas </font>
+          <font face="Verdana" size="1">(for CBuilder user: .hpp/.cpp extension)</font><font size="2" face="Courier New"><br>
+          <br>
+          </font><font face="Verdana" size="2"><font color="#000080"><b>
+          Solution: </b></font><br>
+          If compiler complains about these files simply remove the unit from 
+          the uses clause. <u>This is the recommended way.<br>
+          Alternatively</u> install the units from the </font>
+          <font size="2" face="Courier New">source\deprecated</font><font face="Verdana" size="2"> 
+          (Delphi only, CBuilder user must always remove references)<i>. </i>
+          These units are actually empty but make compiler happy. <br>
+&nbsp;</font></span></li>
+          <li><font face="Verdana" size="2"><span lang="de"><b>Unknown 
+          Identifier error (Components in forms)<i><br>
+          </i></b>New or different units are required for a control.<i><br>
+          </i><br>
+          <font color="#000080"><b>Solution: </b></font><br>
+          Simply load the affected form and save it again. Delphi/CBuilder will 
+          automatically add required units to the uses clause. T</span>he
+          <span lang="de">simplest</span> way is to press F9 (compile) until the project
+starts.<span lang="de"> </span>&nbsp;The IDE will detect missing unit references and add them
+automatically. <br>
+&nbsp;</font></li>
+          <li><span lang="de"><b><font face="Verdana" size="2">Unknown </font>
+          </b></span><font face="Verdana" size="2"><span lang="de"><b>Identifier 
+          error (types)</b></span><br>
+          In <span lang="de">&quot;</span>worst<span lang="de">&quot;</span> case additional units must be added manually to the
+uses clause of an unit<span lang="de"> (e.g. when</span> type or method was moved to another unit, which is
+not added by the Delphi IDE automatically). <br>
+          If you get an unknown identifier,
+error simply check the <b>helpfile</b> <span lang="de">or search the interface/source 
+          files to find out </span>where the <span lang="de">affected </span>type/method is
+          <span lang="de">defined </span>and add th<span lang="de">is</span> unit to the uses clause.<br>
+          <span lang="de">For example: Many button related types are now defined 
+          in </span></font><span lang="de"><font size="2" face="Courier New">
+          LMDButtonBase.pas</font><font face="Verdana" size="2"> unit instead of
+          </font><font size="2" face="Courier New">LMDGraph.pas</font><font face="Verdana" size="2">. 
+          For example if you have changed in your code the style of a button, it 
+          is very likely that you have to add LMDButtonBase to the uses clause.</font></span></li>
+        </ol>
+		<p>
+			<span lang="de"><font face="Verdana" size="2">The mentioned issues 
+            deal with unit names only. Like always we tried to keep 
+            compatibility as far as possible (concerning properties and objects).
+            <br>
+            <br>
+            <b>
+            <i>Other changes</i></b><br>
+            The style for TLMDCustomButton and TLMDCustomSpeedButton (and 
+            controls using internal SpeedButtons) is now 
+            specified by the ButtonStyle property. <br>
+            In addition the ubsWinXP, ubsWinXPCombo, ubsWinXPTool and 
+            ubsAutoDetect styles were 
+            removed, because CtlXP property (which is activated by default) is 
+            now supported by buttons. In most cases you need not to take care of 
+            this change, because we handle conversion automatically.&nbsp;<br>
+            </font></span><font face="Arial"><a href="#Top"><font size="1" face="Verdana">[Top]</font></a></font></p>
+		<P><font face="Verdana">&nbsp; </font>
+		<P>
+			<HR>
+		<P><FONT color="#000080">©&nbsp; </FONT><FONT color="#0000ff">by</FONT><FONT color="#000080">
+				<A href="http://www.lmd.de/">LMD Innovative</A> Germany<BR>
+				All other trademarks are acknowledged.</FONT>
+		</P>
+	</BODY>
+</HTML>

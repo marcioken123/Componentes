@@ -1,0 +1,146 @@
+T+: TActionClientItemClass
+T+: TActionClientsClass
+T+: TActionBarsClass
+T+: TActionBarItemClass
+T+: TCustomActionManager
+        P+: Loading
+        P+: ActionBars
+        P+: DefaultActionBars
+        P+: LinkedActionLists
+        P+: FileName
+        P+: Images
+        P+: PrioritySchedule
+T+: TActionManager
+        P+: FileName
+        P+: ActionBars
+        P+: LinkedActionLists
+        P+: Images
+        P+: PrioritySchedule
+        P+: State
+        P+: OnChange
+        P+: OnExecute
+        P+: OnUpdate
+T+: TActionListItem
+        P+: ActionList
+        P+: Caption
+T+: TActionListCollection
+        P+: ActionManager
+        P+: ListItems
+T+: TActionProc
+T+: TActionClientsCollection
+        P+: ActionClients
+        P+: ParentItem
+        P+: ActionManager
+        P+: Customizable
+T+: TBackgroundLayout
+T+: TChangesAllowed
+T+: TChangesAllowedSet
+T+: TActionClient
+        P+: OwningCollection
+        P+: ActionBar
+        P+: ChildActionBar
+        P+: HasItems
+        P+: ChangesAllowed
+        P+: Color
+        P+: ContextItems
+        P+: Background
+        P+: BackgroundLayout
+        P+: Items
+        P+: Visible
+T+: TActionBarItem
+        P+: ActionBars
+        P+: ActionBar
+        P+: AutoSize
+        P+: GlyphLayout
+T+: TActionBars
+        P+: ActionBars
+        P+: Customizable
+        P+: HintShortCuts
+        P+: SessionCount
+        P+: ShowHints
+T+: TActionClientClass
+T+: TCaptionOptions
+T+: TActionClients
+        P+: ActionClients
+        P+: ActionManager
+        P+: AutoHotKeys
+        P+: Customizable
+        P+: HideUnused
+        P+: CaptionOptions
+        P+: SmallIcons
+T+: TActionClientLinkClass
+T+: TActionClientLink
+T+: TMergeRange
+T+: TActionClientItem
+        P+: ActionClients
+        P+: ActionLink
+        P+: CheckUnused
+        P+: Control
+        P+: ParentItem
+        P+: Separator
+        P+: ShortCutText
+        P+: Action
+        P+: Caption
+        P+: ImageIndex
+        P+: MergeIndex
+        P+: LastSession
+        P+: ShowCaption
+        P+: ShowGlyph
+        P+: ShowShortCut
+        P+: ShortCut
+        P+: UsageCount
+T+: TCustomActionClass
+T+: TActionDragObject
+        P+: ActionCount
+        P+: ActionManager
+        P+: Actions
+T+: TCategoryDragObject
+        P+: Category
+T+: TActionItemDragObject
+        P+: ClientItem
+T+: TCustomActionControlClass
+T+: TBarOrientation
+T+: TControlCreatedEvent
+T+: TGetControlClassEvent
+T+: TBarEdge
+T+: TCustomActionBar
+        P+: Canvas
+        P+: HRowCount
+        P+: Items
+        P+: PersistentHotKeys
+        P+: VRowCount
+        P+: ActionManager
+        P+: ActionClient
+        P+: AllowHiding
+        P+: Caption
+        P+: Color
+        P+: ContextBar
+        P+: DesignMode
+        P+: HorzMargin
+        P+: HorzSeparator
+        P+: Orientation
+        P+: ActionControls
+        P+: Spacing
+        P+: VertMargin
+        P+: VertSeparator
+        P+: OnControlCreated
+        P+: OnGetControlClass
+        P+: OnPaint
+T+: TCMItemMsg
+T+: TCustomActionControl
+        P+: GlyphPos
+        P+: ActionBar
+        P+: ActionClient
+        P+: GlyphLayout
+        P+: Margins
+        P+: Selected
+        P+: Separator
+        P+: ShowCaption
+        P+: ShowShortCut
+        P+: SmallIcon
+        P+: Spacing
+        P+: TextBounds
+        P+: Transparent
+        P+: OnClick
+TE: IActionBarDesigner
+T+: TXToolDockForm

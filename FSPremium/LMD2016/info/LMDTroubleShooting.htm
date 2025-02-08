@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<meta http-equiv="Content-Language" content="en-us">
+<TITLE>LMD VCL - Troubleshooting</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+</HEAD>
+<BODY>
+<STYLE>BODY {
+	FONT-SIZE: 70%; BACKGROUND: #ffffff; FONT-FAMILY: Verdana, Arial, Helvetica, MS Sans Serif
+}
+A:link {
+	COLOR: #0000ff; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #0000ff; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #ff0000; TEXT-DECORATION: underline
+}
+TABLE {
+	FONT-SIZE: 100%
+}
+HR {
+	WIDTH: 25%; COLOR: red; TEXT-ALIGN: left
+}
+</STYLE>
+<p>
+<FONT face=verdana size=+2><a name="Top"></a>LMD VCL - TroubleShooting/FAQ<br>
+</FONT>
+<FONT size=-2>
+
+(© by LMD Innovative, (<A href="http://www.lmd.de/">http://www.lmd.de</A>
+ or <A href="http://www.lmdinnovative.com/">http://www.lmdinnovative.com</A>)</font></p>
+<HR>
+
+<p><FONT color=#000080 size="1"><a href="_readme.htm">[Main]</a></FONT><br>
+<font size="2" face="Verdana"><br>
+Please find latest FAQ/TroubleShooting documents in <a href="http://wiki.lmd.de">
+public Wiki</a> for LMD products. This document covers possible installation 
+problems. For support and installation help review also our
+<a href="LMD2K16Support.htm">support</a> options.<br></font><strong><font size="5" face="Arial">
+<br></font></strong><font size="3" face="Verdana">
+<b>Installation</b></font></p>
+<ol>
+	<li><font size="2" face="Verdana"><a href="#I1">After successful installation, errors like 
+	&quot;Can't find entry point [..] in lmdxxxxx.bpl&quot; occur after starting 
+	Delphi/C++ Builder IDE.</a></font></li>
+	<li><font face="Verdana" size="2"><a href="#I2">[Fatal Error]: Unit XXXX was 
+	compiled with a different version of XXXXX</a></font></li>
+	<li><font face="Verdana" size="2"><a href="#I3">LMD[..].pas not found error 
+	/ Version Mix Up</a></font></li>
+	<li><font size="2" face="Verdana"><span lang="de"><a href="#I4">LMD VCL Trials or SE 
+	releases do NOT work with Delphi / C++ Builder Trials! </a>
+	</span></font></li>
+	<li><span lang="de"><font face="Verdana" size="2"><a href="#I5">Components 
+	do not appear on component palette</a></font></span></li>
+</ol>
+<p><font size="3" face="Verdana"><b><br>
+</b></font><b><font size="2"><a name="I1"></a>After successful installation, errors like &quot;Can't find entry 
+point [..] in lmdxxxx.bpl&quot; occur during startup of Delphi/C++ Builder IDE.<br>
+</font></b><font size="2">If &quot;Entry Point not found&quot; or &quot;Could not find [..]&quot; 
+errors occur during startup of IDE, problem is most likely caused by a version 
+mix up.<br>
+Reason: Delphi/C++ Builder still has access to older or different runtime 
+packages (--&gt; multiple variants of same runtime package reside on your system. 
+Especially when older versions reside in \system32 folder, they are preferred 
+against those which reside in \projects\bpl directory). <br>
+If you encounter this problem, check your harddisk whether several versions of 
+same runtime package are installed on your system. All LMD-Tools runtime 
+packages start with lmd[..], so using the filter *lmd*.bpl for harddisk search 
+should work. <br>
+Usually this problem occurs when a previous version was not removed completely. 
+E.g. if you compiled source code manually, Delphi places created runtime BPL's 
+automatically into the default BPL output path (can be specified in Environment 
+Options dialog). Older version may have installed them in System directory - so 
+there is the possible version conflict.<br>
+To completely remove an old LMD-Tools version (the hard way): </font></p>
+<ul>
+	<li><font size="2">Close Delphi / C++ IDE (Note: Be sure that you did not 
+	include any LMD VCL units in own packages, otherwise open these packages, 
+	remove LMD-Tools units and recompile them). </font></li>
+	<li><font size="2">Use all uninstallers for previous packages </font></li>
+	<li><font size="2">Delete all LMD-Tools directoies </font></li>
+	<li><font size="2">Delete all LMD-Tools path settings from 
+	Extras|Environment Options|Tab Library </font></li>
+	<li><font size="2">Now most important point: Search your harddisk (at least 
+	in your system directory and the Delphi Projects\BPL path) for LMD BPLs. Use 
+	as search string *lmd*.bpl for runtime packages.&nbsp; </font></li>
+	<li><font size="2">Remove them all </font></li>
+</ul>
+<p><font size="2">After that try to reinstall original package or use source 
+code installer. To install LMD VCL sourcecode: </font></p>
+<ul>
+	<li><font size="2">Use the source installer of your product </font></li>
+	<li><font size="2">After installation check whether paths to LMD VCL source 
+	files are correctly set. If for any reason not, add them yourself </font>
+	</li>
+	<li><font size="2">We have extremly simplified source compilation. Load the 
+	correct project group and compile one package after another. Install only 
+	designtime packages (dcllmd*.bpk). </font></li>
+	<li><font size="2">All compiled packages can be found after compilation in 
+	the Projects\BPL path of your IDE version. </font></li>
+</ul>
+<p><FONT color=#000080 size="1"><a href="#Top">[Top]</a></FONT></p><hr>
+<p><b><font size="2"><a name="I2"></a>[Fatal Error]: Unit XXXX was compiled with 
+a different version of XXXXX</font></b><font size="2"><br>
+<i>Example<br>
+</i><font color="#FF0000"><b>[Fatal Error] UMain.pas(8): Unit lmdsysin was 
+compiled with a different version of lmdconst.IDS_CPUSPEED<br>
+</b></font><br>
+<i>Reason</i><br>
+A previous installation (trial, previous release) was not removed completely. 
+This error message might also occur, when you try to use precompiled LMD VCL 
+packages with Delphi/C++ Builder trials. <br>
+<br>
+<i>Solution</i><br>
+Make sure that no path reference to an older LMD-Tools exist (check Environment 
+Options|Library Path). The most secure way would be to uninstall any files of 
+any previous version from your harddisk. Please rebuild your project completely 
+to reflect new units. For detailed instructions read Uninstall section in 
+installation guide.</font></p>
+<p><FONT color=#000080 size="1"><a href="#Top">[Top]</a></FONT></p><hr>
+<p><font face="Verdana" size="2"><b><a name="I3"></a>LMD[..].pas not found error 
+/ Version Mix Up <br>
+</b>If IDE claims that it can't find a file (though DCUs are available and 
+Library Path is set correctly - see Environment Options), there are only a few 
+possible causes for this problem: </font></p>
+<ul>
+	<li><font face="Verdana" size="2">Your IDE version is not compatible with 
+	precompiled LMD VCL package. Make sure that you do not use a Delphi / C++ 
+	Builder trial and that you have installed all required service packs of your 
+	IDE. </font></li>
+	<li><font face="Verdana" size="2">Most probably this is a version mix up. 
+	For the offending files please check whether a previous version was 
+	completely uninstalled, that no parts are compiled into existing packages 
+	(e.g. your personal packages, you might have to rebuild the package) and 
+	that your project was REBUILD (to force the compilation of latest PAS/DCU 
+	files). Furthermore the project files may have references to older package 
+	files (especially if you use runtime packages, simply check Package settings 
+	in Project Options.</font></li>
+</ul>
+<p><FONT color=#000080 size="1"><a href="#Top">[Top]</a></FONT></p><hr>
+<p><font size="2" face="Verdana">
+<b><a name="I4"></a>I want to <span lang="de">use a LMD VCL Trial (or SE version) within a 
+Delphi/CBuilder Trial. Everything installs ok, but if I want to execute a 
+project I receive error &quot;LMD[..].pas not found&quot;.</span><br>
+</b><span lang="de">To make it short: </span></font><font face="Verdana">
+<font size="2">&nbsp;You need a full version of <span lang="de">C++ Builder/</span>Delphi 
+to run any precompiled version<span lang="de"> (Trial or SE). </span>The VCL 
+files<span lang="de"> in Borland </span>Trials use a different DCU signature than 
+full version<span lang="de">s</span>. So many or<span lang="de"> </span>almost 
+all precompiled packages will fail to work on a <span lang="de">CBuilder/Delphi
+</span>Trial<span lang="de">version</span>.</font><br>
+</font><FONT color=#000080 size="1"><a href="#Top">[Top]</a></FONT></p><hr>
+<p><font size="2" face="Verdana">
+<b><a name="I5"></a>After installation (without errors) components do not appear 
+on component palette<br>
+</b>Please check first in <i>Install Components... </i>dialog whether Package 
+entries were created at all. If items are not available, packages have to be 
+installed manually (check installation guide in \info folder). If items are 
+available, but not checked: Check them to enable packages. If you receive error 
+messages, IDE has no (or wrong) access to the runtime packages. Please check 
+then whether installer has installed runtime packages correctly into your 
+default output BPL folder. If runtime/designtime packages are missing, locate 
+the files on your harddisk and copy them to the default folder and add them 
+manually. <br>
+<b><br>
+For localized (german, japanes, french) Delphi/C++ Builder IDEs (from Delphi 
+2005 and higher) the identification of the default BPL output path may fail. If 
+problem occurs, please copy files to the correct folder manually.</b></font><font face="Verdana"><br>
+</font><FONT color=#000080 size="1"><a href="#Top">[Top]</a></FONT></p>
+<p>&nbsp;</p> 
+<HR>
+
+<P><FONT color=#000080>©&nbsp;  </FONT><FONT color=#0000FF>by</FONT><FONT color=#000080> <A 
+href="http://www.lmd.de/">LMD Innovative</A> Germany<BR>All other trademarks are 
+acknowledged.</FONT> </P></BODY></HTML>

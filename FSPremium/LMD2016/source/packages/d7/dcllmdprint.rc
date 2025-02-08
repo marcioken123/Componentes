@@ -1,0 +1,30 @@
+LANGUAGE 0,0
+
+MAINICON ICON "C:\LMD2016VCL\public\source\install\templates\lmdtools.ico"
+
+PLATFORMTARGETS RCDATA
+{
+    3
+}
+
+1 VERSIONINFO
+FILEOS              VOS__WINDOWS32
+FILETYPE            VFT_APP
+FILESUBTYPE         VFT2_UNKNOWN
+FILEVERSION         2016, 5, 0, 0
+PRODUCTVERSION      2016, 5, 0, 0
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4"
+        BEGIN
+            VALUE "CompanyName",      "LMD Innovative \0"
+            VALUE "FileDescription",  "LMD 2016 - Common PrintPack Components \0"
+            VALUE "FileVersion",      "2016.5.0 \0"
+            VALUE "LegalCopyright",   "© by LMD Innovative \0"
+            VALUE "LegalTrademarks",  " \0"
+            VALUE "ProductName",      "LMD 2008 VCL Series \0"
+            VALUE "ProductVersion",   "2016.5.0.0 \0"
+        END
+    END
+END

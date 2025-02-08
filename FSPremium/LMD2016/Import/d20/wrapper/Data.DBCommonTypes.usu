@@ -1,0 +1,7 @@
+T+: TLoginEvent
+T+: FLDVchk
+T+: FLDRights
+TE: pCBType
+T+: CBType
+T+: CBRType
+T+: TKeyIndex

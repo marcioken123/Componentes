@@ -1,0 +1,83 @@
+T+: TSysCharSet
+TE: TIntegerSet
+T+: WordRec
+T+: LongRec
+T+: Int64Rec
+TE: PByteArray
+TE: TByteArray
+TE: PWordArray
+TE: TWordArray
+TE: TProcedure
+T+: TFileName
+T+: TSearchRec
+T+: TFloatValue
+T+: TFloatFormat
+T+: TFloatRec
+T+: TTimeStamp
+T+: TMbcsByteType
+T+: TSysLocale
+T+: TLangRec
+T+: TLanguages
+        P+: Count
+        P+: Name
+        P+: NameFromLocaleID
+        P+: NameFromLCID
+        P+: ID
+        P+: LocaleID
+        P+: Ext
+T+: Exception
+        P+: HelpContext
+        P+: Message
+T+: ExceptClass
+T+: EAbort
+T+: EHeapException
+T+: EOutOfMemory
+T+: EInOutError
+TE: PExceptionRecord
+T+: TExceptionRecord
+T+: EExternal
+T+: EExternalException
+T+: EIntError
+T+: EDivByZero
+T+: ERangeError
+T+: EIntOverflow
+T+: EMathError
+T+: EInvalidOp
+T+: EZeroDivide
+T+: EOverflow
+T+: EUnderflow
+T+: EInvalidPointer
+T+: EInvalidCast
+T+: EConvertError
+T+: EAccessViolation
+T+: EPrivilege
+T+: EStackOverflow
+T+: EControlC
+T+: EVariantError
+T+: EPropReadOnly
+T+: EPropWriteOnly
+T+: EAssertionFailed
+T+: EAbstractError
+T+: EIntfCastError
+T+: EInvalidContainer
+T+: EInvalidInsert
+T+: EPackageError
+T+: EOSError
+T+: EWin32Error
+T+: ESafecallException
+T+: TFormatSettings
+T+: TFilenameCaseMatch
+TE: PDayTable
+TE: TDayTable
+TE: TReplaceFlags
+T+: TNameType
+TE: TPackageInfoProc
+TE: TTerminateProc
+TE: IReadWriteSync
+T+: TSimpleRWSync
+TE: PThreadInfo
+T+: TThreadInfo
+T+: TThreadLocalCounter
+T+: TMultiReadExclusiveWriteSynchronizer
+        P+: RevisionLevel
+T+: TMREWSync

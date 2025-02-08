@@ -1,0 +1,173 @@
+T+: EDBClient
+        PW: ErrorCode
+T+: EReconcileError
+        P+: Context
+        PW: PreviousError
+T+: TGetUsernameEvent
+T+: TCustomRemoteServer
+        P+: OnGetUsername
+        P+: AppServer
+T+: TConnectionBroker
+        P+: Connected
+        P+: Connection
+        P+: LoginPrompt
+        P+: AfterConnect
+        P+: AfterDisconnect
+        P+: BeforeConnect
+        P+: BeforeDisconnect
+        P+: OnGetUsername
+        P+: OnLogin
+T+: TAggUpdateEvent
+T+: TAggregate
+        P+: DependentFields
+        P+: RecBufOfs
+        PW: AggHandle
+        P+: InUse
+        P+: DataSet
+        P+: DataSize
+        P+: DataType
+        P+: Active
+        P+: AggregateName
+        P+: Expression
+        P+: GroupingLevel
+        P+: IndexName
+        P+: Visible
+        P+: OnUpdate
+T+: TAggregates
+        P+: Items
+TE: TFieldDescList
+TE: PRecInfo
+T+: TRecInfo
+T+: TCDSRecInfo
+TE: PKeyBuffer
+T+: TKeyBuffer
+T+: TCDSKeyBuffer
+T+: TDataPacketFormat
+T+: TReconcileAction
+T+: TReconcileErrorEvent
+T+: TRemoteEvent
+T+: TReconcileInfo
+T+: TDataSetOption
+T+: TDataSetOptions
+T+: TFetchOption
+T+: TFetchOptions
+T+: TCustomClientDataSet
+        P+: Aggregates
+        P+: AggregatesActive
+        P+: CommandText
+        P+: DisableStringTrim
+        PW: DSBase
+        PW: DSCursor
+        P+: IndexDefs
+        P+: IndexName
+        P+: IsClone
+        P+: FetchOnDemand
+        P+: MasterSource
+        P+: Params
+        P+: ProviderEOF
+        P+: ReadOnly
+        P+: StoreDefs
+        P+: Ranged
+        P+: OnReconcileError
+        P+: BeforeApplyUpdates
+        P+: AfterApplyUpdates
+        P+: BeforeGetRecords
+        P+: AfterGetRecords
+        P+: BeforeRowRequest
+        P+: AfterRowRequest
+        P+: BeforeExecute
+        P+: AfterExecute
+        P+: BeforeGetParams
+        P+: AfterGetParams
+        P+: Active
+        P+: DataSetField
+        P+: ProviderName
+        P+: FileName
+        P+: ConnectionBroker
+        P+: IndexFieldNames
+        P+: MasterFields
+        P+: PacketRecords
+        P+: RemoteServer
+        P+: HasAppServer
+        P+: ActiveAggs
+        P+: ChangeCount
+        P+: CloneSource
+        P+: Data
+        P+: XMLData
+        PW: AppServer
+        P+: DataSize
+        P+: Delta
+        P+: GroupingLevel
+        P+: IndexFieldCount
+        P+: IndexFields
+        P+: KeyExclusive
+        P+: KeyFieldCount
+        P+: KeySize
+        P+: LogChanges
+        P+: SavePoint
+        P+: StatusFilter
+T+: TClientDataSet
+        P+: Active
+        P+: Aggregates
+        P+: AggregatesActive
+        P+: AutoCalcFields
+        P+: CommandText
+        P+: ConnectionBroker
+        P+: Constraints
+        P+: DataSetField
+        P+: DisableStringTrim
+        P+: FileName
+        P+: Filter
+        P+: Filtered
+        P+: FilterOptions
+        P+: FieldDefs
+        P+: IndexDefs
+        P+: IndexFieldNames
+        P+: IndexName
+        P+: FetchOnDemand
+        P+: MasterFields
+        P+: MasterSource
+        P+: ObjectView
+        P+: PacketRecords
+        P+: Params
+        P+: ProviderName
+        P+: ReadOnly
+        P+: RemoteServer
+        P+: StoreDefs
+        P+: BeforeOpen
+        P+: AfterOpen
+        P+: BeforeClose
+        P+: AfterClose
+        P+: BeforeInsert
+        P+: AfterInsert
+        P+: BeforeEdit
+        P+: AfterEdit
+        P+: BeforePost
+        P+: AfterPost
+        P+: BeforeCancel
+        P+: AfterCancel
+        P+: BeforeDelete
+        P+: AfterDelete
+        P+: BeforeScroll
+        P+: AfterScroll
+        P+: BeforeRefresh
+        P+: AfterRefresh
+        P+: OnCalcFields
+        P+: OnDeleteError
+        P+: OnEditError
+        P+: OnFilterRecord
+        P+: OnNewRecord
+        P+: OnPostError
+        P+: OnReconcileError
+        P+: BeforeApplyUpdates
+        P+: AfterApplyUpdates
+        P+: BeforeGetRecords
+        P+: AfterGetRecords
+        P+: BeforeRowRequest
+        P+: AfterRowRequest
+        P+: BeforeExecute
+        P+: AfterExecute
+        P+: BeforeGetParams
+        P+: AfterGetParams
+        P+: Ranged
+T+: TClientBlobStream

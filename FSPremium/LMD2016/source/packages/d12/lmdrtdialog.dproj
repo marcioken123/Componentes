@@ -1,0 +1,137 @@
+	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{C77D990D-BA08-4D24-8390-EA8D4C32B333}</ProjectGuid>
+			<MainSource>lmdrtdialog.dpk</MainSource>
+			<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+			<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+			<DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+			<DCC_DependencyCheckOutputName>lmdrtdialog.bpl</DCC_DependencyCheckOutputName>
+			<ProjectVersion>12.0</ProjectVersion>
+			<Config Condition="'$(Config)'==''">build</Config>
+		</PropertyGroup>
+                <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='build' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<DCC_DcuOutput>..\..\build</DCC_DcuOutput>
+			<DllSuffix>120</DllSuffix>
+			<DCC_CBuilderOutput>All</DCC_CBuilderOutput>
+			<DCC_HppOutput>..\..</DCC_HppOutput>
+			<DCC_DependencyCheckOutputName>lmdrtdialog.bpl</DCC_DependencyCheckOutputName>
+			<DCC_ImageBase>00400000</DCC_ImageBase>
+			<DCC_Description>LMD-Tools DialogPack Runtime package</DCC_Description>
+			<RuntimeOnlyPackage>true</RuntimeOnlyPackage>
+			<DesignOnlyPackage>false</DesignOnlyPackage>
+			<DCC_OutputNeverBuildDcps>true</DCC_OutputNeverBuildDcps>
+			<GenDll>true</GenDll>
+			<DCC_SymbolReferenceInfo>1</DCC_SymbolReferenceInfo>
+			<GenPackage>true</GenPackage>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<Version>7.0</Version>
+		</PropertyGroup>
+		<ItemGroup>
+			<DelphiCompile Include="lmdrtdialog.dpk">
+				<MainSource>MainSource</MainSource>
+			</DelphiCompile>
+			<DCCReference Include="rtl.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="vcl.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="vclx.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="vclie.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+                        <DCCReference Include="..\..\JSButton.pas" />
+    <DCCReference Include="..\..\JSCheckBox.pas" />
+    <DCCReference Include="..\..\JSDialog.pas" />
+    <DCCReference Include="..\..\JSDialogCheck.pas" />
+    <DCCReference Include="..\..\JSDialogs.pas" />
+    <DCCReference Include="..\..\JSDialogStrs.pas" />
+    <DCCReference Include="..\..\JSEditDialog.pas" />
+    <DCCReference Include="..\..\JSEditDialogIntf.pas" />
+    <DCCReference Include="..\..\JSEditDialogs.pas" />
+    <DCCReference Include="..\..\JSEditEvents.pas" />
+    <DCCReference Include="..\..\JSGraphics.pas" />
+    <DCCReference Include="..\..\JSGraphUtil.pas" />
+    <DCCReference Include="..\..\JSLabel.pas" />
+    <DCCReference Include="..\..\JSMonthCal.pas" />
+    <DCCReference Include="..\..\JSPasswordDialog.pas" />
+    <DCCReference Include="..\..\JSPasswordDialogFrame.pas">
+      <Form>fmJSPasswordDialog</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\JSProgressBar.pas" />
+    <DCCReference Include="..\..\JSRichEdit.pas" />
+    <DCCReference Include="..\..\JSTypes.pas" />
+    <DCCReference Include="..\..\JSUnicode.pas" />
+    <DCCReference Include="..\..\JSConfirmPasswordDialogFrame.pas">
+      <Form>fmJSConfirmPasswordDialog</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\JSChangePasswordDialogFrame.pas">
+      <Form>fmJSChangePasswordDialog</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\JSDualEditDialogFrame.pas">
+      <Form>fmDualEditDialog</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\JSDualEditDialog.pas" />
+    <DCCReference Include="..\..\JSDialogSheet.pas" />
+    <DCCReference Include="..\..\JSDialogSheets.pas" />
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+		<ProjectExtensions>
+			<Borland.Personality>Delphi.Personality.12</Borland.Personality>
+			<Borland.ProjectType>Package</Borland.ProjectType>
+			<BorlandProject>
+				<Delphi.Personality>
+					<Parameters>
+						<Parameters Name="UseLauncher">False</Parameters>
+						<Parameters Name="LoadAllSymbols">True</Parameters>
+						<Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+					</Parameters>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1049</VersionInfo>
+						<VersionInfo Name="CodePage">1251</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName">LMD Innovative</VersionInfoKeys>
+						<VersionInfoKeys Name="FileDescription">LMD-Tools DialogPack Runtime package</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">2016.5.*</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright">Copyright (c) LMD Innovative</VersionInfoKeys>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName">LMD 2009 VCL Series</VersionInfoKeys>
+						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<Source>
+						<Source Name="MainSource">lmdrtdialog.dpk</Source>
+					</Source>
+				</Delphi.Personality>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>

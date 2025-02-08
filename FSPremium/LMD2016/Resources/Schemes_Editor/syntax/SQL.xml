@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SchemeList root='Main'>
+
+  <Scheme name='Numbers'>
+    <Regex token0='number'>\b [+\-]? \d+ (\. \d+)? ([eE] [+\-]? \d+)? \b</Regex>
+  </Scheme>
+
+  <Scheme name='Comment' defaultToken='comment'>
+      <SyntaxBlock capture="true">
+        <Start> commentOpen </Start>
+        <End> commentClose </End>
+      </SyntaxBlock>      
+  </Scheme>
+
+  <Scheme name='String' defaultToken='string'>
+  </Scheme>
+
+  <Scheme name='BadString' inherit='String' defaultToken='badString'>
+  </Scheme>
+
+  <Scheme name='StringFind'>
+	<Regex innerScheme='BadString' > 
+		&apos; (.*?\\ &apos; )*? .* $ 
+	</Regex>
+
+	<Regex innerScheme='String' priority='10'> 
+		&apos; (.*?\\ &apos; )*? &apos; 
+	</Regex>
+
+	<Regex innerScheme='String' priority='20'> 
+		&apos; (.*?\\ &apos; )*? .*? [^\\] &apos;
+	</Regex>  
+
+	<Regex innerScheme='String' priority='30'> 
+		&apos;  &apos; 
+	</Regex>
+        
+  </Scheme>
+
+  <Scheme name='Main' keywordsIgnoreCase='true' inherit='StringFind' inherit0='Numbers'>
+
+    <KeywordRegex>\b[a-zA-Z_][\w_]*\b</KeywordRegex>
+
+	<!-- Common SQL Syntax -->
+    <Keywords>
+		add all alter and any as asc authorization backup
+		begin between body break browse bulk by cascade
+		case check checkpoint close clustered coalesce
+		column commit committed compute confirm constraint
+		contains containstable continue controlrow create
+		cross current current_date current_time current_timestamp
+		current_user cursor database dbcc deallocate declare
+		default delete deny desc disk distinct distributed
+		double drop dummy dynamic else encryption end errlvl
+		errorexit escape except exec exit fast_forward file
+		fillfactor floppy for foreign forward_only freetext
+		freetexttable from full function goto grant group
+		having holdlock identity identity_insert identitycol
+		if in index insensitive insert instead intersect into is
+		isolation join key keyset kill left level like lineno load
+		mirrorexit national nocheck nonclustered not null nullif of
+		off offsets on once only open opendatasource openquery
+		openrowset optimistic option or order outer over package
+		percent perm permanent pipe plan precision prepare primary
+		print privileges proc procedure processexit public raiserror
+		read read_only readtext reconfigure references repeatable
+		replication restore restrict return returns revoke right
+		rollback row rowcount rowguidecol rule save schema schemabinding
+		scroll_locks select serializable session_user set setuser
+		shutdown some sql_variant static statistics system_user table
+		tape temp temporary textsize then to top tran transaction trigger
+		truncate tsequal type_warning uncommitted union unique update
+		updatetext use values varying view waitfor when where while
+		with work writetext xml replace REVERSE	
+		varchar collate integer numeric 
+		FLOOR RAND COUNT CAST
+    </Keywords>
+
+	<!--MySQL-->
+	<Keywords>
+		AUTO_INCREMENT INT LIMIT 
+		PROCEDURE FUNCTION BEGIN END
+		EXECUTE USING
+		OUTFILE
+		FIELDS TERMINATED
+		LINES OPTIONALLY ENCLOSED
+		SUM LOCK TABLES UNLOCK
+    </Keywords>
+	
+	<Regex token0='symbol'>
+		[ ; = + - / * &amp; | ^ ( ) \[ \] , . : ! ~ &lt; &gt; % { } ? # @  ]
+	</Regex>
+	
+	<RegexBlock innerScheme='Comment'
+				start_token0='commentOpen'    
+				end_token0='commentClose'
+				priority='10'>
+	  <Start> \/\*  </Start>           
+	  <End> \*\/ </End>        
+	</RegexBlock>        
+
+	<Regex innerScheme='Comment' priority='10'> -- .* </Regex>
+  </Scheme>
+</SchemeList>

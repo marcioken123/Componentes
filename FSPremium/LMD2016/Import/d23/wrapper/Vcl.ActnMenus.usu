@@ -1,0 +1,134 @@
+T+: TMenuStack
+        P+: Bars
+        P+: List
+T+: TCustomPopupClass
+T+: TCustomAddRemoveItemClass
+T+: TActionBarStyleEx
+T+: TAnimationStyle
+T+: TMenuPopupEvent
+T+: TGetPopupClassEvent
+T+: TExitMenuEvent
+T+: TCustomActionMenuBar
+        P+: AnimateDuration
+        P+: DelayItem
+        P+: Expandable
+        P+: Expanded
+        P+: MouseControl
+        P+: ParentMenu
+        P+: Selected
+        P+: AnimationStyle
+        P+: AutoFocus
+        P+: ExpandDelay
+        P+: InMenuLoop
+        P+: ParentControl
+        P+: PopupStack
+        P+: Resizing
+        P+: RootMenu
+        P+: UseSystemFont
+        P+: OnEnterMenuLoop
+        P+: OnExitMenuLoop
+        P+: OnGetPopupClass
+        P+: OnPopup
+T+: TCustomMenuExpandBtn
+        P+: Menu
+T+: TCustomMenuExpandBtnClass
+T+: TCustomActionPopupMenu
+        P+: ExpandBtn
+        P+: Shadow
+T+: TCustomizeActionToolBarClass
+T+: TCustomizeActionToolBar
+        P+: AddlItem
+        P+: AdditionalItem
+T+: TCustomizeActionLink
+T+: TCustomizeActionClientItem
+T+: TMDIButtonStyle
+T+: TCustomMDIMenuButton
+        P+: ButtonStyle
+T+: TCustomActionMainMenuBar
+        P+: Inactive
+        P+: PersistentHotKeys
+        P+: Shadows
+        P+: WindowMenu
+T+: TActionMainMenuBar
+        P+: Canvas
+        P+: UseSystemFont
+        P+: ActionManager
+        P+: Align
+        P+: AllowHiding
+        P+: Anchors
+        P+: AnimateDuration
+        P+: AnimationStyle
+        P+: AutoFocus
+        P+: BiDiMode
+        P+: Caption
+        P+: Color
+        P+: ColorMap
+        P+: Constraints
+        P+: DragCursor
+        P+: DragKind
+        P+: DragMode
+        P+: EdgeBorders
+        P+: EdgeInner
+        P+: EdgeOuter
+        P+: Enabled
+        P+: ExpandDelay
+        P+: Font
+        P+: HorzMargin
+        P+: ParentBiDiMode
+        P+: ParentBackground
+        P+: ParentColor
+        P+: ParentFont
+        P+: ParentShowHint
+        P+: PersistentHotKeys
+        P+: Shadows
+        P+: ShowHint
+        P+: Spacing
+        P+: Touch
+        P+: VertMargin
+        P+: Visible
+        P+: WindowMenu
+        P+: OnAlignInsertBefore
+        P+: OnAlignPosition
+        P+: OnCanResize
+        P+: OnClick
+        P+: OnControlCreated
+        P+: OnConstrainedResize
+        P+: OnContextPopup
+        P+: OnDockDrop
+        P+: OnDockOver
+        P+: OnDblClick
+        P+: OnDragDrop
+        P+: OnDragOver
+        P+: OnEndDock
+        P+: OnEndDrag
+        P+: OnEnter
+        P+: OnEnterMenuLoop
+        P+: OnExit
+        P+: OnExitMenuLoop
+        P+: OnGesture
+        P+: OnGetControlClass
+        P+: OnGetPopupClass
+        P+: OnGetSiteInfo
+        P+: OnMouseActivate
+        P+: OnMouseDown
+        P+: OnMouseMove
+        P+: OnMouseUp
+        P+: OnPaint
+        P+: OnPopup
+        P+: OnResize
+        P+: OnStartDock
+        P+: OnStartDrag
+        P+: OnUnDock
+T+: TMenuEdges
+T+: TCustomMenuItem
+        P+: Menu
+        P+: MouseSelected
+        P+: ShortCutBounds
+        P+: Edges
+T+: TCustomMenuButton
+        P+: Menu
+T+: TCustomAddRemoveItem
+T+: TMenuItemControlClass
+T+: TAddRemoveItemClass
+T+: TMenuButtonControlClass
+TE: TUpdateActnMenusProc

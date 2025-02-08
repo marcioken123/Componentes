@@ -1,0 +1,64 @@
+package dcllmdcore;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$LIBSUFFIX '220'}
+{$DESCRIPTION 'LMD 2016 - LMD-Tools Core Components'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  lmdrtl,
+  dcllmdrtl,
+  rtl,
+  vcl,
+  vclx,
+  designide,
+  dclstd,
+  lmdrtcore,
+  dcllmdrtlx;
+
+contains
+  LMD_RegCore in '..\..\LMD_RegCore.pas',
+  LMD_RegCoreEditors in '..\..\LMD_RegCoreEditors.pas',
+  pLMDCPGetCore in '..\..\pLMDCPGetCore.pas',
+  pLMDBevelEditorDlg in '..\..\pLMDBevelEditorDlg.pas' {LMDBevelEditorDlg},
+  pLMDBitmapEffectEditorDlg in '..\..\pLMDBitmapEffectEditorDlg.pas' {LMDBitmapEffectEditorDlg},
+  pLMDBitmapStyleEditorDlg in '..\..\pLMDBitmapStyleEditorDlg.pas' {LMDBitmapStyleEditorDlg},
+  pLMDButtonLayoutEditorDlg in '..\..\pLMDButtonLayoutEditorDlg.pas' {LMDButtonLayoutEditorDlg},
+  pLMDCECore in '..\..\pLMDCECore.pas',
+  pLMDDateTimeFormatEditorDlg in '..\..\pLMDDateTimeFormatEditorDlg.pas' {LMDFrmDateTimePropertyEditor},
+  pLMDExDsgnOIEnh in '..\..\pLMDExDsgnOIEnh.pas',
+  pLMDFillObjectEditorDlg in '..\..\pLMDFillObjectEditorDlg.pas' {LMDFillEditorDlg},
+  pLMDFontFXEditorDlg in '..\..\pLMDFontFXEditorDlg.pas' {LMDFxEditorDlg},
+  pLMDGlyphTextLayoutEditorDlg in '..\..\pLMDGlyphTextLayoutEditorDlg.pas' {LMDGlyphTextLayoutEditorDlg},
+  pLMDGradientEditorDlg in '..\..\pLMDGradientEditorDlg.pas' {LMDGradientEditorDlg},
+  pLMDMaskEditorDlg in '..\..\pLMDMaskEditorDlg.pas' {LMDfrmMaskEditDlg},
+  pLMDPeCore in '..\..\pLMDPeCore.pas',
+  pLMDSmallBarEditorDlg in '..\..\pLMDSmallBarEditorDlg.pas' {LMDSmallBarEditorDlg},
+  pLMDStatusBarEditorDlg in '..\..\pLMDStatusBarEditorDlg.pas' {LMDStatusBarEditorDlg},
+  pLMDStringsEditorDlg in '..\..\pLMDStringsEditorDlg.pas' {LMDFrmStringEditor},
+  pLMDTransparentEditorDlg in '..\..\pLMDTransparentEditorDlg.pas' {LMDTransparentEditorDlg},
+  pLMDToolBarEditorDlg in '..\..\pLMDToolBarEditorDlg.pas' {LMDToolbarEditorDlg};
+
+end.

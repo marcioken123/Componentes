@@ -1,0 +1,44 @@
+package lmdrttxtdb;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$LIBSUFFIX '120'}
+{$DESCRIPTION 'LMD-Tools TextPack Database Components'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  lmdrtl,
+  rtl,
+  vcl,
+  vclx,
+  dbrtl,
+  vcldb,
+  lmdrttxt;
+
+contains
+  LMDTextDBLabel in '..\..\LMDTextDBLabel.pas',
+  LMDTextDBViewLabel in '..\..\LMDTextDBViewLabel.pas',
+  LMDTextDBExport in '..\..\LMDTextDBExport.pas';
+
+end.

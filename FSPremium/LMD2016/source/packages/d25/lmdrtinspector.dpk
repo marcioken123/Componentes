@@ -1,0 +1,53 @@
+package lmdrtinspector;
+
+{$R *.res}
+{$R *.otares}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'LMD-Tools InspectorPack Runtime package'}
+{$LIBSUFFIX '250'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  lmdrtl,
+  rtl,
+  vcl,
+  vclx;
+
+contains
+  LMDInsCst in '..\..\LMDInsCst.pas',
+  LMDInsClass in '..\..\LMDInsClass.pas',
+  LMDInsPropPage in '..\..\LMDInsPropPage.pas',
+  LMDInsPropInsp in '..\..\LMDInsPropInsp.pas',
+  LMDInsEditorUtils in '..\..\LMDInsEditorUtils.pas',
+  LMDInsEditorWnds in '..\..\LMDInsEditorWnds.pas',
+  LMDInsStrsEditor in '..\..\LMDInsStrsEditor.pas' {LMDStringsEditorDialog},
+  LMDInsWideStrsEditor in '..\..\LMDInsWideStrsEditor.pas' {LMDWideStringsEditorDialog},
+  LMDInsCollectionEditor in '..\..\LMDInsCollectionEditor.pas' {LMDCollectionEditorDialog},
+  LMDInsMenuEditor in '..\..\LMDInsMenuEditor.pas' {LMDMenuEditorDialog},
+  LMDInsPropEditors in '..\..\LMDInsPropEditors.pas';
+
+end.

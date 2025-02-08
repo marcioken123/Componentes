@@ -1,0 +1,152 @@
+TE: TBytes
+T+: TSysCharSet
+TE: TIntegerSet
+T+: WordRec
+T+: LongRec
+T+: Int64Rec
+TE: PByteArray
+TE: TByteArray
+TE: PWordArray
+TE: TWordArray
+TE: TProcedure
+T+: TFileName
+T+: TSearchRec
+T+: TSymLinkRec
+T+: TDateTimeInfoRec
+T+: TFloatValue
+T+: TFloatFormat
+T+: TFloatRec
+T+: TTimeStamp
+T+: TMbcsByteType
+T+: TLocaleID
+T+: TSysLocale
+T+: TLangRec
+T+: TLanguages
+        P+: Count
+        P+: Name
+        P+: NameFromLocaleID
+        P+: NameFromLCID
+        P+: ID
+        P+: LocaleName
+        P+: LocaleID
+        P+: Ext
+        P+: UserDefaultLocale
+TE: PExceptionRecord
+T+: Exception
+        P+: BaseException
+        P+: HelpContext
+        P+: InnerException
+        P+: Message
+        P+: StackTrace
+        PE: StackInfo
+T+: EArgumentException
+T+: EArgumentOutOfRangeException
+T+: EArgumentNilException
+T+: EPathTooLongException
+T+: ENotSupportedException
+T+: EDirectoryNotFoundException
+T+: EFileNotFoundException
+T+: EInvalidOpException
+T+: ENoConstructException
+T+: ExceptClass
+T+: EAbort
+T+: EHeapException
+T+: EOutOfMemory
+T+: EInOutError
+T+: EExternal
+T+: EExternalException
+T+: EIntError
+T+: EDivByZero
+T+: ERangeError
+T+: EIntOverflow
+T+: EMathError
+T+: EInvalidOp
+T+: EZeroDivide
+T+: EOverflow
+T+: EUnderflow
+T+: EInvalidPointer
+T+: EInvalidCast
+T+: EConvertError
+T+: EAccessViolation
+T+: EPrivilege
+T+: EStackOverflow
+T+: EControlC
+T+: EVariantError
+T+: EPropReadOnly
+T+: EPropWriteOnly
+T+: EAssertionFailed
+T+: EAbstractError
+T+: EIntfCastError
+T+: EInvalidContainer
+T+: EInvalidInsert
+T+: EPackageError
+T+: EOSError
+T+: EWin32Error
+T+: ESafecallException
+T+: EMonitor
+T+: EMonitorLockException
+T+: ENoMonitorSupportException
+T+: EProgrammerNotFound
+T+: ENotImplemented
+T+: TFormatSettings
+T+: TLocaleOptions
+T+: TFileSystemAttribute
+T+: TFileSystemAttributes
+T+: TFilenameCaseMatch
+TE: PDayTable
+TE: TDayTable
+TE: TReplaceFlags
+T+: TCmdLineSwitchType
+T+: TCmdLineSwitchTypes
+TE: TGuidHelper
+T+: TNameType
+TE: TPackageInfoProc
+TE: TValidatePackageProc
+TE: TTerminateProc
+TE: IReadWriteSync
+T+: TSimpleRWSync
+TE: PThreadInfo
+T+: TThreadInfo
+T+: TThreadLocalCounter
+T+: TMultiReadExclusiveWriteSynchronizer
+        P+: RevisionLevel
+T+: TMREWSync
+TE: TCharArray
+T+: TCharSearch
+T+: TStringBuilder
+        P+: Capacity
+        P+: Chars
+        P+: Length
+        P+: MaxCapacity
+T+: EEncodingError
+T+: TEncoding
+        P+: ANSI
+        P+: ASCII
+        P+: BigEndianUnicode
+        P+: CodePage
+        P+: Default
+        P+: EncodingName
+        P+: IsSingleByte
+        P+: Unicode
+        P+: UTF7
+        P+: UTF8
+T+: TMBCSEncoding
+T+: TUTF7Encoding
+T+: TUTF8Encoding
+T+: TUnicodeEncoding
+T+: TBigEndianUnicodeEncoding
+TE: TProc
+TE: TProc
+TE: TProc
+TE: TProc
+TE: TProc
+TE: TFunc
+TE: TFunc
+TE: TFunc
+TE: TFunc
+TE: TFunc
+TE: TPredicate
+TE: ILanguageEnumerator
+TE: ILanguageEnumerable
+T+: TUncertainState
+T+: TOSVersion

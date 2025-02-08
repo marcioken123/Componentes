@@ -1,0 +1,115 @@
+T+: EDSWriter
+        P+: ErrorCode
+T+: TCustomPacketWriter
+        PW: DSWriter
+T+: TGetRecordOption
+T+: TGetRecordOptions
+T+: TDataRequestEvent
+T+: TProviderOption
+T+: TProviderOptions
+TE: PPutFieldInfo
+TE: TPutFieldProc
+T+: TPutFieldInfo
+TE: TInfoArray
+T+: TGetParamsEvent
+T+: TOnValidate
+T+: TDataPacketWriter
+        P+: Constraints
+        P+: PacketOptions
+        P+: Options
+        P+: OnGetParams
+T+: TPacketDataSet
+        P+: WritingCurValues
+        P+: NewValuesModified
+        P+: StreamMetaData
+        P+: UseCurValues
+T+: TCustomProvider
+        P+: OnDataRequest
+        P+: OnValidate
+        P+: BeforeApplyUpdates
+        P+: AfterApplyUpdates
+        P+: BeforeGetRecords
+        P+: AfterGetRecords
+        P+: BeforeRowRequest
+        P+: AfterRowRequest
+        P+: BeforeExecute
+        P+: AfterExecute
+        P+: BeforeGetParams
+        P+: AfterGetParams
+        P+: ActiveUpdateException
+        P+: OwnerData
+        P+: Data
+        P+: Exported
+T+: TResolverResponse
+T+: TProviderDataEvent
+T+: TBeforeUpdateRecordEvent
+T+: TAfterUpdateRecordEvent
+T+: TResolverErrorEvent
+T+: TBeforeCommitEvent
+T+: TBaseProvider
+        P+: PacketDataSet
+        P+: Resolver
+        P+: Options
+        P+: UpdateMode
+        P+: OnDataRequest
+        P+: OnGetData
+        P+: OnUpdateData
+        P+: OnUpdateError
+        P+: BeforeUpdateRecord
+        P+: AfterUpdateRecord
+T+: TGetTableNameEvent
+T+: TGetDSProps
+T+: TDataSetProvider
+        P+: TransactionStarted
+        P+: ActiveUpdateException
+        P+: OwnerData
+        P+: Params
+        P+: DataSet
+        P+: Constraints
+        P+: ResolveToDataSet
+        P+: Exported
+        P+: Options
+        P+: UpdateMode
+        P+: OnDataRequest
+        P+: OnGetData
+        P+: OnUpdateData
+        P+: OnUpdateError
+        P+: AfterUpdateRecord
+        P+: BeforeUpdateRecord
+        P+: OnValidate
+        P+: BeforeApplyUpdates
+        P+: AfterApplyUpdates
+        P+: BeforeGetRecords
+        P+: AfterGetRecords
+        P+: BeforeRowRequest
+        P+: AfterRowRequest
+        P+: BeforeExecute
+        P+: AfterExecute
+        P+: BeforeGetParams
+        P+: AfterGetParams
+        P+: OnGetTableName
+        P+: OnGetDataSetProperties
+T+: TProvider
+T+: TUpdateTree
+        P+: Opened
+        P+: DetailList
+        PE: Data
+        P+: Delta
+        P+: DetailCount
+        P+: Details
+        P+: ErrorDS
+        P+: HasErrors
+        P+: IsNested
+        P+: Name
+        P+: Parent
+        P+: Resolver
+        P+: Source
+T+: TCustomResolver
+        P+: Provider
+        P+: UpdateTree
+T+: TDataSetResolver
+        P+: Provider
+T+: TSQLResolver
+        P+: Provider
+T+: TLocalAppServer
+TE: IProviderContainer

@@ -1,0 +1,62 @@
+package CoolCtlsD4;
+
+{$R *.RES}
+{$R 'CoolCtrlsReg.dcr'}
+{$R 'VclTracerReg.dcr'}
+{$R 'CoolAppLock.dcr'}
+{$R 'CoolScrollBar.dcr'}
+{$R 'CoolWinDock.dcr'}
+{$R 'CoolSplitter.dcr'}
+{$ALIGN ON}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS ON}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $00400000}
+{$DESCRIPTION 'CoolControls'}
+{$DESIGNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  vcl40,
+  VCLDB40,
+  VCLX40,
+  VCLJPG40;
+
+contains
+  VclTracer in 'VclTracer.pas',
+  VclTracerReg in 'VclTracerReg.pas',
+  MsgTracer in 'MsgTracer.pas',
+  CoolCtrls in 'CoolCtrls.pas',
+  CoolCtrlsDB in 'CoolCtrlsDB.pas',
+  CoolTools in 'CoolTools.pas',
+  CoolCtrlsReg in 'CoolCtrlsReg.pas',
+  PointListUnit in 'PointListUnit.pas' {PointListForm},
+  CoolLists in 'CoolLists.pas',
+  CoolPolygons in 'CoolPolygons.pas',
+  CoolAboutUnit in 'CoolAboutUnit.pas' {FormAbout},
+  ColorListUnit in 'ColorListUnit.pas' {ColorListForm},
+  PolygonesUnit in 'PolygonesUnit.pas' {PolygonesForm},
+  CoolUtils in 'CoolUtils.pas',
+  CoolCtrlsEx in 'CoolCtrlsEx.pas',
+  CoolAppLock in 'CoolAppLock.pas',
+  CoolScrollbar in 'CoolScrollBar.pas',
+  CoolSplitter in 'CoolSplitter.pas',
+  CoolWinDock in 'CoolWinDock.pas';
+
+end.

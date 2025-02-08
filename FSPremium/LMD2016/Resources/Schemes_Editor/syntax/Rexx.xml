@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SchemeList root='Main'>
+
+    <Scheme name='Text' inherit='Numbers'>                
+    
+        <Regex token0='email'>
+            [_a-zA-Z\d\-\.]{1,40}
+            @ 
+            ([_ a-z A-Z \d \-]+ 
+            (\. [_ a-z A-Z \d \-]+ )+ )
+        </Regex>
+    
+        <Regex token0='st' regex=' \/\* | \*\/   ' />                                
+    </Scheme>
+
+    <Scheme name='Numbers'>
+        <Regex token0='number'>
+            \b (0x \d+ [lL]? | \d+ (e \d*)? [lLdDfF]? ) \b
+        </Regex>
+        
+        <Regex token0='number'>
+            \b [+\-]? \d+ (\. \d+)? ([eE] [+\-]? \d+) \b
+        </Regex>
+    </Scheme>
+
+    <Scheme name='Comment' inherit='Text' defaultToken='comment'  />
+
+    <Scheme name='String' inherit='Text' defaultToken='string'>
+    </Scheme>
+
+    <Scheme name='BadString' inherit='String' defaultToken='badString'>
+    </Scheme>
+
+    <Scheme name='StringFind'>
+        <Regex innerScheme='BadString' > 
+            &apos; .* $ 
+        </Regex>
+
+        <Regex innerScheme='String' priority='10'> 
+            &apos; .*? &apos;
+        </Regex>
+    </Scheme>
+
+    <Scheme name='Main' inherit='Numbers' inherit0='StringFind' 
+            defaultToken='default'           
+
+            keywordsIgnoreCase='true'
+    >
+        <KeywordRegex>\b[a-zA-Z_]\w*\b</KeywordRegex>
+
+        <Keywords>    
+            do          end     select  RC      RESULT  SIGL
+            address     arg     call    drop    else    error   exit    expose
+            forever     if      interpret       iterate         leave   otherwise
+            parse       procedure       pull    push    queue   return  say
+            signal      source  syntax  then    to      until   upper   value
+            var         when    while   abbrev  abs     bitand  bitor   bitxor
+            center      centre  changestr       charin  charout chars   compare
+            condition   copies  countstr        datatype        date    delstr
+            delword     digits  errortext       form    format  fuzz    insert
+            lastpos     left    length          linein  lineout lines   max
+            min         max     overlay         pos     queued  random  reverse
+            right       sign    sourceline      space   stream  strip   substr
+            subword     symbol  time            translate       trunc   verify
+            word        wordindex               wordlength      wordpos
+            words       xrange
+        </Keywords>
+
+        <Regex innerScheme='Comment' priority='1000' regex='--([^ \[ ].*)?$' />
+        
+        <RegexBlock start='\/\*' end='\*\/' end_token0='comment' 
+                innerScheme='Comment'/>
+
+        <Regex token0='symbol' regex='[   \}   \{    \]  \#  \[  \( \) &gt; &lt; ]' />
+        <Regex token0='symbol' regex='[-:?\~=+!^;,]' />
+
+        <SkipSyntaxToken token='comment' />
+
+        <SyntaxBlock capture="true">
+            <Start> kw:else kw:do </Start>
+            <End> kw:end  </End>
+        </SyntaxBlock>
+
+        <SyntaxBlock capture="true">
+            <Start> kw:select </Start>
+            <End> kw:end  </End>
+        </SyntaxBlock>
+
+
+        <SyntaxBlock capture="true">
+            <Start> kw:if [^ kw:return kw:then ]+? kw:then kw:do </Start>
+            <End> kw:end  </End>
+        </SyntaxBlock>
+
+        <SyntaxBlock capture="true">
+            <Start> kw:do  </Start>
+            <End> kw:end  </End>
+        </SyntaxBlock>
+
+        <SyntaxBlock capture="true">
+            <Start> kw:signal kw:value </Start>
+            <End> kw:return  </End>
+        </SyntaxBlock>
+
+    </Scheme>
+</SchemeList>

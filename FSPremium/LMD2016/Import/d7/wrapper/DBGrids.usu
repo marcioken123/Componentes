@@ -1,0 +1,135 @@
+T+: TColumnValue
+T+: TColumnValues
+T+: TColumnTitle
+        P+: Column
+        P+: Alignment
+        P+: Caption
+        P+: Color
+        P+: Font
+T+: TColumnButtonStyle
+T+: TColumn
+        P+: IsStored
+        P+: Grid
+        P+: AssignedValues
+        P+: Expandable
+        P+: Field
+        P+: ParentColumn
+        P+: Showing
+        P+: Alignment
+        P+: ButtonStyle
+        P+: Color
+        P+: DropDownRows
+        P+: Expanded
+        P+: FieldName
+        P+: Font
+        P+: ImeMode
+        P+: ImeName
+        P+: PickList
+        P+: PopupMenu
+        P+: ReadOnly
+        P+: Title
+        P+: Width
+        P+: Visible
+T+: TColumnClass
+T+: TDBGridColumnsState
+T+: TDBGridColumns
+        P+: State
+        P+: Grid
+        P+: Items
+T+: TGridDataLink
+        P+: DefaultFields
+        P+: FieldCount
+        P+: Fields
+        P+: SparseMap
+        P+: Grid
+T+: TBookmarkList
+        P+: Count
+        P+: CurrentRowSelected
+        P+: Items
+T+: TDBGridOption
+T+: TDBGridOptions
+TE: TDrawDataCellEvent
+TE: TDrawColumnCellEvent
+T+: TDBGridClickEvent
+T+: TCustomDBGrid
+        P+: Columns
+        P+: DefaultDrawing
+        P+: DataLink
+        P+: IndicatorOffset
+        P+: LayoutLock
+        P+: Options
+        P+: ReadOnly
+        P+: SelectedRows
+        P+: TitleFont
+        P+: UpdateLock
+        P+: OnColEnter
+        P+: OnColExit
+        PE: OnDrawDataCell
+        PE: OnDrawColumnCell
+        P+: OnEditButtonClick
+        P+: OnColumnMoved
+        P+: OnCellClick
+        P+: OnTitleClick
+        P+: EditorMode
+        P+: FieldCount
+        P+: Fields
+        P+: SelectedField
+        P+: SelectedIndex
+        P+: DataSource
+T+: TDBGrid
+        P+: Canvas
+        P+: SelectedRows
+        P+: Align
+        P+: Anchors
+        P+: BiDiMode
+        P+: BorderStyle
+        P+: Color
+        P+: Columns
+        P+: Constraints
+        P+: Ctl3D
+        P+: DataSource
+        P+: DefaultDrawing
+        P+: DragCursor
+        P+: DragKind
+        P+: DragMode
+        P+: Enabled
+        P+: FixedColor
+        P+: Font
+        P+: ImeMode
+        P+: ImeName
+        P+: Options
+        P+: ParentBiDiMode
+        P+: ParentColor
+        P+: ParentCtl3D
+        P+: ParentFont
+        P+: ParentShowHint
+        P+: PopupMenu
+        P+: ReadOnly
+        P+: ShowHint
+        P+: TabOrder
+        P+: TabStop
+        P+: TitleFont
+        P+: Visible
+        P+: OnCellClick
+        P+: OnColEnter
+        P+: OnColExit
+        P+: OnColumnMoved
+        P+: OnDrawDataCell
+        P+: OnDrawColumnCell
+        P+: OnDblClick
+        P+: OnDragDrop
+        P+: OnDragOver
+        P+: OnEditButtonClick
+        P+: OnEndDock
+        P+: OnEndDrag
+        P+: OnEnter
+        P+: OnExit
+        P+: OnKeyDown
+        P+: OnKeyPress
+        P+: OnKeyUp
+        P+: OnMouseDown
+        P+: OnMouseMove
+        P+: OnMouseUp
+        P+: OnStartDock
+        P+: OnStartDrag
+        P+: OnTitleClick

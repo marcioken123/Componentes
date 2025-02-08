@@ -1,0 +1,223 @@
+T+: TSeekOrigin
+T+: TAlignment
+T+: TLeftRight
+T+: TBiDiMode
+TE: TShiftState
+T+: THelpContext
+T+: THelpType
+T+: TShortCut
+T+: TNotifyEvent
+T+: TGetStrProc
+T+: EStreamError
+T+: EFileStreamError
+T+: EFCreateError
+T+: EFOpenError
+T+: EFilerError
+T+: EReadError
+T+: EWriteError
+T+: EClassNotFound
+T+: EMethodNotFound
+T+: EInvalidImage
+T+: EResNotFound
+T+: EListError
+T+: EBitsError
+T+: EStringListError
+T+: EComponentError
+T+: EParserError
+T+: EOutOfResources
+T+: EInvalidOperation
+T+: TDuplicates
+TE: PPointerList
+TE: TPointerList
+TE: TListSortCompare
+T+: TListNotification
+T+: TListAssignOp
+T+: TList
+        P+: Capacity
+        P+: Count
+        PE: Items
+        PE: List
+T+: TThreadList
+        P+: Duplicates
+TE: IInterfaceList
+T+: TInterfaceList
+        P+: Capacity
+        P+: Count
+        PE: Items
+T+: TBits
+        P+: Bits
+        P+: Size
+T+: TPersistent
+T+: TPersistentClass
+T+: TInterfacedPersistent
+T+: TRecall
+        P+: Reference
+T+: TCollectionItem
+        P+: Collection
+        P+: ID
+        P+: Index
+        P+: DisplayName
+T+: TCollectionItemClass
+T+: TCollectionNotification
+T+: TCollection
+        P+: NextID
+        P+: PropName
+        P+: UpdateCount
+        P+: Count
+        P+: ItemClass
+        P+: Items
+T+: TOwnedCollection
+T+: TGetModuleProc
+TE: IStringsAdapter
+TE: TStringsDefined
+T+: TStrings
+        P+: UpdateCount
+        P+: Capacity
+        P+: CommaText
+        P+: Count
+        P+: Delimiter
+        P+: DelimitedText
+        P+: Names
+        P+: Objects
+        P+: QuoteChar
+        P+: Values
+        P+: ValueFromIndex
+        P+: NameValueSeparator
+        P+: Strings
+        P+: Text
+        PE: StringsAdapter
+TE: PStringItem
+T+: TStringItem
+TE: PStringItemList
+TE: TStringItemList
+TE: TStringListSortCompare
+T+: TStringList
+        P+: Duplicates
+        P+: Sorted
+        P+: CaseSensitive
+        P+: OnChange
+        P+: OnChanging
+T+: TStream
+        P+: Position
+        P+: Size
+TE: IStreamPersist
+T+: THandleStream
+        P+: Handle
+T+: TFileStream
+T+: TCustomMemoryStream
+        PE: Memory
+T+: TMemoryStream
+        P+: Capacity
+T+: TStringStream
+        P+: DataString
+T+: TResourceStream
+T+: TStreamOwnership
+T+: TStreamAdapter
+        P+: Stream
+        P+: StreamOwnership
+T+: TGetClass
+T+: TClassFinder
+T+: TValueType
+T+: TFilerFlag
+T+: TFilerFlags
+T+: TReaderProc
+T+: TWriterProc
+T+: TStreamProc
+TE: IInterfaceComponentReference
+T+: TFiler
+        P+: Root
+        P+: LookupRoot
+        P+: Ancestor
+        P+: IgnoreChildren
+T+: TComponentClass
+TE: IVarStreamable
+TE: TFindMethodEvent
+T+: TSetNameEvent
+T+: TReferenceNameEvent
+T+: TAncestorNotFoundEvent
+T+: TReadComponentsProc
+T+: TReaderError
+T+: TFindComponentClassEvent
+T+: TCreateComponentEvent
+T+: TReader
+        P+: PropName
+        P+: CanHandleExceptions
+        P+: Owner
+        P+: Parent
+        P+: Position
+        P+: OnError
+        PE: OnFindMethod
+        P+: OnSetName
+        P+: OnReferenceName
+        P+: OnAncestorNotFound
+        P+: OnCreateComponent
+        P+: OnFindComponentClass
+T+: TFindAncestorEvent
+T+: TGetLookupInfoEvent
+T+: TWriter
+        P+: Position
+        P+: RootAncestor
+        P+: OnFindAncestor
+        P+: UseQualifiedNames
+T+: TParser
+        P+: FloatType
+        P+: SourceLine
+        P+: Token
+T+: EThread
+T+: TThreadMethod
+T+: TThreadPriority
+TE: PSynchronizeRecord
+T+: TSynchronizeRecord
+T+: TThread
+        P+: ReturnValue
+        P+: Terminated
+        P+: FatalException
+        P+: FreeOnTerminate
+        P+: Handle
+        P+: Priority
+        P+: Suspended
+        P+: ThreadID
+        P+: OnTerminate
+T+: TOperation
+TE: TComponentState
+TE: TComponentStyle
+T+: TGetChildProc
+T+: TComponentName
+TE: IVCLComObject
+TE: IDesignerNotify
+T+: TComponent
+        PE: ComObject
+        P+: Components
+        P+: ComponentCount
+        P+: ComponentIndex
+        PE: ComponentState
+        PE: ComponentStyle
+        P+: DesignInfo
+        P+: Owner
+        PE: VCLComObject
+        P+: Name
+        P+: Tag
+T+: TBasicActionLink
+        P+: Action
+        P+: OnChange
+T+: TBasicActionLinkClass
+T+: TBasicAction
+        P+: OnChange
+        P+: ActionComponent
+        P+: OnExecute
+        P+: OnUpdate
+T+: TBasicActionClass
+T+: TDataModule
+        P+: DesignOffset
+        P+: DesignSize
+        P+: OldCreateOrder
+        P+: OnCreate
+        P+: OnDestroy
+T+: TActiveXRegType
+T+: TIdentMapEntry
+TE: TIdentToInt
+TE: TIntToIdent
+TE: TFindGlobalComponent
+TE: TIsUniqueGlobalComponentName
+T+: TStreamOriginalFormat
+T+: TWndMethod

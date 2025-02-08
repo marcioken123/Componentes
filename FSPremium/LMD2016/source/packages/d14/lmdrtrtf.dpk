@@ -1,0 +1,68 @@
+package lmdrtrtf;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$LIBSUFFIX '140'}
+{$DESCRIPTION 'LMD-Tools RichPack Components'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  lmdrtl,
+  rtl,
+  vcl,
+  vclx,
+  lmdrtrtlx,
+  lmdrtprint;
+
+contains
+  LMDRTFActions in '..\..\LMDRTFActions.pas',
+  LMDRTFBase in '..\..\LMDRTFBase.pas',
+  LMDRTFBookMarkDialog in '..\..\LMDRTFBookMarkDialog.pas' {LMDRTFBookMarkDialog},
+  LMDRTFCharmapDialog in '..\..\LMDRTFCharmapDialog.pas' {LMDRTFCharmapDialog},
+  LMDRTFConst in '..\..\LMDRTFConst.pas',
+  LMDRTFFontComboBox in '..\..\LMDRTFFontComboBox.pas',
+  LMDRTFFontDialog in '..\..\LMDRTFFontDialog.pas',
+  LMDRTFHyperText in '..\..\LMDRTFHyperText.pas',
+  LMDRTFHyperTextStorage in '..\..\LMDRTFHyperTextStorage.pas',
+  LMDRTFInt in '..\..\LMDRTFInt.pas',
+  LMDRTFLabel in '..\..\LMDRTFLabel.pas',
+  LMDRTFLinkDialog in '..\..\LMDRTFLinkDialog.pas' {LMDRichfrmLinkDialog},
+  LMDRTFPageDialog in '..\..\LMDRTFPageDialog.pas',
+  LMDRTFOleContainer in '..\..\LMDRTFOleContainer.pas',
+  LMDRTFParagraphProp in '..\..\LMDRTFParagraphProp.pas' {LMDRichfrmParagraph},
+  LMDRTFPrintPreview in '..\..\LMDRTFPrintPreview.pas' {LMDRichfrmPrintPreview},
+  LMDRTFPrintPreviewMode in '..\..\LMDRTFPrintPreviewMode.pas' {RTFPrintPreviewMode},
+  LMDRTFRichEdit in '..\..\LMDRTFRichEdit.pas',
+  LMDRTFRuler in '..\..\LMDRTFRuler.pas',
+  LMDRTFStatisticsDialog in '..\..\LMDRTFStatisticsDialog.pas' {LMDRTFStatisticsDlg},
+  LMDRTFStorage in '..\..\LMDRTFStorage.pas',
+  LMDRTFSyntaxEdit in '..\..\LMDRTFSyntaxEdit.pas',
+  LMDRTFTabsProp in '..\..\LMDRTFTabsProp.pas' {LMDRichfrmTabs},
+  LMDRTFRichDialog in '..\..\LMDRTFRichDialog.pas',
+  LMDRTFRichDialogForm in '..\..\LMDRTFRichDialogForm.pas',
+  LMDRTFInsertDateTimeDlg in '..\..\LMDRTFInsertDateTimeDlg.pas' {frmLMDRichInsertDateTimeDlg},
+  LMDRTFImageDataObject in '..\..\LMDRTFImageDataObject.pas',
+  LMDRichEditPrintTask in '..\..\LMDRichEditPrintTask.pas';
+
+end.

@@ -1,0 +1,294 @@
+T+: TCommonDialog
+        PE: Template
+        P+: TemplateModule
+        P+: Handle
+        P+: Ctl3D
+        P+: HelpContext
+        P+: OnClose
+        P+: OnShow
+T+: TOpenOption
+T+: TOpenOptions
+T+: TOpenOptionEx
+T+: TOpenOptionsEx
+T+: TFileEditStyle
+T+: TOFNotifyEx
+T+: TIncludeItemEvent
+T+: TOpenDialog
+        P+: FileEditStyle
+        P+: Files
+        P+: HistoryList
+        P+: DefaultExt
+        P+: FileName
+        P+: Filter
+        P+: FilterIndex
+        P+: InitialDir
+        P+: Options
+        P+: OptionsEx
+        P+: Title
+        P+: OnCanClose
+        P+: OnFolderChange
+        P+: OnSelectionChange
+        P+: OnTypeChange
+        P+: OnIncludeItem
+T+: TSaveDialog
+T+: TColorDialogOption
+T+: TColorDialogOptions
+TE: TCustomColors
+T+: TColorDialog
+        P+: Color
+        P+: Ctl3D
+        P+: CustomColors
+        P+: Options
+T+: TFontDialogOption
+T+: TFontDialogOptions
+T+: TFontDialogDevice
+T+: TFDApplyEvent
+T+: TFontDialog
+        P+: Font
+        P+: Device
+        P+: MinFontSize
+        P+: MaxFontSize
+        P+: Options
+        P+: OnApply
+T+: TPrinterSetupDialog
+T+: TPrintRange
+T+: TPrintDialogOption
+T+: TPrintDialogOptions
+T+: TPrintDialog
+        P+: Collate
+        P+: Copies
+        P+: FromPage
+        P+: MinPage
+        P+: MaxPage
+        P+: Options
+        P+: PrintToFile
+        P+: PrintRange
+        P+: ToPage
+T+: TPrinterOrientation
+T+: TPageSetupDialogOption
+T+: TPageSetupDialogOptions
+T+: TPrinterKind
+T+: TPageType
+T+: TPageSetupBeforePaintEvent
+T+: TPageMeasureUnits
+T+: TPaintPageEvent
+T+: TPageSetupDialog
+        P+: PageSetupDlgRec
+        P+: MinMarginLeft
+        P+: MinMarginTop
+        P+: MinMarginRight
+        P+: MinMarginBottom
+        P+: MarginLeft
+        P+: MarginTop
+        P+: MarginRight
+        P+: MarginBottom
+        P+: Options
+        P+: PageWidth
+        P+: PageHeight
+        P+: Units
+        P+: BeforePaint
+        P+: OnDrawFullPage
+        P+: OnDrawMinMargin
+        P+: OnDrawMargin
+        P+: OnDrawGreekText
+        P+: OnDrawEnvStamp
+        P+: OnDrawRetAddress
+T+: TFindOption
+T+: TFindOptions
+TE: TFindReplaceFunc
+T+: TFindDialog
+        P+: Left
+        P+: Position
+        P+: Top
+        P+: FindText
+        P+: Options
+        P+: OnFind
+T+: TReplaceDialog
+        P+: ReplaceText
+        P+: OnReplace
+T+: EPlatformVersionException
+T+: TFileDialogOption
+T+: TFileDialogOptions
+T+: TFileDialogOverwriteResponse
+T+: TFileDialogShareViolationResponse
+T+: TFileDialogCloseEvent
+T+: TFileDialogFolderChangingEvent
+T+: TFileDialogOverwriteEvent
+T+: TFileDialogShareViolationEvent
+T+: TFileTypeItem
+        PE: DisplayNameWStr
+        PE: FileMaskWStr
+        P+: DisplayName
+        P+: FileMask
+T+: TFileTypeItems
+        P+: Items
+T+: TFavoriteLinkItem
+        P+: Location
+T+: TFavoriteLinkItemsEnumerator
+        P+: Current
+T+: TFavoriteLinkItems
+        P+: Items
+T+: TCustomFileDialog
+        P+: ClientGuid
+        P+: DefaultExtension
+        P+: DefaultFolder
+        PW: Dialog
+        P+: FavoriteLinks
+        P+: FileName
+        P+: FileNameLabel
+        P+: Files
+        P+: FileTypes
+        P+: FileTypeIndex
+        P+: Handle
+        P+: OkButtonLabel
+        P+: Options
+        PW: ShellItem
+        PW: ShellItems
+        P+: Title
+        P+: OnExecute
+        P+: OnFileOkClick
+        P+: OnFolderChange
+        P+: OnFolderChanging
+        P+: OnOverwrite
+        P+: OnSelectionChange
+        P+: OnShareViolation
+        P+: OnTypeChange
+T+: TCustomFileOpenDialog
+T+: TFileOpenDialog
+        P+: ClientGuid
+        P+: DefaultExtension
+        P+: DefaultFolder
+        P+: FavoriteLinks
+        P+: FileName
+        P+: FileNameLabel
+        P+: FileTypes
+        P+: FileTypeIndex
+        P+: OkButtonLabel
+        P+: Options
+        P+: Title
+        P+: OnExecute
+        P+: OnFileOkClick
+        P+: OnFolderChange
+        P+: OnFolderChanging
+        P+: OnSelectionChange
+        P+: OnShareViolation
+        P+: OnTypeChange
+T+: TCustomFileSaveDialog
+T+: TFileSaveDialog
+        P+: ClientGuid
+        P+: DefaultExtension
+        P+: DefaultFolder
+        P+: FavoriteLinks
+        P+: FileName
+        P+: FileNameLabel
+        P+: FileTypes
+        P+: FileTypeIndex
+        P+: OkButtonLabel
+        P+: Options
+        P+: Title
+        P+: OnExecute
+        P+: OnFileOkClick
+        P+: OnFolderChange
+        P+: OnFolderChanging
+        P+: OnOverwrite
+        P+: OnSelectionChange
+        P+: OnShareViolation
+        P+: OnTypeChange
+T+: TTaskDialogFlag
+T+: TTaskDialogFlags
+T+: TTaskDialogCommonButton
+T+: TTaskDialogCommonButtons
+T+: TTaskDialogIcon
+T+: TProgressBarState
+T+: TTaskDialogProgressBar
+        P+: MarqueeSpeed
+        P+: Max
+        P+: Min
+        P+: Position
+        P+: State
+T+: TTaskDialogBaseButtonItem
+        P+: ModalResult
+        PE: TextWStr
+        P+: Caption
+        P+: Default
+        P+: Enabled
+T+: TTaskDialogButtonItem
+        P+: CommandLinkHint
+        P+: ElevationRequired
+        P+: ModalResult
+T+: TTaskDialogRadioButtonItem
+TE: TTaskDialogButtonList
+T+: TTaskDialogButtonsEnumerator
+        P+: Current
+T+: TTaskDialogButtons
+        P+: DefaultButton
+        P+: Items
+T+: TTaskDlgClickEvent
+T+: TTaskDlgTimerEvent
+T+: TCustomTaskDialog
+        P+: Button
+        P+: Buttons
+        P+: Caption
+        P+: CommonButtons
+        P+: CustomFooterIcon
+        P+: CustomMainIcon
+        P+: DefaultButton
+        P+: ExpandButtonCaption
+        P+: Expanded
+        P+: ExpandedText
+        P+: Flags
+        P+: FooterIcon
+        P+: FooterText
+        P+: Handle
+        P+: HelpContext
+        P+: MainIcon
+        P+: ModalResult
+        P+: ProgressBar
+        P+: RadioButton
+        P+: RadioButtons
+        P+: Text
+        P+: Title
+        P+: URL
+        P+: VerificationText
+        P+: OnButtonClicked
+        P+: OnDialogConstructed
+        P+: OnDialogCreated
+        P+: OnDialogDestroyed
+        P+: OnExpanded
+        P+: OnHyperlinkClicked
+        P+: OnNavigated
+        P+: OnRadioButtonClicked
+        P+: OnTimer
+        P+: OnVerificationClicked
+T+: TTaskDialog
+        P+: Buttons
+        P+: Caption
+        P+: CommonButtons
+        P+: CustomFooterIcon
+        P+: CustomMainIcon
+        P+: DefaultButton
+        P+: ExpandButtonCaption
+        P+: ExpandedText
+        P+: Flags
+        P+: FooterIcon
+        P+: FooterText
+        P+: HelpContext
+        P+: MainIcon
+        P+: ProgressBar
+        P+: RadioButtons
+        P+: Text
+        P+: Title
+        P+: VerificationText
+        P+: OnButtonClicked
+        P+: OnDialogConstructed
+        P+: OnDialogCreated
+        P+: OnDialogDestroyed
+        P+: OnExpanded
+        P+: OnHyperlinkClicked
+        P+: OnNavigated
+        P+: OnRadioButtonClicked
+        P+: OnTimer
+        P+: OnVerificationClicked
+T+: TMsgDlgType
+T+: TMsgDlgBtn
+T+: TMsgDlgButtons

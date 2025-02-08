@@ -1,0 +1,61 @@
+package dcllmdrtlx;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$LIBSUFFIX '200'}
+{$DESCRIPTION 'LMD 2016 - Common Shared Components'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  lmdrtl,
+  dcllmdrtl,
+  rtl,
+  vcl,
+  vclx,
+  designide,
+  dclstd,
+  vclimg,
+  lmdrtrtlx;
+
+contains
+  LMD_RegRtlX in '..\..\LMD_RegRtlX.pas',
+  pLMDActionsData in '..\..\pLMDActionsData.pas',
+  pLMDActnList in '..\..\pLMDActnList.pas',
+  pLMDActnListEditor in '..\..\pLMDActnListEditor.pas' {frmActionListEditor},
+  pLMDStdActnList in '..\..\pLMDStdActnList.pas' {frmStdActionList},
+  pLMDCEBase in '..\..\pLMDCEBase.pas',
+  pLMDCEX in '..\..\pLMDCEX.pas',
+  pLMDPeX in '..\..\pLMDPeX.pas',
+  pLMDPeCst in '..\..\pLMDPeCst.pas',
+  pLMDDsgnCPGetX in '..\..\pLMDDsgnCPGetX.pas',
+  pLMDWizardsX in '..\..\pLMDWizardsX.pas',
+  pLMDHTMLEditDlg in '..\..\pLMDHTMLEditDlg.pas' {frmLMDMiniHTMLEditor},
+  pLMDTaskDialogEditor in '..\..\pLMDTaskDialogEditor.pas',
+  pLMDStdListEditorDlg in '..\..\pLMDStdListEditorDlg.pas' {TLMDStdListEditorDlg},
+  pLMDStdItemPropertiesEditorDlg in '..\..\pLMDStdItemPropertiesEditorDlg.pas' {TLMDStdItemForm},
+  pLMDExtImageListEditorDlg in '..\..\pLMDExtImageListEditorDlg.pas' {LMDExtImageListEditorDlg},
+  pLMDCustomImageListSelectDlg in '..\..\pLMDCustomImageListSelectDlg.pas' {LMDCustImgListSelectDlg},
+  pLMDPicturePropertyEditor in '..\..\pLMDPicturePropertyEditor.pas' {LMDPicturePropertyEditorDlg};
+
+end.

@@ -1,0 +1,124 @@
+TE: PColor
+T+: TColor
+T+: HMETAFILE
+T+: HENHMETAFILE
+T+: EInvalidGraphic
+T+: EInvalidGraphicOperation
+T+: TResData
+T+: TFontPitch
+T+: TFontName
+T+: TFontCharset
+T+: TFontDataName
+T+: TFontStyle
+T+: TFontStyles
+T+: TFontStylesBase
+T+: TFontData
+T+: TPenStyle
+T+: TPenMode
+T+: TPenData
+T+: TBrushStyle
+T+: TBrushData
+TE: PResource
+T+: TResource
+T+: TGraphicsObject
+        P+: OnChange
+        PE: OwnerCriticalSection
+TE: IChangeNotifier
+T+: TFont
+        PE: FontAdapter
+        P+: Handle
+        P+: PixelsPerInch
+        P+: Charset
+        P+: Color
+        P+: Height
+        P+: Name
+        P+: Pitch
+        P+: Size
+        P+: Style
+T+: TPen
+        P+: Handle
+        P+: Color
+        P+: Mode
+        P+: Style
+        P+: Width
+T+: TBrush
+        P+: Bitmap
+        P+: Handle
+        P+: Color
+        P+: Style
+T+: TFontRecall
+T+: TPenRecall
+T+: TBrushRecall
+T+: TFillStyle
+T+: TFillMode
+T+: TCopyMode
+T+: TCanvasStates
+T+: TCanvasState
+T+: TCanvasOrientation
+T+: TCanvas
+        P+: ClipRect
+        P+: Handle
+        P+: LockCount
+        P+: CanvasOrientation
+        P+: PenPos
+        P+: Pixels
+        P+: TextFlags
+        P+: OnChange
+        P+: OnChanging
+        P+: Brush
+        P+: CopyMode
+        P+: Font
+        P+: Pen
+T+: TProgressStage
+T+: TProgressEvent
+T+: TGraphic
+        P+: Empty
+        P+: Height
+        P+: Modified
+        P+: Palette
+        P+: PaletteModified
+        P+: Transparent
+        P+: Width
+        P+: OnChange
+        P+: OnProgress
+T+: TGraphicClass
+T+: TPicture
+        P+: Bitmap
+        P+: Graphic
+        PE: PictureAdapter
+        P+: Height
+        P+: Icon
+        P+: Metafile
+        P+: Width
+        P+: OnChange
+        P+: OnProgress
+T+: TMetafileCanvas
+T+: TSharedImage
+        P+: RefCount
+T+: TMetafileImage
+T+: TMetafile
+        P+: CreatedBy
+        P+: Description
+        P+: Enhanced
+        P+: Handle
+        P+: MMWidth
+        P+: MMHeight
+        P+: Inch
+T+: TBitmapImage
+T+: TBitmapHandleType
+T+: TPixelFormat
+T+: TTransparentMode
+T+: TBitmap
+        P+: Canvas
+        P+: Handle
+        P+: HandleType
+        P+: IgnorePalette
+        P+: MaskHandle
+        P+: Monochrome
+        P+: PixelFormat
+        PE: ScanLine
+        P+: TransparentColor
+        P+: TransparentMode
+T+: TIconImage
+T+: TIcon
+        P+: Handle

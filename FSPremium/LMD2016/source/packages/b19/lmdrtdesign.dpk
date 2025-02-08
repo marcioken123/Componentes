@@ -1,0 +1,50 @@
+package lmdrtdesign;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$LIBSUFFIX '190'}
+{$DESCRIPTION 'LMD DesignPack Runtime package'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  lmdrtl,
+  rtl,
+  vcl,
+  vclx,
+  lmdrtinspector;
+
+contains
+  LMDDsgDesigner in '..\..\LMDDsgDesigner.pas',
+  LMDDsgCst in '..\..\LMDDsgCst.pas',
+  LMDDsgClass in '..\..\LMDDsgClass.pas',
+  LMDDsgPropInsp in '..\..\LMDDsgPropInsp.pas',
+  LMDDsgDiagram in '..\..\LMDDsgDiagram.pas',
+  LMDDsgDiagramDb in '..\..\LMDDsgDiagramDb.pas',
+  LMDDsgManager in '..\..\LMDDsgManager.pas',
+  LMDDsgComboBox in '..\..\LMDDsgComboBox.pas',
+  LMDDsgModule in '..\..\LMDDsgModule.pas',
+  LMDDsgObjects in '..\..\LMDDsgObjects.pas',
+  LMDDsgStructDlg in '..\..\LMDDsgStructDlg.pas' {LMDStructDlg};
+
+end.

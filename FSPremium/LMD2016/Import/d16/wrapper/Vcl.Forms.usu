@@ -1,0 +1,526 @@
+T+: TScrollBarKind
+T+: TScrollBarInc
+T+: TScrollBarStyle
+T+: TControlScrollBar
+        P+: Kind
+        P+: ScrollPos
+        P+: ButtonSize
+        P+: Color
+        P+: Increment
+        P+: Margin
+        P+: ParentColor
+        P+: Position
+        P+: Range
+        P+: Smooth
+        P+: Size
+        P+: Style
+        P+: ThumbSize
+        P+: Tracking
+        P+: Visible
+T+: TWindowState
+T+: TScrollingWinControl
+        P+: AutoScroll
+        P+: OnAlignInsertBefore
+        P+: OnAlignPosition
+        P+: HorzScrollBar
+        P+: VertScrollBar
+T+: TFormBorderStyle
+T+: TBorderStyle
+T+: TScrollBox
+        P+: Align
+        P+: Anchors
+        P+: AutoScroll
+        P+: AutoSize
+        P+: BevelEdges
+        P+: BevelInner
+        P+: BevelOuter
+        P+: BevelKind
+        P+: BevelWidth
+        P+: BiDiMode
+        P+: BorderStyle
+        P+: Constraints
+        P+: DockSite
+        P+: DoubleBuffered
+        P+: DragCursor
+        P+: DragKind
+        P+: DragMode
+        P+: Enabled
+        P+: Color
+        P+: Ctl3D
+        P+: Font
+        P+: Padding
+        P+: ParentBiDiMode
+        P+: ParentBackground
+        P+: ParentColor
+        P+: ParentCtl3D
+        P+: ParentDoubleBuffered
+        P+: ParentFont
+        P+: ParentShowHint
+        P+: PopupMenu
+        P+: ShowHint
+        P+: TabOrder
+        P+: TabStop
+        P+: Touch
+        P+: Visible
+        P+: OnCanResize
+        P+: OnClick
+        P+: OnConstrainedResize
+        P+: OnContextPopup
+        P+: OnDblClick
+        P+: OnDockDrop
+        P+: OnDockOver
+        P+: OnDragDrop
+        P+: OnDragOver
+        P+: OnEndDock
+        P+: OnEndDrag
+        P+: OnEnter
+        P+: OnExit
+        P+: OnGesture
+        P+: OnGetSiteInfo
+        P+: OnMouseActivate
+        P+: OnMouseDown
+        P+: OnMouseEnter
+        P+: OnMouseLeave
+        P+: OnMouseMove
+        P+: OnMouseUp
+        P+: OnMouseWheel
+        P+: OnMouseWheelDown
+        P+: OnMouseWheelUp
+        P+: OnResize
+        P+: OnStartDock
+        P+: OnStartDrag
+        P+: OnUnDock
+T+: TCustomFrame
+T+: TCustomFrameClass
+T+: TFrame
+        P+: Align
+        P+: Anchors
+        P+: AutoScroll
+        P+: AutoSize
+        P+: BiDiMode
+        P+: Constraints
+        P+: DockSite
+        P+: DoubleBuffered
+        P+: DragCursor
+        P+: DragKind
+        P+: DragMode
+        P+: Enabled
+        P+: Color
+        P+: Ctl3D
+        P+: Font
+        P+: Padding
+        P+: ParentBackground
+        P+: ParentBiDiMode
+        P+: ParentColor
+        P+: ParentCtl3D
+        P+: ParentDoubleBuffered
+        P+: ParentFont
+        P+: ParentShowHint
+        P+: PopupMenu
+        P+: ShowHint
+        P+: TabOrder
+        P+: TabStop
+        P+: Touch
+        P+: Visible
+        P+: OnAlignInsertBefore
+        P+: OnAlignPosition
+        P+: OnCanResize
+        P+: OnClick
+        P+: OnConstrainedResize
+        P+: OnContextPopup
+        P+: OnDblClick
+        P+: OnDockDrop
+        P+: OnDockOver
+        P+: OnDragDrop
+        P+: OnDragOver
+        P+: OnEndDock
+        P+: OnEndDrag
+        P+: OnEnter
+        P+: OnExit
+        P+: OnGesture
+        P+: OnGetSiteInfo
+        P+: OnMouseActivate
+        P+: OnMouseDown
+        P+: OnMouseEnter
+        P+: OnMouseLeave
+        P+: OnMouseMove
+        P+: OnMouseUp
+        P+: OnMouseWheel
+        P+: OnMouseWheelDown
+        P+: OnMouseWheelUp
+        P+: OnResize
+        P+: OnStartDock
+        P+: OnStartDrag
+        P+: OnUnDock
+TE: IDesignerHook
+TE: IOleForm
+T+: THelpEventData
+T+: TPopupWnd
+TE: TPopupWndArray
+T+: TBorderIcon
+T+: TBorderIcons
+T+: TFormStyle
+T+: TPosition
+T+: TDefaultMonitor
+T+: TPrintScale
+T+: TShowAction
+T+: TTileMode
+T+: TCloseAction
+T+: TCloseEvent
+T+: TCloseQueryEvent
+TE: TFormState
+T+: TShortCutEvent
+T+: THelpEvent
+T+: TPopupMode
+T+: TGlassFrame
+        P+: OnChange
+        P+: Enabled
+        P+: Left
+        P+: Top
+        P+: Right
+        P+: Bottom
+        P+: SheetOfGlass
+T+: TCustomForm
+        P+: ActiveMDIChild
+        P+: AlphaBlend
+        P+: AlphaBlendValue
+        P+: BorderIcons
+        P+: TransparentColor
+        P+: TransparentColorValue
+        P+: DefaultMonitor
+        P+: Icon
+        P+: MDIChildCount
+        P+: MDIChildren
+        P+: ObjectMenuItem
+        P+: PixelsPerInch
+        P+: PopupChildren
+        P+: Position
+        P+: PrintScale
+        P+: Scaled
+        P+: TileMode
+        P+: WindowMenu
+        P+: ClientHandle
+        P+: FormStyle
+        P+: OldCreateOrder
+        P+: OnActivate
+        P+: OnClose
+        P+: OnCloseQuery
+        P+: OnCreate
+        P+: OnDestroy
+        P+: OnDeactivate
+        P+: OnHelp
+        P+: OnHide
+        P+: OnPaint
+        P+: OnShortCut
+        P+: OnShow
+        P+: Active
+        P+: ActiveControl
+        P+: Action
+        P+: ActiveOleControl
+        P+: BorderStyle
+        P+: Canvas
+        P+: Caption
+        P+: Color
+        PE: Designer
+        P+: DropTarget
+        P+: Font
+        PE: FormState
+        P+: GlassFrame
+        P+: HelpFile
+        P+: KeyPreview
+        P+: Menu
+        P+: ModalResult
+        P+: Monitor
+        PE: OleFormObject
+        P+: PopupMode
+        P+: ScreenSnap
+        P+: SnapBuffer
+        P+: WindowState
+        P+: PopupParent
+        P+: Left
+        P+: Top
+T+: TCustomFormClass
+T+: TActiveFormBorderStyle
+T+: TCustomActiveForm
+        P+: Visible
+        P+: ActiveControl
+        P+: Anchors
+        P+: AutoScroll
+        P+: AutoSize
+        P+: AxBorderStyle
+        P+: BorderWidth
+        P+: Caption
+        P+: Color
+        P+: Constraints
+        P+: Font
+        P+: Height
+        P+: HorzScrollBar
+        P+: KeyPreview
+        P+: Padding
+        P+: OldCreateOrder
+        P+: PixelsPerInch
+        P+: PopupMenu
+        P+: PrintScale
+        P+: Scaled
+        P+: ShowHint
+        P+: VertScrollBar
+        P+: Width
+        P+: OnActivate
+        P+: OnClick
+        P+: OnCreate
+        P+: OnContextPopup
+        P+: OnDblClick
+        P+: OnDestroy
+        P+: OnDeactivate
+        P+: OnDragDrop
+        P+: OnDragOver
+        P+: OnKeyDown
+        P+: OnKeyPress
+        P+: OnKeyUp
+        P+: OnMouseActivate
+        P+: OnMouseDown
+        P+: OnMouseEnter
+        P+: OnMouseLeave
+        P+: OnMouseMove
+        P+: OnMouseUp
+        P+: OnPaint
+T+: TForm
+        P+: ActiveMDIChild
+        P+: ClientHandle
+        P+: DockManager
+        P+: MDIChildCount
+        P+: MDIChildren
+        P+: TileMode
+        P+: Action
+        P+: ActiveControl
+        P+: Align
+        P+: AlphaBlend
+        P+: AlphaBlendValue
+        P+: Anchors
+        P+: AutoScroll
+        P+: AutoSize
+        P+: BiDiMode
+        P+: BorderIcons
+        P+: BorderStyle
+        P+: BorderWidth
+        P+: Caption
+        P+: ClientHeight
+        P+: ClientWidth
+        P+: Color
+        P+: TransparentColor
+        P+: TransparentColorValue
+        P+: Constraints
+        P+: Ctl3D
+        P+: UseDockManager
+        P+: DefaultMonitor
+        P+: DockSite
+        P+: DoubleBuffered
+        P+: DragKind
+        P+: DragMode
+        P+: Enabled
+        P+: ParentFont
+        P+: Font
+        P+: FormStyle
+        P+: GlassFrame
+        P+: Height
+        P+: HelpFile
+        P+: HorzScrollBar
+        P+: Icon
+        P+: KeyPreview
+        P+: Padding
+        P+: Menu
+        P+: OldCreateOrder
+        P+: ObjectMenuItem
+        P+: ParentBiDiMode
+        P+: PixelsPerInch
+        P+: PopupMenu
+        P+: PopupMode
+        P+: PopupParent
+        P+: Position
+        P+: PrintScale
+        P+: Scaled
+        P+: ScreenSnap
+        P+: ShowHint
+        P+: SnapBuffer
+        P+: Touch
+        P+: VertScrollBar
+        P+: Visible
+        P+: Width
+        P+: WindowState
+        P+: WindowMenu
+        P+: OnActivate
+        P+: OnAlignInsertBefore
+        P+: OnAlignPosition
+        P+: OnCanResize
+        P+: OnClick
+        P+: OnClose
+        P+: OnCloseQuery
+        P+: OnConstrainedResize
+        P+: OnContextPopup
+        P+: OnCreate
+        P+: OnDblClick
+        P+: OnDestroy
+        P+: OnDeactivate
+        P+: OnDockDrop
+        P+: OnDockOver
+        P+: OnDragDrop
+        P+: OnDragOver
+        P+: OnEndDock
+        P+: OnGesture
+        P+: OnGetSiteInfo
+        P+: OnHide
+        P+: OnHelp
+        P+: OnKeyDown
+        P+: OnKeyPress
+        P+: OnKeyUp
+        P+: OnMouseActivate
+        P+: OnMouseDown
+        P+: OnMouseEnter
+        P+: OnMouseLeave
+        P+: OnMouseMove
+        P+: OnMouseUp
+        P+: OnMouseWheel
+        P+: OnMouseWheelDown
+        P+: OnMouseWheelUp
+        P+: OnPaint
+        P+: OnResize
+        P+: OnShortCut
+        P+: OnShow
+        P+: OnStartDock
+        P+: OnUnDock
+T+: TFormClass
+T+: TCustomDockForm
+        P+: AutoScroll
+        P+: BorderStyle
+        P+: FormStyle
+        P+: PixelsPerInch
+T+: TMonitor
+        P+: Handle
+        P+: MonitorNum
+        P+: Left
+        P+: Height
+        P+: Top
+        P+: Width
+        P+: BoundsRect
+        P+: WorkareaRect
+        P+: Primary
+TE: PCursorRec
+T+: TCursorRec
+TE: TCursorRecType
+T+: TMonitorDefaultTo
+T+: TScreen
+        P+: ActiveControl
+        P+: ActiveCustomForm
+        P+: ActiveForm
+        P+: CustomFormCount
+        P+: CustomForms
+        P+: CursorCount
+        P+: Cursor
+        P+: Cursors
+        P+: DataModules
+        P+: DataModuleCount
+        P+: FocusedForm
+        P+: SaveFocusedList
+        P+: MonitorCount
+        P+: Monitors
+        P+: DesktopRect
+        P+: DesktopHeight
+        P+: DesktopLeft
+        P+: DesktopTop
+        P+: DesktopWidth
+        P+: WorkAreaRect
+        P+: WorkAreaHeight
+        P+: WorkAreaLeft
+        P+: WorkAreaTop
+        P+: WorkAreaWidth
+        P+: HintFont
+        P+: IconFont
+        P+: MenuFont
+        P+: MessageFont
+        P+: CaptionFont
+        P+: Fonts
+        P+: FormCount
+        P+: Forms
+        P+: Imes
+        P+: DefaultIme
+        P+: DefaultKbLayout
+        P+: Height
+        P+: PixelsPerInch
+        P+: PrimaryMonitor
+        P+: Width
+        P+: OnActiveControlChange
+        P+: OnActiveFormChange
+T+: TTimerMode
+TE: PHintInfo
+T+: THintInfo
+T+: TCMHintShowPause
+T+: TPopupForm
+TE: TPopupFormArray
+T+: TMessageEvent
+T+: TExceptionEvent
+T+: TGetHandleEvent
+T+: TIdleEvent
+T+: TShowHintEvent
+T+: TWindowHook
+T+: TSettingChangeEvent
+TE: TTaskWindowList
+T+: TApplication
+        P+: Active
+        P+: ActionUpdateDelay
+        P+: ActiveFormHandle
+        P+: AllowTesting
+        P+: AutoDragDocking
+        PE: HelpSystem
+        P+: CurrentHelpFile
+        P+: DefaultFont
+        P+: DialogHandle
+        P+: EnumAllWindowsOnActivateHint
+        P+: ExeName
+        P+: HelpFile
+        P+: Hint
+        P+: HintColor
+        P+: HintHidePause
+        P+: HintPause
+        P+: HintShortCuts
+        P+: HintShortPause
+        P+: Icon
+        P+: MainForm
+        P+: MainFormHandle
+        P+: MainFormOnTaskBar
+        P+: ModalLevel
+        P+: ModalPopupMode
+        P+: BiDiMode
+        P+: BiDiKeyboard
+        P+: NonBiDiKeyboard
+        P+: ShowHint
+        P+: ShowMainForm
+        P+: Terminated
+        P+: Title
+        P+: UpdateFormatSettings
+        P+: UpdateMetricSettings
+        P+: OnActionExecute
+        P+: OnActionUpdate
+        P+: OnActivate
+        P+: OnDeactivate
+        P+: OnException
+        P+: OnGetActiveFormHandle
+        P+: OnGetMainFormHandle
+        P+: OnIdle
+        P+: OnHelp
+        P+: OnHint
+        P+: OnMessage
+        P+: OnMinimize
+        P+: OnModalBegin
+        P+: OnModalEnd
+        P+: OnRestore
+        P+: OnShowHint
+        P+: OnShortCut
+        P+: OnSettingChange
+        P+: Handle
+        P+: PopupControlWnd
+TE: TFocusState
+TE: TSetLayeredWindowAttributes
+TW: TScrollingStyleHook
+TW: TFormStyleHook
+        P+: Handle
+TE: TScrollBoxStyleHook

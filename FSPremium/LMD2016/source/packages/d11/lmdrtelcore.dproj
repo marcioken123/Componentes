@@ -1,0 +1,228 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{52C3A694-371C-40E5-9C61-70D88242A371}</ProjectGuid>
+    <MainSource>lmdrtelcore.dpk</MainSource>
+    <Configuration Condition=" '$(Configuration)' == '' ">build</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+    <DCC_DependencyCheckOutputName>lmdrtelcore.bpl</DCC_DependencyCheckOutputName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'build|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_CBuilderOutput>All</DCC_CBuilderOutput>
+    <DCC_Define>RELEASE</DCC_Define>
+    <DCC_DcuOutput>..\..\build</DCC_DcuOutput>
+    <DCC_HppOutput>..\..</DCC_HppOutput>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Delphi.Personality</Borland.Personality>
+    <Borland.ProjectType>Package</Borland.ProjectType>
+    <BorlandProject>
+<BorlandProject xmlns=""> <Delphi.Personality>   <Parameters>
+      <Parameters Name="UseLauncher">False</Parameters>
+      <Parameters Name="LoadAllSymbols">True</Parameters>
+      <Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+    </Parameters>
+    <Package_Options>
+      <Package_Options Name="PackageDescription">LMD ElPack Core Components</Package_Options>
+      <Package_Options Name="ImplicitBuild">False</Package_Options>
+      <Package_Options Name="DesigntimeOnly">false</Package_Options>
+      <Package_Options Name="RuntimeOnly">true</Package_Options>
+    </Package_Options>
+    <VersionInfo>
+      <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+      <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+      <VersionInfo Name="MajorVer">1</VersionInfo>
+      <VersionInfo Name="MinorVer">0</VersionInfo>
+      <VersionInfo Name="Release">0</VersionInfo>
+      <VersionInfo Name="Build">0</VersionInfo>
+      <VersionInfo Name="Debug">False</VersionInfo>
+      <VersionInfo Name="PreRelease">False</VersionInfo>
+      <VersionInfo Name="Special">False</VersionInfo>
+      <VersionInfo Name="Private">False</VersionInfo>
+      <VersionInfo Name="DLL">False</VersionInfo>
+      <VersionInfo Name="Locale">1049</VersionInfo>
+      <VersionInfo Name="CodePage">1251</VersionInfo>
+    </VersionInfo>
+    <VersionInfoKeys>
+      <VersionInfoKeys Name="CompanyName">LMD Innovative</VersionInfoKeys>
+      <VersionInfoKeys Name="FileDescription">LMD ElPack Core Components</VersionInfoKeys>
+      <VersionInfoKeys Name="FileVersion">2016.5.*</VersionInfoKeys>
+      <VersionInfoKeys Name="InternalName"></VersionInfoKeys>
+      <VersionInfoKeys Name="LegalCopyright">Copyright (c) LMD Innovative</VersionInfoKeys>
+      <VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys>
+      <VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys>
+      <VersionInfoKeys Name="ProductName">LMD 2009 VCL Series</VersionInfoKeys>
+      <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+      <VersionInfoKeys Name="Comments"></VersionInfoKeys>
+    </VersionInfoKeys>
+    <Source>
+      <Source Name="MainSource">lmdrtelcore.dpk</Source>
+    </Source>
+  </Delphi.Personality> </BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <ItemGroup />
+  <ItemGroup>
+    <DelphiCompile Include="lmdrtelcore.dpk">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <DCCReference Include="..\..\ElACtrls.pas" />
+    <DCCReference Include="..\..\ElAdvPanel.pas" />
+    <DCCReference Include="..\..\ElAppBar.pas" />
+    <DCCReference Include="..\..\ElAppBarForm.pas" />
+    <DCCReference Include="..\..\ElBaseComp.pas" />
+    <DCCReference Include="..\..\ElBiProgr.pas" />
+    <DCCReference Include="..\..\ElBtnCtl.pas" />
+    <DCCReference Include="..\..\ElBtnEdit.pas" />
+    <DCCReference Include="..\..\ElCalc.pas" />
+    <DCCReference Include="..\..\ElCalculatorEdit.pas" />
+    <DCCReference Include="..\..\ElCalendar.pas" />
+    <DCCReference Include="..\..\ElCalendarDefs.pas" />
+    <DCCReference Include="..\..\ElCalendDlg.pas">
+      <Form>ElCalendarForm</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\ElCaption.pas" />
+    <DCCReference Include="..\..\ElCGControl.pas" />
+    <DCCReference Include="..\..\ElCheckCtl.pas" />
+    <DCCReference Include="..\..\ElCheckItemGrp.pas" />
+    <DCCReference Include="..\..\ElCLabel.pas" />
+    <DCCReference Include="..\..\ElClipMon.pas" />
+    <DCCReference Include="..\..\ElClock.pas" />
+    <DCCReference Include="..\..\ElClrCmb.pas" />
+    <DCCReference Include="..\..\ElCombos.pas" />
+    <DCCReference Include="..\..\ElComponent.pas" />
+    <DCCReference Include="..\..\ElCRC32.pas" />
+    <DCCReference Include="..\..\ElCurrEdit.pas" />
+    <DCCReference Include="..\..\ElDailyTip.pas">
+      <Form>ElDailyTipForm</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\ElDragDrop.pas" />
+    <DCCReference Include="..\..\ElDriveCombo.pas" />
+    <DCCReference Include="..\..\ElDTPick.pas" />
+    <DCCReference Include="..\..\ElEditCmds.pas" />
+    <DCCReference Include="..\..\ElEdits.pas" />
+    <DCCReference Include="..\..\ElExpBar.pas" />
+    <DCCReference Include="..\..\ElExpressionEval.pas" />
+    <DCCReference Include="..\..\ElFlatCtl.pas" />
+    <DCCReference Include="..\..\ElFolderDlg.pas" />
+    <DCCReference Include="..\..\ElFontCombo.pas" />
+    <DCCReference Include="..\..\ElFontListBox.pas" />
+    <DCCReference Include="..\..\ElFrmPers.pas" />
+    <DCCReference Include="..\..\ElGauge.pas" />
+    <DCCReference Include="..\..\ElGraphs.pas" />
+    <DCCReference Include="..\..\ElGroupBox.pas" />
+    <DCCReference Include="..\..\ElHashList.pas" />
+    <DCCReference Include="..\..\ElHeader.pas" />
+    <DCCReference Include="..\..\ElHintWnd.pas" />
+    <DCCReference Include="..\..\ElHook.pas" />
+    <DCCReference Include="..\..\ElHotKey.pas" />
+    <DCCReference Include="..\..\ElHstgrm.pas" />
+    <DCCReference Include="..\..\ElHTMLContainer.pas" />
+    <DCCReference Include="..\..\ElHTMLHint.pas" />
+    <DCCReference Include="..\..\ElHTMLLbl.pas" />
+    <DCCReference Include="..\..\ElHTMLPanel.pas" />
+    <DCCReference Include="..\..\ElHTMLView.pas" />
+    <DCCReference Include="..\..\ElImgCombo.pas" />
+    <DCCReference Include="..\..\ElImgFrm.pas" />
+    <DCCReference Include="..\..\ElImgLst.pas" />
+    <DCCReference Include="..\..\ElIni.pas" />
+    <DCCReference Include="..\..\ElInputDlg.pas" />
+    <DCCReference Include="..\..\ElInputProcessor.pas" />
+    <DCCReference Include="..\..\ElIPEdit.pas" />
+    <DCCReference Include="..\..\ElLabel.pas" />
+    <DCCReference Include="..\..\ElListBox.pas" />
+    <DCCReference Include="..\..\ElMaskEdit.pas" />
+    <DCCReference Include="..\..\ElMathParser.pas" />
+    <DCCReference Include="..\..\ElMD5.pas" />
+    <DCCReference Include="..\..\ElMemoCombo.pas" />
+    <DCCReference Include="..\..\ElMenuBar.pas" />
+    <DCCReference Include="..\..\ElMenus.pas" />
+    <DCCReference Include="..\..\ElMouseHint.pas" />
+    <DCCReference Include="..\..\ElMRU.pas" />
+    <DCCReference Include="..\..\ElMTree.pas" />
+    <DCCReference Include="..\..\ElNameEdits.pas" />
+    <DCCReference Include="..\..\ElObjList.pas" />
+    <DCCReference Include="..\..\ElOneInst.pas" />
+    <DCCReference Include="..\..\ElOpts.pas" />
+    <DCCReference Include="..\..\ElPanel.pas" />
+    <DCCReference Include="..\..\ElPgCtl.pas" />
+    <DCCReference Include="..\..\ElPopBtn.pas" />
+    <DCCReference Include="..\..\ElPowerMan.pas" />
+    <DCCReference Include="..\..\ElProcessUtils.pas" />
+    <DCCReference Include="..\..\ElPromptDlg.pas" />
+    <DCCReference Include="..\..\ElPropTools.pas" />
+    <DCCReference Include="..\..\ElRegExpr.pas" />
+    <DCCReference Include="..\..\ElRegUtils.pas" />
+    <DCCReference Include="..\..\ElSBCtrl.pas" />
+    <DCCReference Include="..\..\ElSBHook.pas" />
+    <DCCReference Include="..\..\ElScrollBar.pas" />
+    <DCCReference Include="..\..\ElScrollBox.pas" />
+    <DCCReference Include="..\..\ElShellUtils.pas" />
+    <DCCReference Include="..\..\ElShutdownWatcher.pas" />
+    <DCCReference Include="..\..\ElSideBar.pas" />
+    <DCCReference Include="..\..\ElSndMap.pas" />
+    <DCCReference Include="..\..\ElSpin.pas" />
+    <DCCReference Include="..\..\ElSpinBtn.pas" />
+    <DCCReference Include="..\..\ElSplit.pas" />
+    <DCCReference Include="..\..\ElStack.pas" />
+    <DCCReference Include="..\..\ElStatBar.pas" />
+    <DCCReference Include="..\..\ElStrArray.pas" />
+    <DCCReference Include="..\..\ElStrPool.pas" />
+    <DCCReference Include="..\..\ElStrToken.pas" />
+    <DCCReference Include="..\..\ElStyleMan.pas" />
+    <DCCReference Include="..\..\ElSysHotKey.pas" />
+    <DCCReference Include="..\..\ElTimers.pas" />
+    <DCCReference Include="..\..\ElToolBar.pas" />
+    <DCCReference Include="..\..\ElTools.pas" />
+    <DCCReference Include="..\..\ElTopmost.pas" />
+    <DCCReference Include="..\..\ElTrackBar.pas" />
+    <DCCReference Include="..\..\ElTray.pas" />
+    <DCCReference Include="..\..\ElTrayInfo.pas" />
+    <DCCReference Include="..\..\ElXTree.pas" />
+    <DCCReference Include="..\..\ElXTreeCell.pas" />
+    <DCCReference Include="..\..\ElXTreeCellCombo.pas" />
+    <DCCReference Include="..\..\ElTree.pas" />
+    <DCCReference Include="..\..\ElTreeInplaceEditors.pas" />
+    <DCCReference Include="..\..\ElTreeAdvEdit.pas" />
+    <DCCReference Include="..\..\ElTreeBtnEdit.pas" />
+    <DCCReference Include="..\..\ElTreeCheckBoxEdit.pas" />
+    <DCCReference Include="..\..\ElTreeColorCombo.pas" />
+    <DCCReference Include="..\..\ElTreeCombo.pas" />
+    <DCCReference Include="..\..\ElTreeComboBox.pas" />
+    <DCCReference Include="..\..\ElTreeCurrEdit.pas" />
+    <DCCReference Include="..\..\ElTreeDTPickEdit.pas" />
+    <DCCReference Include="..\..\ElTreeGrids.pas" />
+    <DCCReference Include="..\..\ElTreeMaskEdit.pas" />
+    <DCCReference Include="..\..\ElTreeMemoComboEdit.pas" />
+    <DCCReference Include="..\..\ElTreeMemoEdit.pas" />
+    <DCCReference Include="..\..\ElTreeModalEdit.pas" />
+    <DCCReference Include="..\..\ElTreeSpinEdit.pas" />
+    <DCCReference Include="..\..\ElTreeStdEditors.pas" />
+    <DCCReference Include="..\..\ElTreeTreeComboEdit.pas" />
+    <DCCReference Include="..\..\ElURLLabel.pas" />
+    <DCCReference Include="..\..\ElVCLUtils.pas" />
+    <DCCReference Include="..\..\ElVerInfo.pas" />
+    <DCCReference Include="..\..\ElXHeader.pas" />
+    <DCCReference Include="..\..\ElXPThemedControl.pas" />
+    <DCCReference Include="..\..\ElFormContainer.pas" />
+    <DCCReference Include="..\..\ElFormDisplay.pas" />
+    <DCCReference Include="..\..\ElFormPgCtl.pas" />
+    <DCCReference Include="..\..\frmHdrStp.pas" />
+    <DCCReference Include="..\..\frmTbrStp.pas" />
+    <DCCReference Include="..\..\HTMLLbx.pas" />
+    <DCCReference Include="..\..\LMDElConst.pas" />
+    <DCCReference Include="..\..\LMDGlyphs.pas" />
+    <DCCReference Include="..\..\LMDUniscribeStrings.pas" />
+    <DCCReference Include="..\..\ElShadowWindow.pas" />
+    <DCCReference Include="lmdrtl.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="rtl.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="vcl.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="vclx.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="lmdrtrtlx.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="lmdrtlog.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+</Project>

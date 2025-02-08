@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<SchemeList root='Main'>
+
+
+  <Scheme name='Comment' defaultToken='comment'>
+      <SyntaxBlock capture="true">
+        <Start> commentOpen </Start>
+        <End> commentClose </End>
+      </SyntaxBlock>      
+  </Scheme>
+  
+  <Scheme name='CssInProp' defaultToken='cssAttrListBG'>
+  
+      <!-- Searches for url attributes like: url('www.url.com') -->  
+      
+      <Regex token1='cssUrlAttr'
+             token2='cssUrlAttr'
+             token3='cssUrlAttr'             
+             token4='cssUrlHref'
+             token5='cssUrlAttr'
+             token6='cssUrlAttr'
+             token7='cssUrlAttr'
+             priority='100'
+      >
+          ( url  \(   \s*  )
+          ( [ &quot; &apos; ]+ )
+          ( \s* )
+          (.+?)
+          ( \2 )
+          ( \s* )          
+          ( \s*  \)  )
+      </Regex>
+
+      <Regex token1='cssUrlAttr'
+             token2='cssUrlHref'
+             token3='cssUrlAttr'
+             priority='100'
+      >
+          ( url  \(   \s*  )
+          ([^ &quot; &apos; ]+?)
+          ( \s*  \)  )
+      </Regex>
+            
+      <!-- Simple attribute value -->
+      <Regex token0='attributeValue'>
+          [^ \s , ]
+      </Regex>
+            
+      <!-- String attribute value -->
+      <Regex token0='attributeValue' priority='10'>
+          ([&quot; &apos;]) .*? \1 
+      </Regex>
+
+      <!-- Unfinished string -->  
+      <Regex token0='badAttributeValue' priority='5' >
+          [&quot; &apos;] .+ 
+      </Regex>  
+
+      <!-- Unfinished url -->  
+      <Regex token0='badAttributeValue'
+             priority='50' >
+          url \( [^ ) ]+ \)?
+      </Regex>  
+      
+  </Scheme>
+  
+  <Scheme name='CssProps' >
+
+      <SyntaxBlock capture="true">
+        <Start> tagOpen </Start>
+        <End> tagClose </End>
+      </SyntaxBlock>
+
+      <RegexBlock innerScheme='CssInProp'
+                  start_token0='attributeName'
+                  end_token0='tagClose' >
+        <Start> (\b[ \w - ]+\s*:) </Start>        
+        <End> (?= \} ) | ; | $ </End>        
+      </RegexBlock>
+
+      <RegexBlock innerScheme='Comment'
+                  start_token0='commentOpen'
+                  end_token0='commentClose'
+                  priority='1000' >
+        <Start> &lt; !--  </Start>
+        <End> --&gt; </End>
+      </RegexBlock>
+
+      <RegexBlock innerScheme='Comment'
+                  start_token0='commentOpen'
+                  end_token0='commentClose'>
+        <Start> \/\*  </Start>
+        <End> \*\/ </End>
+      </RegexBlock>
+            
+  </Scheme>
+  
+  <Scheme name='Main' >
+        <Regex token0='cssRule'>\w+</Regex>        
+        
+        <Regex token0='cssRelSymbol'>[* &gt; . &lt; #]+</Regex>        
+
+        <RegexBlock innerScheme='CssProps' start_token0='tagOpen' end_token0='tagClose' >
+            <Start> \{ </Start>        
+            <End> \} </End>    
+        </RegexBlock>
+
+        <RegexBlock innerScheme='Comment'
+                    start_token0='commentOpen'    
+                    end_token0='commentClose' 
+                    priority='1000' >
+          <Start> &lt; !--  </Start>           
+          <End> --&gt; </End>        
+        </RegexBlock>
+
+        <RegexBlock innerScheme='Comment'
+                    start_token0='commentOpen'    
+                    end_token0='commentClose'>
+          <Start> \/\*  </Start>           
+          <End> \*\/ </End>        
+        </RegexBlock>        
+        
+        
+        <RegexBlock innerScheme='CssInProp'
+                    start_token0='attributeName'
+                    end_token0='tagClose' >
+          <Start> ^ \s* @import </Start>        
+          <End> ; | $ </End>        
+        </RegexBlock>
+                
+  </Scheme>
+    
+</SchemeList>

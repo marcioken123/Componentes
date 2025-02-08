@@ -1,0 +1,116 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{0B29D957-30E3-437E-AFCD-5DA05DA23F61}</ProjectGuid>
+    <MainSource>lmdrtchart.dpk</MainSource>
+    <Configuration Condition=" '$(Configuration)' == '' ">build</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+    <DCC_DependencyCheckOutputName>lmdrtchart.bpl</DCC_DependencyCheckOutputName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'build|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_CBuilderOutput>All</DCC_CBuilderOutput>
+    <DCC_Define>RELEASE</DCC_Define>
+    <DCC_DcuOutput>..\..\build</DCC_DcuOutput>
+    <DCC_HppOutput>..\..</DCC_HppOutput>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Delphi.Personality</Borland.Personality>
+    <Borland.ProjectType>Package</Borland.ProjectType>
+    <BorlandProject>
+<BorlandProject xmlns=""> <Delphi.Personality>   <Parameters>
+      <Parameters Name="UseLauncher">False</Parameters>
+      <Parameters Name="LoadAllSymbols">True</Parameters>
+      <Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+    </Parameters>
+    <Package_Options>
+      <Package_Options Name="PackageDescription">LMD ChartPack Components</Package_Options>
+      <Package_Options Name="ImplicitBuild">False</Package_Options>
+      <Package_Options Name="DesigntimeOnly">false</Package_Options>
+      <Package_Options Name="RuntimeOnly">true</Package_Options>
+    </Package_Options>
+    <VersionInfo>
+      <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+      <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+      <VersionInfo Name="MajorVer">1</VersionInfo>
+      <VersionInfo Name="MinorVer">0</VersionInfo>
+      <VersionInfo Name="Release">0</VersionInfo>
+      <VersionInfo Name="Build">0</VersionInfo>
+      <VersionInfo Name="Debug">False</VersionInfo>
+      <VersionInfo Name="PreRelease">False</VersionInfo>
+      <VersionInfo Name="Special">False</VersionInfo>
+      <VersionInfo Name="Private">False</VersionInfo>
+      <VersionInfo Name="DLL">False</VersionInfo>
+      <VersionInfo Name="Locale">1049</VersionInfo>
+      <VersionInfo Name="CodePage">1251</VersionInfo>
+    </VersionInfo>
+    <VersionInfoKeys>
+      <VersionInfoKeys Name="CompanyName">LMD Innovative</VersionInfoKeys>
+      <VersionInfoKeys Name="FileDescription">LMD ChartPack Components</VersionInfoKeys>
+      <VersionInfoKeys Name="FileVersion">2016.5.*</VersionInfoKeys>
+      <VersionInfoKeys Name="InternalName"></VersionInfoKeys>
+      <VersionInfoKeys Name="LegalCopyright">Copyright (c) LMD Innovative</VersionInfoKeys>
+      <VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys>
+      <VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys>
+      <VersionInfoKeys Name="ProductName">LMD 2009 VCL Series</VersionInfoKeys>
+      <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+      <VersionInfoKeys Name="Comments"></VersionInfoKeys>
+    </VersionInfoKeys>
+    <Source>
+      <Source Name="MainSource">lmdrtchart.dpk</Source>
+    </Source>
+  </Delphi.Personality> </BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <ItemGroup />
+  <ItemGroup>
+    <DelphiCompile Include="lmdrtchart.dpk">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <DCCReference Include="..\..\LMDXMLNodeNames.pas" />
+    <DCCReference Include="..\..\LMDChart.pas" />
+    <DCCReference Include="..\..\LMDChartArea.pas" />
+    <DCCReference Include="..\..\LMDChartAxis.pas" />
+    <DCCReference Include="..\..\LMDChartScaleBreak.pas" />
+    <DCCReference Include="..\..\LMDChartBackground.pas" />
+    <DCCReference Include="..\..\LMDChartCTAreaLine3D.pas" />
+    <DCCReference Include="..\..\LMDChartCTAreaLine.pas" />
+    <DCCReference Include="..\..\LMDChartCTAreaSpline3D.pas" />
+    <DCCReference Include="..\..\LMDChartCTAreaSpline.pas" />
+    <DCCReference Include="..\..\LMDChartCTBar3D.pas" />
+    <DCCReference Include="..\..\LMDChartCTBar.pas" />
+    <DCCReference Include="..\..\LMDChartCTColumn3D.pas" />
+    <DCCReference Include="..\..\LMDChartCTColumn.pas" />
+    <DCCReference Include="..\..\LMDChartCTDoughnut.pas" />
+    <DCCReference Include="..\..\LMDChartCTPie2D.pas" />
+    <DCCReference Include="..\..\LMDChartData.pas" />
+    <DCCReference Include="..\..\LMDChartFont.pas" />
+    <DCCReference Include="..\..\LMDChartLabel.pas" />
+    <DCCReference Include="..\..\LMDChartLegend.pas" />
+    <DCCReference Include="..\..\LMDChartLine.pas" />
+    <DCCReference Include="..\..\LMDChartMarker.pas" />
+    <DCCReference Include="..\..\LMDChartPersistent.pas" />
+    <DCCReference Include="..\..\LMDChartTitleBox.pas" />
+    <DCCReference Include="..\..\LMDChartTypes.pas" />
+    <DCCReference Include="..\..\LMDChartUtils.pas" />
+    <DCCReference Include="..\..\LMDChartValuesBase.pas" />
+    <DCCReference Include="..\..\LMDChartValues.pas" />
+    <DCCReference Include="..\..\LMDChartValuesCollection.pas" />
+    <DCCReference Include="..\..\LMDChartSeries.pas" />
+    <DCCReference Include="..\..\LMDChartSeriesCollection.pas" />
+    <DCCReference Include="..\..\LMDChartSource.pas" />
+    <DCCReference Include="..\..\LMDChartRectangular2DCT.pas" />
+    <DCCReference Include="..\..\LMDChartCTLine.pas" />
+    <DCCReference Include="..\..\LMDChartPrintTask.pas" />
+    <DCCReference Include="lmdrtl.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="rtl.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="vcl.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="vclx.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="lmdrtrtlx.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="lmdrtprint.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+    <DCCReference Include="vcljpg.dcp"> <CopyLocal>False</CopyLocal> </DCCReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+</Project>

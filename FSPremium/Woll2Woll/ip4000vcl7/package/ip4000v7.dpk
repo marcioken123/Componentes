@@ -1,0 +1,96 @@
+package ip4000v7;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'InfoPower 4000 for Delphi 7'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  VCL,
+  VCLX,
+  VCLDB,
+  BDERTL;
+
+contains
+  wwdbgrid,
+  wwtable,
+  wwmemo,
+  wwdblook,
+  wwidlg,
+  wwdbdlg,
+  wwquery,
+  wwkeycb,
+  wwdotdot,
+  wwdatsrc,
+  wwqbe,
+  wwlocate,
+  wwdbcomb,
+  wwdbspin,
+  wwdbedit,
+  wwfltdlg,
+  wwintl,
+  wwstorep,
+  wwriched,
+  wwrcdvw,
+  wwrich,
+  wwrichtb,
+  wwrchdlg,
+  wwfltvw,
+  wwfltdum,
+  wwspin,
+  wwdbigrd,
+  wwcommon,
+  wwpict,
+  wwsystem,
+  wwfilter,
+  wwstacks,
+  wwstr,
+  wwtypes,
+  wwrcdpnl,
+  wwDialog,
+  wwDBNavigator,
+  wwdbdatetimepicker,
+  wwmonthcalendar,
+  wwSpeedButton,
+  wwricholecallback,
+  wwTrackIcon,
+  wwrichole,
+  wwcollection,
+  wwDataInspector,
+  wwFrame,
+  wwClearPanel,
+  wwcheckbox,
+  wwradiobutton,
+  wwbitmap,
+  wwchangelink,
+  wwhistorylist,
+  wwrichobjinfo,
+  wwradiogroup,
+  wwpaintoptions,
+  wwclearbuttongroup,
+  wwexport,
+  wwrtfconverter,
+  wwcombobutton;
+
+end.

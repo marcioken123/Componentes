@@ -1,0 +1,10 @@
+T+: TBaseImageList
+        P+: LinkCount
+        P+: Links
+        P+: Count
+T+: TImageLink
+        P+: Images
+        P+: ImageIndex
+        P+: IgnoreIndex
+        P+: IgnoreImages
+        P+: OnChange

@@ -1,0 +1,95 @@
+T+: TMenuResizeActionControl
+T+: TCustomButtonControl
+        P+: MouseInControl
+        P+: AllowAllUp
+        P+: Caption
+        P+: Down
+        P+: Flat
+        P+: ShowCaption
+        P+: ShowShortCut
+        P+: State
+        P+: TrackButton
+T+: TCustomUtilityButton
+        P+: AutoScroll
+        P+: ArrowSize
+        P+: ArrowType
+        P+: Color
+        P+: Direction
+        P+: RepeatRate
+        P+: OnClick
+T+: TCustomToolScrollBtn
+T+: TCustomDropDownButton
+        P+: DroppedDown
+T+: TCustomActionCombo
+T+: TCustomComboControl
+        P+: ComboBox
+T+: TCustomActionDockBar
+        P+: AllowScrolling
+        P+: ScrollingRate
+        P+: VisibleIndex
+T+: TCustomToolScrollBtnClass
+T+: TCustomActionToolBar
+        P+: HiddenCount
+T+: TActionToolBar
+        P+: Canvas
+        P+: ActionManager
+        P+: Align
+        P+: AllowHiding
+        P+: Anchors
+        P+: BiDiMode
+        P+: Caption
+        P+: Color
+        P+: ColorMap
+        P+: Constraints
+        P+: Cursor
+        P+: DragCursor
+        P+: DragKind
+        P+: DragMode
+        P+: EdgeBorders
+        P+: EdgeInner
+        P+: EdgeOuter
+        P+: Enabled
+        P+: Font
+        P+: HorzMargin
+        P+: HorzSeparator
+        P+: Orientation
+        P+: ParentBiDiMode
+        P+: ParentBackground
+        P+: ParentColor
+        P+: ParentFont
+        P+: ParentShowHint
+        P+: PersistentHotKeys
+        P+: PopupMenu
+        P+: ShowHint
+        P+: Spacing
+        P+: Touch
+        P+: VertMargin
+        P+: Visible
+        P+: OnAlignInsertBefore
+        P+: OnAlignPosition
+        P+: OnControlCreated
+        P+: OnCanResize
+        P+: OnClick
+        P+: OnConstrainedResize
+        P+: OnContextPopup
+        P+: OnDockDrop
+        P+: OnDockOver
+        P+: OnDblClick
+        P+: OnDragDrop
+        P+: OnDragOver
+        P+: OnEndDock
+        P+: OnEndDrag
+        P+: OnEnter
+        P+: OnExit
+        P+: OnGesture
+        P+: OnGetControlClass
+        P+: OnGetSiteInfo
+        P+: OnMouseActivate
+        P+: OnMouseDown
+        P+: OnMouseMove
+        P+: OnMouseUp
+        P+: OnPaint
+        P+: OnResize
+        P+: OnStartDock
+        P+: OnStartDrag
+        P+: OnUnDock

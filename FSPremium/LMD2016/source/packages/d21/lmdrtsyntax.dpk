@@ -1,0 +1,50 @@
+package lmdrtsyntax;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$LIBSUFFIX '210'}
+{$DESCRIPTION 'LMD SyntaxEdit Runtime package'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  lmdrtl,
+  rtl,
+  vcl,
+  vclx,
+  lmdrtprint;
+
+contains
+  LMDSedUtils in '..\..\LMDSedUtils.pas',
+  LMDSedParser in '..\..\LMDSedParser.pas',
+  LMDSedDocument in '..\..\LMDSedDocument.pas',
+  LMDSedView in '..\..\LMDSedView.pas',
+  LMDSedDialogs in '..\..\LMDSedDialogs.pas',
+  LMDSedConst in '..\..\LMDSedConst.pas',
+  LMDSedFindDialog in '..\..\LMDSedFindDialog.pas' {LMDSedFindDlg},
+  LMDSedGotoLineDialog in '..\..\LMDSedGotoLineDialog.pas' {LMDSedGotoLineDlg},
+  LMDSedColorSchemeDialog in '..\..\LMDSedColorSchemeDialog.pas' {TLMDSedColorSchemeDlg},
+  LMDSedKeyBindingsDialog in '..\..\LMDSedKeyBindingsDialog.pas' {TLMDSedKeyBindingsDlg},
+  LMDSedSchemeEditDialog in '..\..\LMDSedSchemeEditDialog.pas' {LMDSedGotoLineDlg};
+
+end.

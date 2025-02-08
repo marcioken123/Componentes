@@ -1,0 +1,64 @@
+package dcllmdelcore;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$LIBSUFFIX '70'}
+{$DESCRIPTION 'LMD 2016 - ElPack Core Components'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  lmdrtl,
+  dcllmdrtl,
+  rtl,
+  vcl,
+  vclx,
+  designide,
+  dclstd,
+  dcllmdrtlx,
+  lmdrtelcore;
+
+contains
+  LMD_RegElCore in '..\..\LMD_RegElCore.pas',
+  pLMDElCE in '..\..\pLMDElCE.pas',
+  pLMDElPE in '..\..\pLMDElPE.pas',
+  pLMDElFormPers in '..\..\pLMDElFormPers.pas' {PersPropsForm},
+  pLMDElImgListEdit in '..\..\pLMDElImgListEdit.pas',
+  pLMDElImgListEditDlg in '..\..\pLMDElImgListEditDlg.pas',
+  pLMDElItemCol in '..\..\pLMDElItemCol.pas' {ItemColDlg},
+  pLMDElItemsProp in '..\..\pLMDElItemsProp.pas' {ItemsPropDlg},
+  pLMDElMenuDsgn in '..\..\pLMDElMenuDsgn.pas',
+  pLMDElMlCapProp in '..\..\pLMDElMlCapProp.pas' {MlCapEditDialog},
+  pLMDElSectEdit in '..\..\pLMDElSectEdit.pas' {SectEdit},
+  pLMDElSectProp in '..\..\pLMDElSectProp.pas' {ElSectionsPropDlg},
+  pLMDElSoundMap in '..\..\pLMDElSoundMap.pas' {SoundMapForm},
+  pLMDElStrPoolEdit in '..\..\pLMDElStrPoolEdit.pas',
+  pLMDElStyleImageSelect in '..\..\pLMDElStyleImageSelect.pas',
+  pLMDElStyleManProp in '..\..\pLMDElStyleManProp.pas',
+  pLMDElHTMLEditorDlg in '..\..\pLMDElHTMLEditorDlg.pas' {frmLMDElHTMLEditor},
+  pLMDElXItemCol in '..\..\pLMDElXItemCol.pas' {XItemColDlg},
+  pLMDElXItemsProp in '..\..\pLMDElXItemsProp.pas' {XItemsPropDlg},
+  pLMDElXSectEdit in '..\..\pLMDElXSectEdit.pas' {XSectEdit},
+  pLMDElXSectProp in '..\..\pLMDElXSectProp.pas' {ElXSectionsPropDlg};
+
+end.

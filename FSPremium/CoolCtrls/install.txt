@@ -1,0 +1,36 @@
+Installation
+
+  NOTE: All the packages files are created using Client/Server versions
+  of Delphi/CBuilder and may include references to the packages/libraries
+  that not included into Pro versions. Should you experience this
+  type problems try to manually remove references to these packages. If 
+  you have Standard version of Delphi/CBuilder please contact us to get 
+  your copy of CoolControls for Standard Delphi/CBuilder version.
+
+  For proper installation of the package you need to copy all the package 
+  files to the folder where your components are placed. 
+
+  For Delphi 4/5/6/7
+  ==================
+  1. All files should be copied to the same place. 
+  2. Open in Delphi CoolCtlsD(X).dpk package depending on your Delphi version.
+  3. Press "Install" speed button.
+  4. Make sure that folder with CoolControls is in your library path: 
+     Tools -> Environment Options -> Library -> Library Path.
+
+  For C++ Builder 4/5/6
+  =====================
+  1. Open package's source file CoolCtlsB(X).bpk.
+  2. Install the package. Press "Install" button.
+
+  Help installation
+  =================
+  1. Copy CoolCtls.hlp, CoolCtls.cnt  to your Delphi / BCB help folder.
+  2. Edit the Delphi4.cfg (in the Delphi4\Help directory, for Delphi 3 and 
+     BCB this file has appropriate names) and add the following line to 
+     the "Third Party" section : ":Link CoolCtls.hlp"
+  3. Edit the Delphi4.cnt file (in the Delphi4\Help directory and add 
+     the following line to the "index" section (located at the top of 
+     file): ":Index CoolControls=CoolCtls.hlp"
+  4. Add the following line to the "include" section (located at the 
+     bottom of the file): ":Include CoolCtls.cnt".

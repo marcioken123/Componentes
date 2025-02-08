@@ -1,0 +1,109 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="de">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>LMD 2016 - Delphi/C++ Builder 6 Support</title>
+</head>
+
+<body>
+
+<style>BODY {
+	FONT-SIZE: 70%; BACKGROUND: #ffffff; FONT-FAMILY: Verdana, Arial, Helvetica, MS Sans Serif
+}
+A:link {
+	COLOR: #0000ff; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #0000ff; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #ff0000; TEXT-DECORATION: underline
+}
+TABLE {
+	FONT-SIZE: 100%
+}
+HR {
+	WIDTH: 25%; COLOR: red; TEXT-ALIGN: left
+}
+</style>
+<p><font face="verdana" size="+2"><a name="Top"></a>LMD 2016 - Delphi/C++ 
+Builder 6 Support<br>
+</font><font size="-2">(© by LMD Innovative, (<a style="color: #0000ff; text-decoration: none" href="http://www.lmd.de/">http://www.lmd.de</a> 
+or
+<a style="color: #0000ff; text-decoration: none" href="http://www.lmdinnovative.com/">
+http://www.lmdinnovative.com</a>)</font></p>
+<hr style="width: 25%; color: red; text-align: left">
+<p><font color="#000080" size="1">
+<a style="color: #0000ff; text-decoration: none" href="_readme.htm">[Main]</a></font><br>
+<font size="2" face="Verdana"><br>
+<br>
+<a style="color: #0000ff; text-decoration: none" href="#Denos">Introduction</a><br>
+<a style="color: #0000ff; text-decoration: none" href="#Port">Special Notes</a><br>
+<a style="color: #0000ff; text-decoration: none" href="#Issues">C++ Builder 6.0 
+Note</a></font><font face="Verdana" size="3"><b><br>
+&nbsp;</b></font></p>
+<p><font face="Verdana" size="3"><b><br>
+<a name="Denos"></a>Introduction<br>
+</b><font size="2">Since</font></font><font face="Verdana" size="2"> LMD 2009 May releases Delphi/C++ 
+Builder 6.0 support was re-enabled again. For emulating theme features of Delphi 
+7 and higher parts of ThemeManager package by Mike Lischke (<a href="http://www.soft-gems.net">www.soft-gems.net</a>)were 
+integrated into Delphi/C++Builder 6 packages. </font><br>
+<font color="#000080" size="1" face="Verdana">
+<a style="color: #0000ff; text-decoration: none" href="#Top">[Top]</a></font><br>
+&nbsp;</p>
+<p><font face="Verdana" size="3"><b><a name="Port"></a>Special Notes</b></font></p>
+<ul>
+	<li><font face="Verdana" size="2">Please note that problems may occur, when 
+	ThemeManager is installed at the same time. </font></li>
+	<li><font face="Verdana" size="2">Not all VCL 7 and better features are 
+	integrated, e.g. reviewing demos you might note the non-working 
+	ParentBackground property for certain controls. Solution is to reset this 
+	property.</font></li>
+	<li><font face="Verdana" size="2">Demos were not adapted/tested for 
+	Delphi/C++ Builder 6 support. They usually work, but sometimes you might get 
+	messages like &quot;unit masks.dcu not found&quot;. Here please update the list of 
+	integrated packages or do not use packages at all. Another issue may be 
+	usage of controls in demos which are available from Delphi 7 on (example is 
+	e.g. XPMan). Here simply ignore error messages during form load. You can 
+	emulate this feature by using LMDXPRes unit like in LMD 2007 releases or 
+	earlier.</font></li>
+</ul>
+<p><font color="#000080" size="1" face="Verdana">
+<a style="color: #0000ff; text-decoration: none" href="#Top">[Top]</a></font><br>
+&nbsp;</p>
+<p><font size="3" face="Verdana"><b><a name="Issues"></a>C++ Builder 6.0 Note<br>
+</b></font><font face="Verdana" size="2">You might get problems with the 
+uxTheme.h file originally shipped by Borland during compilation of a project 
+with LMD controls. Error message will be:</font></p>
+<ul>
+	<li><font face="Verdana" size="2">[C++&nbsp; Error] uxTheme.h(176): E2146 
+	Need an identifier to declare&nbsp; (also in line 546)</font></li>
+</ul>
+<p><font face="Verdana" size="2">Simplest solution is to change declarations of 
+the offending types as follows (changed parts marked in bold red):</font></p>
+<p><font face="Courier" size="2">typedef enum THEMESIZE<br>
+{<br>
+TS_MIN, // minimum size<br>
+TS_TRUE, // size without stretching<br>
+TS_DRAW, // size that theme mgr will use to draw part<br>
+} <b><font color="#FF0000">myThemeSize</font></b>;</font></p>
+<p><font face="Courier" size="2">typedef enum PROPERTYORIGIN<br>
+{<br>
+PO_STATE, // property was found in the state section<br>
+PO_PART, // property was found in the part section<br>
+PO_CLASS, // property was found in the class section<br>
+PO_GLOBAL, // property was found in [globals] section<br>
+PO_NOTFOUND // property was not found<br>
+} <b><font color="#FF0000">myPropertyOrigin</font></b>;</font></p>
+<p><font color="#000080" size="1" face="Verdana">
+<a style="color: #0000ff; text-decoration: none" href="#Top">[Top]</a></font></p>
+<hr style="width: 25%; color: red; text-align: left">
+<p><font color="#000080">©&nbsp; </font><font color="#0000FF">by</font><font color="#000080">
+<a style="color: #0000ff; text-decoration: none" href="http://www.lmd.de/">LMD 
+Innovative</a> Germany<br>
+All other trademarks are acknowledged.</font> </p>
+
+</body>
+
+</html>

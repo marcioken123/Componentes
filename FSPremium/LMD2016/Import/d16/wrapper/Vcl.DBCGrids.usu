@@ -1,0 +1,59 @@
+T+: TDBCtrlGridLink
+T+: TDBCtrlPanel
+T+: TDBCtrlGridOrientation
+T+: TDBCtrlGridBorder
+T+: TDBCtrlGridKey
+T+: TPaintPanelEvent
+T+: TDBCtrlGrid
+        P+: Panel
+        P+: Canvas
+        P+: EditMode
+        P+: PanelCount
+        P+: PanelIndex
+        P+: Align
+        P+: AllowDelete
+        P+: AllowInsert
+        P+: Anchors
+        P+: ColCount
+        P+: Color
+        P+: Constraints
+        P+: DataSource
+        P+: DragCursor
+        P+: DragMode
+        P+: Enabled
+        P+: Font
+        P+: Orientation
+        P+: PanelBorder
+        P+: PanelHeight
+        P+: PanelWidth
+        P+: ParentColor
+        P+: ParentFont
+        P+: ParentShowHint
+        P+: PopupMenu
+        P+: TabOrder
+        P+: TabStop
+        P+: RowCount
+        P+: SelectedColor
+        P+: ShowFocus
+        P+: ShowHint
+        P+: Touch
+        P+: Visible
+        P+: OnClick
+        P+: OnDblClick
+        P+: OnDragDrop
+        P+: OnDragOver
+        P+: OnEndDrag
+        P+: OnEnter
+        P+: OnExit
+        P+: OnGesture
+        P+: OnKeyDown
+        P+: OnKeyPress
+        P+: OnKeyUp
+        P+: OnMouseActivate
+        P+: OnMouseDown
+        P+: OnMouseEnter
+        P+: OnMouseLeave
+        P+: OnMouseMove
+        P+: OnMouseUp
+        P+: OnPaintPanel
+        P+: OnStartDrag

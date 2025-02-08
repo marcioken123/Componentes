@@ -1,0 +1,510 @@
+T+: EDatabaseError
+T+: EUpdateError
+        P+: Context
+        P+: ErrorCode
+        P+: PreviousError
+        P+: OriginalException
+T+: TFieldType
+T+: TDataSetState
+T+: TDataEvent
+T+: TUpdateStatus
+T+: TUpdateStatusSet
+T+: TUpdateAction
+TE: TUpdateRecordTypes
+T+: TUpdateMode
+T+: TUpdateKind
+T+: TUpdateErrorEvent
+T+: TUpdateRecordEvent
+T+: TConnectChangeEvent
+T+: TCustomConnection
+        P+: StreamedConnected
+        P+: Connected
+        P+: DataSets
+        P+: DataSetCount
+        P+: LoginPrompt
+        P+: AfterConnect
+        P+: BeforeConnect
+        P+: AfterDisconnect
+        P+: BeforeDisconnect
+        P+: OnLogin
+T+: TNamedItem
+        P+: Name
+T+: TDefUpdateMethod
+T+: TDefCollection
+        P+: OnUpdate
+        P+: DataSet
+        P+: Updated
+T+: TFieldClass
+T+: TFieldAttribute
+T+: TFieldAttributes
+T+: TFieldDefsClass
+T+: TFieldDef
+        P+: FieldClass
+        P+: FieldNo
+        P+: InternalCalcField
+        P+: ParentDef
+        P+: Required
+        P+: Attributes
+        P+: ChildDefs
+        P+: DataType
+        P+: Precision
+        P+: Size
+T+: TFieldDefClass
+T+: TFieldDefs
+        P+: HiddenFields
+        P+: Items
+        P+: ParentDef
+T+: TIndexOption
+T+: TIndexOptions
+T+: TIndexDef
+        P+: FieldExpression
+        P+: CaseInsFields
+        P+: DescFields
+        P+: Expression
+        P+: Fields
+        P+: Options
+        P+: Source
+        P+: GroupingLevel
+T+: TIndexDefClass
+T+: TIndexDefs
+        P+: Items
+T+: TIndexDefsClass
+T+: TFlatList
+        P+: Updated
+        P+: Locked
+        P+: DataSet
+T+: TFieldDefList
+        P+: FieldDefs
+T+: TFieldDefListClass
+T+: TFieldList
+        P+: Fields
+T+: TFieldListClass
+T+: TFieldsEnumerator
+        P+: Current
+T+: TFieldKind
+T+: TFieldKinds
+T+: TFields
+        P+: SparseFields
+        P+: OnChange
+        P+: ValidFieldKinds
+        P+: Count
+        P+: DataSet
+        P+: Fields
+T+: TFieldsClass
+T+: TProviderFlag
+T+: TProviderFlags
+T+: TFieldNotifyEvent
+T+: TFieldGetTextEvent
+T+: TFieldSetTextEvent
+TE: TFieldRef
+T+: TFieldChars
+T+: TAutoRefreshFlag
+T+: TLookupList
+T+: TLookupListClass
+TE: PLookupListEntry
+T+: TLookupListEntry
+T+: TDefaultLookupList
+T+: Largeint
+T+: TField
+        PW: AsBCD
+        P+: AsBoolean
+        P+: AsCurrency
+        P+: AsDateTime
+        PW: AsSQLTimeStamp
+        PW: AsSQLTimeStampOffset
+        P+: AsSingle
+        P+: AsFloat
+        P+: AsExtended
+        P+: AsInteger
+        P+: AsLargeInt
+        P+: AsString
+        P+: AsWideString
+        P+: AsAnsiString
+        PE: AsBytes
+        P+: AsVariant
+        P+: AttributeSet
+        P+: Calculated
+        P+: CanModify
+        P+: CurValue
+        P+: DataSet
+        P+: DataSize
+        P+: DataType
+        P+: DisplayName
+        P+: DisplayText
+        P+: EditMask
+        P+: EditMaskPtr
+        P+: FieldNo
+        P+: FullName
+        P+: IsIndexField
+        P+: IsNull
+        P+: Lookup
+        P+: LookupList
+        P+: NewValue
+        P+: Offset
+        P+: OldValue
+        P+: ParentField
+        P+: Size
+        P+: Text
+        P+: ValidChars
+        P+: Value
+        P+: Alignment
+        P+: AutoGenerateValue
+        P+: CustomConstraint
+        P+: ConstraintErrorMessage
+        P+: DefaultExpression
+        P+: DisplayLabel
+        P+: DisplayWidth
+        P+: FieldKind
+        P+: FieldName
+        P+: HasConstraints
+        P+: Index
+        P+: ImportedConstraint
+        P+: LookupDataSet
+        P+: LookupKeyFields
+        P+: LookupResultField
+        P+: KeyFields
+        P+: LookupCache
+        P+: Origin
+        P+: ProviderFlags
+        P+: ReadOnly
+        P+: Required
+        P+: Visible
+        P+: OnChange
+        P+: OnGetText
+        P+: OnSetText
+        P+: OnValidate
+T+: TStringField
+        P+: Value
+        P+: EditMask
+        P+: FixedChar
+        P+: Size
+        P+: Transliterate
+T+: TWideStringField
+        P+: Value
+T+: TNumericField
+        P+: Alignment
+        P+: DisplayFormat
+        P+: EditFormat
+T+: TIntegerField
+        P+: Value
+        P+: MaxValue
+        P+: MinValue
+T+: TLongWordField
+        P+: Value
+        P+: MaxValue
+        P+: MinValue
+T+: TSmallintField
+T+: TShortintField
+T+: TByteField
+T+: TLargeintField
+        P+: Value
+        P+: MaxValue
+        P+: MinValue
+T+: TWordField
+T+: TAutoIncField
+T+: TUnsignedAutoIncField
+T+: TFloatField
+        P+: Value
+        P+: currency
+        P+: MaxValue
+        P+: MinValue
+        P+: Precision
+T+: TSingleField
+        P+: Value
+        P+: currency
+        P+: MaxValue
+        P+: MinValue
+        P+: Precision
+T+: TCurrencyField
+        P+: currency
+T+: TExtendedField
+        P+: Value
+        P+: currency
+        P+: MaxValue
+        P+: MinValue
+        P+: Precision
+T+: TBooleanField
+        P+: Value
+        P+: DisplayValues
+T+: TDateTimeField
+        P+: Value
+        P+: DisplayFormat
+        P+: EditMask
+T+: TSQLTimeStampField
+        PW: Value
+        P+: DisplayFormat
+        P+: EditMask
+T+: TSQLTimeStampOffsetField
+        PW: Value
+T+: TDateField
+T+: TTimeField
+T+: TBinaryField
+        P+: Size
+T+: TBytesField
+T+: TVarBytesField
+T+: TBCDField
+        P+: Value
+        P+: currency
+        P+: MaxValue
+        P+: MinValue
+        P+: Precision
+        P+: Size
+T+: TFMTBCDField
+        PW: Value
+        P+: currency
+        P+: MaxValue
+        P+: MinValue
+        P+: Precision
+        P+: Size
+T+: TBlobType
+T+: TBlobField
+        P+: BlobSize
+        P+: Modified
+        PE: Value
+        P+: Transliterate
+        P+: BlobType
+        P+: GraphicHeader
+        P+: Size
+T+: TMemoField
+        P+: Value
+        P+: Transliterate
+T+: TWideMemoField
+        P+: Value
+T+: TGraphicField
+T+: TObjectField
+        P+: FieldCount
+        P+: Fields
+        P+: FieldValues
+        P+: UnNamed
+        P+: ObjectType
+T+: TADTField
+T+: TArrayField
+        P+: Size
+T+: TDataSetField
+        P+: NestedDataSet
+        P+: IncludeObjectField
+T+: TReferenceField
+        P+: ReferenceTableName
+        P+: Size
+T+: TVariantField
+T+: TInterfaceField
+        PE: Value
+T+: TIDispatchField
+        PE: Value
+T+: TGuidField
+        P+: AsGuid
+T+: TAggregateField
+        PE: Handle
+        P+: ResultType
+        P+: Active
+        P+: currency
+        P+: DisplayName
+        P+: DisplayFormat
+        P+: Expression
+        P+: FieldKind
+        P+: GroupingLevel
+        P+: IndexName
+        P+: Precision
+        P+: Visible
+T+: TDataLink
+        P+: VisualControl
+        P+: Active
+        P+: ActiveRecord
+        P+: BOF
+        P+: BufferCount
+        P+: DataSet
+        P+: DataSource
+        P+: DataSourceFixed
+        P+: Editing
+        P+: Eof
+        P+: ReadOnly
+        P+: RecordCount
+T+: TDetailDataLink
+        P+: DetailDataSet
+T+: TMasterDataLink
+        P+: FieldNames
+        P+: Fields
+        P+: OnMasterChange
+        P+: OnMasterDisable
+T+: TDataChangeEvent
+T+: TDataSource
+        P+: DataLinks
+        P+: State
+        P+: AutoEdit
+        P+: DataSet
+        P+: Enabled
+        P+: OnStateChange
+        P+: OnDataChange
+        P+: OnUpdateData
+T+: TDataSetDesigner
+        P+: DataSet
+T+: TCheckConstraint
+        P+: CustomConstraint
+        P+: ErrorMessage
+        P+: FromDictionary
+        P+: ImportedConstraint
+T+: TCheckConstraintClass
+T+: TCheckConstraints
+        P+: Items
+T+: TCheckConstraintsClass
+TE: TBlobData
+T+: TParamType
+T+: TParamTypes
+T+: TParamObjectClass
+T+: TParam
+        P+: DataSet
+        P+: AsBCD
+        PW: AsFMTBCD
+        PE: AsBlob
+        P+: AsBoolean
+        P+: AsCurrency
+        P+: AsDate
+        P+: AsDateTime
+        P+: AsSingle
+        P+: AsFloat
+        P+: AsInteger
+        P+: AsSmallInt
+        P+: AsShortInt
+        P+: AsByte
+        P+: AsLongWord
+        P+: AsLargeInt
+        PW: AsSQLTimeStamp
+        PW: AsSQLTimeStampOffset
+        P+: AsMemo
+        P+: AsString
+        P+: AsWideString
+        P+: AsAnsiString
+        PE: AsBytes
+        P+: AsTime
+        P+: AsWord
+        P+: AsDataSet
+        P+: AsObject
+        P+: AsParams
+        P+: AsStream
+        P+: Bound
+        P+: IsNull
+        P+: NativeStr
+        P+: Text
+        P+: DataType
+        P+: Precision
+        P+: NumericScale
+        P+: Name
+        P+: ParamType
+        P+: Size
+        P+: Value
+T+: TParamClass
+T+: TParams
+        P+: Items
+        P+: ParamValues
+T+: TParamsClass
+TE: IParamObject
+T+: TParamObject
+TE: IParamStreamObject
+T+: TParamStreamObject
+T+: TPSCommandType
+T+: TSQLCommandType
+TE: IProviderSupport
+TE: IProviderSupport2
+TE: TDataSetCommandStates
+TE: IDataSetCommandSupport
+TE: TBookmark
+T+: TBookmarkStr
+TE: PBookmarkFlag
+T+: TBookmarkFlag
+TE: TRecordBuffer
+TE: TBufferList
+T+: TGetMode
+T+: TGetResult
+TE: TResyncMode
+T+: TDataAction
+T+: TBlobStreamMode
+T+: TLocateOption
+T+: TLocateOptions
+T+: TDataOperation
+T+: TDataSetNotifyEvent
+T+: TDataSetErrorEvent
+T+: TFilterOption
+T+: TFilterOptions
+T+: TFilterRecordEvent
+TE: PPacketAttribute
+T+: TPacketAttribute
+TE: TBlobByteData
+T+: TGroupPosInd
+T+: TGroupPosInds
+T+: TDataSetClass
+T+: TDataSet
+        P+: ActiveRecord
+        P+: CurrentRecord
+        P+: BlobFieldCount
+        P+: BookmarkSize
+        PE: Buffers
+        P+: BufferCount
+        PE: CalcBuffer
+        P+: CalcFieldsSize
+        P+: Constraints
+        P+: FieldNoOfs
+        P+: InternalCalcFields
+        P+: NestedDataSets
+        P+: NestedDataSetClass
+        PE: Reserved
+        P+: AggFields
+        P+: Bof
+        PE: Bookmark
+        P+: CanModify
+        P+: DataSetField
+        P+: DataSource
+        P+: DefaultFields
+        P+: Designer
+        P+: Eof
+        P+: BlockReadSize
+        P+: FieldCount
+        P+: FieldDefs
+        P+: FieldDefList
+        P+: Fields
+        P+: FieldList
+        P+: FieldValues
+        P+: Found
+        P+: IsUniDirectional
+        P+: Modified
+        P+: ObjectView
+        P+: RecordCount
+        P+: RecNo
+        P+: RecordSize
+        P+: SparseArrays
+        P+: State
+        P+: Filter
+        P+: Filtered
+        P+: FilterOptions
+        P+: Active
+        P+: AutoCalcFields
+        P+: BeforeOpen
+        P+: AfterOpen
+        P+: BeforeClose
+        P+: AfterClose
+        P+: BeforeInsert
+        P+: AfterInsert
+        P+: BeforeEdit
+        P+: AfterEdit
+        P+: BeforePost
+        P+: AfterPost
+        P+: BeforeCancel
+        P+: AfterCancel
+        P+: BeforeDelete
+        P+: AfterDelete
+        P+: BeforeScroll
+        P+: AfterScroll
+        P+: BeforeRefresh
+        P+: AfterRefresh
+        P+: OnCalcFields
+        P+: OnDeleteError
+        P+: OnEditError
+        P+: OnFilterRecord
+        P+: OnNewRecord
+        P+: OnPostError
+T+: TWideDataSet
+T+: TDateTimeAlias
+T+: TDateTimeRec
+T+: TDBScreenCursor
+TE: IDBScreen
+TE: IDBApplication
+TE: IDBSession
