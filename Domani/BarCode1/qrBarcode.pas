@@ -42,7 +42,7 @@ See the comments in barcode.pas for more details.
 interface
 
 uses
-  Classes, SysUtils, Graphics, Barcode, QRCTRLS;
+  Classes, SysUtils, Graphics, Barcode_new, QRCTRLS;
 
 type
   TQRAsBarcode = class(TQRImage)
