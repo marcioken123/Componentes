@@ -1,0 +1,183 @@
+================================================================================
+JCL 2.8 Testing Build 5677
+==========RAD Studio XE=========================================================
+Installed personalities :
+32 bit Delphi
+================================================================================
+Multiple profile installation
+Single profile installation
+================================================================================
+Saving conditional defines...
+Loaded template for include file C:\Projetos\JEDI\jcl\source\include\jcl.template.inc
+Saved include file C:\Projetos\JEDI\jcl\source\include\jcld15.inc
+Building source\common library units for RAD Studio XE...
+"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\bin\dcc32.exe" bzip2 Jcl8087 JclAbstractContainers JclAlgorithms JclAnsiStrings JclArrayLists JclArraySets JclBase JclBinaryTrees JclCharsets JclCompilerUtils JclComplex JclCompression JclContainerIntf JclCounter JclDateTime JclDevToolsResources JclExprEval JclFileUtils JclHashMaps JclHashSets JclIDEUtils JclIniFiles JclLinkedLists JclLogic JclMath JclMIDI JclMime JclNotify JclPCRE JclPreProcessorAlgorithmsTemplates JclPreProcessorArrayListsTemplates JclPreProcessorArraySetsTemplates JclPreProcessorBinaryTreesTemplates JclPreProcessorContainer1DTemplates JclPreProcessorContainer2DTemplates JclPreProcessorContainerIntfTemplates JclPreProcessorContainerKnownMaps JclPreProcessorContainerKnownTypes JclPreProcessorContainerTemplates JclPreProcessorContainerTypes JclPreProcessorExcDlgTemplates JclPreProcessorHashMapsTemplates JclPreProcessorHashSetsTemplates JclPreProcessorLexer JclPreProcessorLinkedListsTemplates JclPreProcessorParser JclPreProcessorQueuesTemplates JclPreProcessorSortedMapsTemplates JclPreProcessorStacksTemplates JclPreProcessorTemplates JclPreProcessorTreesTemplates JclPreProcessorVectorsTemplates JclQueues JclResources JclRTTI JclSchedule JclSimpleXml JclSortedMaps JclStacks JclStatistics JclStreams JclStrHashMap JclStringConversions JclStringLists JclStrings JclSynch JclSysInfo JclSysUtils JclTrees JclUnicode JclUnitConv JclUnitVersioning JclUnitVersioningProviders JclUsesUtils JclValidation JclVectors JclWideStrings pcre zlibh --no-config -U"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\lib\Win32\release" -M -$X+ -$G+ -$H+ -$P+ -$U- -$T- -$V+ -$J+ -$Z1 -$L+ -$Y+ -$J+ -$C- -$D- -$I- -$O+ -$Q- -$R- -$W- -N0"C:\Projetos\JEDI\jcl\lib\d15" -I"C:\Projetos\JEDI\jcl\source\include" -U"C:\Projetos\JEDI\jcl\source\common;C:\Projetos\JEDI\jcl\source\windows;C:\Projetos\JEDI\jcl\source\vcl" -R"C:\Projetos\JEDI\jcl\source\common;C:\Projetos\JEDI\jcl\source\windows;C:\Projetos\JEDI\jcl\source\vcl"
+Embarcadero Delphi for Win32 compiler version 22.0
+Copyright (c) 1983,2010 Embarcadero Technologies, Inc.
+628902 lines, 2.62 seconds, 53084 bytes code, 16900 bytes data.
+Building source\windows library units for RAD Studio XE...
+"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\bin\dcc32.exe" Hardlinks JclAppInst JclCIL JclCLR JclCOM JclConsole JclCppException JclDebug JclDebugSerialization JclDebugXMLDeserializer JclDebugXMLSerializer JclDotNet JclHelpUtils JclHookExcept JclLANMan JclLocales JclMapi JclMetadata JclMiscel JclMsBuild JclMsdosSys JclMultimedia JclNTFS JclPeImage JclRegistry JclSecurity JclShell JclStructStorage JclSvcCtrl JclTask JclTD32 JclTimeZones JclWin32 JclWin32Ex JclWinMIDI mscoree_TLB mscorlib_TLB MSHelpServices_TLB MSTask sevenzip Snmp --no-config -U"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\lib\Win32\release" -M -$X+ -$G+ -$H+ -$P+ -$U- -$T- -$V+ -$J+ -$Z1 -$L+ -$Y+ -$J+ -$C- -$D- -$I- -$O+ -$Q- -$R- -$W- -N0"C:\Projetos\JEDI\jcl\lib\d15" -I"C:\Projetos\JEDI\jcl\source\include" -U"C:\Projetos\JEDI\jcl\source\common;C:\Projetos\JEDI\jcl\source\windows;C:\Projetos\JEDI\jcl\source\vcl" -R"C:\Projetos\JEDI\jcl\source\common;C:\Projetos\JEDI\jcl\source\windows;C:\Projetos\JEDI\jcl\source\vcl"
+Embarcadero Delphi for Win32 compiler version 22.0
+Copyright (c) 1983,2010 Embarcadero Technologies, Inc.
+207105 lines, 1.11 seconds, 3833 bytes code, 596 bytes data.
+Building source\vcl library units for RAD Studio XE...
+"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\bin\dcc32.exe" JclFont JclGraphics JclGraphUtils JclOpenDialogFavorites JclOpenDialogHooks JclPrint JclVclResources JclVersionControl JclVersionCtrlCVSImpl JclVersionCtrlGITImpl JclVersionCtrlSVNImpl --no-config -U"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\lib\Win32\release" -M -$X+ -$G+ -$H+ -$P+ -$U- -$T- -$V+ -$J+ -$Z1 -$L+ -$Y+ -$J+ -$C- -$D- -$I- -$O+ -$Q- -$R- -$W- -N0"C:\Projetos\JEDI\jcl\lib\d15" -I"C:\Projetos\JEDI\jcl\source\include" -U"C:\Projetos\JEDI\jcl\source\common;C:\Projetos\JEDI\jcl\source\windows;C:\Projetos\JEDI\jcl\source\vcl" -R"C:\Projetos\JEDI\jcl\source\common;C:\Projetos\JEDI\jcl\source\windows;C:\Projetos\JEDI\jcl\source\vcl"
+Embarcadero Delphi for Win32 compiler version 22.0
+Copyright (c) 1983,2010 Embarcadero Technologies, Inc.
+42141 lines, 0.55 seconds, 7524 bytes code, 24 bytes data.
+Building source\common library debug units for RAD Studio XE...
+"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\bin\dcc32.exe" bzip2 Jcl8087 JclAbstractContainers JclAlgorithms JclAnsiStrings JclArrayLists JclArraySets JclBase JclBinaryTrees JclCharsets JclCompilerUtils JclComplex JclCompression JclContainerIntf JclCounter JclDateTime JclDevToolsResources JclExprEval JclFileUtils JclHashMaps JclHashSets JclIDEUtils JclIniFiles JclLinkedLists JclLogic JclMath JclMIDI JclMime JclNotify JclPCRE JclPreProcessorAlgorithmsTemplates JclPreProcessorArrayListsTemplates JclPreProcessorArraySetsTemplates JclPreProcessorBinaryTreesTemplates JclPreProcessorContainer1DTemplates JclPreProcessorContainer2DTemplates JclPreProcessorContainerIntfTemplates JclPreProcessorContainerKnownMaps JclPreProcessorContainerKnownTypes JclPreProcessorContainerTemplates JclPreProcessorContainerTypes JclPreProcessorExcDlgTemplates JclPreProcessorHashMapsTemplates JclPreProcessorHashSetsTemplates JclPreProcessorLexer JclPreProcessorLinkedListsTemplates JclPreProcessorParser JclPreProcessorQueuesTemplates JclPreProcessorSortedMapsTemplates JclPreProcessorStacksTemplates JclPreProcessorTemplates JclPreProcessorTreesTemplates JclPreProcessorVectorsTemplates JclQueues JclResources JclRTTI JclSchedule JclSimpleXml JclSortedMaps JclStacks JclStatistics JclStreams JclStrHashMap JclStringConversions JclStringLists JclStrings JclSynch JclSysInfo JclSysUtils JclTrees JclUnicode JclUnitConv JclUnitVersioning JclUnitVersioningProviders JclUsesUtils JclValidation JclVectors JclWideStrings pcre zlibh --no-config -U"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\lib\Win32\debug" -U"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\lib\Win32\release" -M -$X+ -$G+ -$H+ -$P+ -$U- -$T- -$V+ -$J+ -$Z1 -$L+ -$Y+ -$J+ -$C+ -$D+ -$I+ -$O- -$Q+ -$R+ -$W+ -N0"C:\Projetos\JEDI\jcl\lib\d15\debug" -I"C:\Projetos\JEDI\jcl\source\include" -U"C:\Projetos\JEDI\jcl\source\common;C:\Projetos\JEDI\jcl\source\windows;C:\Projetos\JEDI\jcl\source\vcl" -R"C:\Projetos\JEDI\jcl\source\common;C:\Projetos\JEDI\jcl\source\windows;C:\Projetos\JEDI\jcl\source\vcl"
+Embarcadero Delphi for Win32 compiler version 22.0
+Copyright (c) 1983,2010 Embarcadero Technologies, Inc.
+628902 lines, 2.42 seconds, 53252 bytes code, 16900 bytes data.
+Building source\windows library debug units for RAD Studio XE...
+"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\bin\dcc32.exe" Hardlinks JclAppInst JclCIL JclCLR JclCOM JclConsole JclCppException JclDebug JclDebugSerialization JclDebugXMLDeserializer JclDebugXMLSerializer JclDotNet JclHelpUtils JclHookExcept JclLANMan JclLocales JclMapi JclMetadata JclMiscel JclMsBuild JclMsdosSys JclMultimedia JclNTFS JclPeImage JclRegistry JclSecurity JclShell JclStructStorage JclSvcCtrl JclTask JclTD32 JclTimeZones JclWin32 JclWin32Ex JclWinMIDI mscoree_TLB mscorlib_TLB MSHelpServices_TLB MSTask sevenzip Snmp --no-config -U"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\lib\Win32\debug" -U"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\lib\Win32\release" -M -$X+ -$G+ -$H+ -$P+ -$U- -$T- -$V+ -$J+ -$Z1 -$L+ -$Y+ -$J+ -$C+ -$D+ -$I+ -$O- -$Q+ -$R+ -$W+ -N0"C:\Projetos\JEDI\jcl\lib\d15\debug" -I"C:\Projetos\JEDI\jcl\source\include" -U"C:\Projetos\JEDI\jcl\source\common;C:\Projetos\JEDI\jcl\source\windows;C:\Projetos\JEDI\jcl\source\vcl" -R"C:\Projetos\JEDI\jcl\source\common;C:\Projetos\JEDI\jcl\source\windows;C:\Projetos\JEDI\jcl\source\vcl"
+Embarcadero Delphi for Win32 compiler version 22.0
+Copyright (c) 1983,2010 Embarcadero Technologies, Inc.
+207105 lines, 1.12 seconds, 3978 bytes code, 596 bytes data.
+Building source\vcl library debug units for RAD Studio XE...
+"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\bin\dcc32.exe" JclFont JclGraphics JclGraphUtils JclOpenDialogFavorites JclOpenDialogHooks JclPrint JclVclResources JclVersionControl JclVersionCtrlCVSImpl JclVersionCtrlGITImpl JclVersionCtrlSVNImpl --no-config -U"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\lib\Win32\debug" -U"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\lib\Win32\release" -M -$X+ -$G+ -$H+ -$P+ -$U- -$T- -$V+ -$J+ -$Z1 -$L+ -$Y+ -$J+ -$C+ -$D+ -$I+ -$O- -$Q+ -$R+ -$W+ -N0"C:\Projetos\JEDI\jcl\lib\d15\debug" -I"C:\Projetos\JEDI\jcl\source\include" -U"C:\Projetos\JEDI\jcl\source\common;C:\Projetos\JEDI\jcl\source\windows;C:\Projetos\JEDI\jcl\source\vcl" -R"C:\Projetos\JEDI\jcl\source\common;C:\Projetos\JEDI\jcl\source\windows;C:\Projetos\JEDI\jcl\source\vcl"
+Embarcadero Delphi for Win32 compiler version 22.0
+Copyright (c) 1983,2010 Embarcadero Technologies, Inc.
+42141 lines, 0.52 seconds, 8054 bytes code, 24 bytes data.
+Building C:\Projetos\JEDI\jcl\packages\d15\Jcl.dpk...
+Cleaning package cache for Jcl150.bpl
+Cleaning ok
+Compiling package C:\Projetos\JEDI\jcl\packages\d15\Jcl.dpk
+"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\bin\dcc32.exe" "C:\Projetos\JEDI\jcl\packages\d15\Jcl.dpk" --no-config -U"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\lib\Win32\release" -N"..\..\lib\d15" -I"..\..\lib\d15;..\..\source\include;" -R"..\..\lib\d15;..\..\source\include;" -DBCB;BCB;WIN32;CONDITIONALEXPRESSIONS;VER220;RELEASE;BCB;WIN32;CONDITIONALEXPRESSIONS;VER220;RELEASE -U"C:\Projetos\JEDI\jcl\lib\d15\;C:\Users\Public\Documents\RAD Studio\8.0\Dcp;..\..\lib\d15;..\..\source\include;" -LU"rtl" -LN"C:\Projetos\JEDI\jcl\lib\d15" -LE"C:\Users\Public\Documents\RAD Studio\8.0\Bpl"
+Embarcadero Delphi for Win32 compiler version 22.0
+Copyright (c) 1983,2010 Embarcadero Technologies, Inc.
+129 lines, 0.97 seconds, 1759164 bytes code, 719080 bytes data.
+Compilation success
+...done.
+Building C:\Projetos\JEDI\jcl\packages\d15\JclContainers.dpk...
+Cleaning package cache for JclContainers150.bpl
+Cleaning ok
+Compiling package C:\Projetos\JEDI\jcl\packages\d15\JclContainers.dpk
+"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\bin\dcc32.exe" "C:\Projetos\JEDI\jcl\packages\d15\JclContainers.dpk" --no-config -U"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\lib\Win32\release" -N"..\..\lib\d15" -I"..\..\lib\d15;..\..\source\include;" -R"..\..\lib\d15;..\..\source\include;" -DBCB;BCB;WIN32;CONDITIONALEXPRESSIONS;VER220;RELEASE;BCB;WIN32;CONDITIONALEXPRESSIONS;VER220;RELEASE -U"C:\Projetos\JEDI\jcl\lib\d15\;C:\Users\Public\Documents\RAD Studio\8.0\Dcp;..\..\lib\d15;..\..\source\include;" -LU"rtl;Jcl" -LN"C:\Projetos\JEDI\jcl\lib\d15" -LE"C:\Users\Public\Documents\RAD Studio\8.0\Bpl"
+Embarcadero Delphi for Win32 compiler version 22.0
+Copyright (c) 1983,2010 Embarcadero Technologies, Inc.
+70 lines, 0.38 seconds, 2137900 bytes code, 772 bytes data.
+Compilation success
+...done.
+Building C:\Projetos\JEDI\jcl\packages\d15\JclDeveloperTools.dpk...
+Cleaning package cache for JclDeveloperTools150.bpl
+Cleaning ok
+Compiling package C:\Projetos\JEDI\jcl\packages\d15\JclDeveloperTools.dpk
+"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\bin\dcc32.exe" "C:\Projetos\JEDI\jcl\packages\d15\JclDeveloperTools.dpk" --no-config -U"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\lib\Win32\release" -N"..\..\lib\d15" -I"..\..\lib\d15;..\..\source\include;" -R"..\..\lib\d15;..\..\source\include;" -DBCB;BCB;WIN32;CONDITIONALEXPRESSIONS;VER220;RELEASE;BCB;WIN32;CONDITIONALEXPRESSIONS;VER220;RELEASE -U"C:\Projetos\JEDI\jcl\lib\d15\;C:\Users\Public\Documents\RAD Studio\8.0\Dcp;..\..\lib\d15;..\..\source\include;" -LU"rtl;Jcl;JclContainers" -LN"C:\Projetos\JEDI\jcl\lib\d15" -LE"C:\Users\Public\Documents\RAD Studio\8.0\Bpl"
+Embarcadero Delphi for Win32 compiler version 22.0
+Copyright (c) 1983,2010 Embarcadero Technologies, Inc.
+87 lines, 0.38 seconds, 496108 bytes code, 14604 bytes data.
+Compilation success
+...done.
+Building C:\Projetos\JEDI\jcl\packages\d15\JclVcl.dpk...
+Cleaning package cache for JclVcl150.bpl
+Cleaning ok
+Compiling package C:\Projetos\JEDI\jcl\packages\d15\JclVcl.dpk
+"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\bin\dcc32.exe" "C:\Projetos\JEDI\jcl\packages\d15\JclVcl.dpk" --no-config -U"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\lib\Win32\release" -N"..\..\lib\d15" -I"..\..\lib\d15;..\..\source\include;" -R"..\..\lib\d15;..\..\source\include;" -DBCB;BCB;WIN32;CONDITIONALEXPRESSIONS;VER220;RELEASE;BCB;WIN32;CONDITIONALEXPRESSIONS;VER220;RELEASE -U"C:\Projetos\JEDI\jcl\lib\d15\;C:\Users\Public\Documents\RAD Studio\8.0\Dcp;..\..\lib\d15;..\..\source\include;" -LU"rtl;vcl;vclimg;Jcl" -LN"C:\Projetos\JEDI\jcl\lib\d15" -LE"C:\Users\Public\Documents\RAD Studio\8.0\Bpl"
+Embarcadero Delphi for Win32 compiler version 22.0
+Copyright (c) 1983,2010 Embarcadero Technologies, Inc.
+68 lines, 0.22 seconds, 135720 bytes code, 1572 bytes data.
+Compilation success
+...done.
+Building C:\Projetos\JEDI\jcl\packages\d15\JclBaseExpert.dpk...
+Cleaning package cache for JclBaseExpert150.bpl
+Cleaning ok
+Compiling package C:\Projetos\JEDI\jcl\packages\d15\JclBaseExpert.dpk
+"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\bin\dcc32.exe" "C:\Projetos\JEDI\jcl\packages\d15\JclBaseExpert.dpk" --no-config -U"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\lib\Win32\release" -N"..\..\lib\d15" -I"..\..\lib\d15;..\..\source\include;" -R"..\..\lib\d15;..\..\source\include;" -DBCB;BCB;WIN32;CONDITIONALEXPRESSIONS;VER220;RELEASE;BCB;WIN32;CONDITIONALEXPRESSIONS;VER220;RELEASE -U"C:\Projetos\JEDI\jcl\lib\d15\;C:\Users\Public\Documents\RAD Studio\8.0\Dcp;..\..\lib\d15;..\..\source\include;" -LU"rtl;vcl;vclx;designide;Jcl;JclDeveloperTools" -LN"C:\Projetos\JEDI\jcl\lib\d15" -LE"C:\Users\Public\Documents\RAD Studio\8.0\Bpl"
+Embarcadero Delphi for Win32 compiler version 22.0
+Copyright (c) 1983,2010 Embarcadero Technologies, Inc.
+40172 lines, 0.34 seconds, 60276 bytes code, 468 bytes data.
+Compilation success
+...done.
+Building C:\Projetos\JEDI\jcl\packages\d15\JclDebugExpert.dpk...
+Cleaning package cache for JclDebugExpert150.bpl
+Cleaning ok
+Compiling package C:\Projetos\JEDI\jcl\packages\d15\JclDebugExpert.dpk
+"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\bin\dcc32.exe" "C:\Projetos\JEDI\jcl\packages\d15\JclDebugExpert.dpk" --no-config -U"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\lib\Win32\release" -N"..\..\lib\d15" -I"..\..\lib\d15;..\..\source\include;" -R"..\..\lib\d15;..\..\source\include;" -DBCB;BCB;WIN32;CONDITIONALEXPRESSIONS;VER220;RELEASE;BCB;WIN32;CONDITIONALEXPRESSIONS;VER220;RELEASE -U"C:\Projetos\JEDI\jcl\lib\d15\;C:\Users\Public\Documents\RAD Studio\8.0\Dcp;..\..\lib\d15;..\..\source\include;" -LU"rtl;vcl;designide;Jcl;JclBaseExpert;JclDeveloperTools" -LN"C:\Projetos\JEDI\jcl\lib\d15" -LE"C:\Users\Public\Documents\RAD Studio\8.0\Bpl"
+Embarcadero Delphi for Win32 compiler version 22.0
+Copyright (c) 1983,2010 Embarcadero Technologies, Inc.
+7598 lines, 0.20 seconds, 34472 bytes code, 348 bytes data.
+Compilation success
+...done.
+Building C:\Projetos\JEDI\jcl\packages\d15\JclProjectAnalysisExpert.dpk...
+Cleaning package cache for JclProjectAnalysisExpert150.bpl
+Cleaning ok
+Compiling package C:\Projetos\JEDI\jcl\packages\d15\JclProjectAnalysisExpert.dpk
+"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\bin\dcc32.exe" "C:\Projetos\JEDI\jcl\packages\d15\JclProjectAnalysisExpert.dpk" --no-config -U"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\lib\Win32\release" -N"..\..\lib\d15" -I"..\..\lib\d15;..\..\source\include;" -R"..\..\lib\d15;..\..\source\include;" -DBCB;BCB;WIN32;CONDITIONALEXPRESSIONS;VER220;RELEASE;BCB;WIN32;CONDITIONALEXPRESSIONS;VER220;RELEASE -U"C:\Projetos\JEDI\jcl\lib\d15\;C:\Users\Public\Documents\RAD Studio\8.0\Dcp;..\..\lib\d15;..\..\source\include;" -LU"rtl;vcl;designide;Jcl;JclBaseExpert" -LN"C:\Projetos\JEDI\jcl\lib\d15" -LE"C:\Users\Public\Documents\RAD Studio\8.0\Bpl"
+Embarcadero Delphi for Win32 compiler version 22.0
+Copyright (c) 1983,2010 Embarcadero Technologies, Inc.
+6488 lines, 0.19 seconds, 23760 bytes code, 208 bytes data.
+Compilation success
+...done.
+Building C:\Projetos\JEDI\jcl\packages\d15\JclFavoriteFoldersExpert.dpk...
+Cleaning package cache for JclFavoriteFoldersExpert150.bpl
+Cleaning ok
+Compiling package C:\Projetos\JEDI\jcl\packages\d15\JclFavoriteFoldersExpert.dpk
+"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\bin\dcc32.exe" "C:\Projetos\JEDI\jcl\packages\d15\JclFavoriteFoldersExpert.dpk" --no-config -U"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\lib\Win32\release" -N"..\..\lib\d15" -I"..\..\lib\d15;..\..\source\include;" -R"..\..\lib\d15;..\..\source\include;" -DBCB;BCB;WIN32;CONDITIONALEXPRESSIONS;VER220;RELEASE;BCB;WIN32;CONDITIONALEXPRESSIONS;VER220;RELEASE -U"C:\Projetos\JEDI\jcl\lib\d15\;C:\Users\Public\Documents\RAD Studio\8.0\Dcp;..\..\lib\d15;..\..\source\include;" -LU"rtl;vcl;designide;Jcl;JclVcl;JclBaseExpert" -LN"C:\Projetos\JEDI\jcl\lib\d15" -LE"C:\Users\Public\Documents\RAD Studio\8.0\Bpl"
+Embarcadero Delphi for Win32 compiler version 22.0
+Copyright (c) 1983,2010 Embarcadero Technologies, Inc.
+2801 lines, 0.20 seconds, 5484 bytes code, 92 bytes data.
+Compilation success
+...done.
+Building C:\Projetos\JEDI\jcl\packages\d15\JclRepositoryExpert.dpk...
+Cleaning package cache for JclRepositoryExpert150.bpl
+Cleaning ok
+Compiling package C:\Projetos\JEDI\jcl\packages\d15\JclRepositoryExpert.dpk
+"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\bin\dcc32.exe" "C:\Projetos\JEDI\jcl\packages\d15\JclRepositoryExpert.dpk" --no-config -U"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\lib\Win32\release" -N"..\..\lib\d15" -I"..\..\lib\d15;..\..\source\include;" -R"..\..\lib\d15;..\..\source\include;" -DBCB;BCB;WIN32;CONDITIONALEXPRESSIONS;VER220;RELEASE;BCB;WIN32;CONDITIONALEXPRESSIONS;VER220;RELEASE -U"C:\Projetos\JEDI\jcl\lib\d15\;C:\Users\Public\Documents\RAD Studio\8.0\Dcp;..\..\lib\d15;..\..\source\include;" -LU"rtl;vcl;designide;Jcl;JclContainers;JclBaseExpert;JclDeveloperTools" -LN"C:\Projetos\JEDI\jcl\lib\d15" -LE"C:\Users\Public\Documents\RAD Studio\8.0\Bpl"
+Embarcadero Delphi for Win32 compiler version 22.0
+Copyright (c) 1983,2010 Embarcadero Technologies, Inc.
+30895 lines, 0.27 seconds, 39536 bytes code, 360 bytes data.
+Compilation success
+...done.
+Building C:\Projetos\JEDI\jcl\packages\d15\JclSIMDViewExpert.dpk...
+Cleaning package cache for JclSIMDViewExpert150.bpl
+Cleaning ok
+Compiling package C:\Projetos\JEDI\jcl\packages\d15\JclSIMDViewExpert.dpk
+"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\bin\dcc32.exe" "C:\Projetos\JEDI\jcl\packages\d15\JclSIMDViewExpert.dpk" --no-config -U"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\lib\Win32\release" -N"..\..\lib\d15" -I"..\..\lib\d15;..\..\source\include;" -R"..\..\lib\d15;..\..\source\include;" -DBCB;BCB;WIN32;CONDITIONALEXPRESSIONS;VER220;RELEASE;BCB;WIN32;CONDITIONALEXPRESSIONS;VER220;RELEASE -U"C:\Projetos\JEDI\jcl\lib\d15\;C:\Users\Public\Documents\RAD Studio\8.0\Dcp;..\..\lib\d15;..\..\source\include;" -LU"rtl;vcl;designide;Jcl;JclBaseExpert" -LN"C:\Projetos\JEDI\jcl\lib\d15" -LE"C:\Users\Public\Documents\RAD Studio\8.0\Bpl"
+Embarcadero Delphi for Win32 compiler version 22.0
+Copyright (c) 1983,2010 Embarcadero Technologies, Inc.
+16599 lines, 0.25 seconds, 53684 bytes code, 772 bytes data.
+Compilation success
+...done.
+Building C:\Projetos\JEDI\jcl\packages\d15\JclStackTraceViewerExpert.dpk...
+Cleaning package cache for JclStackTraceViewerExpert150.bpl
+Cleaning ok
+Compiling package C:\Projetos\JEDI\jcl\packages\d15\JclStackTraceViewerExpert.dpk
+"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\bin\dcc32.exe" "C:\Projetos\JEDI\jcl\packages\d15\JclStackTraceViewerExpert.dpk" --no-config -U"C:\Program Files (x86)\Embarcadero\RAD Studio\8.0\lib\Win32\release" -N"..\..\lib\d15" -I"..\..\lib\d15;..\..\source\include;" -R"..\..\lib\d15;..\..\source\include;" -DBCB;BCB;WIN32;CONDITIONALEXPRESSIONS;VER220;RELEASE;BCB;WIN32;CONDITIONALEXPRESSIONS;VER220;RELEASE -U"C:\Projetos\JEDI\jcl\lib\d15\;C:\Users\Public\Documents\RAD Studio\8.0\Dcp;..\..\lib\d15;..\..\source\include;" -LU"rtl;vcl;designide;Jcl;JclBaseExpert" -LN"C:\Projetos\JEDI\jcl\lib\d15" -LE"C:\Users\Public\Documents\RAD Studio\8.0\Bpl"
+Embarcadero Delphi for Win32 compiler version 22.0
+Copyright (c) 1983,2010 Embarcadero Technologies, Inc.
+40343 lines, 0.28 seconds, 61348 bytes code, 356 bytes data.
+Compilation success
+...done.
+Added "C:\Projetos\JEDI\jcl\lib\d15;C:\Projetos\JEDI\jcl\source\include" to library search path.
+Added "C:\Projetos\JEDI\jcl\source\common;C:\Projetos\JEDI\jcl\source\windows;C:\Projetos\JEDI\jcl\source\vcl" to library browsing path.
+Added "C:\Projetos\JEDI\jcl\lib\d15\debug" to Debug DCU Path.
+Cleaning package cache for JclBaseExpert150.bpl
+Cleaning ok
+Registering package C:\Users\Public\Documents\RAD Studio\8.0\Bpl\JclBaseExpert150.bpl
+Registration ok
+Cleaning package cache for JclDebugExpert150.bpl
+Cleaning ok
+Registering package C:\Users\Public\Documents\RAD Studio\8.0\Bpl\JclDebugExpert150.bpl
+Registration ok
+Cleaning package cache for JclProjectAnalysisExpert150.bpl
+Cleaning ok
+Registering package C:\Users\Public\Documents\RAD Studio\8.0\Bpl\JclProjectAnalysisExpert150.bpl
+Registration ok
+Cleaning package cache for JclFavoriteFoldersExpert150.bpl
+Cleaning ok
+Registering package C:\Users\Public\Documents\RAD Studio\8.0\Bpl\JclFavoriteFoldersExpert150.bpl
+Registration ok
+Cleaning package cache for JclRepositoryExpert150.bpl
+Cleaning ok
+Registering package C:\Users\Public\Documents\RAD Studio\8.0\Bpl\JclRepositoryExpert150.bpl
+Registration ok
+Cleaning package cache for JclSIMDViewExpert150.bpl
+Cleaning ok
+Registering package C:\Users\Public\Documents\RAD Studio\8.0\Bpl\JclSIMDViewExpert150.bpl
+Registration ok
+Cleaning package cache for JclStackTraceViewerExpert150.bpl
+Cleaning ok
+Registering package C:\Users\Public\Documents\RAD Studio\8.0\Bpl\JclStackTraceViewerExpert150.bpl
+Registration ok
