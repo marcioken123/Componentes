@@ -23,17 +23,17 @@ Building source\common library units for RAD Studio 10.4 32 bit...
 "C:\Program Files (x86)\Embarcadero\Studio\21.0\bin\dcc32.exe" bzip2 Jcl8087 JclAbstractContainers JclAlgorithms JclAnsiStrings JclArrayLists JclArraySets JclBase JclBinaryTrees JclCharsets JclCompilerUtils JclComplex JclCompression JclContainerIntf JclCounter JclDateTime JclDevToolsResources JclExprEval JclFileUtils JclHashMaps JclHashSets JclIDEUtils JclIniFiles JclLinkedLists JclLogic JclMath JclMIDI JclMime JclNotify JclPCRE JclPreProcessorAlgorithmsTemplates JclPreProcessorArrayListsTemplates JclPreProcessorArraySetsTemplates JclPreProcessorBinaryTreesTemplates JclPreProcessorContainer1DTemplates JclPreProcessorContainer2DTemplates JclPreProcessorContainerIntfTemplates JclPreProcessorContainerKnownMaps JclPreProcessorContainerKnownTypes JclPreProcessorContainerTemplates JclPreProcessorContainerTypes JclPreProcessorExcDlgTemplates JclPreProcessorHashMapsTemplates JclPreProcessorHashSetsTemplates JclPreProcessorLexer JclPreProcessorLinkedListsTemplates JclPreProcessorParser JclPreProcessorQueuesTemplates JclPreProcessorSortedMapsTemplates JclPreProcessorStacksTemplates JclPreProcessorTemplates JclPreProcessorTreesTemplates JclPreProcessorVectorsTemplates JclQueues JclResources JclRTTI JclSchedule JclSimpleXml JclSortedMaps JclStacks JclStatistics JclStreams JclStrHashMap JclStringConversions JclStringLists JclStrings JclSynch JclSysInfo JclSysUtils JclTrees JclUnicode JclUnitConv JclUnitVersioning JclUnitVersioningProviders JclUsesUtils JclValidation JclVectors JclWideStrings pcre zlibh --no-config -U"C:\Program Files (x86)\Embarcadero\Studio\21.0\lib\Win32\release" -M -$X+ -$G+ -$H+ -$P+ -$U- -$T- -$V+ -$J+ -$Z1 -$L+ -$Y+ -$J+ -$C- -$D- -$I- -$O+ -$Q- -$R- -$W- -N0"D:\Projetos\Componentes\JEDI\jcl\lib\d27\win32" -ns"System;System.Win;WinAPI;Vcl;Vcl.Imaging" -I"D:\Projetos\Componentes\JEDI\jcl\source\include" -U"D:\Projetos\Componentes\JEDI\jcl\source\common;D:\Projetos\Componentes\JEDI\jcl\source\windows;D:\Projetos\Componentes\JEDI\jcl\source\vcl" -R"D:\Projetos\Componentes\JEDI\jcl\source\common;D:\Projetos\Componentes\JEDI\jcl\source\windows;D:\Projetos\Componentes\JEDI\jcl\source\vcl"
 Embarcadero Delphi for Win32 compiler version 34.0
 Copyright (c) 1983,2020 Embarcadero Technologies, Inc.
-657314 lines, 2.39 seconds, 53088 bytes code, 16900 bytes data.
+657314 lines, 1.62 seconds, 53088 bytes code, 16900 bytes data.
 Building source\windows library units for RAD Studio 10.4 32 bit...
 "C:\Program Files (x86)\Embarcadero\Studio\21.0\bin\dcc32.exe" Hardlinks JclAppInst JclCIL JclCLR JclCOM JclConsole JclCppException JclDebug JclDebugSerialization JclDebugXMLDeserializer JclDebugXMLSerializer JclDotNet JclHelpUtils JclHookExcept JclLANMan JclLocales JclMapi JclMetadata JclMiscel JclMsBuild JclMsdosSys JclMultimedia JclNTFS JclPeImage JclRegistry JclSecurity JclShell JclStructStorage JclSvcCtrl JclTask JclTD32 JclTimeZones JclWin32 JclWin32Ex JclWinMIDI mscoree_TLB mscorlib_TLB MSHelpServices_TLB MSTask sevenzip Snmp --no-config -U"C:\Program Files (x86)\Embarcadero\Studio\21.0\lib\Win32\release" -M -$X+ -$G+ -$H+ -$P+ -$U- -$T- -$V+ -$J+ -$Z1 -$L+ -$Y+ -$J+ -$C- -$D- -$I- -$O+ -$Q- -$R- -$W- -N0"D:\Projetos\Componentes\JEDI\jcl\lib\d27\win32" -ns"System;System.Win;WinAPI;Vcl;Vcl.Imaging" -I"D:\Projetos\Componentes\JEDI\jcl\source\include" -U"D:\Projetos\Componentes\JEDI\jcl\source\common;D:\Projetos\Componentes\JEDI\jcl\source\windows;D:\Projetos\Componentes\JEDI\jcl\source\vcl" -R"D:\Projetos\Componentes\JEDI\jcl\source\common;D:\Projetos\Componentes\JEDI\jcl\source\windows;D:\Projetos\Componentes\JEDI\jcl\source\vcl"
 Embarcadero Delphi for Win32 compiler version 34.0
 Copyright (c) 1983,2020 Embarcadero Technologies, Inc.
-219052 lines, 0.62 seconds, 3843 bytes code, 596 bytes data.
+219052 lines, 0.50 seconds, 3843 bytes code, 596 bytes data.
 Building source\vcl library units for RAD Studio 10.4 32 bit...
 "C:\Program Files (x86)\Embarcadero\Studio\21.0\bin\dcc32.exe" JclFont JclGraphics JclGraphUtils JclOpenDialogFavorites JclOpenDialogHooks JclPrint JclVclResources JclVersionControl JclVersionCtrlCVSImpl JclVersionCtrlGITImpl JclVersionCtrlSVNImpl --no-config -U"C:\Program Files (x86)\Embarcadero\Studio\21.0\lib\Win32\release" -M -$X+ -$G+ -$H+ -$P+ -$U- -$T- -$V+ -$J+ -$Z1 -$L+ -$Y+ -$J+ -$C- -$D- -$I- -$O+ -$Q- -$R- -$W- -N0"D:\Projetos\Componentes\JEDI\jcl\lib\d27\win32" -ns"System;System.Win;WinAPI;Vcl;Vcl.Imaging" -I"D:\Projetos\Componentes\JEDI\jcl\source\include" -U"D:\Projetos\Componentes\JEDI\jcl\source\common;D:\Projetos\Componentes\JEDI\jcl\source\windows;D:\Projetos\Componentes\JEDI\jcl\source\vcl" -R"D:\Projetos\Componentes\JEDI\jcl\source\common;D:\Projetos\Componentes\JEDI\jcl\source\windows;D:\Projetos\Componentes\JEDI\jcl\source\vcl"
 Embarcadero Delphi for Win32 compiler version 34.0
 Copyright (c) 1983,2020 Embarcadero Technologies, Inc.
-45375 lines, 0.69 seconds, 7239 bytes code, 24 bytes data.
+45375 lines, 0.61 seconds, 7239 bytes code, 24 bytes data.
 Building source\common library debug units for RAD Studio 10.4 32 bit...
 "C:\Program Files (x86)\Embarcadero\Studio\21.0\bin\dcc32.exe" bzip2 Jcl8087 JclAbstractContainers JclAlgorithms JclAnsiStrings JclArrayLists JclArraySets JclBase JclBinaryTrees JclCharsets JclCompilerUtils JclComplex JclCompression JclContainerIntf JclCounter JclDateTime JclDevToolsResources JclExprEval JclFileUtils JclHashMaps JclHashSets JclIDEUtils JclIniFiles JclLinkedLists JclLogic JclMath JclMIDI JclMime JclNotify JclPCRE JclPreProcessorAlgorithmsTemplates JclPreProcessorArrayListsTemplates JclPreProcessorArraySetsTemplates JclPreProcessorBinaryTreesTemplates JclPreProcessorContainer1DTemplates JclPreProcessorContainer2DTemplates JclPreProcessorContainerIntfTemplates JclPreProcessorContainerKnownMaps JclPreProcessorContainerKnownTypes JclPreProcessorContainerTemplates JclPreProcessorContainerTypes JclPreProcessorExcDlgTemplates JclPreProcessorHashMapsTemplates JclPreProcessorHashSetsTemplates JclPreProcessorLexer JclPreProcessorLinkedListsTemplates JclPreProcessorParser JclPreProcessorQueuesTemplates JclPreProcessorSortedMapsTemplates JclPreProcessorStacksTemplates JclPreProcessorTemplates JclPreProcessorTreesTemplates JclPreProcessorVectorsTemplates JclQueues JclResources JclRTTI JclSchedule JclSimpleXml JclSortedMaps JclStacks JclStatistics JclStreams JclStrHashMap JclStringConversions JclStringLists JclStrings JclSynch JclSysInfo JclSysUtils JclTrees JclUnicode JclUnitConv JclUnitVersioning JclUnitVersioningProviders JclUsesUtils JclValidation JclVectors JclWideStrings pcre zlibh --no-config -U"C:\Program Files (x86)\Embarcadero\Studio\21.0\lib\Win32\debug" -U"C:\Program Files (x86)\Embarcadero\Studio\21.0\lib\Win32\release" -M -$X+ -$G+ -$H+ -$P+ -$U- -$T- -$V+ -$J+ -$Z1 -$L+ -$Y+ -$J+ -$C+ -$D+ -$I+ -$O- -$Q+ -$R+ -$W+ -N0"D:\Projetos\Componentes\JEDI\jcl\lib\d27\win32\debug" -ns"System;System.Win;WinAPI;Vcl;Vcl.Imaging" -I"D:\Projetos\Componentes\JEDI\jcl\source\include" -U"D:\Projetos\Componentes\JEDI\jcl\source\common;D:\Projetos\Componentes\JEDI\jcl\source\windows;D:\Projetos\Componentes\JEDI\jcl\source\vcl" -R"D:\Projetos\Componentes\JEDI\jcl\source\common;D:\Projetos\Componentes\JEDI\jcl\source\windows;D:\Projetos\Componentes\JEDI\jcl\source\vcl"
 Embarcadero Delphi for Win32 compiler version 34.0
@@ -48,7 +48,7 @@ Building source\vcl library debug units for RAD Studio 10.4 32 bit...
 "C:\Program Files (x86)\Embarcadero\Studio\21.0\bin\dcc32.exe" JclFont JclGraphics JclGraphUtils JclOpenDialogFavorites JclOpenDialogHooks JclPrint JclVclResources JclVersionControl JclVersionCtrlCVSImpl JclVersionCtrlGITImpl JclVersionCtrlSVNImpl --no-config -U"C:\Program Files (x86)\Embarcadero\Studio\21.0\lib\Win32\debug" -U"C:\Program Files (x86)\Embarcadero\Studio\21.0\lib\Win32\release" -M -$X+ -$G+ -$H+ -$P+ -$U- -$T- -$V+ -$J+ -$Z1 -$L+ -$Y+ -$J+ -$C+ -$D+ -$I+ -$O- -$Q+ -$R+ -$W+ -N0"D:\Projetos\Componentes\JEDI\jcl\lib\d27\win32\debug" -ns"System;System.Win;WinAPI;Vcl;Vcl.Imaging" -I"D:\Projetos\Componentes\JEDI\jcl\source\include" -U"D:\Projetos\Componentes\JEDI\jcl\source\common;D:\Projetos\Componentes\JEDI\jcl\source\windows;D:\Projetos\Componentes\JEDI\jcl\source\vcl" -R"D:\Projetos\Componentes\JEDI\jcl\source\common;D:\Projetos\Componentes\JEDI\jcl\source\windows;D:\Projetos\Componentes\JEDI\jcl\source\vcl"
 Embarcadero Delphi for Win32 compiler version 34.0
 Copyright (c) 1983,2020 Embarcadero Technologies, Inc.
-45375 lines, 0.64 seconds, 7802 bytes code, 24 bytes data.
+45375 lines, 0.67 seconds, 7802 bytes code, 24 bytes data.
 Building D:\Projetos\Componentes\JEDI\jcl\packages\d27\Jcl.dpk...
 Cleaning package cache for Jcl270.bpl
 Cleaning ok
@@ -56,7 +56,7 @@ Compiling package D:\Projetos\Componentes\JEDI\jcl\packages\d27\Jcl.dpk
 "C:\Program Files (x86)\Embarcadero\Studio\21.0\bin\dcc32.exe" "D:\Projetos\Componentes\JEDI\jcl\packages\d27\Jcl.dpk" --no-config -U"C:\Program Files (x86)\Embarcadero\Studio\21.0\lib\Win32\release" -NU"..\..\lib\d27\win32" -I"..\..\lib\d27\win32;..\..\source\include;" -R"..\..\lib\d27\win32;..\..\source\include;" -DBCB;BCB;WIN32;CONDITIONALEXPRESSIONS;RELEASE;BCB;WIN32;CONDITIONALEXPRESSIONS;RELEASE -U"d:\Projetos\Componentes\JEDI\jcl\lib\d27\\win32\;C:\Users\Public\Documents\Embarcadero\Studio\21.0\Dcp;..\..\lib\d27\win32;..\..\source\include;" -LU"rtl;" -ns"System;System.Win;WinApi;Vcl;Vcl.Imaging;" -LN"d:\Projetos\Componentes\JEDI\jcl\lib\d27\\win32" -LE"C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl"  -GD
 Embarcadero Delphi for Win32 compiler version 34.0
 Copyright (c) 1983,2020 Embarcadero Technologies, Inc.
-128 lines, 0.59 seconds, 1818340 bytes code, 719216 bytes data.
+128 lines, 0.23 seconds, 1818340 bytes code, 719216 bytes data.
 Compilation success
 ...done.
 Building D:\Projetos\Componentes\JEDI\jcl\packages\d27\JclContainers.dpk...
@@ -66,7 +66,7 @@ Compiling package D:\Projetos\Componentes\JEDI\jcl\packages\d27\JclContainers.dp
 "C:\Program Files (x86)\Embarcadero\Studio\21.0\bin\dcc32.exe" "D:\Projetos\Componentes\JEDI\jcl\packages\d27\JclContainers.dpk" --no-config -U"C:\Program Files (x86)\Embarcadero\Studio\21.0\lib\Win32\release" -NU"..\..\lib\d27\win32" -I"..\..\lib\d27\win32;..\..\source\include;" -R"..\..\lib\d27\win32;..\..\source\include;" -DBCB;BCB;WIN32;CONDITIONALEXPRESSIONS;RELEASE;BCB;WIN32;CONDITIONALEXPRESSIONS;RELEASE -U"d:\Projetos\Componentes\JEDI\jcl\lib\d27\\win32\;C:\Users\Public\Documents\Embarcadero\Studio\21.0\Dcp;..\..\lib\d27\win32;..\..\source\include;" -LU"rtl;Jcl;" -ns"System;System.Win;WinApi;Vcl;Vcl.Imaging;" -LN"d:\Projetos\Componentes\JEDI\jcl\lib\d27\\win32" -LE"C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl"  -GD
 Embarcadero Delphi for Win32 compiler version 34.0
 Copyright (c) 1983,2020 Embarcadero Technologies, Inc.
-69 lines, 0.22 seconds, 2156624 bytes code, 884 bytes data.
+69 lines, 0.20 seconds, 2156624 bytes code, 884 bytes data.
 Compilation success
 ...done.
 Building D:\Projetos\Componentes\JEDI\jcl\packages\d27\JclDeveloperTools.dpk...
@@ -76,7 +76,7 @@ Compiling package D:\Projetos\Componentes\JEDI\jcl\packages\d27\JclDeveloperTool
 "C:\Program Files (x86)\Embarcadero\Studio\21.0\bin\dcc32.exe" "D:\Projetos\Componentes\JEDI\jcl\packages\d27\JclDeveloperTools.dpk" --no-config -U"C:\Program Files (x86)\Embarcadero\Studio\21.0\lib\Win32\release" -NU"..\..\lib\d27\win32" -I"..\..\lib\d27\win32;..\..\source\include;" -R"..\..\lib\d27\win32;..\..\source\include;" -DBCB;BCB;WIN32;CONDITIONALEXPRESSIONS;RELEASE;BCB;WIN32;CONDITIONALEXPRESSIONS;RELEASE -U"d:\Projetos\Componentes\JEDI\jcl\lib\d27\\win32\;C:\Users\Public\Documents\Embarcadero\Studio\21.0\Dcp;..\..\lib\d27\win32;..\..\source\include;" -LU"rtl;Jcl;JclContainers;" -ns"System;System.Win;WinApi;Vcl;Vcl.Imaging;" -LN"d:\Projetos\Componentes\JEDI\jcl\lib\d27\\win32" -LE"C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl"  -GD
 Embarcadero Delphi for Win32 compiler version 34.0
 Copyright (c) 1983,2020 Embarcadero Technologies, Inc.
-86 lines, 0.17 seconds, 514628 bytes code, 14752 bytes data.
+86 lines, 0.14 seconds, 514628 bytes code, 14752 bytes data.
 Compilation success
 ...done.
 Building D:\Projetos\Componentes\JEDI\jcl\packages\d27\JclVcl.dpk...
@@ -86,7 +86,7 @@ Compiling package D:\Projetos\Componentes\JEDI\jcl\packages\d27\JclVcl.dpk
 "C:\Program Files (x86)\Embarcadero\Studio\21.0\bin\dcc32.exe" "D:\Projetos\Componentes\JEDI\jcl\packages\d27\JclVcl.dpk" --no-config -U"C:\Program Files (x86)\Embarcadero\Studio\21.0\lib\Win32\release" -NU"..\..\lib\d27\win32" -I"..\..\lib\d27\win32;..\..\source\include;" -R"..\..\lib\d27\win32;..\..\source\include;" -DBCB;BCB;WIN32;CONDITIONALEXPRESSIONS;RELEASE;BCB;WIN32;CONDITIONALEXPRESSIONS;RELEASE -U"d:\Projetos\Componentes\JEDI\jcl\lib\d27\\win32\;C:\Users\Public\Documents\Embarcadero\Studio\21.0\Dcp;..\..\lib\d27\win32;..\..\source\include;" -LU"rtl;vcl;vclimg;Jcl;" -ns"System;System.Win;WinApi;Vcl;Vcl.Imaging;" -LN"d:\Projetos\Componentes\JEDI\jcl\lib\d27\\win32" -LE"C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl"  -GD
 Embarcadero Delphi for Win32 compiler version 34.0
 Copyright (c) 1983,2020 Embarcadero Technologies, Inc.
-67 lines, 0.27 seconds, 141672 bytes code, 1692 bytes data.
+67 lines, 0.17 seconds, 141672 bytes code, 1692 bytes data.
 Compilation success
 ...done.
 Building D:\Projetos\Componentes\JEDI\jcl\packages\d27\JclBaseExpert.dpk...
@@ -96,7 +96,7 @@ Compiling package D:\Projetos\Componentes\JEDI\jcl\packages\d27\JclBaseExpert.dp
 "C:\Program Files (x86)\Embarcadero\Studio\21.0\bin\dcc32.exe" "D:\Projetos\Componentes\JEDI\jcl\packages\d27\JclBaseExpert.dpk" --no-config -U"C:\Program Files (x86)\Embarcadero\Studio\21.0\lib\Win32\release" -NU"..\..\lib\d27\win32" -I"..\..\lib\d27\win32;..\..\source\include;" -R"..\..\lib\d27\win32;..\..\source\include;" -DBCB;BCB;WIN32;CONDITIONALEXPRESSIONS;RELEASE;BCB;WIN32;CONDITIONALEXPRESSIONS;RELEASE -U"d:\Projetos\Componentes\JEDI\jcl\lib\d27\\win32\;C:\Users\Public\Documents\Embarcadero\Studio\21.0\Dcp;..\..\lib\d27\win32;..\..\source\include;" -LU"rtl;vcl;vclx;designide;Jcl;JclDeveloperTools;" -ns"System;System.Win;WinApi;Vcl;Vcl.Imaging;" -LN"d:\Projetos\Componentes\JEDI\jcl\lib\d27\\win32" -LE"C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl"  -GD
 Embarcadero Delphi for Win32 compiler version 34.0
 Copyright (c) 1983,2020 Embarcadero Technologies, Inc.
-44143 lines, 0.50 seconds, 66800 bytes code, 588 bytes data.
+44143 lines, 0.42 seconds, 66800 bytes code, 588 bytes data.
 Compilation success
 ...done.
 Building D:\Projetos\Componentes\JEDI\jcl\packages\d27\JclDebugExpert.dpk...
@@ -106,7 +106,7 @@ Compiling package D:\Projetos\Componentes\JEDI\jcl\packages\d27\JclDebugExpert.d
 "C:\Program Files (x86)\Embarcadero\Studio\21.0\bin\dcc32.exe" "D:\Projetos\Componentes\JEDI\jcl\packages\d27\JclDebugExpert.dpk" --no-config -U"C:\Program Files (x86)\Embarcadero\Studio\21.0\lib\Win32\release" -NU"..\..\lib\d27\win32" -I"..\..\lib\d27\win32;..\..\source\include;" -R"..\..\lib\d27\win32;..\..\source\include;" -DBCB;BCB;WIN32;CONDITIONALEXPRESSIONS;RELEASE;BCB;WIN32;CONDITIONALEXPRESSIONS;RELEASE -U"d:\Projetos\Componentes\JEDI\jcl\lib\d27\\win32\;C:\Users\Public\Documents\Embarcadero\Studio\21.0\Dcp;..\..\lib\d27\win32;..\..\source\include;" -LU"rtl;vcl;designide;Jcl;JclBaseExpert;JclDeveloperTools;" -ns"System;System.Win;WinApi;Vcl;Vcl.Imaging;" -LN"d:\Projetos\Componentes\JEDI\jcl\lib\d27\\win32" -LE"C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl"  -GD
 Embarcadero Delphi for Win32 compiler version 34.0
 Copyright (c) 1983,2020 Embarcadero Technologies, Inc.
-8170 lines, 0.23 seconds, 40788 bytes code, 468 bytes data.
+8170 lines, 0.22 seconds, 40788 bytes code, 468 bytes data.
 Compilation success
 ...done.
 Building D:\Projetos\Componentes\JEDI\jcl\packages\d27\JclProjectAnalysisExpert.dpk...
@@ -116,7 +116,7 @@ Compiling package D:\Projetos\Componentes\JEDI\jcl\packages\d27\JclProjectAnalys
 "C:\Program Files (x86)\Embarcadero\Studio\21.0\bin\dcc32.exe" "D:\Projetos\Componentes\JEDI\jcl\packages\d27\JclProjectAnalysisExpert.dpk" --no-config -U"C:\Program Files (x86)\Embarcadero\Studio\21.0\lib\Win32\release" -NU"..\..\lib\d27\win32" -I"..\..\lib\d27\win32;..\..\source\include;" -R"..\..\lib\d27\win32;..\..\source\include;" -DBCB;BCB;WIN32;CONDITIONALEXPRESSIONS;RELEASE;BCB;WIN32;CONDITIONALEXPRESSIONS;RELEASE -U"d:\Projetos\Componentes\JEDI\jcl\lib\d27\\win32\;C:\Users\Public\Documents\Embarcadero\Studio\21.0\Dcp;..\..\lib\d27\win32;..\..\source\include;" -LU"rtl;vcl;designide;Jcl;JclBaseExpert;" -ns"System;System.Win;WinApi;Vcl;Vcl.Imaging;" -LN"d:\Projetos\Componentes\JEDI\jcl\lib\d27\\win32" -LE"C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl"  -GD
 Embarcadero Delphi for Win32 compiler version 34.0
 Copyright (c) 1983,2020 Embarcadero Technologies, Inc.
-7055 lines, 0.23 seconds, 29360 bytes code, 328 bytes data.
+7055 lines, 0.20 seconds, 29360 bytes code, 328 bytes data.
 Compilation success
 ...done.
 Building D:\Projetos\Componentes\JEDI\jcl\packages\d27\JclFavoriteFoldersExpert.dpk...
@@ -136,7 +136,7 @@ Compiling package D:\Projetos\Componentes\JEDI\jcl\packages\d27\JclRepositoryExp
 "C:\Program Files (x86)\Embarcadero\Studio\21.0\bin\dcc32.exe" "D:\Projetos\Componentes\JEDI\jcl\packages\d27\JclRepositoryExpert.dpk" --no-config -U"C:\Program Files (x86)\Embarcadero\Studio\21.0\lib\Win32\release" -NU"..\..\lib\d27\win32" -I"..\..\lib\d27\win32;..\..\source\include;" -R"..\..\lib\d27\win32;..\..\source\include;" -DBCB;BCB;WIN32;CONDITIONALEXPRESSIONS;RELEASE;BCB;WIN32;CONDITIONALEXPRESSIONS;RELEASE -U"d:\Projetos\Componentes\JEDI\jcl\lib\d27\\win32\;C:\Users\Public\Documents\Embarcadero\Studio\21.0\Dcp;..\..\lib\d27\win32;..\..\source\include;" -LU"rtl;vcl;designide;Jcl;JclContainers;JclBaseExpert;JclDeveloperTools;" -ns"System;System.Win;WinApi;Vcl;Vcl.Imaging;" -LN"d:\Projetos\Componentes\JEDI\jcl\lib\d27\\win32" -LE"C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl"  -GD
 Embarcadero Delphi for Win32 compiler version 34.0
 Copyright (c) 1983,2020 Embarcadero Technologies, Inc.
-34018 lines, 0.27 seconds, 45916 bytes code, 480 bytes data.
+34018 lines, 0.23 seconds, 45916 bytes code, 480 bytes data.
 Compilation success
 ...done.
 Building D:\Projetos\Componentes\JEDI\jcl\packages\d27\JclSIMDViewExpert.dpk...
@@ -148,7 +148,7 @@ Embarcadero Delphi for Win32 compiler version 34.0
 Copyright (c) 1983,2020 Embarcadero Technologies, Inc.
 D:\Projetos\Componentes\JEDI\jcl\experts\debug\simdview\JclSIMDUtils.pas(868) Warning: W1000 Symbol 'TOTAThreadContext' is deprecated
 D:\Projetos\Componentes\JEDI\jcl\experts\debug\simdview\JclSIMDUtils.pas(868) Warning: W1000 Symbol 'TOTAThreadContext' is deprecated
-18018 lines, 0.27 seconds, 59324 bytes code, 892 bytes data.
+18018 lines, 0.22 seconds, 59324 bytes code, 892 bytes data.
 Compilation success
 ...done.
 Building D:\Projetos\Componentes\JEDI\jcl\packages\d27\JclStackTraceViewerExpert.dpk...
@@ -158,7 +158,7 @@ Compiling package D:\Projetos\Componentes\JEDI\jcl\packages\d27\JclStackTraceVie
 "C:\Program Files (x86)\Embarcadero\Studio\21.0\bin\dcc32.exe" "D:\Projetos\Componentes\JEDI\jcl\packages\d27\JclStackTraceViewerExpert.dpk" --no-config -U"C:\Program Files (x86)\Embarcadero\Studio\21.0\lib\Win32\release" -NU"..\..\lib\d27\win32" -I"..\..\lib\d27\win32;..\..\source\include;" -R"..\..\lib\d27\win32;..\..\source\include;" -DBCB;BCB;WIN32;CONDITIONALEXPRESSIONS;RELEASE;BCB;WIN32;CONDITIONALEXPRESSIONS;RELEASE -U"d:\Projetos\Componentes\JEDI\jcl\lib\d27\\win32\;C:\Users\Public\Documents\Embarcadero\Studio\21.0\Dcp;..\..\lib\d27\win32;..\..\source\include;" -LU"rtl;vcl;designide;Jcl;JclBaseExpert;" -ns"System;System.Win;WinApi;Vcl;Vcl.Imaging;" -LN"d:\Projetos\Componentes\JEDI\jcl\lib\d27\\win32" -LE"C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl"  -GD
 Embarcadero Delphi for Win32 compiler version 34.0
 Copyright (c) 1983,2020 Embarcadero Technologies, Inc.
-44318 lines, 0.28 seconds, 68368 bytes code, 476 bytes data.
+44318 lines, 0.22 seconds, 68368 bytes code, 476 bytes data.
 Compilation success
 ...done.
 Added "D:\Projetos\Componentes\JEDI\jcl\lib\d27\win32;D:\Projetos\Componentes\JEDI\jcl\source\include" to library search path.
