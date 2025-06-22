@@ -1,0 +1,110 @@
+/**** weel bg **********/
+.well-primary {
+	color: #fff;
+	background-color: #337ab7;	
+}
+
+.well-success {
+	background-color: #dff0d8;
+}
+
+.well-info {
+	background-color: #d9edf7;
+}
+
+.well-warning {
+	background-color: #fcf8e3;	
+}
+	
+.well-danger {
+	background-color: #f2dede;	
+}
+
+/**** alerts ***********/
+.flyover {
+	position: fixed;
+	width: 50%;
+	z-index: 1000000; 
+}
+
+.flyover-right-top {
+	right: 1em;
+	top: 1em;
+}
+ 
+.flyover-right-center {
+	right: 1em;
+	top: 50%;
+}
+
+.flyover-right-bottom {
+	right: 1em;
+	bottom: 1em;
+}
+
+@media only screen and (max-width: 767px) {
+	.flyover {
+		width: auto;
+		left: 1em;
+	}
+}
+
+/**** dropdown-submenu ***/
+.dropdown-submenu > .dropdown-menu {
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+
+.dropdown-submenu > .dropdown-menu-right{
+    left: -100%;
+    margin-top: -6px;
+    margin-right: 100%;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+
+@media (max-width: 767px) {
+	.navbar-nav .open .dropdown-submenu > .dropdown-menu {
+		padding-left: 15px;
+	}
+}
+
+.caret-right {
+    color: black;
+    border-bottom: 4px solid transparent;
+    border-top: 4px solid transparent;
+    border-left: 4px solid;
+    display: inline-block;
+    height: 0;
+    vertical-align: middle;
+    width: 0;
+    margin-left: 10px;
+}
+
+.caret-left {
+    color: black;
+    border-bottom: 4px solid transparent;
+    border-top: 4px solid transparent;
+    border-right: 4px solid;
+    display: inline-block;
+    height: 0;
+    vertical-align: middle;
+    width: 0;
+    margin-left: 10px;
+}
+
+/**** select plugin ***/
+.form-control.disabled > button, .form-control.disabled > button:hover {
+    background-color: #eee;
+    opacity: 1;
+}
+
+/**** webshims fixes for firefox ****/
+.input-buttons .step-controls {
+	display: none;
+}

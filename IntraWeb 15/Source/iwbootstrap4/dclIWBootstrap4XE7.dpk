@@ -1,0 +1,43 @@
+package dclIWBootstrap4XE7;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'IntraWeb Bootstrap 4 Framework'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  DesignIDE,
+  vclimg,
+  dbrtl,
+  inet,
+  IWBootstrap4XE7,
+  Intraweb_15_DXE7,
+  dclIntraweb_15_DXE7;
+
+contains
+  IWBS4Deprecated in 'IWBS4Deprecated.pas',
+  IWBS4Register in 'IWBS4Register.pas',
+  glyphicons4 in 'glyphicons4.pas';
+
+end.

@@ -1,0 +1,94 @@
+package IWBootstrap4D12;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$DEFINITIONINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'IntraWeb Bootstrap 4 Framework'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcl,
+  vclimg,
+  inet,
+  Intraweb_15_D12;
+
+contains
+  IWBS4Utils in 'IWBS4Utils.pas',
+  IWBS4Common in 'IWBS4Common.pas',
+  IWBS4LayoutMgr in 'IWBS4LayoutMgr.pas',
+  IWBS4TabControl in 'IWBS4TabControl.pas',
+  IWBS4Controls in 'IWBS4Controls.pas',
+  IWBS4CustomInput in 'IWBS4CustomInput.pas',
+  IWBS4InputCommon in 'IWBS4InputCommon.pas',
+  IWBS4Button in 'IWBS4Button.pas',
+  IWBS4CustomControl in 'IWBS4CustomControl.pas',
+  IWBS4ScriptEvents in 'IWBS4ScriptEvents.pas',
+  IWBS4Image in 'IWBS4Image.pas',
+  IWBS4RestServer in 'IWBS4RestServer.pas',
+  IWBS4CustomEvents in 'IWBS4CustomEvents.pas',
+  IWBS4Global in 'IWBS4Global.pas',
+  IWBS4DropDown in 'IWBS4DropDown.pas',
+  IWBS4ImageUtils in 'IWBS4ImageUtils.pas',
+  IWBS4List in 'IWBS4List.pas',
+  IWBS4ButtonGroup in 'IWBS4ButtonGroup.pas',
+  IWBS4InputForm in 'IWBS4InputForm.pas',
+  IWBS4CustomRegion in 'IWBS4CustomRegion.pas',
+  IWBS4CommonInterfaces in 'IWBS4CommonInterfaces.pas',
+  IWBS4Header in 'IWBS4Header.pas',
+  IWBS4Typography in 'IWBS4Typography.pas',
+  IWBS4BlockText in 'IWBS4BlockText.pas',
+  IWBS4Carousel in 'IWBS4Carousel.pas',
+  IWBS4FlexboxItem in 'IWBS4FlexboxItem.pas',
+  IWBS4Color in 'IWBS4Color.pas',
+  IWBS4Flexbox in 'IWBS4Flexbox.pas',
+  IWBS4Inline in 'IWBS4Inline.pas',
+  IWBS4BoxModel in 'IWBS4BoxModel.pas',
+  IWBS4Responsive in 'IWBS4Responsive.pas',
+  IconsGoogle in 'IconsGoogle.pas',
+  IWBS4Tooltip in 'IWBS4Tooltip.pas',
+  IconsFontAwesome in 'IconsFontAwesome.pas',
+  IWBS4Region in 'IWBS4Region.pas',
+  IWBS4Table in 'IWBS4Table.pas',
+  IWBS4BaseContainer in 'IWBS4BaseContainer.pas',
+  IWBS4Progress in 'IWBS4Progress.pas',
+  IWBS4InputSelect in 'IWBS4InputSelect.pas',
+  IWBS4Input in 'IWBS4Input.pas',
+  IWBS4InputCheckbox in 'IWBS4InputCheckbox.pas',
+  IWBS4InputText in 'IWBS4InputText.pas',
+  IWBS4Alert in 'IWBS4Alert.pas',
+  IWBS4Badge in 'IWBS4Badge.pas',
+  IWBS4Block in 'IWBS4Block.pas',
+  IWBS4MemoHtml in 'IWBS4MemoHtml.pas',
+  IWBS4Navbar in 'IWBS4Navbar.pas',
+  IWBS4MoabDialog in 'IWBS4MoabDialog.pas',
+  IWBS4MoabContent in 'IWBS4MoabContent.pas',
+  IWBS4Moab in 'IWBS4Moab.pas',
+  IWBS4Cal in 'IWBS4Cal.pas',
+  IWBS4InputTypes in 'IWBS4InputTypes.pas',
+  IWBS4ModalOld in 'IWBS4ModalOld.pas';
+
+end.

@@ -1,0 +1,47 @@
+package dclIWBootstrapD12;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$DEFINITIONINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'IntraWeb Bootstrap 3 Framework'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  DesignIDE,
+  vclimg,
+  dbrtl,
+  inet,
+  IWBootstrapD12,
+  Intraweb_15_D12,
+  dclIntraweb_15_D12;
+
+contains
+  IWBSRegister in 'IWBSRegister.pas',
+  IWBSDeprecated in 'IWBSDeprecated.pas',
+  glyphicons in 'glyphicons.pas';
+
+end.
+
