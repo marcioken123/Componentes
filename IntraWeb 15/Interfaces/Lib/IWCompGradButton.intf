@@ -1,0 +1,95 @@
+unit IWCompGradButton;
+{$I IWCompilerDefines.inc}
+
+{PUBDIST}
+
+interface
+
+uses
+  SysUtils, Classes,
+  IWBaseControl, IWControl, IWHTMLTag, IWScriptEvents, IWRenderContext, IWXMLTag,
+  IWBaseInterfaces, IWBaseHTMLControl, IWFont, Graphics, IWColor,
+  IWCSS;
+
+type
+  TGradButtonColorScheme = (csCustom, csMaroon, csRed, csBlue, csGreen, csYellow, csOrange,
+                            csGray, csLightGray, csBlack, csWhite, csPink);
+
+  TIWGradButtonStyle = class(TPersistent)
+  private
+    procedure SetButtonDisabled(const Value: TIWCssGradient);
+    procedure SetBorderDisabled(const Value: TIWCssBorder);
+  protected
+    FControl: TIWCustomControl;
+    FButtonOptions: TIWCssGradientDiv;
+    FButtonHover: TIWCssGradient;
+    FButtonActive: TIWCssGradient;
+    FButtonDisabled: TIWCssGradient;
+    FBorder: TIWCssBorder;
+    FBorderDisabled: TIWCssBorder;
+    FColorScheme: TGradButtonColorScheme;
+    FTextShadow: TIWCssTextShadow;
+    FBoxShadow: TIWCssBoxShadow;
+    procedure SetColorScheme(const Value: TGradButtonColorScheme);
+    procedure SetBorder(const Value: TIWCssBorder);
+    procedure SetButtonActive(const Value: TIWCssGradient);
+    procedure SetButtonHover(const Value: TIWCssGradient);
+    procedure SetButtonOptions(const Value: TIWCssGradientDiv);
+  public
+    constructor Create(AControl: TIWCustomControl); virtual;
+    destructor Destroy; override;
+    procedure Assign(Source: TPersistent); override;
+  published
+    property Border: TIWCssBorder read FBorder write SetBorder;
+    property BorderDisabled: TIWCssBorder read FBorderDisabled write SetBorderDisabled;
+    property Button: TIWCssGradientDiv read FButtonOptions write SetButtonOptions;
+    property ButtonHover: TIWCssGradient read FButtonHover write SetButtonHover;
+    property ButtonActive: TIWCssGradient read FButtonActive write SetButtonActive;
+    property ButtonDisabled: TIWCssGradient read FButtonDisabled write SetButtonDisabled;
+    property ColorScheme: TGradButtonColorScheme read FColorScheme write SetColorScheme;
+    property BoxShadow: TIWCssBoxShadow read FBoxShadow write FBoxShadow;
+    property TextShadow: TIWCssTextShadow read FTextShadow write FTextShadow;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWGradButton = class(TIWCustomControl, IIWSubmitControl)
+  private
+    FFocusOutline: Boolean;
+    procedure SetFocusOutline(const Value: Boolean);
+  protected
+    FSubmitParam: string;
+    FHotKey: string;
+    FStyle: TIWGradButtonStyle;
+    procedure SetStyle(const Value: TIWGradButtonStyle);
+    procedure Submit(const AValue: string); override;
+    procedure HookEvents(APageContext: TIWPageContext40; AScriptEvents: TIWScriptEvents); override;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    procedure InitControl; override;
+    procedure Dispose(ADispose: Boolean); override;
+  public
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    function RenderCSSClass(AComponentContext: TIWCompContext): string; override;
+    function RenderStyle(AContext: TIWCompContext): string; override;
+    function GetSubmitParam: string;
+  published
+    property Style: TIWGradButtonStyle read FStyle write SetStyle;
+    property FocusOutline: boolean read FFocusOutline write SetFocusOutline default False;
+    property HotKey: string read FHotkey write FHotKey;
+    property Caption;
+    property Confirmation;
+    property DoSubmitValidation;
+    property Enabled;
+    property ExtraTagParams;
+    property Color;
+    property Font;
+    property FriendlyName;
+    property ScriptEvents;
+    property TabOrder;
+    property OnClick;
+    property OnAsyncClick;
+    property OnAsyncDoubleClick;
+    property OnAsyncEnter;
+    property OnAsyncExit;
+  end;
+
+implementation

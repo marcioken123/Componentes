@@ -1,0 +1,61 @@
+unit IW.Server.HTTPIndy;
+{$I IWCompilerDefines.inc}
+{$DEFINE USE_NEW_INDY}
+
+interface
+
+uses
+  Classes, SysUtils, IW.Common.StreamHelper, InCustomHttpServer, InContext, InHeaderList,
+  InCTypes, InServerIOHandler, InSchedulerOfThreadPool,
+  // OpenSSL 1.0.x branch
+  InSSLOpenSSLHeaders, InGlobal;
+
+type
+  TIWCustomIOHandlerClass = class of TInServerIOHandler;
+
+  THTTPServerIndy = class(TInCustomHttpServer)
+  private
+    FSharedThreadPool: TInSchedulerOfThreadPool;
+    FOpenSSLVersion: string;
+    FHttpsPort: Integer;
+    procedure GetSSLPassword(var VPassword: {$IFDEF FPC}AnsiString{$ELSE}string{$ENDIF});
+    procedure GetSSLPasswordEx(Sender: TObject; var Password: {$IFDEF FPC}AnsiString{$ELSE}string{$ENDIF}; const IsWrite: Boolean);
+    procedure DoOnStatusInfoEx(ASender: TObject; const AsslSocket: PSSL;
+      const AWhere, Aret: TIdC_INT; const AType, AMsg: {$IFDEF FPC}AnsiString{$ELSE}string{$ENDIF});
+    procedure SetHttpBindings;
+    procedure SetHttpsBindings;
+  protected
+    class var mIOHandlerClass: TIWCustomIOHandlerClass;
+    function GetThreadPool: TInSchedulerOfThreadPool;
+    procedure SetHttpsOpenSSL1_0;
+    {$IFDEF USE_NEW_INDY}
+    procedure SetHttpsOpenSSL1_1;
+    {$ENDIF}
+    procedure InitComponent; override;
+    procedure ParseFileMultiPart(ARequest: TInHTTPRequestInfo; aFileList: TStrings);
+    procedure ParseFileXMLHttp(aRequest: TInHTTPRequestInfo; aFileList: TStrings);
+    procedure ParseRawContent(aRequest: TInHTTPRequestInfo; aFileList: TStrings);
+    procedure CreatePostStream(ASender: TInContext; AHeaders: TInHeaderList; var VPostStream: TStream); override;
+    procedure DoCommandGet(aThread: TInContext; aRequest: TInHTTPRequestInfo;
+     aResponse: TInHTTPResponseInfo); override;
+    procedure DoCommandOther(AThread: TInContext; ARequestInfo: TInHTTPRequestInfo;
+     AResponseInfo: TInHTTPResponseInfo); override;
+    procedure EncodeRequest(aBytes: TBytes; aRequest: TInHTTPRequestInfo; aFileList: TStringList; const aPort: Integer);
+    procedure DecodeReply(aBytes: TBytes; aResponse: TInHTTPResponseInfo);
+    procedure SendFile(aResponse: TInHTTPResponseInfo; aStream: TStreamHelper);
+    procedure SendCacheFile(aResponse: TInHTTPResponseInfo; aStream: TStreamHelper);
+    procedure DoAfterDispatch(aRequest: TInHTTPRequestInfo; aResponse: TInHTTPResponseInfo); virtual;
+    function DoQuerySSLPort(APort: TIdPort): Boolean; override;
+  public
+    class var DefaultCipherList: string;
+    class var DefaultCipherSuites: string;
+    destructor Destroy; override;
+    procedure InitHTTP;
+    procedure InitHTTPS;
+    class procedure RegisterIOHandlerClass(AIOHandlerClass: TIWCustomIOHandlerClass);
+    property OpenSSLVersion: string read FOpenSSLVersion;
+  end;
+
+  THTTPServerIndyClass = class of THTTPServerIndy;
+
+implementation

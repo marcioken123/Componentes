@@ -1,0 +1,15 @@
+unit IW.Browser.Webkit;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  IW.Browser.Browser;
+
+type
+  TWebkit = class(TBrowser)
+  public
+    constructor Create(aVersion: single; aMinVersion: single = 12); override;
+  end;
+
+implementation

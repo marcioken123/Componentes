@@ -1,0 +1,64 @@
+unit IWCompText;
+{$I IWCompilerDefines.inc}
+
+{PUBDIST}
+
+interface
+
+uses
+  Classes, Controls, IWControl, IWHTMLTag, IWRenderContext, IWColor,
+  IWXMLTag;
+
+type
+  TIWCustomText = class(TIWCustomControl)
+  protected
+    FBGColor: TIWColor;
+    FConvertSpaces: Boolean;
+    FLines: TStringList;
+    FRawText: Boolean;
+    FWantReturns: Boolean;
+    //
+    procedure OnItemsChange(ASender : TObject);
+    procedure SetLines(const AValue: TStringList);
+    procedure SetBGColor(const AValue : TIWColor);
+
+    procedure InitControl; override;
+
+    procedure RetrieveLinesForRendering(var s: string);
+
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+
+    function getText: TCaption; override;
+    procedure TextChangedNotification; override;
+    property ConvertSpaces: Boolean read FConvertSpaces write FConvertSpaces default False;
+
+    property RawText: boolean read FRawText write FRawText;
+
+    property WantReturns: Boolean read FWantReturns write FWantReturns;
+  protected
+    procedure Dispose(ADispose: Boolean); override;
+  public
+    function get_HasTabOrder: Boolean; override;
+    procedure SetText(const AValue: TCaption); override;
+    procedure Clear; virtual;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    function RenderStyle(AContext: TIWCompContext): string; override;
+
+    property BGColor: TIWColor read FBGColor write SetBGColor;
+    property Lines: TStringList read FLines write SetLines;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWText = class(TIWCustomText)
+  published
+    property BGColor;
+    property ConvertSpaces;
+    property Font;
+    property FriendlyName;
+    property Lines;
+    property RawText;
+    property UseFrame;
+    property WantReturns;
+  end;
+
+implementation

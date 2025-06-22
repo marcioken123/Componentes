@@ -1,0 +1,19 @@
+unit IW.Browser.FirefoxMobile;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  IW.Browser.Browser, IW.Browser.Firefox;
+
+type
+  TFirefoxMobile = class(TFirefox)
+  public
+    const
+      BROWSER_NAME = 'Firefox Mobile';
+      MIN_VERSION = 14.0;    // Before version 14.0 FF Mobile had many issues
+    constructor Create(aVersion: single); override;
+    class function Match(AUserAgent: string; out AVersion: Single): Boolean; override;
+  end;
+
+implementation

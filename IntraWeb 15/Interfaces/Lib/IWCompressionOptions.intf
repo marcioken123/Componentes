@@ -1,0 +1,78 @@
+unit IWCompressionOptions;
+
+interface
+
+{$I IWCompilerDefines.inc}
+
+uses
+  SysUtils, Classes, IWTypes;
+
+// this class is declared in a separate unit, so ServerControllerBase doesn't link with Indy classes declared
+// in IWCompress.pas which also uses IWCompressionOptions
+
+// IW_NOTE:
+// Plain deflate compression has been deprecated in IW in favor of gzip.
+// There are several reasons why buy the most important is that plain deflate as an
+// http compression protocol is not being used anymore, mostly anywhere.
+// https://almanac.httparchive.org/en/2020/compression
+type
+  TCompressorImplementation = (compLibDeflate, compZLib);
+
+const
+  DEFAULT_COMPRESSOR = {$IFDEF CBUILDER} compZLib {$ELSE} compLibDeflate {$ENDIF};
+
+type
+  TIWCompressionLevel = 1..12;   // Max=12 for LibDeflate. Max=9 for std ZLib
+
+  TCheckLockMethod = procedure (const aPropName: string) of Object;
+
+  TIWCompressionOptions = class(TPersistent)
+  strict private
+    class var FDesignWarningProc: TServerControllerDesignProc;
+    class var FDesignCheckProc: TServerControllerDesignProc;
+  private
+    FLevel: Byte;
+    FMinSize: Integer;
+    FEnabled: Boolean;
+    FAllowGZip: Boolean;
+    FAllowDeflate: Boolean;
+    FPreCompress: Boolean;
+    FCheckLock: TCheckLockMethod;
+    FCheckSSE42: Boolean;
+    FCompressorImplementation: TCompressorImplementation;
+    FUseExternalLib: Boolean;
+    FDesignMode: Boolean;
+    procedure SetAllowDeflate(const Value: Boolean);
+    procedure SetAllowGZip(const Value: Boolean);
+    procedure SetEnabled(const Value: Boolean);
+    procedure SetMinSize(const Value: Integer);
+    procedure SetLevel(const Value: Byte);
+    procedure CheckLock(const aPropName: string);
+    class procedure DesignMessage(aSender: TObject; const aMessage: string); static;
+    class procedure DesignCheck(aSender: TObject; const aMessage: string); static;
+    procedure CheckDeprecated;
+    procedure SetCompressorImplementation(
+      const Value: TCompressorImplementation);
+    procedure SetUseExternalLib(const Value: Boolean);
+  public
+    constructor Create; virtual;
+    procedure Assign(ASource: TPersistent); override;
+    procedure SetCheckLock(AMethod: TCheckLockMethod);
+    class procedure SetDesignWarningProc(aProc: TServerControllerDesignProc);
+    class procedure SetDesignCheckProc(aProc: TServerControllerDesignProc);
+    function GetMaxLevel: Integer;
+    procedure CheckLibDeflateRequirements;
+    property CheckSSE42: Boolean read FCheckSSE42 write FCheckSSE42 default True;
+    property DesignMode: Boolean read FDesignMode write FDesignMode default False;
+  published
+    property Enabled: Boolean read FEnabled write SetEnabled default True;
+    property Level: Byte read FLevel write SetLevel default 1;
+    property AllowGZip: Boolean read FAllowGZip write SetAllowGZip default True;
+    property AllowDeflate: Boolean read FAllowDeflate write SetAllowDeflate default True;
+    property MinSize: Integer read FMinSize write SetMinSize default 512;
+    property PreCompress: Boolean read FPreCompress write FPreCompress default True;
+    property CompressorImplementation: TCompressorImplementation read FCompressorImplementation write SetCompressorImplementation default DEFAULT_COMPRESSOR;
+    property UseExternalLib: Boolean read FUseExternalLib write SetUseExternalLib default False;
+  end;
+
+implementation

@@ -1,0 +1,48 @@
+unit IW.Server.Indy;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, SysUtils, InContext, IW.Server.HTTPIndy, IW.Server.IWServerBase,
+  IWCompress;
+
+type
+  TSaServerIndy = class(TComponent, IIWServerBase)
+  private
+    class var mHttpServerIndyClass: THTTPServerIndyClass;
+  protected
+    FBitsPerSec: Integer;
+    FHTTP: THTTPServerIndy;
+    FHTTPS: THTTPServerIndy;
+    FUseServerIntercept: Boolean;
+    procedure HTTPOnConnect(AThread: TInContext);
+    function CreateHTTP: THTTPServerIndy;
+    procedure InitComponent;
+    procedure Log(const aText: string); virtual;
+  public
+    constructor Create(AOwner: TComponent); override;
+    destructor Destroy; override;
+    //
+    property BitsPerSec: Integer read FBitsPerSec write FBitsPerSec default -1;
+    property HTTP: THTTPServerIndy read FHTTP;
+    property HTTPS: THTTPServerIndy read FHTTPS;
+    property UseServerIntercept: Boolean read FUseServerIntercept write FUseServerIntercept default False;
+    // let the users register descendants of THTTPServerIndy to be used as HTTP and HTTPS servers
+    class procedure RegisterHttpServerIndy(AHttpServerIndyClass: THTTPServerIndyClass);
+    // IIWServerBase
+    function GetBitsPerSec: Integer;
+    procedure SetBitsPerSec(const Value: Integer);
+    function GetHTTPActive: Boolean;
+    function GetHTTPSActive: Boolean;
+    function GetLogStraffic: Boolean;
+    procedure SetLogTraffic(const Value: Boolean);
+    procedure Start;
+    function Description: string;
+    function GetCompressorClass: TIWCompressorClass;
+    function GetAdditionalHttpsInfo: string;
+    function GetActivePortsInfo: string;
+    procedure Restart;
+  end;
+
+implementation

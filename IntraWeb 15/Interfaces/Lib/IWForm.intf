@@ -1,0 +1,203 @@
+unit IWForm;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, Classes, Controls, IWVCLComponent, IWXMLTag,
+  IWFileReference, IWBaseHTMLControl, IWControl, IWApplication, IWBaseForm,
+  IWTypes, IWHTMLTag, IWHTML40Interfaces, IWContainer, IWCompProgressIndicator,
+  IWRenderContext, IWBaseHTMLInterfaces, IWBaseContainerLayout, IWMarkupLanguageTag,
+  IWContainerLayout, IWBaseInterfaces, IWBaseHTMLForm, IWBaseRenderContext,
+  IW.Common.RenderStream, IWHTML40Container, IWBaseHTML40Component,
+  IW.Common.StrLists, IW.Common.Lists, IWCallback, IWCallbackFunc;
+
+type
+  TIWPageRenderOptions = class(TPersistent)
+  private
+    FRenderMargins: Boolean;
+  public
+    constructor Create;
+    procedure Assign(ASource: TPersistent); override;
+  published
+    property RenderMargins: Boolean read FRenderMargins write FRenderMargins default True;
+  end;
+
+  TIWBackground = class(TIWFileReference)
+  protected
+    FFixed: Boolean;
+    procedure AssignTo(ADest: TPersistent); override;
+  public
+  published
+    property Fixed: Boolean read FFixed write FFixed;
+  end;
+
+  {$IFDEF FPC}
+  IIWFormDesigner = interface(IUnknown)
+    procedure InvalidateRect(Sender: TObject; ARect: TRect; Erase: boolean);
+  end;
+  {$ENDIF}
+
+  TIWForm = class(TIWBaseHTMLForm, IIWHTML40Container, IIWHTML40Form)
+  private
+    procedure SetDummyBool(const AValue: Boolean);
+    procedure SetTheme(const AValue: string);
+  protected
+    FLeftToRight: Boolean;
+    FActiveControl: TIWCustomControl;
+    FInitProc: string;
+    FJavaScript: TStringList;
+    FJavaScriptOnce: string;
+    FBackground: TIWBackground;
+    FHandleTabs: Boolean;
+    FOnDefaultAction: TNotifyEvent;
+    FReleased: Boolean;
+    FLockUntilLoaded: Boolean;
+    FLockOnSubmit: Boolean;
+    FStyleSheet: TIWFileReference;
+    FCss: string;
+    mIWAJAXNotifier: TIWBaseHTML40Component;
+    FDocType: string;
+    FKeepAlive: Boolean;
+    FRenderKeepAlive: Boolean;
+    //
+    FRealTabOrderList: TIWListBase;
+    FProgressIndicator: TIWProgressIndicator;
+    FActiveControlChanged: Boolean;
+    FDoResizePrediction: Boolean;
+    FPageContext: TIWPageContext40;
+    FCacheFiles: TIWMinStringList;
+    FPageRenderOptions: TIWPageRenderOptions;
+    {$IFDEF FPC}
+    FDesigner: IIWFormDesigner;
+    {$ENDIF}
+    function GetProgressIndicator: TIWProgressIndicator;
+    procedure SetProgressIndicator(const Value: TIWProgressIndicator);
+    procedure SetDocType(const Value: string);
+    procedure SetKeepAlive(const Value: Boolean);
+    procedure ProcessContentFile(const AFile: string);
+    procedure IWComponentsChanged(AComponent: TComponent); override;
+    function GetHasTemplate: Boolean;
+    function CreatePageContext: TIWPageContext40;
+  private
+    FTabOrderThreshold: SmallInt;
+    FRenderAsyncEnabled: Boolean;
+    procedure SetUpdateMode(const Value: TIWFormUpdateMode);
+    procedure SetPageRenderOptions(const Value: TIWPageRenderOptions);
+  protected
+    procedure Dispose(ADispose: Boolean); override;
+
+    // IIWContainer methods
+    function InitContainerContext(AWebApplication: TIWApplication): TIWContainerContext; override;
+
+    procedure Notification(AComponent: TComponent; AOperation: TOperation); override;
+
+    procedure SetJavaScript(AValue: TStringList);
+    procedure SetBackground(const AValue: TIWBackground);
+    procedure SetStyleSheet(const AValue: TIWFileReference);
+    procedure SetServerOnResize(const AValue: Boolean);
+
+    procedure InitControl; override;
+    procedure Loaded; override;
+
+    procedure SetActiveControl(AControl: IIWHTML40Control); virtual;
+
+    procedure RenderComponents(AContainerContext: TIWContainerContext;
+      APageContext: TIWBasePageContext); override;
+    procedure RenderWidgets(AContainer: TComponent; APageContext: TIWBasePageContext);
+    procedure RenderAsyncComponents(AContainerContext: TIWContainerContext; APageContext: TIWBasePageContext);
+
+    function DoPostRenderProcessing(ATag: TIWMarkupLanguageTag;
+      AComponentContext: TIWBaseComponentContext; AComponent: TComponent): TIWMarkupLanguageTag; override;
+
+    function CheckUpdateTree(AComponent: TComponent): Boolean; override;
+
+    function GenerateControlPositions: string;
+    {function get_Width: Integer;
+    function get_Height: Integer;}
+
+    procedure FillRealTabOrders;
+    procedure ClearRealTabOrders;
+    procedure DoExecuteForm; override;
+    procedure DoGenerateForm(AStream: TIWRenderStream); override;
+    procedure AsyncRenderComponent(AComponent: TComponent); override;
+  public
+    constructor CreateNew(AOwner: TComponent; const ADummy: Integer = 0); override;
+    destructor Destroy; override;
+    function AddSubmitIFrame(AStream: TIWRenderStream = nil): string;
+    procedure AddToInitProc(const ACode: string);
+    procedure AddBodyScript(const ACode: string);
+    procedure AddBodyScriptFile(const AFilename: string);
+    procedure DoDefaultAction;
+    function  RenderAsync(AContainerContext: TIWContainerContext): TIWXMLTag;
+
+    function get_PageContext: TIWPageContext40;
+    procedure SetBounds(ALeft, ATop, AWidth, AHeight: Integer); override;
+    //
+    procedure SetIWAJAXNotifier(aIWAJAXNotifier: TIWBaseHTML40Component);
+    function SendAJAXNotification: Boolean;
+    function GetIWAJAXNotificationJSCode: string;
+    function GetIsStrictMode: Boolean;
+    procedure RenderChildContainer(AStream: TIWRenderStream; AContainer: TIWContainer);
+    class function FindParentForm(Control: TControl): TIWForm;
+    // NOTE: Internal use. DO NOT DOCUMENT
+    property DoResizePrediction: Boolean read FDoResizePrediction write FDoResizePrediction;
+    property PageContext: TIWPageContext40 read get_PageContext;
+    property JavaScriptOnce: string read FJavaScriptOnce write FJavaScriptOnce;
+    property RealTabOrderList: TIWListBase read FRealTabOrderList;
+    property CacheFiles: TIWMinStringList read FCacheFiles;
+    property HasTemplate: Boolean read GetHasTemplate;
+    // Ajax (callback) support
+    procedure RegisterCallBack(const AName: string; AMethod: TIWCallbackMethod); overload;
+    procedure RegisterCallBack(const AName: string; AProc: TIWCallbackProc0); overload;
+    procedure RegisterCallBack(const AName: string; AProc: TIWCallbackProc1); overload;
+    procedure RegisterCallBack(const AName: string; AProc: TIWCallbackProc2); overload;
+    procedure RegisterCallBack(const AName: string; AProc: TIWCallbackProc3); overload;
+    procedure RegisterCallBack(const AName: string; AProc: TIWCallbackProc4); overload;
+    procedure UnregisterCallBack(const AName: string); overload;
+    procedure UnregisterCallBack(AMethod: TIWCallbackMethod); overload;
+    procedure PerformCallBack(Sender: TComponent; const AName: string);
+    function CallbackResponse: TIWCallBackResponse;
+    procedure ResyncEvents;
+    function GetRealTabOrder(AControl: TControl): Integer;
+    procedure AsyncReload(const aForceReload: Boolean = True);
+    procedure ExecuteJS(const ACode: string);
+    {$IFDEF FPC}
+    property Designer: IIWFormDesigner read FDesigner write FDesigner;
+    procedure InvalidateRect(ARect: TRect; Erase: Boolean); override;
+    {$ENDIF}
+  published
+    function get_LayoutMgr: TIWContainerLayout;
+    procedure set_LayoutMgr(Value: TIWContainerLayout);
+    procedure set_BrowserSecurityCheck(AValue: Boolean);
+
+    property ActiveControl: TIWCustomControl read FActiveControl write FActiveControl;
+    property Background: TIWBackground read FBackground write SetBackground;
+    property LayoutMgr: TIWContainerLayout read get_LayoutMgr write set_LayoutMgr;
+    property HandleTabs: Boolean read FHandleTabs write FHandleTabs;
+    property LeftToRight: Boolean read FLeftToRight write FLeftToRight;
+    property LockUntilLoaded: Boolean read FLockUntilLoaded write FLockUntilLoaded;
+    property LockOnSubmit: Boolean read FLockOnSubmit write FLockOnSubmit;
+    property StyleSheet: TIWFileReference read FStyleSheet write SetStyleSheet;
+    property ShowHint;
+    property ServerOnResize: Boolean write SetServerOnResize;
+    property ProgressIndicator: TIWProgressIndicator read GetProgressIndicator write SetProgressIndicator;
+    property OnDefaultAction: TNotifyEvent read FOnDefaultAction write FOnDefaultAction;
+    property OnResize;
+    property JavaScript: TStringList read FJavaScript write SetJavaScript;
+    property DocType: string read FDocType write SetDocType;
+    property KeepAlive: Boolean read FKeepAlive write SetKeepAlive default False;
+    property PageRenderOptions: TIWPageRenderOptions read FPageRenderOptions write SetPageRenderOptions;
+    property Css: string read FCss write FCss;   // Form's Body CSS class
+    // Deprecated XII
+    property BrowserSecurityCheck: Boolean write set_BrowserSecurityCheck;
+    // Depecated XII
+    property UpdateMode: TIWFormUpdateMode write SetUpdateMode;
+    // Deprecated 15.1
+    property XPTheme: boolean write SetDummyBool;
+    property Theme: string write SetTheme;
+    property RenderAsyncEnabled: Boolean read FRenderAsyncEnabled write FRenderAsyncEnabled default True;
+    property TabOrderThreshold: SmallInt read FTabOrderThreshold write FTabOrderThreshold default 0;
+  end;
+
+implementation

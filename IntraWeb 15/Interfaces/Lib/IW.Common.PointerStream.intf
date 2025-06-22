@@ -1,0 +1,36 @@
+unit IW.Common.PointerStream;
+{$I IWCompilerDefines.inc}
+{$POINTERMATH ON}
+
+interface
+
+{
+Stream which uses an existing pointer.
+Stream is not resizable.
+}
+
+uses
+  Classes, IW.Common.XPlatTypes;
+
+type
+  TIWPointerStream = class(TMemoryStream)
+  protected
+    function Realloc(var NewCapacity: NativeIntM): Pointer; override;
+  public
+    constructor Create(aPointer: PByte; aSize: Int64); overload;
+    // SetRange defines a different starting point (Changes Memory property) and size of the underlying stream
+    // After calling SetRange the original memory/size is lost, so you won't have
+    // access to the whole data again unless calling SetRange again.
+    // This is used to avoid copying the content of a TIWPointerStream into another
+    // stream when handling an inline-type ContentStream
+    procedure SetRange(aRangeStart, aRangeSize: Int64);
+  end;
+
+  // Similtar to RTL's TBytesStream however is designed to work with fixed size
+  // buffers that can't be resized
+  TIWBytesStream = class(TBytesStream)
+  protected
+    function Realloc(var NewCapacity: NativeIntM): Pointer; override;
+  end;
+
+implementation

@@ -1,0 +1,53 @@
+unit IW.HTTP.Cookie;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, IW.Common.Lists;
+
+type
+  TIWCookieSameSiteOption = (ssoNone, ssoLax, ssoStrict);
+
+  THTTPCookie = class
+  private
+    function GetSameSiteStr: string;
+  protected
+    mName: string;
+    mValue: string;
+    mPath: string;
+    mExpires: TDateTime;
+    mDomain: string;
+    mSecure: Boolean;
+    mHttpOnly: Boolean;
+    mSameSite: TIWCookieSameSiteOption;
+  public
+    constructor Create(const aName, aValue, aPath: string; const aExpires: TDateTime;
+                       const aHttpOnly: Boolean = False; const aSecure: Boolean = False;
+                       const aSameSite: TIWCookieSameSiteOption = ssoLax);
+    property Name: string read mName write mName;
+    property Value: string read mValue write mValue;
+    property Path: string read mPath write mPath;
+    // Note about Expires cookie field:
+    // To have real session cookies (without expires field), in ISAPI we need to set Expires <= -1. For Indy servers (SA) we need to set Expires = 0
+    property Expires: TDateTime read mExpires write mExpires;
+    property Domain: string read mDomain write mDomain;
+    property HttpOnly: Boolean read mHttpOnly write mHttpOnly;
+    property Secure: Boolean read mSecure write mSecure;
+    // SameSite attribute according to https://tools.ietf.org/html/draft-west-first-party-cookies-07
+    // currently only supported by Chrome/Firefox/Chrome-Android
+    property SameSite: TIWCookieSameSiteOption read mSameSite write mSameSite;
+    property SameSiteStr: string read GetSameSiteStr;
+  end;
+
+  THttpCookieList = class(TIWObjectList)
+  private
+    function FindCookie(const aName: string): Integer;
+  public
+    function AddCookie(const aName, aValue, aPath: string; const aExpires: TDateTime;
+                       const aHttpOnly: Boolean = False; const aSecure: Boolean = False;
+                       const aSameSite: TIWCookieSameSiteOption = ssoLax): Integer;
+    procedure RemoveCookie(const aName, aPath: string);
+  end;
+
+implementation

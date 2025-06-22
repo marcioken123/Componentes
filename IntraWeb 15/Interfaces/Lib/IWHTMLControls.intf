@@ -1,0 +1,355 @@
+unit IWHTMLControls;
+{$I IWCompilerDefines.inc}
+
+{Dist Pub}
+
+interface
+
+uses
+  Classes, Graphics,
+  IWHTMLTag, IWXMLTag, IWScriptEvents, IWControl, IWGlobal, IWColor,
+  IWRenderContext, IWBaseInterfaces, IWMarkupLanguageTag, IWTypes,
+  IWFileReference;
+
+type
+  TIWImagePosition = (ipLeft, ipRight);
+
+  TIWControlImage = class(TPersistent)
+  strict private
+    FOwner: TIWCustomControl;
+    FFileReference: TIWFileReference;
+    FPosition: TIWImagePosition;
+    FWebFontClass: string;
+    FOnChange: TNotifyEvent;
+    procedure Changed;
+  private
+    procedure SetFileReference(const Value: TIWFileReference);
+    procedure SetPosition(const Value: TIWImagePosition);
+    procedure SetWebFontClass(const Value: string);
+    procedure FileReferenceChanged(Sender: TObject);
+    function GetIsEmpty: Boolean;
+  published
+    property FileReference: TIWFileReference read FFileReference write SetFileReference;
+    property Position: TIWImagePosition read FPosition write SetPosition default ipLeft;
+    property WebFontClass: string read FWebFontClass write SetWebFontClass;
+  public
+    constructor Create(AOwner: TIWCustomControl);
+    destructor Destroy; override;
+    procedure Assign(ASource: TPersistent); override;
+    procedure Render(AContext: TIWCompContext; ATag: TIWMarkupLanguageTag; AIsAsync: Boolean; ASetPosition: Boolean = True; ARenderEmpty: Boolean = False);
+    property Empty: Boolean read GetIsEmpty;
+    property OnChange: TNotifyEvent read FOnChange write FOnChange;
+  end;
+
+  TIWControlActionSet = (asCustom, asSpinner1, asSpinner2, asNotch, asRefresh1, asRefresh2, asCog, asHeartBeat, asWarning,
+                         asExclamation, saDiscFlip, saBell, saTrash);
+
+  TAnimationType = (atNone, atSpin, atPulse, atFlip, atShake, atFade, atBounce, atBeat, atBeat_fade);
+
+  TIWControlAnimation = class(TPersistent)
+  strict private
+    FOwner: TIWCustomControl;
+    FWebFontClass: string;
+    FCaption: string;
+    FAnimation: TAnimationType;
+    FDisable: Boolean;
+    FOnChange: TNotifyEvent;
+    procedure Changed;
+    procedure SetAnimation(const Value: TAnimationType);
+    procedure SetCaption(const Value: string);
+    procedure SetWebFontClass(const Value: string);
+    procedure SetDisable(const Value: Boolean);
+    function GetIsEmpty: Boolean;
+    function GetCommonSet: TIWControlActionSet;
+    procedure SetCommonSet(Value: TIWControlActionSet);
+    function FindCommonActionSetIndex(const AWebFontClass: string; AAnimation: TAnimationType): Integer;
+  published
+    property Animation: TAnimationType read FAnimation write SetAnimation default atNone;
+    property WebFontClass: string read FWebFontClass write SetWebFontClass;
+    property Caption: string read FCaption write SetCaption;
+    property Disable: Boolean read FDisable write SetDisable;
+    property CommonSet: TIWControlActionSet read GetCommonSet write SetCommonSet;
+  public
+    constructor Create(AOwner: TIWCustomControl);
+    destructor Destroy; override;
+    procedure Assign(ASource: TPersistent); override;
+    procedure Render(AContext: TIWCompContext; ATag: TIWMarkupLanguageTag);
+    property Empty: Boolean read GetIsEmpty;
+    property OnChange: TNotifyEvent read FOnChange write FOnChange;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWHRule = class(TIWCustomControl)
+  //TODO: add a percentage prop
+  protected
+    FBGColor: TIWColor;
+    FBorderColor : TIWColor;
+    procedure InitControl; override;
+    procedure SetBGColor(const Value: TIWColor);
+    procedure SetBorderColor(const Value: TIWColor);
+  public
+    function get_HasTabOrder: Boolean; override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    function RenderStyle(AContext: TIWCompContext): string; override;
+  published
+    property FriendlyName;
+    property BGColor: TIWColor read FBGColor write SetBGColor default clNone;
+    property BorderColor : TIWColor read FBorderColor write SetBorderColor;
+  end;
+
+  TIWListRenderMode = (rmTable, rmHTMLList);
+
+  TIWListBulletType = (btDisc, btCircle, btSquare, btNone);
+
+  {$include IWPlatformAttrib.inc}
+  TIWList = class(TIWCustomControl)
+  protected
+    FNumbered: Boolean;
+    FBulleted: Boolean;
+    FItems: TStringList;
+    //
+    procedure OnItemsChange( ASender : TObject );
+    procedure SetItems(AValue: TStringList);
+    procedure InitControl; override;
+    function RenderAsHTMLList(AContext: TIWCompContext): TIWHTMLTag;
+    function RenderAsTable(AContext: TIWCompContext): TIWHTMLTag;
+  private
+    FRenderMode: TIWListRenderMode;
+    FBulletType: TIWListBulletType;
+    procedure SetNumbered(const AValue: Boolean);
+    procedure SetBulleted(const AValue: Boolean);
+    procedure SetRenderMode(const AValue: TIWListRenderMode);
+    procedure SetBulletType(const AValue: TIWListBulletType);
+  protected
+    procedure Dispose(ADispose: Boolean); override;
+  public
+    procedure Clear; virtual;
+    constructor Create(AOwner: TComponent); override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    function RenderStyle(AContext: TIWCompContext): string; override;
+  published
+    property FriendlyName;
+    property Font;
+    property Items: TStringList read FItems write SetItems;
+    property Numbered: boolean read FNumbered write SetNumbered default True;
+    property Bulleted: boolean read FBulleted write SetBulleted default False;
+    property RenderMode: TIWListRenderMode read FRenderMode write SetRenderMode default rmTable;
+    property BulletType: TIWListBulletType read FBulletType write SetBulletType default btDisc;
+  end;
+
+  TIWLinkBase = class(TIWCustomControl, IIWSubmitControl)
+  private
+    FDisplayStyle: TIWDisplayStyle;
+    procedure SetDisplayStyle(const Value: TIWDisplayStyle);
+    procedure ImageChanged(Sender: TObject);
+  protected
+    FAlignment: TAlignment;
+    FSubmitParam: string;
+    FRawText: Boolean;
+    FHasTabOrder: Boolean;
+    FImage: TIWControlImage;
+    procedure InitControl; override;
+    procedure Dispose(ADispose: Boolean); override;
+    procedure Submit(const AValue: string); override;
+    procedure SetAlignment(const Value: TAlignment);
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    function get_HasTabOrder: Boolean; override;
+    procedure SetHasTabOrder(const Value: Boolean);
+    procedure SetImage(const Value: TIWControlImage);
+  public
+    function RenderStyle(AComponentContext: TIWCompContext): string; override;
+    function GetSubmitParam: string;
+    property RawText: Boolean read FRawText write FRawText;
+    property DisplayStyle: TIWDisplayStyle read FDisplayStyle write SetDisplayStyle default dsInherit;
+    property Image: TIWControlImage read FImage write SetImage;
+  published
+    property Alignment: TAlignment read FAlignment write SetAlignment;
+    property Enabled;
+    property ExtraTagParams;
+    property Color;
+    property Font;
+    property ScriptEvents;
+    property HasTabOrder: Boolean read get_HasTabOrder write SetHasTabOrder;
+  end;
+
+  TIWURLTargetMode = (tmNewWindow, tmBlank, tmSelf, tmParent, tmTop);
+
+  TIWURLTarget = class(TPersistent)
+  protected
+    FAddressBar: Boolean;
+    FHeight: Integer;
+    FLeft: Integer;
+    FMenu: Boolean;
+    FResizable: Boolean;
+    FScrollbars: Boolean;
+    FToolbar: Boolean;
+    FTop: Integer;
+    FWidth: Integer;
+    FWindowName: string;
+    FBlank: Boolean;
+    FMode: TIWURLTargetMode;
+  public
+    constructor Create; overload;
+    constructor Create(AAddressBar: Boolean; AHeight: Integer;
+      ALeft: Integer; AMenu: Boolean; AResizable: Boolean;
+      AScrollbars: Boolean; AToolbar: Boolean; ATop: Integer;
+      AWidth: Integer; AWindowName: string); overload;
+    function GetModeString(AMode: TIWURLTargetMode): string;
+  published
+    property AddressBar: Boolean read FAddressBar write FAddressBar;
+    property Height: Integer read FHeight write FHeight default -1;
+    property Left: Integer read FLeft write FLeft default -1;
+    property Menu: Boolean read FMenu write FMenu default False;
+    property Resizable: Boolean read FResizable write FResizable default True;
+    property Scrollbars: boolean read FScrollbars write FScrollbars default True;
+    property Toolbar: Boolean read FToolbar write FToolbar default False;
+    property Top: Integer read FTop write FTop default -1;
+    property Width: Integer read FWidth write FWidth default -1;
+    property WindowName: string read FWindowName write FWindowName;
+    property Mode: TIWURLTargetMode read FMode write FMode default tmNewWindow;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWLink = class(TIWLinkBase)
+  private
+    FUseHash: Boolean;
+  protected
+    procedure InitControl; override;
+    procedure HookEvents(AContext: TIWPageContext40; AScriptEvents: TIWScriptEvents); override;
+  public
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+  published
+    property Confirmation;
+    property DoSubmitValidation;
+    property FriendlyName;
+    property OnClick;
+    property OnAsyncClick;
+    property TabOrder;
+
+    property RawText;
+    property Caption;
+    property DisplayStyle;
+    property UseHash: Boolean read FUseHash write FUseHash default True;
+    property Image;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWURL = class(TIWLinkBase)
+  protected
+    FTargetOptions: TIWURLTarget;
+    FTerminateApp: Boolean;
+    FUseTarget: Boolean;
+    FURL: string;
+    //
+    procedure SetTerminateApp(const AValue: Boolean);
+    procedure SetUseTarget(const AValue: Boolean);
+    procedure SetURL(const AValue: string);
+    procedure HookEvents(AContext: TIWPageContext40; AScriptEvents: TIWScriptEvents); override;
+    procedure InitControl; override;
+    function get_HasName: Boolean; override;
+    function GetRenderCaption: string;
+    function GetNewWindowCode: string;
+    function IsRelativeUrl: Boolean;
+    function GetStopCode: string;
+    procedure DoRenderHTML(AContext: TIWCompContext; AParentTag: TIWHTMLTag);
+  public
+    destructor Destroy; override;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+  published
+    property TargetOptions: TIWURLTarget read FTargetOptions write FTargetOptions;
+    property TerminateApp: boolean read FTerminateApp write SetTerminateApp;
+    property URL: string read FURL write SetURL;
+    property UseTarget: boolean read FUseTarget write SetUseTarget;
+    property FriendlyName;
+    property TabOrder;
+    property RawText;
+    property Caption;
+    property DisplayStyle;
+    property Image;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWDownloadLink = class(TIWLinkBase)
+  protected
+    FFileToDownload: TIWFileDownloadReference;
+    procedure InitControl; override;
+    procedure Dispose(ADispose: Boolean); override;
+    procedure DoRender(AContext: TIWCompContext);
+    procedure FileChanged(ASender: TObject);
+  public
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+  published
+    property FriendlyName;
+    property OnAsyncClick;
+    property TabOrder;
+    property Caption;
+    property DisplayStyle;
+    property Image;
+    property FileToDownload: TIWFileDownloadReference read FFileToDownload write FFileToDownload;
+  end;
+
+  TIWAppletAlignment = (aaTop, aaMiddle, aaBottom, aaLeft, aaRight);
+
+  {$include IWPlatformAttrib.inc}
+  TIWApplet = class(TIWCustomControl)
+  protected
+    FAlignment: TIWAppletAlignment;
+    FAltText: string;
+    FAppletName: string;
+    FArchive: string;
+    FClassFile: string;
+    FCodeBase: string;
+    FHorizSpace: Integer;
+    FParams: TStringList;
+    FVertSpace: Integer;
+    //
+    procedure SetParams(const AValue: TStringList);
+    procedure InitControl; override;
+  protected
+    procedure Dispose(ADispose: Boolean); override;
+  public
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+  published
+    property Alignment: TIWAppletAlignment read FAlignment write FAlignment;
+    property AltText: string read FAltText write FAltText;
+    property AppletName: string read FAppletName write FAppletName;
+    property Archive: string read FArchive write FArchive;
+    property ClassFile: string read FClassFile write FClassFile;
+    property CodeBase: string read FCodeBase write FCodeBase;
+    property FriendlyName;
+    property HorizSpace: Integer read FHorizSpace write FHorizSpace;
+    property Params: TStringList read FParams write SetParams;
+    property VertSpace: Integer read FVertSpace write FVertSpace;
+  end;
+
+  TIWURLWindowScrolling = (usYes, usNo, usAuto);
+
+  {$include IWPlatformAttrib.inc}
+  TIWURLWindow = class(TIWCustomControl)
+  protected
+    FURI: string;
+    FLongDesc: string;
+    FBorder: Boolean;
+    FMarginWidth: Integer;
+    FMarginHeight: Integer;
+    FScrolling: TIWURLWindowScrolling;
+    procedure InitControl; override;
+    procedure SetURI(AValue: string);
+  public
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+  published
+    property FriendlyName;
+    property Align;
+    property URI: string read FURI write SetURI;
+    property LongDesc: string read FLongDesc write FLongDesc;
+    property Border: Boolean read FBorder write FBorder;
+    property MarginWidth: Integer read FMarginWidth write FMarginWidth;
+    property MarginHeight: Integer read FMarginHeight write FMarginHeight;
+    property Scrolling: TIWURLWindowScrolling read FScrolling write FScrolling;
+    property Height;
+    property Width;
+  end;
+
+implementation

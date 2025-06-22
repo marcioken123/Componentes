@@ -1,0 +1,87 @@
+unit IW.Common.SysTools;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, SyncObjs, Windows, Classes;
+
+// Procs
+  procedure Check(const ACondition: Boolean; const AMsg: string);
+  procedure LogFileAppend(const AData: string; const AExtension: string = 'log');
+  procedure AddToEventLog(const AMessage: string);
+  procedure FileAppend(const APathName: string; const AData: string);
+  function FileContents(const APathname: string): string;
+  // FileMake instead of FileCreate to avoid conflict with one in SysUtils and possible
+  // use of wrong one as they can share the same signatures
+  procedure FileMake(const APathName: string; const AData: string = '';
+   const AOverwrite: Boolean = True);
+  procedure FileCopy(const ASource, ADest: string; const AOverwrite: Boolean = False);
+  procedure FileDelete(const APathname: string);
+  procedure FileMove(const ASource, ADest: string; const AOverwrite: Boolean = False);
+  function IncludeTrailingPathDelim(const APath: string): string;
+  function FindInstanceContainingResource(const AResName: string; AType: PWideChar): THandle;
+  function FindInstanceContainingResourceEx(const AResName: UnicodeString; AType: PWideChar; var ErrCode: Integer): THandle;
+   function FindResourceEx(const AResName: UnicodeString; AType: PWideChar; var AHInstance: THandle): THandle;
+  function GetPropertyList(pClassInfo: Pointer): TStringList;
+  function iif(const AValue: string; const ATrue: string; const AFalse: string = ''): string;
+    overload;
+  function iif(const AValue: Boolean; const ATrue: string; const AFalse: string = ''): string;
+    overload;
+  function iif(const AValue: Boolean; const ATrue, AFalse: Integer): Integer; overload;
+  function IsDesignTimePackage: Boolean;
+  function IsDebugging: Boolean;
+    // Temp file creation
+  function MakeSystemTempFile(APath: string = ''; APrefix: string = 'ATZ'): string;
+  function MakeTempFile(APath: string; const APrefix: string = 'ATZ'; const AExtension: string = ''; const AUseRandomName: Boolean = False): string;
+
+  function Minutes(const iMin: Integer): TDateTime;
+  function PosInIntArray(const iLook: Integer; Search: array of Integer): Integer;
+  function PosInStrArray(const sLook: string; Search: array of string): Integer;
+  function RemoveFileExt(const AFilename: string): string;
+  function IsNumeric(const c1: Char): Boolean;
+  procedure Shell(const asCmd, asFile: string; const abWait: Boolean = false);
+  function TempPath: string;
+  function Win32SafeCheck(ARetVal: BOOL): BOOL;
+  function MakeDirectory(const Dir: string; RaiseOnError: boolean = true): Boolean;
+  function DirectoryExists(const Directory: string): Boolean;
+  function CriticalFolder(ADirectory: string): Boolean;
+  procedure SetThreadName(const AName: string);
+  // cross compiler function to get locale settings avoiding warnings
+  function IWFormatSettings: TFormatSettings;
+  // delete a directory tree
+  function IWDelTree(const ADirectory: string): Boolean;
+
+  function IWGetFileSize(const AFileName: string): Int64;
+
+  // Creates 160-bit random string, ncoded using a modified Base64 encoding (URI friendly, according to RFC 2396)
+  function NewGuidEncode64: string;
+  // Creates 160-bit random string used as Nonce
+  function NewNonceEncode64: string;
+
+  function IsValidSessionID(const aSessionID: string): Boolean;
+
+  function IsLocalHost(const addr: string): Boolean;
+  function IsPrivateIP(addr: string): Boolean;
+
+const
+  BoolStr: array[Boolean] of string = ('False', 'True');
+  BoolChar: array[Boolean] of Char = ('F', 'T');
+  YesNoStr: array[Boolean] of string = ('No', 'Yes');
+  CR = #13;
+  LF = #10;
+  TAB = #9;
+  EOL = CR + LF;
+  QT = '''';
+  PATHDELIM = '\';
+
+var
+  GVoid: string = '';
+  GAppPathname: string = ''; // w:\source\guess\guess.exe
+  GAppFilename: string = ''; // guess.exe
+  gsAppPath: string = ''; // w:\source\guess\
+  gsAppName: string = '';
+  gsTempPath: string = '';
+  GSystemPath: string = '';
+
+implementation

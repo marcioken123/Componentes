@@ -1,0 +1,39 @@
+unit IW.Common.Stream;
+{$I IWCompilerDefines.inc}
+
+interface
+
+{
+TMemoryStream descendant with a few customizations
+}
+
+uses
+  Classes, SysUtils, IW.Common.XPlatTypes;
+
+const
+  _2KB = 2048;
+  _8KB = 8192;
+  _32KB = 32768;
+
+type
+  TIWMemoryStream = class(TMemoryStream)
+  private
+    class var FInitialSize: Integer;
+    class var FMemoryDelta: Integer;
+    class var FResetPoolSize: Integer;
+  protected
+    function Realloc(var NewCapacity: NativeIntM): Pointer; override;
+  public
+    class function GetInstance: TIWMemoryStream;
+    class procedure ReleaseInstance(var AInstance: TIWMemoryStream);
+    constructor Create(AllocSize: Integer = 0); virtual;
+    destructor Destroy; override;
+    class function CreateCopy(ASourceStream: TStream; Count: Int64): TIWMemoryStream;
+    procedure SaveToFile(const AFileName: string);
+    function Clone: TIWMemoryStream;
+    class property InitialSize: Integer read FInitialSize write FInitialSize default _2KB;
+    class property MemoryDelta: Integer read FMemoryDelta write FMemoryDelta default _8KB;
+    class property ResetPoolSize: Integer read FResetPoolSize write FResetPoolSize default _32KB;
+  end;
+
+implementation

@@ -1,0 +1,144 @@
+unit IWCompTabControl;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, Controls, Windows,
+  IWVCLBaseContainer, IWRegion, IWHTMLTag, IWRenderContext,
+  IWTypes, IWFont, IWColor,  IWApplication, IWControl,
+  IWBaseInterfaces, SysUtils, IWContainerBorderOptions, IWXMLTag;
+
+const
+  TAB_ROW_HEIGHT = 20;
+
+type
+  TIWTabPage = class;
+
+  {$include IWPlatformAttrib.inc}
+  TIWTabControl = class(TIWCustomRegion, IIWInputControl, IIWSubmitControl)
+  protected
+    FSubmitParam: string;
+    FOnChange: TNotifyEvent;
+    FOnAsyncChange: TIWAsyncEvent;
+    FActiveTabFont: TIWFont;
+    FActiveTabColor: TIWColor;
+    FInactiveTabFont: TIWFont;
+    FInactiveTabColor: TIWColor;
+    FActiveTabBorder: TIWBorderOptions;
+    FInactiveTabBorder: TIWBorderOptions;
+    FPages: TList;
+    FActivePage: Integer;
+    FTabMargin: Integer;
+    FTabPadding: Integer;
+    FTabHeight: Integer;
+    FTabRowHeight: Integer;
+    FTabBorderRadius: Integer;
+    function RenderCSSClass(AComponentContext: TIWCompContext): string; override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    procedure SetActivePage(AIndex: Integer);
+    procedure InitControl; override;
+    procedure InitDesignTime; override;
+
+    // from IIWInputControl
+    procedure SetValue(const AValue: string);
+    procedure SetFileValue(AFile: TFileName);
+    function get_NonEditableAsLabel: Boolean;
+    procedure set_NonEditableAsLabel(AValue: Boolean);
+    function get_Editable: Boolean;
+    procedure set_Editable(aValue: Boolean);
+    procedure GetInputControlNames(ANames: TStringList);
+    function IsForThisControl(AName: string): Boolean;
+    function get_SubmitOnAsyncEvent: Boolean;
+    procedure set_SubmitOnAsyncEvent(Value: Boolean);
+
+    procedure DoOnAsyncChange(AParams: TStringList);
+    procedure Dispose(ADispose: Boolean); override;
+    procedure SetTabMargin(const Value: Integer);
+    procedure SetTabPadding(const Value: Integer);
+    procedure SetTabRowHeight(const Value: Integer);
+    procedure SetTabHeight(const Value: Integer);
+    procedure SetTabBorderRadius(const Value: Integer);
+    procedure TabRowHeightChanged;
+    procedure TabBorderChanged(Sender: TObject);
+    procedure SetActiveTabBorder(const Value: TIWBorderOptions);
+    procedure SetInactiveTabBorder(const Value: TIWBorderOptions);
+    function CssClassName: string;
+    function DoSetActivePage(const AValue: Integer): Boolean;
+  public
+    function GetSubmitParam: string;
+    procedure Submit(const AValue: string);
+    function getSubmitProc: TSubmitProc;
+    property Pages: TList read FPages;
+    procedure pageAdded(APage: TIWTabPage);
+    procedure pageRemoved(APage: TIWTabPage);
+
+    procedure CMDesignHitTest(var Msg: TCmDesignHitTest); message CM_DESIGNHITTEST;
+    function CreateNewPage(const APageTitle: string = ''; const APageName: string = ''): TIWTabPage;
+    function RenderStyle(AContext: TIWCompContext): string; override;
+    function TabIndex(const ATab: TIWTabPage): Integer;
+  published
+    property OnChange: TNotifyEvent read FOnChange write FOnChange;
+    property OnAsyncChange: TIWAsyncEvent read FOnAsyncChange write FOnAsyncChange;
+    property ActiveTabFont: TIWFont read FActiveTabFont write FActiveTabFont;
+    property InactiveTabFont: TIWFont read FInactiveTabFont write FInactiveTabFont;
+    property ActiveTabColor: TIWColor read FActiveTabColor write FActiveTabColor;
+    property InactiveTabColor: TIWColor read FInactiveTabColor write FInactiveTabColor;
+
+    property ActivePage: Integer read FActivePage write SetActivePage;
+    property Align;
+    property Anchors;
+    property BorderOptions;
+    property TabOrder;
+    property Color;
+    property ParentShowHint;
+    property ShowHint;
+    property Hint;
+    property Cursor;
+    property ClipRegion;
+    property LayoutMgr;
+    property ExtraTagParams;
+    property ZIndex;
+    property StyleRenderOptions;
+    //
+    property OnHTMLTag;
+    property OnCreate;
+    //
+    property TabMargin: Integer read FTabMargin write SetTabMargin default 0;
+    property TabPadding: Integer read FTabPadding write SetTabPadding default 3;
+    property TabRowHeight: Integer read FTabRowHeight write SetTabRowHeight default TAB_ROW_HEIGHT;
+    property TabHeight: Integer read FTabHeight write SetTabHeight default TAB_ROW_HEIGHT;
+    property TabBorderRadius: Integer read FTabBorderRadius write SetTabBorderRadius default 0;
+    property ActiveTabBorder: TIWBorderOptions read FActiveTabBorder write SetActiveTabBorder;
+    property InactiveTabBorder: TIWBorderOptions read FInactiveTabBorder write SetInactiveTabBorder;
+    property Css;
+  end;
+
+  TIWTabPage = class(TIWCustomRegion)
+  private
+    FPageIndex: Integer;
+  protected
+    FTitle: string;
+    FChanged: Boolean;
+    procedure set_Visible(Value: Boolean); override;
+    function RenderCSSClass(AComponentContext: TIWCompContext): string; override;
+    function RenderStyle(AComponentContext: TIWCompContext): string; override;
+    procedure ParentChanging(AOldParent, AParent: TComponent); override;
+    procedure InitControl; override;
+    procedure InitDesignTime; override;
+    procedure SetTitle(AValue: string);
+    function CssClassName: string;
+    function HasSameStyle(aPage: TIWTabPage): Boolean;
+  public
+    procedure Invalidate; override;
+  published
+    property Title: string read FTitle write SetTitle;
+    property BorderOptions;
+    property Color;
+  end;
+
+// This is needed to be public because the DSN Paint Handlers uses it too
+function TabOrderCompare(Item1, Item2: Pointer): Integer;
+
+implementation

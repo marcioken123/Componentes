@@ -1,0 +1,572 @@
+unit IWDBStdCtrls;
+{$I IWCompilerDefines.inc}
+
+{PUBDIST}
+
+interface
+
+uses
+  SysUtils, Controls, Classes, DB,
+  IWControl, IWCompCheckbox, IWCompEdit, IWCompLabel, IWCompListbox, IWCompMemo,
+  IWCompText, IWHTMLTag, IWFileReference, IWXMLTag,
+  IWRenderContext, IWBaseInterfaces, IWBaseControl, IWScriptEvents,
+  IW.Common.XPlatTypes;
+
+type
+  EIWDataSetNotEditingError = class(Exception)
+    constructor Create(DataSource: TDataSource);
+  end;
+
+  TNavigateBtn = (
+    nbFirst, nbPrior, nbNext, nbLast,
+    nbInsert, nbDelete, nbEdit, nbPost, nbCancel, nbRefresh);
+  TButtonSet = set of TNavigateBtn;
+
+  TIWDBNavigator = class;
+
+  TIWDBNavImages = class(TPersistent)
+  protected
+    FDelete: TIWFileReference;
+    FPost: TIWFileReference;
+    FCancel: TIWFileReference;
+    FFirst: TIWFileReference;
+    FNext: TIWFileReference;
+    FInsert: TIWFileReference;
+    FEdit: TIWFileReference;
+    FRefresh: TIWFileReference;
+    FLast: TIWFileReference;
+    FPrior: TIWFileReference;
+    //
+    FDelete_Disabled: TIWFileReference;
+    FPost_Disabled: TIWFileReference;
+    FCancel_Disabled: TIWFileReference;
+    FFirst_Disabled: TIWFileReference;
+    FNext_Disabled: TIWFileReference;
+    FInsert_Disabled: TIWFileReference;
+    FEdit_Disabled: TIWFileReference;
+    FRefresh_Disabled: TIWFileReference;
+    FLast_Disabled: TIWFileReference;
+    FPrior_Disabled: TIWFileReference;
+    FParentDBNavigator: TIWDBNavigator;
+    //
+    procedure SetCancel(const Value: TIWFileReference);
+    procedure SetDelete(const Value: TIWFileReference);
+    procedure SetEdit(const Value: TIWFileReference);
+    procedure SetFirst(const Value: TIWFileReference);
+    procedure SetInsert(const Value: TIWFileReference);
+    procedure SetLast(const Value: TIWFileReference);
+    procedure SetNext(const Value: TIWFileReference);
+    procedure SetPost(const Value: TIWFileReference);
+    procedure SetPrior(const Value: TIWFileReference);
+    procedure SetRefresh(const Value: TIWFileReference);
+    procedure SetCancel_Disabled(const Value: TIWFileReference);
+    procedure SetDelete_Disabled(const Value: TIWFileReference);
+    procedure SetEdit_Disabled(const Value: TIWFileReference);
+    procedure SetFirst_Disabled(const Value: TIWFileReference);
+    procedure SetInsert_Disabled(const Value: TIWFileReference);
+    procedure SetLast_Disabled(const Value: TIWFileReference);
+    procedure SetNext_Disabled(const Value: TIWFileReference);
+    procedure SetPost_Disabled(const Value: TIWFileReference);
+    procedure SetPrior_Disabled(const Value: TIWFileReference);
+    procedure SetRefresh_Disabled(const Value: TIWFileReference);
+  public
+    constructor Create(const AParenDBNav: TIWDBNavigator); overload;
+    constructor Create(ACancel, ADelete, AEdit, AFirst, AInsert, ALast,
+      ANext, APost, APrior, ARefresh, ACancelDisabled, ADeleteDisabled,
+      AEditDisabled, AFirstDisabled, AInsertDisabled, ALastDisabled,
+      ANextDisabled, APostDisabled, APriorDisabled, ARefreshDisabled: TIWFileReference); overload;
+    destructor Destroy; override;
+  published
+    property First_Enabled: TIWFileReference read FFirst write SetFirst;
+    property First_Disabled: TIWFileReference read FFirst_Disabled write SetFirst_Disabled;
+    property Prior_Enabled: TIWFileReference read FPrior write SetPrior;
+    property Prior_Disabled: TIWFileReference read FPrior_Disabled write SetPrior_Disabled;
+    property Next_Enabled: TIWFileReference read FNext write SetNext;
+    property Next_Disabled: TIWFileReference read FNext_Disabled write SetNext_Disabled;
+    property Last_Enabled: TIWFileReference read FLast write SetLast;
+    property Last_Disabled: TIWFileReference read FLast_Disabled write SetLast_Disabled;
+    property Edit_Enabled: TIWFileReference read FEdit write SetEdit;
+    property Edit_Disabled: TIWFileReference read FEdit_Disabled write SetEdit_Disabled;
+    property Insert_Enabled: TIWFileReference read FInsert write SetInsert;
+    property Insert_Disabled: TIWFileReference read FInsert_Disabled write SetInsert_Disabled;
+    property Delete_Enabled: TIWFileReference read FDelete write SetDelete;
+    property Delete_Disabled: TIWFileReference read FDelete_Disabled write SetDelete_Disabled;
+    property Post_Enabled: TIWFileReference read FPost write SetPost;
+    property Post_Disabled: TIWFileReference read FPost_Disabled write SetPost_Disabled;
+    property Cancel_Enabled: TIWFileReference read FCancel write SetCancel;
+    property Cancel_Disabled: TIWFileReference read FCancel_Disabled write SetCancel_Disabled;
+    property Refresh_Enabled: TIWFileReference read FRefresh write SetRefresh;
+    property Refresh_Disabled: TIWFileReference read FRefresh_Disabled write SetRefresh_Disabled;
+  end;
+
+  TIWDBNavConfirmations = class(TPersistent)
+  protected
+    FFirst: string;
+    FPrior: string;
+    FNext: string;
+    FLast: string;
+    FEdit: string;
+    FInsert: string;
+    FDelete: string;
+    FPost: string;
+    FCancel: string;
+    FRefresh: string;
+  public
+    constructor Create(const ADesignMode: Boolean); overload;
+    constructor Create(AFirst, APrior, ANext, ALast, AEdit, AInsert,
+      ADelete, APost, ACancel, ARefresh: string); overload;
+  published
+    property First: string read FFirst write FFirst;
+    property Prior: string read FPrior write FPrior;
+    property Next: string read FNext write FNext;
+    property Last: string read FLast write FLast;
+    property Edit: string read FEdit write FEdit;
+    property Insert: string read FInsert write FInsert;
+    property Delete: string read FDelete write FDelete;
+    property Post: string read FPost write FPost;
+    property Cancel: string read FCancel write FCancel;
+    property Refresh: string read FRefresh write FRefresh;
+  end;
+
+  TIWOrientation = (orHorizontal, orVertical);
+
+  TIWDataLink = class(TDataLink)
+  private
+    FControl: TIWBaseControl;
+    procedure UpdateEditable;
+  protected
+    procedure ActiveChanged; override;
+    procedure EditingChanged; override;
+    procedure LayoutChanged; override;
+    procedure DataEvent(Event: TDataEvent; Info: NativeIntDE); override;
+    property Control: TIWBaseControl read FControl;
+  public
+    constructor Create(AControl: TIWBaseControl);
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWDBCheckBox = class(TIWCustomCheckBox, IIWAutoEditableControl)
+  private
+    FDataLink: TIWDataLink;
+    procedure SetDataSource(const Value: TDataSource);
+  protected
+    FAutoEditable: Boolean;
+    FDataField: string;
+    FDataSource: TDataSource;
+    FValueChecked: string;
+    FValueUnchecked: string;
+    //
+    procedure Notification(AComponent: TComponent; AOperation: TOperation); override;
+    procedure SetDataField(const AValue: string);
+    procedure InitControl; override;
+    procedure CheckData; virtual;
+    procedure EditingChanged;
+    procedure ValueChanged; override;
+  public
+    destructor Destroy; override;
+
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+  published
+    property AutoEditable: Boolean read FAutoEditable write FAutoEditable;
+    property DataField: string read FDataField write SetDataField;
+    property DataSource: TDataSource read FDataSource write SetDataSource;
+    property FriendlyName;
+    property ValueChecked: string read FValueChecked write FValueChecked;
+    property ValueUnchecked: string read FValueUnchecked write FValueUnchecked;
+
+//    property AsyncServerProcess;
+    property OnAsyncClick;
+    property OnAsyncChange;
+    property OnAsyncEnter;
+    property OnAsyncExit;
+    property OnAsyncKeyDown;
+    property OnAsyncKeyUp;
+    property OnAsyncKeyPress;
+    property OnAsyncMouseDown;
+    property OnAsyncMouseMove;
+    property OnAsyncMouseOver;
+    property OnAsyncMouseOut;
+    property OnAsyncMouseUp;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWDBComboBox = class(TIWCustomCombobox, IIWAutoEditableControl)
+  private
+    FDataLink: TIWDataLink;
+    procedure SetDataSource(const Value: TDataSource);
+  protected
+    FAutoEditable: Boolean;
+    FDataField: string;
+    FDataSource: TDataSource;
+    //
+    procedure Notification(AComponent: TComponent; AOperation: TOperation); override;
+    procedure SetValue(const AValue: string); override;
+    procedure InitControl; override;
+    procedure CheckData; virtual;
+    procedure EditingChanged;
+  public
+    destructor Destroy; override;
+
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+  published
+    property AutoEditable: Boolean read FAutoEditable write FAutoEditable;
+    property DataField: string read FDataField write FDataField;
+    property DataSource: TDataSource read FDataSource write SetDataSource;
+    property FriendlyName;
+    property ItemIndex;
+    property Items;
+    property Sorted;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWDBEdit = class(TIWHtml5Edit, IIWAutoEditableControl)
+  private
+    FDataLink: TIWDataLink;
+    procedure SetDataSource(const Value: TDataSource);
+    procedure SetDataField(const AValue: string);
+  protected
+    FAutoEditable: Boolean;
+    FDataField: string;
+    FDataSource: TDataSource;
+    //
+    procedure Notification(AComponent: TComponent; AOperation: TOperation); override;
+    procedure Paint; override;
+    procedure SetValue(const AValue: string); override;
+
+    procedure InitControl; override;
+    procedure CheckData; virtual;
+    procedure EditingChanged;
+    procedure Dispose(ADispose: Boolean); override;
+  public
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+  published
+    property AutoEditable: Boolean read FAutoEditable write FAutoEditable;
+    property DataField: string read FDataField write SetDataField;
+    property DataSource: TDataSource read FDataSource write SetDataSource;
+    property FriendlyName;
+    property PasswordPrompt;
+    property Attributes;
+    property DataType;
+    property DataTypeOptions;
+    property AsDateTime;
+    property DelayKeyEvents;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWDBLabel = class(TIWCustomLabel)
+  private
+    FDataLink: TIWDataLink;
+    procedure SetDataSource(const Value: TDataSource);
+  protected
+    FDataField: string;
+    FDataSource: TDataSource;
+    //
+    procedure Notification(AComponent: TComponent; AOperation: TOperation); override;
+    procedure Paint; override;
+    procedure InitControl; override;
+    procedure CheckData; virtual;
+  public
+    destructor Destroy; override;
+
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+  published
+    property AutoSize;
+    property DataField: string read FDataField write FDataField;
+    property DataSource: TDataSource read FDataSource write SetDataSource;
+    property FriendlyName;
+
+//    property AsyncServerProcess;
+    property OnAsyncClick;
+    property OnAsyncMouseDown;
+    property OnAsyncMouseMove;
+    property OnAsyncMouseOver;
+    property OnAsyncMouseOut;
+    property OnAsyncMouseUp;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWDBListbox = class(TIWCustomListbox, IIWAutoEditableControl)
+  private
+    FDataLink: TIWDataLink;
+    procedure SetDataSource(const Value: TDataSource);
+  protected
+    FTrimValues: Boolean;
+    FAutoEditable: Boolean;
+    FDataField: string;
+    FDataSource: TDataSource;
+    //
+    procedure Notification(AComponent: TComponent; AOperation: TOperation); override;
+    procedure SetValue(const AValue: string); override;
+    procedure InitControl; override;
+    procedure CheckData; virtual;
+    procedure EditingChanged;
+  public
+    destructor Destroy; override;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+  published
+    property TrimValues: Boolean read FTrimValues write FTrimValues;
+    property AutoEditable: Boolean read FAutoEditable write FAutoEditable;
+    property DataField: string read FDataField write FDataField;
+    property DataSource: TDataSource read FDataSource write SetDataSource;
+    property FriendlyName;
+    property Items;
+    property ItemIndex;
+    property Sorted;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWDBLookupComboBox = class(TIWCustomCombobox, IIWAutoEditableControl, IIWExInputControl)
+  private
+    FDataLink: TIWDataLink;
+    FAutoSetListSourceCursor: Boolean;
+    FAutoSetDetailState: Boolean;
+    FOnLoadLookupList: TNotifyEvent;
+    procedure SetDataSource(const Value: TDataSource);
+    function GetKeyValue: Variant;
+    procedure SetKeyValue(const Value: Variant);
+    procedure SetDisableWhenEmpty(const Value: Boolean);
+    procedure CheckData; virtual;
+    function ShouldRenderAutoSetListSourceCursorEvent: Boolean;
+  protected
+    FAutoEditable: Boolean;
+    FDataField: string;
+    FDataSource: TDataSource;
+    FDisableWhenEmpty: Boolean;
+    FKeyField: string;
+    FKeyItems: TStringList;
+    FListField: string;
+    FListSource: TDataSource;
+    FKeyValue: variant;
+    procedure Notification(AComponent: TComponent; AOperation: TOperation); override;
+    procedure SetValue(const AValue: string); overload; override;
+    procedure InitControl; override;
+    procedure EditingChanged;
+    procedure DoSetListSourceCursor;
+    procedure MasterChanged(const ASetState, AEnabled: Boolean); virtual;
+    procedure DoOnAsyncChange(AParams: TStringList); override;
+    procedure RegisterAsyncEvents(APageContext: TIWPageContext40); override;
+    procedure AssignAsyncEvents(APageContext: TIWPageContext40; AScriptEvents: TIWScriptEvents); override;
+    // IIWExInputControl
+    procedure SetValue(const AValue: string; out AValueChanged: Boolean); reintroduce; overload; virtual;
+    procedure ValueChanged; virtual;
+  public
+    destructor Destroy; override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    function GetSelectedValue: string; override;
+    property KeyValue: Variant read GetKeyValue write SetKeyValue;
+  published
+    property AutoEditable: Boolean read FAutoEditable write FAutoEditable;
+    property DataField: string read FDataField write FDataField;
+    property DataSource: TDataSource read FDataSource write SetDataSource;
+    property FriendlyName;
+    property KeyField: string read FKeyField write FKeyField;
+    property ListField: string read FListField write FListField;
+    property ListSource: TDataSource read FListSource write FListSource;
+    property DisableWhenEmpty: boolean read FDisableWhenEmpty write SetDisableWhenEmpty;
+    property AutoSetListSourceCursor: Boolean read FAutoSetListSourceCursor write FAutoSetListSourceCursor default False;
+    property AutoSetDetailState: Boolean read FAutoSetDetailState write FAutoSetDetailState default False;
+    property OnLoadLookupList: TNotifyEvent read FOnLoadLookupList write FOnLoadLookupList;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWDBLookupListBox = class(TIWCustomListbox, IIWAutoEditableControl, IIWExInputControl)
+  private
+    FDataLink: TIWDataLink;
+    FAutoSetListSourceCursor: Boolean;
+    FAutoSetDetailState: Boolean;
+    FOnLoadLookupList: TNotifyEvent;
+    procedure SetDataSource(const Value: TDataSource);
+    function GetKeyValue: Variant;
+    procedure SetKeyValue(const Value: Variant);
+    procedure SetDisableWhenEmpty(const Value: Boolean);
+    function ShouldRenderAutoSetListSourceCursorEvent: Boolean;
+  protected
+    FAutoEditable: Boolean;
+    FDataField: string;
+    FDataSource: TDataSource;
+    FKeyField: string;
+    FKeyItems: TStringList;
+    FListField: string;
+    FListSource: TDataSource;
+    FDisableWhenEmpty: Boolean;
+    FKeyValue: variant;
+    //
+    procedure Notification(AComponent: TComponent; AOperation: TOperation); override;
+    procedure SetValue(const AValue: string); overload; override;
+    procedure InitControl; override;
+    procedure CheckData; virtual;
+    procedure EditingChanged;
+    procedure DoSetListSourceCursor;
+    procedure MasterChanged(const ASetState, AEnabled: Boolean); virtual;
+    procedure DoOnAsyncChange(AParams: TStringList); override;
+    procedure RegisterAsyncEvents(APageContext: TIWPageContext40); override;
+    procedure AssignAsyncEvents(APageContext: TIWPageContext40; AScriptEvents: TIWScriptEvents); override;
+    // IIWExInputControl
+    procedure SetValue(const AValue: string; out AValueChanged: Boolean); reintroduce; overload; virtual;
+    procedure ValueChanged; virtual;
+  public
+    destructor Destroy; override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    function GetSelectedValue: string; override;
+    property KeyValue: Variant read GetKeyValue write SetKeyValue;
+  published
+    property AutoEditable: Boolean read FAutoEditable write FAutoEditable;
+    property DataField: string read FDataField write FDataField;
+    property DataSource: TDataSource read FDataSource write SetDataSource;
+    property FriendlyName;
+    property KeyField: string read FKeyField write FKeyField;
+    property ListField: string read FListField write FListField;
+    property ListSource: TDataSource read FListSource write FListSource;
+    property DisableWhenEmpty: boolean read FDisableWhenEmpty write SetDisableWhenEmpty;
+    property AutoSetListSourceCursor: Boolean read FAutoSetListSourceCursor write FAutoSetListSourceCursor default False;
+    property AutoSetDetailState: Boolean read FAutoSetDetailState write FAutoSetDetailState default False;
+    property OnLoadLookupList: TNotifyEvent read FOnLoadLookupList write FOnLoadLookupList;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWDBMemo = class(TIWCustomMemo, IIWAutoEditableControl)
+  private
+    FDataLink: TIWDataLink;
+    procedure SetDataSource(const Value: TDataSource);
+  protected
+    FAutoEditable: Boolean;
+    FDataField: string;
+    FDataSource: TDataSource;
+    //
+    function SupportsInput: Boolean; override;
+    procedure Notification(AComponent: TComponent; AOperation: TOperation); override;
+    procedure SetValue(const AValue: string); override;
+    procedure InitControl; override;
+    procedure CheckData; virtual;
+    procedure EditingChanged;
+  public
+    destructor Destroy; override;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+  published
+    property AutoEditable: Boolean read FAutoEditable write FAutoEditable;
+    property DataField: string read FDataField write FDataField;
+    property DataSource: TDataSource read FDataSource write SetDataSource;
+    property FriendlyName;
+    property Attributes;
+
+//    property AsyncServerProcess;
+    property OnAsyncClick;
+    property OnAsyncDoubleClick;
+    property OnAsyncChange;
+    property OnAsyncEnter;
+    property OnAsyncExit;
+    property OnAsyncKeyDown;
+    property OnAsyncKeyUp;
+    property OnAsyncKeyPress;
+    property OnAsyncMouseDown;
+    property OnAsyncMouseMove;
+    property OnAsyncMouseOver;
+    property OnAsyncMouseOut;
+    property OnAsyncMouseUp;
+    property OnAsyncSelect;
+    property DelayKeyEvents;
+  end;
+
+  TIWDBNavBeforeActionEvent = procedure (Sender: TObject; NavButton: TNavigateBtn; var Handled: Boolean) of object;
+
+  TIWDBNavInsertMode = (imInsert, imAppend);
+
+  {$include IWPlatformAttrib.inc}
+  TIWDBNavigator = class(TIWCustomControl, IIWSubmitControl)
+  private
+    FDataLink: TIWDataLink;
+    FInsertMode: TIWDBNavInsertMode;
+    procedure SetDataSource(const Value: TDataSource);
+  protected
+    FSubmitParam: string;
+    FConfirmations: TIWDBNavConfirmations;
+    FDataSource: TDataSource;
+    FImageWidth: Integer;
+    FImageHeight: Integer;
+    FOnFirst: TNotifyEvent;
+    FOnPrior: TNotifyEvent;
+    FOnNext: TNotifyEvent;
+    FOnLast: TNotifyEvent;
+    FOnEdit: TNotifyEvent;
+    FOnInsert: TNotifyEvent;
+    FOnDelete: TNotifyEvent;
+    FOnPost: TNotifyEvent;
+    FOnCancel: TNotifyEvent;
+    FOnRefresh: TNotifyEvent;
+    FOnBeforeAction: TIWDBNavBeforeActionEvent;
+    FVisibleButtons: TButtonSet;
+    FDBNavImages: TIWDBNavImages;
+    FOrientation: TIWOrientation;
+    //
+    procedure Notification(AComponent: TComponent; AOperation: TOperation); override;
+    procedure SetVisibleButtons(Value: TButtonSet);
+    procedure SetDBNavImages(const Value: TIWDBNavImages);
+    procedure SetOrientation(const Value: TIWOrientation);
+    procedure InitControl; override;
+    procedure Submit(const AValue: string); override;
+    function GetButton(const AButtonName: string): TNavigateBtn;
+  public
+    destructor Destroy; override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    function GetSubmitParam: string;
+  published
+    property Confirmations: TIWDBNavConfirmations read FConfirmations write FConfirmations;
+    property DataSource: TDataSource read FDataSource write SetDataSource;
+    property FriendlyName;
+    property ImageHeight: Integer read FImageHeight write FImageHeight;
+    property ImageWidth: Integer read FImageWidth write FImageWidth;
+    property VisibleButtons: TButtonSet read FVisibleButtons write SetVisibleButtons;
+    property CustomImages: TIWDBNavImages read FDBNavImages write SetDBNavImages;
+    property Orientation: TIWOrientation read FOrientation write SetOrientation;
+    property InsertMode: TIWDBNavInsertMode read FInsertMode write FInsertMode default imInsert;
+    //
+    property OnFirst: TNotifyEvent read FOnFirst write FOnFirst;
+    property OnPrior: TNotifyEvent read FOnPrior write FOnPrior;
+    property OnNext: TNotifyEvent read FOnNext write FOnNext;
+    property OnLast: TNotifyEvent read FOnLast write FOnLast;
+    property OnEdit: TNotifyEvent read FOnEdit write FOnEdit;
+    property OnInsert: TNotifyEvent read FOnInsert write FOnInsert;
+    property OnDelete: TNotifyEvent read FOnDelete write FOnDelete;
+    property OnPost: TNotifyEvent read FOnPost write FOnPost;
+    property OnCancel: TNotifyEvent read FOnCancel write FOnCancel;
+    property OnRefresh: TNotifyEvent read FOnRefresh write FOnRefresh;
+    property OnBeforeAction: TIWDBNavBeforeActionEvent read FOnBeforeAction write FOnBeforeAction;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWDBText = class(TIWCustomText)
+  private
+    FDataLink: TIWDataLink;
+    procedure SetDataSource(const Value: TDataSource);
+  protected
+    FDataField: string;
+    FDataSource: TDataSource;
+    //
+    procedure Notification(AComponent: TComponent; AOperation: TOperation); override;
+    procedure InitControl; override;
+    procedure CheckData; virtual;
+  public
+    destructor Destroy; override;
+
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+  published
+    property ConvertSpaces;
+    property DataField: string read FDataField write FDataField;
+    property DataSource: TDataSource read FDataSource write SetDataSource;
+    property FriendlyName;
+    property Font;
+    property RawText;
+    property UseFrame;
+    property WantReturns;
+  end;
+
+implementation

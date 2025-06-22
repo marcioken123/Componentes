@@ -1,0 +1,21 @@
+unit IW.Server.Logger;
+
+interface
+
+uses
+  SysUtils, Classes, IW.Common.FileStream;
+
+type
+  TIWRequestLogger = class
+  private
+    FStream: TIWFileStream;
+    class var FCount: Integer;
+  public
+    class var LogFileNamePrefix: string;
+  public
+    procedure LogRequestData(Name, Value: AnsiString);
+    procedure Init;
+    procedure Finalize;
+  end;
+
+implementation

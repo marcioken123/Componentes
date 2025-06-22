@@ -1,0 +1,129 @@
+unit IW.LibDeflate.Import;
+
+//******************************************************************************
+//
+//                           IntraWeb Unit File
+//
+// libdeflate interface file
+//
+// libdeflate is **the fastest** zlib/gzip compatible library currently available
+//
+// https://github.com/ebiggers/libdeflate
+//
+// Copyright(c) 2002-2024 Atozed Software Ltd. All rights reserved.
+//
+//******************************************************************************
+
+interface
+
+{$I IWCompilerDefines.inc}
+{$HINTS OFF}
+
+function InitLibDeflate(const aUseExternalLib: Boolean): Boolean;
+
+procedure SetLibDeflatePathName(const aPathName: string);
+
+type
+  libdeflate_compressor = type Pointer;
+  libdeflate_decompressor = type Pointer;
+
+  size_t = {$IFDEF WIN64} UInt64 {$ELSE} Cardinal {$ENDIF};
+  psize_t = ^size_t;
+  u32 = Cardinal;
+
+  // Result of a call to libdeflate_deflate_decompress(),
+  // libdeflate_zlib_decompress(), or libdeflate_gzip_decompress().
+  libdeflate_result = (
+    // Decompression was successful.
+    LIBDEFLATE_SUCCESS = 0,
+    // Decompressed failed because the compressed data was invalid, corrupt,
+    // or otherwise unsupported.
+    LIBDEFLATE_BAD_DATA = 1,
+    // A NULL 'actual_out_nbytes_ret' was provided, but the data would have
+    // decompressed to fewer than 'out_nbytes_avail' bytes.
+    LIBDEFLATE_SHORT_OUTPUT = 2,
+    // The data would have decompressed to more than 'out_nbytes_avail'
+    // bytes.
+    LIBDEFLATE_INSUFFICIENT_SPACE = 3
+  );
+
+var
+  libdeflate_alloc_compressor: function (
+    compression_level: Integer): libdeflate_compressor; cdecl;
+
+  libdeflate_deflate_compress: function (
+    compressor: libdeflate_compressor;
+    const in_: Pointer;
+    in_nbytes: size_t;
+    out_: Pointer;
+    out_nbytes_avail: size_t): size_t; cdecl;
+
+  libdeflate_deflate_compress_bound: function (
+    compressor: libdeflate_compressor;
+	  in_nbytes: size_t): size_t; cdecl;
+
+  libdeflate_zlib_compress: function(compressor: libdeflate_compressor;
+    const in_: Pointer;
+    in_nbytes: size_t;
+    out_: Pointer;
+    out_nbytes_avail: size_t): size_t; cdecl;
+
+  libdeflate_zlib_compress_bound: function (
+    compressor: libdeflate_compressor;
+	  in_nbytes: size_t): size_t; cdecl;
+
+  libdeflate_gzip_compress: function (
+    compressor: libdeflate_compressor;
+    const in_: Pointer;
+    in_nbytes: size_t;
+    out_: Pointer;
+    out_nbytes_avail: size_t): size_t; cdecl;
+
+  libdeflate_gzip_compress_bound: function (
+    compressor: libdeflate_compressor;
+	  in_nbytes: size_t): size_t; cdecl;
+
+  libdeflate_free_compressor: procedure (
+    compressor: libdeflate_compressor); cdecl;
+
+  libdeflate_alloc_decompressor: function (
+    ): libdeflate_decompressor; cdecl;
+
+  libdeflate_deflate_decompress: function (
+    decompressor: libdeflate_decompressor;
+    const in_: Pointer;
+    in_nbytes: size_t;
+    out_: Pointer;
+    out_nbytes_avail: size_t;
+    actual_out_nbytes_ret: psize_t = nil): libdeflate_result; cdecl;
+
+  libdeflate_zlib_decompress: function (
+    decompressor: libdeflate_decompressor;
+    const in_: Pointer;
+    in_nbytes: size_t;
+    out_: Pointer;
+    out_nbytes_avail: size_t;
+    actual_out_nbytes_ret: psize_t = nil): libdeflate_result; cdecl;
+
+  libdeflate_gzip_decompress: function (
+    decompressor: libdeflate_decompressor;
+    const in_: Pointer;
+    in_nbytes: size_t;
+    out_: Pointer;
+    out_nbytes_avail: size_t;
+    actual_out_nbytes_ret: psize_t = nil): libdeflate_result; cdecl;
+
+  libdeflate_free_decompressor: procedure (
+    decompressor: libdeflate_decompressor); cdecl;
+
+  libdeflate_x86_cpu_features: function(
+    ): u32; cdecl;
+
+  libdeflate_crc32: function (
+    crc: u32; p: Pointer;
+    len: size_t): u32; cdecl;
+
+  libdeflate_get_signature: function(
+    ): smallint; cdecl;
+
+implementation

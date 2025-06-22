@@ -1,0 +1,33 @@
+unit IWBaseHTML40Component;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  IWBaseHTMLComponent, IWHTML40Interfaces, IWBaseRenderContext, IWRenderContext,
+  IWXMLTag;
+
+type
+  TIWBaseHTML40Component = class(TIWBaseHTMLComponent, IIWHTML40Component)
+  private
+    FDoRefreshControl: Boolean;
+  protected
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; virtual;
+
+    function RenderCSSClass(AComponentContext: TIWCompContext): string; virtual;
+    function RenderStyle(AComponentContext: TIWCompContext): string; virtual;
+    procedure RenderScripts(AComponentContext: TIWCompContext); virtual;
+
+    function RenderAsyncComponent(AContext: TIWBaseComponentContext): TIWXMLTag; virtual;
+    procedure AddAsyncStyle(ATag: TIWXMLTag; AStyle: String); 
+
+    function WantsSubmitValidation: Boolean;
+
+  public
+    function get_DoRefreshControl: Boolean;
+    procedure set_DoRefreshControl(AValue: Boolean);
+
+    property DoRefreshControl: Boolean read get_DoRefreshControl write set_DoRefreshControl;
+  end;
+
+implementation

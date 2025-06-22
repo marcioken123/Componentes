@@ -1,0 +1,212 @@
+unit IWCompEdit;
+{$I IWCompilerDefines.inc}
+
+{PUBDIST}
+
+// Disable Compiler warings for DEPRECATED set_RenderSize, setRenderSize and get_RenderSize
+{$WARN SYMBOL_DEPRECATED OFF}
+
+interface
+
+uses
+  Graphics, Forms, Classes, IWControl,
+  IWBaseControl, IWTypes, IWScriptEvents, IWHTMLTag, IWColor,
+  IWXMLTag, IWRenderContext, IWBaseInterfaces, IWMarkupLanguageTag,
+  IWHTML40Interfaces, IWCompLabel, IWApplication;
+
+type
+  TIWCustomEdit = class(TIWCustomControl, IIWInputControl, IIWSubmitControl, IIWInputControl40)
+  private
+    FAttributes: TIWInputAttributes;
+    procedure SetAttributes(const Value: TIWInputAttributes);
+    procedure RenderAsyncInputAttributes(AContext: TIWCompContext; ATag: TIWXMLTag);
+  protected
+    FSubmitParam: string;
+    FAlignment: TAlignment;
+    FBGColor: TIWColor;
+    FFocusColor: TIWColor;
+    FMaxLength: Integer;
+    FOnSubmit: TNotifyEvent;
+    FPasswordPrompt: Boolean;
+    FRequired: Boolean;
+    FReadOnly: Boolean;
+    FTagType: string;
+    FControlBorderWidth: Integer;
+    FLabel: TIWLabel;
+    //
+    procedure DoSubmit;
+    procedure HookEvents(AContext: TIWPageContext40; AScriptEvents: TIWScriptEvents); override;
+    procedure SetValue(const AValue: string); virtual;
+    procedure Submit(const AValue: string); override;
+    procedure SetPasswordPrompt(const AValue: Boolean); virtual;
+    procedure SetBGColor(const Value: TIWColor);
+    procedure SetAlignment(const Value: TAlignment);
+    procedure SetFocusColor(const Value: TIWColor);
+    procedure SetMaxLength(const AValue: Integer);
+    procedure SetReadOnly(const AValue: Boolean);
+    procedure SetRequired(const AValue: Boolean);
+    procedure InitControl; override;
+    function FormHasOnDefaultActionSet: Boolean;
+    function get_ShouldRenderTabOrder: Boolean; override;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    function get_HTMLWidth: Integer; override;
+    function get_HTMLHeight: Integer; override;
+    function GetDisplayText: string; virtual;
+  public
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    function RenderStyle(AContext: TIWCompContext): string; override;
+    property PasswordPrompt: Boolean read FPasswordPrompt write SetPasswordPrompt;
+    function GetSubmitParam: string;
+    property Attributes: TIWInputAttributes read FAttributes write SetAttributes default DefaultIWInputAttributes;
+  published
+    property Alignment: TAlignment read FAlignment write SetAlignment default taLeftJustify;
+
+    property BGColor: TIWColor read FBGColor write SetBGColor default clNone;
+    // Doc
+    property FocusColor: TIWColor read FFocusColor write SetFocusColor default clNone;
+    property DoSubmitValidation;
+    property Editable default True;
+    property NonEditableAsLabel default False;
+
+    property Font;
+    property ExtraTagParams;
+    property FriendlyName;
+    property RenderSize default True;
+    // Doc
+    property MaxLength: Integer read FMaxLength write SetMaxLength default 0;
+    // Doc
+    property ReadOnly: Boolean read FReadOnly write SetReadOnly default False;
+    // Doc
+    property Required: Boolean read FRequired write SetRequired default False;
+    property ScriptEvents;
+    property SubmitOnAsyncEvent;
+    property TabOrder;
+
+    property OnSubmit: TNotifyEvent read FOnSubmit write FOnSubmit;
+    // property AsyncServerProcess;
+
+    property OnAsyncClick;
+    property OnAsyncDoubleClick;
+    property OnAsyncChange;
+    property OnAsyncEnter;
+    property OnAsyncExit;
+    property OnAsyncKeyDown;
+    property OnAsyncKeyUp;
+    property OnAsyncKeyPress;
+    property OnAsyncMouseDown;
+    property OnAsyncMouseMove;
+    property OnAsyncMouseOver;
+    property OnAsyncMouseOut;
+    property OnAsyncMouseUp;
+  end;
+
+  TIWHtml5Edit = class;
+
+  // datetime-local is not implemented because Firefox and Safari don't support it either
+  TIWEditDataType = (stText, stColor, stDate, stTime, stEmail, stNumber,
+                    stPassword, stRange, stTel, stUrl, stDateTimeLocal);
+
+  TIWNumberType = (ntFloat, ntInteger, ntCurrency, ntText);
+
+  TIWNumberValidation = (nvBrowserNative, nvIntraWeb);
+
+  TIWStringCase = (scNormal, scUppercase, scLowercase);
+
+  TIWEditDataTypeOptions = class(TPersistent)
+  private
+    FOwner: TIWHtml5Edit;
+    FNumberType: TIWNumberType;
+    FMax: string;
+    FMin: string;
+    FStep: string;
+    FPattern: string;
+    FNumberValidation: TIWNumberValidation;
+    FTimeSeconds: Boolean;
+    FFloatDP: Byte;
+    FChanged: Boolean;
+    FStringCase: TIWStringCase;
+    procedure SetNumberType(const Value: TIWNumberType);
+    procedure SetMax(const Value: string);
+    procedure SetMin(const Value: string);
+    procedure SetNumberValidation(const Value: TIWNumberValidation);
+    procedure SetPattern(const Value: string);
+    procedure SetStep(const Value: string);
+    procedure SetFloatDP(const Value: Byte);
+    procedure SetStringCase(const Value: TIWStringCase);
+    procedure Changed;
+  published
+    constructor Create(AOwner: TIWHtml5Edit);
+    procedure Render(AContext: TIWCompContext; ATag: TIWMarkupLanguageTag; AIsAsync: Boolean);
+    property Max: string read FMax write SetMax; // can be number or date
+    property Min: string read FMin write SetMin; // can be number or date
+    property Step: string read FStep write SetStep;
+    property Pattern: string read FPattern write SetPattern;
+    property NumberType: TIWNumberType read FNumberType write SetNumberType default ntFloat;
+    property NumberValidation: TIWNumberValidation read FNumberValidation write SetNumberValidation default nvBrowserNative;
+    property TimeSeconds: Boolean read FTimeSeconds write FTimeSeconds default False;
+    property FloatDP: Byte read FFloatDP write SetFloatDP default 0;
+    property StringCase: TIWStringCase read FStringCase write SetStringCase default scNormal;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWHtml5Edit = class(TIWCustomEdit)
+  private
+    FDataType: TIWEditDataType;
+    FDataTypeOptions: TIWEditDataTypeOptions;
+    FDelayKeyEvents: Boolean;
+    FOnAsyncInput: TIWAsyncEvent;
+    procedure SetDataType(const Value: TIWEditDataType);
+    procedure SetDataTypeOptions(const Value: TIWEditDataTypeOptions);
+    function GetAsDateTime: TDateTime;
+    procedure SetAsDateTime(const AValue: TDateTime);
+    function DoGetAsFloat(const AValue: string; AIsPost: Boolean): Double;
+    function GetAsFloat: Double;
+    function GetAsInteger: Integer;
+    procedure SetAsFloat(const Value: Double);
+    procedure SetAsInteger(const Value: Integer);
+    function GetDataType: string;
+  protected
+    procedure RenderScripts(AComponentContext: TIWCompContext); override;
+    procedure NumberTypeChanged(const ANewType: TIWNumberType); virtual;
+    function FormatPostValue(const AValue: string; out AValid: Boolean): string; virtual;
+    procedure SetPasswordPrompt(const AValue: Boolean); override;
+    procedure InitControl; override;
+    procedure Dispose(ADispose: Boolean); override;
+    function GetDisplayText: string; override;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    procedure SetValue(const AValue: string); override;
+    procedure DoOnAsyncInput(AParams: TStringList); virtual;
+    procedure RegisterAsyncEvents(APageContext: TIWPageContext40); override;
+    procedure UnRegisterAsyncEvents; override;
+    procedure AssignAsyncEvents(APageContext: TIWPageContext40; AScriptEvents: TIWScriptEvents); override;
+    property DataType: TIWEditDataType read FDataType write SetDataType default stText;
+    property DataTypeOptions: TIWEditDataTypeOptions read FDataTypeOptions write SetDataTypeOptions;
+    property AsDateTime: TDateTime read GetAsDateTime write SetAsDateTime;
+    property AsInteger: Integer read GetAsInteger write SetAsInteger;
+    property AsFloat: Double read GetAsFloat write SetAsFloat;
+    property DelayKeyEvents: Boolean read FDelayKeyEvents write FDelayKeyEVents default False;
+    property OnAsyncInput: TIWAsyncEvent read FOnAsyncInput write FOnAsyncInput;
+  public
+    procedure Clear;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    procedure SelectAll;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWEdit = class(TIWHtml5Edit)
+  published
+    property Enabled default True;
+    property PasswordPrompt default False;
+    property Text;
+    property Attributes;
+    property DataType;
+    property DataTypeOptions;
+    property DelayKeyEvents;
+    property OnAsyncInput;
+  public
+    property AsDateTime;
+    property AsInteger;
+    property AsFloat;
+  end;
+
+implementation

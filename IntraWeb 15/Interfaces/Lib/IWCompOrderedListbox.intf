@@ -1,0 +1,71 @@
+unit IWCompOrderedListbox;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes,
+  IWBaseInterfaces, IWControl, IWRenderContext, IWHTMLTag, IWFont;
+
+type
+  {$include IWPlatformAttrib.inc}
+  TIWOrderedListbox = class(TIWCustomControl, IIWSubmitControl, IIWInputControl)
+  private
+    FSubmitParam: string;
+
+    // Internal
+    FButtonWidth: Integer;
+    FItems : TStringList;
+
+    // Properties
+    FMoveUpCaption,
+    FMoveDownCaption: string;
+
+    FUpID,
+    FDownID,
+    FListID: string;
+
+    // fonts for visual elements
+    FItemsFont : TIWFont;
+    FCaptionFont : TIWFont;
+    FButtonsFont : TIWFont;
+    //
+    function GetItems: TStringList;
+    procedure SetItems(const Value: TStringList);
+
+  protected
+    FItemIndex: Integer;
+    FMultiSelect: Boolean;
+    FSelectedList: TStringList;
+
+    procedure InitControl; override;
+    procedure Submit(const AValue: string); override;
+
+    procedure GetInputControlNames(ANames: TStringList); override;
+    function IsForThisControl(AName: string): Boolean; override;
+    procedure SetValue(const AValue: string); virtual;
+
+    procedure Dispose(ADispose: Boolean); override;
+    procedure SetItemIndex(AIndex: Integer); virtual;
+    procedure SetMultiSelect(const AValue: Boolean);
+    function GetSelected(AIndex: Integer): Boolean;
+    procedure SetSelected(AIndex: Integer; const AValue: Boolean);
+    procedure ResetSelection;
+  public
+    function GetSubmitParam: string;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    property Selected[AIndex: Integer]: Boolean read GetSelected write SetSelected;
+  published
+    property ButtonWidth : Integer read FButtonWidth write FButtonWidth;
+    property Caption;
+    property Items : TStringList read GetItems write SetItems;
+    property ItemIndex: Integer read FItemIndex write SetItemIndex;
+    property MultiSelect: boolean read FMultiSelect write SetMultiSelect;
+    property MoveDownCaption : string read FMoveDownCaption write FMoveDownCaption;
+    property MoveUpCaption : string read FMoveUpCaption write FMoveUpCaption;
+    property ItemsFont : TIWFont read FItemsFont write FItemsFont;
+    property CaptionFont : TIWFont read FCaptionFont write FCaptionFont;
+    property ButtonsFont : TIWFont read FButtonsFont write FButtonsFont;
+  end;
+
+implementation

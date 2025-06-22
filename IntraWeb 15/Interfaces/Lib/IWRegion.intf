@@ -1,0 +1,197 @@
+unit IWRegion;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, Classes, Controls, Types, Forms, Graphics,
+  IWVCLBaseContainer, IWVCLComponent, IWContainer, IWControl, IWHTMLTag, IWBaseContainerLayout,
+  IWColor, IWBaseInterfaces, IWRenderContext, IWContainerLayout, IWBaseHTMLInterfaces,
+  IWBaseHTMLControl, IWHTML40Interfaces, IWScriptEvents, IWTypes,
+  IWContainerBorderOptions, IWApplication, IWFont, IWBaseControl,
+  IWMarkupLanguageTag, IWHTMLContainer, IWBaseRenderContext, IWXMLTag,
+  IW.Common.RenderStream, IWHTML40Container;
+
+type
+  TIWCustomRegion = class(TIWHTML40Container, IIWHTML40Container, IIWBaseComponent,
+                          IIWBaseHTMLComponent, IIWBaseControl, IIWBaseHTMLControl,
+                          IIWHTML40Control, IIWHTML40Component)
+  private
+    FBorderOptions: TIWContainerBorderOptions;
+    FIWControlImplementation: TIWHTMLControlImplementation;
+    FIWBaseControlImplementation: TIWBaseControlImplementation;
+    FOnCreate: TNotifyEvent;
+    FUseFrame: Boolean;
+    FRegionDiv: TIWHTMLTag;
+    FClip: Boolean;
+    FFocusOutline: Boolean;
+    procedure SetBorderOptions(const Value: TIWContainerBorderOptions);
+    procedure OnBorderChange(ASender: TObject);
+    function get_Clip: Boolean;
+    procedure set_Clip(AValue: Boolean);
+    function get_HasName: Boolean;
+    function get_UseFrame: Boolean;
+    procedure set_UseFrame(AValue: Boolean);
+    function get_HTMLWidth: Integer;
+    function get_HTMLHeight: Integer;
+    function get_HTMLLeft: Integer;
+    function get_HTMLTop: Integer;
+    function get_WebCursor: TIWCursor;
+    procedure set_WebCursor(AValue: TIWCursor);
+    function get_ExtraTagParams: TStringList;
+    procedure set_ExtraTagParams(const Value: TStringList);
+    function get_OnHTMLTag: TIWOnHTMLTag;
+    procedure set_OnHTMLTag(AValue: TIWOnHTMLTag);
+    function get_ZIndex: Integer;
+    procedure set_ZIndex(AValue: Integer);
+    function get_RenderSize: Boolean;
+    procedure set_RenderSize(AValue: Boolean);
+    function get_StyleRenderOptions: TIWStyleRenderOptions;
+    procedure set_StyleRenderOptions(AValue: TIWStyleRenderOptions);
+    function get_ScriptEvents: TIWScriptEvents;
+    procedure set_ScriptEvents(Value: TIWScriptEvents);
+    function get_Css: string;
+    procedure set_Css(const AValue: string);
+    function get_SkinId: string;
+    procedure set_SkinId(const AValue: string);
+    // deprecated
+    function get_SupportsPartial: Boolean;
+    procedure set_SupportsPartial(AValue: Boolean);
+    function IsScriptEventsStored: Boolean;
+    procedure RenderTabOrder(ATag: TIWHTMLTag; APageContext: TObject);
+    procedure SetFocusOutline(const Value: Boolean);
+  protected
+    FWebApplication: TIWApplication;
+    procedure set_WebFont(AValue: TIWFont);
+    function get_WebFont: TIWFont;
+    function get_HTMLName: string; virtual;
+    function get_Visible: Boolean; override;
+    procedure set_Visible(Value: Boolean); override;
+    function get_WebColor: TIWColor; override;
+    procedure set_WebColor(Value: TIWColor); override;
+    function getTabOrder: TIWTabOrder; override;
+    procedure setTabOrder(AValue: TIWTabOrder); override;
+    procedure StyleRenderOptionsChanged(Sender: TObject); virtual;
+    procedure Dispose(ADispose: Boolean); override;
+    procedure AdjustClientRect(var Rect: TRect); override;
+    function GetClientRect: TRect; override;
+    function InitPaintHandler: TIWPaintHandler; override;
+    procedure Loaded; override;
+    function InitContainerContext(AWebApplication: TIWApplication): TIWContainerContext; override;
+    function RenderCSSClass(AComponentContext: TIWCompContext): string; virtual;
+    function RenderStyle(AComponentContext: TIWCompContext): string; virtual;
+    procedure RenderScripts(AComponentContext: TIWCompContext); virtual;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    procedure AddAsyncStyle(ATag: TIWXMLTag; AStyle: String); override;
+    function WantsSubmitValidation: Boolean;
+    function get_Canvas: TCanvas; override;
+    function ParentContainer: IIWBaseContainer;
+    procedure PaintTo(ACanvas: TCanvas);
+    function SupportsSubmit: Boolean;
+    function SupportsInput: Boolean;
+    procedure AddFreeNotifier(AObject: TObject);
+    procedure RemoveFreeNotifier(AObject: TObject);
+    procedure MakeHTMLTag(ATag: TIWHTMLTag; ABuffer: TIWRenderStream); overload;
+    function  MakeHTMLTag(ATag: TIWHTMLTag): string; overload; // SLOW, for backward compatibility only
+    procedure DoHTMLTag(ATag: TIWHTMLTag);
+    procedure DoCreate;
+    procedure InitDesignTime; override;
+    procedure InitControl; override;
+    procedure SetName(const AValue: TComponentName); override;
+    procedure RenderComponents(AContainerContext: TIWContainerContext; APageContext: TIWBasePageContext); override;
+    function NeedsFormTag: Boolean; virtual;
+    function HintEvents(ATag: TIWHTMLTag): string;
+    procedure HookEvents(APageContext: TIWPageContext40; AScriptEvents: TIWScriptEvents); virtual;
+    function CheckComponentForRender(AComponent: TComponent): Boolean; override;
+    function DoPostRenderProcessing(ATag: TIWMarkupLanguageTag;
+      AComponentContext: TIWBaseComponentContext; AComponent: TComponent): TIWMarkupLanguageTag; override;
+    function CheckUpdateTree(AComponent: TComponent): Boolean; override;
+    function get_ComponentName: string;
+    function RequiresRefresh: Boolean;
+    procedure AfterParentChanging(AOldParent, AParent: TComponent); override;
+
+    property SupportsPartial: Boolean read get_SupportsPartial write set_SupportsPartial;
+    property ControlImplementation: TIWHTMLControlImplementation read FIWControlImplementation; // implements IIWBaseComponent, IIWBaseControl, IIWControl;
+    property Align;
+    property Anchors;
+    property Color default clNone;
+    property ParentShowHint default False;
+    property ShowHint default True;
+    property Hint;
+    property Cursor: TIWCursor read get_WebCursor write set_WebCursor default crAuto;
+    property ClipRegion: Boolean read get_Clip write set_Clip default True;
+    property ExtraTagParams: TStringList read get_ExtraTagParams write set_ExtraTagParams;
+    property ZIndex: Integer read get_ZIndex write set_ZIndex default 1000;
+    property OnHTMLTag: TIWOnHTMLTag read get_OnHTMLTag write set_OnHTMLTag;
+    property OnCreate: TNotifyEvent read FOnCreate write FOnCreate;
+    property FocusOutline: Boolean read FFocusOutline write SetFocusOutline default False;
+    property RegionDiv: TIWHTMLTag read FRegionDiv write FRegionDiv;
+  public
+    procedure SetBounds(ALeft, ATop, AWidth, AHeight: Integer); override;
+    procedure Invalidate; override;
+    procedure SetChildrenTabOrder;
+    procedure ResetHTMLName;
+    procedure RefreshAsyncRender;
+    //
+    property BorderOptions: TIWContainerBorderOptions read FBorderOptions write SetBorderOptions;
+    property HTMLName: string read get_HTMLName;
+    property HasName: Boolean read get_HasName;
+    property HTMLWidth: Integer read get_HTMLWidth;
+    property HTMLHeight: Integer read get_HTMLHeight;
+    property UseFrame: Boolean read get_UseFrame write set_UseFrame;
+    property WebColor;
+    property StyleRenderOptions: TIWStyleRenderOptions read get_StyleRenderOptions write set_StyleRenderOptions;
+    property WebFont: TIWFont read get_WebFont write set_WebFont;
+    property Css: string read get_Css write set_Css;
+    property ScriptEvents: TIWScriptEvents read get_ScriptEvents write set_ScriptEvents stored IsScriptEventsStored;
+  published
+    property Visible;
+    property TabOrder default 0;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWRegion = class(TIWCustomRegion, IIWInputControl)
+  private
+    FSplitter: Boolean;
+    FSplitterBorder: Boolean;
+    function get_NonEditableAsLabel: Boolean;
+    procedure set_NonEditableAsLabel(AValue: Boolean);
+    function get_Editable: Boolean;
+    procedure set_Editable(aValue: Boolean);
+    //function get_SubmitOnAsyncEvent: Boolean;
+    //procedure set_SubmitOnAsyncEvent(Value: Boolean);
+  protected
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    procedure InitControl; override;
+    function ContainerPrefix: string; override;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    procedure SetValue(const AValue: string);
+    procedure SetFileValue(AFile: TFileName);
+    procedure GetInputControlNames(ANames: TStringList);
+    function IsForThisControl(AName: string): Boolean;
+    procedure setTabOrder(AValue: TIWTabOrder); override;
+  published
+    property Align;
+    property Anchors;
+    property BorderOptions;
+    property TabOrder;
+    property Color;
+    property ParentShowHint;
+    property ShowHint;
+    property Hint;
+    property Cursor default crAuto;
+    property ClipRegion;
+    property LayoutMgr;
+    property ExtraTagParams;
+    property ZIndex;
+    property OnHTMLTag;
+    property OnCreate;
+    property Splitter: Boolean read FSplitter write FSplitter default False;
+    property SplitterBorder: Boolean read FSplitterBorder write FSplitterBorder default True;
+    property StyleRenderOptions;
+    property ScriptEvents;
+    property FocusOutline;
+    property Css;
+  end;
+
+implementation

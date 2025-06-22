@@ -1,0 +1,19 @@
+unit IW.Browser.Opera;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  IW.Browser.Browser;
+
+type
+  TOpera = class(TBrowser)
+  public
+    const
+      BROWSER_NAME = 'Opera';
+      MIN_VERSION = 12;
+    constructor Create(aVersion: single); override;
+    class function Match(AUserAgent: string; out AVersion: Single): Boolean; override;
+  end;
+
+implementation

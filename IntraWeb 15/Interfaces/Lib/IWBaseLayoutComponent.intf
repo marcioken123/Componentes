@@ -1,0 +1,28 @@
+unit IWBaseLayoutComponent;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, Controls, Forms, IWVCLComponent, IW.Browser.Browser;
+
+type
+  TIWBaseLayoutComponent = class(TIWVCLComponent)
+  private
+    FBrowser: TBrowser;
+    FEnabled: Boolean;
+  protected
+    procedure InitDesignTime; override;
+    procedure InitControl; override;
+    property Browser: TBrowser read FBrowser;
+  public
+    function Able: Boolean; virtual;
+    procedure Initialize(const ABrowser: TBrowser); virtual;
+    procedure Reset; virtual;
+  published
+    property Enabled: Boolean read FEnabled write FEnabled default true;
+    property Name;
+  end;
+
+
+implementation

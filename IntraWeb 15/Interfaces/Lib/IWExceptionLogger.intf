@@ -1,0 +1,95 @@
+unit IWExceptionLogger;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Windows, SysUtils, Classes, SyncObjs, IW.Common.Threads, IW.Http.Request,
+  IW.Common.Lists, IWException;
+
+type
+  TReportInfo = (riAppInfo, riExceptionInfo, riIWAppInfo, riStackTrace, riRequestInfo);
+  TReportInfos = set of TReportInfo;
+
+  TLogType = (ltFile, ltEventLog);
+
+  TIWExceptionLogger = class(TPersistent)
+  private
+    FIgnoreList: TIWListBase;
+    FReportInfos: TReportInfos;
+    FHtmlReportInfos: TReportInfos;
+    FLogType: TLogType;
+    FComputerName: string;
+    FEnabled: Boolean;
+    FFilePath: string;
+    FFileName: string;
+    FPurgeAfterDays: Integer;
+    function IsReportInfosStored: Boolean;
+    function IsHtmlReportInfosStored: Boolean;
+  protected
+    procedure InitControl;
+    function GetDefaultFilePath: string;
+    function GetDefaultFileName: string;
+    function GetFilePath: string;
+    function GetFileName: string;
+  public
+    constructor Create; virtual;
+    destructor Destroy; override;
+    function LogException(Sender: TObject; E: Exception; ARequest: THttpRequest): Boolean;
+    function GetExceptionDetail(E: Exception; ARequest: THttpRequest): string;
+    function GetErrorInfo(E: Exception; ARequest: THttpRequest): TIWExceptionInfo;
+    procedure RegisterIgnoreException(ExceptionClass: ExceptClass);
+    procedure Assign(ASource: TPersistent); override;
+    procedure PurgeFiles;
+  published
+    property ReportInfos: TReportInfos read FReportInfos write FReportInfos stored IsReportInfosStored;
+    property HtmlReportInfos: TReportInfos read FHtmlReportInfos write FHtmlReportInfos stored IsHtmlReportInfosStored;
+    property FilePath: string read FFilePath write FFilePath;
+    property FileName: string read FFileName write FFileName;
+    property LogType: TLogType read FLogType write FLogType default ltFile;
+    property Enabled: Boolean read FEnabled write FEnabled default False;
+    property PurgeAfterDays: Integer read FPurgeAfterDays write FPurgeAfterDays default 0;
+  end;
+
+  IIWExceptionLogWorker = interface
+  ['{07081616-9C84-4B04-9B10-F8F0C26361B4}']
+    function Log: Boolean;
+    function GetExceptionDetail: string;
+    function GetErrorInfo: TIWExceptionInfo;
+  end;
+
+  TIWExceptionLogWorker = class(TInterfacedObject, IIWExceptionLogWorker)
+  strict private
+    FReport: TStrings;
+    FStackTrace: TStrings;
+    FException: Exception;
+    FRequest: THttpRequest;
+    FOwner: TIWExceptionLogger;
+    FAddr,
+    FAppID,
+    FContent,
+    FRunParams,
+    FExceptionSpecific,
+    FDetail: string;
+    FShowSecurityDetails: Boolean;
+    procedure InitExceptionInfo(AForRenderer: Boolean);
+    procedure AddLine(sl: TStrings);
+    procedure GetAppInfo(sl: TStrings);
+    procedure GetExceptionInfo(sl: TStrings);
+    procedure GetIWAppInfo(sl: TStrings);
+    procedure GetStackTrace(sl: TStrings);
+    procedure GetRequestInfo(sl: TStrings);
+    procedure CreateReport(AReport: TStrings);
+    function SaveReport: Boolean;
+    function SaveToFile: Boolean;
+    function SaveToEventLog: Boolean;
+    procedure SetException(AValue: Exception);
+  public
+    constructor Create(AOwner: TIWExceptionLogger; E: Exception; ARequest: THttpRequest);
+    destructor Destroy; override;
+    function Log: Boolean;
+    function GetExceptionDetail: string;
+    function GetErrorInfo: TIWExceptionInfo;
+  end;
+
+implementation

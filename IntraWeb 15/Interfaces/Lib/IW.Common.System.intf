@@ -1,0 +1,75 @@
+unit IW.Common.System;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, SyncObjs, Windows, Classes;
+
+// Original IW.Common.System was renamed to IW.Common.SysTools. You should NOT use this
+// unit when writing new code. Use IW.Common.SysTools instead. This is for
+// compatibility with existing projects which reference IW.Common.System directly.
+
+// All original IW.Common.System funcions are now wrapped in these funcions with
+// the same name. There is a bug in new Delphi compilers when generating HPP files for
+// units with names containing DOTS, if the last part of the name conflicts with some other unit.
+// In this case, there is a conflict between IW.Commom.System and Delphi's own System unit.
+// This causes C++ Builder compiler to fail. As a workaround, we renamed
+// IW.Common.System to IW.Common.SysTools and created this new IW.Common.Sytem
+// which  is still compatible with Delphi
+
+  procedure Check(const ACondition: Boolean; const AMsg: string);
+  procedure LogFileAppend(const AData: string; const AExtension: string = 'log');
+  procedure AddToEventLog(const AMessage: string);
+  procedure FileAppend(const APathName: string; const AData: string);
+  function FileContents(const APathname: string): string;
+  procedure FileMake(const APathName: string; const AData: string = '';
+   const AOverwrite: Boolean = True);
+  procedure FileCopy(const ASource, ADest: string; const AOverwrite: Boolean = False);
+  procedure FileDelete(const APathname: string);
+  procedure FileMove(const ASource, ADest: string; const AOverwrite: Boolean = False);
+  function IncludeTrailingPathDelim(const APath: string): string;
+  function FindInstanceContainingResource(const AResName: string; AType: PChar): THandle;
+  function GetPropertyList(pClassInfo: Pointer): TStringList;
+  function iif(const AValue: string; const ATrue: string; const AFalse: string = ''): string;  overload;
+  function iif(const AValue: Boolean; const ATrue: string; const AFalse: string = ''): string; overload;
+  function iif(const AValue: Boolean; const ATrue, AFalse: Integer): Integer; overload;
+  function IsDesignTimePackage: Boolean;
+  function MakeSystemTempFile(APath: string = ''; APrefix: string = 'ATZ'): string;
+  function MakeTempFile(APath: string; const APrefix: string = 'ATZ'; const AExtension: string = ''; const AUseRandomName: Boolean = False): string;
+  function Minutes(const iMin: Integer): TDateTime;
+  function PosInIntArray(const iLook: Integer; Search: array of Integer): Integer;
+  function PosInStrArray(const sLook: string; Search: array of string): Integer;
+  function RemoveFileExt(const AFilename: string): string;
+  function IsNumeric(const c1: Char): Boolean;
+  procedure Shell(const asCmd, asFile: string; const abWait: Boolean = false);
+  function TempPath: string;
+  function Win32SafeCheck(ARetVal: BOOL): BOOL;
+  function MakeDirectory(const Dir: string; RaiseOnError: boolean = true): Boolean;
+  function DirectoryExists(const Directory: string): Boolean;
+  function CriticalFolder(ADirectory: string): Boolean;
+  procedure SetThreadName(const AName: string);
+  function IWFormatSettings: TFormatSettings;
+  function IWDelTree(const ADirectory: string): Boolean;
+  // these are variables in IW.Common.System. Here we have functions with the same name,
+  // which allow read only access to those variables
+  function GVoid: string;
+  function GAppPathname: string;
+  function GAppFilename: string;
+  function gsAppPath: string;
+  function gsAppName: string;
+  function gsTempPath: string;
+  function GSystemPath: string;
+
+const
+  BoolStr: array[Boolean] of string = ('False', 'True');
+  BoolChar: array[Boolean] of Char = ('F', 'T');
+  YesNoStr: array[Boolean] of string = ('No', 'Yes');
+  CR = #13;
+  LF = #10;
+  TAB = #9;
+  EOL = CR + LF;
+  QT = '''';
+  PATHDELIM = '\';
+
+implementation

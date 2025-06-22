@@ -1,0 +1,20 @@
+unit IWHashTableLock;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, Classes, {$IFDEF FPC} IW.Common.FpcCompat, {$ENDIF} IW.Common.Interlocked;
+
+{$ALIGN ON}
+{$RANGECHECKS OFF}
+{$DEFINE INLINE}
+
+{$IFDEF FPC}
+  {$UNDEF INLINE}  // Inlined CAS methods in FPC don't work correctly
+{$ENDIF}
+
+// A small class which operates on a target variable used as a lock. The target variable is a 64-bit bucket (Int64)
+// which holds the key (lower 32-bits) and the state (or lock, in the upper 32-bits) so the key and state can be manipulated atomically
+// via Interlocked primitives.
+// It started as an implementation

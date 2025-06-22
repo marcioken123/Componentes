@@ -1,0 +1,32 @@
+unit IWAutherBase;
+{$I IWCompilerDefines.inc}
+
+{Dist Public}
+
+interface
+
+uses
+  Classes;
+
+type
+  TAutherPolicy = (apRestrictAll, apRestrictNone);
+  TOnAuthenticate = procedure(aAuthResult: Boolean) of object;
+
+  TIWAutherBase = class(TComponent)
+  private
+    FAutherPolicy: TAutherPolicy;
+    FOnAuthenticate: TOnAuthenticate;
+    procedure SetAutherPolicy(const Value: TAutherPolicy);
+    procedure SetOnAuthenticate(const Value: TOnAuthenticate);
+  protected
+    procedure Notification(AComponent: TComponent; Operation: TOperation); override;
+  public
+    procedure DoOnAuthenticate(aAuthResult: Boolean);
+    function Check(const aUser: string; const aPass: string): Boolean; virtual; abstract;
+    constructor Create(AOwner: TComponent); override;
+  published
+    property AutherPolicy: TAutherPolicy read FAutherPolicy write SetAutherPolicy;
+    property OnAuthenticate: TOnAuthenticate read FOnAuthenticate write SetOnAuthenticate;
+  end;
+
+implementation

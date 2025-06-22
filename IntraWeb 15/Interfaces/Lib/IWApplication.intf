@@ -1,0 +1,469 @@
+unit IWApplication;
+{$I IWCompilerDefines.inc}
+{Dist Source}
+
+interface
+
+uses
+  SysUtils, Types, IW.HTTP.Request, Classes, IWVCLComponent,
+  IW.HTTP.Reply, IW.Common.HttpPacket, {$IFDEF FPC} IW.Common.FpcCompat, {$ENDIF}
+  IWException, IWTypes, IW.Common.RenderStream, IWLFSessionList, IWSessionList,
+  IWCallBack, IW.Browser.Browser, IWPermissions, IW.HTTP.FileItem,
+  IW.Common.Threads, IW.Common.Strings, IW.Common.StreamHelper, IW.Common.StrLists,
+  IW.Common.Lists, IWCallBackFunc, IW.OAuth.Base;
+
+type
+  TIWApplication = class;
+
+  TExecuteFormErrorEvent = procedure(Sender: TObject; E: Exception; var Handled: Boolean) of object;
+
+  TIWParamsString = class(TIWStringList)
+  private
+    FRawString: string;
+    FWebApp: TIWApplication;
+    function GetRawString: string;
+    procedure SetRawString(const AValue: string);
+  public
+    constructor Create; virtual;
+    procedure AddStrings(AStrings: TStrings); override;
+    class procedure ValidateParams(AStrings: TStrings);
+    class procedure EncodeParams(const AParamsList: TStrings);
+    class procedure DecodeParams(const AParamsList: TStrings);
+    procedure Clear; override;
+    property RawString: string read GetRawString write SetRawString;
+  end;
+
+  TSessionEvent = (seCreate, seDestroy, seRequest, seResetId);
+
+  TIWSessionLogger = class
+  public
+    class procedure LogEvent(ASession: TIWApplication; AEvent: TSessionEvent; const AMsg: string = '');
+  end;
+
+  TIWSessionListLock = (slNone, slRead, slWrite);
+
+  TSessionFlag = (sfSkipExecuteForm,      // ExecuteForm() should be executed?
+                  sfSkipGenerateForm,     // GenerateForm() should be executed?
+                  sfRedirect,             // is redirecting?
+                  sfAddCookie,            // add session cookie?
+                  sfRemoveCookie,         // remove current session cookie?
+                  sfResetId,              // resetting session id?
+                  sfCallbackRequest,      // is this a callback (AJAX) request?
+                  sfCallBackProcessing,   // are we processing a callback (AJAX) request?
+                  sfSecureMode,           // is current request using HTTPS?
+                  sfTerminated,           // is session terminated?
+                  sfActiveFormChanged,    // Active form changed during ExecuteForm?
+                  sfPostRedirectGet       // Use Post/Redirect/Get pattern?
+                 );
+
+  TFormList = class(TIWListBase)
+  end;
+
+  TSessionFlags = set of TSessionFlag;
+
+  TInstLists = class
+  public
+    BlockList: Pointer;
+    FreeList: Pointer;
+  end;
+
+  TIWRegionalSettings = record
+  private
+    FCache: string;
+    FDecimalSeparator: Char;
+    FThousandSeparator: Char;
+    FCurrencyString: string;
+    FCurrencyFormat: Byte;
+    FNegCurrFormat: Byte;
+    FMinValueMessage: string;
+    FMaxValueMessage: string;
+    FShowThousandSeparator: Boolean;
+    procedure SetDecimalSeparator(const Value: Char);
+    procedure SetThousandSeparator(const Value: Char);
+    procedure SetCurrencyString(const Value: string);
+    procedure SetCurrencyFormat(const Value: Byte);
+    procedure SetNegCurrFormat(const Value: Byte);
+    procedure SetMinValueMessage(const Value: string);
+    procedure SetMaxValueMessage(const Value: string);
+    procedure SetShowThousandSeparator(const Value: Boolean);
+  public
+    property DecimalSeparator: Char read FDecimalSeparator write SetDecimalSeparator;
+    property ThousandSeparator: Char read FThousandSeparator write SetThousandSeparator;
+    property CurrencyString: string read FCurrencyString write SetCurrencyString;
+    property CurrencyFormat: Byte read FCurrencyFormat write SetCurrencyFormat;
+    property NegCurrFormat: Byte read FNegCurrFormat write SetNegCurrFormat; // actually only 1 and 2 are currently supported
+    property MinValueMessage: string read FMinValueMessage write SetMinValueMessage;
+    property MaxValueMessage: string read FMaxValueMessage write SetMaxValueMessage;
+    property ShowThousandSeparator: Boolean read FShowThousandSeparator write SetShowThousandSeparator;
+    class function New: TIWRegionalSettings; static;
+    procedure InitFromSystemSettings;
+    procedure AssignFromGlobalSettings;
+    function AsJsonString: string;
+  end;
+
+  TCheckAuthProc = procedure of Object;
+
+  TIWAppErrorHandler = class
+  public
+    // handles errors when executing forms/content handlers
+    class procedure HandleSessionExecuteError(ASession: TIWApplication; E: Exception);
+  end;
+
+  TIWApplication = class(TIWVCLComponent)
+  strict private
+    mStatus: TThreadSafeValue;
+    mLastAccess: TThreadSafeValue;
+    FSessionTimeOut: TThreadSafeValue;
+    mCreationTime: TDateTime;
+    FSessionFlags: TSessionFlags;
+    FDelayedReleasedForms: TIWListBase;
+    mWindowID: string;
+    FAppUrlID: string;
+    FCheckAuthProc: TCheckAuthProc;
+    procedure SetSessionID;
+    procedure RemovePrivateDirs;
+    procedure SetSessionTimeOut(const AValue: Integer);
+    function GetSessionTimeOut: Integer;
+    function GetExecAction: string;
+    function GetExecActionURL: string;
+    function DoGetExecActionURL(AHttps: Boolean): string;
+    procedure DoResetApplicationID;
+    function GetIsPostBack: Boolean;
+    function GetIsFormFirstRequest: Boolean;
+    function GetInsideIFrame: Boolean;
+    procedure DoOnNavigate(aUrl: string);
+  private
+    FPrevAppID: string;
+    FMainFormID: string;
+    FPrevFormID: string;
+    FSelfDestructIn: TThreadSafeValue;
+    function GetNonce: string;
+  protected
+    FLastForm: TComponent;
+    FFormHeight: Integer;
+    FFormWidth: Integer;
+    mPermissions: TIWPermissions;
+    FApplicationPath: string;
+    FActiveForms: TFormList;
+    FReleasedForms: TIWListBase;
+    FAppID: string;
+    mAppUrlBase: string;
+    mInternalUrlBase: string;
+    mSessionInternalUrlBase: string;
+    mSessionUrlBase: string;
+    mUserCacheUrlBase: string;
+    FAuthPassword: string;
+    FAuthUser: string;
+    FCallBackResponse: TIWCallBackResponse;
+    mBrowser: TBrowser;
+    FData: TObject;
+    FForms: TIWListBase;
+    FIP: string;
+    FMasterTemplate: string;
+    FReferringURL: string;
+    FResponse: THttpReply;
+    FRequest: THttpRequest;
+    FRunParams: TStrings;
+    FTrackID: Int64;
+    FTaggedSessionName: string;
+    mUserCacheDir: string;
+    FMappedURL: string;
+    // Used to override form generation. Message boxes, redirects, etc.
+    // Some old code still exists that should be ported to use this.
+    mRenderOverride: TIWRenderStream;
+    mCacheFiles: TIWMinStringList;
+    mInitProc: string;
+    mCookiePath: string;
+    mLanguage: string;
+    FOnExecuteFormError: TExecuteFormErrorEvent;
+    FWindowIdIsSet: Boolean; // Is WindowId (browser window.name) already set?
+    FFixupList: TList;
+    FInstLists: TInstLists;
+    FTouch: TObject;   // See TIWVCLBaseControl
+    FDestroying: Boolean;
+    FPostParamsHash: Cardinal;
+    FActiveHandler: TObject;
+    FIsIFrame: ShortInt;  // -1: not set, 0: false, 1: true
+    FOAuthController: TOAuthController;
+    //
+    procedure CheckConnectionMode; virtual;
+    function GetActiveForm: TComponent;
+    function GetForm(AIndex: Integer): TComponent;
+    function GetActiveFormByIndex(AIndex: Integer): TComponent;
+    function GetFormCount: Integer;
+    function GetActiveFormCount: Integer;
+    function GetApplicationPath: string;
+    procedure Notification(AComponent: TComponent; AOperation: TOperation); override;
+    function GetSessionTimeStamp: TDateTime;
+    function GetApplicationURL: string;
+    procedure SetPermissions(const Value: TIWPermissions);
+    function GetFileList: THttpFileList;
+    procedure RemoveAppIdFromURL(var URL: string);
+    procedure HandleExecuteFormError(Sender: TObject; E: Exception); virtual;
+    function GetActiveMasterTemplate: string;
+    procedure ActiveFormListChanged(Sender: TObject);
+    function GetLastAccess: TDateTime;
+    function GetSelfDestructTime: TDateTime;
+    class function IsHTTPS(ARequest: THttpRequest): Boolean;
+    class function GetHost(ARequest: THttpRequest): string; overload;
+    class function GetHost(ARequest: THttpRequest; AHttps: Boolean): string; overload;
+    function GetSessionFlag(const AFlag: TSessionFlag): Boolean;
+    procedure SetSessionFlag(const AFlag: TSessionFlag; AValue: Boolean);
+    procedure IncludeFlag(const AFlag: TSessionFlag);
+    procedure ExcludeFlag(const AFlag: TSessionFlag);
+    procedure SetIsCallBack;
+    procedure ResetWindowId;
+    procedure SetCheckAuthProc(ACheckAuthProc: TCheckAuthProc);
+    function PageVer(aPage: TComponent): integer; virtual;
+    procedure ProcessOAuthResponse;
+    function GetOAuthController: TOAuthController;
+  public
+    RegionalSettings: TIWRegionalSettings;  // TIWRegionalSettings is a record. Expose it as a public member once props can't be used
+  public
+    constructor Create(aBrowser: TBrowser; aRequest: THttpRequest; aResponse: THttpReply;
+                       const AIP: string; const AAuthUser, AAuthPassword: string;
+                       const AUrlBase: string); reintroduce;
+    destructor Destroy; override;
+
+    procedure CreateAndShowDefaultPage; virtual;
+    procedure ResetApplicationID;
+    procedure LogSessionEvent(AEvent: TSessionEvent);
+    procedure SetRenderOverride(aStream: TIWRenderStream); overload;
+    procedure SetRenderOverride(const aHTML: string); overload;
+    function SendRenderOverride(aReply: THttpReply): Boolean;
+
+    // Internal use only
+    procedure InitApplication(aBrowser: TBrowser; aRequest: THttpRequest; aResponse: THttpReply; const AIP: string; const AAuthUser, AAuthPassword: string;
+      const AReferringURL: string; AParams: TStrings; const AUrlBase: string);
+
+    function FindFile(AName: string): THttpFile;
+    procedure AddDataModule(ADataModule: TDataModule);
+    procedure RemoveDataModule(ADataModule: TDataModule);
+
+    function ExecuteActiveForm(AParams: TStrings): Boolean; virtual;
+    procedure GenerateActiveForm(aReply: THttpReply); virtual;
+
+    procedure ProcessForm(aReply: THttpReply; aParams: TStrings);
+
+    procedure GoToURL(const aURL: string; const aReplaceUrl: Boolean = True; const aPrependBaseUrl: Boolean = True);
+    procedure Redirect(const aURL: string; aReplaceUrl: Boolean); overload;
+    procedure Initialize(ARequest: THttpRequest; AResponse: THttpReply);
+    procedure MarkAccess;
+
+    class function FullApplicationURL(ARequest: THttpRequest): string;
+    function FindFormByClassName(const AFormClassName: string): TComponent;
+    function FindFormByName(const AFormName: string): TComponent;
+    function FindFormByClass(const AFormClass: TComponentClass): TComponent;
+    function ShowForm(AFormClass: TComponentClass; AReleaseActiveForm: Boolean = False; AUseExistingInstance: Boolean = False): TComponent; overload;
+    function ShowForm(const AFormClassName: string; AReleaseActiveForm: Boolean = False; AUseExistingInstance: Boolean = False): TComponent; overload;
+    procedure RemoveForm(AForm: TComponent);
+    procedure ReleaseForm(AForm: TComponent; const ADelayed: Boolean = False);
+    procedure SendFile(const aPathname: string; const aAttachment: Boolean = False;
+      aContentType: string = ''; aFilename: string = '');
+    procedure SendStream(aStream: TStream; const aAttachment: Boolean = False; const aContentType: string = ''; const aFilename: string = '');
+    procedure SetSendHeaders(const aAttachment: Boolean; const aContentType: string; const aFilename: string);
+    procedure SetActiveForm(aForm: TComponent); virtual;
+    procedure SetUserNameAndPassword(aUserName, aPassword: string);
+
+    procedure SwitchToSecure;
+    procedure SwitchToNonSecure;
+    procedure ShowMessage(AMsg: string; const AType: TIWShowMessageType = smAlert; ATemplate: string = ''); overload; virtual;
+    procedure ShowMessageEx(const AMsg: string; const ACallback: string = ''; const ATitle: string = '';
+                            const BtnCaption: string = ''; callbackData: TStrings = nil); virtual;
+    procedure ShowConfirm(const AMsg: string; const ACallback: string; const ATitle: string = '';
+                          const OkBtnCaption: string = ''; const CancelBtnCaption: string = '';
+                          callbackData: TStrings = nil); virtual;
+    procedure ShowPrompt(const AMsg: string; const ACallback: string; const ATitle: string = '';
+                         const DefaultValue: string = ''; const OkBtnCaption: string = '';
+                         const CancelBtnCaption: string = ''; callbackData: TStrings = nil); virtual;
+    procedure ShowNotification(const AMsg: string; const AType: TIWNotifyType = ntLog; const ADelay: Integer = -1); virtual;
+    procedure ShowAlert(AMsg: string); virtual;
+
+    // C# overloads
+    ///Summary; NewWindow opens a popup window, which shows the page specified by AURL.
+    ///  If a window with the given name is already open, then it will be shown back on top.
+    procedure NewWindow(const AURL: string); overload;
+    procedure NewWindow(const AURL: string; const AName: string; const AWidth: Integer = -1;
+      const AHeight: Integer = -1); overload;
+    procedure NewWindow(const AURL: string; const AName: string; const AWidth: Integer;
+      const AHeight: Integer; AOptions: TIWWindowOptions
+      ;const ATop: Integer = -1; const ALeft: Integer = -1); overload;
+    //
+    procedure Terminate; overload;
+    procedure Terminate(const AMsg: string); overload;
+    procedure TerminateAndRedirect(const aURL: string); overload;
+    procedure TerminateAndRedirect(const aURL: string; const aPrependBaseUrl: Boolean); overload;
+    procedure SelfDestruct(const aSecs: Cardinal = 15);
+
+    procedure RegisterCallBack(const AName: string; AMethod: TIWCallbackMethod); overload;
+    procedure RegisterCallBack(const AName: string; AProc: TIWCallbackProc0); overload;
+    procedure RegisterCallBack(const AName: string; AProc: TIWCallbackProc1); overload;
+    procedure RegisterCallBack(const AName: string; AProc: TIWCallbackProc2); overload;
+    procedure RegisterCallBack(const AName: string; AProc: TIWCallbackProc3); overload;
+    procedure RegisterCallBack(const AName: string; AProc: TIWCallbackProc4); overload;
+    procedure UnregisterCallBack(const AName: string); overload;
+    procedure UnregisterCallBack(AMethod: TIWCallbackMethod); overload;
+
+    procedure PerformCallBack(Sender: TComponent; const AName: string);
+    procedure CheckActiveFormInSync;
+
+    function GetInternalFileURL(const AFilename: string): string;
+    function GetExternalFileURL(const AFilename: string): string;
+    function Lock(ATimeOut: Cardinal = 300): Boolean;
+    function TryLock(): Boolean;
+    procedure Unlock();
+    function GetHtmlStart: string;
+    procedure GetAuthorizationFields(var aUserName, aPassword: string);
+    function GetFormID: string;
+    function GetNewFormID: string;
+    procedure ExecuteJS(const ACode: string);
+    procedure SkipGenerateForm;
+    function GetRequestWindowID: string;
+    procedure SetActiveFormSize(AParams: TStrings);
+    // URL Bases
+    //
+    // Master root, / for SA, for ISAPI /path/myapp.dll
+    // Does not include host or port.
+    property AppUrlBase: string read mAppUrlBase;
+    // Internal URL space with $. Ex: /$/
+    property InternalUrlBase: string read mInternalUrlBase;
+    // URL with SessionID if AllowMult=true, otherwise same as InternalUrlBase.
+    // e.g. /$/06oicl90kiigi11327pcr0k33y73 for SA, /path/myapp.dll/$/06oicl90kiigi11327pcr0k33y73 for ISAPI.
+    property SessionInternalUrlBase: string read mSessionInternalUrlBase;
+    // SessionUrlBase = AppUrlBase + Session Id if AllowMult=True. If AllowMult = False it equals AppUrlBase
+    // e.g. /06oicl90kiigi11327pcr0k33y73 for SA, /path/myapp.dll/06oicl90kiigi11327pcr0k33y73 for ISAPI. Does not contain exec command "$"
+    property SessionUrlBase: string read mSessionUrlBase;
+    // URL base of User cache
+    property UserCacheUrlBase: string read mUserCacheUrlBase;
+    // http://, domain, port + AppUrlBase
+    property ApplicationURL: string read GetApplicationURL;
+    property CallBackProcessing: Boolean Index sfCallBackProcessing read GetSessionFlag;
+    property CallBackResponse: TIWCallBackResponse read FCallBackResponse;
+    property ApplicationPath: string read GetApplicationPath;
+    property ActiveForm: TComponent read GetActiveForm;
+    property ActiveFormCount: Integer read GetActiveFormCount;
+    property AppID: string read FAppID;
+    property AuthPassword: string read FAuthPassword;
+    property AuthUser: string read FAuthUser;
+    property Browser: TBrowser read mBrowser;
+    property Data: TObject read FData write FData;
+    property ExecAction: string read GetExecAction;
+    property ExecActionURL: string read GetExecActionURL;
+    property FormAction: string read GetExecAction; // FormAction points to ExecAction property
+    property FormCount: Integer read GetFormCount;
+    property FormWidth: Integer read FFormWidth write FFormWidth default -1;
+    property FormHeight: Integer read FFormHeight write FFormHeight default -1;
+    property FileList: THttpFileList read GetFileList;
+    property Forms[AIndex: Integer]: TComponent read GetForm;
+    property ActiveForms[AIndex: Integer]: TComponent read GetActiveFormByIndex;
+    property IP: string read FIP;
+    property IsCallBack: Boolean Index sfCallbackRequest read GetSessionFlag;
+    property LastAccess: TDateTime read GetLastAccess;
+    property MasterTemplate: string read FMasterTemplate write FMasterTemplate;
+    property ActiveMasterTemplate: string read GetActiveMasterTemplate;
+    property SecureMode: Boolean Index sfSecureMode read GetSessionFlag;
+    property ReferringURL: string read FReferringURL;
+    property Response: THttpReply read FResponse;
+    property Request: THttpRequest read FRequest;
+    property RunParams: TStrings read FRunParams;
+    property Terminated: Boolean Index sfTerminated read GetSessionFlag;
+    property SessionTimeOut: Integer read GetSessionTimeOut write SetSessionTimeOut;
+    property SessionTimeStamp: TDateTime read GetSessionTimeStamp;
+    property TrackID: Int64 read FTrackID;
+    property TaggedSessionName:string read FTaggedSessionName write FTaggedSessionName;
+    property UserCacheDir: string read mUserCacheDir;
+    // MappedURL is used to change ExecAction, only by content handlers!
+    property MappedURL: string read FMappedURL write FMappedURL;
+    property Permissions: TIWPermissions read mPermissions write SetPermissions;
+    property CacheFiles: TIWMinStringList read mCacheFiles;
+    property InitProc: string read mInitProc write mInitProc;
+    property CookiePath: string read mCookiePath;
+    property Status: TThreadSafeValue read mStatus;
+    property OnExecuteFormError: TExecuteFormErrorEvent read FOnExecuteFormError write FOnExecuteFormError;
+    property ActiveFormChanged: Boolean Index sfActiveFormChanged read GetSessionFlag;
+    property IsRedirect: Boolean Index sfRedirect read GetSessionFlag;
+    property PostRedirectGet: Boolean Index sfPostRedirectGet read GetSessionFlag write SetSessionFlag;
+    property IsPostBack: Boolean read GetIsPostBack;
+    property IsFormFirstRequest: Boolean read GetIsFormFirstRequest;
+    property Language: string read mLanguage write mLanguage;
+    property WindowID: string read mWindowID write mWindowID;
+    property Nonce: string read GetNonce;
+    property IsDestroying: Boolean read FDestroying;
+    // this is the surrogate ID used in URL when ServerController.SecurityOptions.SurrogateSessionId is set
+    // Surrogate ID is used in URL instead of the real session ID, making it impossible to hijack a session
+    // kwowing only the session URL
+    property AppUrlID: string read FAppUrlID;
+    property InsideIFrame: Boolean read GetInsideIFrame;
+    property PrevFormID: string read FPrevFormID;
+    property OAuth: TOAuthController read GetOAuthController;
+  end;
+
+  TIWSessions = class
+  private
+    FExpiredSessions: TIWExpiredSessionList;
+    FOnCreateSession: TNotifyEvent;
+    FOnDestroySession: TNotifyEvent;
+    FSessionList: IWLFSessionList.TIWSessionList;
+    FDestroying: Boolean;
+    function DoRemoveAndFree(const AAppID: string): Boolean;  overload;
+  private
+    procedure DoChangeSessionID(const ASessionID: string; var ANewSessionID: string);
+    procedure DoOnCreateSession(ASession: TIWApplication);
+    procedure DoOnDestroySession(ASession: TIWApplication);
+    function GenerateSessionID: string;
+    procedure GetExpiredSessionList(AList: TIWMinStringList);
+  protected
+    //
+    procedure AddSessionAndLock(ASession: TIWApplication);
+    function Lock(ASession: TIWApplication): Boolean;
+    procedure Unlock(ASession: TIWApplication);
+    procedure RemoveExpiredSessions(AList: TIWListBase);
+    function DoRemoveAndFree(const AWebApplication: TIWApplication): Boolean; overload;
+    procedure ClearExpiredSessionsList;
+  public
+    constructor Create(aHasExpiredSessionsList: Boolean);
+    destructor Destroy; override;
+
+    ///Summary: LookupAndLock tries to find the the session given by AAppId and
+    ///  will lock it. If the corresponding session is already locked, then LookupAndLock
+    ///  will re-try until the session becomes available.
+    ///  If ATimeOut is greater than zero, then it will re-try to lock the session
+    ///  for max ATimeOut milliseconds.
+    function LookupAndLock(const AAppID: string; out AExpired, AAlreadyLocked: Boolean; ATimeOut: Cardinal = 0): TIWApplication; overload;
+    function LookupAndLock(const AAppID: string; ATimeOut: Cardinal = 0): TIWApplication; overload;
+    function LookupByTaggedNameAndLock(const ATaggedSessionName: string): TIWApplication;
+    procedure GetList(AList: TStrings);
+
+    function GetExpiredRunParams(const AAppID: string; const ARemove: Boolean): string;
+    function QueryStatus(const AAppID: string): Integer;
+    procedure QuerySession(const AAppID: string; ARequest, AResponse: TObject);
+    procedure MarkAccess(const AAppID: string);
+    function Terminate(const AAppID: string): Boolean;
+    function IsValidSession(ASession: TIWApplication): Boolean;
+    procedure Clear;
+    function GetCount: Integer;
+    // exposes TIWSessionList methods to end users
+    function Execute(AProc: TSessionListProcEx; AData: Pointer = nil): Boolean; overload;
+    function Execute(const ASessionID: string; AProc: TSessionProcEx; AData: Pointer = nil): Boolean; overload;
+    function Execute(AProc: TSessionProc): Boolean; overload;
+    function Execute(const ASessionID: string; AProc: TSessionProc): Boolean; overload;
+    function LookUp(const ASessionID: string; AProc: TSessionProcEx; AData: Pointer = nil): Boolean;
+    //
+    property OnCreateSession: TNotifyEvent read FOnCreateSession write FOnCreateSession;
+    property OnDestroySession: TNotifyEvent read FOnDestroySession write FOnDestroySession;
+    property Count: Integer read GetCount;
+  end;
+
+  TGetWebApplicationThreadVar = function: TIWApplication;
+  TSetWebApplicationThreadVar = function(AWebApplication: TIWApplication): TIWApplication;
+  TGetAppPath = function: string;
+  TSessionClassType = class of TIWApplication;
+
+var
+  gSessionClass: TSessionClassType = TIWApplication;
+  gSessions: TIWSessions = nil;
+  gSetWebApplicationThreadVar: TSetWebApplicationThreadVar = nil;
+  gGetWebApplicationThreadVar: TGetWebApplicationThreadVar = nil;
+  gGetAppPath: TGetAppPath = nil;
+
+implementation

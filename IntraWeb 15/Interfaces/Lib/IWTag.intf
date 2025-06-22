@@ -1,0 +1,27 @@
+unit IWTag;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes;
+
+type
+  TIWTag = class
+  protected
+    mTagType: string;
+    mName: string;
+    mParams: TStrings;
+  public
+    constructor Create(const aType, aName: string); virtual;
+    destructor Destroy; override;
+    function AsString: string;
+    function ParamValue(const aParamName: string; const aDefault: string = ''): string;
+    //
+    // Type is a reserved word, so we use TagType instead
+    property TagType: string read mTagType;
+    property Name: string read mName;
+    property Params: TStrings read mParams;
+  end;
+
+implementation

@@ -1,0 +1,6 @@
+unit IW.Common.XPlatTypes;
+{$I IWCompilerDefines.inc}
+
+interface
+
+// Contains new types or aliases for types that differ in Delphi and FPC implementation

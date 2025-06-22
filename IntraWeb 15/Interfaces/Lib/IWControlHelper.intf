@@ -1,0 +1,70 @@
+unit IWControlHelper;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, Classes, IWControl, IWRenderContext, IWRegion, IWApplication,
+  IWBaseHTML40Component;
+
+type
+  TIWControlHelper = class helper for TIWCustomControl
+  public
+    procedure AddJavaScriptToExecute(const jsCode: string); overload;
+    procedure AddJavaScriptToExecute(AContext: TIWCompContext; const jsCode: string); overload;
+    procedure AddJavaScriptToExecute(APageContext: TIWPageContext40; const jsCode: string); overload;
+    procedure AddScriptFile(AContext: TIWCompContext; const AFileName: string); overload;
+    procedure AddScriptFile(AContext: TIWCompContext; const AFileName: string; AIsExternal: Boolean); overload;
+    procedure AddBodyScriptFile(AContext: TIWCompContext; const AFileName: string); overload;
+    procedure AddBodyScriptFile(AContext: TIWCompContext; const AFileName: string; AIsExternal: Boolean); overload;
+    procedure AddLinkFile(AContext: TIWCompContext; const AFileName: string);
+    procedure AddScript(AContext: TIWCompContext; const jsCode: string);
+    procedure AddStyle(AContext: TIWCompContext; const ASelector, ACss: string; AImportant: Boolean = False);
+    procedure AddToInitProc(AContext: TIWCompContext; const jsCode: string);
+    procedure AddToInitProcDoFirstCode(AContext: TIWCompContext; const jsCode: string);
+    procedure DownloadContentFile(const aUrl, aSubFolder: string);
+    function GetLocalFileUrl(AContext: TIWCompContext; const AFileName, ABaseFolder: string): string;
+    procedure HookEventHandler(AContext: TIWCompContext; const AHtmlName, AEventName, ACode: string);
+    procedure HookClickHandler(AContext: TIWCompContext; const AHtmlName, ACode: string);
+  end;
+
+  TIWRegionHelper = class helper for TIWCustomRegion
+  public
+    function GetWebApp: TIWApplication;
+    procedure AddJavaScriptToExecute(const jsCode: string); overload;
+    procedure AddJavaScriptToExecute(AContext: TIWCompContext; const jsCode: string); overload;
+    procedure AddJavaScriptToExecute(APageContext: TIWPageContext40; const jsCode: string); overload;
+    procedure AddScriptFile(AContext: TIWCompContext; const AFileName: string); overload;
+    procedure AddScriptFile(AContext: TIWCompContext; const AFileName: string; AIsExternal: Boolean); overload;
+    procedure AddBodyScriptFile(AContext: TIWCompContext; const AFileName: string); overload;
+    procedure AddBodyScriptFile(AContext: TIWCompContext; const AFileName: string; AIsExternal: Boolean); overload;
+    procedure AddLinkFile(AContext: TIWCompContext; const AFileName: string);
+    procedure AddScript(AContext: TIWCompContext; const jsCode: string);
+    procedure AddStyle(AContext: TIWCompContext; const ASelector, ACss: string; AImportant: Boolean = False);
+    procedure AddToInitProc(AContext: TIWCompContext; const jsCode: string);
+    procedure AddToInitProcDoFirstCode(AContext: TIWCompContext; const jsCode: string);
+    procedure DownloadContentFile(const aUrl, aSubFolder: string);
+    function GetLocalFileUrl(AContext: TIWCompContext; const AFileName, ABaseFolder: string): string;
+  end;
+
+  TIWComponentHelper = class helper for TIWBaseHTML40Component
+  public
+    procedure AddJavaScriptToExecute(const jsCode: string); overload;
+    procedure AddJavaScriptToExecute(AContext: TIWCompContext; const jsCode: string); overload;
+    procedure AddJavaScriptToExecute(APageContext: TIWPageContext40; const jsCode: string); overload;
+    procedure AddScriptFile(AContext: TIWCompContext; const AFileName: string); overload;
+    procedure AddScriptFile(AContext: TIWCompContext; const AFileName: string; AIsExternal: Boolean); overload;
+    procedure AddBodyScriptFile(AContext: TIWCompContext; const AFileName: string); overload;
+    procedure AddBodyScriptFile(AContext: TIWCompContext; const AFileName: string; AIsExternal: Boolean); overload;
+    procedure AddLinkFile(AContext: TIWCompContext; const AFileName: string);
+    procedure AddScript(AContext: TIWCompContext; const jsCode: string);
+    procedure AddStyle(AContext: TIWCompContext; const ASelector, ACss: string; AImportant: Boolean = False);
+    procedure AddToInitProc(AContext: TIWCompContext; const jsCode: string);
+    procedure AddToInitProcDoFirstCode(AContext: TIWCompContext; const jsCode: string);
+    procedure DownloadContentFile(const aUrl, aSubFolder: string);
+    function GetLocalFileUrl(AContext: TIWCompContext; const AFileName, ABaseFolder: string): string;
+    procedure HookEventHandler(AContext: TIWCompContext; const AHtmlName, AEventName, ACode: string);
+    procedure HookClickHandler(AContext: TIWCompContext; const AHtmlName, ACode: string);
+  end;
+
+implementation

@@ -1,0 +1,34 @@
+unit IWServerControllerIniReader;
+
+interface
+
+uses
+  Classes, SysUtils, IniFiles, IWServerControllerBase;
+
+type
+  TIWServerControllerIniReader = class(TObject)
+  private
+    FServerController: TIWServerControllerBase;
+    FIni: TIniFile;
+  protected
+    function SaveProperty(const APropName, APropValue: string): string; virtual;
+    function LoadProperty(const APropName: string): string; virtual;
+    procedure SetProperty(AObject: TPersistent; const APropName: string); virtual;
+    procedure WriteProperty(AObject: TPersistent; const APropName: string); virtual;
+    procedure SaveEmptyProperty(const APropName: string); virtual;
+    procedure LoadFromIni; virtual;
+    procedure SaveToIni; virtual;
+    procedure SaveEmptyToIni; virtual;
+  public
+    constructor Create(AOwner: TIWServerControllerBase);
+    procedure Load;
+    procedure Save;
+    procedure LoadFromFile(const FileName: string);
+    procedure SaveToFile(const FileName: string);
+    procedure SaveEmptyToFile(const FileName: string);
+    class procedure LoadSettings(AServerController: TIWServerControllerBase);
+    class procedure SaveSettings(AServerController: TIWServerControllerBase);
+    class procedure SaveEmptySettings;
+  end;
+
+implementation

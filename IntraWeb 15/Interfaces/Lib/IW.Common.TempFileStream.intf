@@ -1,0 +1,34 @@
+unit IW.Common.TempFileStream;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, IW.Common.BufferedHandleStream;
+
+//Stream backed by a temp file.
+//Can optionally delete after use.
+//
+//There is a bug at least in Delphi 2009. In this case, TFileStream does not respect share mode.
+//http://qc.embarcadero.com/wc/qcmain.aspx?d=71632
+//So we descend from THandleStream and create the file ourselves
+
+type
+  TTempFileStream = class(TBufferedHandleStream)
+  strict private
+    class var FTempPath: string;
+    class var FRandomTempFileNames: Boolean;
+  protected
+    mDeleteFile: Boolean;
+    mFilename: string;
+    class function GetTempPath: string; static;
+    class procedure SetTempPath(const aValue: string); static;
+  public
+    constructor Create(aDeleteFile: Boolean = False; aPath: string = ''; const aPrefix: string = 'ATZ');
+    destructor Destroy; override;
+    property Filename: string read mFilename;
+    class property TempPath: string read GetTempPath write SetTempPath;
+    class property RandomTempFileNames: Boolean read FRandomTempFileNames write FRandomTempFileNames;
+  end;
+
+implementation

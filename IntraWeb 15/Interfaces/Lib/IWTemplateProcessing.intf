@@ -1,0 +1,12 @@
+unit IWTemplateProcessing;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Windows, IWTemplateParserHTML, Classes, IWUtils;
+
+function ConvertFromTemplate(const ASrc: string; ACompsOnForm: TStringList): string;
+function ConvertToTemplate(const ASrc: string; AWorkPath: string): string;
+
+implementation

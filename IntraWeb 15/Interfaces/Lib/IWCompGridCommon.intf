@@ -1,0 +1,47 @@
+unit IWCompGridCommon;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, Graphics, IWColor, IWTypes;
+
+type
+
+  TIWDBGridRefreshMode = (rmAutomatic, rmAlways, rmManual);
+
+  TIWDBGridOption = (
+    dgIndicator, dgShowTitles);
+
+  TIWDBGridOptions = set of TIWDBGridOption;
+
+  TIWGridLines = (tlAll, tlNone, tlRows, tlCols);
+
+  TIWGridBorderStyle = (tfDefault, tfVoid, tfAbove, tfBelow, tvHorizSides, tfVertSides, tfLeft
+    , tfRight);
+
+  TIWGridVAlign = TIWVerticalAlignment;
+
+  TIWOnCellClick = procedure(ASender: TObject; const ARow: Integer; const AColumn: Integer) of object;
+
+  TIWGridBorderColors = class(TPersistent)
+  private
+    FColor: TIWColor;
+    FLight: TIWColor;
+    FDark: TIWColor;
+  public
+    constructor Create; overload;
+    constructor Create(AColor, ALight, ADark: TIWColor); overload;
+  published
+    property Color: TIWColor read FColor write FColor;
+    property Light: TIWColor read FLight write FLight;
+    property Dark: TIWColor read FDark write FDark;
+  end;
+
+  function RenderVerticalAlign(const aVAlign: TIWGridVAlign): string;
+  function RenderHorizontalAlign(const aHAlign: TAlignment): string;
+
+var
+  IWGridAlignments: array[TAlignment] of string = ('left', 'right', 'center');
+
+implementation

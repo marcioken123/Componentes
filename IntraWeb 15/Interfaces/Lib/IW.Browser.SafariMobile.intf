@@ -1,0 +1,19 @@
+unit IW.Browser.SafariMobile;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  IW.Browser.Browser, IW.Browser.Webkit;
+
+type
+  TSafariMobile = class(TWebkit)    // Safari Mobile: iPhone/iPad/iPod
+  public
+    const
+      BROWSER_NAME = 'Safari Mobile';
+      MIN_VERSION = 4;
+    constructor Create(aVersion: single); override;
+    class function Match(AUserAgent: string; out AVersion: Single): Boolean; override;
+  end;
+
+implementation

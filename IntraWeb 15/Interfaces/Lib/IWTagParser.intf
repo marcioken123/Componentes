@@ -1,0 +1,30 @@
+unit IWTagParser;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, IWTemplateParserHTML, IWTag;
+
+type
+  TIWTagParser = class
+  protected
+    mOutputEscapeAsIs: Boolean;
+    mDest: TStream;
+    mPrsr: TIWTemplateParserHTML;
+    mIgnoreHTMLTags: Boolean;
+    //
+    function IsOurTagType(aTagType: string): Boolean;
+    procedure ReadParam(aParams: TStrings);
+    procedure WriteString(const aValue: string);
+  public
+    constructor Create(aSrc: TStream); overload;
+    constructor Create(const aSrc: string; aDest: TStream); overload;
+    destructor Destroy; override;
+    function NextTag: TIWTag;
+    procedure ReIntroduceTag(aIWTag: TIWTag);
+    property IgnoreHTMLTags: Boolean read mIgnoreHTMLTags write mIgnoreHTMLTags;
+    property OutputEscapeAsIs: Boolean read mOutputEscapeAsIs write mOutputEscapeAsIs;
+  end;
+
+implementation

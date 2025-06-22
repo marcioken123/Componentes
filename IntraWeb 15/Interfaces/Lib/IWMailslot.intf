@@ -1,0 +1,77 @@
+unit IWMailslot;
+
+// Simple and lightweith IPC communication using mailslots
+
+interface
+
+uses
+  SysUtils, Classes;
+
+const
+  _8KB = 8 * 1024;  // default max message size, more than enough for our purposes
+
+type
+  TIWMailslot = class
+  strict protected
+    FHandle: THandle;
+    FIsOpen: Boolean;
+    FActive: Boolean;
+    FOnOpen: TNotifyEvent;
+    FOnClose: TNotifyEvent;
+    FServerId: string;
+    FLastError: string;
+    procedure SetActive(Value: Boolean);
+    function DoOpen: Boolean; virtual; abstract;
+    procedure SetServerId(const Value: string);
+    function GetChannelName: string; virtual; abstract;
+    function GetMessageCount: Cardinal;
+    function GetMessageSize: Cardinal;
+  public
+    constructor Create(const aServerId: string); virtual;
+    destructor Destroy; override;
+    procedure Open;
+    procedure Close;
+    property Active: Boolean read FActive write SetActive;
+    property ServerId: string read FServerId write SetServerId;
+    property ChannelName: string read GetChannelName;
+    property OnOpen: TNotifyEvent read FOnOpen write FOnOpen;
+    property OnClose: TNotifyEvent read FOnClose write FOnClose;
+    property LastError: string read FLastError;
+  end;
+
+  TIWMailslotClient = class(TIWMailslot)
+  protected
+    FServerName: string;
+    FAutoOpen: Boolean;
+    procedure SetServerName(const Value: string);
+    function DoOpen: Boolean; override;
+    function GetChannelName: string; override;
+  public
+    constructor Create(const aServerId: string); override;
+    function Write(const Buffer; const Count: Longint): Integer; overload;
+    function Write(Stream: TMemoryStream; Count: Longint): Integer; overload;
+    function Write(const s: string): Integer; overload;
+    property ServerName: string read FServerName write SetServerName;
+    property AutoOpen: Boolean read FAutoOpen write FAutoOpen default True;
+  end;
+
+  TIWMailslotServer = class(TIWMailslot)
+  private
+    FTimeout: Integer;
+    FMaxMessageSize: Cardinal;
+  protected
+    function DoOpen: Boolean; override;
+    function GetChannelName: string; override;
+  public
+    constructor Create(const aServerId: string); override;
+    function Read(var Buffer; Count: LongInt): Integer; overload;
+    function Read(Stream: TMemoryStream): Integer; overload;
+    function Read(var s: string): Integer; overload;
+    function ReadAsString: string;
+    property Timeout: Integer read FTimeout write FTimeout default 1;
+    property MessageCount: Cardinal read GetMessageCount;
+    property MessageSize: Cardinal read GetMessageSize;
+    property MaxMessageSize: Cardinal read FMaxMessageSize write FMaxMessageSize default _8KB;
+  end;
+
+implementation

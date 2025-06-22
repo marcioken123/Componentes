@@ -1,0 +1,20 @@
+unit IW.Browser.Other;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  IW.Browser.Browser;
+
+type
+  TOther = class(TBrowser)
+  public
+    const
+      BROWSER_NAME = 'Unknown browser';
+      MIN_VERSION = 0;
+    constructor Create(aVersion: single); override;
+    class function Match(AUserAgent: string; out AVersion: Single): Boolean; override;
+    function IsSupported: Boolean; override;
+  end;
+
+implementation

@@ -1,0 +1,86 @@
+unit IWCompVideo;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, Classes, IWVCLBaseControl, IWBaseControl, IWBaseHTMLControl,
+  IWControl, IWFileReference, IWRenderContext, IWHTMLTag, IWXMLTag, IWScriptEvents;
+
+type
+  {$include IWPlatformAttrib.inc}
+  TIWVideo = class(TIWCustomControl)
+  private
+    FMuted: Boolean;
+    FAutoHeigh: Boolean;
+    FAutoWidth: Boolean;
+    FPlay: Boolean;
+    FAutoPIP: Boolean;
+    FDisablePIP: Boolean;
+    FCurrentTime: Integer;
+    FVideoFile: TIWFileReference;
+    FAutoPlay: Boolean;
+    FLoop: Boolean;
+    FShowVideoPlayer: Boolean;
+    FPreLoad: Boolean;
+    FAlternateVideoFile: TIWFileReference;
+    FFocusOutline: Boolean;
+    FAltText: string;
+    FOnAsyncEnded: TIWAsyncEvent;
+    FOnAsyncPlay: TIWAsyncEvent;
+    FOnAsyncPause: TIWAsyncEvent;
+    FOnAsyncError: TIWAsyncEvent;
+    FOnAsyncWaiting: TIWAsyncEvent;
+    procedure SetLoop(const Value: boolean);
+    procedure SetMuted(const Value: Boolean);
+    procedure SetAltText(const Value: string);
+    function ExecAction(const Action: string): string;
+    procedure SetCurrentTime(const Value: Integer);
+    procedure SetVideoFile(const Value: TIWFileReference);
+    procedure SetAlternateVideoFile(const Value: TIWFileReference);
+    procedure SetFocusOutline(const Value: Boolean);
+    procedure SetShowVideoPlayer(const Value: Boolean);
+    procedure DoOnAsyncEnded(AParams: TStringList);
+    procedure DoOnAsyncPlay(AParams: TStringList);
+    procedure DoOnAsyncPause(AParams: TStringList);
+    procedure DoOnAsyncError(AParams: TStringList);
+    procedure DoOnAsyncWaiting(AParams: TStringList);
+  protected
+    procedure InitControl; override;
+    procedure Dispose(ADispose: Boolean); override;
+    procedure RegisterAsyncEvents(APageContext: TIWPageContext40); override;
+    procedure AssignAsyncEvents(APageContext: TIWPageContext40; AScriptEvents: TIWScriptEvents); override;
+  public
+    function RenderCSSClass(AComponentContext: TIWCompContext): string; override;
+    function RenderStyle(AContext: TIWCompContext): string; override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    class function GetVideoType(const VideoFileName: string): string;
+    procedure Play;
+    procedure Pause;
+  published
+    { Published declarations }
+    property VideoFile: TIWFileReference read FVideoFile write SetVideoFile;
+    property FocusOutline: boolean read FFocusOutline write SetFocusOutline default False;
+    property AlternateVideoFile: TIWFileReference read FAlternateVideoFile write SetAlternateVideoFile;
+    property ShowVideoPlayer: Boolean read FShowVideoPlayer write SetShowVideoPlayer default True;
+    property AutoPlay: boolean read FAutoPlay write FAutoPlay default True;
+    property AutoPIP: Boolean read FAutoPIP write FAutoPIP default False;
+    property DisablePIP: Boolean read FDisablePIP write FDisablePIP default False;
+    property Loop: boolean read FLoop write SetLoop default False;
+    property PreLoad: boolean read FPreLoad write FPreLoad default True;
+    property Muted: Boolean read FMuted write SetMuted default False;
+    property AltText: string read FAltText write SetAltText;
+    property Width default 480;
+    property Height default 320;
+    property AutoWidth: Boolean read FAutoWidth write FAutoWidth default False;
+    property AutoHeigh: Boolean read FAutoHeigh write FAutoHeigh default False;
+    property CurrentTime: Integer read FCurrentTime write SetCurrentTime default 0;
+    property OnAsyncEnded: TIWAsyncEvent read FOnAsyncEnded write FOnAsyncEnded;
+    property OnAsyncPlay: TIWAsyncEvent read FOnAsyncPlay write FOnAsyncPlay;
+    property OnAsyncPause: TIWAsyncEvent read FOnAsyncPause write FOnAsyncPause;
+    property OnAsyncError: TIWAsyncEvent read FOnAsyncError write FOnAsyncError;
+    property OnAsyncWaiting: TIWAsyncEvent read FOnAsyncWaiting write FOnAsyncWaiting;
+  end;
+
+implementation

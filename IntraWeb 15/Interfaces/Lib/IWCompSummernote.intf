@@ -1,0 +1,131 @@
+unit IWCompSummernote;
+{$I IWCompilerDefines.inc}
+
+{PUBDIST}
+
+// Disable Compiler warings for DEPRECATED set_RenderSize, setRenderSize and get_RenderSize
+{$WARN SYMBOL_DEPRECATED OFF}
+
+interface
+
+uses
+  Classes, Controls,
+  IWHTMLTag, IWControl, IWColor, IWRenderContext, IWXMLTag, IWBaseInterfaces, IW.Common.StrLists,
+  IWHTML40Interfaces, IWTypes, IWCompMemo, IW.Common.StrBuilder, IW.Common.SysTools;
+
+const
+  TSummernoteButtons: array[0..27] of string = (// Font Style
+                                                'FontName',
+                                                'FontSize',
+                                                'FontSizeUnit',
+                                                'Color',
+                                                'ForeColor',
+                                                'BackColor',
+                                                'Bold',
+                                                'Italic',
+                                                'Underline',
+                                                'StrikeThrough',
+                                                'SubScript',
+                                                'SuperScript',
+                                                'Clear',
+                                                //Paragraph Style
+                                                'Style',
+                                                'OL',
+                                                'UL',
+                                                'Paragraph',
+                                                'Height',
+                                                //Insert
+                                                'HR',
+                                                'Link',
+                                                'Picture',
+                                                'Table',
+                                                'Video',
+                                                // Misc
+                                                'CodeView',
+                                                'FullScreen',
+                                                'Help',
+                                                'Undo',
+                                                'Redo');
+const
+  DEFAULT_SUMMERNOTE_TOOLBAR = 'style=Style;' +
+                               'font=Bold,Underline,Clear;' +
+                               'fontname=FontName;' +
+                               'color=Color;' +
+                               'paragraph=UL,OL,Paragraph;' +
+                               'table=Table;' +
+                               'insert=Link,Picture,Video;' +
+                               'view=FullScreen,CodeView,Help;';
+type
+  TToolbarConfig = class(TIWStringList)
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWSummernote = class(TIWCustomMemo)
+  private
+    class var FLocalJavaScriptFolder: string;
+    class var FLocalStyleFolder: string;
+  private
+    FRenderCDNFiles: Boolean;
+    FRenderLocalFiles: Boolean;
+    FToolbarConfig: TToolbarConfig;
+    FDisableDragDrop: Boolean;
+    FDisableShortCuts: Boolean;
+    FDisableTab: Boolean;
+    FRenderTextAreaHeight: Boolean;
+    FRenderExternalHeight: Boolean;
+    FLang: string;
+    procedure AddRequiredFiles(AContext: TIWCompContext);
+    function IsToolbarConfigDefault: Boolean;
+    function IsToolbarConfigStored: Boolean;
+    procedure SetToolbarConfig(const Value: TToolbarConfig);
+    procedure RenderToolbarConfig(var sb: IStrBuilder);
+    procedure SetDisableDragDrop(const Value: Boolean);
+    procedure SetDisableShortCuts(const Value: Boolean);
+    procedure SetDisableTab(const Value: Boolean);
+    procedure SetRenderTextAreaHeight(const Value: Boolean);
+    procedure SetRenderExternalHeight(const Value: Boolean);
+    procedure SetLang(const Value: string);
+  protected
+    procedure InitControl; override;
+    procedure Dispose(ADispose: Boolean); override;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    procedure SetRenderCDNFiles(const Value: Boolean);
+    procedure SetRenderLocalFiles(const Value: Boolean);
+    procedure Loaded; override;
+  public
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    function RenderStyle(AComponentContext: TIWCompContext): string; override;
+    procedure DownloadContentFiles;
+    class property LocalJavaScriptFolder: string read FLocalJavaScriptFolder write FLocalJavaScriptFolder;
+    class property LocalStyleFolder: string read FLocalStyleFolder write FLocalStyleFolder;
+  published
+    property Attributes;
+    property Enabled;
+    property FriendlyName;
+    property Lines;
+    property OnAsyncClick;
+    property OnAsyncDoubleClick;
+    property OnAsyncChange;
+    property OnAsyncEnter;
+    property OnAsyncExit;
+    property OnAsyncKeyDown;
+    property OnAsyncKeyUp;
+    property OnAsyncKeyPress;
+    property OnAsyncMouseDown;
+    property OnAsyncMouseMove;
+    property OnAsyncMouseOver;
+    property OnAsyncMouseOut;
+    property OnAsyncMouseUp;
+    property OnAsyncSelect;
+    property RenderCDNFiles: Boolean read FRenderCDNFiles write SetRenderCDNFiles default True;
+    property RenderLocalFiles: Boolean read FRenderLocalFiles write SetRenderLocalFiles default False;
+    property ToolbarConfig: TToolbarConfig read FToolbarConfig write SetToolbarConfig stored IsToolbarConfigStored;
+    property DisableTab: Boolean read FDisableTab write SetDisableTab default False;
+    property DisableDragDrop: Boolean read FDisableDragDrop write SetDisableDragDrop default False;
+    property DisableShortCuts: Boolean read FDisableShortCuts write SetDisableShortCuts default False;
+    property RenderTextAreaHeight: Boolean read FRenderTextAreaHeight write SetRenderTextAreaHeight default True; // Height applies to the internal editor Height
+    property RenderExternalHeight: Boolean read FRenderExternalHeight write SetRenderExternalHeight default False;// Height applies to the whole control
+    property Lang: string read FLang write SetLang;
+  end;
+
+implementation

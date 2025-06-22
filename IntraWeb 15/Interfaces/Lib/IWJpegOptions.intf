@@ -1,0 +1,33 @@
+unit IWJpegOptions;
+{$I IWCompilerDefines.inc}
+
+{Dist Public}
+
+interface
+
+uses
+  Classes, SysUtils, Windows, Controls, Messages,
+  {$IFNDEF FPC} Jpeg, {$ELSE} IW.Common.FPCCompat, {$ENDIF} Graphics;
+
+type
+  TIWJpegOptions = class(TPersistent)
+  protected
+    FCompressionQuality: TJPEGQualityRange;
+    FPerformance: TJPEGPerformance;
+    FProgressiveEncoding: Boolean;
+    FSmoothing: Boolean;
+  public
+    constructor Create; overload;
+
+    constructor Create( ACompressionQuality: TJPEGQualityRange;
+                        APerformance: TJPEGPerformance;
+                        AProgressiveEncoding, ASmoothing: Boolean ); overload;
+    procedure AssignTo(ADest: TPersistent); override;
+  published
+    property CompressionQuality: TJPEGQualityRange read FCompressionQuality write FCompressionQuality;
+    property Performance: TJPEGPerformance read FPerformance write FPerformance;
+    property ProgressiveEncoding: Boolean read FProgressiveEncoding write FProgressiveEncoding;
+    property Smoothing: Boolean read FSmoothing write FSmoothing;
+  end;
+
+implementation

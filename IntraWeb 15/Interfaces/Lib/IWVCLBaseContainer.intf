@@ -1,0 +1,145 @@
+unit IWVCLBaseContainer;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, Controls, Forms, Windows, Messages, Graphics, IWColor,
+  IWTypes, IWBaseInterfaces, IW.Common.Lists, IW.Common.StrLists;
+
+type
+  TIWBaseContainer = class(TScrollingWinControl, IIWInvisibleControlRenderer)
+  private
+    FAlignPending: Boolean;
+    FRehashPending: Boolean;
+    FAligningState: Byte;
+    function GetLoading: Boolean; inline;
+    function GetDesignMode: Boolean; inline;
+    procedure WMLButtonDown( var Msg: TWMLButtonDown ); message CM_DESIGNHITTEST;
+    function IsAligning(ALevel: Byte): Boolean;
+    procedure SetIsAligning(ALevel: Byte; AValue: Boolean);
+    //procedure SetRehashPending(AValue: Boolean);
+  protected
+    FRenderInvisibleControls: Boolean;
+    procedure SetRenderInvisibleControls(const Value: Boolean);
+    function GetRenderInvisibleControls: Boolean;
+    procedure WMNCHitTest(var AMessage: TMessage); message WM_NCHITTEST;
+    procedure ControlChange(var AMessage: TMessage); message CM_CONTROLCHANGE;
+    procedure Resizing(State: TWindowState); override;
+
+    {$IFNDEF RUNTIME}
+    procedure WMPaint(var Message: TWMPaint); message WM_PAINT;
+    procedure PaintWindow(ADC: HDC); override;
+    {$ENDIF}
+
+    procedure IWResizingContainer; virtual;
+    procedure Paint; virtual;
+
+    procedure InitDesignTime; virtual;
+    procedure InitControl; virtual;
+
+    procedure SetName(const Value: TComponentName); override;
+
+    procedure IWLoaded; virtual;
+    procedure Loaded; override;
+
+    procedure AdjustSize; override;
+    procedure RequestAlign; override;
+    function GetClientRect: TRect; override;
+
+    procedure ParentChanging(AOldParent, AParent: TComponent); virtual;
+    procedure AfterParentChanging(AOldParent, AParent: TComponent);virtual;
+    procedure SetParent(AParent: TWinControl); override;
+
+    function get_WebColor: TIWColor; virtual;
+    procedure set_WebColor(Value: TIWColor); virtual;
+
+    procedure AdjustClientRect(var Rect: TRect); override;
+
+    function getTabOrder: TIWTabOrder; virtual;
+    procedure setTabOrder(AValue: TIWTabOrder); virtual;
+
+    function get_Canvas: TCanvas; virtual; abstract;
+
+    function get_ShowHint: Boolean;
+    procedure set_ShowHint(Value: Boolean);
+
+    function get_ParentShowHint: Boolean;
+    procedure set_ParentShowHint(Value: Boolean);
+
+    function get_Width: Integer;
+    function get_Height: Integer;
+
+    function get_TabOrder: TIWTabOrder;
+    procedure set_TabOrder(AValue: TIWTabOrder);
+
+    procedure set_Height(Value: Integer);
+    procedure set_Width(Value: Integer);
+
+    procedure set_Left(Value: Integer);
+    procedure set_Top(Value: Integer);
+
+    function get_Anchors: TAnchors;
+    procedure set_Anchors(Value: TAnchors);
+    function get_Align: TAlign;
+    procedure set_Align(Value: TAlign);
+
+    property Canvas: TCanvas read get_Canvas;
+    property Color: TIWColor read get_WebColor write set_WebColor;
+    property WebColor: TIWColor read get_WebColor write set_WebColor;
+    property TabOrder: TIWTabOrder read getTabOrder write setTabOrder default -1;
+
+    property isLoading: Boolean read GetLoading;
+    function get_Visible: Boolean; virtual;
+    procedure set_Visible(Value: Boolean); virtual;
+    procedure Dispose(ADispose: Boolean); virtual;
+    function GetNewComponentList: TIWListBase; virtual;
+    function GetDestroyedComponentList: TIWSimpleStringList; virtual;
+    procedure CreateWnd; override;
+    procedure CreateHandle; override;
+    {$IFDEF VCL160}  // Touch was introduced in Delphi XE2
+    procedure CreateTouchManager; override;
+    {$ENDIF}
+    {$IFDEF FPC}
+    procedure CreateBrush; override;
+    {$ENDIF}
+  public
+    constructor Create(AOwner: TComponent); override;
+    destructor Destroy; override;
+    procedure ForceAlign;
+    procedure CheckNeedAlign;
+    procedure CenterInParent(const ACenterOption: TIWCenteringOption = coCenterBoth);
+    property AlignPending: Boolean read FAlignPending write FAlignPending;
+    property RehashPending: Boolean read FRehashPending write FRehashPending; //SetRehashPending;
+    property IsDesignMode: Boolean read GetDesignMode;
+    procedure Repaint; override;
+    {$IFNDEF FPC}
+    procedure Invalidate; override;
+    {$ENDIF}
+    property NewComponentList: TIWListBase read GetNewComponentList;
+    property DestroyedComponentList: TIWSimpleStringList read GetDestroyedComponentList;
+    {$IFDEF VCL160}  // Touch was introduced in Delphi XE2
+    procedure CMParentTabletOptionsChanged(var Message: TMessage); message CM_PARENTTABLETOPTIONSCHANGED;
+    {$ENDIF}
+    procedure CMColorChanged(var Message: TMessage); message CM_COLORCHANGED;
+    procedure WMEraseBkgnd(var Message: TWmEraseBkgnd); message WM_ERASEBKGND;
+    procedure WMNCPaint(var Message: TWMNCPaint); message WM_NCPAINT;
+    {$IFDEF FPC}
+    procedure Invalidate; override;
+    procedure InvalidateRect(ARect: TRect; Erase: Boolean); virtual;
+    {$ENDIF}
+  published
+    property Visible: boolean read get_Visible write set_Visible default True;
+    ///Summary: By default invisible controls are not rendered at all. By setting RenderInvisibleControls to true
+    ///  invisible controls are rendered with style "visibility: hidden", this allows to make these controls
+    ///  visible later on via async events. For Sync events this is not relevant and may increase the page's HTML size.
+    ///  Default was changed to TRUE on version 14.0.34
+    property RenderInvisibleControls: Boolean read GetRenderInvisibleControls write SetRenderInvisibleControls stored True;
+  end;
+
+  function GetIWParent(AComponent: TComponent): TComponent; inline;
+  function GetIWParentContainer(AComponent: TComponent): IIWBaseContainer;
+  function GetIWParentForm(AComponent: TComponent): TComponent;
+  procedure CenterControlInParent(AControl: TControl; const ACenterOption: TIWCenteringOption);
+
+implementation

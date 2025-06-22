@@ -1,0 +1,64 @@
+unit IWBaseComponent;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, SysUtils,
+  IWBaseInterfaces, IWMarkupLanguageTag, IWBaseRenderContext, IW.Common.Lists;
+
+type
+  TIWBaseComponentImplementation = class
+  private
+    FComponent: TComponent;
+    FExtraTagParams: TStringList;
+    FFreeNotificationList: TIWListBase;
+    FParent: TComponent;
+  protected
+    procedure ParentReferenceNeeded;
+    procedure ParentChanging;
+    function get_ParentContainer: IIWBaseContainer;
+    property Component: TComponent read FComponent;
+  public
+    constructor Create(AComponent: TComponent); reintroduce; virtual;
+    destructor Destroy; override;
+    procedure DoFreeNotification;
+    procedure AddFreeNotifier(AObject: TObject);
+    procedure RemoveFreeNotifier(AObject: TObject);
+    function get_ExtraTagParams: TStringList;
+    procedure set_ExtraTagParams(const Value: TStringList);
+    property ExtraTagParams: TStringList read get_ExtraTagParams write set_ExtraTagParams;
+    // returns the owner IWBaseForm instance as a IIWBaseContainer interface
+    property ParentContainer: IIWBaseContainer read get_ParentContainer;
+  end;
+
+  TIWBaseComponent = class(TComponent, IIWBaseComponent)
+  protected
+    procedure Dispose(ADispose: Boolean); virtual;
+  protected
+    FBaseComponentImplementation: TIWBaseComponentImplementation;
+
+    procedure InitControl; virtual;
+    procedure InitDesignTime; virtual;
+
+    // IIWBaseComponent interface
+    function RenderMarkupLanguageTag(AContext: TIWBaseComponentContext): TIWMarkupLanguageTag; virtual;
+    function RequiresRefresh: Boolean; virtual;
+
+    function get_ComponentName: string; virtual;
+    function SupportsSubmit: Boolean;
+    function SupportsInput: Boolean;
+    function InterfaceInstance: TComponent;
+  public
+    constructor Create(AOwner: TComponent); override;
+    destructor Destroy; override;
+    procedure AddFreeNotifier(AObject: TObject);
+    procedure RemoveFreeNotifier(AObject: TObject);
+    procedure ParentChanging;
+  published
+    function get_ExtraTagParams: TStringList; virtual;
+    procedure set_ExtraTagParams(const Value: TStringList); virtual;
+    property ExtraTagParams: TStringList read get_ExtraTagParams write set_ExtraTagParams;
+  end;
+
+implementation

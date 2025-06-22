@@ -1,0 +1,219 @@
+unit IWCompFileUploader;
+{$I IWCompilerDefines.inc}
+
+{PUBDIST}
+
+// Disable Compiler warings for DEPRECATED set_RenderSize, setRenderSize and get_RenderSize
+{$WARN SYMBOL_DEPRECATED OFF}
+
+interface
+
+uses
+  SysUtils, Classes,
+  IWControl, IWBaseControl, IWHTMLTag, IWRenderContext,
+  IWBaseInterfaces, IW.HTTP.FileItem, IWFont, Graphics, IWColor,
+  IWScriptEvents, IWXMLTag, IWCSS;
+
+type
+  TIWStyleOptions = class(TIWCssGradient)
+  private
+    procedure SetBackgroundColor(const Value: TIWColor);
+  public
+    procedure InitDefault; override;
+  published
+    // BGColor = set both colors, FromColor and ToColor at the same time. Write-only property (not visible in Object Inspector)
+    // It was used in initial TIWFileUploader versions and this w.o. property was kept for compatibility
+    property BGColor: TIWColor write SetBackgroundColor stored False;
+  end;
+
+  TIWStyleAreaOptions = class(TIWStyleOptions)
+  private
+    FHeight: Integer;
+    FWidth: Integer;
+    FBorderRadius: Integer;
+    procedure SetHeight(const Value: Integer);
+    procedure SetWidth(const Value: Integer);
+    procedure SetBorderRadius(const Value: Integer);
+  public
+    procedure InitDefault; override;
+    function RenderStyle(AContext: TIWCompContext): string; override;
+    procedure Assign(Source: TPersistent); override;
+  published
+    property Height: Integer read FHeight write SetHeight;
+    property Width: Integer read FWidth write SetWidth;
+    property BorderRadius: Integer read FBorderRadius write SetBorderRadius default 0;
+  end;
+
+  TIWFileUploaderStyle = class(TPersistent)
+  private
+    FButtonOptions: TIWStyleAreaOptions;
+    FListOptions: TIWStyleAreaOptions;
+    FDropAreaOptions: TIWStyleAreaOptions;
+    FDropAreaActiveOptions: TIWStyleAreaOptions;
+    FButtonHoverOptions: TIWStyleOptions;
+    FListErrorOptions: TIWStyleOptions;
+    FListSuccessOptions: TIWStyleOptions;
+  public
+    constructor Create(AControl: TIWCustomControl); virtual;
+    destructor Destroy; override;
+  published
+    // Style Options
+    property ButtonOptions: TIWStyleAreaOptions read FButtonOptions write FButtonOptions;
+    property ButtonHoverOptions: TIWStyleOptions read FButtonHoverOptions write FButtonHoverOptions;
+    property ListOptions: TIWStyleAreaOptions read FListOptions write FListOptions;
+    property ListSuccessOptions: TIWStyleOptions read FListSuccessOptions write FListSuccessOptions;
+    property ListErrorOptions: TIWStyleOptions read FListErrorOptions write FListErrorOptions;
+    property DropAreaOptions: TIWStyleAreaOptions read FDropAreaOptions write FDropAreaOptions;
+    property DropAreaActiveOptions: TIWStyleAreaOptions read FDropAreaActiveOptions write FDropAreaActiveOptions;
+  end;
+
+  TIWFileUploaderTextStrings = class(TPersistent)
+  private
+    FDragText: string;
+    FUploadButtonText: string;
+    FCancelButtonText: string;
+    FUploadErrorText: string;
+    FMultipleFileDropNotAllowedText: string;
+    FOfTotalText: string;
+    FRemoveButtonText: string;
+    FTypeErrorText: string;
+    FSizeErrorText: string;
+    FEmptyErrorText: string;
+    FNoFilesErrorText: string;
+    FMinSizeErrorText: string;
+    FOnLeaveWarningText: string;
+  published
+    property DragText: string read FDragText write FDragText;
+    property UploadButtonText: string read FUploadButtonText write FUploadButtonText;
+    property CancelButtonText: string read FCancelButtonText write FCancelButtonText;
+    property UploadErrorText: string read FUploadErrorText write FUploadErrorText;
+    property MultipleFileDropNotAllowedText: string read FMultipleFileDropNotAllowedText write FMultipleFileDropNotAllowedText;
+    property OfTotalText: string read FOfTotalText write FOfTotalText;
+    property RemoveButtonText: string read FRemoveButtonText write FRemoveButtonText;
+    // messages
+    property TypeErrorText: string read FTypeErrorText write FTypeErrorText;
+    property SizeErrorText: string read FSizeErrorText write FSizeErrorText;
+    property MinSizeErrorText: string read FMinSizeErrorText write FMinSizeErrorText;
+    property EmptyErrorText: string read FEmptyErrorText write FEmptyErrorText;
+    property NoFilesErrorText: string read FNoFilesErrorText write FNoFilesErrorText;
+    property OnLeaveWarningText: string read FOnLeaveWarningText write FOnLeaveWarningText;
+  end;
+
+  TUploadCompleteEvent = procedure (Sender: TObject; var DestPath, FileName: string; var SaveFile: Boolean; var Overwrite: Boolean) of object;
+
+  TIWCustomFileUploader = class(TIWCustomControl, IIWInputControl, IIWUploadControl)
+  private
+    FAllowedExtensions: string;
+    FAcceptFiles: string;
+    FDisableCancel: Boolean;
+    FOnAsyncUploadCompleted: TUploadCompleteEvent;
+    FAutoUpload: Boolean;
+    FAutoSave: Boolean;
+    FButtonVisible: Boolean;
+    FListVisible: Boolean;
+    FAutoSavePath: string;
+    FOverwriteExisting: Boolean;
+    FAutoHideListTime: Cardinal;
+    FCssClasses: TStrings;
+    FOnAsyncUploadSuccess: TIWAsyncEvent;
+    FOnAsyncUploadError: TIWAsyncEvent;
+    FOnAsyncSelectFile: TIWAsyncEvent;
+    FAllowDragAndDrop: Boolean;
+    procedure SetAllowedExtensions(const Value: string);
+    procedure SetAcceptFiles(const Value: string);
+    procedure SetCssClasses(const Value: TStrings);
+  protected
+    FCSSClassPrefix: string;
+    FMultiple: Boolean;
+    FFileList: THttpFileList;
+    FMinFileSize: Int64;
+    FMaxFileSize: Int64;
+    FJavaScriptDebug: Boolean;
+    FTextStrings: TIWFileUploaderTextStrings;
+    FStyle: TIWFileUploaderStyle;
+    procedure SetName(const AValue: TComponentName); override;
+    procedure InitControl; override;
+    procedure Dispose(ADispose: Boolean); override;
+    function DefaultCSSClass(const AName: string): string;
+    function GetCSSClass(const AName: string): string; overload;
+    function GetCSSClass(const AName: string; out IsCustom: Boolean): string; overload;
+    procedure AssignFileList(const ASourceList: THttpFileList);
+    function SupportsInput: Boolean; override;
+    function get_HasName: Boolean; override;
+    procedure SetValue(const AValue: string);
+    procedure SetFileValue(AFile: TFileName); override;
+    function DoSaveFile(APathname: string; const AFileName: string; AIndex: Integer; AOverwrite: Boolean): Boolean;
+    procedure CreateDirectory(const APathname: string);
+    procedure DoOnAsyncUploadSuccess(AParams: TStringList);
+    procedure DoOnAsyncUploadError(AParams: TStringList);
+    procedure DoOnAsyncSelectFile(AParams: TStringList);
+    procedure AssignAsyncEvents(APageContext: TIWPageContext40; AScriptEvents: TIWScriptEvents); override;
+    function CallJavaScriptMethod(const ACode: string): Boolean;
+  public
+    class function CheckMimeType: string; static;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    function RenderStyle(AContext: TIWCompContext): string; override;
+    function SaveAll(APathname: string; AOverwrite: Boolean): Integer;
+    procedure SaveToFile(const ASourceFileName: string; const ADestFileName: TFileName; AOverwrite: Boolean);
+    procedure SaveToStream(const ASourceFileName: string; AStream: TStream);
+    procedure NotifyUploadCompleted;  // IIWUploadControl interface
+    function StartUpload: Boolean;
+    function SelectFile: Boolean;
+    function ClearList: Boolean;
+    property FileList: THttpFileList read FFileList;
+  published
+    property TabOrder;
+    property JavaScriptDebug: boolean read FJavaScriptDebug write FJavaScriptDebug default False;
+    property MinFileSize: Int64 read FMinFileSize write FMinFileSize default 0;
+    property MaxFileSize: Int64 read FMaxFileSize write FMaxFileSize default 20971520;
+    property Multiple: boolean read FMultiple write FMultiple default False;
+    property AutoHideListTime: Cardinal read FAutoHideListTime write FAutoHideListTime default 0;
+    //
+    property TextStrings: TIWFileUploaderTextStrings read FTextStrings write FTextStrings;
+    property Style: TIWFileUploaderStyle read FStyle write FStyle;
+    property AllowedExtensions: string read FAllowedExtensions write SetAllowedExtensions;
+    property AcceptFiles: string read FAcceptFiles write SetAcceptFiles;
+    property DisableCancel: boolean read FDisableCancel write FDisableCancel default False;
+    property AutoUpload: boolean read FAutoUpload write FAutoUpload default True;
+    property AutoSave: boolean read FAutoSave write FAutoSave default False;
+    property AutoSavePath: string read FAutoSavePath write FAutoSavePath;
+    property OverwriteExisting: boolean read FOverwriteExisting write FOverwriteExisting default True;
+    property ButtonVisible: boolean read FButtonVisible write FButtonVisible default True;
+    property ListVisible: boolean read FListVisible write FListVisible default True;
+    property CssClasses: TStrings read FCssClasses write SetCssClasses;
+    property AllowDragAndDrop: Boolean read FAllowDragAndDrop write FAllowDragAndDrop default True;
+    property OnAsyncUploadCompleted: TUploadCompleteEvent read FOnAsyncUploadCompleted write FOnAsyncUploadCompleted;
+    property OnAsyncUploadSuccess: TIWAsyncEvent read FOnAsyncUploadSuccess write FOnAsyncUploadSuccess;
+    property OnAsyncUploadError: TIWAsyncEvent read FOnAsyncUploadError write FOnAsyncUploadError;
+    property OnAsyncSelectFile: TIWAsyncEvent read FOnAsyncSelectFile write FOnAsyncSelectFile;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWFileUploader = class(TIWCustomFileUploader)
+  protected
+    property RenderSize;
+    property Css;
+    property SkinId;
+  published
+    property Enabled;
+    property FriendlyName;
+    property Font;
+  end;
+
+resourcestring
+  RSFU_DragText = 'Drop files here to upload';
+  RSFU_UploadButtonText = 'Upload a file';
+  RSFU_CancelButtonText = 'Cancel';
+  RSFU_RemoveButtonText = 'Remove';
+  RSFU_UploadErrorText = 'Upload failed';
+  RSFU_MultipleFileDropNotAllowedText = 'You may only drop a single file';
+  RSFU_OfTotalText = 'of';
+  RSFU_TypeErrorText = '{file} has an invalid extension. Only {extensions} files are allowed.';
+  RSFU_SizeErrorText = '{file} is too large, maximum file size is {sizeLimit}.';
+  RSFU_MinSizeErrorText = '{file} is too small, minimum file size is {minSizeLimit}.';
+  RSFU_EmptyErrorText = '{file} is empty, please select files again without it.';
+  RSFU_NoFilesErrorText = 'No files to upload.';
+  RSFU_OnLeaveWarningText = 'The files are being uploaded, if you leave now the upload will be cancelled.';
+
+implementation

@@ -1,0 +1,43 @@
+unit IW.Common.ReadCacheFileStream;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, SysUtils;
+
+const
+  IWCacheExtension = '.tmp';
+  IWCacheSignature = 'IWCACHE';
+  SignatureSize = SizeOf(UInt32) + 7;
+
+type
+  TReadCacheFileStream = class(TFileStream)
+  private
+    function GetDisplayFileName: string;
+  protected
+    mMetaDataRead: Boolean;
+    mInnerSize: Int64;   // the size of the cache file without metadata
+    mContentType: string;
+    mCacheType: Byte;
+    mHref: string;
+    mDeleteFile: Boolean;
+    mAttachment: Boolean;
+    function GetSize: Int64; override;
+    procedure SetSize(const NewSize: Int64); override;
+    procedure ReadCacheMetaData;
+    class function CheckCacheSignature(aStream: TStream; aSize: Int64): Boolean;
+  public
+    constructor Create(const aPathname: string);
+    destructor Destroy; override;
+    class function GetCacheFileHref(const aPathname: string): string;
+    class function IsCacheFile(const aPathname: string): Boolean;
+    function Read(var Buffer; Count: Longint): Longint; override;
+    property ContentType: string read mContentType;
+    property Attachment: Boolean read mAttachment;
+    property DisplayFileName: string read GetDisplayFileName;
+    property CacheType: Byte read mCacheType;
+    property DeleteFile: Boolean read mDeleteFile;
+  end;
+
+implementation

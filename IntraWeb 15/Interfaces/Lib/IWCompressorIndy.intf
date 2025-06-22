@@ -1,0 +1,17 @@
+unit IWCompressorIndy;
+{$I IWCompilerDefines.inc}
+
+// ZLib compressor for Indy-based SA applications
+
+interface
+
+uses
+  SysUtils, Classes, IWCompress;
+
+type
+  TIWCompressorIndy = class(TIWCompressor)
+  public
+    procedure Compress(const ARequest, AResponse: TObject); override;
+  end;
+
+implementation

@@ -1,0 +1,29 @@
+unit IWVarDir;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses Classes, SysUtils, IWTag, IWVar;
+
+type
+  TIWVarDir = class(TIWVar)
+  protected
+    mSearchRec: TSearchrec;
+    mDirPath: string;
+    procedure ProcessTitle;
+    procedure ProcessName;
+    procedure ProcessURL;
+    procedure DoProcessTag(aTag: TIWTag); override;
+    function GetExclude: Boolean;
+    function GetConfigFileName: string;
+  public
+    function GetName: string;
+    function GetURL: string;
+    function GetTitle: string;
+    function GetTimeCreated: string;
+    function GetTimeModified: string;
+    constructor Create(aText: string; aSearchRec: TSearchrec; aDirPath: string);
+    property Exclude: Boolean read GetExclude;
+  end;
+
+implementation

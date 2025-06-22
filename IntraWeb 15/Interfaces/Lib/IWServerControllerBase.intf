@@ -1,0 +1,823 @@
+unit IWServerControllerBase;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, Classes, Windows, ActiveX, SyncObjs,
+  IWVCLComponent, IW.HTTP.Reply, IWFileReference, IW.HTTP.Request, IWBaseForm,
+  IW.Browser.Browser, IWApplication, IWTypes, IWCompressionOptions, IWAutherBase,
+  IWExceptionLogger, IW.Common.Threads, IW.Common.StrLists, IW.Common.Lists,
+  IW.HTTP.Cookie, IW.OAuth.Base, IWServerMonitorClient;
+
+type
+  TComInitialization = (ciNone, ciNormal, ciMultiThreaded);
+
+  TIWResyncInfo = record
+    Session: TIWApplication;
+    CurrentTrackId: Int64;
+    SubmittedTrackId: Int64;
+    FormName: string;
+    FormClassName: string;
+    FormOutOfSync: Boolean;
+    TrackIdOutOfSync: Boolean;
+    ExecuteForm: Boolean;
+    SetActiveForm: Boolean;
+    RecreateActiveForm: Boolean;
+    Handled: Boolean;
+  end;
+
+  TIWExceptionCallbackInfo = record
+    Sender: TObject;
+    SourceException: Exception;
+    Request: THttpRequest;
+  end;
+
+  TIWExceptionCallbackProc = procedure(aExceptionInfo: TIWExceptionCallbackInfo; var Handled: Boolean) of object;
+
+  TIWExceptionCallback = class(TObject)
+  protected
+    FCallBackFunction: TIWExceptionCallbackProc;
+  public
+    constructor Create(ACallbackFunction: TIWExceptionCallbackProc);
+    procedure PerformCallBack(AParams: TIWExceptionCallbackInfo; var Handled: Boolean);
+  end;
+
+  TOnNewSessionEvent = procedure(aSession: TIWApplication) of object;
+  TOnGetMainFormEvent = procedure(var vMainForm: TIWBaseForm) of object;
+  TOnCloseSessionEvent = procedure(aSession: TIWApplication) of object;
+
+  TOnExceptionEvent = procedure(AApplication: TIWApplication; AException: Exception; var Handled: Boolean) of object;
+  TOnBackButtonEvent = procedure(var VResyncInfo: TIWResyncInfo) of object;
+  TOnGetSessionID = procedure(ASession: TIWApplication; var VNewSessionID:String) of object;
+
+  TOnBeforeRenderEvent = procedure(ASession: TIWApplication; AForm: TIWBaseForm; var VNewForm: TIWBaseForm) of object;
+  TOnAfterRenderEvent = procedure(ASession: TIWApplication; AForm: TIWBaseForm) of object;
+  TOnUserTag = procedure(const aName: string; aParams: TStrings; aOutput: TStringStream) of object;
+  TOnSessionTag = procedure(aSession: TIWApplication; const aName: string; aParams: TStrings; aOutput: TStringStream) of object;
+  TOnBrowserCheckEvent = procedure(aSession: TIWApplication; var rBrowser: TBrowser) of object;
+  TOnParseParameterEvent = procedure(var AParam: string; var AllowIt: Boolean; const Index: Integer) of object;
+  TOnLogExceptionEvent = function(const ReportInfo: TStrings): Boolean of object;
+  TOnRewriteURLEvent = procedure(ARequest: THttpRequest; var ARewriteURL: string) of object;
+  TOnBeforeNewSessionEvent = procedure(const aUrlPath: string; aRequest: THttpRequest; out vCanCreate: Boolean) of object;
+  TOnBindEvent = procedure(const aHttpBindings, aHttpsBindings: TStrings) of object;
+  TOnWindowIdChangedEvent = procedure(ASession: TIWApplication; var vContinue: Boolean) of object;
+  TOnMetaTagEvent = procedure(ASession: TIWApplication; const AMetaName: string; var vMetaValue: string) of object;
+  TOnOAuthSuccessEvent = procedure(ASession: TIWApplication; var Handled: Boolean) of object;
+  TOnOAuthErrorEvent = procedure(ASession: TIWApplication; const ErrorInfo: TOAuthErrorInfo; var Handled: Boolean) of object;
+
+  TIWCacheFileAccess = (faGrant, faDeny, faRequireSession);
+
+  TOnValidateCacheFileAccess = procedure(const aUrlPath: string; var vFileAccess: TIWCacheFileAccess) of object;
+
+  TIWNonSSLRequest = (nsAccept, nsBlock, nsRedirect);
+
+  TIWSSLVersion =  (SSLv2, SSLv23, SSLv3, TLSv1, TLSv11, TLSv12, TLSv13);
+  TIWSSLVersions = set of TIWSSLVersion;
+
+  TIWServerControllerBase = class;
+
+  TIWServerControllerPersistentProperty = class(TPersistent)
+  protected
+    FServerController: TIWServerControllerBase;
+    procedure Init; virtual;
+    procedure CheckLock(const aPropName: string);
+  public
+    constructor Create(AServerControllerBase: TIWServerControllerBase);
+  end;
+
+  // this is used by TIWSSLOptions
+  TIWSSLCertificateOptions = class(TIWServerControllerPersistentProperty)
+  private
+    FPath: string;
+    FCertFileName: string;
+    FKeyFileName: string;
+    FRootCertFileName: string;
+    FDHParamsFileName: string;
+    FPassword: string;
+    procedure SetPath(const Value: string);
+    procedure SetCertFileName(const Value: string);
+    procedure SetDHParamsFileName(const Value: string);
+    procedure SetKeyFileName(const Value: string);
+    procedure SetRootCertFileName(const Value: string);
+  public
+    procedure Assign(ASource: TPersistent); override;
+  published
+    property Path: string read FPath write SetPath;
+    property CertFileName: string read FCertFileName write SetCertFileName;
+    property KeyFileName: string read FKeyFileName write SetKeyFileName;
+    property RootCertFileName: string read FRootCertFileName write SetRootCertFileName;
+    property DHParamsFileName: string read FDHParamsFileName write SetDHParamsFileName;
+    property Password: string read FPassword write FPassword;
+  end;
+  
+  TIWSSLOptions = class(TIWServerControllerPersistentProperty)
+  protected
+    FCertificatePassword: string;
+    FPort: Integer;
+    FNonSSLRequest: TIWNonSSLRequest;
+    FVersion: TIWSSLVersion;
+    FCipherList: string;
+    FCipherSuites: string;
+    FSSLVersions: TIWSSLVersions;
+    FEnableACME: Boolean;
+    FCertificateOptions: TIWSSLCertificateOptions;
+    FSetOpenSSLPath: Boolean;
+    procedure SetCertificateOptions(const Value: TIWSSLCertificateOptions);
+    procedure SetCertificatePassword(const Value: string);
+    procedure SetDHParamsFile(const Value: string);
+    procedure SetSetOpenSSLPath(const Value: Boolean);
+    procedure SetCipherList(const Value: string);
+    procedure SetCipherSuites(const Value: string);
+    procedure SetSSLVersions(const Value: TIWSSLVersions);
+    procedure SetEnableACME(const Value: Boolean);
+    procedure SetVersion(const Value: TIWSSLVersion);
+    procedure SetNonSSLRequest(const Value: TIWNonSSLRequest);
+    // SetPort() method name will cause C++ Builder to fail
+    procedure SetPortNumber(const Value: Integer);
+  public
+    procedure Init; override;
+    destructor Destroy; override;
+    procedure Assign(ASource: TPersistent); override;
+  published
+    property CertificatePassword: string write SetCertificatePassword;  // Deprecated. moved to Certificate.Password
+    property DHParamsFile: string write SetDHParamsFile;                // Deprecated. Moved to Certificate.DHParamsFileName
+    property NonSSLRequest: TIWNonSSLRequest read FNonSSLRequest write SetNonSSLRequest default nsAccept;
+    property Port: Integer read FPort write SetPortNumber default 0;
+    property SSLVersion: TIWSSLVersion read FVersion write SetVersion default TLSv12;
+    property CipherList: string read FCipherList write SetCipherList;
+    property CipherSuites: string read FCipherSuites write SetCipherSuites;
+    property SSLVersions : TIWSSLVersions read FSSLVersions write SetSSLVersions default [];
+    property EnableACME: Boolean read FEnableACME write SetEnableACME default True;
+    property Certificate: TIWSSLCertificateOptions read FCertificateOptions write SetCertificateOptions;
+    property SetOpenSSLPath: Boolean read FSetOpenSSLPath write SetSetOpenSSLPath default True;
+  end;
+
+  TIWSessionCookieOptions = class(TIWServerControllerPersistentProperty)
+  protected
+    FSessionCookies: Boolean;
+    FCookieNameSuffix: string;
+    FUseCookies: Boolean;
+    FHttpOnly: Boolean;
+    FSecure: Boolean;
+    FSameSite: TIWCookieSameSiteOption;
+    FRunCookieCheck: Boolean;
+    procedure SetCookieNameSuffix(const Value: string);
+    procedure SetUseCookies(const Value: Boolean);
+    procedure Init; override;
+    procedure SetSameSite(const Value: TIWCookieSameSiteOption);
+  published
+    property SessionCookies: Boolean read FSessionCookies write FSessionCookies default True;
+    property CookieNameSuffix: string read FCookieNameSuffix write SetCookieNameSuffix;
+    property UseCookies: Boolean read FUseCookies write SetUseCookies default True;
+    property Secure: Boolean read FSecure write FSecure default False;
+    property HttpOnly: Boolean read FHttpOnly write FHttpOnly default False;
+    property SameSite: TIWCookieSameSiteOption read FSameSite write SetSameSite default ssoLax;
+    property RunCookieCheck: Boolean read FRunCookieCheck write FRunCookieCheck default True;
+  public
+    procedure Assign(ASource: TPersistent); override;
+  end;
+
+  TIWSearchEngineOptions = class(TIWServerControllerPersistentProperty)
+  protected
+    mRedirectToContentHandler: Boolean;
+    mContentHandlerPath: string;
+  published
+    property RedirectToContentHandler: Boolean read mRedirectToContentHandler write mRedirectToContentHandler default False;
+    property ContentHandlerPath: string read mContentHandlerPath write mContentHandlerPath;
+  public
+    procedure Assign(ASource: TPersistent); override;
+  end;
+
+  TIWAjaxErrorMode = (emNone, emAlert, emConsole);
+
+  TIWJavaScriptOptions = class(TIWServerControllerPersistentProperty)
+  private
+    procedure SetjQueryVersion(const Value: string);
+  protected
+    mDebug: Boolean;
+    mUseUncompressedFiles: Boolean;
+    mEnableFirebug: Boolean;
+    mAjaxErrorMode: TIWAjaxErrorMode;
+    mRenderjQuery: Boolean;
+    mjQueryVersion: string;
+  published
+    property Debug: Boolean read mDebug write mDebug default False;
+    property UseUncompressedFiles: Boolean read mUseUncompressedFiles write mUseUncompressedFiles default False;
+    property EnableFirebug: Boolean read mEnableFirebug write mEnableFirebug default False;
+    property AjaxErrorMode: TIWAjaxErrorMode read mAjaxErrorMode write mAjaxErrorMode default emAlert;
+    property RenderjQuery: Boolean read mRenderjQuery write mRenderjQuery default True;
+    property jQueryVersion: string read mjQueryVersion write SetjQueryVersion stored False;
+  public
+    procedure Init; override;
+    procedure Assign(ASource: TPersistent); override;
+  end;
+
+  TIWBackButtonMode = (bmInterceptGlobal, bmInterceptForm, bmEnable, bmDisableCompat);
+
+  TIWBackButtonOptions = class(TIWServerControllerPersistentProperty)
+  protected
+    mShowMessage: Boolean;
+    mWarningMessage: string;
+    mMode: TIWBackButtonMode;
+    mReloadPage: Boolean;
+  published
+    property Mode: TIWBackButtonMode read mMode write mMode default bmDisableCompat;
+    property ShowMessage: Boolean read mShowMessage write mShowMessage default False;
+    property WarningMessage: string read mWarningMessage write mWarningMessage;
+    property ReloadPage: Boolean read mReloadPage write mReloadPage default False;
+  public
+    procedure Init; override;
+    procedure Assign(ASource: TPersistent); override;
+  end;
+
+  // used to set extra methods other than GET and POST. Due to a bug in Delphi streaming system
+  // we need to include the first elements as well, see the following link for more details:
+  // https://stackoverflow.com/questions/73244251/delphi-properties-based-on-sets-of-subrange-types-are-not-streamed-correctly-to
+  TExtraHttpMethods = hmGet..hmPatch;
+  THttpMethods = set of TExtraHttpMethods;
+
+  TIWSecurityOptions = class(TIWServerControllerPersistentProperty)
+  private
+    procedure SetCorsOrigin(const Value: string);
+    function IsHttpMethodsStored: Boolean;
+    procedure SetSurrogateSessionId(const Value: Boolean);
+    procedure SetAllowedStartParams(const Value: TStringList);
+    procedure SetMaxActiveSessionsPerIp(const Value: Integer);
+  protected
+    mCheckSameIP: Boolean;
+    mCheckSameUA: Boolean;
+    mCheckFormId: Boolean;
+    mCheckWindowId: Boolean;
+    mRandomTempFileNames: Boolean;
+    mShowSecurityErrorDetails: Boolean;
+    mPreventDoubleSubmission: Boolean;
+    mForceAjaxPost: Boolean;
+    mCorsOrigin: string;
+    mHttpMethods: THttpMethods;
+    mSurrogateSessionId: Boolean;
+    mAllowedStartParams: TStringList;
+    mMaxActiveSessionsPerIp: Integer;
+    mEnableHSTS: Boolean;
+    procedure Init; override;
+    procedure SetHttpMethods(AValue: THttpMethods);
+  public
+    procedure Assign(ASource: TPersistent); override;
+    destructor Destroy; override;
+  published
+    property CheckSameIP: Boolean read mCheckSameIP write mCheckSameIP default False;
+    property CheckSameUA: Boolean read mCheckSameUA write mCheckSameUA default True;
+    property CheckFormId: Boolean read mCheckFormId write mCheckFormId default False;
+    property CheckWindowId: Boolean read mCheckWindowId write mCheckWindowId default True;
+    property RandomTempFileNames: Boolean read mRandomTempFileNames write mRandomTempFileNames default True;
+    property PreventDoubleSubmission: Boolean read mPreventDoubleSubmission write mPreventDoubleSubmission default True;
+    property ShowSecurityErrorDetails: Boolean read mShowSecurityErrorDetails write mShowSecurityErrorDetails default True;
+    // Always use POST for Ajax requests. Fields are transmitted as content not as query string
+    property ForceAjaxPost: Boolean read mForceAjaxPost write mForceAjaxPost default False;
+    property CorsOrigin: string read mCorsOrigin write SetCorsOrigin;
+    property HttpMethods: THttpMethods read mHttpMethods write SetHttpMethods stored IsHttpMethodsStored default [hmGet, hmPost];
+    property SurrogateSessionId: Boolean read mSurrogateSessionId write SetSurrogateSessionId default True;
+    property AllowedStartParams: TStringList read mAllowedStartParams write SetAllowedStartParams;
+    property MaxActiveSessionsPerIp: Integer read mMaxActiveSessionsPerIp write SetMaxActiveSessionsPerIp default 0;
+    property EnableHSTS: Boolean read mEnableHSTS write mEnableHSTS default True;
+  end;
+
+  TIWMobileOptions = class(TIWServerControllerPersistentProperty)
+  protected
+    mViewportTag: string;
+  public
+    procedure Assign(ASource: TPersistent); override;
+  published
+    property ViewportTag: string read mViewportTag write mViewportTag;
+  end;
+
+  TLogSessionEventType = (etCreate, etDestroy, etRequest);
+
+  TLogSessionEventTypes = set of TLogSessionEventType;
+
+  // From 15.1.0:
+  // AllowMultipleSessionsPerUser  True     False     True      False
+  // CookieOptions.UseCookies      True     False     False     True
+  // Session ID in URL              Y        N         Y         N
+  // Multiple sessions              Y        Y         Y         N
+  TIWSessionOptions = class(TIWServerControllerPersistentProperty)
+  private
+    FUniqueURL: Boolean;
+    FSessionTimeout: Cardinal;
+    FLockSessionTimeout: Cardinal;
+    FRestartExpiredSession: Boolean;
+    FAllowSearchEngines: Boolean;
+    FRequiresExplicitStart: Boolean;
+    FHttpStatusForDeniedSessions: Word;
+    FBrowserCheckBeforeNewSession: Boolean;
+    FLogSessionEvents: TLogSessionEventTypes;
+    FAllowInIFrame: Boolean;
+    FLockedSessionNoContentResponse: Boolean;
+    procedure SetSessionTimeout(const AValue: Cardinal);
+    procedure SetUniqueURL(const AValue: Boolean);
+    procedure SetRestartExpiredSession(const AValue: Boolean);
+    function IsSessionTimeoutStored: Boolean;
+  protected
+    procedure Init; override;
+  public
+    procedure Assign(ASource: TPersistent); override;
+  published
+    property UniqueURL: Boolean read FUniqueURL write SetUniqueURL default False;
+    property SessionTimeout: Cardinal read FSessionTimeout write SetSessionTimeout stored IsSessionTimeoutStored;
+    property LockSessionTimeout: Cardinal read FLockSessionTimeout write FLockSessionTimeout default 180000;
+    property RestartExpiredSession: Boolean read FRestartExpiredSession write SetRestartExpiredSession default False;
+    property AllowSearchEngines: Boolean read FAllowSearchEngines write FAllowSearchEngines default False;
+    property RequiresExplicitStart: Boolean read FRequiresExplicitStart write FRequiresExplicitStart default False;
+    property HttpStatusForDeniedSessions: Word read FHttpStatusForDeniedSessions write FHttpStatusForDeniedSessions default 404;
+    property BrowserCheckBeforeNewSession: Boolean read FBrowserCheckBeforeNewSession write FBrowserCheckBeforeNewSession default True;
+    property LogSessionEvents: TLogSessionEventTypes read FLogSessionEvents write FLogSessionEvents default [];
+    property AllowInIFrame: Boolean read FAllowInIFrame write FAllowInIFrame default True;
+    // instead of  "Session Already locked" exception (which effectively kills the existing session on the browser side)
+    // respond with 204-No Content response which allows applicaiton to continue working. This allows a much better
+    // user experience
+    property LockedSessionNoContentResponse: Boolean read FLockedSessionNoContentResponse write FLockedSessionNoContentResponse default True;
+  end;
+
+  TIWProxyPortRedirection = class(TIWServerControllerPersistentProperty)
+  private
+    mActive: Boolean;
+    mHttpPort: Integer;
+    mHttpsPort: Integer;
+  public
+    procedure Init; override;
+    procedure Assign(ASource: TPersistent); override;
+  published
+    property Active: Boolean read mActive write mActive default False;
+    property HttpsPort: Integer read mHttpsPort write mHttpsPort default 443;
+    property HttpPort: Integer read mHttpPort write mHttpPort default 80;
+  end;
+
+  TIWHttpSysHostWildcard = (hwStrong, hwWeak);
+
+  TIWHttpSysOptions = class(TIWServerControllerPersistentProperty)
+  private
+    mVirtualHostNames: string;
+    mAddDefaultBinding: Boolean;
+    mHostWildcard: TIWHttpSysHostWildcard;
+    mThreadsPerCore: Word;
+    mLimitThreadCountInDebug: Boolean;
+    mRequestClientCertificate: Boolean;
+    procedure SetAddDefaultBinding(const Value: Boolean);
+    procedure SetVirtualHostNames(const Value: string);
+  public
+    procedure Init; override;
+    procedure Assign(ASource: TPersistent); override;
+  published
+    property VirtualHostNames: string read mVirtualHostNames write SetVirtualHostNames;
+    property AddDefaultBinding: Boolean read mAddDefaultBinding write SetAddDefaultBinding default True;
+    property HostWildcard: TIWHttpSysHostWildcard read mHostWildcard write mHostWildcard default hwStrong;
+    property ThreadsPerCore: Word read mThreadsPerCore write mThreadsPerCore default 0;
+    property LimitThreadCountInDebug: Boolean read mLimitThreadCountInDebug write mLimitThreadCountInDebug default True;
+    property RequestClientCertificate: Boolean read mRequestClientCertificate write mRequestClientCertificate default False;
+  end;
+
+  TOpenSSLVersion = (ssl1_0, ssl1_1);
+
+  TIWIndyServerOptions = class(TIWServerControllerPersistentProperty)
+  private
+    mThreadPoolSize: Word;
+    mUseThreadPool: Boolean;
+    mLimitThreadCountInDebug: Boolean;
+    mOpenSSLVersion: TOpenSSLVersion;
+    procedure SetUseThreadPool(const Value: Boolean);
+    procedure SetThreadPoolSize(const Value: Word);
+    procedure SetOpenSSLVersion(const Value: TOpenSSLVersion);
+  public
+    procedure Init; override;
+    procedure Assign(ASource: TPersistent); override;
+  published
+    property UseThreadPool: Boolean read mUseThreadPool write SetUseThreadPool default True;
+    property ThreadPoolSize: Word read mThreadPoolSize write SetThreadPoolSize default 50;
+    property LimitThreadCountInDebug: Boolean read mLimitThreadCountInDebug write mLimitThreadCountInDebug default True;
+    property OpenSSLVersion: TOpenSSLVersion read mOpenSSLVersion write SetOpenSSLVersion default ssl1_0;
+  end;
+
+  TLockerStyle = (lsDark, lsLight);
+
+  TIWLockerOptions = class(TIWServerControllerPersistentProperty)
+  private
+    FCustomLockerAnimationFile: string;
+    FShowLoadingAnimation: Boolean;
+    FStyle: TLockerStyle;
+    FBackgroundRGBA: string;
+    FCaption: string;
+    FOptions: string;
+    procedure SetBackgroundRGBA(AValue: string);
+    procedure SetCaption(const AValue: string);
+    procedure SetStyle(AValue: TLockerStyle);
+    procedure SetShowLoadingAnimation(AValue: Boolean);
+    procedure SetCustomLockerAnimationFile(const AValue: string);
+    procedure InitRuntime;
+  public
+    procedure Init; override;
+    procedure Assign(ASource: TPersistent); override;
+    function GetLockerFileName: string;
+    function ToJsonString(const AUrlBase: string): string;
+  published
+    property CustomLockerAnimationFile: string read FCustomLockerAnimationFile write SetCustomLockerAnimationFile;
+    property ShowLoadingAnimation: Boolean read FShowLoadingAnimation write SetShowLoadingAnimation default True;
+    property Style: TLockerStyle read FStyle write SetStyle default lsLight;
+    property BackgroundRGBA: string read FBackgroundRGBA write SetBackgroundRGBA;
+    property Caption: string read FCaption write SetCaption;
+  end;
+
+  TIWServerMonitorOptions = class(TIWServerControllerPersistentProperty)
+  private
+    FEnabled: Boolean;
+    FIntervalMinutes: SmallInt;
+    procedure SetEnabled(AValue: Boolean);
+    procedure SetIntervalMinutes(AValue: SmallInt);
+  public
+    procedure Init; override;
+    procedure Assign(ASource: TPersistent); override;
+  published
+    property Enabled: Boolean read FEnabled write SetEnabled default False;
+    property IntervalMinutes: SmallInt read FIntervalMinutes write SetIntervalMinutes default 60;
+  end;
+
+  TOnDispatch = procedure(Request: THttpRequest; aReply: THttpReply) of object;
+
+  TOnExecuteRequest = procedure(const Url: string; Request: THttpRequest; aReply: THttpReply; var Handled: Boolean) of object;
+
+  TOnAuthFailed = procedure(aReply: THttpReply; aSession: TIWApplication) of object;
+
+  TLogOptions = (loNone, loFile);
+
+  THttpClientClass = (WinHttpClient, IndyHttpClient);
+
+  TSessionTimeoutThread = class(TIWTimedThread)
+  private
+    FPassCount: Integer;
+    FFreeList: TIWListBase;
+  protected
+    procedure DoExecute; override;
+    procedure HandleThreadException(E: Exception; var AContinue: Boolean); override;
+  public
+    constructor Create(const AName: string; AInterval: Integer); override;
+    destructor Destroy; override;
+  end;
+
+  // This thread watches the Session timeout thread and makes sure that it is always
+  // running
+  TSentinelThread = class(TIWTimedThread)
+  private
+    FSessionTimeoutThreadHandle: THandle;
+  protected
+    procedure DoExecute; override;
+  end;
+
+  // enum allows us to add new options
+  TIWPostRedirectGetOption = (prgDisabled, prgEnabled, prgEnabledFormChange);
+
+  TIWServerControllerBase = class(TIWDatamodule)
+  strict private
+    FBlockedDocExtensions: TIWMinStringList;
+    FBlockedPathInfoList: TIWMinStringList;
+    FAutoLoadIniSettings: Boolean;
+    class var
+      FExceptionCallbackList: TIWObjectList;
+      FFixupPatchEnabled: Boolean;
+      FDesignWarningProc: TServerControllerDesignProc;
+      FDesignCheckProc: TServerControllerDesignProc;
+    function PerformExceptionCallbacks(Sender: TObject; AException: Exception; ARequest: THttpRequest): Boolean;
+    function CheckStartParams(aParamsList: TStrings; aAllowedList: TStringList): Boolean;
+  private
+    function LocatePathFromExe(const aSubPath: string): string;
+    procedure SetDocType(const Value: string);
+    procedure SetURLBase(const Value: string);
+    procedure SetHtmlLanguage(const Value: string);
+    procedure SetHttpSysOptions(const Value: TIWHttpSysOptions);
+    function GetCheckWindowId: Boolean;
+    procedure SetLoaderHTML(aStrings: TStrings);
+    procedure SetSessionOptions(const Value: TIWSessionOptions);
+    function GetSessionTimeout: Cardinal;
+    procedure SetSessionTimeout(const AValue: Cardinal);
+    function GetLockSessionTimeout: Cardinal;
+    procedure SetLockSessionTimeout(const AValue: Cardinal);
+    function GetAllowMultipleSessionsPerUser: Boolean;
+    procedure SetAllowMultipleSessionsPerUser(const Value: Boolean);
+    function GetRestartExpiredSession: Boolean;
+    procedure SetRestartExpiredSession(const Value: Boolean);
+    procedure SetLogSessionEvents(const Value: Boolean);
+    procedure SetCustomLockerAnimationFile(const Value: string);
+    procedure SetShowLoadingAnimation(const Value: Boolean);
+    procedure SetLockerOptions(const Value: TIWLockerOptions);
+    procedure SetServerMonitorOptions(const Value: TIWServerMonitorOptions);
+    procedure SetIndyServerOptions(const Value: TIWIndyServerOptions);
+    function InitSessionTimeoutThread(AExecuteAtStart: Boolean = False): NativeUInt;
+    class procedure DesignMessage(Sender: TObject; const aMessage: string);
+  protected
+    mLoaderHTML: TStrings;
+    mLocked: Boolean;
+    FPageTransitions: Boolean;
+    FServerResizeTimeout: Integer;
+    FTheme: string;
+    FDebugHTML: Boolean;
+    mMachineName: string;
+    FLog: TLogOptions;
+    FStartDateTime: TDateTime;
+    mStartUID: string;
+    FAuthBeforeNewSession: Boolean;
+    FAppName: string;
+    FBoundIP: string;
+    mCacheDir: string;
+    FCompression: TIWCompressionOptions;
+    FComInitialization: TComInitialization;
+    FEncoding : TEncoding;
+    fContentPath: string;
+    FDescription: string;
+    mDisplayName: string;
+    FExceptionDisplayMode: TIWShowMessageType;
+    FGUIActive: Boolean;
+    FHistoryEnabled: Boolean;
+    FHTMLHeaders: TStringList;
+    FContentFiles: TStringList;
+    FLicenseTracking: Boolean;
+    FMasterTemplate: string;
+    FOnAfterDispatch: TOnDispatch;
+    FOnBeforeDispatch: TOnDispatch;
+    FOnCloseSession: TOnCloseSessionEvent;
+    FOnException: TOnExceptionEvent;
+    FOnGetSessionID: TOnGetSessionID;
+    mOnNewSession: TOnNewSessionEvent;
+    mOnGetMainForm: TOnGetMainFormEvent;
+    FOnBackButton: TOnBackButtonEvent;
+    FOnBeforeRender: TOnBeforeRenderEvent;
+    FOnAfterRender: TOnAfterRenderEvent;
+    mOnUserTag: TOnUserTag;
+    mOnSessionTag: TOnSessionTag;
+    FPort: Integer;
+    FProcessID: string;
+    FSSLOptions: TIWSSLOptions;
+    FTemplateDir: string;
+    FStyleSheet: TIWFileReference;
+    FURLBase: string;
+    mAuther: TIWAutherBase;
+    mOnBrowserCheck: TOnBrowserCheckEvent;
+    mDocType: string;
+    mIECompatibilityMode: string;
+    mOnConfig: TNotifyEvent;
+    mSessionTimeoutThread: TSessionTimeoutThread;
+    mSentinelThread: TSentinelThread;
+    mCacheFiles: TIWMinStringList;
+    mServerVariables: TStringList;
+    mShowStartParams: Boolean;
+    mExceptionLogger: TIWExceptionLogger;
+    mCookieOptions: TIWSessionCookieOptions;
+    mSearchEngineOptions: TIWSearchEngineOptions;
+    mJavaScriptOptions: TIWJavaScriptOptions;
+    mSecurityOptions: TIWSecurityOptions;
+    mBackButtonOptions: TIWBackButtonOptions;
+    mMobileOptions: TIWMobileOptions;
+    mProxyPortRedirection: TIWProxyPortRedirection;
+    mHttpKeepAlive: Boolean;
+    mRewriteURL: string;
+    mLogCommandEnabled: Boolean;
+    mUseAjaxNotify: Boolean;
+    mOnParseParameter: TOnParseParameterEvent;
+    mOnSessionRestarted: TOnNewSessionEvent;
+    mOnExecuteRequest: TOnExecuteRequest;
+    mOnLogException: TOnLogExceptionEvent;
+    mOnRewriteURL: TOnRewriteURLEvent;
+    mOnBeforeNewSession: TOnBeforeNewSessionEvent;
+    mOnAuthFailed: TOnAuthFailed;
+    mPostRedirectGet: TIWPostRedirectGetOption;
+    mHttpSysOptions: TIWHttpSysOptions;
+    mHTMLLanguage: string;
+    mOnBind: TOnBindEvent;
+    mOnWindowIdChanged: TOnWindowIdChangedEvent;
+    mOnValidateCacheFileAccess: TOnValidateCacheFileAccess;
+    mOnMetaTag: TOnMetaTagEvent;
+    FSessionOptions: TIWSessionOptions;
+    FRenderAsyncEnabled: Boolean;
+    FUserSessionOldDestroyOrder: Boolean;
+    mThemeColor: string;
+    FOnOAuthSuccess: TOnOAuthSuccessEvent;
+    FOnOAuthError: TOnOAuthErrorEvent;
+    FDisableTemplateCacheOnDebug: Boolean;
+    FHttpClientClass: THttpClientClass;
+    mLockerOptions: TIWLockerOptions;
+    mServerMonitorOptions: TIWServerMonitorOptions;
+    FServerMonitorClient: TIWServerMonitorClient;
+    mIndyServerOptions: TIWIndyServerOptions;
+    FShutdownStarted: Boolean;
+    //
+    procedure SetDummyBool(const AValue: Boolean);
+    procedure SetDummyInt(const AValue: Integer);
+    procedure SetDummyStr(const AValue: string);
+    procedure SetCompression(const Value: TIWCompressionOptions);
+    procedure SetAuther(const Value: TIWAutherBase);
+    procedure CheckLock(const aPropName: string);
+    procedure CreateCommon(const aConfigLog: Boolean);
+    function GetMachineName: string;
+    procedure SetHTMLHeaders(const AValue: TStringList);
+    procedure SetVersion(const AValue: string);
+    function GetVersion: string;
+    procedure SetCacheDir(const aValue: string);
+    procedure SetContentPath(const Value: string);
+    procedure SetTemplateDir(const Value: string);
+    procedure SetAppname(const aValue: string);
+    procedure SetBoundIP(const aValue: string);
+    procedure Loaded; override;
+    procedure InitDesignTime; override;
+    procedure SetContentFiles(const Value: TStringList);
+    procedure InitControl; override;
+  public
+    RegionalSettings: TIWRegionalSettings;  // TIWRegionalSettings is a record. Expose it as a public member once props can't be used
+    function AuthActive: Boolean;
+    constructor Create(AOwner: TComponent); overload; override;
+    constructor Create(const aConfigLog: Boolean); reintroduce; overload;
+    // This is here because CB requires a constructor of this form in the immediate ancestor
+    // to avoid other problems.
+    constructor CreateNew(AOwner: TComponent; Dummy: Integer = 0); override;
+    destructor Destroy; override;
+    procedure BeforeDestruction; override;
+    procedure AfterConstruction; override;
+
+    class function IsHTTPS(ARequest: THttpRequest; ATestProxy: Boolean = False): Boolean;
+    class procedure CheckLockGlobal(const aPropName: string);
+    class procedure SetDesignWarningProc(aProc: TServerControllerDesignProc);
+    class procedure SetDesignCheckProc(aProc: TServerControllerDesignProc);
+    procedure DoCloseSession(ASession: TIWApplication);
+    function DoException(AApplication: TIWApplication; AException: Exception; ARequest: THttpRequest): Boolean; virtual;
+    function DoLogException(Sender: TObject; AException: Exception; ARequest: THttpRequest; AExecuteCallbacks: Boolean = True): Boolean;
+    procedure DoGetSessionID(ASession: TIWApplication; var VNewSessionID:string);
+    procedure DoNewSession(aSession: TIWApplication);
+    procedure DoOnBeforeNewSession(const aUrlPath: string; aRequest: THttpRequest; out vCanCreate: Boolean);
+    procedure DoGetMainForm(var vMainForm: TIWBaseForm);
+    procedure DoBackButton(var vResyncInfo: TIWResyncInfo);
+    procedure DoSessionRestarted(aSession: TIWApplication);
+    procedure MakeGUIActive;
+    class procedure SetServerControllerClass;
+    class function NewCacheFile(const AContentType: string): string;
+    procedure SetStyleSheet(const Value: TIWFileReference);
+    procedure SetSSLOptions(const Value: TIWSSLOptions);
+    procedure SetExceptionLogger(const Value: TIWExceptionLogger);
+    procedure SetCookieOptions(const Value: TIWSessionCookieOptions);
+    procedure SetSearchEngineOptions(const Value: TIWSearchEngineOptions);
+    procedure SetJavaScriptOptions(const Value: TIWJavaScriptOptions);
+    procedure SetSecurityOptions(const Value: TIWSecurityOptions);
+    procedure SetBackButtonOptions(const Value: TIWBackButtonOptions);
+    procedure SetMobileOptions(const Value: TIWMobileOptions);
+    procedure SetProxyPortRedirection(const Value: TIWProxyPortRedirection);
+    procedure SetTheme(const Value: string);
+    procedure DoOnUserTag(const aName: string; aParams: TStrings; aOutput: TStringStream);
+    procedure DoOnSessionTag(aSession: TIWApplication; const aName: string; aParams: TStrings; aOutput: TStringStream);
+    procedure DoBrowserCheck(aSession: TIWApplication; var rBrowser: TBrowser);
+    procedure SetUseAjaxNotify(const Value: Boolean);
+    function RedirectPortString(const ARequest: THttpRequest; const aHttps: Boolean): string;
+    procedure DownloadContentFile(const aUrl, aSubPath: string);
+    function HttpMethodHasFiles(const aMethod: string): Boolean;
+    function IsDestroying: Boolean;
+    procedure LogMessage(const aMessage: string);
+    class procedure RegisterExceptionCallback(aCallback: TIWExceptionCallbackProc);
+    class procedure UnregisterExceptionCallback(aCallback: TIWExceptionCallbackProc);
+    class property FixupPatchEnabled: Boolean read FFixupPatchEnabled write FFixupPatchEnabled;
+    property ContentPath: string read fContentPath write SetContentPath;
+    property Locked: boolean read mLocked;
+    property StartDateTime: TDateTime read FStartDateTime;
+    property StartUID: string read mStartUID;
+    property GUIActive: Boolean read FGUIActive;
+    property LicenseTracking: Boolean read FLicenseTracking write FLicenseTracking;
+    property MachineName: string read mMachineName;
+    property ProcessID: string read FProcessID;
+    property CacheFiles: TIWMinStringList read mCacheFiles;
+    property ServerVariables: TStringList read mServerVariables;
+    property RewriteURL: string read mRewriteURL write mRewriteURL;
+    property CheckWindowId: Boolean read GetCheckWindowId;
+    // List of document extensions which should be blocked right when receiving the request on IWServer.
+    // Received URLs will be checked against this list and they will be blocked if the URL address ends with
+    // anything on that list (404 is returned to the caller).
+    // For insance, any document path terminated with '.php' will be blocked by default
+    // because several attacks try to explore common known .php documents. This avoids the
+    // costy creation/initialization/destruction of new sessions
+    property BlockedDocExtensions: TIWMinStringList read FBlockedDocExtensions;
+    property BlockedPathInfoList: TIWMinStringList read FBlockedPathInfoList;
+    property RenderAsyncEnabled: Boolean read FRenderAsyncEnabled write FRenderAsyncEnabled default True;
+    property UserSessionOldDestroyOrder: Boolean read FUserSessionOldDestroyOrder write FUserSessionOldDestroyOrder default False;
+    property ShutdownStarted: Boolean read FShutdownStarted;
+  published
+    // Deprecated 14.0.1 2012-05-05
+    property CharSet: string write SetDummyStr;
+    //Deprecated: XII 2011-11-22
+    property CacheExpiry: Integer write SetDummyInt;
+    // Deprected 14.0.1 2012-05-05
+    property FilesDir: string write SetDummyStr;
+    // Deprected 14.0.26 2014-03-18
+    property HistoryEnabled: Boolean write SetDummyBool;
+    // Deprecated 14.0.1 2012-05-05
+    property InternalFilesDir: string write SetDummyStr;
+    // Deprecated 14.0.1 2012-05-05
+    property InternalFilesURL: string write SetDummyStr;
+    // Deprecated 14.0.13 2013-07-05. Use JavaScriptOptions instead
+    property JavascriptDebug: Boolean write SetDummyBool;
+    // Deprecated 14.0.53 2016-05-09. Not used anymore
+    property RedirectMsgDelay: Integer write SetDummyInt;
+    // Deprecated 14.0.1 2012-05-05
+    property UseInternalFiles: Boolean write SetDummyBool;
+    // Deprecated 15.1.0 2018-12-08
+    property EnableImageToolbar: Boolean write SetDummyBool;
+    // Depreacated 15.2.51 2022-03-06
+    property LogSessionEvents: Boolean write SetLogSessionEvents;
+    // ---------------
+    property AuthBeforeNewSession: Boolean read FAuthBeforeNewSession write FAuthBeforeNewSession default False;
+    property AppName: string read FAppName write SetAppName;
+    property BoundIP: string read FBoundIP write SetBoundIP;
+    property CacheDir: string read mCacheDir write SetCacheDir;
+    property ComInitialization: TComInitialization read FComInitialization write FComInitialization default ciNone;
+    property Compression: TIWCompressionOptions read FCompression write SetCompression;
+    property Description: string read FDescription write FDescription;
+    property DebugHTML: Boolean read FDebugHTML write FDebugHTML default False;
+    property DisplayName: string read mDisplayName write mDisplayName;
+    property Log: TLogOptions read FLog write FLog default loNone;
+    property ExceptionDisplayMode: TIWShowMessageType read FExceptionDisplayMode write FExceptionDisplayMode default smAlert;
+    property HTMLHeaders: TStringList read FHTMLHeaders write SetHTMLHeaders;
+    property ContentFiles: TStringList read FContentFiles write SetContentFiles;
+    property MasterTemplate:string read FMasterTemplate write FMasterTemplate;
+    property PageTransitions: Boolean read FPageTransitions write FPageTransitions default False;
+    property Port: Integer read FPort write FPort;
+    property ServerResizeTimeout: Integer read FServerResizeTimeout write FServerResizeTimeout default 0;
+    property Auther: TIWAutherBase read mAuther write SetAuther;
+    ///Summary: If true then a small turning sparkle animation will be shown, while the application
+    ///  is locked (loads).
+    property ShowLoadingAnimation: Boolean write SetShowLoadingAnimation; // deprecated, write-only. Use LockerOptions instead
+    property StyleSheet: TIWFileReference read FStyleSheet write SetStyleSheet;
+    property SSLOptions: TIWSSLOptions read FSSLOptions write SetSSLOptions;
+    property TemplateDir: string read FTemplateDir write SetTemplateDir;
+    property Theme: string read FTheme write SetTheme;
+    property URLBase: string read FURLBase write SetURLBase;
+    property Version: string read GetVersion write SetVersion;
+    property DocType: string read mDocType write SetDocType;
+    property IECompatibilityMode: string read mIECompatibilityMode write mIECompatibilityMode;
+    property ShowStartParams: boolean read mShowStartParams write mShowStartParams default True;
+    property ExceptionLogger: TIWExceptionLogger read mExceptionLogger write SetExceptionLogger;
+    property CookieOptions: TIWSessionCookieOptions read mCookieOptions write SetCookieOptions;
+    property SearchEngineOptions: TIWSearchEngineOptions read mSearchEngineOptions write SetSearchEngineOptions;
+    property JavaScriptOptions: TIWJavaScriptOptions read mJavaScriptOptions write SetJavaScriptOptions;
+    property HttpKeepAlive: Boolean read mHttpKeepAlive write mHttpKeepAlive default False;
+    property SecurityOptions: TIWSecurityOptions read mSecurityOptions write SetSecurityOptions;
+    property LogCommandEnabled: Boolean read mLogCommandEnabled write mLogCommandEnabled default True;
+    property BackButtonOptions: TIWBackButtonOptions read mBackButtonOptions write SetBackButtonOptions;
+    property MobileOptions: TIWMobileOptions read mMobileOptions write SetMobileOptions;
+    property ProxyPortRedirection: TIWProxyPortRedirection read mProxyPortRedirection write SetProxyPortRedirection;
+    property UseAjaxNotify: Boolean read mUseAjaxNotify write SetUseAjaxNotify default True;
+    property PostRedirectGet: TIWPostRedirectGetOption read mPostRedirectGet write mPostRedirectGet default prgDisabled;
+    property CustomLockerAnimationFile: string write SetCustomLockerAnimationFile; // deprecated, write-only. Use LockerOptions instead
+    property HTMLLanguage: string read mHtmlLanguage write SetHtmlLanguage;
+    property HttpSysOptions: TIWHttpSysOptions read mHttpSysOptions write SetHttpSysOptions;
+    property LoaderHTML: TStrings read mLoaderHTML write SetLoaderHTML;
+    property SessionOptions: TIWSessionOptions read FSessionOptions write SetSessionOptions;
+    // these properties are not part of SessionOptions. They are hidden from ObjectInspector (see IWRegister)
+    property AllowMultipleSessionsPerUser: Boolean read GetAllowMultipleSessionsPerUser write SetAllowMultipleSessionsPerUser stored False;
+    property SessionTimeout: Cardinal read GetSessionTimeout write SetSessionTimeout stored False;
+    property LockSessionTimeout: Cardinal read GetLockSessionTimeout write SetLockSessionTimeout stored False;
+    property RestartExpiredSession: Boolean read GetRestartExpiredSession write SetRestartExpiredSession stored False;
+    property AutoLoadIniSettings: Boolean read FAutoLoadIniSettings write FAutoLoadIniSettings default True;
+    // Events
+    property OnAfterDispatch: TOnDispatch read FOnAfterDispatch write FOnAfterDispatch;
+    property OnBeforeDispatch: TOnDispatch read FOnBeforeDispatch write FOnBeforeDispatch;
+    property OnCloseSession: TOnCloseSessionEvent read FOnCloseSession write FOnCloseSession;
+    property OnConfig: TNotifyEvent read mOnConfig write mOnConfig;
+    property OnException: TOnExceptionEvent read FOnException write FOnException;
+    property OnGetSessionID: TOnGetSessionID read FOnGetSessionID write FOnGetSessionID;
+    property OnNewSession: TOnNewSessionEvent read mOnNewSession write mOnNewSession;
+    property OnGetMainForm: TOnGetMainFormEvent read mOnGetMainForm write mOnGetMainForm;
+    property OnBackButton: TOnBackButtonEvent read FOnBackButton write FOnBackButton;
+    property OnBeforeRender:TOnBeforeRenderEvent read FOnBeforeRender write FOnBeforeRender;
+    property OnAfterRender:TOnAfterRenderEvent read FOnAfterRender write FOnAfterRender;
+    property OnUserTag: TOnUserTag read mOnUserTag write mOnUserTag;
+    property OnSessionTag: TOnSessionTag read mOnSessionTag write mOnSessionTag;
+    property OnBrowserCheck: TOnBrowserCheckEvent read mOnBrowserCheck write mOnBrowserCheck;
+    property OnParseParameter: TOnParseParameterEvent read mOnParseParameter write mOnParseParameter;
+    property OnSessionRestarted: TOnNewSessionEvent read mOnSessionRestarted write mOnSessionRestarted;
+    property OnExecuteRequest: TOnExecuteRequest read mOnExecuteRequest write mOnExecuteRequest;
+    property OnLogException: TOnLogExceptionEvent read mOnLogException write mOnLogException;
+    property OnAuthFailed: TOnAuthFailed read mOnAuthFailed write mOnAuthFailed;
+    property OnRewriteURL: TOnRewriteURLEvent read mOnRewriteURL write mOnRewriteURL;
+    property OnBeforeNewSession: TOnBeforeNewSessionEvent read mOnBeforeNewSession write mOnBeforeNewSession;
+    property OnBind: TOnBindEvent read mOnBind write mOnBind;
+    property OnWindowIdChanged: TOnWindowIdChangedEvent read mOnWindowIdChanged write mOnWindowIdChanged;
+    property OnValidateCacheFileAccess: TOnValidateCacheFileAccess read mOnValidateCacheFileAccess write mOnValidateCacheFileAccess;
+    property OnMetaTag: TOnMetaTagEvent read mOnMetaTag write mOnMetaTag;
+    property OnOAuthSuccess: TOnOAuthSuccessEvent read FOnOAuthSuccess write FOnOAuthSuccess;
+    property OnOAuthError: TOnOAuthErrorEvent read FOnOAuthError write FOnOAuthError;
+    property ThemeColor: string read mThemeColor write mThemeColor;
+    property DisableTemplateCacheOnDebug: Boolean read FDisableTemplateCacheOnDebug write FDisableTemplateCacheOnDebug default True;
+    property HttpClientClass: THttpClientClass read FHttpClientClass write FHttpClientClass default WinHttpClient;
+    property LockerOptions: TIWLockerOptions read mLockerOptions write SetLockerOptions;
+    property ServerMonitorOptions: TIWServerMonitorOptions read mServerMonitorOptions write SetServerMonitorOptions;
+    property IndyServerOptions: TIWIndyServerOptions read mIndyServerOptions write SetIndyServerOptions;
+  end;
+
+  TIWServerControllerBaseClass = class of TIWServerControllerBase;
+
+  procedure ComInitialize; inline;
+  procedure ComFinalize; inline;
+
+
+implementation

@@ -1,0 +1,116 @@
+unit IWCSS;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, Classes,
+  IWControl, IWRenderContext, IWFont, Graphics, IWColor,
+  IWContainerBorderOptions;
+
+type
+  TIWCSS3 = class(TPersistent)
+  protected
+    FControl: TIWCustomControl;
+    procedure InvalidateControl;
+    procedure InitDefault; virtual;
+  public
+    constructor Create(AControl: TIWCustomControl); virtual;
+    function RenderStyle(AContext: TIWCompContext): string; virtual; abstract;
+  end;
+
+  TIWCssBorder = class(TIWCSS3)
+  protected
+    FColor: TIWColor;
+    FWidth: Integer;
+    procedure SetColor(const Value: TIWColor);
+    procedure SetWidth(const Value: Integer);
+  public
+    constructor Create(AControl: TIWCustomControl); override;
+    procedure InitDefault; override;
+    procedure Assign(Source: TPersistent); override;
+    function RenderStyle(AContext: TIWCompContext): string; override;
+  published
+    property Color: TIWColor read FColor write SetColor;
+    property Width: Integer read FWidth write SetWidth;
+  end;
+
+  TIWCssGradient = class(TIWCSS3)
+  protected
+    FFont: TIWFont;
+    FAlignment: TAlignment;
+    FFromColor: TIWColor;
+    FToColor: TIWColor;
+    procedure SetFromColor(const Value: TIWColor);
+    procedure SetAlignment(const Value: TAlignment);
+    procedure SetFont(const Value: TIWFont);
+    procedure SetToColor(const Value: TIWColor);
+  public
+    constructor Create(AControl: TIWCustomControl); override;
+    destructor Destroy; override;
+    procedure InitDefault; override;
+    procedure Assign(Source: TPersistent); override;
+    function RenderStyle(AContext: TIWCompContext): string; override;
+  published
+    property Alignment: TAlignment read FAlignment write SetAlignment;
+    property Font: TIWFont read FFont write SetFont;
+    property FromColor: TIWColor read FFromColor write SetFromColor;
+    property ToColor: TIWColor read FToColor write SetToColor;
+  end;
+
+  TIWCssGradientDiv = class(TIWCssGradient)
+  protected
+    FBorderRadius: Integer;
+    procedure SetBorderRadius(const Value: Integer);
+  public
+    procedure Assign(Source: TPersistent); override;
+    function RenderStyle(AContext: TIWCompContext): string; override;
+  published
+    property BorderRadius: Integer read FBorderRadius write SetBorderRadius default 0;
+  end;
+
+  TIWCssShadow = class(TIWCSS3)
+  protected
+    FHShadow: Integer;
+    FVShadow: Integer;
+    FBlur: Integer;
+    FSpread: Integer;
+    FColor: TIWColor;
+    FInset: Boolean;
+    FColorTransparency: Double;
+    FVisible: Boolean;
+    procedure SetColorTransparency(const Value: Double);
+    procedure SetBlur(const Value: Integer);
+    procedure SetColor(const Value: TIWColor);
+    procedure SetHShadow(const Value: Integer);
+    procedure SetInset(const Value: Boolean);
+    procedure SetSpread(const Value: Integer);
+    procedure SetVisible(const Value: Boolean);
+    procedure SetVShadow(const Value: Integer);
+  public
+    constructor Create(AControl: TIWCustomControl); override;
+    procedure InitDefault; override;
+    procedure Assign(Source: TPersistent); override;
+    function RenderStyle(AContext: TIWCompContext): string; override;
+  published
+    property HShadow: Integer read FHShadow write SetHShadow default 1;
+    property VShadow: Integer read FVShadow write SetVShadow default 1;
+    property Blur: Integer read FBlur write SetBlur default 1;
+    property Spread: Integer read FSpread write SetSpread default 0;
+    property Color: TIWColor read FColor write SetColor default clBlack;
+    property Inset: boolean read FInset write SetInset default False;
+    property ColorTransparency: Double read FColorTransparency write SetColorTransparency;
+    property Visible: boolean read FVisible write SetVisible default True;
+  end;
+
+  TIWCssBoxShadow = class(TIWCssShadow)
+  public
+    function RenderStyle(AContext: TIWCompContext): string; override;
+  end;
+
+  TIWCssTextShadow = class(TIWCssShadow)
+  public
+    function RenderStyle(AContext: TIWCompContext): string; override;
+  end;
+
+implementation

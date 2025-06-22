@@ -1,0 +1,31 @@
+unit IWBaseContainerLayout;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, SysUtils,
+  IWBaseLayoutComponent, IWBaseInterfaces, IWBaseRenderContext, IW.Common.RenderStream;
+
+type
+  TIWBaseContainerLayout = class(TIWBaseLayoutComponent)
+  protected
+    FPreHeadContent: string;
+    FHeadContent: string;
+    FContainer: IIWBaseContainer;
+    function GetCurrentContainer: IIWBaseContainer;
+    function GetNoFormTag: Boolean;
+    procedure InitControl; override;
+    property Container: IIWBaseContainer read GetCurrentContainer;
+  public
+    procedure SetContainer(AContainer: IIWBaseContainer);
+    destructor Destroy; override;
+    procedure Process(AStream: TIWRenderStream;
+      AContainerContext: TIWContainerContext; aPage: TIWBasePageContext); virtual; abstract;
+    //
+    property PreHeadContent: string read FPreHeadContent write FPreHeadContent;
+    property HeadContent: string read FHeadContent write FHeadContent;
+    property NoFormTag: Boolean read GetNoFormTag;
+  end;
+
+implementation

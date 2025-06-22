@@ -1,0 +1,104 @@
+unit IWContainerBorderOptions;
+{$I IWCompilerDefines.inc}
+
+interface
+
+Uses
+  Graphics, Controls, Classes,
+  IWColor, IWHTMLTag, IWRenderContext, IWBaseInterfaces, IWBaseHTMLInterfaces;
+
+const
+  USE_FRAME_WIDTH : Integer = 2;
+
+type
+  TIWContainerBorderStyle = (cbsNone, cbsHidden, cbsDotted, cbsDashed, cbsSolid, cbsDouble, cbsGroove, cbsRidge,
+    cbsInset, cbsOutset);
+
+  TIWContainerBorderWidth = (cbwThin, cbwMedium, cbwThick, cbwNumeric);
+
+  TIWBorderOptions = class(TPersistent)
+  private
+    FOnChange: TNotifyEvent;
+  protected
+    FColor: TIWColor;
+    FControl: TControl;
+    FWidth: Integer;
+    procedure SetColor(const Value: TIWColor);
+    procedure SetWidth(const Value: Integer);
+    procedure AssignTo(ADest: TPersistent); override;
+    procedure DoChange;
+  public
+    constructor Create; overload;
+    constructor Create(AColor: TIWColor; AWidth: Integer); overload;
+    function RenderStyle: string; virtual;
+    property Control: TControl read FControl write FControl;
+    property OnChange: TNotifyEvent read FOnChange write FOnChange;
+  published
+    property Color: TIWColor read FColor write SetColor default clNone;
+    property Width: Integer read FWidth write SetWidth;
+  end;
+
+  TIWContainerBorderOptions = class(TPersistent)
+  private
+    FBGColor: TIWColor;
+    FHorizScrollBar: Boolean;
+    FVertScrollBar: Boolean;
+    FOnChange: TNotifyEvent;
+    FStyle: TIWContainerBorderStyle;
+    FColor: TIWColor;
+    procedure SetHorizScrollBar(const Value: Boolean);
+    procedure SetStyle(const Value: TIWContainerBorderStyle);
+    procedure SetVertScrollBar(const Value: Boolean);
+
+    procedure DoChange;
+    procedure SetNumericWidth(const Value: Integer);
+    procedure SetBGColor(const Value: TIWColor);
+    function GetPixelWidth: Integer;
+  protected
+    FControl: TControl;
+    FBorderWidth: TIWContainerBorderWidth;
+    FNumericWidth: Integer;
+
+    procedure SetColor(const Value: TIWColor);
+    procedure SetWidth(const Value: TIWContainerBorderWidth);
+
+    procedure AssignTo(ADest: TPersistent); override;
+  public
+    constructor Create(AControl: TObject); overload;
+
+    // for .NET persistance by code
+    constructor Create(ANumericWidth: Integer;
+                       ABorderWidth: TIWContainerBorderWidth;
+                       AStyle: TIWContainerBorderStyle;
+                       AColor: TIWColor); overload;
+
+    class function CreateDefaultFrame(const AContent: TIWHTMLTag;
+      APageContext: TIWPageContext40; AControl: IIWBaseHTMLControl): TIWHTMLTag;
+    function RenderFrameStyle(AClip: Boolean): string;
+    function CreateFrame(const AContent: TIWHTMLTag;
+      APageContext: TIWPageContext40; AControl: IIWBaseHTMLControl): TIWHTMLTag;
+    function RenderStyle(AComponentContext: TIWCompContext): string;
+  public
+    property Control: TControl read FControl write FControl;
+    property HorizScrollBar: Boolean read FHorizScrollBar write SetHorizScrollBar;
+    property VertScrollBar: Boolean read FVertScrollBar write SetVertScrollBar;
+    property BGColor: TIWColor read FBGColor write SetBGColor;
+  public
+    procedure InitalizeForRendering(ABGColor: TIWColor; AHorizScrollBar, AVertScrollBar: Boolean);
+    property OnChange: TNotifyEvent read FOnChange write FOnChange;
+    property PixelWidth: Integer read GetPixelWidth;
+  published
+    property NumericWidth: Integer read FNumericWidth write SetNumericWidth default 1;
+    property BorderWidth: TIWContainerBorderWidth read FBorderWidth write SetWidth default cbwNumeric;
+    property Style: TIWContainerBorderStyle read FStyle write SetStyle default cbsSolid;
+    property Color: TIWColor read FColor write SetColor default clNone;
+  end;
+
+  TIWFrameHTMLTag = class(TIWHTMLTag)
+  private
+    FEmbededTag: TIWHTMLTag;
+  public
+    property EmbededTag: TIWHTMLTag read FEmbededTag;
+  end;
+
+implementation

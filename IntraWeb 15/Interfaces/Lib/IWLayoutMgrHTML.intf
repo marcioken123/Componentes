@@ -1,0 +1,44 @@
+unit IWLayoutMgrHTML;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, IWVCLComponent,
+  IWBaseInterfaces, IWContainerLayout, IWJpegOptions,
+  IWHTML40Interfaces, IWRenderContext, IWTemplateProcessorHTML, IW.Common.RenderStream,
+  IWLayoutMgrHTMLInterface, IWTypes, IWBaseHTMLInterfaces, IWBaseRenderContext;
+
+type
+  {$include IWPlatformAttrib.inc}
+  TIWLayoutMgrHTML = class(TIWTemplateProcessorBase, IIWLayoutMgrHTML)
+  private
+    FHTML: TStringList;
+    FTemplateProcessor: TIWTemplateProcessorHTML;
+    FEditorComponent: IHTMLLayoutComponent;
+    FOnUnknownTag: TIWUnknownTagEvent;
+
+    function GetHTML: TStringList;
+  protected
+    procedure OutputWorkFiles(const AWorkPath: string);
+    procedure SetHTMLEditor(AEdtComp: IHTMLLayoutComponent);
+    function GetHTMLEditor: IHTMLLayoutComponent;
+    function HasHTMLEditor: Boolean;
+    procedure InitControl; override;
+    procedure SetHTML(const AValue: TStringList);
+  public
+    procedure ProcessControl(AContainerContext: TIWContainerContext;
+      APageContext: TIWBaseHTMLPageContext; AControl: IIWBaseHTMLComponent); override;
+    procedure ProcessControls(AContainerContext: TIWContainerContext;
+      APageContext: TIWBaseHTMLPageContext); override;
+    procedure Process(AStream: TIWRenderStream;
+      AContainerContext: TIWContainerContext; APageContext: TIWBasePageContext); override;
+    function RenderStyle(AControl: IIWBaseHTMLControl): string; override;
+    destructor Destroy; override;
+  published
+    property HTML: TStringList read GetHTML write SetHTML;
+    property OnUnknownTag: TIWUnknownTagEvent read FOnUnknownTag write FOnUnknownTag;
+    property StyleAttributesToRemove;
+  end;
+
+implementation

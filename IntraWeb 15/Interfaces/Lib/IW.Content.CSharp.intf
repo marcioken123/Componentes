@@ -1,0 +1,6 @@
+unit IW.Content.CSharp;
+{$I IWCompilerDefines.inc}
+
+interface
+
+implementation

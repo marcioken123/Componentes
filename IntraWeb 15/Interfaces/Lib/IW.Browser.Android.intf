@@ -1,0 +1,19 @@
+unit IW.Browser.Android;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  IW.Browser.Browser, IW.Browser.Webkit;
+
+type
+  TAndroid = class(TWebkit)
+  public
+    const
+      BROWSER_NAME = 'Android Webkit Browser';
+      MIN_VERSION = 2;     // 2 to accept SamsungBrowser
+    constructor Create(aVersion: single); override;
+    class function Match(AUserAgent: string; out AVersion: Single): Boolean; override;
+  end;
+
+implementation

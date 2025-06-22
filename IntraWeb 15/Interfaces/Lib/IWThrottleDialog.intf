@@ -1,0 +1,38 @@
+unit IWThrottleDialog;
+
+interface
+
+uses
+  Windows, Messages,
+  Graphics,
+  Controls,
+  Forms,
+  Dialogs,
+  StdCtrls,
+  SysUtils, Classes;
+
+type
+  TThrottleDialog = class(TForm)
+    cboxSpeedLimit: TComboBox;
+    btnOK: TButton;
+    btnCancel: TButton;
+    Label1: TLabel;
+    edtCustom: TEdit;
+    Label2: TLabel;
+    procedure cboxSpeedLimitChange(Sender: TObject);
+    procedure btnOKClick(Sender: TObject);
+    procedure cboxSpeedLimitClick(Sender: TObject);
+  private
+    FBitsPerSec: Integer;
+    procedure SetBitsPerSec(const Value: Integer);
+    { Private declarations }
+  public
+    { Public declarations }
+    constructor Create(AOwner: TComponent); override;
+    property BitsPerSec: Integer read FBitsPerSec write SetBitsPerSec;
+  end;
+
+var
+  ThrottleDialog: TThrottleDialog;
+
+implementation

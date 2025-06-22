@@ -1,0 +1,23 @@
+unit IWAutherINI;
+{$I IWCompilerDefines.inc}
+
+{Dist Public}
+
+interface
+
+uses
+  Classes,
+  IWAutherBase, INIFiles,
+  SysUtils;
+
+type
+  {$include IWPlatformAttrib.inc}
+  TIWAutherINI = class(TIWAutherBase)
+  public
+    constructor Create(AOwner: TComponent); override;
+    destructor Destroy; override;
+    //
+    function Check(const aUser: string; const aPass: string): Boolean; override;
+  end;
+
+implementation

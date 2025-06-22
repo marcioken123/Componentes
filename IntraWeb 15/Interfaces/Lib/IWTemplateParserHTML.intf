@@ -1,0 +1,78 @@
+unit IWTemplateParserHTML;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses Classes;
+
+{.$DEFINE DEBUG_STREAM}
+
+const
+  toEOL = Char(5);
+  toEOF = Char(0);
+  toSymbol = Char(1);
+  toString = Char(2);
+  toInteger = Char(3);
+  toFloat = Char(4);
+  {$IFDEF DEBUG_STREAM}
+  DEBUG_STREAM_FILENAME = 'c:\temp\DebugStream.txt';
+  {$ENDIF}
+
+type
+  TCharSet = set of AnsiChar;
+
+type
+  TIWTemplateParserHTML = class(TObject)
+  private
+    FOutStream: TStream;
+    {$IFDEF DEBUG_STREAM}
+    FDebugStream: TStringStream;
+    {$ENDIF}
+    FSourcePtr: PChar;
+    FTokenPtr: PChar;
+    FStringPtr: PChar;
+    FSourceLine: Integer;
+    FToken: Char;
+    procedure SkipBlanks(DoCopy: Boolean);
+    function SkipToNextToken(CopyBlanks, DoCopy: Boolean; const AllowedSymbols: TCharSet = []): Char;
+    function CopySkipTo(Length: Integer; DoCopy: Boolean): string;
+    function CopySkipToEOL(DoCopy: Boolean): string;
+    function CopySkipToEOF(DoCopy: Boolean): string;
+    procedure UpdateOutStream(StartPos: PChar);
+    procedure WriteOutput(ASource: PChar; ALen: Integer);
+  public
+    constructor Create(ASource: PChar; OutStream: TStream);
+    destructor Destroy; override;
+    procedure InitParser(ASource: PChar; OutStream: TStream);
+    procedure CheckToken(T: Char);
+    procedure CheckTokenSymbol(const S: string);
+    function CopyTo(Length: Integer): string;
+    function CopyToToken(AToken: Char): string;
+    function CopyToEOL: string;
+    function CopyToEOF: string;
+    procedure CopyTokenToOutput;
+    procedure Error(const Ident: string);
+    procedure ErrorFmt(const Ident: string; const Args: array of const);
+    procedure ErrorStr(const Message: string);
+    function NextToken: Char;
+    function SkipToken(CopyBlanks: Boolean): Char;
+    function SkipTokenIncludeSymbols(CopyBlanks: Boolean; const ASymbols: TCharSet): Char;
+    procedure SkipEOL;
+    function SkipTo(Length: Integer): string;
+    function SkipToToken(AToken: Char): string;
+    function SkipToEOL: string;
+    function SkipToEOF: string;
+    function SkipToTokenGetString(AToken: Char): string;
+    function TokenComponentIdent: string;
+    function TokenFloat: Extended;
+    function TokenInt: Longint;
+    function TokenString: string;
+    function TokenSymbolIs(const S: string): Boolean;
+    procedure CheckAndSkipToken(T: Char);
+    function CopySkipToToken(AToken: Char; DoCopy: Boolean): string;
+    property SourceLine: Integer read FSourceLine;
+    property Token: Char read FToken;
+    property OutputStream: TStream read FOutStream write FOutStream;
+  end;
+
+implementation

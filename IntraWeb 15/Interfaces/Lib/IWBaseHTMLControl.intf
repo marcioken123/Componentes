@@ -1,0 +1,177 @@
+unit IWBaseHTMLControl;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, Windows, Controls, Messages, Graphics, {$IFDEF FPC} jpeglib, {$ELSE} Jpeg, {$ENDIF}
+  IWVCLBaseControl, IWTypes, IWBaseHTMLComponent, IWColor, IWFont, IWBaseInterfaces,
+  IWBaseHTMLInterfaces, IWRenderContext, IWHTMLTag, IWMarkupLanguageTag, IWBaseControl,
+  IWBaseRenderContext, IWBaseForm, IWHTMLContainer, IW.Common.RenderStream, IWXMLTag;
+
+type
+  TIWBaseHTMLControl = class;
+  TIWRadioGroupLayout = (glVertical, glHorizontal);
+  TIWPropertyType = (ptBoolean, ptString, ptInteger, ptColor, ptPixel, ptFont, ptStringList);
+
+  TIWModifiedProps = set of TIWAsyncCommonProp;
+
+  TIWBaseHTMLControlImplementation = class(TIWBaseHTMLComponentImplementation)
+  protected
+    FControl: TControl;
+    FVisible: Boolean;
+    FColor: TIWColor;
+    FFont: TIWFont;
+    FTabOrder: TIWTabOrder;
+    FModifiedProps: TIWModifiedProps;
+    FHtmlName: string;    // Cache HtmlName of control during rendering. It's cleared before RenderHTML/RenderAsync
+
+    procedure FontChangeEvent(Sender: TObject);
+
+    function getHTMLWidth: Integer;
+    function getHTMLHeight: Integer;
+
+    procedure setFont(const AValue: TIWFont);
+    function getFont: TIWFont;
+    procedure PropChanged(AProp: TIWAsyncCommonProp); virtual;
+    procedure PropsChanged(AProps: TIWModifiedProps); virtual;
+  public
+    function GetVisible: Boolean;
+    procedure SetVisible(const Value: Boolean);
+
+    procedure setIWColor(const Value: TIWColor);
+    function getIWColor: TIWColor;
+
+    function getTabOrder: TIWTabOrder;
+    procedure setTabOrder(const AValue: TIWTabOrder);
+
+    function getHTMLName: string; override;
+    property Control: TControl read FControl;
+  public
+    constructor Create(AComponent: TComponent); override;
+    destructor Destroy; override;
+
+    property HTMLWidth: Integer read getHTMLWidth;
+    property HTMLHeight: Integer read getHTMLHeight;
+
+    // Font must be in base class to hide TControl's Font
+    property Font: TIWFont read getFont write setFont;
+  end;
+
+  TIWBaseHTMLControlImplementationInternal = TIWBaseHTMLControlImplementation;
+
+  TIWBaseHTMLControl = class(TIWBaseControl, IIWBaseComponent, IIWBaseHTMLComponent,
+                             IIWBaseHTMLControl, IIWTabOrder)
+  strict private
+    procedure ClearTabOrder(AParent: TControl); virtual;
+    function DefaultTabOrder: TIWTabOrder; virtual;
+  private
+    function InternalGetRealTabOrder(AContainer: TObject): TIWTabOrder;
+  protected
+    FEditable: Boolean;
+    FNonEditableAsLabel: Boolean;
+
+    FIWBaseHTMLControlImplementation: TIWBaseHTMLControlImplementation;
+    FNeedsFormTag: Boolean;
+    //
+    FTabOrder: TIWTabOrder;
+    //
+    function get_OnHTMLTag: TIWOnHTMLTag;
+    procedure set_OnHTMLTag(AValue: TIWOnHTMLTag);
+    // IIWBaseComponent interface
+    function RenderMarkupLanguageTag(AContext: TIWBaseComponentContext): TIWMarkupLanguageTag;
+    function RequiresRefresh: Boolean; virtual;
+    function get_ComponentName: string;
+    function InterfaceInstance: TComponent;
+    function SupportsSubmit: Boolean;
+    function SupportsInput: Boolean; virtual;
+    procedure AddFreeNotifier(AObject: TObject);
+    procedure RemoveFreeNotifier(AObject: TObject);
+    function NeedsFormTag: Boolean;
+    function InitializeImplementation: TIWBaseHTMLControlImplementation; virtual;
+    procedure ReleaseImplementation; virtual;
+
+    function get_HTMLWidth: Integer; virtual;
+    function get_HTMLHeight: Integer; virtual;
+
+    procedure MakeHTMLTag(ATag: TIWHTMLTag; ABuffer: TIWRenderStream); overload;
+    function  MakeHTMLTag(ATag: TIWHTMLTag): string; overload; // SLOW, for backward compatibility only
+
+    procedure DoHTMLTag(ATag: TIWHTMLTag);
+
+    procedure ColorChanged; override;
+    procedure TextChangedNotification; override;
+    procedure FontChanged(ASender: TObject); virtual;
+    procedure ExtraTagParamsChanged(Sender: TObject); virtual;
+
+    procedure InitDesignTime; override;
+    procedure InitControl; override;
+
+    function get_Editable: Boolean; virtual;
+    procedure set_Editable(aValue: Boolean); virtual;
+
+    function get_HasName: Boolean; virtual;
+    function get_HTMLName: string; virtual;
+    function get_HasTabOrder: Boolean; virtual;
+    function get_NonEditableAsLabel: Boolean;
+    procedure set_NonEditableAsLabel(AValue: Boolean);
+    property NonEditableAsLabel:Boolean read get_NonEditableAsLabel write set_NonEditableAsLabel default True;
+
+    // Font must be in base class to hide TControl's Font
+    procedure set_WebColor(Value: TIWColor);
+    function get_WebColor: TIWColor;
+
+    function get_WebFont: TIWFont;
+    procedure set_WebFont(AValue: TIWFont);
+
+    function getTabOrder: TIWTabOrder; override;
+    procedure setTabOrder(AValue: TIWTabOrder); override;
+
+    function get_ShouldRenderTabOrder: Boolean;virtual;
+    function get_RealTabOrder: TIWTabOrder;
+
+    procedure RenderTabOrder(ATag: TIWHTMLTag; APageContext: TObject);
+    procedure AfterParentChanging(AOldParent, AParent: TComponent); override;
+
+    function get_Visible: Boolean; override;
+    procedure set_Visible(Value: Boolean); override;
+
+    function get_ExtraTagParams: TStringList; virtual;
+    procedure set_ExtraTagParams(const Value: TStringList); virtual;
+    function IsTabOrderStored: Boolean; override;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; virtual;
+
+    property BaseHTMLControlImplementation: TIWBaseHTMLControlImplementation read FIWBaseHTMLControlImplementation;
+    property Editable: Boolean read get_Editable write set_Editable;
+    property Font: TIWFont read get_WebFont write set_WebFont;
+    property Color: TIWColor read get_WebColor write set_WebColor;
+    property WebFont: TIWFont read get_WebFont write set_WebFont;
+    property WebColor: TIWColor read get_WebColor write set_WebColor;
+    property ShouldRenderTabOrder:boolean read get_ShouldRenderTabOrder;
+    procedure SetName(const NewName: TComponentName); override;
+  public
+    class function TextToJSStringLiteral(const AText: string): string;
+    class function TextToHTML(const AText: string; const AConvertEOLs: Boolean = True;
+      const AConvertSpaces: Boolean = False ): string; overload;
+    // Introduce this when breaking interface
+    class function TextToHTML(const AText: string; const AIsCallback: Boolean;
+      const AConvertEOLs: Boolean; const AConvertSpaces: Boolean): string; overload;
+
+    function OwnerForm: TIWBaseForm;
+    function OwnerFrame: TIWHTMLContainer;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; virtual;
+    function get_EventTargetHTMLName: string; virtual;
+
+    property InternalTabOrder:TIWTabOrder read FTabOrder;
+    property HasTabOrder: Boolean read get_HasTabOrder;
+    property HTMLName: string read get_HTMLName;
+    property HasName: Boolean read get_HasName;
+    property Caption;
+    property Text;
+    procedure ResetHTMLName;
+  published
+    property ExtraTagParams: TStringList read get_ExtraTagParams write set_ExtraTagParams;
+    property OnHTMLTag: TIWOnHTMLTag read get_OnHTMLTag write set_OnHTMLTag;
+  end;
+
+implementation

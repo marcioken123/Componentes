@@ -1,0 +1,103 @@
+unit IWCompCheckbox;
+{$I IWCompilerDefines.inc}
+{PUBDIST}
+
+interface
+
+uses
+  Classes, IWHTMLTag, IWXMLTag,
+  IWControl, IWTypes, IWScriptEvents, IWRenderContext, IWBaseInterfaces, IWHTML40Interfaces;
+
+type
+  TIWCustomCheckBoxStyle = (stNormal, stCool, stCustomImage, stColor1, stSquareBW1, stSquareBW2, stSquareBlue1,
+                            stSquareBlue2, stSquareBlue3, stSquareColor1, stSquareColor2,
+                            stSquareColor3, stCircleColor1, stCircleColor2);
+
+  TOnGetFileNameEvent = procedure(ASender: TObject; AChecked: Boolean; var aFileName: string) of object;
+
+  TIWCustomCheckBox = class(TIWCustomControl, IIWInputControl, IIWSubmitControl,
+                            IIWInputControl40, IIWExInputControl)
+  private
+    FDisplayStyle: TIWDisplayStyle;
+    procedure SetDisplayStyle(const Value: TIWDisplayStyle);
+  protected
+    FSubmitParam: string;
+    FChecked: Boolean;
+    FStyle: TIWCustomCheckBoxStyle;
+    FOnChange: TNotifyEvent;
+    FOnGetImageFileName: TOnGetFileNameEvent;
+    //
+    procedure HookEvents(AContext: TIWPageContext40; AScriptEvents: TIWScriptEvents); override;
+    //
+    procedure Submit(const AValue: string); override;
+    procedure SetValue(const AValue: string); overload; virtual;
+    procedure GetInputControlNames(ANames: TStringList); override;
+    function IsForThisControl(AName: string): Boolean; override;
+    function get_ShouldRenderTabOrder: Boolean; override;
+    //
+    procedure SetChecked(AValue: Boolean);virtual;
+    function GetChecked: Boolean;virtual;
+
+    procedure InitControl; override;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    function SupportsInput: Boolean; override;
+    function get_HasName: Boolean; override;
+    // IIWExInputControl
+    procedure SetValue(const AValue: string; out AValueChanged: Boolean); overload; virtual;
+    procedure ValueChanged; virtual;
+    procedure SetCheckBoxStyle(Value: TIWCustomCheckBoxStyle);
+    //
+    function GetImageFileName(AContext: TIWCompContext; AChecked: Boolean): string;
+    function RenderHTML_Enhanced(AContext: TIWCompContext): TIWHTMLTag;
+    function RenderHTML_Normal(AContext: TIWCompContext): TIWHTMLTag;
+  public
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    function GetSubmitParam: string;
+    function RenderStyle(AComponentContext: TIWCompContext): string; override;
+    function GetImageIndex: Integer;
+    property Checked: Boolean read GetChecked write SetChecked;
+    property DisplayStyle: TIWDisplayStyle read FDisplayStyle write SetDisplayStyle default dsInherit;
+  published
+    property Caption;
+    property Editable;
+    property ExtraTagParams;
+    property Font;
+    property SubmitOnAsyncEvent;
+    property ScriptEvents;
+    property DoSubmitValidation;
+    property Style: TIWCustomCheckBoxStyle read FStyle write SetCheckBoxStyle;
+    property TabOrder;
+    property Cursor default crDefault;
+
+    property OnClick;
+    property OnChange: TNotifyEvent read FOnChange write FOnChange;
+
+    property OnAsyncClick;
+    property OnAsyncChange;
+    property OnGetImageFileName: TOnGetFileNameEvent read FOnGetImageFileName write FOnGetImageFileName;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWCheckBox = class(TIWCustomCheckBox)
+  published
+    property Confirmation;
+    property Checked;
+    property Enabled;
+    property FriendlyName;
+    property DisplayStyle;
+
+    property OnAsyncClick;
+    property OnAsyncChange;
+    property OnAsyncEnter;
+    property OnAsyncExit;
+    property OnAsyncKeyDown;
+    property OnAsyncKeyUp;
+    property OnAsyncKeyPress;
+    property OnAsyncMouseDown;
+    property OnAsyncMouseMove;
+    property OnAsyncMouseOver;
+    property OnAsyncMouseOut;
+    property OnAsyncMouseUp;
+  end;
+
+implementation

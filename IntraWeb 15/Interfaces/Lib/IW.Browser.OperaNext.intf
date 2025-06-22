@@ -1,0 +1,19 @@
+unit IW.Browser.OperaNext;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  IW.Browser.Browser, IW.Browser.Webkit;
+
+type
+  TOperaNext = class(TWebkit)
+  public
+    const
+      BROWSER_NAME = 'Opera (Edition Next)';
+      MIN_VERSION = 15;
+    constructor Create(aVersion: single); override;
+    class function Match(AUserAgent: string; out AVersion: Single): Boolean; override;
+  end;
+
+implementation

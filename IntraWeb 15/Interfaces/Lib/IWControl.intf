@@ -1,0 +1,359 @@
+unit IWControl;
+{$I IWCompilerDefines.inc}
+
+// Disable Compiler warnings for DEPRECATED set_RenderSize, setRenderSize and get_RenderSize
+{$WARN SYMBOL_DEPRECATED OFF}
+
+interface
+
+uses
+  SysUtils, Classes, Messages, Windows, Controls, Graphics,
+  IW.Browser.Browser, IWColor, IWBaseHTMLControl, IWTypes, IWScriptEvents, IWXMLTag,
+  IWFont, IWHTMLTag, IWHTML40Interfaces, IWBaseHTMLInterfaces,
+  IWBaseInterfaces, IWRenderContext, IWContainerBorderOptions, IW.Common.StrLists,
+  IWApplication, IWBaseControl, IWBaseRenderContext, IWMarkupLanguageTag;
+
+type
+  TIWAsyncCommonProp = IWTypes.TIWAsyncCommonProp;
+
+const
+  AsyncCommonPropAll = [acpEnabled..acpAlignment];
+
+type
+  // TIWScrollStyle maps to CSS overflow property
+  TIWScrollStyle = (sbsNone, sbsAuto, sbsBoth, sbsVertical, sbsHorizontal);
+
+  // We need to declare this in IWTypes to avoid circular references in IWBaseForm.
+  // However this would break 3rd party code, so we
+  // Declare TIWAsyncEvent in IWTypes and point this definition to that.
+  TIWAsyncEvent = IWTypes.TIWAsyncEvent;
+
+  TIWAsyncCommonPropToRender = set of TIWAsyncCommonProp;
+  TIWCustomControl = class;
+  TScriptEvent = string;
+  TIWOnClickWithValue = procedure(ASender: TObject; const AValue: string) of object;
+
+  TIWAsyncEventType = (aeClick, aeDoubleClick, aeChange, aeEnter, aeExit,
+                       aeKeyDown, aeKeyUp, aeKeyPress,
+                       aeMouseDown, aeMouseMove, aeMouseOver, aeMouseOut, aeMouseUp,
+                       aeSelect, aeLoad, aeUnLoad, aeInput);
+
+  TIWAsyncEventTypes = set of TIWAsyncEventType;
+
+  TIWControlOption = (cfUseFrame, cfDoRefreshControl, cfSubmitOnAsyncEvent,
+                      cfDoSubmitValidation, cfClip);
+
+  TIWControlOptions = set of TIWControlOption;
+
+  TIWHTMLControlImplementation = class(TIWBaseHTMLControlImplementation)
+  protected
+    FRenderSize: Boolean;
+    FStyleRenderOptions: TIWStyleRenderOptions;
+    FZIndex: Integer;
+    FCss: string;
+    FSkinId: string;
+    FCursor: TIWCursor;
+    FScriptEvents: TIWScriptEvents;
+    FIWCLParentName: string;
+    function GetIWCLName: string;
+    function GetIWCLParentName: string;
+    function GetSubmitOnAsync(): Boolean;
+    function AddAsyncTag(ATag: TIWMarkupLanguageTag; const AName, AValue: string; AIgnoreEmpty: Boolean): TIWXMLTag; overload;
+    function AddAsyncTag(ATag: TIWMarkupLanguageTag; const AName, AValue: string): TIWXMLTag; overload;
+  public
+    constructor Create(AControl: TComponent); override;
+    destructor Destroy; override;
+
+    function GetHTMLLeft: Integer;
+    function GetHTMLTop: Integer;
+
+    function RenderCSSClass(AComponentContext: TIWCompContext): string;
+    function RenderMargins(AComponentContext: TIWCompContext): string;
+    procedure RenderScripts(AComponentContext: TIWCompContext);
+    function RenderStyle(AComponentContext: TIWCompContext): string;
+    function WantsSubmitValidation: Boolean;
+
+    procedure RenderAsyncPropertyAsString(const APropertyName: string; ATag: TIWXMLTag; const APropertyValue: string; AIgnoreEmptyValue: Boolean);
+    procedure RenderAsyncPropertyAsStringLiteral(const APropertyName: string; ATag: TIWXMLTag; const APropertyValue: string; AIgnoreEmptyValue: Boolean);
+    procedure RenderAsyncProperty(const APropertyName: string; ATag: TIWXMLTag; APropertyValue: Boolean); overload;
+    procedure RenderAsyncProperty(const APropertyName: string; ATag: TIWXMLTag; APropertyValue: Integer); overload;
+    procedure RenderAsyncPropertyAsColor(const APropertyName: string; ATag: TIWXMLTag; APropertyValue: TIWColor); overload;
+    procedure RenderAsyncPropertyAsPixel(const APropertyName: string; ATag: TIWXMLTag; APropertyValue: Integer);
+    procedure RenderAsyncCommonProperties(AComponentContext: TIWCompContext; ATag : TIWXMLTag; APropToRender: TIWAsyncCommonPropToRender);
+
+    procedure AddAsyncStyle(ATag: TIWXMLTag; const AStyle: string);
+
+    function GetRenderSize: Boolean;
+    function GetStyleRenderOptions: TIWStyleRenderOptions;
+    function SetStyleRenderOptions(AValue :TIWStyleRenderOptions): Boolean;
+
+    function GetZIndex: Integer;
+    procedure SetZIndex(const AValue: Integer);
+
+    function getCss: string;
+    procedure setCss(const AValue: string);
+
+    function getSkinId: string;
+    procedure setSkinId(const AValue: string);
+
+    function GetCursor: TIWCursor;
+    procedure SetCursor(AValue: TIWCursor);
+
+    function GetScriptEvents: TIWScriptEvents;
+    procedure SetScriptEvents(const Value: TIWScriptEvents);
+
+    property HTMLLeft: Integer read GetHTMLLeft;
+    property HTMLTop: Integer read GetHTMLTop;
+    property IWCLName: string read GetIWCLName;
+    property IWCLParentName: string read GetIWCLParentName;
+  end;
+
+  TIWCustomControl = class(TIWBaseHTMLControl, IIWHTML40Control, IIWHTML40Component, IIWResyncEvents)
+  strict private
+    // FControlOptions replace all boolean properties:
+    // UseFrame, DoRefreshControl, FSubmitOnAsyncEvent, FDoSubmitValidation and future additions
+    FControlOptions: TIWControlOptions;
+    FPageContext: TIWPageContext40;
+    function IsFontStored: Boolean;
+  protected
+    FCanReceiveFocus: Boolean;
+    FSubmitParam: string;
+    FConfirmation: string;
+    FFriendlyName: string;
+    FInitProc: string;
+    FJavaScriptOnce: string;
+    FIWCLInitProc: string;
+    FLockOnAsyncEvents: TIWAsyncEventTypes;
+    FAsyncParams: TStringList;
+    FOnAsyncClick: TIWAsyncEvent;
+    FOnAsyncDoubleClick: TIWAsyncEvent;
+    FOnAsyncChange: TIWAsyncEvent;
+    FOnAsyncEnter: TIWAsyncEvent;
+    FOnAsyncExit: TIWAsyncEvent;
+    FOnAsyncKeyDown: TIWAsyncEvent;
+    FOnAsyncKeyUp: TIWAsyncEvent;
+    FOnAsyncKeyPress: TIWAsyncEvent;
+    FOnAsyncMouseDown: TIWAsyncEvent;
+    FOnAsyncMouseMove: TIWAsyncEvent;
+    FOnAsyncMouseOver: TIWAsyncEvent;
+    FOnAsyncMouseOut: TIWAsyncEvent;
+    FOnAsyncMouseUp: TIWAsyncEvent;
+    FOnAsyncSelect: TIWAsyncEvent;
+    FOnAsyncLoad: TIWAsyncEvent;
+    FOnAsyncUnLoad: TIWAsyncEvent;
+    FIsRefreshAsyncRender: Boolean;
+    // dummy methods to set unused properties
+    procedure SetString(const aValue: string);
+    procedure SetBoolean(const aValue: Boolean);
+    procedure SetInteger(const aValue: Integer);
+    //
+    function get_UseFrame: Boolean;
+    procedure set_UseFrame(AValue: Boolean);
+    function get_DoRefreshControl: Boolean;
+    procedure set_DoRefreshControl(AValue: Boolean);
+    function get_SubmitOnAsyncEvent: Boolean;
+    procedure set_SubmitOnAsyncEvent(AValue: Boolean);
+    function get_DoSubmitValidation: Boolean;
+    procedure set_DoSubmitValidation(AValue: Boolean);
+    function get_Clip: Boolean;
+    function get_WebCursor: TIWCursor;
+    procedure set_WebCursor(AValue: TIWCursor);
+    function get_Css: string;
+    procedure set_Css(const AValue: string);
+    // deprecated
+    function get_SupportsPartial: Boolean;
+    procedure set_SupportsPartial(AValue: Boolean);
+    function get_ScriptEvents: TIWScriptEvents;
+    procedure set_ScriptEvents(Value: TIWScriptEvents);
+    function get_SkinId: string;
+    procedure set_SkinId(const AValue: string);
+    function get_ZIndex: Integer;
+    procedure set_ZIndex(AValue: Integer);
+    function get_RenderSize: Boolean; deprecated;
+    function get_StyleRenderOptions: TIWStyleRenderOptions;
+    procedure set_StyleRenderOptions(AValue: TIWStyleRenderOptions);
+    function get_HTMLLeft: Integer;
+    function get_HTMLTop: Integer;
+    function get_Hint: string;
+    procedure set_Hint(const AValue: string);
+    //
+    procedure Dispose(ADispose: Boolean); override;
+    procedure DoOnAsyncClick(AParams: TStringList); virtual;
+    procedure DoOnAsyncDoubleClick(AParams: TStringList); virtual;
+    procedure DoOnAsyncChange(AParams: TStringList); virtual;
+    procedure DoOnAsyncEnter(AParams: TStringList); virtual;
+    procedure DoOnAsyncExit(AParams: TStringList); virtual;
+    procedure DoOnAsyncKeyDown(AParams: TStringList); virtual;
+    procedure DoOnAsyncKeyUp(AParams: TStringList); virtual;
+    procedure DoOnAsyncKeyPress(AParams: TStringList); virtual;
+    procedure DoOnAsyncMouseDown(AParams: TStringList); virtual;
+    procedure DoOnAsyncMouseMove(AParams: TStringList); virtual;
+    procedure DoOnAsyncMouseOver(AParams: TStringList); virtual;
+    procedure DoOnAsyncMouseOut(AParams: TStringList); virtual;
+    procedure DoOnAsyncMouseUp(AParams: TStringList); virtual;
+    procedure DoOnAsyncSelect(AParams: TStringList); virtual;
+    procedure DoOnAsyncLoad(AParams: TStringList); virtual;
+    procedure DoOnAsyncUnLoad(AParams: TStringList); virtual;
+
+    function InitializeImplementation: TIWBaseHTMLControlImplementation; override;
+    procedure ReleaseImplementation; override;
+
+    procedure set_Editable(aValue: Boolean); override;
+    procedure set_Visible(Value: Boolean); override;
+    function RequiresRefresh: Boolean; override;
+    function SupportsSubmit: Boolean;
+    function SupportsInput: Boolean; override;
+    procedure set_RenderSize(AValue: Boolean); deprecated;
+    procedure setRenderSize(AValue: Boolean); deprecated;
+    procedure set_Clip(AValue: Boolean);
+
+    procedure RenderAsyncPropertyAsString(const APropertyName: string; ATag: TIWXMLTag; const APropertyValue: string; AIgnoreEmptyValue: Boolean);
+    procedure RenderAsyncPropertyAsStringLiteral(const APropertyName: string; ATag: TIWXMLTag; const APropertyValue: string; AIgnoreEmptyValue: Boolean);
+    procedure RenderAsyncProperty(const APropertyName: string; ATag: TIWXMLTag; APropertyValue: Boolean); overload;
+    procedure RenderAsyncProperty(const APropertyName: string; ATag: TIWXMLTag; APropertyValue: Integer); overload;
+    procedure RenderAsyncPropertyAsColor(const APropertyName: string; ATag: TIWXMLTag; APropertyValue: TIWColor);
+    procedure RenderAsyncPropertyAsPixel(const APropertyName: string; ATag: TIWXMLTag; APropertyValue: TIWColor);
+    procedure RenderAsyncCommonProperties(AComponentContext: TIWCompContext; aTag : TIWXMLTag; APropToRender: TIWAsyncCommonPropToRender = AsyncCommonPropAll);
+
+    procedure RenderScripts(AComponentContext: TIWCompContext); virtual;
+    procedure AddAsyncStyle(ATag: TIWXMLTag; AStyle: string);
+
+    procedure AddAsyncEventHandler(const AEventName: string; const AsyncEventName: string; AScriptEvents: TIWScriptEvents;
+      ADirectProcessing: Boolean; AAppend: Boolean; const ALock: Boolean = False); virtual;
+
+    function HintEvents(ATag: TIWHTMLTag): string;
+    procedure HookEvents(APageContext: TIWPageContext40; AScriptEvents: TIWScriptEvents); virtual;
+    procedure AssignAsyncEvents(APageContext: TIWPageContext40; AScriptEvents: TIWScriptEvents); virtual;
+    procedure RegisterAsyncEvents(APageContext: TIWPageContext40); virtual;
+    procedure SetName(const AValue: TComponentName); override;
+
+    function SubmitHandler(const AParam: string = ''; const AName: string = ''; const AAlwaysReturnsFalse:boolean = false ): string;
+    function SubmitLink(const AHTML: string; const AParam: string = ''; const AOnClick: boolean = false; ABrowser: TBrowser = nil): TIWHTMLTag;
+    // Interface support
+    // Some methods are not abstract so that no warnings are issued as not all methods are required
+    // to be overridden.
+    function WantsSubmitValidation: Boolean;
+    procedure InitControl; override;
+    procedure GetInputControlNames(ANames: TStringList); virtual;
+    function IsForThisControl(AName: string): Boolean; virtual;
+
+    procedure SetFileValue(AFile: TFileName); virtual;
+    procedure Submit(const AValue: string); virtual;
+    function getSubmitProc: TSubmitProc;
+
+    function HTMLControlImplementation: TIWHTMLControlImplementation;
+
+    procedure ColorChanged; override;
+    procedure ParentChanging(AOldParent, AParent: TComponent); override;
+    procedure TextChangedNotification; override;
+
+    function get_HTMLWidth: Integer; override;
+    function get_HTMLHeight: Integer; override;
+    function get_HTMLMarginWidth: Integer;
+    function get_HTMLMarginHeight: Integer;
+
+    function IsScriptEventsStored: Boolean; virtual;
+    procedure StyleRenderOptionsChanged(Sender: TObject); virtual;
+    procedure UnRegisterAsyncEvents; virtual;
+    function GetIWCLName: string;
+    function GetAlignWithMargins: Boolean;
+    procedure SetAlignWithMargins(Value: Boolean);
+    function IsHintStored: Boolean;
+
+    property SupportsPartial: Boolean read get_SupportsPartial write set_SupportsPartial;
+    property Confirmation: string read FConfirmation write FConfirmation;
+    property DoSubmitValidation: Boolean read get_DoSubmitValidation write set_DoSubmitValidation default True;
+    property UseFrame: Boolean read get_UseFrame write set_UseFrame;
+    property SubmitOnAsyncEvent: Boolean read get_SubmitOnAsyncEvent write set_SubmitOnAsyncEvent;
+    property PageContext: TIWPageContext40 read FPageContext;
+  public
+    constructor Create(AOwner: TComponent); override;
+    procedure Invalidate; override;
+    procedure SetBounds(ALeft, ATop, AWidth, AHeight: Integer); override;
+
+    procedure RepaintControl;
+    function RenderCSSClass(AComponentContext: TIWCompContext): string; virtual;
+    function RenderStyle(AComponentContext: TIWCompContext): string; virtual;
+    function RenderAsyncComponent(AContext: TIWBaseComponentContext): TIWXMLTag; virtual;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+
+    // class methods to render styles
+    class function RenderScrollStyle(const IWScrollStyle: TIWScrollStyle): string;
+    class function RenderCursorStyle(const IWCursor: TIWCursor): string;
+    class function RenderSizeStyle(const aWidth, aHeight: Integer): string;
+    class function RenderTextAlignStyle(const aAlignment: TAlignment): string;
+    class function RenderVerticalAlignStyle(const aAlignment: TIWVerticalAlignment): string;
+    class function RenderBGColor(const aColor: TIWColor): string;
+    class function RenderDisplayStyle(const aDisplayStyle: TIWDisplayStyle): string;
+
+    procedure SetFocus;
+    function GetAsyncParam(const AParamName: string): string; overload;
+    function GetAsyncParam(const AParamName: string; const Default: Integer): Integer; overload;
+    procedure CenterInParent(const ACenterOption: TIWCenteringOption = coCenterBoth);
+    function GetWebApp: TIWApplication;
+    function RegionalSettings: TIWRegionalSettings;
+    procedure RefreshAsyncRender;
+
+    property Font stored IsFontStored;
+    property Color;
+    //
+    // This is public because the render needs it.
+    property WebColor;
+    property DoRefreshControl: Boolean read get_DoRefreshControl write set_DoRefreshControl;
+    property WebFont;
+    property Clip: Boolean read get_Clip;
+    property FriendlyName: string read FFriendlyName write FFriendlyName;
+    property ScriptEvents: TIWScriptEvents read get_ScriptEvents write set_ScriptEvents stored IsScriptEventsStored;
+
+    property OnAsyncClick: TIWAsyncEvent read FOnAsyncClick write FOnAsyncClick;
+    property OnAsyncDoubleClick: TIWAsyncEvent read FOnAsyncDoubleClick write FOnAsyncDoubleClick;
+    property OnAsyncChange: TIWAsyncEvent read FOnAsyncChange write FOnAsyncChange;
+    property OnAsyncEnter: TIWAsyncEvent read FOnAsyncEnter write FOnAsyncEnter;
+    property OnAsyncExit: TIWAsyncEvent read FOnAsyncExit write FOnAsyncExit;
+    property OnAsyncKeyDown: TIWAsyncEvent read FOnAsyncKeyDown write FOnAsyncKeyDown;
+    property OnAsyncKeyUp: TIWAsyncEvent read FOnAsyncKeyUp write FOnAsyncKeyUp;
+    property OnAsyncKeyPress: TIWAsyncEvent read FOnAsyncKeyPress write FOnAsyncKeyPress;
+    property OnAsyncMouseDown: TIWAsyncEvent read FOnAsyncMouseDown write FOnAsyncMouseDown;
+    property OnAsyncMouseMove: TIWAsyncEvent read FOnAsyncMouseMove write FOnAsyncMouseMove;
+    property OnAsyncMouseOver: TIWAsyncEvent read FOnAsyncMouseOver write FOnAsyncMouseOver;
+    property OnAsyncMouseOut: TIWAsyncEvent read FOnAsyncMouseOut write FOnAsyncMouseOut;
+    property OnAsyncMouseUp: TIWAsyncEvent read FOnAsyncMouseUp write FOnAsyncMouseUp;
+    property OnAsyncSelect: TIWAsyncEvent read FOnAsyncSelect write FOnAsyncSelect;
+    property OnAsyncLoad: TIWAsyncEvent read FOnAsyncLoad write FOnAsyncLoad;
+    property OnAsyncUnLoad: TIWAsyncEvent read FOnAsyncUnLoad write FOnAsyncUnLoad;
+  published
+    property Align;
+    property Css: string read get_Css write set_Css;
+
+    property SkinId: string read get_SkinId write set_SkinId;
+
+    property Anchors;
+    property Cursor: TIWCursor read get_WebCursor write set_WebCursor default crAuto;
+
+    // Deprecated XII
+    property IW50Hint: Boolean write SetBoolean;
+    // Deprecated XII
+    property StatusText: string write SetString;
+
+    property ParentShowHint default False;
+    property ShowHint default True;
+    property ZIndex: Integer read get_ZIndex write set_ZIndex default 0;
+    property RenderSize: Boolean read get_RenderSize write set_RenderSize default True;
+    property StyleRenderOptions: TIWStyleRenderOptions read get_StyleRenderOptions write set_StyleRenderOptions;
+    // we redeclare the "Hint" property because we neet to invalidate the control when the hint changes for Async updates
+    // Note about this: Using something like TControl(IWButton1).Hint := 'my hint' won't call set_Hint(). Instead, it will set the hint using TControl's own access methods
+    property Hint: string read get_Hint write set_Hint Stored IsHintStored;
+    property LockOnAsyncEvents: TIWAsyncEventTypes read FLockOnAsyncEvents write FLockOnAsyncEvents default [];
+    property IWCLName: string read GetIWCLName;
+    property AlignWithMargins: Boolean read GetAlignWithMargins write SetAlignWithMargins;
+  end;
+
+  TIWControl = class(TIWCustomControl, IIWInputControl, IIWSubmitControl, IIWInputControl40)
+  protected
+    procedure SetValue(const AValue: string); virtual;
+    function GetSubmitParam: string;
+  end;
+
+  function GetInterfaceInstance(AControl: IIWHTML40Control): TIWCustomControl;
+
+implementation

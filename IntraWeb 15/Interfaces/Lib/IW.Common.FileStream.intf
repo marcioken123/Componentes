@@ -1,0 +1,37 @@
+unit IW.Common.FileStream;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses Classes, SysUtils, IW.Common.BufferedHandleStream;
+
+type
+  TIWFileStream = class(TBufferedHandleStream)
+  strict private
+    FFileName: string;
+  private
+    function GetAsString: string;
+  public
+    constructor Create(const AFileName: string; Mode: Word); overload;
+    constructor Create(const AFileName: string; Mode: Word; Rights: Cardinal); overload;
+    destructor Destroy; override;
+    property FileName: string read FFileName;
+    property AsString: string read GetAsString;
+  end;
+
+  TIWTextFileReader = class
+  public
+    class function ReadAllBytes(const APathname: string; AWriteLock: Boolean = True): TBytes; overload;
+    class function ReadAllText(const APathname: string; AWriteLock: Boolean = True): string; overload;
+    class function ReadAllBytes(const AStream: TStream): TBytes; overload;
+    class function ReadAllText(const AStream: TStream): string; overload;
+  end;
+
+  TIWTextFileWriter = class
+  public
+    class procedure WriteAllBytes(AContent: TBytes; const APathname: string);
+    class procedure WriteAllText(const AContent, APathname: string); overload;
+    class procedure WriteAllText(const AContent: AnsiString; const APathname: string); overload;
+  end;
+
+implementation

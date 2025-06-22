@@ -1,0 +1,33 @@
+unit IW.Common.ConvertUtils;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils;
+
+function ISO31_FormatSettings: TFormatSettings; inline;
+function ISO31ToFloat(const AValue: string): Double;
+function ISO31ToFloatDef(const AValue: string; const ADefault: Double): Double;
+function FloatStrToISO31(const AValue: string): string;
+function FloatToISO31(const AValue: Double): string; overload;
+function FloatToISO31(const AValue: Single): string; overload;
+function ISO31ToFloatStr(const aValue: string): string;
+function IsFloat(const AValue: string): Boolean;
+procedure StrToBrowserFloatStr(var AValue: string; aBrowserDecSeparator: Char);
+procedure BrowserFloatStrToStr(var AValue: string; aBrowserDecSeparator: Char);
+
+type
+  TEnumConverter = class
+  public
+    class function EnumToInt<T>(const EnumValue: T): Integer;
+    class function EnumToString<T>(EnumValue: T): string;
+    class function EnumToJsOptionString<T>(EnumValue: T; PrefixSize: Integer = 2): string;
+  end;
+
+{$IFNDEF DELPHI15}
+var
+  FormatSettings: TFormatSettings;
+{$ENDIF}
+
+implementation

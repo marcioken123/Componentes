@@ -1,0 +1,285 @@
+unit IWCompGrids;
+{$I IWCompilerDefines.inc}
+
+{DIST Public}
+
+// Disable Compiler warings for DEPRECATED set_RenderSize, setRenderSize and get_RenderSize
+{$WARN SYMBOL_DEPRECATED OFF}
+
+interface
+
+uses
+  Graphics,
+  Classes,
+  IWVCLComponent,
+  Controls,
+  IWCompGridCommon, IWControl, IWFont, IWTypes, IWHTMLTag, IWColor, IWApplication,
+  IWRenderContext, IWBaseHTMLInterfaces, IWHTML40Interfaces, IWContainer,
+  IWBaseRenderContext, IWContainerLayout, IWBaseInterfaces, IWXMLTag,
+  IWMarkupLanguageTag, IW.Common.RenderStream, IW.Common.StrLists;
+
+  {$include IWCompilerDefines.inc}
+
+type
+  TIWCellRenderOption = (crAlign, crBGcolor, crCellPadding, crStyle, crValign);
+  TIWCellRenderOptions = set of TIWCellRenderOption;
+  TIWGetCellRenderOptionsEvent = procedure(Sender: TObject; Row,Col: Integer; var CellOptions: TIWCellRenderOptions) of object;
+
+const
+  DefaultCellRenderOptions = [crAlign, crBGcolor, crCellPadding, crStyle, crValign];
+
+type
+  TIWGridCell = class;
+  TIWCustomGrid = class;
+
+  // This is a TCollectionItem so in the future it can be made visual easier later.
+  TIWGridCell = class(TCollectionItem)
+  //COLSPAN=Number (columns spanned by the cell)
+  //ROWSPAN=Number (rows spanned by the cell)
+  private
+    function GetFont: TIWFont;
+  protected
+    FGrid: TIWCustomGrid;
+    FDoRefreshControl: Boolean;
+    FAlignment: TAlignment;
+    FBGColor: TIWColor;
+    FClickable: Boolean;
+    FControl: TIWCustomControl;
+    FDesignMode: Boolean;
+    FDoSubmitValidation: Boolean;
+    FFont: TIWFont;
+    FHeader: Boolean;
+    FHeight: string;
+    FShowHint: Boolean;
+    FTag: TObject;
+    FText: string;
+    FUnlinkedText: string;
+    FVAlign: TIWGridVAlign;
+    FVisible: Boolean;
+    FWidth: string;
+    FWrap: Boolean;
+    FHint: string;
+    FRawText: Boolean;
+    FCss: string;
+    //
+    procedure SetControl(const AValue: TIWCustomControl); virtual;
+    procedure SetGrid(const AValue: TIWCustomGrid);
+    procedure SetFont(const AValue: TIWFont);
+    procedure SetHeight(const AValue: string);
+    procedure SetShowHint(const Value: Boolean);
+    procedure SetWidth(const AValue: string);
+    procedure SetCss(const Value: string);
+    procedure SetRawText(const Value: Boolean);
+    procedure SetText(const Value: string);
+
+    procedure AssignTo(ADest: TPersistent); override;
+
+    property DesignMode: Boolean read FDesignMode;
+    function RenderControlForThisRow: Boolean; virtual;
+  public
+    constructor Create(ACollection: TCollection); overload; override;
+    destructor Destroy; override;
+
+    function RenderSelf(AGrid: TIWCustomGrid; const ARow: Integer;
+      const AColumn: Integer; AContext: TIWCompContext;
+      AContainerContext: TIWContainerContext; AText: string = ''): TIWHTMLTag; virtual;
+    procedure Invalidate;
+    //
+    property Grid: TIWCustomGrid read FGrid write SetGrid;
+    property DoRefreshControl: Boolean read FDoRefreshControl write FDoRefreshControl;
+    property Clickable: Boolean read FClickable write FClickable;
+  published
+    property Alignment: TAlignment read FAlignment write FAlignment;
+    property BGColor: TIWColor read FBGColor write FBGColor;
+    property Control: TIWCustomControl read FControl write SetControl;
+    property DoSubmitValidation: Boolean read FDoSubmitValidation write FDoSubmitValidation;
+    property Font: TIWFont read GetFont write SetFont;
+    property Header: Boolean read FHeader write FHeader;
+    property Height: string read FHeight write SetHeight;
+    ///Summary: A Hint is rendered as "Title" attribute, and the browser will display a
+    ///  small yellow box containing the hint message.
+    property Hint: string read FHint write FHint;
+    ///Summary: Set ShowHint to false to prevent the cell's Hint to be rendered.
+    ///  ShowHint defaults to True.
+    ///  Note: If TIWCustomGrid.ShowHint is set to false, no hint will be rendered anyway.
+    property ShowHint:boolean read FShowHint write SetShowHint;
+    property Tag: TObject read FTag write FTag;
+    property Text: string read FText write SetText;
+    property UnlinkedText: string read FUnlinkedText write FUnlinkedText;
+    property VAlign: TIWGridVAlign read FVAlign write FVAlign;
+    property Visible: Boolean read FVisible write FVisible;
+    property Width: string read FWidth write SetWidth;
+    property Wrap: Boolean read FWrap write FWrap;
+    property RawText: Boolean read FRawText write SetRawText;
+    property Css:string read FCss write SetCss;
+  end;
+
+  TIWGridCells = class(TOwnedCollection)
+  protected
+    FDoRefreshControl: Boolean;
+  public
+    function Add: TIWGridCell;
+    procedure Invalidate;
+    //
+    property DoRefreshControl: Boolean read FDoRefreshControl write FDoRefreshControl;
+  end;
+
+  TIWOnRenderCell = procedure(ACell: TIWGridCell; const ARow: Integer; const AColumn: Integer)
+    of object;
+
+  //TODO: If we have more container control combos, make a TIWCustomControlContainer that
+  TIWCustomGrid = class(TIWCustomControl, IIWBaseContainer, IIWHTML40Container, IIWFreeNotification)
+  protected
+    FHiddenColumns: TStringList;
+    FContainerImplementation: TIWContainerImplementation;
+    FOnRender: TNotifyEvent;
+    //Align is not supported because Grid is abosolutely positioned. Align has also been depricated
+    //in HTML 4.
+    FBorderColors: TIWGridBorderColors;
+    FBorderSize: Integer;
+    FBorderStyle: TIWGridBorderStyle;
+    FBGColor: TIWColor;
+    FCells: array of array of TIWGridCell;
+    FCellPadding: Integer;
+    FCellSpacing: Integer;
+    FFrameBuffer: Integer;
+    FLines: TIWGridLines;
+    FOnRenderCell: TIWOnRenderCell;
+    FSummary: string;
+    FUseSize: Boolean;
+    FCellRenderOptions: TIWCellRenderOptions;
+    FOnGetCellRenderOptions: TIWGetCellRenderOptionsEvent;
+    FStyles: TIWMinStringList;
+    FHTMLName: string;
+    //
+    procedure DoRender; virtual;
+    procedure DoRenderCell(ACell: TIWGridCell; const ARow: Integer; const AColumn: Integer);
+    procedure RenderCells(AContext: TIWCompContext; AGridTag: TIWHTMLTag); virtual;
+    function IsValidCell(ACell: TIWGridCell): Boolean; virtual; abstract;
+
+    procedure InitControl; override;
+
+    // Container functions
+    function ContainerPrefix: string;
+    function ContainerName: string;
+    function ContainerClassname: string;
+    function InterfaceInstance: TComponent;
+    procedure IWAddComponent(AComponent: TComponent);
+    procedure IWRemoveComponent(AComponent: TComponent);
+    function IWFindComponent(AComponent: TComponent): Integer;
+    function FindComponentByName(AComponent: String): TComponent;
+    function get_Component(AIndex: Integer): TComponent;
+    function get_IWComponentsCount: Integer;
+    function InitContainerContext(AWebApplication: TIWApplication): TIWContainerContext;
+
+    procedure RenderComponents(AContainerContext: TIWContainerContext;
+      APageContext: TIWBasePageContext);
+
+    procedure RenderAsyncComponents(AContext: TIWContainerContext;
+      APageContext: TIWBasePageContext);
+
+    procedure RenderInnerHTML(AParentTag: TIWMarkupLanguageTag; AContext: TIWCompContext);
+
+    procedure SetActiveControl(AControl: IIWHTML40Control);
+
+    procedure set_LayoutMgr(Value: TIWContainerLayout);
+    function get_LayoutMgr: TIWContainerLayout;
+
+    function get_ContainerContext: TIWContainerContext;
+    procedure set_ContainerContext(const AContainerContext: TIWContainerContext);
+
+    function GenerateControlPositions: string;
+    function CheckComponentForRender(AComponent: TComponent): Boolean;
+
+    procedure Freeing(AObject: TObject); virtual;
+
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+
+    property LayoutMgr: TIWContainerLayout read get_LayoutMgr write set_LayoutMgr;
+    property ContainerContext: TIWContainerContext read get_ContainerContext write set_ContainerContext;
+    property Component[AIndex: Integer]: TComponent read get_Component;
+
+    property IWComponentsCount: Integer read get_IWComponentsCount;
+    procedure Dispose(ADispose: Boolean); override;
+    procedure SetHiddenColumns(AValue: TStringList);
+  public
+    function get_HasTabOrder: Boolean; override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    ///Summary: Returns true only if all cells of the given Row number are set to visible = true
+    function IsRowVisible(ARow: Integer): Boolean;
+    procedure SetColumnVisibility(AColumn: Integer; AVisible: Boolean);
+    property CellStyles: TIWMinStringList read FStyles;
+  published
+    property BorderColors: TIWGridBorderColors read FBorderColors write FBorderColors;
+    property BGColor: TIWColor read FBGColor write FBGColor;
+    property BorderSize: Integer read FBorderSize write FBorderSize;
+    property BorderStyle: TIWGridBorderStyle read FBorderStyle write FBorderStyle;
+    property Caption;
+    property CellPadding: Integer read FCellPadding write FCellPadding;
+    property CellSpacing: Integer read FCellSpacing write FCellSpacing;
+    property Font;
+    property FrameBuffer: Integer read FFrameBuffer write FFrameBuffer;
+    property Lines: TIWGridLines read FLines write FLines;
+    property OnRenderCell: TIWOnRenderCell read FOnRenderCell write FOnRenderCell;
+    property Summary: string read FSummary write FSummary;
+    procedure set_Visible(Value: Boolean); override;
+    property UseFrame;
+    property UseSize: Boolean read FUseSize write FUseSize;
+    property HiddenColumns: TStringList read FHiddenColumns write SetHiddenColumns;
+    property OnRender: TNotifyEvent read FOnRender write FOnRender;
+    property CellRenderOptions: TIWCellRenderOptions read FCellRenderOptions  write FCellRenderOptions default DefaultCellRenderOptions;
+    property OnGetCellRenderOptions: TIWGetCellRenderOptionsEvent read FOnGetCellRenderOptions write FOnGetCellRenderOptions;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWGrid = class(TIWCustomGrid, IIWSubmitControl)
+  protected
+    FShowEmptyCells: Boolean;
+    FShowInvisibleRows: Boolean;
+    FSubmitParam: string;
+    FCellCollection: TIWGridCells;
+    FColumnCount: Integer;
+    FOnCellClick: TIWOnCellClick;
+    FRowCount: Integer;
+    FCurrentRow : Integer;
+    FScrollToCurrentRow: Boolean;
+
+    procedure DoCellClick(const ARow: Integer; const AColumn: Integer); virtual;
+    function GetCell(const ARow, AColumn: Integer): TIWGridCell;
+    procedure RenderCells(AContext: TIWCompContext; AGridTag: TIWHTMLTag); override;
+    procedure SetColumnCount(const AValue: Integer);
+    procedure SetRowCount(const AValue: Integer);
+    procedure Submit(const AValue: string); override;
+    function IsValidCell(ACell: TIWGridCell): Boolean; override;
+
+    procedure Freeing(AObject: TObject); override;
+
+    procedure InitControl; override;
+    procedure Dispose(ADispose: Boolean); override;
+  public
+    destructor Destroy; override;
+    //
+    procedure Clear;
+    function GetSubmitParam: string;
+    function CellExists(const ARow, AColumn: Integer): Boolean;
+    procedure DeleteColumn(const AColumn: Integer);
+    procedure DeleteRow(const ARow: Integer);
+    //
+    property Cell[const ARow: Integer; const AColumn: Integer]: TIWGridCell read GetCell;
+    property CurrentRow : Integer read FCurrentRow write FCurrentRow;
+  published
+    property FriendlyName;
+    property ColumnCount: Integer read FColumnCount write SetColumnCount;
+    property OnCellClick: TIWOnCellClick read FOnCellClick write FOnCellClick;
+    property RowCount: Integer read FRowCount write SetRowCount;
+    ///Summary: If set to false, empty cells (those which have no text or control, or are set as visible=false)
+    ///  will be rendered as empty <td></td> tag pairs.
+    property ShowEmptyCells: Boolean read FShowEmptyCells write FShowEmptyCells;
+    ///Summary: If set to false, empty rows (those which have only empty cells, or are set as visible=false)
+    ///  will NOT be rendered at all.
+    ///  Default is true, which means that rows with invisble cells will be rendered, with empty <tr><td></td>...</td> pairs.
+    property ShowInvisibleRows: Boolean read FShowInvisibleRows write FShowInvisibleRows;
+    property ScrollToCurrentRow: Boolean read FScrollToCurrentRow write FScrollToCurrentRow;
+  end;
+
+implementation

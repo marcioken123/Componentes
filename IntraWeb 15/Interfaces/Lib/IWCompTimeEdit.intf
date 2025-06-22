@@ -1,0 +1,45 @@
+unit IWCompTimeEdit;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, IWCompEdit, IWRenderContext, IWHTMLTag;
+
+type
+  TIWTimeDisplayFormat = (dfAuto, dfMinutes, dfHours, dfDays, dfWeeks);
+
+  {$include IWPlatformAttrib.inc}
+  TIWTimeEdit = class(TIWCustomEdit)
+  private
+    FMinutes: Integer;
+    FHoursPerDay: Integer;
+    FDaysPerWeek: Integer;
+
+    FDisplayFormat: TIWTimeDisplayFormat;
+
+    function GetWeeks: string;
+    function GetDays: string;
+    function GetHours: string;
+    procedure SetMinutes(const Value: Integer);
+    function GetFormattedText: string;
+  protected
+    procedure InitControl; override;
+    procedure SetValue(const AValue: string); override;
+  public
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+
+    // Not published, they are read only
+    property Hours: string read GetHours;
+    property Days: string read GetDays;
+    property Weeks: string read GetWeeks;
+    property Value: string read GetFormattedText;
+  published
+    property DaysPerWeek: Integer read FDaysPerWeek write FDaysPerWeek;
+    property HoursPerDay: Integer read FHoursPerDay write FHoursPerDay;
+    property Minutes: Integer read FMinutes write SetMinutes;
+    property DisplayFormat : TIWTimeDisplayFormat read FDisplayFormat write FDisplayFormat;
+  end;
+
+
+implementation

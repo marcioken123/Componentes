@@ -1,0 +1,120 @@
+unit IWCompButton;
+{$I IWCompilerDefines.inc}
+
+{PUBDIST}
+
+// Disable Compiler warings for DEPRECATED set_RenderSize, setRenderSize and get_RenderSize
+{$WARN SYMBOL_DEPRECATED OFF}
+
+interface
+
+uses
+  Classes,
+  IWBaseControl, IWControl, IWHTMLTag, IWScriptEvents, IWRenderContext, IWXMLTag,
+  IWBaseInterfaces, IWBaseHTMLControl, IWMarkupLanguageTag, IWHTMLControls,
+  IWFileReference;
+
+type
+  // Deprecated XII
+  TIWButtonType = (btSubmit, btButton, btReset);
+
+  TIWButton = class;
+
+  {$include IWPlatformAttrib.inc}
+  TIWButton = class(TIWCustomControl, IIWSubmitControl)
+  private
+    FRenderButtonTag: Boolean;
+    procedure SetRenderButtonTag(const Value: Boolean);
+    procedure SetImage(const Value: TIWControlImage);
+  protected
+    FSubmitParam: string;
+    FButtonType: TIWButtonType;
+    FHotKey: string;
+    FImage: TIWControlImage;
+    //
+    procedure Submit(const AValue: string); override;
+    procedure HookEvents(APageContext: TIWPageContext40; AScriptEvents: TIWScriptEvents); override;
+    procedure InitControl; override;
+    procedure Dispose(ADispose: Boolean); override;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    procedure ImageChanged(Sender: TObject);
+    function ShouldRenderButtonTag: Boolean; virtual;
+    function ShouldRenderEmptyImage: Boolean; virtual;
+  public
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    function GetSubmitParam: string;
+    function RenderStyle(AComponentContext: TIWCompContext): string; override;
+  published
+    // Deprecated XII
+    property ButtonType: TIWButtonType write FButtonType;
+    property HotKey: string read FHotkey write FHotKey;
+    property Caption;
+    property Confirmation;
+    property DoSubmitValidation;
+    property Enabled;
+    property ExtraTagParams;
+    property Color;
+    property Font;
+    property FriendlyName;
+    property ScriptEvents;
+    property TabOrder;
+    property RenderButtonTag: Boolean read FRenderButtonTag write SetRenderButtonTag default False;
+    property Image: TIWControlImage read FImage write SetImage;
+
+    property OnClick;
+    property OnAsyncClick;
+    property OnAsyncDoubleClick;
+    property OnAsyncEnter;
+    property OnAsyncExit;
+    property OnAsyncMouseMove;
+    property OnAsyncMouseOver;
+    property OnAsyncMouseOut;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWAnimatedButton = class(TIWButton)
+  private
+    class var FLocalJavaScriptFolder: string;
+    class var FLocalStyleFolder: string;
+  private
+    FClickAnimation: TIWControlAnimation;
+    FRenderCDNFiles: Boolean;
+    FRenderLocalFiles: Boolean;
+    procedure SetClickAnimation(Value: TIWControlAnimation);
+    procedure SetRenderCDNFiles(const Value: Boolean);
+    procedure SetRenderLocalFiles(const Value: Boolean);
+  protected
+    procedure InitControl; override;
+    procedure Dispose(ADispose: Boolean); override;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    procedure DoOnAsyncClick(AParams: TStringList); override;
+    procedure Loaded; override;
+    procedure AddRequiredFiles(AContext: TIWCompContext); virtual;
+    function ShouldRenderEmptyImage: Boolean; override;
+  public
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    procedure DownloadContentFiles;
+    class property LocalJavaScriptFolder: string read FLocalJavaScriptFolder write FLocalJavaScriptFolder;
+    class property LocalStyleFolder: string read FLocalStyleFolder write FLocalStyleFolder;
+  published
+    property ClickAnimation: TIWControlAnimation read FClickAnimation write SetClickAnimation;
+    property RenderCDNFiles: Boolean read FRenderCDNFiles write SetRenderCDNFiles default True;
+    property RenderLocalFiles: Boolean read FRenderLocalFiles write SetRenderLocalFiles default False;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWDownloadButton = class(TIWAnimatedButton)
+  protected
+    FFileToDownload: TIWFileDownloadReference;
+    procedure InitControl; override;
+    procedure Dispose(ADispose: Boolean); override;
+    procedure DoRender(AContext: TIWCompContext);
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    procedure FileChanged(ASender: TObject);
+  public
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+  published
+    property FileToDownload: TIWFileDownloadReference read FFileToDownload write FFileToDownload;
+  end;
+
+implementation

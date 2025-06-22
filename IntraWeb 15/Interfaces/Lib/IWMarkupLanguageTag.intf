@@ -1,0 +1,202 @@
+unit IWMarkupLanguageTag;
+{$I IWCompilerDefines.inc}
+{Dist Public}
+
+interface
+
+uses
+  SysUtils, Classes, IW.Common.StreamHelper, IWColor, IW.Common.RenderStream, IW.Common.Strings,
+  IW.Common.StrLists, IW.Common.Lists;
+
+type
+  // Notes about TIWTagParamsStringList in IW 14.1.0+
+  // TIWTagParamsStringList used to be a TStringList descendant.
+  // TStringList occupies 92 bytes in x86 (152 bytes in x64) and is not the fastest
+  // data structure for the job. Now we use a TIWNameValueList which occupies only 24 bytes in x86
+  // (40 bytes in x64) and is 10x faster for this specific task than a std TStringList
+
+  TIWTagParamsStringList = TIWNameValueList;
+
+  TIWMarkupLanguageTagCollection = class;
+
+  TIWMarkupLanguageTagCollectionClass = class of TIWMarkupLanguageTagCollection;
+
+  //TIWMarkupLanguageElement doesn't actually need to descend from TPersistent.
+  // TPersistent performs worse than TObject in multithreaded applications because
+  // of Fixup resolution during Destroy()
+  TIWMarkupLanguageElement = class(TObject)
+  private
+    FParentElement: TIWMarkupLanguageElement;
+    FDestroying: Boolean;
+    FRendering: Boolean;
+  protected
+    procedure SetParentElement(const Value: TIWMarkupLanguageElement); virtual;
+    procedure RenderElement(ABuffer: TStreamHelper; AIndent: Integer = 0); virtual; abstract;
+
+    procedure InitializeElement(AParentElement: TIWMarkupLanguageElement); virtual;
+  public
+    procedure Assign(ASource: TObject); virtual;
+    constructor Create(AParentElement: TIWMarkupLanguageElement); virtual;
+    destructor Destroy; override;
+    procedure Render(ABuffer: TStreamHelper); overload;
+    function Render: string; overload; // SLOW, for backward compatibility only
+    //
+    property Destroying: Boolean read FDestroying;
+    property ParentElement: TIWMarkupLanguageElement read FParentElement write SetParentElement;
+  end;
+
+  TIWMarkupLanguageElementClass = class of TIWMarkupLanguageElement;
+
+  TIWCloseTag = (cbAuto, cbFalse, cbTrue, cbSimpleClose);
+
+  // Notes about TIWMarkupLanguageTag in IW 14.0.1+
+  // FAttributes is used mostly in <style> tags. Each style attribute is one element in FAttributes list
+  // A typical <style> tag contains 10-20 attributes. In previous versions we had to create
+  // one TIWMarkupLanguageTag instance per attribute. Using a dedicated list for attributes
+  // we avoid the creation of a huge amount of objects
+
+  TIWMarkupLanguageTag = class(TIWMarkupLanguageElement)
+  strict private
+    FAttributes: TIWTagParamsStringList;
+    function GetAttributeCount: Integer;
+  protected
+    FContents: TIWMarkupLanguageTagCollection;
+    FParams: TIWTagParamsStringList;
+    FScriptEvents: string;
+    FTag: string;
+    FIsPreformated: Boolean;
+    FClosingTag: TIWCloseTag;
+    procedure SetParams(const AValue: TIWTagParamsStringList);
+    function GetScriptEvents: string;
+    procedure SetTag(const Value: string); virtual;
+    procedure RenderElement(ABuffer: TStreamHelper; AIndent: Integer = 0); override;
+    procedure RenderElementContent(ABuffer: TStreamHelper; AIndent: Integer);virtual;
+    function ContentsClass: TIWMarkupLanguageTagCollectionClass; virtual;
+    procedure InitializeElement(AParentElement: TIWMarkupLanguageElement); override;
+    procedure RenderAttributes(ABuffer: TStreamHelper); virtual;
+    property ClosingTag: TIWCloseTag read FClosingTag write FClosingTag;
+  public
+    procedure Add(const AAttribName: string);
+    procedure AddClassParam(const AClassName: string);
+    procedure AddStringParam(const AAttribName: string; const AAttribValue: string; const AllowEmptyValue: boolean = False); overload;
+    procedure AddStringParam(const AAttribName: string; const AAttribValue: AnsiString); overload;
+    procedure AddIntegerParam(const AAttribName: string; const AAttribValue: Integer);
+    procedure AddBoolParam(const AAttribName: string; const AAttribValue: Boolean);
+    procedure AddColor(const AAttribName: string; const AAttribValue: TIWColor);
+    procedure AddParmsList(AParams: TStringList);
+    procedure AddAttributeListAsString(const AAttributeList: string);
+    procedure DeleteAttribute(AIndex: Integer);
+    procedure ClearParam(const AParamName: string);
+    procedure Assign(ASource: TObject); override;
+    constructor CreateTag(const ATag: string; const AParentElement: TIWMarkupLanguageElement = nil); virtual;
+    destructor Destroy; override;
+    function ParamValueFromIndex(AIndex: Integer): string;
+    function HasContent: Boolean; virtual;
+    procedure RenderContent(ABuffer: TStreamHelper);
+    procedure AddId(const AId: string);
+    property Params: TIWTagParamsStringList read FParams write SetParams;
+    property Tag: string read FTag write SetTag;
+    property Contents: TIWMarkupLanguageTagCollection read FContents;
+    property ScriptEvents: string read GetScriptEvents write FScriptEvents;
+    property IsPreformated: Boolean read FIsPreformated write FIsPreformated;
+    // Attributes can be nil! It is created on demand
+    property Attributes: TIWTagParamsStringList read FAttributes;
+    // AttributeCount returns 0 if FAttributes is nil
+    property AttributeCount: Integer read GetAttributeCount;
+  end;
+
+  TIWTextElement = class(TIWMarkupLanguageElement)
+  private
+    FText: string;
+  protected
+    procedure RenderElement(ABuffer: TStreamHelper; AIndent: Integer = 0); override;
+  public
+    procedure Assign(ASource: TObject); override;
+
+    property Text: string read FText write FText;
+  end;
+
+  TIWBinaryElement = class(TIWMarkupLanguageElement)
+  private
+    FBuffer: TIWRenderStream;
+  protected
+    procedure RenderElement(ABuffer: TStreamHelper; AIndent: Integer = 0); override;
+    procedure InitializeElement(AParentElement: TIWMarkupLanguageElement); override;
+  public
+    destructor Destroy; override;
+    //
+    property Buffer: TIWRenderStream read FBuffer write FBuffer;
+  end;
+
+  TIWMarkupLanguageTagClass = class of TIWMarkupLanguageTag;
+
+  TIWMarkupLanguageTagCollection = class(TIWListBase)
+  private
+    FParentElement: TIWMarkupLanguageElement;
+    FTagClass: TIWMarkupLanguageTagClass;
+  protected
+    function GetHTMLElement(AIndex: Integer): TIWMarkupLanguageElement;
+  public
+    constructor Create(AParentElement: TIWMarkupLanguageElement; ATagClass: TIWMarkupLanguageTagClass); virtual;
+    destructor Destroy; override;
+
+    procedure Clear; override;
+    procedure Assign(ASource: TIWMarkupLanguageTagCollection);
+
+    function FindTagByName(const ATag: string): TIWMarkupLanguageTag;
+    function AddTagAsObject(const ATag: TIWMarkupLanguageTag;
+      const ASetParentElement: Boolean = False): TIWMarkupLanguageTag;
+    function CreateOrGetExistingTag(const ATag: string): TIWMarkupLanguageTag;
+    function AddTag(const ATag: string; const ASetParentElement: Boolean = False): TIWMarkupLanguageTag;
+    function AddText(const AText: string; const ASetParentElement: Boolean = False): TIWTextElement;
+
+    function AddBuffer(const ABuffer: TIWRenderStream; const ASetParentElement: Boolean = False): TIWBinaryElement; overload;
+    function AddBuffer(const ABuffer: TBytes; const ASetParentElement: Boolean = False): TIWBinaryElement; overload;
+
+    procedure AddTagCollection(ATagCollection: TIWMarkupLanguageTagCollection; AFreeSourceCollection: Boolean = False;
+      const ASetParentElement: Boolean = False);
+    function FindTagByStringParam(const AAttribName, AAttribValue: string): TIWMarkupLanguageTag;
+    property Items[AIndex: Integer]: TIWMarkupLanguageElement read GetHTMLElement; default;
+  end;
+
+  TIWStyleSheetCollection = class
+  private
+    FList: TIWNameValueList;
+    procedure SetItem(const ASelector: string; AStyle: string);
+    function GetItem(const ASelector: string): string;
+    function GetItemByIndex(AIndex: Integer): string;
+    function GetCount: Integer;
+    function GetSelector(AIndex: Integer): string;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    property Items[const ASelector: string]: string read GetItem write SetItem; default;
+    property Styles[AIndex: Integer]: string read GetItemByIndex;
+    property Selectors[AIndex: Integer]: string read GetSelector;
+    property Count: Integer read GetCount;
+    procedure Delete(const ASelector: string);
+    procedure Clear;
+  end;
+
+  TIWStyleTag = class(TIWMarkupLanguageTag)
+  private
+    FStyleSheet: TIWStyleSheetCollection;
+    function GetStyleCount: Integer;
+  protected
+    procedure RenderElementContent(ABuffer: TStreamHelper; AIndent: Integer); override;
+    procedure SetStyle(const ASelector, AStyle: string);
+    function GetStyle(const ASelector: string): string;
+  public
+    constructor Create(AParentElement: TIWMarkupLanguageElement); override;
+    destructor Destroy; override;
+    procedure AddStyleSheet(AStyleSheet: TIWStyleSheetCollection);
+    procedure Clear;
+    procedure Delete(const ASelector: string);
+    procedure AddStyle(const ASelector, AStyle: string);
+    function HasContent: Boolean; override;
+    function GetElementContent: string;
+    property Styles[const ASelector: string]: string read GetStyle write SetStyle; default;
+    property StyleCount: Integer read GetStyleCount;
+  end;
+
+implementation

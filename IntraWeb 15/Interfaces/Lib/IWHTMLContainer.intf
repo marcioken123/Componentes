@@ -1,0 +1,39 @@
+unit IWHTMLContainer;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, Controls, Forms, Windows, Messages,
+  IWVCLBaseContainer, IWRenderContext, IWBaseInterfaces, IWTypes,
+  IWHTMLTag, IWContainer, IWMarkupLanguageTag, IWBaseRenderContext,
+  IWBaseForm;
+
+type
+  TIWHTMLContainer = class(TIWContainer, IIWTabOrder)
+  protected
+    FTabOrder: TIWTabOrder;
+    function InternalGetRealTabOrder(AContainer: TObject): TIWTabOrder;
+    procedure InternalSetTabOrder(AParentContainer: TIWContainer; AValue: Integer);
+    procedure ClearTabOrder(AParent: TControl); virtual;
+    function DefaultTabOrder: TIWTabOrder; virtual;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; virtual;
+    function RenderMarkupLanguageTag(AContext: TIWBaseComponentContext): TIWMarkupLanguageTag; virtual;
+    procedure AfterParentChanging(AOldParent, AParent: TComponent); override;
+    function getTabOrder: TIWTabOrder; override;
+    function get_RealTabOrder: TIWTabOrder;
+    procedure setTabOrder(AValue: TIWTabOrder); override;
+    function get_ShouldRenderTabOrder: Boolean; virtual;
+    property ShouldRenderTabOrder: boolean read get_ShouldRenderTabOrder;
+  public
+    function get_HasTabOrder: Boolean; virtual;
+    function OwnerForm: TIWBaseForm;
+    function OwnerFrame: TIWHTMLContainer;
+    //
+    property InternalTabOrder: TIWTabOrder read FTabOrder;
+    property HasTabOrder: boolean read get_HasTabOrder;
+  published
+    property Name;
+  end;
+
+implementation

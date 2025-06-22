@@ -1,0 +1,24 @@
+unit IWAutherEvent;
+{$I IWCompilerDefines.inc}
+
+{Dist Public}
+
+interface
+
+uses
+  Classes, IWAutherBase;
+
+type
+  TOnCheck = function(const aUser: string; const aPass: string): boolean of object;
+
+  {$include IWPlatformAttrib.inc}
+  TIWAutherEvent = class(TIWAutherBase)
+  protected
+    mOnCheck: TOnCheck;
+  public
+    function Check(const aUser: string; const aPass: string): Boolean; override;
+  published
+    property OnCheck: TOnCheck read mOnCheck write mOnCheck;
+  end;
+
+implementation

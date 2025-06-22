@@ -1,0 +1,9 @@
+unit IWServerSession;
+{$I IWCompilerDefines.inc}
+
+// Nice eval page
+// Temp/Cache - Give each session its own sub dir and delete on session destroy
+
+interface
+
+// Intended Export - Later can move this implementation

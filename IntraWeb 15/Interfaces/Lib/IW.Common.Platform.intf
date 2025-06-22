@@ -1,0 +1,17 @@
+unit IW.Common.Platform;
+
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Windows;
+
+// IWCodeRedirect is an utility procedure to patch VCL/RTL methods at runtime
+procedure IWCodeRedirect(OldAddress, NewAddress: Pointer);
+function IWRedirectVTMMethod(AClass: TClass; OldMethod, NewMethod: Pointer): Boolean;
+procedure GetWorkingMemory(var WorkingSetSize, PeakWorkingSetSize, PagefileUsage, PeakPagefileUsage: Int64);
+function GetHandleCount: Cardinal;
+function IsDebugging: Boolean;
+
+implementation

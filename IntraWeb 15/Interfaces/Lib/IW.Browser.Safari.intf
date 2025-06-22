@@ -1,0 +1,19 @@
+unit IW.Browser.Safari;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  IW.Browser.Browser, IW.Browser.Webkit;
+
+type
+  TSafari = class(TWebkit)
+  public
+    const
+      BROWSER_NAME = 'Safari';
+      MIN_VERSION = 5;
+    constructor Create(aVersion: single); override;
+    class function Match(AUserAgent: string; out AVersion: Single): Boolean; override;
+  end;
+
+implementation

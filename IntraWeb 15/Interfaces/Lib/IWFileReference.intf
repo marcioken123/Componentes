@@ -1,0 +1,44 @@
+unit IWFileReference;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, SysUtils, IWFilePath;
+
+type
+  TIWFileReference = class(TPersistent)
+  protected
+    FFilename: string;
+    FOnChange: TNotifyEvent;
+    FURL: string;
+    //
+    procedure AssignTo(ADest: TPersistent); override;
+    procedure DoChange;
+    procedure SetFilename(const AValue: string);
+    function FileLocation(const AURLBase: string): string;
+    function UrlLocation(const AURLBase: string): string;
+  public
+    function Location(const AURLBase: string = ''): string;
+    procedure set_URL(const AValue: string);
+    function QualifiedPath: string;
+    function get_Empty: Boolean;
+    function GetFileName: string;
+    procedure Clear;
+    //
+    property Empty: Boolean read get_Empty;
+    property OnChange: TNotifyEvent read FOnChange write FOnChange;
+  published
+    property Filename: string read FFilename write SetFilename;
+    property URL: string read FURL write set_URL;
+  end;
+
+  TIWFileDownloadReference = class(TIWFileReference)
+  private
+    FDisplayName: string;
+    function GetDisplayName: string;
+  published
+    property DisplayName: string read GetDisplayName write FDisplayName;
+  end;
+
+implementation

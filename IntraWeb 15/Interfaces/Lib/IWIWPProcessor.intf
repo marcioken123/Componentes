@@ -1,0 +1,39 @@
+unit IWIWPProcessor;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, IWTag, IWApplication, IW.Common.NativeXML, IW.HTTP.Request;
+
+type
+  TVarType = (vtVar, vtHTML, vtText);
+
+  TIWIWPProcessor = class
+  protected
+    mRootPath: string;
+    mFile: string;
+    mEnumListInfo: TStringList;
+    procedure MergeStreams(ADest, ASource: TStringStream; StreamType: TVarType);
+    procedure ProcessSysTag(aVarName: string; aDest: TStringStream);
+    procedure ProcessVarTag(aTag: TIWTag; aDest: TStringStream);
+    function ProcessFileTag(aVarName: string; aDest: TStringStream; aFileName: string): Boolean;
+    procedure ProcessEnumList(aTag: TIWTag; aDest: TStringStream; aRSSChannel: TXMLNode = Nil; aRequest: THttpRequest = nil);
+    procedure ProcessEnumBreadcrumb(ATag: TIWTag; aDest: TStringStream);
+    procedure ProcessHttpTag(ATag: TIWTag; aRequest: THttpRequest; aDest: TStringStream);
+    procedure ProcessCookieTag(ATag: TIWTag; aRequest: THttpRequest; aDest: TStringStream);
+    procedure ProcessDocTag(ATag: TIWTag; aRequest: THttpRequest; aDest: TStringStream);
+    procedure ProcessDirTag(ATag: TIWTag; aRequest: THttpRequest; aDest: TStringStream);
+    procedure ProcessArgTag(aArgValue: string; aDest: TStringStream);
+    function ProcessRSS(aTag: TIWTag; aRequest: THttpRequest; aMaxItems, aPage: string): string;
+    procedure EmbedRSSLink(ATag: TIWTag; aDest: TStringStream; aRequest: THttpRequest);
+    procedure FixHRefLink(ATag: TIWTag; aDest: TStringStream);
+    function Execute(aTag: TIWTag): TStream; overload;
+  public
+    constructor Create(const aRootPath: string; const aFile: string);
+    destructor Destroy; override;
+    function Execute(aApplication: TIWApplication = nil; aSource: TStream = nil; aRequest: THttpRequest = nil; aTag: TIWTag = nil): TStream; overload;
+    function ExecuteRSS(aRequest: THttpRequest): TStream;
+  end;
+
+implementation

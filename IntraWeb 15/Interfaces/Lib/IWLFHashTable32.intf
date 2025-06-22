@@ -1,0 +1,104 @@
+unit IWLFHashTable32;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, Classes, IW.Common.HashUtils, IW.Common.Interlocked;
+
+{$ALIGN ON}
+{$RANGECHECKS OFF}
+
+type
+  // base class for lock free hash tables
+  // A generic approach could possibly be used, sacrificing simplicity and
+  // some performance, so I'd rather use specific classes
+  TIWLFHashTableBase = class
+  private
+    FSize: Integer;
+    FCount: Integer;
+    FMaxProbeLen: Integer;
+    FKeyIsHash: Boolean;
+    procedure IncBucket(var ABucket: Integer); inline;
+    function IncProbeLen(var AProbeLen: Integer): Boolean; inline;
+    procedure SetMaxProbeLen(const AProbeLen: Integer); inline;
+  protected
+    procedure Init; virtual; abstract;
+    procedure Dispose; virtual; abstract;
+    procedure InternalClear(AFreeItems: Boolean); virtual; abstract;
+  public
+    constructor Create(ASize: Integer; AKeyIsHash: Boolean = False);
+    destructor Destroy; override;
+    procedure Clear(AFreeItems: Boolean);
+    property Count: Integer read FCount;
+    property Size: Integer read FSize;
+    property MaxProbeLen: Integer read FMaxProbeLen;
+  end;
+
+  // 4xP => Key: 4 bytes, Value: Pointer  (4 bytes - x86, 8 bytes - x64)
+  TIWLFHashTable4xP = class(TIWLFHashTableBase)
+  private type
+    TBucket = record
+      Key: Integer;
+      Value: Pointer;
+    end;
+  strict private
+    FStorage: array of TBucket;
+    function GetBucket(AKey: Integer): Integer; inline;
+    function InternalSetItem(const Key: Integer; Value: Pointer): Boolean;
+    function InternalGetItem(const Key: Integer): Pointer;
+  protected
+    procedure Init; override;
+    procedure Dispose; override;
+    procedure InternalClear(AFreeItems: Boolean); override;
+  public
+    function SetItem(const Key: Integer; Value: Pointer): Boolean;
+    function GetItem(const Key: Integer): Pointer; overload;
+    function ContainsKey(const Key: Integer): Boolean;
+  end;
+
+  // 4x4 => Key: 4 bytes, Value: 4 bytes
+  TIWLFHashTable4x4 = class(TIWLFHashTableBase)
+  private type
+    TBucket = record
+      Key: Integer;
+      Value: Integer;
+    end;
+  strict private
+    FStorage: array of TBucket;
+    function GetBucket(AKey: Integer): Integer; inline;
+    function InternalSetItem(const Key: Integer; Value: Integer): Boolean;
+    function InternalGetItem(const Key: Integer): Integer;
+  protected
+    procedure Init; override;
+    procedure Dispose; override;
+    procedure InternalClear(AFreeItems: Boolean); override;
+  public
+    function SetItem(const Key: Integer; Value: Integer): Boolean;
+    function GetItem(const Key: Integer): Integer; overload;
+    function ContainsKey(const Key: Integer): Boolean;
+  end;
+
+  // 8x8 => Key: 8 bytes, Value: 8 bytes
+  TIWLFHashTable8x8 = class(TIWLFHashTableBase)
+  private type
+    TBucket = record
+      Key: Int64;
+      Value: Int64;
+    end;
+  strict private
+    FStorage: array of TBucket;
+    function GetBucket(AKey: Int64): Integer; inline;
+    function InternalSetItem(const Key: Int64; Value: Int64): Boolean;
+    function InternalGetItem(const Key: Int64): Int64;
+  protected
+    procedure Init; override;
+    procedure Dispose; override;
+    procedure InternalClear(AFreeItems: Boolean); override;
+  public
+    function SetItem(const Key: Int64; Value: Int64): Boolean;
+    function GetItem(const Key: Int64): Int64; overload;
+    function ContainsKey(const Key: Int64): Boolean;
+  end;
+
+implementation

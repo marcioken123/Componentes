@@ -1,0 +1,41 @@
+unit IWAppForm;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, IWTypes, IWGlobal, IWBaseForm, IWForm, IW.Common.RenderStream, IW.HTTP.Request;
+
+type
+  TIWAppForm = class;
+  TOnURLRequest = procedure(aSender: TIWAppForm; aRequest: THttpRequest) of object;
+
+  TIWAppForm = class(TIWForm)
+  protected
+    mOnURLRequest: TOnURLRequest;
+    //
+    class function EndFormClassType: TClass;  override;
+    procedure InitControl; override;
+    procedure DoGenerateForm(AStream: TIWRenderStream); override;
+  public
+    // Dont add alternate constructors. C++ hates it, and 2010 has a few issues
+    // (workable) as well (C# type behaviour)
+    //
+    procedure DoURLRequest(aRequest: THttpRequest);
+    function MessageForm: TIWMessageFormClass; override;
+    class procedure SetAsMainForm;
+    class procedure SetURL(const aPath: string; const aDocument: string);
+    class function RequestAuth(aRequest: THttpRequest; var rGroup: string): Boolean; virtual;
+  published
+    property OnURLRequest: TOnURLRequest read mOnURLRequest write mOnURLRequest;
+  end;
+
+  TIWAppFormClass = class of TIWAppForm;
+
+  TIWShowMessage = class(TIWAppForm, IIWMessageForm)
+  protected
+    procedure ShowMessageOnClick(ASender: TObject);
+    procedure InitializeAndShow(AMsg, ATemplate: string; AType: TIWShowMessageType);
+  end;
+
+implementation

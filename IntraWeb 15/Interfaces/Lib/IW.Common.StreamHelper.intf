@@ -1,0 +1,77 @@
+unit IW.Common.StreamHelper;
+{$I IWCompilerDefines.inc}
+
+interface
+
+{
+Class for adding real methods for reading and writing that should have been
+in Delphi since day 1.
+}
+
+uses
+  Classes, SysUtils, IW.Common.StrLists, IW.Common.XPlatTypes;
+
+type
+  TStreamHelper = class(TObject)
+  protected
+    mFreeStream: Boolean;
+    mStream: TStream;
+    //
+    function GetAsString: string;
+    procedure MaxLengthExceededRead(Value: Integer);
+    procedure MaxLengthExceededWrite(Value: Integer);
+  public
+    class var MaxTextSize: Integer;
+  public
+    constructor Create(aStream: TStream; aFreeStream: Boolean = True);
+    destructor Destroy; override;
+    function ReadBoolean: Boolean;
+    function ReadLine: string;
+    function ReadInteger: Integer;
+    function ReadInt64: Int64;
+    function ReadDouble: Double;
+    function ReadWord: word;
+    function ReadByte: byte;
+    function ReadText: string;
+    function ReadAnsiText: AnsiString;
+    function ReadRawByteText: RawByteString;
+    function ReadStrings(Lines: TStrings): Integer; overload;
+    function ReadStrings(Lines: TIWNameValueList): Integer; overload;
+    function ReadStrings(Lines: TNameValueAnsiStringList): Integer; overload;
+    function ReadStrings(var LinesText: string): Integer; overload;
+
+    class procedure SaveToFile(AStream: TStream; const AFileName: string); overload;
+    procedure SaveToFile(const aPathname: string); overload;
+
+    procedure CopyTo(aBytes: TBytes); overload;
+    procedure CopyTo(aBytes: PByte; aSize: Integer); overload;
+    procedure CopyToBuffer(var aBuffer);
+    function CopyFrom(aSource: TStream; Count: Int64): Int64;
+    function FindString(const s: string; const StartPos: Int64 = 0; const EndPos: Int64 = 0): Int64;
+
+    // Dont use overloads for these becuase
+    // Write(Integer(0)) will still call the byte one
+    procedure WriteBuffer(aBytes: TBytes; aSize: Integer = 0);
+    procedure WriteBoolean(aValue: Boolean);
+    procedure WriteByte(aValue: byte);
+    procedure WriteWord(aValue: word);
+    procedure WriteInteger(aValue: Integer); inline;
+    procedure WriteInt64(aValue: Int64);
+    procedure WriteDouble(aValue: Double);
+    procedure Write(const aValue: string);
+    procedure WriteLine(const aValue: string);
+    procedure WriteText(const aValue: string); overload;
+    procedure WriteText(const aValue: AnsiString); overload;
+    procedure WriteStrings(Lines: TStrings); overload;
+    procedure WriteStrings(List: TIWNameValueList); overload;
+    procedure WriteStrings(List: TIWMinStringList); overload;
+    procedure WriteRawByteStrings(List: TIWNameValueList);
+    function ToString: RtlString; override;
+    //
+    // TODO: In future add write method for AsString
+    property AsString: string read GetAsString;
+    property FreeStream: boolean read mFreeStream write mFreeStream;
+    property Stream: TStream read mStream;
+  end;
+
+implementation

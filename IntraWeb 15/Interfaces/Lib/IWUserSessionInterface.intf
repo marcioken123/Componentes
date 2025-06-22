@@ -1,0 +1,15 @@
+unit IWUserSessionInterface;
+{$I IWCompilerDefines.inc}
+
+interface
+
+type
+  IIWUserSessionInterface = Interface
+  ['{7855133E-B850-4610-B6F5-EE15FE7FCC23}']
+    procedure DoBeforeExecuteForm(Sender: TObject);
+    procedure DoAfterExecuteForm(Sender: TObject);
+    function DoQueryStatus(out Value: Integer): Boolean;
+    procedure DoQuery(ARequest, AResponse: TObject);
+  end;
+
+implementation

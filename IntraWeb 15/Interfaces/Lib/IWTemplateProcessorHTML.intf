@@ -1,0 +1,140 @@
+unit IWTemplateProcessorHTML;
+{$I IWCompilerDefines.inc}
+{$WARN SYMBOL_PLATFORM OFF}
+
+{Dist Public}
+
+interface
+
+uses
+  Classes, Controls,
+  IWContainerLayout, IWRenderContext, IWTypes, IWBaseInterfaces, IW.Common.StrLists,
+  IWBaseHTMLInterfaces, IWBaseRenderContext, IW.Common.RenderStream, IW.Common.Threads,
+  IW.Common.Stream;
+
+type
+  // TODO: remove this class
+  TIWTemplateFiles = class(TPersistent)
+  protected
+    FDefault: string;
+    procedure AssignTo(ADest: TPersistent); override;
+  public
+    constructor Create(const ADefault: string); overload;
+  published
+    property Default: string read FDefault write FDefault;
+  end;
+
+  TIWTemplateProcessorHTML = class;
+
+  TIWValidateComponentEvent = procedure(Sender: TIWTemplateProcessorHTML;
+    AContainerContext: TIWContainerContext; const ACtrlName: string; out ACreated: Boolean) of object;
+
+  TIWFindParentIdEvent = procedure (Sender: TIWTemplateprocessorHTML;
+    AContainerContext: TIWContainerContext; const AComponent: TComponent; out AParentId: string) of object;
+
+  TIWLoadFromResourceEvent = procedure(const AResourceName: string; var VStream: TStream);
+
+  TTemplatePreProcessState = (ppsUndefined, ppsProcess, ppsSkip);
+
+  TIWTemplateCacheItem = class
+  private
+    FTemplateStream: TMemoryStream;
+    FTemplateContent: string;
+    FPreProcessState: TTemplatePreProcessState;
+  public
+    constructor Create(ATemplateStream: TMemoryStream);
+    destructor Destroy; override;
+    property TemplateStream: TMemoryStream read FTemplateStream write FTemplateStream;
+    property TemplateContent: string read FTemplateContent write FTemplateContent;
+    property PreProcessState: TTemplatePreProcessState read FPreProcessState write FPreProcessState default ppsUndefined;
+  end;
+
+  TIWTemplateCache = class
+  strict private
+    class var FInstance: TIWTemplateCache;
+  private
+    mFiles: TIWStringList;
+    mLock: TIWSlimReaderWriter;
+    mAble: Boolean;
+    FOnLoadFromResource: TIWLoadFromResourceEvent;
+    function Load(const aFileName: string; aRefreshFromFile, aLoadFromResource: Boolean): TStream;
+    function TryGet(const aFileName: string; var APreProcessState: TTemplatePreProcessState): TStream;
+    function FindItem(const aFileName: string): TIWTemplateCacheItem;
+    function LoadFromResource(const aResourceName: string): TIWMemoryStream;
+    function LoadFromFile(const aFileName: string): TIWMemoryStream;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    // Delphi 2009 doesn't support class constructors/destructors
+    class {$IFNDEF VER200}constructor{$ELSE}procedure{$ENDIF} CreateClass;
+    class {$IFNDEF VER200}destructor{$ELSE}procedure{$ENDIF} DestroyClass;
+    class property Instance: TIWTemplateCache read FInstance;
+    function GetStream(const aFileName: string; aRefreshFromFile, aLoadFromResource: Boolean; var APreProcessState: TTemplatePreProcessState): TStream;
+    procedure SetString(const aFileName, aValue: string);
+    function GetString(const aFileName: string): string;
+    procedure ClearCache;
+    procedure SetPreProcessState(const aFileName: string; aHasVariables: Boolean);
+    property Able: Boolean read mAble write mAble default True;
+    property OnLoadFromResource: TIWLoadFromResourceEvent read FOnLoadFromResource write FOnLoadFromResource;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWTemplateProcessorHTML = class(TIWTemplateProcessorBase)
+  private
+    class var FGlobalStyleAttributesToRemove: TIWMinStringList;
+  private
+    FStyleList: TIWNameValueList;
+    FRemoveHiddenInputs: Boolean;
+    FTagAttributes: TIWNameValueList;
+    FDisableCache: Boolean;
+    FLoadFromResource: Boolean;
+    function GetTemplateFileName(const ALanguage: string): string;
+  protected
+    FMasterFormTag: Boolean;
+    FTagType: TIWTemplateLayoutHTMLTagType;
+    FTemplates: TIWTemplateFiles;
+    FOnUnknownTag: TIWUnknownTagEvent;
+    FOnBeforeProcess: TIWTemplateProcessEvent;
+    FOnAfterProcess: TIWTemplateProcessEvent;
+    mContentPath: string;
+    mURLBase: string;
+    FMasterTemplate: string;
+    FOnValidateComponent: TIWValidateComponentEvent;
+    FOnFindParentId: TIWFindParentIdEvent;
+    //
+    procedure SetTemplates(const AValue: TIWTemplateFiles);
+    procedure SetMasterFormTag(const AValue: Boolean);
+    function DoUnknownTag(const AName: string): string;
+    procedure InitControl; override;
+    procedure ProcessInit(APageContext: TIWBasePageContext);
+    function MergeMasterTemplate(APageContext: TIWBasePageContext; var LSrcStream: TStream): Boolean; virtual;
+    function FindParentID(AContainerContext: TIWContainerContext; AComponent: TComponent): string; override;
+  public
+    destructor Destroy; override;
+    function Able: Boolean; override;
+    procedure ProcessControl(AContainerContext: TIWContainerContext; APageContext: TIWBaseHTMLPageContext;
+      AControl: IIWBaseHTMLComponent); override;
+    procedure Process(AStream: TIWRenderStream;
+      AContainerContext: TIWContainerContext; APageContext: TIWBasePageContext); override;
+    procedure ProcessStream(ARenderStream: TIWRenderStream; ATemplate: string;
+      AContainerContext: TIWContainerContext; APageContext: TIWBasePageContext);
+    function TemplatePathname: string;
+    function RenderStyle(AControl: IIWBaseHTMLControl): string; override;
+  published
+    property MasterFormTag: Boolean read FMasterFormTag write SetMasterFormTag default true;
+    property TagType: TIWTemplateLayoutHTMLTagType read FTagType write FTagType;
+    property Templates: TIWTemplateFiles read FTemplates write SetTemplates;
+    property OnUnknownTag: TIWUnknownTagEvent read FOnUnknownTag write FOnUnknownTag;
+    property OnBeforeProcess: TIWTemplateProcessEvent read FOnBeforeProcess write FOnBeforeProcess;
+    property OnAfterProcess: TIWTemplateProcessEvent read FOnAfterProcess write FOnAfterProcess;
+    property RemoveHiddenInputs: Boolean read FRemoveHiddenInputs write FRemoveHiddenInputs default False;
+    property MasterTemplate: string read FMasterTemplate write FMasterTemplate;
+    property StyleAttributesToRemove;
+    property RenderStyles;
+    property OnValidateComponent: TIWValidateComponentEvent read FOnValidateComponent write FOnValidateComponent;
+    property OnFindParentId: TIWFindParentIdEvent read FOnFindParentId write FOnFindParentId;
+    property DisableCache: Boolean read FDisableCache write FDisableCache default False;
+    property LoadFromResource: Boolean read FLoadFromResource write FLoadFromResource default False;
+  end;
+
+implementation

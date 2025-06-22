@@ -1,0 +1,14 @@
+unit IW.LibDeflate.Compressor;
+{$I IWCompilerDefines.inc}
+{$POINTERMATH ON}
+
+interface
+
+uses
+  Classes, IWZLibCompress;
+
+function InitLibDeflateCompression(const aUseExternalLib: Boolean; const aLevel: Integer): Boolean;
+
+procedure LibDeflateCompressStream(inStream, outStream: TStream; const aLevel: Integer; const CompressMethod: TIWCompressMethod);
+
+implementation

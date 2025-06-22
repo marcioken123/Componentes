@@ -1,0 +1,45 @@
+unit IWCompFile deprecated;
+{$I IWCompilerDefines.inc}
+
+{PUBDIST}
+
+interface
+
+uses
+  Classes, IWControl, IWBaseControl, IWColor, SysUtils, DB;
+
+type
+  {$include IWPlatformAttrib.inc}
+  TIWFile = class(TIWCustomControl)
+  protected
+    FOnStatus: TIWAsyncEvent;
+    FStatusUpdateInterval: Integer;
+    FSubmitParam: string;
+    FBGColor: TIWColor;
+    FFrameBGColor: TIWColor;
+    FContentType: string;
+    FFileName: string;
+    FButtonHeight: Integer;
+  published
+    property TabOrder;
+    property Enabled;
+    property FriendlyName;
+    property Font;
+    property BGColor: TIWColor read FBGColor write FBGColor;
+    property FrameBGColor: TIWColor read FFrameBGColor write FFrameBGColor;
+    property OnStatus: TIWAsyncEvent read FOnStatus write FOnStatus;
+    property StatusUpdateInterval: Integer read FStatusUpdateInterval write FStatusUpdateInterval;
+    property ButtonHeight: Integer read FButtonHeight write FButtonHeight;
+  end deprecated 'Use TIWFileUploader instead';
+
+  {$include IWPlatformAttrib.inc}
+  TIWDBFile = class(TIWFile)    // does nothing
+  protected
+    FDataField: string;
+    FDataSource: TDataSource;
+  published
+    property DataField: string read FDataField write FDataField;
+    property DataSource: TDataSource read FDataSource write FDataSource;
+  end deprecated 'Use TIWFileUploader instead';
+
+implementation

@@ -1,0 +1,428 @@
+unit IWCompExtCtrls;
+{$I IWCompilerDefines.inc}
+
+{PUBDIST}
+
+// Disable Compiler warings for DEPRECATED set_RenderSize, setRenderSize and get_RenderSize
+{$WARN SYMBOL_DEPRECATED OFF}
+
+interface
+
+uses
+  Classes, Controls, Graphics, SysUtils, IWImageUtils,
+  IWBaseHTMLControl, IWControl, IWTypes, IWFileReference, IWHTMLTag,
+  IWScriptEvents, IWColor, IWRenderContext, IWJpegOptions,
+  IWContainerBorderOptions, IWBaseInterfaces, IWHTML40Interfaces, IWXMLTag,
+  IWBaseHTMLComponent, IWBaseRenderContext, IWApplication, IWBaseHTML40Component,
+  IW.Common.Strings, IWBaseForm, IWCompProgressBar;
+
+type
+  TIWCustomRadioGroup = class(TIWCustomControl, IIWInputControl, IIWSubmitControl,
+                              IIWTabOrder, IIWInputControl40, IIWExInputControl)
+  private
+    FRawText: Boolean;
+    procedure SetRawText(const Value: Boolean);
+  protected
+    FSubmitParam: string;
+    FItemIndex: Integer;
+    FItems: TStringList;
+    FLayout: TIWRadioGroupLayout;
+    //
+    procedure Dispose(ADispose: Boolean); override;
+    procedure SetItemIndex(AIndex: Integer);
+    procedure OnItemsChange( ASender : TObject );
+    procedure SetItems(AValue: TStringList);
+    procedure SetLayout(const AValue: TIWRadioGroupLayout);
+    procedure SetValue(const AValue: string); overload; virtual;
+    procedure HookEvents(AContext: TIWPageContext40; AScriptEvents: TIWScriptEvents); override;
+    procedure Submit(const AValue: string); override;
+    procedure GetInputControlNames(ANames: TStringList); override;
+    function IsForThisControl(AName: string): Boolean; override;
+
+    procedure InitControl; override;
+    procedure DoClick; override;
+
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    function SupportsInput: Boolean; override;
+    // IIWExInputControl
+    procedure SetValue(const AValue: string; out AValueChanged: Boolean); overload; virtual;
+    procedure ValueChanged; virtual;
+  public
+    function get_HasTabOrder: Boolean; override;
+    function get_HasName: Boolean; override;
+    function GetSubmitParam: string;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    function RenderStyle(AContext: TIWCompContext): string; override;
+
+    property ItemIndex: Integer read FItemIndex write SetItemIndex;
+    property Items: TStringList read FItems write SetItems;
+
+    property Layout: TIWRadioGroupLayout read FLayout write SetLayout;
+  published
+    property OnClick; //: TNotifyEvent read GetOnClick write SetOnClick;
+    property Confirmation;
+    property SubmitOnAsyncEvent;
+    property RawText: Boolean read FRawText write SetRawText;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWRadioGroup = class(TIWCustomRadioGroup)
+  published
+    property Editable;
+    property Enabled;
+    property Font;
+    property FriendlyName;
+    property ItemIndex;
+    property Items;
+    property Layout;
+    property ScriptEvents;
+    property TabOrder;
+
+    property SubmitOnAsyncEvent;
+    property OnAsyncClick;
+    property OnAsyncChange;
+  end;
+
+  TIWImageOnMouseDown = procedure(ASender: TObject; const AX: Integer; const AY: Integer) of object;
+//  TIWImageOutput = (ioJPEG, ioGIF, ioPNG);  now declared in TIWImageUtils
+
+  TIWCustomImage = class(TIWCustomControl, IIWSubmitControl)
+  private
+    procedure SetBase64Str(const Value: string);
+  protected
+    FCacheFileHRef: string;
+    FAltText: string;
+    FBorderOptions: TIWBorderOptions;
+    FOnMouseDown: TIWImageOnMouseDown;
+    FOutputType: TIWImageOutput;
+    FPictureStream: TMemoryStream;
+    FPicture: TPicture;
+    FSubmitParam: string;
+    FUseSize: Boolean;
+    FDelayMouseMoveEvents: Boolean;
+    FBase64Str: string;
+    procedure Dispose(ADispose: Boolean); override;
+    //
+    function CanAutoSize(var VNewWidth: Integer; var VNewHeight: Integer): Boolean; override;
+    procedure CreatePicture;
+    procedure Changed; virtual;
+    // Necessary because Borland made FOnClick protected
+    function GetOnClick: TNotifyEvent;
+    procedure SetOnClick(const AValue: TNotifyEvent);
+    function ImageHTML(AContext: TIWCompContext; const ASrc: string): TIWHTMLTag;
+    procedure HookEvents(AContext: TIWPageContext40; AScriptEvents: TIWScriptEvents); override;
+    procedure PictureChanged(ASender: TObject);
+    procedure SetOnMouseDown(const AValue: TIWImageOnMouseDown);
+    procedure SetPicture(AValue: TPicture);
+    function GetPicture: TPicture;
+    procedure Submit(const AValue: string); override;
+    procedure SetUseSize(const AValue: Boolean);
+    procedure SetBorderOptions(AValue: TIWBorderOptions);
+
+    procedure SetAutoSize(AValue: Boolean); override;
+
+    procedure InitControl; override;
+    function get_HasName: Boolean; override;
+    procedure StyleRenderOptionsChanged(Sender: TObject); override;
+    procedure RenderScripts(AComponentContext: TIWCompContext); override;
+  public
+    function get_HasTabOrder: Boolean; override;
+    function GetSubmitParam: string;
+    function RenderStyle(AContext: TIWCompContext): string; override;
+    property Picture: TPicture read GetPicture write SetPicture;
+    property OutputType: TIWImageOutput read FOutputType write FOutputType default ioPNG;
+    property CacheFileHRef: string read FCacheFileHRef;
+    procedure LoadFromBase64String(var Input: string);
+  published
+    property AltText: string read FAltText write FAltText;
+    // Autosize is derived from StyleRenderOptions.Rendersize
+    property AutoSize stored False;
+    property BorderOptions: TIWBorderOptions read FBorderOptions write SetBorderOptions;
+    property Confirmation;
+    property DoSubmitValidation;
+    property ExtraTagParams;
+    property Enabled;
+    property ScriptEvents;
+    property TabOrder;
+    property UseSize: Boolean read FUseSize write SetUseSize;
+    //
+    // Events
+    //
+    property OnClick: TNotifyEvent read GetOnClick write SetOnClick;
+    property OnMouseDown: TIWImageOnMouseDown read FOnMouseDown write SetOnMouseDown;
+    property DelayMouseMoveEvents: Boolean read FDelayMouseMoveEvents write FDelayMouseMoveEvents default False;
+    property Base64Str: string read FBase64Str write SetBase64Str;
+  end;
+
+  TIWDynamicImage = class(TIWCustomImage)
+  protected
+    FJpegOptions: TIWJpegOptions;
+    FTransparentColor:TIWColor;
+    FRenderEmptyAsSpan: Boolean;
+    FPreProcessImage: Boolean;
+    //
+    procedure Dispose(ADispose: Boolean); override;
+    procedure SetJpegOptions(const AValue: TIWJpegOptions);
+    procedure InitControl; override;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    function RenderImage(AContext: TIWCompContext): string;
+    function SaveToCacheFile: string;
+    procedure Changed; override;
+    // this allows users to render an empty image at first and change the picture later using Async events
+    property RenderEmptyAsSpan: Boolean read FRenderEmptyAsSpan write FRenderEmptyAsSpan default True;
+  public
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    function IsEmpty: Boolean;
+    procedure Clear;
+    property TransparentColor:TIWColor read FTransparentColor write FTransparentColor;
+    property JpegOptions: TIWJpegOptions read FJpegOptions write SetJpegOptions;
+  published
+    // when TRUE a cache file will be created when the Picture changes and its HREF will be saved and used when rendering
+    // AFTER creating the cache file, the original Picture.Graphic can be released saving a memory and HANDLES!
+    property PreProcessImage: Boolean read FPreProcessImage write FPreProcessImage default False;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWImage = class(TIWDynamicImage)
+  published
+    property OnAsyncClick;
+    property OnAsyncDoubleClick;
+    property OnAsyncMouseDown;
+    property OnAsyncMouseMove;
+    property OnAsyncMouseOver;
+    property OnAsyncMouseOut;
+    property OnAsyncMouseUp;
+
+    property Picture;
+    property FriendlyName;
+    property TransparentColor;
+    property JpegOptions;
+    property OutputType;
+    property RenderEmptyAsSpan;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWImageFile = class(TIWCustomImage)
+  protected
+    procedure Dispose(ADispose: Boolean); override;
+  protected
+    FCacheable: Boolean;
+    FImageFile: TIWFileReference;
+    //
+    procedure InitControl; override;
+    procedure Loaded; override;
+    procedure ReferenceChanged(ASender: TObject);
+    procedure SetImageFile(const AValue: TIWFileReference);
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+  public
+    destructor Destroy; override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+  published
+    property OnAsyncClick;
+    property OnAsyncMouseDown;
+    property OnAsyncMouseMove;
+    property OnAsyncMouseOver;
+    property OnAsyncMouseOut;
+    property OnAsyncMouseUp;
+//    property OnAsyncLoad: TIWAsyncEvent read FOnAsyncLoad write FOnAsyncLoad;
+
+    property Cacheable: Boolean read FCacheable write FCacheable;
+    property FriendlyName;
+    property ImageFile: TIWFileReference read FImageFile write SetImageFile;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWImageButton = class(TIWImageFile)
+  private
+  protected
+    FHotKey: string;
+    FHotImageFile: TIWFileReference;
+    procedure InitControl; override;
+    procedure HookEvents(AContext: TIWPageContext40; AScriptEvents: TIWScriptEvents); override;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+  public
+    destructor Destroy; override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+  published
+    property HotKey: string read FHotkey write FHotKey;
+    property HotImageFile: TIWFileReference read FHotImageFile write FHotImageFile;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWTimer = class(TIWBaseHTML40Component, IIWSubmitControl)
+  private
+    FShowAsyncLock: Boolean;
+    procedure SetEnabled(const Value: Boolean);
+    procedure SetInterval(const Value: Integer);
+  protected
+    FSubmitParam: string;
+    FEnabled: Boolean;
+    FInterval: Integer;
+    FOnAsyncTimer: TIWAsyncEvent;
+    FOnTimer: TNotifyEvent;
+    //
+    procedure DoOnAsyncTimer(AParams: TStringList);
+    procedure Submit(const AValue: string); virtual;
+    function GetSubmitProc: TSubmitProc;
+    procedure InitControl; override;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+  public
+    function GetSubmitParam: string;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+  published
+    property Enabled: Boolean read FEnabled write SetEnabled;
+    property Interval: Integer read FInterval write SetInterval;
+    property ShowAsyncLock: Boolean read FShowAsyncLock write FShowAsyncLock;
+    property OnTimer: TNotifyEvent read FOnTimer write FOnTimer;
+    property OnAsyncTimer: TIWAsyncEvent read FOnAsyncTimer write FOnAsyncTimer;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWAJAXNotifier = class(TIWBaseHTML40Component)
+  protected
+    mOnNotify: TNotifyEvent;
+    mSendNotification: Boolean;
+    procedure DoOnNotify(AParams: TStringList);
+    procedure RenderScripts(AComponentContext: TIWCompContext); override;
+  public
+    constructor Create(AOwner: TComponent); override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    procedure Notify;
+    property SendNotification: Boolean read mSendNotification;
+  published
+    property OnNotify: TNotifyEvent read mOnNotify write mOnNotify;
+  end;
+
+  TTargetComparison = (tcEqual, tcEqualOrGreater, tcEqualOrLower);
+
+  {$include IWPlatformAttrib.inc}
+  TIWMonitor = class(TIWBaseHTML40Component, IIWSubmitControl)
+  private
+    FTargetValue: Integer;
+    FTimeout: Integer;
+    FActive: Boolean;
+    FjsCallbackName: string;
+    FProgressIndicator: TIWCustomProgressIndicator;
+    procedure SetEnabled(const Value: Boolean);
+    procedure SetInterval(const Value: Integer);
+    procedure SetTimeout(const Value: Integer);
+    procedure SetTargetValue(const Value: Integer);
+    procedure SetActive(const Value: Boolean);
+    procedure SetProgressIndicator(const Value: TIWCustomProgressIndicator);
+  protected
+    FSubmitParam: string;
+    FEnabled: Boolean;
+    FInterval: Integer;
+    FOnAsyncEvent: TIWAsyncEvent;
+    FOnEvent: TNotifyEvent;
+    FTargetComparison: TTargetComparison;
+    //
+    procedure DoOnAsyncEvent(AParams: TStringList);
+    procedure Submit(const AValue: string); virtual;
+    function GetSubmitProc: TSubmitProc;
+    procedure InitControl; override;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    function GetOptions(AContext: TIWCompContext): string; virtual;
+    procedure Notification(AComponent: TComponent; Operation: TOperation); override;
+  public
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    function GetSubmitParam: string;
+  published
+    property Active: Boolean read FActive write SetActive default True;
+    property Enabled: Boolean read FEnabled write SetEnabled default True;
+    property Interval: Integer read FInterval write SetInterval default 2000;
+    property Timeout: Integer read FTimeout write SetTimeout default 0;
+    property TargetValue: Integer read FTargetValue write SetTargetValue default 100;
+    property TargetComparison: TTargetComparison read FTargetComparison write FTargetComparison default tcEqual;
+    property jsCallbackName: string read FjsCallbackName write FjsCallbackName;
+    property OnEvent: TNotifyEvent read FOnEvent write FOnEvent;
+    property OnAsyncEvent: TIWAsyncEvent read FOnAsyncEvent write FOnAsyncEvent;
+    property ProgressIndicator: TIWCustomProgressIndicator read FProgressIndicator write SetProgressIndicator;
+  end;
+
+  TIWSizeUnit = (suPercent, suPixel);
+
+  {$include IWPlatformAttrib.inc}
+  TIWModalWindow = class(TIWBaseHTML40Component)
+  private
+    FEnabled: Boolean;
+    FWindowWidth: Integer;
+    FWindowTop: Integer;
+    FWindowLeft: Integer;
+    FTitle: string;
+    FSizeUnit: TIWSizeUnit;
+    FWindowHeight: Integer;
+    FAutoSize: Boolean;
+    FDragConstraint: Boolean;
+    FDraggable: Boolean;
+    FContentElement: TControl;
+    FRenderStyles: Boolean;
+    FRenderSize: Boolean;
+    FRenderPos: Boolean;
+    FSrc: string;
+    FButtons: TStringList;
+    FVisible: Boolean;
+    FShouldRenderControl: Boolean;
+    FButtonIndex: Integer;
+    FOnAsyncClose: TIWAsyncEvent;
+    FOnAsyncClick: TIWAsyncEvent;
+    FFriendlyName: string;
+    FCloseOnEscKey: Boolean;
+    FDefaultBtnOnEnter: Boolean;
+    FCloseButtonVisible: Boolean;
+    FHasHeader: Boolean;
+    FHasFooter: Boolean;
+    FBorderWidth: Byte;
+    FCloseOnClick: Boolean;
+    FCloseOnClickOverlayOnly: Boolean;
+    function GetInitCode(AContext: TIWCompContext): string;
+    procedure SetButtons(const Value: TStringList);
+    procedure SetContentElement(const Value: TControl);
+    procedure SetSrc(const Value: string);
+    function GetBtnCaption(const Index: Integer): string;
+  protected
+    procedure DoOnAsyncClose(AParams: TStringList);
+    procedure DoOnAsyncClick(AParams: TStringList);
+    procedure InitControl; override;
+    procedure Dispose(ADispose: Boolean); override;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    procedure Notification(AComponent: TComponent; AOperation: TOperation); override;
+  public
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    procedure Show();
+    procedure Reset;
+    procedure Close(const AExecuteCallback: Boolean = False);
+    property Visible: Boolean read FVisible;
+    property ButtonIndex: Integer read FButtonIndex;
+    property ButtonCaption[const Index: Integer]: string read GetBtnCaption;
+  published
+    property Enabled: Boolean read FEnabled write FEnabled default True;
+    property Title: string read FTitle write FTitle;
+    property WindowWidth: Integer read FWindowWidth write FWindowWidth default 0;
+    property WindowHeight: Integer read FWindowHeight write FWindowHeight default 0;
+    property WindowLeft: Integer read FWindowLeft write FWindowLeft default -1;
+    property WindowTop: Integer read FWindowTop write FWindowTop default -1;
+    property SizeUnit: TIWSizeUnit read FSizeUnit write FSizeUnit default suPercent;
+    property RenderStyles: Boolean read FRenderStyles write FRenderStyles default True;
+    property RenderSize: Boolean read FRenderSize write FRenderSize default True;
+    property RenderPos: Boolean read FRenderPos write FRenderPos default True;
+    property Autosize: Boolean read FAutoSize write FAutoSize default True;
+    property CloseOnClick: Boolean read FCloseOnClick write FCloseOnClick default False;
+    property ContentElement: TControl read FContentElement write SetContentElement;
+    property Src: string read FSrc write SetSrc;
+    property Buttons: TStringList read FButtons write SetButtons;
+    property Draggable: Boolean read FDraggable write FDraggable default True;
+    property DragConstraint: Boolean read FDragConstraint write FDragConstraint default False;
+    property HasHeader: Boolean read FHasHeader write FHasHeader default True;
+    property HasFooter: Boolean read FHasFooter write FHasFooter default True;
+    property BorderWidth: Byte read FBorderWidth write FBorderWidth default 1;
+    property FriendlyName: string read FFriendlyName write FFriendlyName;
+    property CloseButtonVisible: Boolean read FCloseButtonVisible write FCloseButtonVisible default True;
+    property CloseOnEscKey: Boolean read FCloseOnEscKey write FCloseOnEscKey default True;
+    property CloseOnClickOverlayOnly: Boolean read FCloseOnClickOverlayOnly write FCloseOnClickOverlayOnly default False;
+    property DefaultBtnOnEnter: Boolean read FDefaultBtnOnEnter write FDefaultBtnOnEnter default False;
+    property OnAsyncClose: TIWAsyncEvent read FOnAsyncClose write FOnAsyncClose;
+    property OnAsyncClick: TIWAsyncEvent read FOnAsyncClick write FOnAsyncClick;
+  end;
+
+implementation

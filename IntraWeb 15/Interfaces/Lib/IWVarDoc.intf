@@ -1,0 +1,40 @@
+unit IWVarDoc;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses Classes, SysUtils, IWVar, IWTag;
+
+type
+  TIWVarDoc = class(TIWVar)
+  protected
+    mSearchRec: TSearchrec;
+    mDocPath: string;
+    //
+    procedure ProcessTitle;
+    procedure ProcessBody;
+    procedure ProcessName;
+    procedure ProcessFullName;
+    procedure ProcessTimeCreated(aTag: TIWTag);
+    procedure ProcessTimeModified(aTag: TIWTag);
+    procedure ProcessURL;
+    procedure ProcessEdit(aTag: TIWTag);
+    procedure ProcessSize(aTag: TIWTag);
+    procedure DoProcessTag(aTag: TIWTag); overload; override;
+    function GetTimeModified(aTag: TIWTag): string; overload;
+    function GetTimeCreated(aTag: TIWTag): string; overload;
+    function GetExclude: Boolean;
+    function GetConfigFileName: string;
+  public
+    constructor Create(aText: string; aSearchRec: TSearchrec; aDocPath: string);
+    function GetTitle: string;
+    function GetName: string;
+    function GetURL: string;
+    function GetTimeCreated: string; overload;
+    function GetTimeModified: string; overload;
+    procedure DoProcessTag(aTag: TIWTag; aDest: TStream); reintroduce; overload;
+
+    property Exclude: Boolean read GetExclude;
+  end;
+
+implementation

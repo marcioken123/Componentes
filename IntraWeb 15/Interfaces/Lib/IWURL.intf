@@ -1,0 +1,57 @@
+unit IWURL;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, Classes;
+
+type
+  TURL = class
+  public
+    // Adds url path delimiter to the end of a given URL if not present
+    class function IncludeTrailingDelimiter(const AUrl: string): string;
+    // converts url to file path
+    class function UrlPathToFilePath(aRootPath: string; aSubPath: string): string;
+    // concatenate a file name and a URL root
+    class function MakeValidFileUrl(const ARootUrl, AFileUrl: string): string;
+    // concatenate two parts of an URL's taking care of url path delimiters between them
+    class function Combine(const ARootUrl, ASubUrl: string): string;
+    class function Concat(const ARootUrl, ASubUrl: string): string;
+    // returns the file name part of a given URL
+    class function ExtractFileName(const AUrl: string): string;
+    // returns the path part of a given URL
+    class function ExtractPath(const AUrl: string): string;
+    // returns TRUE if AUrl starts with http:// or https://
+    class function IsAbsolute(const AUrl: string): Boolean;
+    // removes exec command '/$' from URL
+    class function RemoveExec(const AUrl: string; const AddTrailingDelimiter: boolean = False): string;
+    // Adds exec command '/$' to the end of a given URL
+    class function AppendExec(const AUrl: string): string;
+    // Adds exec command '/$/' to the beginning of a given URL
+    class function PrependExec(const AUrl: string): string;
+    // Extract SessionID from URL
+    class function ExtractSessionId(const AUrl: string): string;
+    // concatenate URL and Query string
+    class function AddQuery(AUrl, AQuery: string; ATrailingDelimiter: Boolean = False): string;
+
+    class function ReplaceLoopbackWithLocalhost(const AUrl: string): string;
+
+    class function RemoveProtocol(const AUrl: string): string;
+    class function PathEncode(const ASrc: string): string;
+    class function ParamsEncode(const ASrc: string): string; overload;
+    class function ParamsEncode(const AParams: TStrings): string; overload;
+    class function ParamsDecode(const ASrc: string): string;
+    class procedure ReplacePathDelimiter(var AUrl: string);
+
+    class procedure Encode(const ASrc: string; UnsafeChars: TSysCharSet; out ResultStr: string);
+    class procedure Decode(const ASrc: string; PlusAsSpaces: Boolean; out ResultStr: string);
+  end;
+
+const
+  PathDelimiter = '\';
+  URLDelimiter  = '/';
+  QueryDelimiter = '?';
+  QueryFieldDelimiter = '&';
+
+implementation

@@ -1,0 +1,81 @@
+unit IWBaseControl;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, Windows, Controls, Messages, Graphics, IWVCLBaseControl, IWBaseInterfaces;
+
+type
+  TIWPaintHandler = class;
+
+  TIWPaintHandlerClass = class of TIWPaintHandler;
+
+  TIWPaintHandler = class(TObject)
+  private
+    FControl: TControl;
+    FCanvas: TCanvas;
+    function GetControlCanvas: TCanvas;
+  protected
+    property Control: TControl read FControl;
+  public
+    constructor Create(AControl: TControl); reintroduce; virtual;
+    procedure Paint; virtual; abstract;
+    procedure PaintTo(ACanvas: TCanvas); virtual;  // used by FPC
+    property ControlCanvas: TCanvas read GetControlCanvas;
+  end;
+
+  //TIWBaseControlImplementation is only instantiated at design time
+  TIWBaseControlImplementation = class
+  private
+    FCanvas: TCanvas;
+    FComponent: TComponent;
+    FPaintHandler: TIWPaintHandler;
+    function GetControl: TControl;
+  public
+    procedure PaintTo(ACanvas: TCanvas);
+    function GetCanvas: TCanvas;
+    constructor Create(AComponent: TComponent);
+    destructor Destroy; override;
+    property Control: TControl read GetControl;
+    property Canvas: TCanvas read GetCanvas;
+  end;
+
+  TIWBaseControl = class(TIWVCLBaseControl, IIWBaseControl)
+  strict private
+    FParent: TComponent;
+    FIWControlImplementation: TIWBaseControlImplementation;
+  protected
+    procedure Dispose(ADispose: Boolean); override;
+    function InitPaintHandler: TIWPaintHandler; virtual;
+    procedure PaintTo(ACanvas: TCanvas);
+    function get_Canvas: TCanvas; override;
+    procedure DoClick; virtual;
+    procedure TextChangedNotification; override;
+    procedure SetName(const AValue: TComponentName); override;
+    procedure ParentChanging(AOldParent, AParent: TComponent); override;
+    procedure Paint; override;
+    procedure InitDesignTime; override;
+    procedure InitControl; override;
+  public
+    class function CreatePaintHandler(const AClassName: string; const AControl: TControl): TIWPaintHandler;
+    function ParentContainer: IIWBaseContainer;
+    procedure Show;
+    procedure Hide;
+    {$IFDEF FPC}
+    // Design time support for IWForm designer on Lazarus
+    procedure Invalidate; override;
+    procedure InvalidateRect(ARect: TRect; Erase: Boolean);
+    {$ENDIF}
+    property Caption;
+    property Text;
+  end;
+
+procedure IWEnableControlTesting;
+procedure IWRegisterPaintHandler(const AClassName: string; APaintHandlerClass: TIWPaintHandlerClass); overload;
+procedure IWUnRegisterPaintHandler(const AClassName: string);
+
+var
+  GDefaultPaintHandler: TIWPaintHandlerClass = nil;
+
+implementation

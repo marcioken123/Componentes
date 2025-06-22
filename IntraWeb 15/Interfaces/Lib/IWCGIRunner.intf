@@ -1,0 +1,44 @@
+unit IWCGIRunner;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, Classes, Windows, IW.HTTP.Request, IWApplication;
+
+type
+  TIWCGIRunner = class
+  private
+    FOutput: TStrings;
+    FCGIModule: string;
+    FCustomFields: TStrings;
+    FExecuteTimeout: Integer;
+    FErrorCode: Cardinal;
+    FStatusResult: Cardinal;
+    FSetWorkingDir: Boolean;
+    FWorkingDir: string;
+    procedure WriteRequest(aSession: TIWApplication; aRequest: THttpRequest);
+    procedure DoExecute(const ACommand, AParameters: string; AOutput: TStrings);
+    procedure SetCustomFields(const Value: TStrings);
+    function GetErrorMessage: string;
+  protected
+    FResponseHeaders,
+    FResponseContent: TStrings;
+    procedure ParseOutput(const AOutput: TStrings); virtual;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    procedure Execute(aSession: TIWApplication; aRequest: THttpRequest);
+    property CGIModule: string read FCGIModule write FCGIModule;
+    property CustomFields: TStrings read FCustomFields write SetCustomFields;
+    property ResponseHeaders: TStrings read FResponseHeaders;
+    property ResponseContent: TStrings read FResponseContent;
+    property ExecuteTimeout: Integer read FExecuteTimeout write FExecuteTimeout default 30000;
+    property StatusResult: Cardinal read FStatusResult;
+    property ErrorCode: Cardinal read FErrorCode;
+    property ErrorMessage: string read GetErrorMessage;
+    property SetWorkingDir: Boolean read FSetWorkingDir write FSetWorkingDir default True;
+    property WorkingDir: string read FWorkingDir write FWorkingDir;
+  end;
+
+implementation

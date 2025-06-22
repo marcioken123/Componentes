@@ -1,0 +1,179 @@
+unit IW.Common.Strings;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, SysUtils, StrUtils, Generics.Defaults;
+
+type
+  StringArray = array of string;
+
+  TString = class
+  public
+    class function Left(const aValue: string; aCount: Integer): string;
+    class procedure ForceSuffix(var vString: string; const aSuffix: string; const AddToEmptyString: boolean = False);
+    class procedure ForcePrefix(var vString: string; const aPrefix: string; const AddToEmptyString: boolean = False);
+    class function Split(const aValue: string; aDelim: char): StringArray;
+    class function SplitToList(const aValue: string; aDelim: char; const TrimStrings: boolean = False): TStrings;
+    class function QuoteDelimited(const aValue: string; aDelim: char): string;
+    class function Dequote(const aValue: string): string;
+    class procedure DequoteSimple(var s: string);
+    class procedure ReplaceChars(aSearchCharSet: TSysCharSet; aReplaceChar: char; var aValue: string);
+    class procedure ReplaceChar(var S: string; aSearch: Char; aReplace: Char);
+    class function IndexOfText(const AText: string; const AValues: array of string): Integer;
+    class function MatchText(const AText: string; const AValues: array of string): Boolean;
+    class function MatchCharAtPos(const AText: string; const ACharPos: Integer; const AChar: Char): Boolean; inline;
+    class function QuoteSpaces(const s: string): string;
+    { Remove every occurrence of #13 and #10. MUCH faster than 2 calls to StringReplace }
+    class function ExtractBefore(const s, substr: string): string;
+    class function ExtractAfter(const s, substr: string): string;
+    class function ExtractBetween(const s, substr1, substr2: string): string;
+    class function FirstNonBlankChar(const s: string; const StartPos: Integer = 1): Char;
+  end;
+
+  // Base64 encoder/decoder class
+  TBase64Encoder = class
+  strict private
+    type
+      TCharIntegerMap = array[Char] of Integer;
+  private
+    // True Base64 encoding table
+    const
+      Base64Alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+    // This is not a TRUE Base64 encoding. It uses lower and upper chars in reverse order (first lower, then upper),
+    // does not pad the result and also uses ~ and - chars instead of / and +
+    // Both chars ~ and - are "unreserved chars" according to RFC 2396 (http://www.ietf.org/rfc/rfc2396.txt)
+    // and are safe to use unescaped within an URI
+    // Used to encode Session ID since IW 14.0.32
+    const
+      CustomBase64Alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789~-';
+    class var FDecodeTable: TCharIntegerMap;
+    class var FCustomDecodeTable: TCharIntegerMap;
+  protected
+    class procedure InternalEncode64(const ABytes: TBytes; ACount: Integer; const AEncodeTable: string; APad: Boolean; out aResult: string);
+    class procedure InternalDecode64(const AInputStr: string; const ADecodeTable: TCharIntegerMap; out Res: TBytes);
+  public
+    class {$IFNDEF VER200}constructor{$ELSE}procedure{$ENDIF} CreateClass;
+    // True Base64 encodind/decoding
+    class function EncodeBase64(const ABytes: TBytes; ACount: Integer; APad: Boolean = False): string; overload;
+    class function EncodeBase64(const ABytes: TBytes; const APad: Boolean = False): string; overload;
+    class function EncodeBase64(const S: string; const APad: Boolean = False): string; overload;
+    class procedure DecodeBase64(const S: string; out Res: TBytes); overload;
+    class function DecodeBase64(const S: string): string; overload;
+    // Custom Base64 encodind/decoding
+    class function Encode64(const ABytes: TBytes; ACount: Integer): string; overload;
+    class function Encode64(const ABytes: TBytes): string; overload;
+    class function Encode64(const S: string): string; overload;
+    class procedure Decode64(const S: string; out Res: TBytes); overload;
+    class function Decode64(const S: string): string; overload;
+  end;
+
+  // access to protected methods of TUTF8Encoding
+  // In FPC we use this encoding directly instead of TEncoding.UTF which is buggy
+  // See: https://forum.lazarus.freepascal.org/index.php?topic=65589
+  TUTF8EncodingEx = class(TUTF8Encoding)
+  public
+    function GetByteCount(Chars: PChar; CharCount: Integer): Integer; override;
+    function GetBytes(Chars: PChar; CharCount: Integer; Bytes: PByte; ByteCount: Integer): Integer; overload; override;
+    {$IFDEF FPC}
+    function GetBytes(const S: UnicodeString; CharIndex, CharCount: Integer; const Bytes: TBytes; ByteIndex: Integer): Integer;
+    {$ENDIF}
+  end;
+
+  // general string routines
+
+  // Some functions are declared with UnicodeString parameters due to FPC compatibility:
+  // Depending on FPC compiler settings, String can be both UnicodeString and AnsiString in
+  // different units, so UnicodeString/AnsiString overloads need to be explicitly defined
+  function IWStartsText(const ASubText, AText: UnicodeString): Boolean; overload;
+  function IWStartsText(const ASubText, AText: AnsiString): Boolean; overload;
+  function IWEndsText(const ASubText, AText: UnicodeString): Boolean; overload;
+  function IWEndsText(const ASubText, AText: AnsiString): Boolean; overload;
+  function IWExtractQuotedStr(var Src: PChar; Quote: Char): string;
+
+  function Fetch(var AString: string; const ADelimiter: string = ' '; const ADelete: Boolean = True;
+   const ACaseSensitive: Boolean = True): string;
+  function FetchPos(var AString: string; APos, ALen: Integer; const ADelete: Boolean = True): string;
+  function FetchAttrValue(var tagContent: string; const attrName: string; aDelete: Boolean = True): string;
+  procedure SetAttrValue(var tagContent: string; const attrName, attrValue: string);
+  procedure RemoveTrailingChars(var s: string; const CharToRemove: Char);
+  procedure EnsureTrailingChar(var s: string; const aChar: Char);
+  function RemoveRepeatedChars(const s: string; const CharToRemove: Char): string;
+  function RemoveLastComma(const S: string): string;
+
+  function LastPos(const Ch: Char; const Str: string; StartPos: Integer = 0): Integer; overload;
+  function LastPos(const SubStr: string; const S: string): Integer; overload;
+
+  procedure TrimInplace(var S: UnicodeString); overload;
+  procedure TrimInplace(var S: AnsiString); overload;
+
+  function QStr(const S: string; const LoCase: Boolean = True): string; inline;
+  function DblQStr(const S: string): string; inline;
+
+  // Replaces '&lt;' and '&gt;' with '<' and '>'. At least 3x faster than 2 calls to StringReplace
+  function DecodeLtGt(const AText: string): string;
+  // Removs all occurences of #10 and #13 from string
+  function RemoveCRLF(const AText: string): string;
+  // Removs all occurences of aCharsToRemove from string
+  function RemoveChars(const AText: string;  aCharsToRemove: TSysCharSet): string;
+  // Encodes special HTML chars
+  function TextToHTMLStringLiteral(const AText: string): string;
+  // Same of TextToHTMLStringLiteral, but also replace line breaks with <br>
+  function TextToHTMLStringLiteralEx(const AText: string): string;
+  // Encodes special HTML chars (or HTML used in XML response). Used by most controls in both Sync and Async responses
+  function TextToHTML(const AText: string; AIsXML: Boolean; AConvertEOLs: Boolean = True; AConvertSpaces: Boolean = False; AAsAttribute: Boolean = False): string;
+  // Escape a string to be used as Json string
+  function TextToJsonString(const AText: string; const AsJsString: Boolean = False): string;
+  // Encodes special chars used in JavaScript (used both inside HTML and XML in async responses)
+  function TextToJSStringLiteral(const AText: string): string;
+  // Encodes special chars for IWWebEdit class
+  function TextToJSWebEdit(const AText: string): string;
+
+  function TextToDataUrl(const AText: string): string;
+
+  // commonly known as "percent encoding"
+  function UrlEncode(const AStr: string): string;
+
+  function BoolToChar(const AValue: Boolean): string;
+  function BoolToString(const AValue: Boolean): string;
+
+  function StringToJSParam(const AValue: string): string;
+
+  function IntToHexFast(Value: Integer; Digits: Integer): string;
+  function AnsiIntToHexFast(Value: Integer; Digits: Integer): AnsiString;
+
+  function FormatByteSize(aSize: Int64; aFormatMask: string = ''): string;
+
+  // Faster replacement of RTL's StringReplace()
+  function IWStringReplace(const S, OldPattern, NewPattern: string; Flags: TReplaceFlags): string; overload;
+  function IWStringReplace(const S, OldPattern, NewPattern: string): string; overload;
+  // The case insensitive complement of IWStringReplace
+  function IWTextReplace(const S, OldPattern, NewPattern: string): string;
+  {$IFDEF CPUX64}
+  function IWPos(const SubStr, Str: UnicodeString): Integer;
+  function IWPosEx(const SubStr, Str: UnicodeString; Offset: Integer): Integer;
+  {$ENDIF}
+
+  function ContainsAll(const Str: string; Patterns: array of string): Boolean;
+  function ContainsAny(const Str: string; Patterns: array of string): Boolean;
+  function ContainsNone(const Str: string; Patterns: array of string): Boolean;
+
+  // encoding and decoding
+  function IWHttpEncode(const AStr: AnsiString): AnsiString;
+  function IWHttpDecode(const AStr: AnsiString): string; overload;
+  function IWHttpDecode(const AStr: UnicodeString): string; overload;
+
+  // Parse & Extract header fields
+  procedure AnsiExtractFields(Separators, _WhiteSpace: TSysCharSet; Content: PAnsiChar;
+    Strings: TStrings; StripQuotes: Boolean = False);
+  procedure ExtractFields(Separators, _WhiteSpace: TSysCharSet; Content: PChar;
+    Strings: TStrings; Decode: Boolean; StripQuotes: Boolean = False);
+
+  function StringEqualityComparer: IEqualityComparer<string>;
+
+  function UTF8Encoding: TUTF8EncodingEx;
+
+  procedure RawByteStrToBytes(const S: string; Bytes: PByte);
+
+implementation

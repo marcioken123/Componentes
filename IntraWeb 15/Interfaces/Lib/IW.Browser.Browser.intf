@@ -1,0 +1,67 @@
+unit IW.Browser.Browser;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, Classes, IW.Common.Lists, IW.Common.Threads, IW.Common.XPlatTypes;
+
+type
+  TBrowser = class;
+
+  TBrowserClass = class of TBrowser;
+
+  // Abstract class - instantiate only descendants
+  TBrowser = class
+  protected
+    mMajorVersion: Integer;
+    mVersion: single;
+    mMinSupportedVersion: single;
+    mAllowOlderBrowsers: Boolean;
+    mStrictMode: Boolean;
+    mUserAgent: string;
+    mBrowserName: string;
+    mIsMobile: Boolean;
+    mHashCode: Cardinal;
+    constructor Create(aVersion: single; aMinSupportedVersion: single); overload; virtual;
+    constructor Create(aVersion: single); overload; virtual; abstract;
+    class procedure Init; virtual;
+    class function FindBrowserClass(const aUserAgent: string; out AVersion: Single): TBrowserClass;
+  public
+    class function CreateBrowser(aUserAgent: string): TBrowser;
+    class function Match(AUserAgent: string; out AVersion: Single): Boolean; virtual;
+    class function ParseBrowserVersion(aVersion: string): single;
+    class function CalcHashCode(const aUserAgent: string): Integer;
+    function IsSupported: Boolean; virtual;
+    function GetHashCode: NativeIntH; override;
+    property AllowOlderBrowsers: boolean read mAllowOlderBrowsers write mAllowOlderBrowsers;
+    property MajorVersion: Integer read mMajorVersion;
+    property MinSupportedVersion: single read mMinSupportedVersion;
+    property Version: single read mVersion;
+    property UserAgent: string read mUserAgent write mUserAgent;
+    property StrictMode: boolean read mStrictMode write mStrictMode;
+    property BrowserName: string read mBrowserName;
+    property IsMobile: boolean read mIsMobile write mIsMobile default False;
+  end;
+
+  // List of registered browsers. Users may add new TBrowser descendants to the list using RegisterBrowser
+  TBrowsers = class
+  private
+    FLock: TIWCriticalSection;
+    FBrowserList: TIWListBase;
+    function Registered(ABrowserClass: TBrowserClass): Boolean;
+    procedure RegisterDefaultBrowsers;
+    procedure InternalAdd(ABrowserClass: TBrowserClass; const idx: Integer = -1);
+  public
+    constructor Create;
+    destructor Destroy; override;
+    procedure RegisterBrowser(ABrowserClass: TBrowserClass; InsertOnTop: boolean = False);
+    procedure Lock;
+    procedure Unlock;
+    procedure CreateDefaultBrowserInstance(var aBrowser: TBrowser; const aUserAgent: string);
+    property BrowserList: TIWListBase read FBrowserList;
+  end;
+
+  function Browsers: TBrowsers;
+
+implementation

@@ -1,0 +1,71 @@
+unit IWCompFlash;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, IWControl, IWFileReference, IWHTMLTag, IWColor, IWCompObject, IWRenderContext;
+
+type
+  TIWFlashQuality = (fqLow, fqAutoLow, fqAutoHigh, fqMedium, fqHigh, fqBest);
+
+  TIWFlashScale = (fsDefault, fsShowAll, fsNoBorder, fsExactFit);
+
+  TIWFlashAlign = (faNone, faLeft, faTop, faRight, faBottom);
+
+  TIWFlashSAlign = (fsNone, fsLeft, fsTop, fsRight, fsBottom, fsTopLeft, fsTopRight, fsBottomLeft
+   , fsBottomRight);
+
+  TIWCustomFlash = class(TIWCustomObject)
+  protected
+    FAlign: TIWFlashAlign;
+    FAutoPlay: Boolean;
+    FBGColor: TIWColor;
+    FEnableMenu: Boolean;
+    FFlashFile: TIWFileReference;
+    FLoop: Boolean;
+    FQuality: TIWFlashQuality;
+    FSAlign: TIWFlashSAlign;
+    FScale: TIWFlashScale;
+    FSWLiveConnect: Boolean;
+    //
+    procedure SetFlashFile(const AValue: TIWFileReference);
+
+    procedure InitControl; override;
+  protected
+    procedure Dispose(ADispose: Boolean); override;
+  public
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+
+    property Align: TIWFlashAlign read FAlign write FAlign;
+    property AutoPlay: Boolean read FAutoPlay write FAutoPlay;
+    property BGColor: TIWColor read FBGColor write FBGColor;
+    property EnableMenu: Boolean read FEnableMenu write FEnableMenu;
+    property FlashFile: TIWFileReference read FFlashFile write SetFlashFile;
+    property Loop: Boolean read FLoop write FLoop;
+    property Quality: TIWFlashQuality read FQuality write FQuality;
+    property SAlign: TIWFlashSAlign read FSAlign write FSAlign;
+    property Scale: TIWFlashScale read FScale write FScale;
+    property SWLiveConnect: Boolean read FSWLiveConnect write FSWLiveConnect;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWFlash = class(TIWCustomFlash)
+  published
+    property Align;
+    property AutoPlay;
+    property BGColor;
+    property EnableMenu;
+    property FlashFile;
+    property FriendlyName;
+    property Height;
+    property Loop;
+    property Quality;
+    property SAlign;
+    property Scale;
+    property SWLiveConnect;
+    property Width;
+    property ObjectType;
+  end;
+
+implementation

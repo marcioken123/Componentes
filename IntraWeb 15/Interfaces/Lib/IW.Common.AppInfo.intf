@@ -1,0 +1,53 @@
+unit IW.Common.AppInfo;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes;
+
+type
+  TFileInfo = (fiCompanyName, fiFileDescription, fiFileVersion, fiIntName,
+               fiLegalCopyright, fiLegalTradmark, fiOrigFilename, fiProductName,
+               fiProductVersion, fiComments);
+
+  TIWMemInfo = record
+    WorkingSetSize,
+    PeakWorkingSetSize,
+    PagefileUsage,
+    PeakPagefileUsage: Int64
+  end;
+
+  TIWAppInfo = class
+  public
+    // full name of IW app executable/dll file, including path information and extension
+    class function GetAppFullFileName: string;
+    // File name of IW app executable/DLL including extension, without path information
+    class function GetAppFileName: string;
+    // File Name of IW app log file, in the same directory of the main executable/dll
+    class function GetAppLogFileName: string;
+    // Directory of IW app executable/DLL
+    class function GetAppPath: string;
+    // Name of IW app executable/DLL without extension
+    class function GetAppName: string;
+    // Win system path - System32 or SysWOW64
+    class function GetSystemPath: string;
+    // Win temporary path directory
+    class function GetTempPath: string;
+    // Current directory
+    class function GetCurrentPath: string;
+    // Computer Name
+    class function GetComputerName: string;
+    // Get aFileInfo information about aFileName
+    class function GetFileInfo(const aFileName: string; aFileInfo: TFileInfo): string;
+    // Get application version
+    class function GetAppVersion: string;
+    // Returns true if running in Win64 OS
+    class function IsWin64: Boolean;
+    // Memory info of the IW process
+    class function GetMemoryInfo: TIWMemInfo;
+    // Number of threads in current process
+    class function GetHandleCount: Cardinal;
+  end;
+
+implementation

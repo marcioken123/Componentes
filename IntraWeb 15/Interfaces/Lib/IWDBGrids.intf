@@ -1,0 +1,172 @@
+unit IWDBGrids;
+{$I IWCompilerDefines.inc}
+
+{PUBDIST}
+
+// Disable Compiler warings for DEPRECATED set_RenderSize, setRenderSize and get_RenderSize
+{$WARN SYMBOL_DEPRECATED OFF}
+
+// Credits:
+//
+// Thanks goes out to David Mustard and Huw Reddick
+// for their contributions to the IWDBGrid and
+// their continued support of IntraWeb and IntraWeb users
+//
+// Thanks Guys!!!
+
+interface
+
+uses
+  Graphics, Classes, DB,
+  IWControl, IWCompGrids, IWHTMLTag, IWColor, IWRenderContext, IWCompGridCommon,
+  IWBaseInterfaces, IWMarkupLanguageTag, IWBaseRenderContext;
+
+type
+  THighlightCompare = (hcNone, hcEqualTo, hcNotEqualTo, hcContains,
+    hcDoesNotContain, hcGreaterThan, hcLessThan);
+
+  TIWColumnAsyncEvent = procedure (Sender: TObject; EventParams: TStringList; const AData: string) of object;
+
+  TIWDBGridColumn = class(TIWGridCell)
+  private
+    FCss: string;
+  protected
+    FBlobCharLimit: Integer;
+    FCompareValue: string;
+    FCompareHighlight: THighlightCompare;
+    // Field Names
+    FDataField: string;
+    FLinkField: string;
+    // Field Objects (TFields) corresponding to Field Names above
+    FDataFieldObj: TField;
+    FLinkFieldObj: TField;
+    FRawText: Boolean;
+    FOnClick: TIWOnClickWithValue;
+    FOnTitleClick: TNotifyEvent;
+    FTitle: TIWGridCell;
+    FOnAsyncClick: TIWColumnAsyncEvent;
+    FOnTitleAsyncClick: TIWAsyncEvent;
+    //
+    procedure SetDataField(const AValue: string);
+    procedure SetLinkField(const AValue: string);
+    procedure SetTitle(const AValue: TIWGridCell);
+    function GetDisplayName: string; {$IFNDEF FPC}override;{$ENDIF}
+
+    procedure AssignTo(ADest: TPersistent); override;
+    function RenderControlForThisRow: Boolean; override;
+    function GetDSField(const AFieldName: string): TField;
+  public
+    constructor Create(ACollection: TCollection);  overload; override;
+    destructor Destroy; override;
+
+    function RenderSelf(AGrid: TIWCustomGrid; const ARow: Integer;
+      const AColumn: Integer; AContext: TIWCompContext; AContainerContext: TIWContainerContext; AText: string = ''): TIWHTMLTag; override;
+    function GetDataFieldObj: TField;
+    function GetLinkFieldObj: TField;
+  published
+    property BlobCharLimit: Integer read FBlobCharLimit write FBlobCharLimit;
+    property CompareValue: string read FCompareValue write FCompareValue;
+    property CompareHighlight: THighlightCompare read FCompareHighlight write FCompareHighlight;
+    property DataField: string read FDataField write SetDataField;
+    property LinkField: string read FLinkField write SetLinkField;
+    property RawText: Boolean read FRawText write FRawText;
+    property OnClick: TIWOnClickWithValue read FOnClick write FOnClick;
+    property OnTitleClick: TNotifyEvent read FOnTitleClick write FOnTitleClick;
+    property Title: TIWGridCell read FTitle write SetTitle;
+    property Css: string read FCss write FCss;
+    property OnAsyncClick: TIWColumnAsyncEvent read FOnAsyncClick write FOnAsyncClick;
+    property OnTitleAsyncClick: TIWAsyncEvent read FOnTitleAsyncClick write FOnTitleAsyncClick;
+  end;
+
+  TIWDBGrid = class;
+
+  TIWDBGridColumns = class(TOwnedCollection)
+  protected
+    FGrid: TIWDBGrid;
+    procedure ResetFields;
+    function GetItem(Index: Integer): TIWDBGridColumn;
+    procedure SetItem(Index: Integer; Value: TIWDBGridColumn);
+  public
+    property Grid: TIWDBGrid read FGrid write FGrid;
+    property Items[Index: Integer]: TIWDBGridColumn read GetItem write SetItem; default;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWDBGrid = class(TIWCustomGrid, IIWSubmitControl)
+  private
+    procedure SetDataSource(const Value: TDataSource);
+    procedure SetRowClick(const Value: Boolean);
+    function CheckForHighlighting(ADataSet: TDataSet): Boolean;
+    procedure DoOnColumnAsyncClick(AParams: TStringList);
+    procedure RegisterCallbacks(AContext: TIWCompContext);
+  protected
+    FScrollToCurrentRow: Boolean;
+    FSubmitParam: string;
+    FColumns: TIWDBGridColumns;
+    FCurrentField: TField;
+    FDataSource: TDataSource;
+    FFooterRowCount: Integer;
+    FFromStart: Boolean;
+    FHighlightRows: Boolean;
+    FHighlightColor: TIWColor;
+    FOptions: TIWDBGridOptions;
+    FRecordCount: Integer;
+    FRenderBuffer: TIWMarkupLanguageTagCollection;
+    FRowIsCurrent: Boolean;
+    FRowLimit: Integer;
+    FRowClick: Boolean;
+    FRollOver: Boolean;
+    FRollOverColor: TIWColor;
+    FRowHeaderColor: TIWColor;
+    FRowAlternateColor: TIWColor;
+    FRowCurrentColor: TIWColor;
+    FRefreshMode: TIWDBGridRefreshMode;
+    //
+    procedure Notification(AComponent: TComponent; AOperation: TOperation); override;
+    procedure RenderCells(AContext: TIWCompContext; AGridTag: TIWHTMLTag); override;
+    procedure SetColumns(AValue: TIWDBGridColumns);
+    procedure Submit(const AValue: string); override;
+    function IsValidCell(ACell: TIWGridCell): Boolean; override;
+
+    procedure Loaded; override;
+    procedure InitControl; override;
+    procedure Dispose(ADispose: Boolean); override;
+    procedure DefineProperties(Filer: TFiler); override;
+    function GetSubmitLink(const AHTML, AParam: string; const AAsync: Boolean): TIWHTMLTag;
+  public
+    procedure CreateImplicitColumns;
+    destructor Destroy; override;
+
+    procedure RefreshData(AContext: TIWCompContext; AGridTag: TIWHTMLTag);
+    function GetSubmitParam: string;
+
+    property CurrentField: TField read FCurrentField;
+    property RecordCount: Integer read FRecordCount;
+    property RowIsCurrent: Boolean read FRowIsCurrent;
+  published
+    property ScrollToCurrentRow: Boolean read FScrollToCurrentRow write FScrollToCurrentRow;
+    property Columns: TIWDBGridColumns read FColumns write SetColumns;
+    property DataSource: TDataSource read FDataSource write SetDataSource;
+    property FooterRowCount: Integer read FFooterRowCount write FFooterRowCount;
+    property FriendlyName;
+    property FromStart: Boolean read FFromStart write FFromStart;
+    property HighlightColor: TIWColor read FHighlightColor write FHighlightColor;
+    property HighlightRows: Boolean read FHighlightRows write FHighlightRows;
+    property Options: TIWDBGridOptions read FOptions write FOptions;
+    property RefreshMode: TIWDBGridRefreshMode read FRefreshMode write FRefreshMode;
+    property RowLimit: Integer read FRowLimit write FRowLimit;
+    property RollOver: Boolean read FRollOver write FRollOver;
+    property RowClick: Boolean read FRowClick write SetRowClick;
+    property RollOverColor: TIWColor read FRollOverColor write FRollOverColor;
+    property RowHeaderColor: TIWColor read FRowHeaderColor write FRowHeaderColor;
+    property RowAlternateColor: TIWColor read FRowAlternateColor write FRowAlternateColor;
+    property RowCurrentColor: TIWColor read FRowCurrentColor write FRowCurrentColor;
+    property TabOrder;
+  end;
+
+  TIWGridHelper = class helper for TIWGrid
+  public
+    procedure LoadFromDataSet(const ADataSet: TDataSet);
+  end;
+
+implementation

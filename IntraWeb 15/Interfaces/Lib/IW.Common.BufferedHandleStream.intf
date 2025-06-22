@@ -1,0 +1,36 @@
+unit IW.Common.BufferedHandleStream;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses Classes, SysUtils;
+
+type
+  TBufferedHandleStream = class(THandleStream)
+  strict private
+    //actually we could use a single buffer for reading and writting, once they are not used at the same time.
+    //However, keeping them separated makes the class easier to fully debug and it doesn't make real difference
+    FWriteBuffer: array of Byte;
+    FReadBuffer: array of Byte;
+    FPendingWriteSize: Longint;
+    FRemainingReadSize: Longint;
+    FReadBufferPos: Longint;
+    function DoWriteToBuffer(const Buffer; Count: Longint): Longint;
+    function DoReadFromBuffer(var Buffer; Count: Longint): Longint;
+    function DoReadToBuffer: Longint;
+    procedure FlushWriteBuffer;
+    procedure ResetReadBuffer;
+  public
+    destructor Destroy; override;
+    //Read and write methods in THandleStream
+    function Read(var Buffer; Count: Longint): Longint; override;
+    function Write(const Buffer; Count: Longint): Longint; override;
+    {$IFDEF VCL17ORABOVE}      // only Delphi XE3 and up have these methods
+    function Read(Buffer: TBytes; Offset, Count: Longint): Longint; override;
+    function Write(const Buffer: TBytes; Offset, Count: Longint): Longint; override;
+    {$ENDIF}
+    function Seek(const Offset: Int64; Origin: TSeekOrigin): Int64; override;
+    function CopyFrom(const Source: TStream; Count: Int64): Int64;
+  end;
+
+implementation

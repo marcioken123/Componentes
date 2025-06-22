@@ -1,0 +1,20 @@
+unit IWVar;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, IWTag;
+
+type
+  TIWVar = class
+  protected
+    mText: string;
+    mDest: TStringStream;
+    procedure DoProcessTag(aTag: TIWTag); virtual; abstract;
+  public
+    function ProcessTag: string;
+    constructor Create(aText: string);
+  end;
+
+implementation

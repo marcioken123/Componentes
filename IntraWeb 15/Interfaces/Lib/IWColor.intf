@@ -1,0 +1,364 @@
+unit IWColor;
+{$I IWCompilerDefines.inc}
+
+{Dist Public}
+
+interface
+
+uses
+  Windows, Graphics, Classes, SysUtils;
+
+type
+  TIWColor = type TColor;
+
+  TIWColorRGBA = class(TPersistent)
+  private
+    FColor: TIWColor;
+    FTransparency: Double;
+    function GetAsRGBAString: string;
+    procedure SetAsRGBAString(const Value: string);
+  published
+    property Color: TIWColor read FColor write FColor;
+    property Transparency: Double read FTransparency write FTransparency;
+    property AsRGBA: string read GetAsRGBAString write SetAsRGBAString;
+  end;
+
+const
+   clNone = TColor($1FFFFFFF); // from System.UITypes
+   clWebTransparent = TColor(-1);
+   clWebALICEBLUE = TColor( $FFF8F0 );
+   clWebANTIQUEWHITE  = TColor( $D7EBFA );
+   clWebAQUA  = TColor( $FFFF00 );
+   clWebAQUAMARINE  = TColor( $D4FF7F );
+   clWebAZURE = TColor( $FFFFF0 );
+   clWebBEIGE = TColor( $DCF5F5 );
+   clWebBISQUE = TColor( $C4E4FF );
+   clWebBLACK = TColor( $000000 );
+   clWebBLANCHEDALMOND = TColor( $CDEBFF );
+   clWebBLUE = TColor( $FF0000 );
+   clWebBLUEVIOLET = TColor( $E22B8A );
+   clWebBROWN = TColor( $2A2AA5 );
+   clWebBURLYWOOD = TColor( $87B8DE );
+   clWebCADETBLUE = TColor( $A09E5F );
+   clWebCHARTREUSE = TColor( $00FF7F );
+   clWebCHOCOLATE = TColor( $1E69D2 );
+   clWebCORAL = TColor( $507FFF );
+   clWebCORNFLOWERBLUE = TColor( $ED9564 );
+   clWebCORNSILK = TColor( $DCF8FF );
+   clWebCRIMSON = TColor( $3C14DC );
+   clWebCYAN = TColor( $FFFF00 );
+   clWebDARKBLUE = TColor( $8B0000 );
+   clWebDARKCYAN = TColor( $8B8B00 );
+   clWebDARKGOLDENROD = TColor( $0B86B8 );
+   clWebDARKGRAY = TColor( $A9A9A9 );
+   clWebDARKGREEN = TColor( $006400 );
+   clWebDARKKHAKI = TColor( $6BB7BD );
+   clWebDARKMAGENTA = TColor( $8B008B);
+   clWebDARKOLIVEGREEN = TColor( $2F6B55);
+   clWebDARKORANGE = TColor( $008CFF );
+   clWebDARKORCHID = TColor( $CC3299 );
+   clWebDARKRED = TColor( $00008B );
+   clWebDARKSALMON = TColor( $7A96E9 );
+   clWebDARKSEAGREEN = TColor( $8FBC8F );
+   clWebDARKSLATEBLUE = TColor( $8B3D48 );
+   clWebDARKSLATEGRAY = TColor( $4F4F2F );
+   clWebDARKTURQUOISE = TColor( $D1CE00 );
+   clWebDARKVIOLET = TColor( $D30094 );
+   clWebDEEPPINK = TColor( $9314FF );
+   clWebDEEPSKYBLUE = TColor( $FFBF00 );
+   clWebDIMGRAY = TColor( $696969 );
+   clWebDODGERBLUE = TColor( $FF901E );
+   clWebFIREBRICK = TColor( $2222B2 );
+   clWebFLORALWHITE = TColor( $F0FAFF );
+   clWebFORESTGREEN = TColor( $228B22 );
+   clWebFUCHSIA = TColor( $FF00FF );
+   clWebGAINSBORO = TColor( $DCDCDC );
+   clWebGHOSTWHITE = TColor( $FFF8F8 );
+   clWebGOLD = TColor( $00D7FF );
+   clWebGOLDENROD = TColor( $20A5DA );
+   clWebGRAY = TColor( $808080 );
+   clWebGREEN = TColor( $008000 );
+   clWebGREENYELLOW = TColor( $2FFFAD );
+   clWebHONEYDEW = TColor( $F0FFF0 );
+   clWebHOTPINK = TColor( $B469FF );
+   clWebINDIANRED = TColor( $5C5CCD );
+   clWebINDIGO = TColor( $82004B );
+   clWebIVORY = TColor( $F0FFFF );
+   clWebKHAKI = TColor( $8CE6F0 );
+   clWebLAVENDER = TColor( $FAE6E6 );
+   clWebLAVENDERBLUSH = TColor( $F5F0FF );
+   clWebLAWNGREEN = TColor( $00FC7C );
+   clWebLEMONCHIFFON = TColor( $CDFAFF );
+   clWebLIGHTBLUE = TColor( $E6D8AD );
+   clWebLIGHTCORAL = TColor( $8080F0 );
+   clWebLIGHTCYAN = TColor( $FFFFE0 );
+   clWebLIGHTGOLDENRODYELLOW = TColor( $D2FAFA );
+   clWebLIGHTGREEN = TColor( $90EE90 );
+   clWebLIGHTGRAY = TColor( $D3D3D3);
+   clWebLIGHTPINK = TColor( $C1B6FF);
+   clWebLIGHTSALMON = TColor( $7AA0FF);
+   clWebLIGHTSEAGREEN = TColor( $AAB220 );
+   clWebLIGHTSKYBLUE = TColor( $FACE87 );
+   clWebLIGHTSLATEBLUE = TColor( $FF7084 );
+   clWebLIGHTSLATEGRAY = TColor( $998877 );
+   clWebLIGHTSTEELBLUE = TColor( $DEC4B0 );
+   clWebLIGHTYELLOW = TColor( $E0FFFF );
+   clWebLIME = TColor( $00FF00 );
+   clWebLIMEGREEN = TColor( $32CD32);
+   clWebLINEN = TColor( $E6F0FA );
+   clWebMAGENTA = TColor( $FF00FF);
+   clWebMAROON = TColor( $000080 );
+   clWebMEDIUMAQUAMARINE = TColor( $AACD66 );
+   clWebMEDIUMBLUE = TColor( $CD0000);
+   clWebMEDIUMORCHID = TColor( $D355BA );
+   clWebMEDIUMPURPLE = TColor( $D87093 );
+   clWebMEDIUMSEAGREEN = TColor( $71B33C );
+   clWebMEDIUMSLATEBLUE = TColor( $EE687B);
+   clWebMEDIUMSPRINGGREEN = TColor( $9AFA00);
+   clWebMEDIUMTURQUOISE = TColor( $CCD148);
+   clWebMEDIUMVIOLETRED = TColor( $8515C7);
+   clWebMIDNIGHTBLUE = TColor( $701919);
+   clWebMINTCREAM = TColor( $FAFFF5);
+   clWebMISTYROSE = TColor( $E1E4FF);
+   clWebMOCCASIN = TColor( $B5E4FF);
+   clWebNAVAJOWHITE = TColor( $ADDEFF);
+   clWebNAVY = TColor( $800000);
+   clWebOLDLACE = TColor( $E6F5FD);
+   clWebOLIVE = TColor( $008080);
+   clWebOLIVEDRAB = TColor( $238E6B );
+   clWebORANGE = TColor( $00A5FF );
+   clWebORANGERED = TColor( $0045FF);
+   clWebORCHID = TColor( $D670DA);
+   clWebPALEGOLDENROD = TColor( $AAE8EE);
+   clWebPALEGREEN = TColor( $98FB98 );
+   clWebPALETURQUOISE = TColor( $EEEEAF);
+   clWebPALEVIOLETRED = TColor( $9370DB);
+   clWebPAPAYAWHIP = TColor( $D5EFFF);
+   clWebPEACHPUFF = TColor( $89DAFF);
+   clWebPERU = TColor( $3F85CD);
+   clWebPINK = TColor( $CBC0FF);
+   clWebPLUM = TColor( $DDA0DD);
+   clWebPOWDERBLUE = TColor( $E6E0B0);
+   clWebPURPLE = TColor( $800080);
+   clWebRED = TColor( $0000FF);
+   clWebROSYBROWN = TColor( $8F8FBC);
+   clWebROYALBLUE = TColor( $E16941);
+   clWebSADDLEBROWN = TColor( $13458B);
+   clWebSALMON = TColor( $7280FA);
+   clWebSANDYBROWN = TColor( $60A4F4);
+   clWebSEAGREEN = TColor( $578B2E);
+   clWebSEASHELL = TColor( $EEF5FF);
+   clWebSIENNA = TColor( $2D52A0);
+   clWebSILVER = TColor( $C0C0C0);
+   clWebSKYBLUE = TColor( $EBCE87);
+   clWebSLATEBLUE = TColor( $CD5A6A);
+   clWebSLATEGRAY = TColor( $908070);
+   clWebSNOW = TColor( $FAFAFF);
+   clWebSPRINGGREEN = TColor( $7FFF00);
+   clWebSTEELBLUE = TColor( $B48246);
+   clWebTAN = TColor( $8CB4D2);
+   clWebTEAL = TColor( $808000);
+   clWebTHISTLE = TColor( $D8BFD8);
+   clWebTOMATO = TColor( $4763FF);
+   clWebTURQUOISE = TColor( $D0E040);
+   clWebVIOLET = TColor( $EE82EE);
+   clWebVIOLETRED = TColor( $9020D0);
+   clWebWHEAT = TColor( $B3DEF5);
+   clWebWHITE = TColor( $FFFFFF);
+   clWebWHITESMOKE = TColor( $F5F5F5);
+   clWebYELLOW = TColor( $00FFFF);
+   clWebYELLOWGREEN = TColor($32CD9A);
+   clWebOUTLINEBLUE = TColor($EDCA9E);
+   clWebBORDERGRAY = TColor($DADADA);
+
+procedure GetIWColorValues(Proc: TGetStrProc);
+
+function IWColorToString(Color: TIWColor): string;
+
+// overloads required by FPC
+function IWColorToIdent(Color: LongInt; var Ident: string): Boolean; overload;
+
+function IWColorToIdent(Color: LongInt; var Ident: AnsiString): Boolean; overload;
+
+function IdentToIWColor(const Ident: string; var Color: LongInt): Boolean; overload;
+
+function IdentToIWColor(const Ident: AnsiString; var Color: Longint): Boolean; overload;
+
+function StringToIWColor(const S: string): TIWColor;
+
+function toTColor(AColor: TIWColor): TColor;
+
+function fromTColor(AColor: TColor): TIWColor;
+
+function HexColorToRGB(const HexColor: string; var R, G, B: Byte): Boolean;
+
+function HexColorToRGBA(const HexColor: string; var R, G, B: Byte; var A: Double): Boolean;
+
+function HexColorToRGBAString(const HexColor: string; aTransparency: Double): string;
+
+function TransparencyToHex(Transparency: Double): string;
+
+function HexToTransparency(const HexTransparency: string): Double;
+
+procedure ColorRGBValues(AColor: TColor; var R, G, B: Byte);
+
+function ColorToRGBString(AColor: TIWColor): string;
+
+function RGBStringToColor(const rgbString: string): TColor;
+
+function ColorToRGBAString(AColor: TIWColor; AColorTransparency: Double): string;
+
+function HTMLColor(AColor: TIWColor; const ATag: string = 'Color'): string;
+
+function IsValidRGBAString(const rgbaString: string): Boolean;
+
+function DecodeRGBAString(const rgbaString: string; var R, G, B: Byte; var A: Double): Boolean;
+
+
+const
+  IWColors: array[0..142] of TIdentMapEntry = (
+    (Value: clWebTransparent; Name: 'clWebTransparent'),
+    (Value: clWebALICEBLUE; Name: 'clWebALICEBLUE'),
+    (Value: clWebANTIQUEWHITE; Name: 'clWebANTIQUEWHITE'),
+    (Value: clWebAQUA; Name: 'clWebAQUA'),
+    (Value: clWebAQUAMARINE; Name: 'clWebAQUAMARINE'),
+    (Value: clWebAZURE; Name: 'clWebAZURE'),
+    (Value: clWebBEIGE; Name: 'clWebBEIGE'),
+    (Value: clWebBISQUE; Name: 'clWebBISQUE'),
+    (Value: clWebBLACK; Name: 'clWebBLACK'),
+    (Value: clWebBLANCHEDALMOND; Name: 'clWebBLANCHEDALMOND'),
+    (Value: clWebBLUE; Name: 'clWebBLUE'),
+    (Value: clWebBLUEVIOLET; Name: 'clWebBLUEVIOLET'),
+    (Value: clWebBROWN; Name: 'clWebBROWN'),
+    (Value: clWebBURLYWOOD; Name: 'clWebBURLYWOOD'),
+    (Value: clWebCADETBLUE; Name: 'clWebCADETBLUE'),
+    (Value: clWebCHARTREUSE; Name: 'clWebCHARTREUSE'),
+    (Value: clWebCHOCOLATE; Name: 'clWebCHOCOLATE'),
+    (Value: clWebCORAL; Name: 'clWebCORAL'),
+    (Value: clWebCORNFLOWERBLUE; Name: 'clWebCORNFLOWERBLUE'),
+    (Value: clWebCORNSILK; Name: 'clWebCORNSILK'),
+    (Value: clWebCRIMSON; Name: 'clWebCRIMSON'),
+    (Value: clWebCYAN; Name: 'clWebCYAN'),
+    (Value: clWebDARKBLUE; Name: 'clWebDARKBLUE'),
+    (Value: clWebDARKCYAN; Name: 'clWebDARKCYAN'),
+    (Value: clWebDARKGOLDENROD; Name: 'clWebDARKGOLDENROD'),
+    (Value: clWebDARKGRAY; Name: 'clWebDARKGRAY'),
+    (Value: clWebDARKGREEN; Name: 'clWebDARKGREEN'),
+    (Value: clWebDARKKHAKI; Name: 'clWebDARKKHAKI'),
+    (Value: clWebDARKMAGENTA; Name: 'clWebDARKMAGENTA'),
+    (Value: clWebDARKOLIVEGREEN; Name: 'clWebDARKOLIVEGREEN'),
+    (Value: clWebDARKORANGE; Name: 'clWebDARKORANGE'),
+    (Value: clWebDARKORCHID; Name: 'clWebDARKORCHID'),
+    (Value: clWebDARKRED; Name: 'clWebDARKRED'),
+    (Value: clWebDARKSALMON; Name: 'clWebDARKSALMON'),
+    (Value: clWebDARKSEAGREEN; Name: 'clWebDARKSEAGREEN'),
+    (Value: clWebDARKSLATEBLUE; Name: 'clWebDARKSLATEBLUE'),
+    (Value: clWebDARKSLATEGRAY; Name: 'clWebDARKSLATEGRAY'),
+    (Value: clWebDARKTURQUOISE; Name: 'clWebDARKTURQUOISE'),
+    (Value: clWebDARKVIOLET; Name: 'clWebDARKVIOLET'),
+    (Value: clWebDEEPPINK; Name: 'clWebDEEPPINK'),
+    (Value: clWebDEEPSKYBLUE; Name: 'clWebDEEPSKYBLUE'),
+    (Value: clWebDIMGRAY; Name: 'clWebDIMGRAY'),
+    (Value: clWebDODGERBLUE; Name: 'clWebDODGERBLUE'),
+    (Value: clWebFIREBRICK; Name: 'clWebFIREBRICK'),
+    (Value: clWebFLORALWHITE; Name: 'clWebFLORALWHITE'),
+    (Value: clWebFORESTGREEN; Name: 'clWebFORESTGREEN'),
+    (Value: clWebFUCHSIA; Name: 'clWebFUCHSIA'),
+    (Value: clWebGAINSBORO; Name: 'clWebGAINSBORO'),
+    (Value: clWebGHOSTWHITE; Name: 'clWebGHOSTWHITE'),
+    (Value: clWebGOLD; Name: 'clWebGOLD'),
+    (Value: clWebGOLDENROD; Name: 'clWebGOLDENROD'),
+    (Value: clWebGRAY; Name: 'clWebGRAY'),
+    (Value: clWebGREEN; Name: 'clWebGREEN'),
+    (Value: clWebGREENYELLOW; Name: 'clWebGREENYELLOW'),
+    (Value: clWebHONEYDEW; Name: 'clWebHONEYDEW'),
+    (Value: clWebHOTPINK; Name: 'clWebHOTPINK'),
+    (Value: clWebINDIANRED; Name: 'clWebINDIANRED'),
+    (Value: clWebINDIGO; Name: 'clWebINDIGO'),
+    (Value: clWebIVORY; Name: 'clWebIVORY'),
+    (Value: clWebKHAKI; Name: 'clWebKHAKI'),
+    (Value: clWebLAVENDER; Name: 'clWebLAVENDER'),
+    (Value: clWebLAVENDERBLUSH; Name: 'clWebLAVENDERBLUSH'),
+    (Value: clWebLAWNGREEN; Name: 'clWebLAWNGREEN'),
+    (Value: clWebLEMONCHIFFON; Name: 'clWebLEMONCHIFFON'),
+    (Value: clWebLIGHTBLUE; Name: 'clWebLIGHTBLUE'),
+    (Value: clWebLIGHTCORAL; Name: 'clWebLIGHTCORAL'),
+    (Value: clWebLIGHTCYAN; Name: 'clWebLIGHTCYAN'),
+    (Value: clWebLIGHTGOLDENRODYELLOW; Name: 'clWebLIGHTGOLDENRODYELLOW'),
+    (Value: clWebLIGHTGREEN; Name: 'clWebLIGHTGREEN'),
+    (Value: clWebLIGHTGRAY; Name: 'clWebLIGHTGRAY'),
+    (Value: clWebLIGHTPINK; Name: 'clWebLIGHTPINK'),
+    (Value: clWebLIGHTSALMON; Name: 'clWebLIGHTSALMON'),
+    (Value: clWebLIGHTSEAGREEN; Name: 'clWebLIGHTSEAGREEN'),
+    (Value: clWebLIGHTSKYBLUE; Name: 'clWebLIGHTSKYBLUE'),
+    (Value: clWebLIGHTSLATEBLUE; Name: 'clWebLIGHTSLATEBLUE'),
+    (Value: clWebLIGHTSLATEGRAY; Name: 'clWebLIGHTSLATEGRAY'),
+    (Value: clWebLIGHTSTEELBLUE; Name: 'clWebLIGHTSTEELBLUE'),
+    (Value: clWebLIGHTYELLOW; Name: 'clWebLIGHTYELLOW'),
+    (Value: clWebLIME; Name: 'clWebLIME'),
+    (Value: clWebLIMEGREEN; Name: 'clWebLIMEGREEN'),
+    (Value: clWebLINEN; Name: 'clWebLINEN'),
+    (Value: clWebMAGENTA; Name: 'clWebMAGENTA'),
+    (Value: clWebMAROON; Name: 'clWebMAROON'),
+    (Value: clWebMEDIUMAQUAMARINE; Name: 'clWebMEDIUMAQUAMARINE'),
+    (Value: clWebMEDIUMBLUE; Name: 'clWebMEDIUMBLUE'),
+    (Value: clWebMEDIUMORCHID; Name: 'clWebMEDIUMORCHID'),
+    (Value: clWebMEDIUMPURPLE; Name: 'clWebMEDIUMPURPLE'),
+    (Value: clWebMEDIUMSEAGREEN; Name: 'clWebMEDIUMSEAGREEN'),
+    (Value: clWebMEDIUMSLATEBLUE; Name: 'clWebMEDIUMSLATEBLUE'),
+    (Value: clWebMEDIUMSPRINGGREEN; Name: 'clWebMEDIUMSPRINGGREEN'),
+    (Value: clWebMEDIUMTURQUOISE; Name: 'clWebMEDIUMTURQUOISE'),
+    (Value: clWebMEDIUMVIOLETRED; Name: 'clWebMEDIUMVIOLETRED'),
+    (Value: clWebMIDNIGHTBLUE; Name: 'clWebMIDNIGHTBLUE'),
+    (Value: clWebMINTCREAM; Name: 'clWebMINTCREAM'),
+    (Value: clWebMISTYROSE; Name: 'clWebMISTYROSE'),
+    (Value: clWebMOCCASIN; Name: 'clWebMOCCASIN'),
+    (Value: clWebNAVAJOWHITE; Name: 'clWebNAVAJOWHITE'),
+    (Value: clWebNAVY; Name: 'clWebNAVY'),
+    (Value: clWebOLDLACE; Name: 'clWebOLDLACE'),
+    (Value: clWebOLIVE; Name: 'clWebOLIVE'),
+    (Value: clWebOLIVEDRAB; Name: 'clWebOLIVEDRAB'),
+    (Value: clWebORANGE; Name: 'clWebORANGE'),
+    (Value: clWebORANGERED; Name: 'clWebORANGERED'),
+    (Value: clWebORCHID; Name: 'clWebORCHID'),
+    (Value: clWebPALEGOLDENROD; Name: 'clWebPALEGOLDENROD'),
+    (Value: clWebPALEGREEN; Name: 'clWebPALEGREEN'),
+    (Value: clWebPALETURQUOISE; Name: 'clWebPALETURQUOISE'),
+    (Value: clWebPALEVIOLETRED; Name: 'clWebPALEVIOLETRED'),
+    (Value: clWebPAPAYAWHIP; Name: 'clWebPAPAYAWHIP'),
+    (Value: clWebPEACHPUFF; Name: 'clWebPEACHPUFF'),
+    (Value: clWebPERU; Name: 'clWebPERU'),
+    (Value: clWebPINK; Name: 'clWebPINK'),
+    (Value: clWebPLUM; Name: 'clWebPLUM'),
+    (Value: clWebPOWDERBLUE; Name: 'clWebPOWDERBLUE'),
+    (Value: clWebPURPLE; Name: 'clWebPURPLE'),
+    (Value: clWebRED; Name: 'clWebRED'),
+    (Value: clWebROSYBROWN; Name: 'clWebROSYBROWN'),
+    (Value: clWebROYALBLUE; Name: 'clWebROYALBLUE'),
+    (Value: clWebSADDLEBROWN; Name: 'clWebSADDLEBROWN'),
+    (Value: clWebSALMON; Name: 'clWebSALMON'),
+    (Value: clWebSANDYBROWN; Name: 'clWebSANDYBROWN'),
+    (Value: clWebSEAGREEN; Name: 'clWebSEAGREEN'),
+    (Value: clWebSEASHELL; Name: 'clWebSEASHELL'),
+    (Value: clWebSIENNA; Name: 'clWebSIENNA'),
+    (Value: clWebSILVER; Name: 'clWebSILVER'),
+    (Value: clWebSKYBLUE; Name: 'clWebSKYBLUE'),
+    (Value: clWebSLATEBLUE; Name: 'clWebSLATEBLUE'),
+    (Value: clWebSLATEGRAY; Name: 'clWebSLATEGRAY'),
+    (Value: clWebSNOW; Name: 'clWebSNOW'),
+    (Value: clWebSPRINGGREEN; Name: 'clWebSPRINGGREEN'),
+    (Value: clWebSTEELBLUE; Name: 'clWebSTEELBLUE'),
+    (Value: clWebTAN; Name: 'clWebTAN'),
+    (Value: clWebTEAL; Name: 'clWebTEAL'),
+    (Value: clWebTHISTLE; Name: 'clWebTHISTLE'),
+    (Value: clWebTOMATO; Name: 'clWebTOMATO'),
+    (Value: clWebTURQUOISE; Name: 'clWebTURQUOISE'),
+    (Value: clWebVIOLET; Name: 'clWebVIOLET'),
+    (Value: clWebVIOLETRED; Name: 'clWebVIOLETRED'),
+    (Value: clWebWHEAT; Name: 'clWebWHEAT'),
+    (Value: clWebWHITE; Name: 'clWebWHITE'),
+    (Value: clWebWHITESMOKE; Name: 'clWebWHITESMOKE'),
+    (Value: clWebYELLOW; Name: 'clWebYELLOW'),
+    (Value: clWebYELLOWGREEN; Name: 'clWebYELLOWGREEN'));
+
+implementation

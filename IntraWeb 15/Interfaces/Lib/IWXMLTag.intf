@@ -1,0 +1,26 @@
+unit IWXMLTag;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, IWMarkupLanguageTag, IW.Common.StreamHelper;
+
+type
+  TIWXMLTag = class(TIWMarkupLanguageTag)
+  private
+    FCDATA: Boolean;
+    procedure SetCDATA(const Value: Boolean);
+    procedure CheckCDATA;
+  protected
+    procedure RenderElement(ABuffer: TStreamHelper; AIndent: Integer = 0); override;
+    procedure RenderElementContent(ABuffer: TStreamHelper; AIndent: Integer = 0); override;
+  public
+    constructor Create(AParentElement: TIWMarkupLanguageElement); override;
+    constructor CreateTag(const ATag: string; const AParentElement: TIWMarkupLanguageElement = nil); override;
+
+    ///Summary:  If set to ture, the content will be render in CDATA tags. Defaults to false.
+    property CDATA: Boolean read FCDATA write SetCDATA;
+  end;
+
+implementation

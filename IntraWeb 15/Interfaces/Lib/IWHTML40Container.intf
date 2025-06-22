@@ -1,0 +1,48 @@
+unit IWHTML40Container;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, Controls, IWVCLBaseContainer,
+  IWHTML40Interfaces, IWHTMLContainer, IWBaseInterfaces, IWBaseRenderContext,
+  IWXMLTag, IWRenderContext, IWMarkupLanguageTag, IWContainerLayout,
+  IW.Common.Lists;
+
+type
+  //Replaces TIWHTML40ContainerImplementation used in previous versions,
+  //however this is a static class. This saves lots of memory in container controls
+  TIWContainerImplementation = class
+  private
+    class function ShouldRenderAsyncComponent(AComponent: TComponent): Boolean; inline;
+    {$IFDEF AJAXSPEED2}
+    class function ComponentCanRenderAsync(AComponent: TComponent): Boolean; inline;
+    {$ENDIF}
+    class procedure ProcessStyleTag(AContainerContext: TIWContainerContext; AComponent: TComponent; AStyleTag: TIWMarkupLanguageTag);
+  public
+    class procedure RenderAsyncComponents(AFormContainer: TIWBaseContainer;
+       AContainerContext: TIWContainerContext; APageContext: TIWBasePageContext);
+    class procedure FillControlListForAsyncRender(AContainer: TIWBaseContainer; AControlList, ANewControlList: TIWListBase);
+  end;
+
+  TIWHTML40Container = class(TIWHTMLContainer, IIWHTML40Container, IIWBaseContainer, IIWTabOrder)
+  private
+    FDoRefreshControl: Boolean;
+  protected
+    FIsRefreshAsyncRender: Boolean;
+    procedure set_LayoutMgr(Value: TIWContainerLayout);
+    function get_LayoutMgr: TIWContainerLayout;
+    function get_DoRefreshControl: Boolean; virtual;
+    procedure set_DoRefreshControl(AValue: Boolean); virtual;
+    procedure RenderAsyncComponents(AContainerContext: TIWContainerContext; APageContext: TIWBasePageContext);
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; virtual;
+    function RenderAsyncComponent(AContext: TIWBaseComponentContext): TIWXMLTag; virtual;
+    procedure AddAsyncStyle(ATag: TIWXMLTag; AStyle: String); virtual; abstract;
+    procedure SetActiveControl(AControl: IIWHTML40Control);
+    function GenerateControlPositions: string;
+    property LayoutMgr: TIWContainerLayout read get_LayoutMgr write set_LayoutMgr;
+  public
+    property DoRefreshControl: Boolean read get_DoRefreshControl write set_DoRefreshControl;
+  end;
+
+implementation

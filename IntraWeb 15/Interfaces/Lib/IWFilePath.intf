@@ -1,0 +1,23 @@
+unit IWFilePath;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, SysUtils;
+
+type
+  TFilePath = class
+  public
+    class function FindRelativePath(AFileName: string; APath: string): string;
+    class function IsAbsolute(const APath: string): Boolean;
+    // concatenate two parts of a path/filename taking care of path delimiters between them
+    class function Concat(const ARootPath, AFileName: string): string;
+    // concatenate a file name and a root path
+    class function MakeValidFileName(const ARootPath, AFileName: string): string;
+    class function GetFileNameWithoutExtension(const aFileName: string): string;
+    class function GetExtension(const aFileName: string): string;
+    class procedure Split(const aFileName: string; var aFileNamePart, aExtensionPart: string);
+  end;
+
+implementation

@@ -1,0 +1,176 @@
+unit IWHTML40Interfaces;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Controls, Classes,
+  IWHTMLTag, IWTypes, IWBaseInterfaces, IWRenderContext,
+  IWScriptEvents, IWContainerLayout, IWXMLTag,  IWBaseHTMLInterfaces,
+  IWBaseRenderContext;
+
+type
+  // Must be in its own unit. hpp emits interfaces last and TIWControl needs it before it as it
+  // uses it.
+  //
+  // Interfaces have caused numerous problems
+  // -No inheritance detection
+  // -Freeing component while interface is held cause AV when done with interface or := nil
+  //  Not always avoidable, see TIWAppForm.Execute.
+
+  IIWHTML40Component = interface(IIWBaseHTMLComponent)
+    ['{9A7ADABA-A576-4CA0-8CA1-612E8D322EC4}']
+    function get_DoRefreshControl: Boolean;
+    procedure set_DoRefreshControl(AValue: Boolean);
+
+    function RenderCSSClass(AComponentContext: TIWCompContext): string;
+    function RenderStyle(AComponentContext: TIWCompContext): string;
+    procedure RenderScripts(AComponentContext: TIWCompContext);
+
+    function RenderAsyncComponent(AContext: TIWBaseComponentContext): TIWXMLTag;
+    procedure AddAsyncStyle(ATag: TIWXMLTag; AStyle: String);
+    
+    function WantsSubmitValidation: Boolean;
+
+    property DoRefreshControl: Boolean read get_DoRefreshControl write set_DoRefreshControl;
+  end;
+
+  IIWHTML40Control = interface(IIWBaseHTMLControl)
+    ['{1352DD21-ECBF-4AEE-A43B-956BE743D26C}']
+    function get_HTMLLeft: Integer;
+    function get_HTMLTop: Integer;
+    (*function get_HTMLWidth: Integer;
+    function get_HTMLHeight: Integer;*)
+
+    function HintEvents(ATag: TIWHTMLTag{; const AHint: string}): string;
+    procedure HookEvents(APageContext: TIWPageContext40; AScriptEvents: TIWScriptEvents);
+
+    function get_RenderSize: Boolean;
+    procedure set_RenderSize(AValue: Boolean);
+
+    function get_StyleRenderOptions: TIWStyleRenderOptions;
+    procedure set_StyleRenderOptions(AValue: TIWStyleRenderOptions);
+
+    function get_ZIndex: Integer;
+    procedure set_ZIndex(AValue: Integer);
+
+    function get_Clip: Boolean;
+    procedure set_Clip(AValue: Boolean);
+
+    function get_Css: string;
+    procedure set_Css(const AValue: string);
+
+    function get_SkinId: string;
+    procedure set_SkinId(const AValue: string);
+
+    function get_WebCursor: TIWCursor;
+    procedure set_WebCursor(AValue: TIWCursor);
+
+    function get_UseFrame: Boolean;
+    procedure set_UseFrame(AValue: Boolean);
+
+    function get_SupportsPartial: Boolean;
+    procedure set_SupportsPartial(AValue: Boolean);
+
+    function get_ScriptEvents: TIWScriptEvents;
+    procedure set_ScriptEvents(Value: TIWScriptEvents);
+
+    function get_Anchors: TAnchors;
+    procedure set_Anchors(Value: TAnchors);
+    function get_Align: TAlign;
+    procedure set_Align(Value: TAlign);
+
+    function get_ShowHint: Boolean;
+    procedure set_ShowHint(Value: Boolean);
+
+    function get_ParentShowHint: Boolean;
+    procedure set_ParentShowHint(Value: Boolean);
+
+    function RequiresRefresh: Boolean;
+
+    property Clip: Boolean read get_Clip write set_Clip;
+    property Css: string read get_Css write set_Css;
+    property WebCursor: TIWCursor read get_WebCursor write set_WebCursor;
+    property UseFrame: Boolean read get_UseFrame write set_UseFrame;
+    property SupportsPartial: Boolean read get_SupportsPartial write set_SupportsPartial;
+    // Hint support
+    property ShowHint: Boolean read get_ShowHint write set_ShowHint;
+    property ParentShowHint: Boolean read get_ParentShowHint write set_ParentShowHint;
+
+
+    property HTMLLeft: Integer read get_HTMLLeft;
+    property HTMLTop: Integer read get_HTMLTop;
+    // property HTMLWidth: Integer read get_HTMLWidth;
+    // property HTMLHeight: Integer read get_HTMLHeight;
+
+    property Align: TAlign read get_Align write set_Align;
+    property Anchors: TAnchors read get_Anchors write set_Anchors;
+
+
+    property RenderSize: Boolean read get_RenderSize;
+    property StyleRenderOptions: TIWStyleRenderOptions read get_StyleRenderOptions write set_StyleRenderOptions;
+    property ScriptEvents: TIWScriptEvents read get_ScriptEvents write set_ScriptEvents;
+    property SkinId: string read get_SkinId write set_SkinId;
+    property ZIndex: Integer read get_ZIndex write set_ZIndex;
+  end;
+
+  IIWHTML40Container = interface(IIWBaseContainer)
+    ['{54D229F9-0F29-47E4-B223-32A700C308C2}']
+    procedure SetActiveControl(AControl: IIWHTML40Control);
+
+    procedure set_LayoutMgr(Value: TIWContainerLayout);
+    function get_LayoutMgr: TIWContainerLayout;
+
+    function GenerateControlPositions: string;
+
+    procedure RenderAsyncComponents(AContext: TIWContainerContext; APageContext: TIWBasePageContext);
+
+    function get_ShowHint: Boolean;
+    procedure set_ShowHint(Value: Boolean);
+
+    function get_Width: Integer;
+    function get_Height: Integer;
+
+    property Width: Integer read get_Width;
+    property Height: Integer read get_Height;
+
+    property ShowHint: Boolean read get_ShowHint write set_ShowHint;
+
+    property LayoutMgr: TIWContainerLayout read get_LayoutMgr write set_LayoutMgr;
+  end;
+
+  IIWHTML40Form = interface(IIWHTML40Container)
+    ['{4B079370-D1B7-4D13-9501-AD0D1572BF4D}']
+    procedure SetBounds(ALeft, ATop, AWidth, AHeight: Integer);
+
+    procedure AddToInitProc(const ACode: string);
+
+    function get_PageContext: TIWPageContext40;
+
+    property PageContext: TIWPageContext40 read get_PageContext;
+  end;
+
+  IIWInputControl40 = interface(IIWInputControl)
+    ['{E025BCAB-CE77-4F61-BE1E-552BAE558045}']
+    function get_SubmitOnAsyncEvent: Boolean;
+    procedure set_SubmitOnAsyncEvent(aValue: Boolean);    
+  
+    property SubmitOnAsyncEvent: Boolean read get_SubmitOnAsyncEvent write set_SubmitOnAsyncEvent;  
+  end;
+
+  function HTML40ControlInterface(AObject: TObject): IIWHTML40Control; overload; {$IFDEF USE_INLINE} inline; {$ENDIF}
+  function HTML40ControlInterface(AObject: TObject; out AInterface: IIWHTML40Control): Boolean; overload; {$IFDEF USE_INLINE} inline; {$ENDIF}
+
+  function HTML40ComponentInterface(AObject: TObject): IIWHTML40Component; overload; {$IFDEF USE_INLINE} inline; {$ENDIF}
+  function HTML40ComponentInterface(AObject: TObject; out AInterface: IIWHTML40Component): Boolean; overload; {$IFDEF USE_INLINE} inline; {$ENDIF}
+
+  function HTML40ContainerInterface(AObject: TObject): IIWHTML40Container; {$IFDEF USE_INLINE} inline; {$ENDIF}
+  function HTML40FormInterface(AObject: TObject): IIWHTML40Form; {$IFDEF USE_INLINE} inline; {$ENDIF}
+
+  function InputControl40Interface(AObject: TObject): IIWInputControl40; overload; {$IFDEF USE_INLINE} inline; {$ENDIF}
+  function InputControl40Interface(AObject: TObject; out AInterface: IIWInputControl40): Boolean; overload; {$IFDEF USE_INLINE} inline; {$ENDIF}
+
+  procedure SetActiveControl(AParent: TComponent; AControl: IIWHTML40Control);
+  procedure SetDoRefreshControl(ARoot: TComponent; AValue: Boolean);
+
+implementation

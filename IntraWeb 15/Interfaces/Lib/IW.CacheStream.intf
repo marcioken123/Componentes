@@ -1,0 +1,40 @@
+unit IW.CacheStream;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, IW.Common.StreamHelper, IWApplication, IW.Common.TempFileStream, IWForm;
+
+type
+  TCacheType = (ctOneTime, ctApp, ctSession, ctForm);
+
+  TCacheStream = class(TStreamHelper)
+  protected
+    mHref: string;
+    mSession: TIWApplication;
+    mContentType: string;
+    mCacheType: TCacheType;
+    mFilename: string;
+    mAttachment: Boolean;
+    function GetHref: string;
+    procedure Init(aOwner: TObject; const aFileName: string; aCacheType: TCacheType);
+    procedure WriteMetaData;
+    class procedure ResolveSession(aOwner: TObject; const aCacheType: TCacheType; out aSession: TIWApplication; out aForm: TIWForm);
+  public
+    class var DefaultPrefix: string;
+    // aOwner param must be TIWApplication or TIWForm
+    constructor Create(aOwner: TObject; aCacheType: TCacheType = ctOneTime); overload;
+    constructor Create(aOwner: TObject; const aFileName: string; aCacheType: TCacheType = ctOneTime); overload;
+    destructor Destroy; override;
+    class function CacheDir: string; overload;
+    class function CacheDir(aOwner: TObject; const aCacheType: TCacheType): string; overload;
+    //
+    property Href: string read GetHref;
+    property ContentType: string read mContentType write mContentType;
+    property CacheType: TCacheType read mCacheType write mCacheType;
+    property Filename: string read mFilename;
+    property Attachment: Boolean read mAttachment write mAttachment;
+  end;
+
+implementation

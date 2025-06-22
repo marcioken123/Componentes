@@ -1,0 +1,17 @@
+unit IWPermissions;
+{$I IWCompilerDefines.inc}
+
+interface
+
+type
+  TIWPermissions = class
+  protected
+    mCanEditPages: Boolean;
+    //
+    procedure SetCanEditPages(const Value: Boolean);
+  public
+    constructor Create;
+    property CanEditPages: Boolean read mCanEditPages write SetCanEditPages;
+  end;
+
+implementation

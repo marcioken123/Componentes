@@ -1,0 +1,465 @@
+unit IWjQGrid;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, Controls, Forms, IWBaseHTMLControl,
+  IWBaseInterfaces, Graphics, IWHTMLTag, IWRenderContext, IWControl, DB,
+  IWApplication, IW.Common.StrBuilder, IW.Common.RenderStream,
+  IW.Common.StrLists, IWXMLTag, StrUtils, IWTypes;
+
+type
+  TDataType = (dtText, dtInt, dtFloat, dtDate, dtCurrency, dtCheckBox, dtSelect);
+
+  TCellEvent = procedure(Sender: TObject; const RowID: string; const Row, Col: Integer) of object;
+
+  TCellSaveEvent = procedure(Sender: TObject; const RowID: string; ACol: Integer; const AColName: string;
+                             var AValue: string; var ASave: Boolean; var AErrorMessage: string) of object;
+
+  TCellAsyncEvent = procedure(Sender: TObject; EventParams: TStringList;
+                              const RowID: string; const Row, Col: Integer) of object;
+
+  TCellDataEvent = procedure(Sender: TObject; const Row, Col: Integer; var CellText: string) of object;
+
+  TGetCellDataEvent = procedure(Sender: TObject; const RowID: string; Col: Integer; const AValue: string) of object;
+
+  TRowEvent = procedure(Sender: TObject; const RowID: string) of object;
+
+  TRowAsyncEvent = procedure(Sender: TObject; EventParams: TStringList; const RowID: string) of object;
+
+  TColumnResizeEvent = procedure(Sender: TObject; Col: Integer; Width: Integer; var Update: Boolean) of object;
+
+  TIWCustomjQGrid = class;
+
+  TColumnCursor = (ccDefault, ccHand, ccHelp, ccText);
+
+  TEditType = (etNone, etCheckBox, etText, etTextarea, etSelect, etPassword, etButton, etImage, etDatePicker);
+
+  TGridUI = (uiBootstrap, uiJQuery, uiBootstrap4, uiBootstrap5);
+
+  TjQGridColumn = class(TCollectionItem)
+  private
+    FWidth: Integer;
+    FSortable: Boolean;
+    FAlignment: TAlignment;
+    FName: string;
+    FDataType: TDataType;
+    FTitle: string;
+    FRowId: boolean;
+    FSearchable: Boolean;
+    FCursor: TColumnCursor;
+    FVisible: boolean;
+    FLink: Boolean;
+    FEditable: Boolean;
+    FEditType: TEditType;
+    FDisabled: Boolean;
+    FCheckBoxValues: string;
+    FDecimalPlaces: Byte;
+    FShowThousandSeparator: Boolean;
+    FDefaultValue: string;
+    FResizable: Boolean;
+    FLookupList: TStrings;
+    procedure SetTitle(const Value: string);
+    procedure SetAlignment(const Value: TAlignment);
+    procedure SetWidth(const Value: Integer);
+    procedure InvalidateGrid;
+    procedure SetLookupList(const Value: TStrings);
+  protected
+    function GetGrid: TIWCustomjQGrid;
+    function GetDisplayName: string; {$IFNDEF FPC}override;{$ENDIF}
+    property RowId: boolean read FRowId write FRowId default False;    // regular grid uses Row # as Key. DB aware grid make it published
+  published
+    property Width: Integer read FWidth write SetWidth;
+    property Name: string read FName write FName;
+    property Sortable: Boolean read FSortable write FSortable default True;
+    property Alignment: TAlignment read FAlignment write SetAlignment default taLeftJustify;
+    property DataType: TDataType read FDataType write FDataType default dtText;
+    property Title: string read FTitle write SetTitle;
+    property Searchable: Boolean read FSearchable write FSearchable default False;
+    property Cursor: TColumnCursor read FCursor write FCursor default ccDefault;
+    property Visible: Boolean read FVisible write FVisible default True;
+    property Link: Boolean read FLink write FLink default False;
+    property Editable: Boolean read FEditable write FEditable default False;
+    property EditType: TEditType read FEditType write FEditType default etNone;
+    property Disabled: Boolean read FDisabled write FDisabled default False;
+    property CheckBoxValues: string read FCheckBoxValues write FCheckBoxValues;
+    property DecimalPlaces: Byte read FDecimalPlaces write FDecimalPlaces default 0;
+    property ShowThousandSeparator: Boolean read FShowThousandSeparator write FShowThousandSeparator default False;
+    property DefaultValue: string read FDefaultValue write FDefaultValue;
+    property Resizable: Boolean read FResizable write FResizable default True;
+    property LookupList: TStrings read FLookupList write SetLookupList;
+  public
+    constructor Create(Collection: TCollection); override;
+    destructor Destroy; override;
+    procedure Assign(Source: TPersistent); override;
+    property Grid: TIWCustomjQGrid read GetGrid;
+  end;
+
+  TjQGridColumnClass = class of TjQGridColumn;
+
+  TjQGridColumns = class(TOwnedCollection)
+  private
+    FGrid: TIWCustomjQGrid;
+  public
+    constructor Create(Grid: TIWCustomjQGrid; ColumnClass: TjQGridColumnClass);
+    property Items; default;
+    property Grid: TIWCustomjQGrid read FGrid;
+  end;
+
+  TToolbarPosition = (tpTop, tpBottom, tpBoth);
+
+  TjQGridOperation = (opEdit, opInsert, opDelete);
+
+  TjQGridOption = (goViewRecords, goAutoGridWidth, goAutoColumnWidth, goCellEdit, goGridView,
+    goHoverRows, goIgnoreCase, goMultiSelect, goRowNumbers, goScroll,
+    goSortable, goZebraStriped, goShowHideBtn, goShowToolbar,
+    goShowPager, goRowSelect, goMultiBoxOnly, goShowTopPager, goShowFilterToolbar);
+
+  TjQGridOptions = set of TjQGridOption;
+
+  TjQFilterSearchOption = (foEqual, foNotEqual, foLowerThan, foLowerOrEqual, foGreaterThan,
+                     foGreaterOrEqual, foBeginsWith, foNotBeginsWith, foIn, foNotIn,
+                     foEndsWith, foNotEndsWith, foContains, foNotContains);
+
+  TjQFilterOptions = class(TPersistent)
+  private
+    FShowDatePicker: Boolean;
+    FSearchOption: TjQFilterSearchOption;
+    FSelectAnyStr: string;
+    function IsSelectAnyStrStored: Boolean;
+  public
+    constructor Create;
+    procedure Assign(Source: TPersistent); override;
+  published
+    property ShowDatePicker: Boolean read FShowDatePicker write FShowDatePicker default True;
+    property SelectAnyStr: string read FSelectAnyStr write FSelectAnyStr stored IsSelectAnyStrStored;
+    property SearchOption: TjQFilterSearchOption read FSearchOption write FSearchOption default foBeginsWith;
+  end;
+
+  TjQDatePickerOptions = class(TPersistent)
+  private
+    FAutoSize: Boolean;
+    FShowWeek: Boolean;
+    FChangeYear: Boolean;
+    FShowButtonPanel: Boolean;
+    FChangeMonth: Boolean;
+    FYearRange: string;
+    function GetjQueryUIDateFormat(const ADateFormat: string): string;
+    function IsYearRangeStored: Boolean;
+  public
+    constructor Create;
+    procedure Assign(Source: TPersistent); override;
+    function Render(const ADateFormat: string): string;
+  published
+    property AutoSize: Boolean read FAutoSize write FAutoSize default True;
+    property ChangeYear: Boolean read FChangeYear write FChangeYear default True;
+    property ChangeMonth: Boolean read FChangeMonth write FChangeMonth default True;
+    property ShowButtonPanel: Boolean read FShowButtonPanel write FShowButtonPanel default True;
+    property ShowWeek: Boolean read FShowWeek write FShowWeek default False;
+    property YearRange: string read FYearRange write FYearRange stored IsYearRangeStored;
+  end;
+
+  TIWCustomjQGrid = class(TIWControl, IIWSubmitControl)
+  private
+    class var FLocalJavaScriptFolder: string;
+    class var FLocalStyleFolder: string;
+  private
+    { Private declarations }
+    FWebApp: TIWApplication;
+    FSubmitParam: string;
+    FSubmitParams: TStrings;
+    FPagerName: string;
+    FColumns: TjQGridColumns;
+    FCaption: string;
+    FVisibleRowCount: Integer;
+    FOptions: TjQGridOptions;
+    FToolbarPosition: TToolbarPosition;
+    FOnAsyncLinkClick: TCellAsyncEvent;
+    FOnAsyncDblClickRow: TCellAsyncEvent;
+    FOnAsyncRightClickRow: TCellAsyncEvent;
+    FOnAsyncSelectRow: TRowAsyncEvent;
+    FOnDblClick: TCellEvent;
+    FOnAsyncColumnResize: TColumnResizeEvent;
+    FOnRowClick: TRowEvent;
+    FSelectedIds: string;
+    FOnGetMultiSelectIDs: TNotifyEvent;
+    FDateFormat: string;
+    FShowBusyOnAsyncEvent: boolean;
+    FUI: TGridUI;
+    FRenderCDNFiles: Boolean;
+    FRenderLocalFiles: Boolean;
+    FRowCount: Integer;
+    FjQueryUIThemeName: string;
+    FRenderRowId: Boolean;
+    FOnSaveCell: TCellSaveEvent;
+    FOnAsyncGetCell: TGetCellDataEvent;
+    FUpdateCount: Integer;
+    FRowSelectedStatus: Boolean;
+    FRenderBootstrapThemeFile: Boolean;
+    FAutoWordWrap: Boolean;
+    FVerticalAlign: TIWVerticalAlignment;
+    FHeaderWordWrap: Boolean;
+    FNeedsjQueryUI: Boolean;
+    FFilterOptions: TjQFilterOptions;
+    FDatePickerOptions: TjQDatePickerOptions;
+    FjQueryUIThemeCssPath: string;
+    FBootstrapVersion: string;
+    procedure AddGridDef(AContext: TIWCompContext);
+    procedure AddCursors(AContext: TIWCompContext);
+    procedure AddEvents(AContext: TIWCompContext);
+    procedure SetColumns(const Value: TjQGridColumns);
+    function AddColumnsHTML: string;
+    procedure AddOptionsHTML;
+    procedure AddToolbarHTML;
+    procedure AddEventsHTML;
+    procedure ScrollToCurrentRow(AContext: TIWCompContext);
+    procedure CheckNeedRepaint;
+    procedure SetCaption(const Value: string);
+    procedure SetOptions(const Value: TjQGridOptions);
+    procedure SetToolbarPosition(const Value: TToolbarPosition);
+    function GetjQName: string;
+    function GetjQSelectorID: string;
+    function GetWebApp: TIWApplication;
+    procedure SetSelectedIds(const Value: string);
+    procedure SetUI(const Value: TGridUI);
+    function GetDataStr: string;
+    procedure SetDataStr(const Value: string);
+    procedure ParseSubmitCellParams;
+    procedure ParseSubmitParams;
+    procedure SetRowCount(const Value: Integer);
+    procedure ColumnsChanged;
+    procedure SetRenderCDNFiles(const Value: Boolean);
+    procedure SetRenderLocalFiles(const Value: Boolean);
+    procedure SetRenderBootstrapThemeFile(const Value: Boolean);
+    procedure SetFilterOptions(const Value: TjQFilterOptions);
+    procedure SetDatePickerOptions(const Value: TjQDatePickerOptions);
+    function IsDateFormatStored: Boolean;
+    procedure SetjQueryUIThemeName(const Value: string);
+    function GetjQueryUIThemeCssPath: string;
+    procedure SetBootstrapVersion(const Value: string);
+  protected
+    { Protected declarations }
+    FSB: TStrBuilder;
+    FRowID: string;
+    FRow, FCol, FPage: Integer;
+    FStatus: string;
+    FColName, FValue: string;
+    FKeyCount: Integer;
+    FOper: TjQGridOperation;
+    class procedure Error(const AMsg: string); overload; static;
+    class procedure Error(const AMsg: string; AIndex: Integer); overload; static;
+    procedure ResizeCells; virtual;
+    procedure CheckCol(ACol: Integer);
+    procedure CheckRow(ARow: Integer);
+    procedure CheckIndexes(ARow, ACol: Integer);
+    procedure Notification(AComponent: TComponent; Operation: TOperation); override;
+    procedure IWPaint; override;
+    procedure FillTableData; virtual; abstract;
+    procedure Submit(const AValue: string); override;
+    procedure ExecMethod(const jsCode: string; APageContext: TIWPageContext40 = nil);
+    procedure AddTableData(AContext: TIWCompContext); virtual;
+    function CreateColumns: TjQGridColumns; virtual;
+    procedure DoAsyncLinkClick(EventParams: TStringList); virtual;
+    procedure DoAsyncDblClickRow(EventParams: TStringList); virtual;
+    procedure DoAsyncRightClickRow(EventParams: TStringList); virtual;
+    procedure DoAsyncSelectRow(EventParams: TStringList); virtual;
+    procedure DoAsyncMultiSelectRows(EventParams: TStringList); virtual;
+    procedure DoAsyncGetCell(EventParams: TStringList); virtual;
+    procedure DoOnEditCell(EventParams: TStrings; out aResult: string); virtual;
+    procedure DoSaveCell(const ARowID: string; ACol: Integer; const AColName, ANewValue: string); virtual; abstract;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    procedure DoAsyncColumnResize(EventParams: TStringList); virtual;
+    function ParseSubmitParam(const aParamName: string): string;
+    procedure SetGridWidth(const AWidth: Integer);
+    procedure SetGridHeight(const AHeight: Integer);
+    // DoGridXXXX functions deal with the grid on the browser
+    procedure DoGridSetCell(const ARowID, AColName, ANewValue: string); virtual;
+    procedure SetValue(const AValue: string); override;
+    procedure set_Visible(Value: Boolean); override;
+    procedure AddRequiredFiles(AContext: TIWCompContext); virtual;
+    procedure Loaded; override;
+    property ShowBusyOnAsyncEvent: boolean read FShowBusyOnAsyncEvent write FShowBusyOnAsyncEvent default False;
+    property Columns: TjQGridColumns read FColumns write SetColumns;
+    property RowCount: Integer read FRowCount write SetRowCount;
+    property OnAsyncLinkClick: TCellAsyncEvent read FOnAsyncLinkClick write FOnAsyncLinkClick;
+    property OnAsyncDblClickRow: TCellAsyncEvent read FOnAsyncDblClickRow write FOnAsyncDblClickRow;
+    property OnAsyncRightClickRow: TCellAsyncEvent read FOnAsyncRightClickRow write FOnAsyncRightClickRow;
+    property OnAsyncSelectRow: TRowAsyncEvent read FOnAsyncSelectRow write FOnAsyncSelectRow;
+    property OnGetMultiSelectIDs: TNotifyEvent read FOnGetMultiSelectIDs write FOnGetMultiSelectIDs;
+    property OnRowClick: TRowEvent read FOnRowClick write FOnRowClick;
+    property OnDblClick: TCellEvent read FOnDblClick write FOnDblClick;
+    property OnSaveCell: TCellSaveEvent read FOnSaveCell write FOnSaveCell;
+    property OnAsyncColumnResize: TColumnResizeEvent read FOnAsyncColumnResize write FOnAsyncColumnResize;
+    property OnAsyncGetCell: TGetCellDataEvent read FOnAsyncGetCell write FOnAsyncGetCell;
+    property WebApp: TIWApplication read GetWebApp;
+    property NeedsjQueryUI: Boolean read FNeedsjQueryUI;
+  public
+    { Public declarations }
+    function DoGridGetCell(const ARowID, AColName: string): string; virtual;
+    constructor Create(AOwner: TComponent); override;
+    destructor Destroy; override;
+    function RenderStyle(AComponentContext: TIWCompContext): string; override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    function GetSubmitParam: string;
+    function get_HasTabOrder: boolean; override;
+    procedure RefreshData; virtual;
+    procedure ClearGridData; virtual;
+    procedure UpdateSelectedIDs;
+    function ColumnIndex(const AColName: string): Integer;
+    procedure HideColumn(const ACol: Integer); overload;
+    procedure HideColumn(const AColName: string); overload;
+    procedure ShowColumn(const ACol: Integer); overload;
+    procedure ShowColumn(const AColName: string); overload;
+    procedure SetCell(const ARow, ACol: Integer; const AValue: string); virtual;
+    procedure EditCell(const ARow, ACol: Integer; AEdit: Boolean = True); overload;
+    procedure EditCell(const ACol: Integer; AEdit: Boolean = True); overload;
+    procedure BeginUpdate;
+    procedure EndUpdate;
+    procedure SetBounds(ALeft, ATop, AWidth, AHeight: Integer); override;
+    procedure ToggleToolbar();
+    procedure SetSelection(const ARowId: string);
+    procedure DownloadContentFiles;
+    property DataStr: string read GetDataStr write SetDataStr;
+    property jQName: string read GetjQName;
+    property jQSelectorID: string read GetjQSelectorID;
+    property SelectedIds: string read FSelectedIDs write SetSelectedIds;
+    property UpdateCount: Integer read FUpdateCount;
+    property RowSelectedStatus: Boolean read FRowSelectedStatus;
+    property jQueryUIThemeCssPath: string read GetjQueryUIThemeCssPath;
+    class property LocalJavaScriptFolder: string read FLocalJavaScriptFolder write FLocalJavaScriptFolder;
+    class property LocalStyleFolder: string read FLocalStyleFolder write FLocalStyleFolder;
+  published
+    { Published declarations }
+    property HeaderWordWrap: Boolean read FHeaderWordWrap write FHeaderWordWrap default False;
+    property AutoWordWrap: Boolean read FAutoWordWrap write FAutoWordWrap default False;
+    property VerticalAlign: TIWVerticalAlignment read FVerticalAlign write FVerticalAlign default vaBaseline;
+    property Caption: string read FCaption write SetCaption;
+    property VisibleRowCount: Integer read FVisibleRowCount write FVisibleRowCount;
+    property Options: TjQGridOptions read FOptions write SetOptions;
+    property ToolbarPosition: TToolbarPosition read FToolbarPosition write SetToolbarPosition default tpTop;
+    property DateFormat: string read FDateFormat write FDateFormat stored IsDateFormatStored;
+    property UI: TGridUI read FUI write SetUI default uiBootstrap;
+    property jQueryUIThemeName: string read FjQueryUIThemeName write SetjQueryUIThemeName;
+    property RenderCDNFiles: Boolean read FRenderCDNFiles write SetRenderCDNFiles default True;
+    property RenderLocalFiles: Boolean read FRenderLocalFiles write SetRenderLocalFiles default False;
+    property RenderRowId: Boolean read FRenderRowId write FRenderRowId default True;
+    property RenderBootstrapThemeFile: Boolean read FRenderBootstrapThemeFile write SetRenderBootstrapThemeFile default False;
+    property FilterOptions: TjQFilterOptions read FFilterOptions write SetFilterOptions;
+    property DatePickerOptions: TjQDatePickerOptions read FDatePickerOptions write SetDatePickerOptions;
+    property BootstrapVersion: string read FBootstrapVersion write SetBootstrapVersion;
+    // fixes a property name with a typo
+    property BootstrapVesion: string write SetBootstrapVersion;
+  end;
+
+  TIWjQGridCells = array of array of string;
+
+  {$include IWPlatformAttrib.inc}
+  TIWjQGrid = class(TIWCustomjQGrid)
+  private
+    FOnGetCellText: TCellDataEvent;
+    FVirtualMode: Boolean;
+    procedure SetVirtualMode(const Value: Boolean);
+    function GetCellValue(ARow, ACol: Integer): string;
+    procedure SetCellValue(ARow, ACol: Integer; const AValue: string);
+  protected
+    FCells: TIWjQGridCells;
+    procedure ResizeCells; override;
+    procedure FillTableData; override;
+    procedure DoSaveCell(const RowID: string; ACol: Integer; const AColName, ANewValue: string); override;
+  public
+    constructor Create(AOwner: TComponent); override;
+    property Cell[ARow, ACol: Integer]: string read GetCellValue write SetCellValue;
+    function CreateColumn(const ATitle: string; const AName: string = ''): TjQGridColumn;
+  published
+    // republished from TIWCustomjQGrid
+    procedure SetCell(const ARow, ACol: Integer; const AValue: string); override;
+    property VirtualMode: Boolean read FVirtualMode write SetVirtualMode default True;
+    property ShowBusyOnAsyncEvent;
+    property VisibleRowCount;
+    property Columns;
+    property RowCount;
+    property OnAsyncLinkClick;
+    property OnAsyncDblClickRow;
+    property OnAsyncRightClickRow;
+    property OnAsyncSelectRow;
+    property OnRowClick;
+    property OnDblClick;
+    property OnGetMultiSelectIDs;
+    property OnGetCellText: TCellDataEvent read FOnGetCellText write FOnGetCellText;
+    property OnSaveCell;
+    property OnAsyncColumnResize;
+  end;
+
+  TIWjQDBGrid = class;
+
+  TjQGridDataLink = class(TDataLink)
+  private
+    FGrid: TIWjQDBGrid;
+  protected
+    procedure RecordChanged(Field: TField); override;
+    procedure ActiveChanged; override;
+  public
+    constructor Create(AGrid: TIWjQDBGrid);
+  end;
+
+  TjQGridDBColumn = class(TjQGridColumn)
+  private
+    FFieldName: string;
+    FField: TField;
+    procedure SetFieldName(const Value: string);
+    procedure SetField(Value: TField);
+    procedure FieldChanged;
+  protected
+    function GetDisplayName: string; {$IFNDEF FPC}override;{$ENDIF}
+  public
+    procedure Assign(Source: TPersistent); override;
+    property Field: TField read FField write FField;
+  published
+    property FieldName: string read FFieldName write SetFieldName;
+    property DataField: string read FFieldName write SetFieldName;
+    property RowId;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWjQDBGrid = class(TIWCustomjQGrid)
+  private
+    FDataLink: TjQGridDataLink;
+    FKeys: array of TField;
+    FMaxRecords: Integer;
+    function GetDataSource: TDataSource;
+    procedure SetDataSource(const Value: TDataSource);
+    function KeyToVarArray(const AKey: string): Variant;
+  protected
+    procedure FillTableData; override;
+    function CreateColumns: TjQGridColumns; override;
+    property DataLink: TjQGridDataLink read FDataLink;
+    procedure RecordChanged(Field: TField);
+    procedure Notification(AComponent: TComponent; Operation: TOperation); override;
+    procedure DoSaveCell(const ARowID: string; ACol: Integer; const AColName, ANewValue: string); override;
+  public
+    constructor Create(AOwner: TComponent); override;
+    destructor Destroy; override;
+    procedure SetCell(const ARow, ACol: Integer; const AValue: string); override;
+    function GetCurrentRowId: string;
+    function CreateColumn(const AFieldName: string; const ATitle: string = ''): TjQGridDBColumn;
+  published
+    property DataSource: TDataSource read GetDataSource write SetDataSource;
+    property MaxRecords: Integer read FMaxRecords write FMaxRecords default 0;
+    // republished from TIWCustomjQGrid
+    property ShowBusyOnAsyncEvent;
+    property Columns;
+    property OnAsyncLinkClick;
+    property OnAsyncDblClickRow;
+    property OnAsyncRightClickRow;
+    property OnAsyncSelectRow;
+    property OnRowClick;
+    property OnDblClick;
+    property OnGetMultiSelectIDs;
+    property OnSaveCell;
+    property OnAsyncColumnResize;
+  end;
+
+procedure MakeJsonString(DS: TDataSet; var sOutput: string);
+
+implementation

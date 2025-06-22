@@ -1,0 +1,19 @@
+unit IW.Browser.Chrome;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  IW.Browser.Browser, IW.Browser.Webkit;
+
+type
+  TChrome = class(TWebkit)
+  public
+    const
+      BROWSER_NAME = 'Chrome';
+      MIN_VERSION = 7;  // first HTML 5 Chrome
+    constructor Create(aVersion: single); override;
+    class function Match(AUserAgent: string; out AVersion: Single): Boolean; override;
+  end;
+
+implementation

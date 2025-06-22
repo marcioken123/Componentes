@@ -1,0 +1,38 @@
+unit IW.Content.Form;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, IWAppForm, IW.Content.Base, IWApplication, IW.HTTP.Request,
+  IW.HTTP.Reply, IWException;
+
+type
+  EIWContentFormException = class(EIWException)
+  end;
+
+  TContentForm = class(TContentBase)
+  protected
+    mFormClass: TIWAppFormClass;
+    mFormClassName: string;
+    mUseExistingInstance: Boolean;
+    mAppendMappedURL: Boolean;
+    mUseSessionActiveForm: Boolean;
+    //
+    procedure Init;
+    procedure CheckFormClass;
+    function Execute(aRequest: THttpRequest; aReply: THttpReply; const aPathname: string;
+                     aSession: TIWApplication; aParams: TStrings): Boolean; override;
+    procedure DoBeforeProcessForm(aForm: TIWAppForm; aSession: TIWApplication); virtual;
+  public
+    constructor Create(aFormClass: TIWAppFormClass; DoBeforeExecuteCallback: TBeforeExecuteHandlerProc = nil); reintroduce; overload;
+    constructor Create(const aFormClassName: string; DoBeforeExecuteCallback: TBeforeExecuteHandlerProc = nil); reintroduce; overload;
+    function RequestAuth(aRequest: THttpRequest; var rGroup: string): Boolean; override;
+    property FormClass: TIWAppFormClass read mFormClass;
+    property FormClassName: string read mFormClassName;
+    property UseExistingInstance: Boolean read mUseExistingInstance write mUseExistingInstance default True;
+    property AppendMappedURL: Boolean read mAppendMappedURL write mAppendMappedURL default True;
+    property UseSessionActiveForm: Boolean read mUseSessionActiveForm write mUseSessionActiveForm default False;
+  end;
+
+implementation

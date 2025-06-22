@@ -1,0 +1,75 @@
+unit IWCompObject;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, IWXMLTag,
+  IWControl, IWHTMLTag, IWRenderContext;
+
+type
+  TIWObjectParamValueType = (vtRef, vtData, vtObject);
+
+  TIWObjectParam = class(TCollectionItem)
+  protected
+    FName: string;
+    FValue: string;
+    FValueType: TIWObjectParamValueType;
+  public
+    constructor Create(Collection: TCollection); override;
+    procedure Assign(Source: TPersistent); override;
+
+    property Name: string read FName write FName;
+    property Value: string read FValue write FValue;
+    property ValueType: TIWObjectParamValueType read FValueType write FValueType;
+  end;
+
+  TIWObjectParams = class(TOwnedCollection)
+  protected
+
+    function GetItem(Index: Integer): TIWObjectParam;
+    procedure SetItem(Index: Integer; const Value: TIWObjectParam);
+  public
+    function Add: TIWObjectParam;
+    constructor Create(AOwner: TPersistent); reintroduce;
+
+    property Items[Index: Integer]: TIWObjectParam read GetItem write SetItem; default;
+  end;
+
+  TIWCustomObject = class(TIWCustomControl)
+  protected
+    FFileReference: string;
+    FArchive: string;
+    FClassID: string;
+    FCodeBase: string;
+    FCodeType: string;
+    FData: string;
+    FDeclare: Boolean;
+    FObjectType: string;
+    FParams: TIWObjectParams;
+    FPluginsPage: string;
+    FRenderEMBED: Boolean;
+    FStandby: string;
+
+    procedure InitControl; override;
+  protected
+    procedure Dispose(ADispose: Boolean); override;
+    function get_HasName: Boolean; override;
+  public
+    function RenderInnerHTML(AParentTag: TIWHTMLTag):TIWHTMLTag; virtual;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    property Archive: string read FArchive write FArchive;
+    property ClassID: string read FClassID write FClassID;
+    property CodeBase: string read FCodeBase write FCodeBase;
+    property CodeType: string read FCodeType write FCodeType;
+    property Data: string read FData write FData;
+    property Declare: Boolean read FDeclare write FDeclare;
+    property ObjectType: string read FObjectType write FObjectType;
+    property Params: TIWObjectParams read FParams write FParams;
+    property PluginsPage: string read FPluginsPage write FPluginsPage;
+    property RenderEMBED: Boolean read FRenderEmbed write FRenderEMBED;
+    property StandBy: string read FStandBy write FStandBy;
+  end;
+
+implementation

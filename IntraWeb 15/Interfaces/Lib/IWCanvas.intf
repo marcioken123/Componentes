@@ -1,0 +1,231 @@
+unit IWCanvas;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes,
+  IWControl, IWRenderContext, IWHTMLTag, IWApplication, IWFont, IWXMLTag,
+  IW.Common.StrBuilder, IWColor, {$IFNDEF FPC} PngImage, Jpeg, {$ELSE} Graphics, IW.Common.FPCCompat, {$ENDIF}
+  IWMimeTypes, IWImageUtils, IWContainerBorderOptions;
+
+type
+  TCanvasLineCap = (lcButt, lcRound, lcSquare);
+
+  TCanvasLineJoin = (ljMiter, ljBevel, ljRound);
+
+  TCanvasTextAlign = (caStart, caEnd, caCenter, caLeft, caRight);
+
+  TCanvasTextBaseline = (tbAlphabetic, tbTop, tbHanging, tbMiddle, tbIdeographic, tbBottom);
+
+  TOnReceiveDataURL = procedure (Sender: TObject; const aData: string) of object;
+
+  TOnUploadPngImage = procedure (Sender: TObject; aImage: TPngImage) of object;
+  TOnUploadJpgImage = procedure (Sender: TObject; aImage: TJpegImage) of object;
+
+  TIWCustomCanvas = class(TIWCustomControl)
+  protected
+    FPenColor: TIWColor;
+    FBrushColor: TIWColor;
+    FLineWidth: Integer;
+    FGlobalAlpha: Double;
+    FLineCap: TCanvasLineCap;
+    FLineJoin: TCanvasLineJoin;
+    FMiterLimit: Integer;
+    FFontChanged: Boolean;
+    FTextAlign: TCanvasTextAlign;
+    FTextBaseline: TCanvasTextBaseline;
+    FFocusOutline: Boolean;
+    FDrawCommands: TStrBuilder;
+    FOnDataURLReceived: TOnReceiveDataURL;
+    FOnPngImageUploaded: TOnUploadPngImage;
+    FOnJpgImageUploaded: TOnUploadJpgImage;
+    FBorderOptions: TIWBorderOptions;
+    procedure AddContext;
+    procedure SetPenColor(const Value: TIWColor);
+    procedure SetBrushColor(const Value: TIWColor);
+    procedure SetLineWidth(const Value: Integer);
+    procedure SetGlobalAlpha(const Value: Double);
+    procedure SetLineCap(const Value: TCanvasLineCap);
+    procedure SetLineJoin(const Value: TCanvasLineJoin);
+    procedure SetMiterLimit(const Value: Integer);
+    procedure CheckRenderFont;
+    procedure SetTextAlign(const Value: TCanvasTextAlign);
+    procedure SetTextBaseline(const Value: TCanvasTextBaseline);
+    procedure CheckContext;
+    procedure Add(const aDrawCommand: string); overload;
+    procedure Add(const aDrawCommand: string; aX, aY: Integer); overload;
+    procedure Add(const aProperty, aValue: string); overload;
+    procedure Add(const aProperty: string; aValue: Integer); overload;
+    procedure RenderDrawCommands(AContext: TIWCompContext);
+    procedure FontChanged(ASender: TObject); override;
+    function IsFontStored: Boolean;
+    procedure DoAsyncReceiveDataURL(EventParams: TStringList);
+    procedure PngImageUploaded(var ADataURL: string);
+    procedure JpgImageUploaded(var ADataURL: string);
+    procedure DataURLReceived(var ADataURL: string); virtual;
+    function IsImageUploadEnabled: Boolean;
+    procedure UploadImage(const ToDataUrl: Boolean; aImageType: TIWImageOutput; aQuality: Integer);
+    procedure SetBorderOptions(const Value: TIWBorderOptions);
+    procedure BorderOptionsChange(ASender: TObject);
+    function CanvasId: string; virtual;
+  public
+    procedure InitControl; override;
+    procedure Dispose(ADispose: Boolean); override;
+    function RenderStyle(AContext: TIWCompContext): string; override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    // These need BeginPath/ClosePath/Stroke/Fill in order to work properly, as in HTML5
+    function MoveTo(X, Y: Integer): TIWCustomCanvas;
+    function LineTo(X, Y: Integer): TIWCustomCanvas;
+    function Arc(X, Y, R: Integer; Angle1, Angle2: Double; Clockwise: Boolean = True): TIWCustomCanvas;
+    function ArcTo(X1, Y1, X2, Y2, R: Integer): TIWCustomCanvas;
+    function QuadraticCurveTo(cpX, cpY, X, Y: Integer): TIWCustomCanvas;
+    function BezierCurveTo(cp1X, cp1Y, cp2X, cp2Y, X, Y: Integer): TIWCustomCanvas;
+    function Circle(X, Y, R: Integer): TIWCustomCanvas;
+    function Rectangle(X, Y, W, H: Integer): TIWCustomCanvas;
+    function RoundRect(X, Y, W, H, R: Integer): TIWCustomCanvas;
+    // These are an extended version which calls BeginPath/ClosePath/Stroke automatically so things are drawn immediately
+    function MoveTo2(X, Y: Integer): TIWCustomCanvas;
+    function LineTo2(X, Y: Integer): TIWCustomCanvas;
+    function Arc2(X, Y, R: Integer; Angle1, Angle2: Double; Clockwise: Boolean = True): TIWCustomCanvas;
+    function ArcTo2(X1, Y1, X2, Y2, R: Integer): TIWCustomCanvas;
+    function QuadraticCurveTo2(cpX, cpY, X, Y: Integer): TIWCustomCanvas;
+    function BezierCurveTo2(cp1X, cp1Y, cp2X, cp2Y, X, Y: Integer): TIWCustomCanvas;
+    function Circle2(X, Y, R: Integer): TIWCustomCanvas;
+    function Rectangle2(X, Y, W, H: Integer): TIWCustomCanvas;
+    function RoundRect2(X, Y, W, H, R: Integer): TIWCustomCanvas;
+
+    function FillText(const AText: string; X, Y: Integer): TIWCustomCanvas;
+    function StrokeText(const AText: string; X, Y: Integer): TIWCustomCanvas;
+    function ClearRect(X, Y, W, H: Integer): TIWCustomCanvas;
+    function StrokeRect(X, Y, W, H: Integer): TIWCustomCanvas;
+    function FillRect(X, Y, W, H: Integer): TIWCustomCanvas;
+    function StrokeFillRect(X, Y, W, H: Integer): TIWCustomCanvas;
+
+    function Scale(sW, sH: Double): TIWCustomCanvas;
+    function Rotate(aAngle: Double): TIWCustomCanvas;
+    function Translate(X, Y: Integer): TIWCustomCanvas;
+
+    function BeginPath: TIWCustomCanvas;
+    function ClosePath: TIWCustomCanvas;
+    function Stroke: TIWCustomCanvas;
+    function Fill: TIWCustomCanvas;
+    function Clip: TIWCustomCanvas;
+    function Save: TIWCustomCanvas;
+    function Restore: TIWCustomCanvas;
+    function ToDataURL(aImageType: TIWImageOutput = ioPNG; aQuality: Integer = -1): TIWCustomCanvas;
+    function UploadPngImage: TIWCustomCanvas;
+    function UploadJpgImage(aQuality: Integer = 75): TIWCustomCanvas;
+    function DrawImage(const ImageId: string; X, Y: Integer): TIWCustomCanvas; overload;
+    function DrawImage(const ImageId: string; X, Y, W, H: Integer): TIWCustomCanvas; overload;
+    function DrawImage(const ImageId: string; ClipX, ClipY, ClipW, ClipH, X, Y, W, H: Integer): TIWCustomCanvas; overload;
+    function DrawCommand(const aDrawCommand: string): TIWCustomCanvas;
+    function CancelDrawCommands: TIWCustomCanvas;
+    function ClearCanvas(AUseBackgroundColor: Boolean = True): TIWCustomCanvas;
+//    procedure ResizeCanvas(aNewWidth, aNewHeight: Integer);
+    procedure LoadFromDataUrl(const aDataUrl: string);
+    procedure ResetCanvas;
+    procedure Download(const aFileName: string; aImageFormat: TMimeType = mtPNG);
+    property PenColor: TIWColor read FPenColor write SetPenColor default clWebBLACK;
+    property BrushColor: TIWColor read FBrushColor write SetBrushColor default clWebBLACK;
+    property LineWidth: Integer read FLineWidth write SetLineWidth default 1;
+    property LineCap: TCanvasLineCap read FLineCap write SetLineCap default lcButt;
+    property LineJoin: TCanvasLineJoin read FLineJoin write SetLineJoin default ljMiter;
+    property MiterLimit: Integer read FMiterLimit write SetMiterLimit default 10;
+    property GlobalAlpha: Double read FGlobalAlpha write SetGlobalAlpha;
+    property TextAlign: TCanvasTextAlign read FTextAlign write SetTextAlign default caStart;
+    property TextBaseline: TCanvasTextBaseline read FTextBaseline write SetTextBaseline default tbAlphabetic;
+  published
+    property BorderOptions: TIWBorderOptions read FBorderOptions write SetBorderOptions;
+    property FocusOutline: Boolean read FFocusOutline write FFocusOutline default True;
+    property Width default 300;
+    property Height default 200;
+    property Font stored IsFontStored;
+    property OnDataURLReceived: TOnReceiveDataURL read FOnDataURLReceived write FOnDataURLReceived;
+    property OnPngImageUploaded: TOnUploadPngImage read FOnPngImageUploaded write FOnPngImageUploaded;
+    property OnJpgImageUploaded: TOnUploadJpgImage read FOnJpgImageUploaded write FOnJpgImageUploaded;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWCanvas = class(TIWCustomCanvas)
+  published
+    property PenColor;
+    property BrushColor;
+    property LineWidth;
+    property LineCap;
+    property LineJoin;
+    property MiterLimit;
+    property GlobalAlpha;
+    property TextAlign;
+    property TextBaseline;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWSignaturePad = class(TIWCustomCanvas)
+  private
+    class var FLocalJavaScriptFolder: string;
+  protected
+    FRenderCDNFiles: Boolean;
+    FRenderLocalFiles: Boolean;
+    procedure AddRequiredFiles(AContext: TIWCompContext);
+    procedure SetRenderCDNFiles(const Value: Boolean);
+    procedure SetRenderLocalFiles(const Value: Boolean);
+    procedure Loaded; override;
+  public
+    procedure InitControl; override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    procedure Undo;
+    procedure DownloadContentFiles;
+    class property LocalJavaScriptFolder: string read FLocalJavaScriptFolder write FLocalJavaScriptFolder;
+  published
+    property PenColor;
+    property BrushColor;
+    property GlobalAlpha;
+    property RenderCDNFiles: Boolean read FRenderCDNFiles write SetRenderCDNFiles default True;
+    property RenderLocalFiles: Boolean read FRenderLocalFiles write SetRenderLocalFiles default False;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWImageLoader = class(TIWCustomCanvas)
+  private
+    class var FLocalJavaScriptFolder: string;
+    class var FLocalStyleFolder: string;
+  protected
+    FRenderCDNFiles: Boolean;
+    FRenderLocalFiles: Boolean;
+    FAcceptFiles: string;
+    FClickableElementId: string;
+    FResizeCanvas: Boolean;
+    procedure AddRequiredFiles(AContext: TIWCompContext);
+    procedure SetRenderCDNFiles(const Value: Boolean);
+    procedure SetRenderLocalFiles(const Value: Boolean);
+    procedure SetClickableElementId(const Value: string);
+    procedure SetAcceptFiles(const Value: string);
+    procedure SetResizeCanvas(const Value: Boolean);
+    function GetOptions(AContext: TIWCompContext): string;
+    procedure Loaded; override;
+    function CanvasId: string; override;
+    function IsForThisControl(AName: string): Boolean; override;
+  public
+    procedure InitControl; override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    procedure DownloadContentFiles;
+    function RenderStyle(AContext: TIWCompContext): string; override;
+
+    procedure StartCropper(aMinWidth: Integer = 0; aMaxWidth: Integer = 0;
+      aMinHeight: Integer = 0; aMaxHeight: Integer = 0; aAspectRatio: Double = 0);
+    procedure StopCropper;
+    procedure RotateCrop(aRotate: Integer = 0);
+    procedure Crop(aWidth: Integer = 0; aHeight: Integer = 0; aScale: Boolean = False; aCenter: Boolean = False);
+    class property LocalJavaScriptFolder: string read FLocalJavaScriptFolder write FLocalJavaScriptFolder;
+    class property LocalStyleFolder: string read FLocalStyleFolder write FLocalStyleFolder;
+  published
+    property RenderCDNFiles: Boolean read FRenderCDNFiles write SetRenderCDNFiles default True;
+    property RenderLocalFiles: Boolean read FRenderLocalFiles write SetRenderLocalFiles default False;
+    property AcceptFiles: string read FAcceptFiles write SetAcceptFiles;
+    property ClickableElementId: string read FClickableElementId write SetClickableElementId;
+    property ResizeCanvas: Boolean read FResizeCanvas write SetResizeCanvas default True;
+  end;
+
+implementation

@@ -1,0 +1,89 @@
+(*****************************************************************************
+The MIT License (MIT)
+
+Copyright (c) 2015-2016 Andreas Hausladen
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*****************************************************************************)
+
+{$A8,B-,C+,E-,F-,G+,H+,I+,J-,K-,M-,N-,O+,P+,Q-,R-,S-,T-,U-,V+,W-,X+,Z1}
+{$WARN WIDECHAR_REDUCED OFF} // All sets only use ASCII chars (<=#127) and the compiler generates the >=#128 check itself
+{$STRINGCHECKS OFF} // It only slows down Delphi strings, doesn't help C++Builder migration and is finally gone in XE+
+{$WARN SYMBOL_DEPRECATED OFF} // for StrLen/StrLComp
+{$POINTERMATH ON}
+
+unit IWJsonDataObjects;
+
+{$IFDEF VER200}
+  // Delphi 2009's ErrorInsight parser uses the CompilerVersion's memory address instead of 20.0, failing all the
+  // IF CompilerVersion compiler directives
+  {$DEFINE CPUX86}
+{$ELSE}
+  {$IF CompilerVersion >= 24.0} // XE3 or newer
+    {$LEGACYIFEND ON}
+  {$IFEND}
+  {$IF CompilerVersion >= 23.0}
+    {$DEFINE HAS_UNIT_SCOPE}
+    {$DEFINE HAS_RETURN_ADDRESS}
+  {$IFEND}
+  {$IF CompilerVersion <= 22.0} // XE or older
+    {$DEFINE CPUX86}
+  {$IFEND}
+  {$IF CompilerVersion >= 35.0}   //D11 Alexandria or newer
+    {$DEFINE REALLOC_NATIVEINT}
+  {$IFEND}
+{$ENDIF VER200}
+
+{$IFDEF NEXTGEN}
+  {$IF CompilerVersion >= 31.0} // 10.1 Berlin or newer
+    {$DEFINE SUPPORTS_UTF8STRING} // Delphi 10.1 Berlin supports UTF8String for mobile compilers
+  {$IFEND}
+{$ELSE}
+  {$DEFINE SUPPORTS_UTF8STRING}
+{$ENDIF}
+
+{$IFDEF CPUX64}
+  {$IFNDEF LINUX64} // Linux 64 compiler doesn't support ASM for x64 code => LLVM
+    {$DEFINE ASMSUPPORT}
+  {$ENDIF ~LINUX64}
+{$ENDIF CPUX64}
+{$IFDEF CPUX86}
+  {$DEFINE ASMSUPPORT}
+{$ENDIF CPUX86}
+{$IFDEF EXTERNALLINKER} // implicates LLVM
+  {$UNDEF ASMSUPPORT}
+{$ENDIF EXTERNALLINKER}
+
+// Enables the progress callback feature
+{$DEFINE SUPPORT_PROGRESS}
+
+// Sanity checks all array index accesses and raise an EListError exception.
+{$DEFINE CHECK_ARRAY_INDEX}
+
+// JSON allows the slash to be escaped. This is only necessary if you plan to put the JSON string
+// into a <script>-Tag because then "</" can't be used and must be escaped to "<\/". This switch
+// enables the special handling for "</" but makes the parser slightly slower.
+{.$DEFINE ESCAPE_SLASH_AFTER_LESSTHAN}
+
+// When parsing a JSON string the pair names are interned to reduce the memory foot print. This
+// slightly slows down the parser but saves a lot of memory if the JSON string contains repeating
+// pair names. The interning uses a hashset to store the strings.
+{$DEFINE USE_STRINGINTERN_FOR_NAMES}
+
+// Use an optimized NewInstance implementation

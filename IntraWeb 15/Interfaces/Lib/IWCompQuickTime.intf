@@ -1,0 +1,79 @@
+unit IWCompQuickTime;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, Graphics,
+  IWCompObject, IWHTMLTag, IWFileReference, IWColor, IWGlobal, IWRenderContext;
+
+type
+  TIWCustomQuickTime = class(TIWCustomObject)
+  protected
+    FAutoPlay: Boolean;
+    FBGColor: TIWColor;
+    FCache: Boolean;
+    FController: Boolean;
+    FHeight: Integer;
+    FHidden: Boolean;
+    FHRef: string;
+    FKioskMode: Boolean;
+    FLoop: Boolean;
+    FMovFile: TIWFileReference;
+    FMovieName: string;
+    FPan: Integer;
+    FPlayEveryFrame: Boolean;
+    FScale: string;
+    FVolume: Integer;
+    FWidth: Integer;
+
+    procedure SetMovFile(const Value: TIWFileReference);
+    procedure DoFileReferenceChage(Sender : TObject);
+    procedure InitControl; override;
+  protected
+    procedure Dispose(ADispose: Boolean); override;    
+  public
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+
+    property AutoPlay: Boolean read FAutoPlay write FAutoPlay;
+    property BGColor: TIWColor read FBGColor write FBGColor default clNone;
+    property Cache: Boolean read FCache write FCache;
+    property Controller: Boolean read FController write FController;
+    property Hidden: Boolean read FHidden write FHidden;
+    property HRef: string read FHRef write FHRef;
+    property KioskMode: Boolean read FKioskMode write FKioskMode;
+    property Loop: Boolean read FLoop write FLoop;
+    property MovFile: TIWFileReference read FMovFile write SetMovFile;
+    property MovieName: string read FMovieName write FMovieName;
+    property Pan: Integer read FPan write FPan;
+    property PlayEveryFrame: Boolean read FPlayEveryFrame write FPlayEveryFrame;
+    property Scale: string read FScale write FScale;
+    property Volume: Integer read FVolume write FVolume default -1;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWQuickTime = class(TIWCustomQuickTime)
+  published
+    property AutoPlay;
+    property BGColor;
+    property Cache;
+    property Controller;
+
+    property FriendlyName;
+    property Height;
+    property Hidden;
+    property HRef;
+    property KioskMode;
+    property Loop;
+    property PluginsPage;
+    property MovFile;
+    property MovieName;
+    property Pan;
+    property PlayEveryFrame;
+    property Scale;
+    property Volume;
+
+    property Width;
+  end;
+
+implementation

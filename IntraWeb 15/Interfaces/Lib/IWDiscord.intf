@@ -1,0 +1,42 @@
+unit IWDiscord;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils,
+  Classes,
+  StrUtils,
+  {$IFDEF FPC} IW.Common.FpcCompat, {$ENDIF}
+  IW.HTTP.ClientBase;
+
+const
+  DiscordBaseUrl = 'https://discord.com/api/webhooks/';
+
+type
+  TIWDiscord = class
+  strict private
+    FToken: string;
+    FBaseURL: string;
+    FErrorMessage: string;
+    function CreateHttpClient: TIWHttpClientBase;
+    function InternalSendMessage(const aUrl, aMsg, aUserName: string): Boolean; // can't be virtual
+  protected
+    function PostUrl: string; virtual;
+  public
+    constructor Create(const aToken: string);
+    function SendMessage(const aMsg: string; const aUserName: string = ''): Boolean;
+    property BaseURL: string read FBaseURL write FBaseURL;
+    property Token: string read FToken write FToken;
+    property ErrorMessage: string read FErrorMessage;
+  end;
+
+  TIWDiscordHelper = class
+  private
+    class procedure DoSend(AData: Pointer);
+  public
+    class function SendMessage(const aToken, aMsg: string; const aUserName: string = ''): Boolean;
+    class procedure SendMessageAsync(const aToken, aMsg: string; const aUserName: string = '');
+  end;
+
+implementation

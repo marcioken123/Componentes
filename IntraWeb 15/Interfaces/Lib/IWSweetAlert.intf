@@ -1,0 +1,53 @@
+unit IWSweetAlert;
+{$I IWCompilerDefines.inc}
+
+interface
+
+{PUBDIST}
+
+uses
+  SysUtils, Classes, Controls,
+  IWBaseControl, IWBaseHTML40Component, IWRenderContext, IWHTMLTag, IWXMLTag;
+  
+type
+  TAlertType = (atWarning, atError, atSuccess, atInfo, atQuestion);
+
+  {$include IWPlatformAttrib.inc}
+  TIWSweetAlert = class(TIWBaseHTML40Component)
+  private
+    class var FLocalJavaScriptFolder: string;
+  private
+    FTitle: string;
+    FText: string;
+    FAlertType: TAlertType;
+    FRenderCDNFiles: Boolean;
+    FRenderLocalFiles: Boolean;
+    procedure SetTitle(const Value: string);
+    procedure SetText(const Value: string);
+    function AlertTypeToStr(AlertType: TAlertType): string;
+    procedure SetAlertType(const Value: TAlertType);
+    procedure SetRenderCDNFiles(const Value: Boolean);
+    procedure SetRenderLocalFiles(const Value: Boolean);
+    procedure InternalSetText(const AText, ATitle: string);
+  protected
+    procedure Loaded; override;
+  public
+    procedure InitControl; override;
+    procedure Show;
+    procedure ShowPrompt(const AEditDest: string; const AText: string = ''; const ATitle: string = ''; const ABtnYes: string = 'Yes'; const ABtnNo: string = 'No'; const AEventYes: string = 'BTNEXECLOGOUT');
+    procedure ShowConfirm(const AText: string = ''; const ATitle: string = ''; pType: TAlertType = atSuccess; const pBtnYes: string = 'Yes'; const pBtnNo: string = 'No'; const pEventYes: string = 'BTNCONFIRM'; const pEventNo: string = 'BTNCANCEL');
+    procedure ShowAlert(const AText: string = ''; const ATitle: string = '');
+    procedure ShowError(const AText: string = ''; const ATitle: string = '');
+    procedure ShowSuccess(const AText: string = ''; const ATitle: string = '');
+    procedure DownloadContentFiles;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    class property LocalJavaScriptFolder: string read FLocalJavaScriptFolder write FLocalJavaScriptFolder;
+  published
+    property Title: string read FTitle write SetTitle;
+    property Text: string read FText write SetText;
+    property AlertType: TAlertType read FAlertType write SetAlertType default atWarning;
+    property RenderCDNFiles: Boolean read FRenderCDNFiles write SetRenderCDNFiles default True;
+    property RenderLocalFiles: Boolean read FRenderLocalFiles write SetRenderLocalFiles default False;
+  end;
+
+implementation

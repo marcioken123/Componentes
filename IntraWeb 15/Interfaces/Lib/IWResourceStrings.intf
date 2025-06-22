@@ -1,0 +1,246 @@
+unit IWResourceStrings;
+{$I IWCompilerDefines.inc}
+
+interface
+
+const
+  EOL = #13#10;
+
+var
+  RSOK: string;
+  RSPermissionDEnied: string;
+  RSShowMessageNotSupported: string;
+  RSSecureModeRequired: string;
+  RSNonSecureModeRequired: string;
+  RSAppStartedAndListening: string;
+  RSNotSupportedDuringPartialUpdate: string;
+  RSWebApplicationRequiered: string;
+  RSOptionsMenuCaption: string;
+  RSDeviceSimulationMenuCaption: string;
+  RSHTML32Caption: string;
+  RSWMLCaption: string;
+  RSXHTMLMPCaption: string;
+  RSWMLHint: string;
+  RSXHTMLMPHint: string;
+  RSHTML32Hint: string;
+  RSUnknownClientType: string;
+  RSCannotShowNonAppForms: string;
+  RSCannotHideNonAppForms: string;
+  RSCannotReleaseNonAppForms: string;
+  RSUnknownBrowserType: string;
+  RSMustBeAppForm: string;
+  RSDoodle: string;
+  RSWrongIPForSession: string;
+  RSWrongBrowserForSession: string;
+  RSInvalidFormId: string;
+  RSWrongSubnetForSession: string;
+  RSClientSideInEnterprise: string;
+  RSValidationRequeredField: string;
+  RSInvalidComponentName: string;
+  RSDroppedConnection: string;
+  RSNotFound: string;
+  RSPopupBlocked: string;
+  RSPleaseWait: string;
+//  RSWarningNonIntraWeb: string;
+//  RSWarning32Control: string;
+//  RSWarning40Control: string;
+//  RSWarningWAPControl: string;
+  RSNoSubmitComponent: string;
+  RSNoSubmitHandler: string;
+  RSInvalidFunction: string;
+  RSInvalidHeight: string;
+  RSInvalidWidth: string;
+  RSIndexOutOfBounds: string;
+  RSNoServerController: string;
+  RSSessionAlreadyLocked: string;
+  RSNotForThisProcess: string;
+  RSRefreshWarning: string;
+  RSResourceNotFound: string;
+  RSNoMainForm: string;
+  RSDeviceNotSupported: string;
+  RSNoServerControllerClass: string;
+  RSUnknownSessionMethod: string;
+  RSInvalidBrowser: string;
+  RSMessageDialog: string;
+  RSColorRed: string;
+  RSColorBlue: string;
+  RSColorGreen: string;
+  RSColorYellow: string;
+  RSColorBrown: string;
+  RSTextError: string;
+  RSCannotReceiveFocus: string;
+  RSErrorCreatingSession: string;
+  RSSessionTerminated: string;
+  // Browsers
+  RSUnknownBrowser: string;
+  RSIE: string;
+  RSNS6Gecko: string;
+  RSNS7Gecko: string;
+  RSOpera: string;
+  RSChrome: string;
+  RSUnrecognizable: string;
+  RSSafari: string;
+  RSOther: string;
+  RSNoCookieSupport: string;
+  //
+  RSCantFindInternalFile: string;
+  RSExecuteError: string;
+  // Standalone Log messages
+  RSIWVersion: string;
+  RSHTTPPort: string;
+  RSHTTPSPort: string;
+  RSBindError: string;
+  RSLicenseNumber: string;
+  // Navigator buttons
+  RSbtnNameFirst: string;
+  RSbtnNamePrior: string;
+  RSbtnNameNext: string;
+  RSbtnNameLast: string;
+  RSbtnNameInsert: string;
+  RSbtnNameDelete: string;
+  RSbtnNameEdit: string;
+  RSbtnNamePost: string;
+  RSbtnNameCancel: string;
+  RSbtnNameRefresh: string;
+
+  // DB package
+  RSUnsupportedFieldType: string;
+  RSNoRefereshWhileInEdit: string;
+  RSInvalidResponse: string;
+  RSDeleteMessage: string;
+  RSUpdateMessage: string;
+  RSCancelMessage: string;
+  RSDataSetNotEditing: string;
+  // Design time
+  RSInvalidSessionTimeout: string;
+  RSEmptyWorkAreaPath: string;
+  RSFormPreviewError: string;
+  RSHTMLEditorError: string;
+  RSIE55OrLater: string;
+  RSScriptEditorCaption: string;
+  RSScriptEditorEvent: string;
+  RSScriptEditorCode: string;
+  RSOKButton: string;
+  RSCancelButton: string;
+  RSApplyButton: string;
+  // TreeVew designer
+  RSNewRoot: string;
+  RSNewItem: string;
+  RSDeleteItem: string;
+  RSEditCaption: string;
+  RSMsgDeleteItem: string;
+  // Run-time only units not part of any of the packages
+  RSApacheDSOError: string;
+  RSISAPIError: string;
+  RSStandaloneError: string;
+  RSAuthFailed: string;
+  RSToolBarError: string;
+  RSRedirecting: string;
+
+  RSCanUseIWControlOnVCLForm: string;
+  RS4On32Form: string;
+  RS32On4Form: string;
+
+  RSDublicateEventHandler: string;
+  RSMetaFileNotSupported: string;
+  RSLoadImageError: string;
+  RSUnrecognizedCommand: string;
+  RSLayoutMgrNeeded32: string;
+  // Log Messages
+  RSLogExecute: string;
+  RSLogCacheFile: string;
+  RSLogInternalGraphic: string;
+  RSLogJavaScript: string;
+  RSLogNewSession: string;
+  RSLogExternalFile: string;
+  RSLogExplicitStop: string;
+  RSLogUnrecognizedCommand: string;
+  RSLogActiveSessions: string;
+  RSLogTotalBytes: string;
+  RSLogResizeCommand: string;
+  RSLogUpdateCommand: string;
+  // IWMain
+  RSClearSessionsCaption: string;
+  RSClearSessionsHint: string;
+  RSCopyClipboardCaption: string;
+  RSCopyClipboardHint: string;
+  RSShowDebugInfoCaption: string;
+  RSShowDebugInfoHint: string;
+  RSExitCaption: string;
+  RSExitHint: string;
+  RSExecuteCaption: string;
+  RSExecuteHint: string;
+  RSExecuteDefaultCaption: string;
+  RSExecuteDefaultHint: string;
+  RSExecuteIECaption: string;
+  RSExecuteIEHint: string;
+  RSExecuteMozillaCaption: string;
+  RSExecuteMozillaHint: string;
+  RSExecuteFirefoxCaption: string;
+  RSExecuteFirefoxHint: string;
+  RSExecuteNS6Caption: string;
+  RSExecuteNS6Hint: string;
+  RSExecuteOperaCaption: string;
+  RSExecuteOperaHint: string;
+  RSUseSSLCaption: string;
+  RSUseSSLHint: string;
+  RSParamCaption: string;
+  RSParamHint: string;
+  RSAboutCaption: string;
+  RSAboutHint: string;
+  RSFileMenuCaption: string;
+  RSRunMenuCaption: string;
+  RSSelectBrowserCaption: string;
+  RSHelpCaption: string;
+  RSToolBarCaption: string;
+  RSUseParamQueryTitle: string;
+  RSUseParamQueryPrompt: string;
+  RSCanSetControlToSelf: string;
+  RSSelectionRequired: string;
+  RSConnectionSpeedCaption: string;
+  RSIncorrectSpeed: string;
+  RSSimulSpeed: string;
+  RSConnectionSpeed: string;
+  // IWCompress
+  RSZLibNotFound: string;
+  RSWrongZLibVer: string;
+  // Calendar
+  RSToday: string;
+  RSPrevious: string;
+  RSNext: string;
+  // Desinger menu items
+  rsEditHTML: string;
+  rsPreviewHTML: string;
+
+  // TimeEdit
+  RSInvalidTimeEditFormat: string;
+
+  RSMissingContainerOnFrame: string; // Display this when there's no container on a TFrame
+
+  RSLogCSSRequest: string;
+
+  // Error messages
+  RSExceptionSessionExpiredMsg: string;
+  RSExceptionSessionInvalidMsg: string;
+  RSExceptionSessionExpired: string;
+  RSExceptionSecurityCheck: string;
+  RSExceptionOther: string;
+  RSExceptionDetailsHidden: string;
+  RSTrappedException: string;
+  //
+  RSBackButtonMessage: string;
+  RSAuthFailedMessage: string;
+  RSMinValueMessage: string;
+  RSMaxValueMessage: string;
+  RSCookieCheckMessage: string;
+
+// these are not variables
+resourcestring
+  RSInternalServerError = '<html><head><title>Internal Server Error 500</title></head>' +
+                          '<body><h1>Internal Server Error 500</h1><hr>' +
+                          'Exception: %s<br><br>' +
+                          '%s<br></body></html>';
+  MinValueMessage = 'Minimum allowed value is ';
+  MaxValueMessage = 'Maximum allowed value is ';
+
+implementation

@@ -1,0 +1,116 @@
+unit IWUtils;
+{$I IWCompilerDefines.inc}
+{$B-}
+
+interface
+
+uses
+  SysUtils, Windows, IWTypes, Classes, IWURL, IW.Http.Request, IW.Common.StrBuilder;
+
+// Procs
+  function GetBit(const aByte, aBit: Byte): Boolean;
+  function SetBit(const aByte, aBit: Byte; aIsSet: Boolean): Byte;
+
+  procedure StreamWrite(AStream: TStream; const AData: string);
+  procedure StreamWriteLn(AStream: TStream; const AData: string = '');
+
+  function ToBase36(AValue: Int64; ADigits: Integer = 1): string;
+  function FromBase36(AValue: string): Int64;
+
+  function IWExtractTagContent(aSource: string; aTag: string): string;
+  function LocateFile(var aFileName: string; aRootPath, aFolder: string; aFolderOnly: Boolean = False): Boolean;
+  function IWFormatByteSize(aFileSize: Int64; aFileSizeMask: string): string;
+
+  function ReadBoolFromIni(Section, Setting: string; IniFileName: string = ''): Boolean;
+  function ReadStringFromIni(Section, Setting: string; Default: string = ''; IniFileName: string = ''): string;
+  function ReadIntFromIni(Section, Setting: string; Default: string = ''; IniFileName: string = ''): Integer;
+
+  // All these strings functions will redirect to IW.Common.Strings. Left here for compat with 3rd party code
+  function LastPos(const SubStr: string; const S: string): Integer; deprecated 'Use IW.Common.Strings unit';
+  function TextToHTMLStringLiteral(const AText: string): string; deprecated 'Use IW.Common.Strings unit';
+  function TextToHTMLStringLiteralEx(const AText: string): string; deprecated 'Use IW.Common.Strings unit';
+  function RemoveCRLF(const AText: string): string; deprecated 'Use IW.Common.Strings unit';
+
+  // aSearchRec.Time is Deprecated from XE and up. Use this to avoid IFDEFS and warnings
+  function SearchRecDateTime(aSearchRec: TSearchRec): TDateTime;
+
+  function ValidateURLBase(const Value: string): string;
+
+  procedure ValidateDocType(const aDocType: string);
+
+  // All URL related functions were moved to IWURL unit (TURL class). Old functions were kept here for compatibility
+  function IncludeURLPathDelimiter(AURLPath: String): string; deprecated 'Use TURL class from IWUrl unit';
+  function URLPathToFilePath(aRootPath: string; aSubPath: string): string; deprecated 'Use TURL class from IWUrl unit';
+
+  function IsHtml5(const aDocType: string): Boolean;
+  function HtmlRedirect(const aUrl: string; const aReplaceUrl: Boolean = True): string; overload;
+  function HtmlRedirect(const aUrl, aNonce: string; const aReplaceUrl: Boolean = True): string; overload;
+  function JsRedirect(const aUrl: string; const aReplaceUrl: Boolean = True): string;
+  function JsPost(const aAction: string): string;
+
+  function StringsToHTML(sl: TStrings): string;
+
+  function ParamIsValid(const AParam: string; out Idx: Integer): Boolean;
+  function SanitizedIdentifier(const aIdentifier: string): string;
+
+  procedure GetAuthorizationFields(aRequest: THttpRequest; var aUserName, aPassword: string);
+
+  // Execute another process from within an IW application (mainly ISAPI DLLs)
+  // this is a recurrent question of IW users, so we will add it as an utility function
+  procedure ExecProcess(const ACommandLine, AParams: string);
+  // quick & dirty routines to download text files. IW only uses this while debugging under Delphi IDE
+  function DownloadFile(const Url, aDestPathname: string): Boolean;
+  function GetUrlContent(const Url: string; const ReadContent: Boolean = True): AnsiString;
+
+type
+  // A very simple JSON string builder.
+  // Not intended do do complex stuff. Just a very basic creator of strings respresenting JS literal objects, used as arguments in JS functions
+  TIWSimpleJSON = record
+  strict private
+    FData: IStrBuilder;
+    FNoQuotes: Boolean;
+    procedure Init;
+    procedure InternalAdd(const AName, AValue: string);
+    function GetData: string;
+    function GetIsEmpty: Boolean;
+    procedure SetNoQuotes(const AValue: Boolean);
+  public
+    function Add(const ANameAndValue: string): TIWSimpleJSON; overload;
+    function Add(const AName, AValue: string): TIWSimpleJSON; overload;
+    function Add(const AName: string; AValue: Boolean): TIWSimpleJSON; overload;
+    function Add(const AName: string; AValue: Integer): TIWSimpleJSON; overload;
+    function Add(const AName: string; AValue, ASkipValue: Integer): TIWSimpleJSON; overload;
+    function Add(const AName: string; AValue: TStrings): TIWSimpleJSON; overload;
+    function Add(const AName: string; AValue: TStrings; AItemsHaveValues: Boolean): TIWSimpleJSON; overload;
+    function Add(const AName, ATextLabel, AIdLabel: string; AValue: TStrings; AItemsHaveValues: Boolean = True): TIWSimpleJSON; overload;
+    function Add(const AName: string; AValue: TIWSimpleJSON): TIWSimpleJSON; overload;
+    function Add(const AName: string; AValue: Double): TIWSimpleJSON; overload;
+    function Add(ANameValuePairs: TStrings): TIWSimpleJSON; overload;
+    function AddRaw(const AName, AValue: string): TIWSimpleJSON; overload;
+    function Clear: TIWSimpleJSON;
+    function WriteTo(AStrBuilder: IStrBuilder): TIWSimpleJSON; overload;
+    function ToString: string;
+    property AsString: string read ToString;
+    property Data: string read GetData;
+    property IsEmpty: Boolean read GetIsEmpty;
+    // Quote property name or not?
+    property NoQuotes: Boolean read FNoQuotes write SetNoQuotes;
+  end;
+
+var
+  GWarningProc: TWarningProc = nil;
+
+const
+  {$I IWVersion.inc}
+  PathDelimiter = IWURL.PathDelimiter;  // Keep this here for backward compatibility
+  URLDelimiter  = IWURL.URLDelimiter;
+
+{$IFDEF WIN64}
+  {$HPPEMIT '#pragma message "wininet.a"'}
+  {$HPPEMIT '#pragma link "wininet.a"'}
+{$ELSE}
+  {$HPPEMIT '#pragma message "wininet.lib"'}
+  {$HPPEMIT '#pragma link "wininet.lib"'}
+{$ENDIF}
+
+implementation

@@ -1,0 +1,98 @@
+unit IWBaseRenderContext;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes,
+  IW.Common.SysTools, IWApplication, IWTypes, IWBaseLayoutComponent,
+  IWMarkupLanguageTag, IW.Common.Strings, IW.Common.StrLists, IW.Common.Lists;
+
+type
+  TIWBasePageContext = class;
+  TIWBaseComponentContext = class;
+
+  TIWContainerContext = class(TObject)
+  private
+    FContextList: TIWObjectList;
+    FAliasContextList: TIWSimpleStringList;
+    function GetNonce: string;
+    procedure InitContextLists;
+    function IsValidComponentLegacy(const AName: string): Boolean;
+  protected
+    FLayout: TIWBaseLayoutComponent;
+    FNewComponentList: TIWListBase;
+    FRemovedComponentList: TIWSimpleStringList;
+    mFormEncoding: TIWFormEncoding;
+    FUpdateTree: Boolean;
+    FWebApplication: TIWApplication;
+    mCacheControls: Boolean;
+    function GetMarkupLanguageTag(const AControl: string): TIWMarkupLanguageTag;
+    function GetControlInstance(const AName: string): TComponent;
+    function GetControlsCount: Integer;
+    function GetControlInstanceFromIndex(AIndex: Integer): TComponent;
+    function GetComponentContext(const AName: string): TIWBaseComponentContext;
+    function GetMarkupLanguageTagList(AIndex: Integer): TIWMarkupLanguageTag;
+  public
+    constructor Create(AWebApplication: TIWApplication; aCacheControl: Boolean = True);
+    destructor Destroy; override;
+    procedure Clear;
+    function IsValidComponent(const AName: string): Boolean;
+    function AddComponent(AComponentContext: TIWBaseComponentContext;
+      AMarkupLanguageTag: TIWMarkupLanguageTag = nil; AFreeContext: Boolean = True): Boolean;
+    procedure RemoveComponent(AComponentContext: TIWBaseComponentContext);
+    function GetComponentList(const ANameMask: string; AList: TIWMinStringList): Boolean;
+    property FormEncoding: TIWFormEncoding read mFormEncoding;
+    property CacheControls: boolean read mCacheControls;
+    property UpdateTree: boolean read FUpdateTree write FUpdateTree;
+    property MarkupLanguageTag[const AControl: string]: TIWMarkupLanguageTag read GetMarkupLanguageTag;
+    property MarkupLanguageTagList[AIndex: Integer]: TIWMarkupLanguageTag read GetMarkupLanguageTagList;
+    property ComponentContext[const AName: string]: TIWBaseComponentContext read GetComponentContext;
+    property Components[const AControl: string]: TComponent read GetControlInstance;
+    property ComponentsCount: Integer read GetControlsCount;
+    property ComponentsList[AIndex: Integer]: TComponent read GetControlInstanceFromIndex;
+    property LayoutManager: TIWBaseLayoutComponent read FLayout write FLayout;
+    property WebApplication: TIWApplication read FWebApplication;
+    property Nonce: string read GetNonce;
+    property NewComponentList: TIWListBase read FNewComponentList;
+    property RemovedComponentList: TIWSimpleStringList read FRemovedComponentList;
+  end;
+
+  TIWBasePageContext = class(TObject)
+  private
+    function GetNonce: string;
+  protected
+    FWebApplication: TIWApplication;
+  public
+    constructor Create(AWebApplication: TIWApplication); virtual;
+    procedure Clear(ADesignTime: Boolean = false); virtual;
+    procedure AppendContext(AContext: TIWBaseComponentContext); virtual;
+    property WebApplication: TIWApplication read FWebApplication;
+    property Nonce: string read GetNonce;
+  end;
+
+  TIWBaseComponentContext = class(TObject)
+  private
+    function GetWebApplication: TIWApplication;
+    function GetNonce: string;
+  protected
+    FMLTag: TIWMarkupLanguageTag;
+    FComponent: TComponent;
+    FContainerContext: TIWContainerContext;
+    FBasePageContext: TIWBasePageContext;
+    FPostRender: string;
+    procedure SetMLTag(const Value: TIWMarkupLanguageTag);
+  public
+    constructor Create(AComponent: TComponent;
+      AContainerContext: TIWContainerContext; APageContext: TIWBasePageContext); virtual;
+    destructor Destroy; override;
+    property BasePageContext: TIWBasePageContext read FBasePageContext;
+    property ContainerContext: TIWContainerContext read FContainerContext write FContainerContext;
+    property Component: TComponent read FComponent;
+    property MarkupLanguageTag: TIWMarkupLanguageTag read FMLTag write SetMLTag;
+    property WebApplication: TIWApplication read GetWebApplication;
+    property PostRender: string read FPostRender write FPostRender;
+    property Nonce: string read GetNonce;
+  end;
+
+implementation

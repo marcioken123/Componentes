@@ -1,0 +1,45 @@
+unit IW.Common.DateTime;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils;
+
+function OffsetFromUTC: TDateTime; inline;
+function DateTimeGMTToHttpStr(const GMTValue: TDateTime): string;
+function LocalDateTimeToHttpStr(const Value: TDateTime): string;
+function GMTToLocalDateTime(S: string): TDateTime;
+function DateTimeToRFC822(ADateTime: TDateTime): string;
+// ISO8601 stuff
+function ISO8601_FormatSettings: TFormatSettings; inline;
+function ISO8601ToDateTime(const AValue: string): TDateTime;
+function ISO8601ToDateTimeDef(const AValue: string; const ADefault: TDateTime): TDateTime;
+function ISO8601ToDateTimeDefEx(const AValue: string; const ADefault: TDateTime): TDateTime;
+function DateToISO8601(const AValue: TDateTime): string;
+function TimeToISO8601(const AValue: TDateTime; const ATimeSeconds: Boolean): string;
+function DateTimeToISO8601(const AValue: TDateTime): string; overload;
+function DateTimeToISO8601(const AValue: TDateTime; const ATimeSeconds: Boolean): string; overload;
+function DateStrToISO8601(const AValue: string): string;
+function TimeStrToISO8601(const AValue: string; const ATimeSeconds: Boolean): string;
+function ISO8601ToDateStr(const aValue: string): string;
+function ISO8601ToTimeStr(const aValue: string): string;
+function UnixTimeToDateTime(UnixTime: Int64): TDateTime;
+// ISO8601 check
+function IsDateISO8601(const AValue: string): Boolean;
+function IsDateTimeISO8601(const AValue: string): Boolean;
+function IsTimeISO8601(const AValue: string; const ATimeSeconds: Boolean): Boolean;
+
+const
+  ONE_MINUTE = 1 / (24*60);
+  InvalidDateTime = -MaxInt;
+  ISO8601_DATE_FORMAT = 'yyyy-mm-dd';
+  ISO8601_TIME_FORMAT = 'hh:nn:ss';
+  ISO8601_SHORTTIME_FORMAT = 'hh:nn';
+  ISO8601_DATETIME_FORMAT = 'yyyy-mm-dd hh:nn:ss';
+  ISO8601_DATESHORTTIME_FORMAT = 'yyyy-mm-dd hh:nn';
+
+resourcestring
+  RSFailedTimeZoneInfo = 'Failed attempting to retrieve time zone information.';
+
+implementation

@@ -1,0 +1,131 @@
+unit IWCompMenu;
+{$I IWCompilerDefines.inc}
+
+// Disable Compiler warings for DEPRECATED set_RenderSize, setRenderSize and get_RenderSize
+{$WARN SYMBOL_DEPRECATED OFF}
+
+interface
+
+uses
+  Graphics, Forms, Controls, Menus, IWImageList, Classes,
+  IWHTMLTag, IWControl, IWColor, IWFont, IW.Common.SysTools, IWRenderContext,
+  IWBaseInterfaces;
+
+type
+  TIWMenu = class;
+
+  TIWMenuOrientation = (iwOHorizontal, iwOVertical);
+
+  TIWMenuStyle = class(TPersistent)
+  private
+    FSelectedItemBGColor: TIWColor;
+    FItemBGColor: TIWColor;
+    FDisabledItemBGColor: TIWColor;
+    FBGColor: TIWColor;
+    FBorderColor : TIWColor;
+    procedure SetDisabledItemBGColor(const Value: TIWColor);
+    procedure SetItemBGColor(const Value: TIWColor);
+    procedure SetSelectedItemBGColor(const Value: TIWColor);
+    procedure SetBGColor(const Value: TIWColor);
+    procedure SetBorderColor(const Value: TIWColor);
+  protected
+    FColor: TIWColor;
+    FSelectedMenuItemFont: TIWFont;
+    FMenuItemFont: TIWFont;
+    FDisabledMenuItemFont : TIWFont;
+    FSelectedMenuCss: string;
+    FDisabledMenuCss: string;
+    FCss: string;
+    FIWMenu: TIWMenu;
+    FOrientation: TIWMenuOrientation;
+    procedure SetMenuItemFont(const Value: TIWFont);
+    procedure SetSelectedMenuItemFont(const Value: TIWFont);
+    procedure SetDisabledMenuItemFont(const Value: TIWFont);
+    procedure SetOrientation(const Value: TIWMenuOrientation);
+  public
+    constructor Create(AIWMenu: TIWMenu);
+
+    destructor Destroy; override;
+
+    procedure Assign(Source: TPersistent); override;
+  published
+    property MenuItemFont: TIWFont read FMenuItemFont write SetMenuItemFont;
+    property SelectedMenuItemFont: TIWFont read FSelectedMenuItemFont write SetSelectedMenuItemFont;
+    property DisabledMenuItemFont: TIWFont read FDisabledMenuItemFont write SetDisabledMenuItemFont;
+
+    property BGColor: TIWColor read FBGColor write SetBGColor;
+    property ItemBGColor: TIWColor read FItemBGColor write SetItemBGColor;
+    property SelectedItemBGColor: TIWColor read FSelectedItemBGColor write SetSelectedItemBGColor;
+    property DisabledItemBGColor: TIWColor read FDisabledItemBGColor write SetDisabledItemBGColor;
+    property BorderColor : TIWColor read FBorderColor write SetBorderColor;
+    property Css: string read FCss write FCss;
+    property SelectedMenuCss: string read FSelectedMenuCss write FSelectedMenuCss;
+    property DisabledMenuCss: string read FDisabledMenuCss write FDisabledMenuCss;
+    property Orientation: TIWMenuOrientation read FOrientation write SetOrientation;
+  end;
+
+  TIWMainMenuStyle = class(TIWMenuStyle);
+
+  TIWSpaceItems = (itsNone, itsEvenlySpaced);
+
+  TIWMenuAutoSize = (mnaNone, mnaFullWidth, mnaFullHeight);
+
+  {$include IWPlatformAttrib.inc}
+  TIWMenu = class(TIWCustomControl, IIWSubmitControl)
+  private
+    FComboBoxHide: Boolean;
+  protected
+    FSubmitParam: string;
+    FAutoSize: TIWMenuAutoSize;
+    FAttachedMenu: TMainMenu;
+    FTimeOut: Integer;
+    FMenuLeft: Integer;
+    FMenuTop: Integer;
+    FPadding: Integer;
+    FTextOffset: Integer;
+    FItemSpacing: TIWSpaceItems;
+    FFrameName: string;
+    FMainMenuStyle: TIWMenuStyle;
+    FSubMenuStyle: TIWMenuStyle;
+    FSubMenuCss: string;
+    FMenuItems: TStringList;
+    //
+    procedure SetIWAutoSize(const Value: TIWMenuAutoSize);
+    procedure SetMainMenuStyle(Value: TIWMenuStyle);
+    procedure SetSubMenuStyle(Value: TIWMenuStyle);
+    procedure SetAttachedMenu(Value: TMainMenu);
+    procedure SetItemSpacing(Value: TIWSpaceItems);
+    procedure SetPadding(Value: Integer);
+    procedure SetTextOffset(Value: Integer);
+  private
+    FOnBeforeRender: TNotifyEvent;
+  protected
+    procedure Notification(AComponent: TComponent; Operation: TOperation); override;
+    procedure Submit(const AValue: string); override;
+  public
+    function GetSubmitParam: string;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    function RenderStyle(AContext: TIWCompContext): string; override;
+    constructor Create(AOwner: TComponent); override;
+    destructor Destroy; override;
+    property TextOffset: Integer read FTextOffset;
+  published
+    property FriendlyName;
+    property AttachedMenu: TMainMenu read FAttachedMenu write SetAttachedMenu;
+    property ItemSpacing: TIWSpaceItems read FItemSpacing write SetItemSpacing;
+    property AutoSize: TIWMenuAutoSize read FAutoSize write SetIWAutoSize;
+    property MainMenuStyle: TIWMenuStyle read FMainMenuStyle write SetMainMenuStyle;
+    property SubMenuStyle: TIWMenuStyle read FSubMenuStyle write SetSubMenuStyle;
+    property SubMenuCss: string read FSubMenuCss write FSubMenuCss;
+    property TimeOut: Integer read FTimeOut write FTimeOut;
+    property OnBeforeRender: TNotifyEvent read FOnBeforeRender write FOnBeforeRender;
+  private
+    property ComboBoxHide: Boolean read FComboBoxHide write FComboBoxHide default true;
+  end;
+// Procs used during Paint
+
+function FixCaption(Value: string): string;
+
+function DQuoteStr(const Value: string): string;
+
+implementation

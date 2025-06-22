@@ -1,0 +1,361 @@
+unit IWCompTreeview;
+{$I IWCompilerDefines.inc}
+
+{PUBDIST}
+
+// Disable Compiler warings for DEPRECATED set_RenderSize, setRenderSize and get_RenderSize
+{$WARN SYMBOL_DEPRECATED OFF}
+
+interface
+
+uses
+  Controls, Forms, Graphics, Classes, SysUtils,
+  IWControl, IWHTMLTag, IWFileReference, IWFont, IWRenderContext,
+  IWBaseInterfaces, IWMarkupLanguageTag, IWXMLTag, IW.Common.Lists,
+  IW.Common.StrLists, IWColor;
+
+type
+  TIWTreeViewItems = class;
+  TIWTreeView = class;
+
+  IIWTreeViewDesigner = interface
+    ['{858EF915-9518-491D-833E-CA313E15A003}']
+    procedure RefreshItems;
+    procedure ItemsFreed;
+  end;
+
+  TItemMargin = record
+    Left,
+    Top,
+    Right,
+    Bottom: Integer;
+  end;
+
+  TIWSelectedItemStyle = class(TPersistent)
+  private
+    FOwner: TIWTreeView;
+    FIWFont: TIWFont;
+    FCss: string;
+    FBackground: TIWColor;
+    procedure SetCss(const Value: string);
+    procedure SetIWFont(const Value: TIWFont);
+    procedure SetBackground(const Value: TIWColor);
+  public
+    constructor Create(AOwner: TIWTreeView);
+    destructor Destroy; override;
+    procedure Assign(ASource: TPersistent); override;
+  published
+    property Css: string read FCss write SetCss;
+    property Font: TIWFont read FIWFont write SetIWFont;
+    property Background: TIWColor read FBackground write SetBackground default clNone;
+  end;
+
+  TIWItemSubCaption = class(TPersistent)
+  private
+    FOwner: TIWTreeView;
+    FEnabled: Boolean;
+    FIWFont: TIWFont;
+    FCss: string;
+    procedure SetCss(const Value: string);
+    procedure SetEnabled(const Value: Boolean);
+    procedure SetIWFont(const Value: TIWFont);
+  public
+    constructor Create(AOwner: TIWTreeView);
+    destructor Destroy; override;
+    procedure Assign(ASource: TPersistent); override;
+  published
+    property Css: string read FCss write SetCss;
+    property Enabled: Boolean read FEnabled write SetEnabled default False;
+    property Font: TIWFont read FIWFont write SetIWFont;
+  end;
+
+  TTreeViewPlusMinusProc = procedure(aSender: TObject; aIsPlus: Boolean) of object;
+
+  TIWTreeViewImages = class(TPersistent)
+  private
+    FOwner: TIWTreeView;
+    FClosedFolderImage: TIWFileReference;
+    FOpenFolderImage: TIWFileReference;
+    FDocumentImage: TIWFileReference;
+    FPlusImage: TIWFileReference;
+    FMinusImage: TIWFileReference;
+    FPlusMinusImageWidth: Integer;
+    FPlusMinusImageHeight: Integer;
+    FTreeViewImagesWidth: Integer;
+    FTreeViewImagesHeight: Integer;
+    procedure SetClosedFolderImage(const Value: TIWFileReference);
+    procedure SetDocumentImage(const Value: TIWFileReference);
+    procedure SetMinusImage(const Value: TIWFileReference);
+    procedure SetOpenFolderImage(const Value: TIWFileReference);
+    procedure SetPlusImage(const Value: TIWFileReference);
+    procedure SetPlusMinusImageWidth(const Value: Integer);
+    procedure SetPlusMinusImageHeight(const Value: Integer);
+    procedure SetTreeViewImagesWidth(const Value: Integer);
+    procedure SetTreeViewImagesHeight(const Value: Integer);
+  protected
+    FOpenFolderImageLocationCache: string;
+    FClosedFolderImageLocationCache: string;
+    FDocumentImageLocationCache: string;
+    FPlusImageLocationCache: string;
+    FMinusImageLocationCache: string;
+  public
+    constructor Create(AOwner: TIWTreeView);
+    destructor Destroy; override;
+    property Owner: TIWTreeView read FOwner;
+    procedure Assign(Source: TPersistent); override;
+  published
+    property OpenFolderImage: TIWFileReference read FOpenFolderImage write SetOpenFolderImage;
+    property ClosedFolderImage: TIWFileReference read FClosedFolderImage write SetClosedFolderImage;
+    property DocumentImage: TIWFileReference read FDocumentImage write SetDocumentImage;
+    property PlusImage: TIWFileReference read FPlusImage write SetPlusImage;
+    property MinusImage: TIWFileReference read FMinusImage write SetMinusImage;
+    property PlusMinusImageWidth: Integer read FPlusMinusImageWidth write SetPlusMinusImageWidth default 11;
+    property PlusMinusImageHeight: Integer read FPlusMinusImageHeight write SetPlusMinusImageHeight default 9;
+    property TreeViewImagesWidth: Integer read FTreeViewImagesWidth write SetTreeViewImagesWidth;
+    property TreeViewImagesHeigth: Integer read FTreeViewImagesHeight write SetTreeViewImagesHeight;
+  end;
+
+  TIWTreeViewItem = class(TCollectionItem)
+  private
+    FVisible: Boolean;
+    procedure SetExpanded(const Value: Boolean);
+    procedure SetHint(const Value: String);
+    procedure SetOnClick(const Value: TNotifyEvent);
+    function IsFontStored: Boolean;
+    procedure SetVisible(const Value: Boolean);
+    function GetId: string;
+  protected
+    FURL: string;
+    FItemImages: TIWTreeViewImages;
+    FIWFont: TIWFont;
+    FParentItem: TIWTreeViewItem;
+    FCaption: string;
+    FExpanded: Boolean;
+    FSubItems: TIWListBase;
+    FName: string;
+    FOnClick: TNotifyEvent;
+    FTreeView: TIWTreeView;
+    FVersion: Integer;
+    FHint: string;
+    FTag: Integer;
+    FUserData: TObject;
+    FCss: string;
+    FDisplayAsFolder: Boolean;
+    procedure DefineProperties(AFiler: TFiler); override;
+    function GetDisplayName: string; {$IFNDEF FPC}override;{$ENDIF}
+    procedure ReadData(AReader: TReader);
+    procedure SetDisplayName(const AValue: string); {$IFNDEF FPC}override;{$ENDIF}
+    procedure SetCaption(const Value: string);
+    procedure WriteData(AWriter: TWriter);
+    procedure SetURL(const Value: String);
+    procedure SetItemImages(const Value: TIWTreeViewImages);
+    procedure SetIWFont(const Value: TIWFont);
+    function GetIWFont: TIWFont;
+    procedure SetParentItem(const Value: TIWTreeViewItem);
+    procedure SetName(const Value: string);
+    function RenderItem(AContext: TIWCompContext; AIdent: Integer; AParentExpanded: Boolean; AAllClickable: Boolean): TIWHTMLTag;
+    function GetPlusImageLocation: string;
+    function GetMinusImageLocation: string;
+    function GetClosedFolderImageLocation: string;
+    function GetDocumentImageLocation: string;
+    function GetOpenFolderImageLocation: string;
+    procedure SetItemVersion(const Value: Integer);
+    procedure AssignTo(ADest: TPersistent); override;
+    property PlusImageLocation: string read GetPlusImageLocation;
+    property MinusImageLocation: string read GetMinusImageLocation;
+    property OpenFolderImageLocation: string read GetOpenFolderImageLocation;
+    property ClosedFolderImageLocation: string read GetClosedFolderImageLocation;
+    property DocumentImageLocation: string read GetDocumentImageLocation;
+    property TreeView: TIWTreeView read FTreeView write FTreeView;
+  public
+    constructor Create(ACollection: TCollection); override;
+    destructor Destroy; override;
+    procedure DoClick;
+    function GetNamePath: string; {$IFNDEF FPC}override;{$ENDIF}
+    // full path separated by URL delimiter '/'
+    function GetFullPath: string;
+    function HasChild: Boolean;
+    property ParentItem: TIWTreeViewItem read FParentItem write SetParentItem;
+    property SubItems: TIWListBase read FSubItems;
+    property UserData: TObject read FUserData write FUserData;
+    function GetParent: TIWTreeViewItem;
+    function GetFirstChild: TIWTreeViewItem;
+    function GetLastChild: TIWTreeViewItem;
+    property Id: string read GetId;
+  published
+    property Caption: string read FCaption write SetCaption;
+    property Expanded: Boolean read FExpanded write SetExpanded;
+    property Font: TIWFont read GetIWFont write SetIWFont stored IsFontStored;
+    property Hint: string read FHint write SetHint;
+    property ItemImages: TIWTreeViewImages read FItemImages write SetItemImages;
+    property Name: string read FName write SetName;
+    property Tag: Integer read FTag write FTag;
+    property URL: string read FURL write SetURL;
+    property Version: Integer read FVersion write SetItemVersion;
+    property OnClick: TNotifyEvent read FOnClick write SetOnClick;
+    property Css: string read FCss write FCss;
+    property Visible: Boolean read FVisible write SetVisible default True;
+    property DisplayAsFolder: Boolean read FDisplayAsFolder write FDisplayAsFolder default False;
+  end;
+
+  TIWTreeViewItems = class(TOwnedCollection)
+  protected
+    FDesigner: IIWTreeViewDesigner;
+    function GetItem(AIndex: Integer): TIWTreeViewItem;
+    procedure SetItem(AIndex: Integer; const AValue: TIWTreeViewItem);
+    function RenderTreeView(AContext: TIWCompContext; AAllClickable: Boolean): TIWHTMLTagCollection;
+    procedure Update(Item: TCollectionItem); override;
+    procedure Notify(Item: TCollectionItem; Action: TCollectionNotification); override;
+  public
+    function Add(aParentItem: TIWTreeViewItem = nil): TIWTreeViewItem; overload;
+    function Add(aParentItem: TIWTreeViewItem; const aCaption: string): TIWTreeViewItem; overload;
+    function GetFirst: TIWTreeViewItem;
+    constructor Create(AOwner: TPersistent);
+    destructor Destroy; override;
+    procedure SetDesigner(ADesigner: IIWTreeViewDesigner);
+    function FindItemByCaption(const aParentItem: TIWTreeViewItem; const aCaption: string): TIWTreeViewItem;
+    property Items[AIndex: Integer]: TIWTreeViewItem read GetItem write SetItem; default;
+  end;
+
+  ///Summary: TTreeViewItemSpace holds values for horizontal and vertical spacing of
+  ///  TreeViewItems.
+  ///  HorizontalSpace = Space between Plus/Minus/Image and Text
+  ///  VerticalSpace = Vertical space between Item Rows
+  TIWTreeViewItemSpace = class(TPersistent)
+  private
+    FVerticalSpace: Integer;
+    FHorizontalSpace: Integer;
+    procedure SetHorizontalSpace(const Value: Integer);
+    procedure SetVerticalSpace(const Value: Integer);
+  published
+    procedure Assign(ASource: TPersistent); override;
+    property HorizontalSpace: Integer read FHorizontalSpace write SetHorizontalSpace;
+    property VerticalSpace: Integer read FVerticalSpace write SetVerticalSpace;
+  end;
+
+  TIWTreeViewClickEvent = procedure(Sender: TObject; ATreeViewItem: TIWTreeViewItem) of object;
+
+  {$include IWPlatformAttrib.inc}
+  TIWTreeView = class(TIWCustomControl, IIWInputControl, IIWSubmitControl)
+  private
+    FScrollToName: string;
+    FUseItemImages: Boolean;
+    FDoServerSidePlusMinus: Boolean;
+    FOnPlusMinus: TTreeViewPlusMinusProc;
+    FAutoIndent: Boolean;
+    FWrapItems: Boolean;
+    FScrollBars: TIWScrollStyle;
+    FAsyncMode: Boolean;
+    FOverrideItemFont: Boolean;
+    FLinkUnderline: Boolean;
+    FExpandOnItemClick: Boolean;
+    FTreeScrollOffset: Integer;
+    FTreeStyles: TIWNameValueList;
+    FSubCaption: TIWItemSubCaption;
+    FSelectedItemStyle: TIWSelectedItemStyle;
+    FFadeEffect: Boolean;
+    FTempStyles: TIWStyleSheetCollection;
+    function GetImageLocation(Image: TIWFileReference): string;
+    procedure SetLinkUnderline(const Value: Boolean);
+    procedure SetExpandOnItemClick(const Value: Boolean);
+    procedure SetItemSpace(const Value: TIWTreeViewItemSpace);
+    procedure SetSubCaption(const Value: TIWItemSubCaption);
+    procedure SetSelectedItemStyle(const Value: TIWSelectedItemStyle);
+    procedure SetFadeEffect(const Value: Boolean);
+    procedure ApplyState(AParams: TStringList);
+    procedure ProcessParams(AParams: TStringList);
+    procedure ItemClicked(const AItemName: string);
+  protected
+    FContext: TIWCompContext;
+    FUniqueCounter: Integer;
+    FSubmitParam: string;
+    FTreeNodes: string;
+    FTreeViewItems: TIWTreeViewItems;
+    FTreeViewImages: TIWTreeViewImages;
+    FSelectedItem: TIWTreeViewItem;
+    FItemSpace: TIWTreeViewItemSpace;
+    FOnClick: TIWTreeViewClickEvent;
+    function GetUniqueName: string;
+    procedure DefineProperties(AFiler: TFiler); override;
+    procedure ReadData(AReader: TReader);
+    procedure WriteData(AWriter: TWriter);
+    procedure SetTreeViewItems(const AValue: TIWTreeViewItems);
+    function GetPlusImageLocation: string;
+    function GetMinusImageLocation: string;
+    function GetClosedFolderImageLocation: string;
+    function GetDocumentImageLocation: string;
+    function GetOpenFolderImageLocation: string;
+    procedure SetValue(const AValue: string); virtual;
+    procedure Submit(const AValue: string); override;
+    procedure Loaded; override;
+    procedure InitControl; override;
+    property PlusImageLocation: string read GetPlusImageLocation;
+    property MinusImageLocation: string read GetMinusImageLocation;
+    property OpenFolderImageLocation: string read GetOpenFolderImageLocation;
+    property ClosedFolderImageLocation: string read GetClosedFolderImageLocation;
+    property DocumentImageLocation: string read GetDocumentImageLocation;
+    procedure SetAutoIndent(const Value: Boolean);
+    procedure SetTreeViewImagesWidth(const Value: Integer);
+    procedure SetTreeViewImagesHeight(const Value: Integer);
+    procedure SetUseItemImages(const Value: Boolean);
+    function PositionableNodeName(aNode: TIWTreeViewItem): string;
+    procedure RenderInnerHTML(AContext: TIWCompContext; AParentTag: TIWMarkupLanguageTag);
+    procedure SetWrapItems(const Value: Boolean);
+    function get_HasName: Boolean; override;
+    procedure Dispose(ADispose: Boolean); override;
+    procedure InternalDoOnAsyncClick(AParams: TStringList);
+  public
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    function GetSubmitParam: string;
+    property Items: TIWTreeViewItems read FTreeViewItems write SetTreeViewItems;
+    property Selected: TIWTreeViewItem read FSelectedItem write FSelectedItem;
+    procedure ClearAll;
+    function RenderStyle(AContext: TIWCompContext): string; override;
+    function FindTreeItem(const aNodeId: string): TIWTreeViewItem;
+    function IndexOf(const aItemName: string): Integer; overload;
+    function IndexOf(const aItem: TIWTreeViewItem): Integer; overload;
+    procedure Collapse(const aItem: TIWTreeViewItem);
+    procedure Expand(const aItem: TIWTreeViewItem);
+    procedure FullExpand;
+    procedure FullCollapse;
+    procedure AssignState(Source: TIWTreeView);
+    procedure ForceVisible(const aItem: TIWTreeViewItem);
+    function SetFullPath(const aPath: string): Boolean;
+    function GetNodeName(const ANodeId: string): string;
+  published
+    property FriendlyName;
+    property Font;
+    property SubCaption: TIWItemSubCaption read FSubCaption write SetSubCaption;
+    ///Summary: If set to true items on sub levels will be indented "tree-like". If
+    /// set to false, the tree will degenerate to a flat list.
+    property AutoIndent: Boolean read FAutoIndent write SetAutoIndent;
+    ///Summary: ItemSpace can be used to define vertical space between Items,
+    //and horizontal space between ItemImages and ItemText
+    property ItemSpace: TIWTreeViewItemSpace read FItemSpace write SetItemSpace;
+    /// Summary: Treenodes holds the collection of the Tree's items.
+    // It is read/write because by default Delphi does not show read only properties
+    // at runtime
+    property TreeNodes: string read FTreeNodes write FTreeNodes; // this is here to allow to edit Items via the Tree nodes editor
+    property TreeViewImages: TIWTreeViewImages read FTreeViewImages write FTreeViewImages;
+    property UseItemImages: boolean read FUseItemImages write SetUseItemImages;
+    property TreeViewImagesWidth: Integer write SetTreeViewImagesWidth;
+    property TreeViewImagesHeigth: Integer write SetTreeViewImagesHeight;
+    property UseFrame;
+    property TreeItemClick: TIWTreeViewClickEvent read FOnClick write FOnClick;
+    property ScrollToName: string read FScrollToName write FScrollToName;
+    property ScrollBars: TIWScrollStyle read FScrollBars write FScrollBars default sbsAuto;
+    ///Summary: Controls if Items which contain white spaces will wrap.
+    ///  Default is false, i.e. Items will render their caption in one long line.
+    property WrapItems: boolean read FWrapItems write SetWrapItems default false;
+    property DoServerSidePlusMinus: Boolean read FDoServerSidePlusMinus write FDoServerSidePlusMinus default True;
+    property OnPlusMinus: TTreeViewPlusMinusProc read FOnPlusMinus write FOnPlusMinus;
+    property AsyncMode: Boolean read FAsyncMode write FAsyncMode default False;
+    property OverrideItemFont: Boolean read FOverrideItemFont write FOverrideItemFont default False;
+    property LinkUnderline: Boolean read FLinkUnderline write SetLinkUnderline default False;
+    property ExpandOnItemClick: Boolean read FExpandOnItemClick write SetExpandOnItemClick default True;
+    property SelectedItemStyle: TIWSelectedItemStyle read FSelectedItemStyle write SetSelectedItemStyle;
+    property FadeEffect: Boolean read FFadeEffect write SetFadeEffect default True;
+  end;
+
+implementation

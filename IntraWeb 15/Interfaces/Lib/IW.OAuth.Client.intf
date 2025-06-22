@@ -1,0 +1,126 @@
+unit IW.OAuth.Client;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, Classes, IW.HTTP.ClientBase,
+  {$IFDEF FPC}IWJsonTools{$ELSE}IWJsonDataObjects{$ENDIF},
+  IW.OAuth.Base, IW.Common.StrLists;
+
+type
+  TIWOAuthAppGoogle = class(TIWOAuthApplication)
+  protected
+    class function GetApiId: string; override;
+  public
+    procedure ResetToDefaults; override;
+    procedure LoadFromJsonFile(const aFilename: string = ''); override;
+    function CreateOAuthClient: TObject; override;
+  end;
+
+  TIWOAuthAppAzure = class(TIWOAuthApplication)
+  protected
+    class function GetApiId: string; override;
+  public
+    procedure ResetToDefaults; override;
+    procedure LoadFromJsonFile(const aFilename: string = ''); override;
+    function CreateOAuthClient: TObject; override;
+  end;
+
+  TIWOAuthAppFacebook = class(TIWOAuthApplication)
+  protected
+    class function GetApiId: string; override;
+  public
+    procedure ResetToDefaults; override;
+    procedure LoadFromJsonFile(const aFilename: string = ''); override;
+    function CreateOAuthClient: TObject; override;
+  end;
+
+  TIWOAuthClient = class(TIWOAuthClientBase)
+  private
+    FHTTPClient: TIWHttpClientBase;
+    FResponse: string;
+    FResponseCode,
+    FErrorCode: Integer;
+    FGrantType: ToaGrantType;
+    FNonce: string;
+    FResponseType: ToaResponseType;
+    FAccessType: ToaAccessType;
+    FResponseMode: ToaResponseMode;
+    // response fields
+    FJsonResponse: TJsonObject;
+  protected
+    function ReplaceVariables(const AUrl: string): string;
+    procedure HttpClientNeeded;
+    function CreateParams: TIWStringList;
+    procedure ResetToDefaults; override;
+    function ProcessResponse: Boolean; virtual;
+  public
+    constructor Create(AOAuthApp: TIWOAuthApplication); override;
+    destructor Destroy; override;
+    function GetErrorInfo: TOAuthErrorInfo; override;
+    property HTTPClient: TIWHttpClientBase read FHTTPClient write FHTTPClient;
+    property Response: string read FResponse write FResponse;
+    property ResponseCode: Integer read FResponseCode;
+    property ErrorCode: Integer read FErrorCode;
+    property JsonResponse: TJsonObject read FJsonResponse;
+    property GrantType: ToaGrantType read FGrantType write FGrantType default gtAuthorizationCode;
+    property ResponseType: ToaResponseType read FResponseType write FResponseType default rtCode;
+    property AccessType: ToaAccessType read FAccessType write FAccessType default atOffline;
+    property ResponseMode: ToaResponseMode read FResponseMode write FResponseMode default rmQuery;
+  end;
+
+  TIWOAuthAzure = class(TIWOAuthClient)
+  protected
+    function GetPromptType(aPromptType: ToaPromptType): string;
+    procedure ParseAccessTokenResponse; virtual;
+    procedure ParseUserInfoResponse; virtual;
+  public
+    function RequestAuthorizationCode: string; override;
+    function ExchangeAccessToken(const aAuthorizationCode: string): Boolean; override;
+    function RefreshAccessToken: Boolean; override;
+    function GetUserInfo: Boolean; override;
+    function ValidateAccessToken(const aAccessToken, aRefreshToken: string): Boolean; override;
+    property GrantType;
+    property State;
+    property ResponseType;
+    property ResponseMode;
+    property PromptType;
+  end;
+
+  TIWOAuthGoogle = class(TIWOAuthClient)
+  protected
+    function GetPromptType(aPromptType: ToaPromptType): string;
+    procedure ParseAccessTokenResponse; virtual;
+    procedure ParseUserInfoResponse; virtual;
+  public
+    function RequestAuthorizationCode: string; override;
+    function ExchangeAccessToken(const aAuthorizationCode: string): Boolean; override;
+    function RefreshAccessToken: Boolean; override;
+    function GetUserInfo: Boolean; override;
+    function ValidateAccessToken(const aAccessToken, aRefreshToken: string): Boolean; override;
+    property State;
+    property ResponseType;
+    property AccessType;
+    property PromptType;
+  end;
+
+  TIWOAuthFacebook = class(TIWOAuthClient)
+  protected
+    function GetPromptType(aPromptType: ToaPromptType): string;
+    procedure ParseAccessTokenResponse; virtual;
+    procedure ParseUserInfoResponse; virtual;
+    function DoGetUserInfo(const AAccessToken: string): Boolean;
+  public
+    function RequestAuthorizationCode: string; override;
+    function ExchangeAccessToken(const aAuthorizationCode: string): Boolean; override;
+    function RefreshAccessToken: Boolean; override;
+    function GetUserInfo: Boolean; override;
+    function ValidateAccessToken(const aAccessToken, aRefreshToken: string): Boolean; override;
+    property State;
+    property ResponseType;
+    property AccessType;
+    property PromptType;
+  end;
+
+implementation

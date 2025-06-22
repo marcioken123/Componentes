@@ -1,0 +1,25 @@
+unit IW.Common.HttpPacket;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, IW.Common.StreamHelper, IW.Common.HsmStream;
+
+type
+  TPacketType = (ptInline, ptFile);
+  THttpReplyType = (rtNone, rtFile, rtNoData, rtInline, rtCacheFile);
+
+  THttpPacket = class
+  strict private
+    class var mPacketBufferSize: Integer;
+    class procedure SetPacketBufferSize(const Value: Integer); static;
+  public
+    class procedure CheckSig(aStream: TStreamHelper);
+    class procedure Encode(aStream: THsmStream; aBytes: PByte; aSize: Integer);
+    class function GetStream(aBytes: PByte; aSize: Integer): TStreamHelper;
+    class procedure WriteSig(aStream: TStreamHelper);
+    class property PacketBufferSize: Integer read mPacketBufferSize write SetPacketBufferSize;
+  end;
+
+implementation

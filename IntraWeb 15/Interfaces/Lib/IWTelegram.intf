@@ -1,0 +1,51 @@
+unit IWTelegram;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes,
+  StrUtils,
+  IW.HTTP.ClientBase;
+
+const
+  TelegramBaseGetUrl = 'https://api.telegram.org/bot';
+  TelegramBasePostUrl = 'https://api.telegram.org/bot{%bot_token%}/sendMessage';
+
+type
+  TParseMode = (MarkdownV2, HTML, Markdown);
+
+  TIWTelegram = class
+  strict private
+    FBotToken: string;
+    FChatId: string;
+    FBaseGetURL: string;
+    FBasePostURL: string;
+    function CreateHttpClient: TIWHttpClientBase;
+    function InternalSendMessage(const aUrl, aMsg: string): Boolean; // can't be virtual
+  private
+    class var FUseGet: Boolean;
+    class var FParseMode: TParseMode;
+  protected
+    function GetUrl(const aMsg: string; aSilent: Boolean): string; virtual;
+    function PostUrl: string; virtual;
+  public
+    constructor Create(const aBotToken, aChatId: string);
+    function SendMessage(const aMsg: string; aSilent: Boolean = True): Boolean;
+    property BaseGetURL: string read FBaseGetURL write FBaseGetURL;
+    property ChatId: string read FChatId write FChatId;
+    property BotToken: string read FBotToken write FBotToken;
+    class property UseGet: Boolean read FUseGet write FUseGet default False;
+    class property ParseMode: TParseMode read FParseMode write FParseMode default MarkdownV2;
+  end;
+
+  TIWTelegramHelper = class
+  private
+    class procedure DoSend(AData: Pointer);
+  public
+    class function SendMessage(const aBotToken, aChatId, aMsg: string; aSilent: Boolean = True): Boolean; static;
+    class procedure SendMessageAsync(const aBotToken, aChatId, aMsg: string; aSilent: Boolean = True); static;
+    class procedure SendMessageHtmlAsync(const aBotToken, aChatId, aMsg: string; aSilent: Boolean = True); static;
+  end;
+
+implementation

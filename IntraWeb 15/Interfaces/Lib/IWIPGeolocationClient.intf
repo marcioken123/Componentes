@@ -1,0 +1,126 @@
+unit IWIPGeolocationClient;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, IW.HTTP.ClientBase,
+  {$IFDEF FPC}IWJsonTools{$ELSE}IWJsonDataObjects{$ENDIF};
+
+type
+  TIPGeoApi = class(TPersistent)
+  private
+    FApiKey: string;
+    FIpAddr: string;
+    FCountryCode: string;
+    FStatus: Integer;
+  protected
+    function GetRequestUrl: string; virtual; abstract;
+    procedure AddField(obj: TJsonObject; const key: string; aList: TStrings; const name: string = '');
+  public
+    class function GetUrl: string; virtual; abstract;
+    procedure ParseResponse(const aResponse: string; aList: TStrings); virtual;
+    property ApiKey: string read FApiKey write FApiKey;
+    property RequestUrl: string read GetRequestUrl;
+    property IpAddr: string read FIpAddr write FIpAddr;
+    property CountryCode: string read FCountryCode;
+    property Status: Integer read FStatus;
+  end;
+
+  TIPGeoApi_Whois = class(TIPGeoApi)
+  protected
+    function GetRequestUrl: string; override;
+  public
+    class function GetUrl: string; override;
+    procedure ParseResponse(const aResponse: string; aList: TStrings); override;
+  end;
+
+  TIPGeoApi_IpGeolocation = class(TIPGeoApi)
+  protected
+    function GetRequestUrl: string; override;
+  public
+    class function GetUrl: string; override;
+    procedure ParseResponse(const aResponse: string; aList: TStrings); override;
+  end;
+
+  TIPGeoApi_IpStack = class(TIPGeoApi)
+  protected
+    function GetRequestUrl: string; override;
+  public
+    class function GetUrl: string; override;
+    procedure ParseResponse(const aResponse: string; aList: TStrings); override;
+  end;
+
+  TIPGeoApi_IpApi = class(TIPGeoApi)
+  protected
+    function GetRequestUrl: string; override;
+  public
+    class function GetUrl: string; override;
+    procedure ParseResponse(const aResponse: string; aList: TStrings); override;
+  end;
+
+  TIPGeoApi_IpApiCo = class(TIPGeoApi)
+  protected
+    function GetRequestUrl: string; override;
+  public
+    class function GetUrl: string; override;
+    procedure ParseResponse(const aResponse: string; aList: TStrings); override;
+  end;
+
+  TIPGeoApi_Geoplugin = class(TIPGeoApi)
+  protected
+    function GetRequestUrl: string; override;
+  public
+    class function GetUrl: string; override;
+    procedure ParseResponse(const aResponse: string; aList: TStrings); override;
+  end;
+
+  TIPGeoApiClass = class of TIPGeoApi;
+
+  TIPGeoApiInterface = (apiGeoplugin, apiIpApiCo, apiIpAPI, apiIpStack, apiWhois, apiIpGeolocation);
+
+  TOnGetApiClassEvent = procedure (Sender: TObject; var aGeoApiClass: TIPGeoApiClass) of object;
+
+  {$include IWPlatformAttrib.inc}
+  TIWIPGeolocationClient = class(TComponent)
+  private
+    FHTTPClient: TIWHTTPClientBase;
+    FApi: TIPGeoApi;
+    FIPGeoApiInterface: TIPGeoApiInterface;
+    FApiKey: string;
+    FResponse: TStrings;
+    FOnGetIPGeoApiClass: TOnGetApiClassEvent;
+    FResponseCode,
+    FErrorCode: Integer;
+    procedure SetIPGeoApiInterface(const Value: TIPGeoApiInterface);
+    function GetUrl: string;
+    function GetRequiresHttps: Boolean;
+    procedure SetVoid(const Value: Boolean); overload;
+    procedure SetVoid(const Value: string); overload;
+    function GetCountryCode: string;
+  protected
+    function GetApiClass: TIPGeoApiClass; virtual;
+  public
+    constructor Create(AOwner: TComponent); override;
+    destructor Destroy; override;
+    function Execute(const aIpAddr: string = ''): Boolean;
+    property HTTPClient: TIWHTTPClientBase read FHTTPClient write FHTTPClient;
+    property Response: TStrings read FResponse write FResponse;
+    property CountryCode: string read GetCountryCode;
+    property ResponseCode: Integer read FResponseCode;
+    property ErrorCode: Integer read FErrorCode;
+  published
+    property IPGeoApiInterface: TIPGeoApiInterface read FIPGeoApiInterface write SetIPGeoApiInterface;
+    property ApiKey: string read FApiKey write FApiKey;
+    property Url: string read GetUrl write SetVoid;
+    property RequiresHttps: Boolean read GetRequiresHttps write SetVoid;
+    property OnGetIPGeoApiClass: TOnGetApiClassEvent read FOnGetIPGeoApiClass write FOnGetIPGeoApiClass;
+  end;
+
+  TIWIPGeolocationHelper = class
+  public
+    class function AllowAccess(const aIpAddr, aAllowedCountries: string): Boolean;
+    class function BlockAccess(const aIpAddr, aBlockedCountries: string): Boolean;
+  end;
+
+implementation

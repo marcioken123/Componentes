@@ -1,0 +1,35 @@
+unit IWIpAccessTable;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, Classes, IWLFHashTable;
+
+{$ALIGN ON}
+{$RANGECHECKS OFF}
+
+type
+  TIWIpAccessTable = class
+  strict private
+    class var FInstance: TIWIpAccessTable;
+    class var FCapacity: Integer;
+  strict private
+    FHashTable: TIWLFHashTable;
+    FMaxSessions: Integer;
+    function GetCount: Integer;
+    function InternalRemoveSessionForIp(AIp: string): Boolean;
+    function InternalAddSessionForIp(AIP: string): Boolean;
+  public
+    class function Instance: TIWIpAccessTable;
+    class procedure Init(AMaxSessions: Integer);
+    class procedure Finalize;
+    constructor Create(ASize: Integer; AMaxSessions: Integer);
+    destructor Destroy; override;
+    class function AddSessionForIp(AIp: string): Boolean;
+    class function RemoveSessionForIp(AIp: string): Boolean;
+    property Count: Integer read GetCount;
+    class property Capacity: Integer read FCapacity write FCapacity;
+  end;
+
+implementation

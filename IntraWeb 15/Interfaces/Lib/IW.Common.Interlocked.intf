@@ -1,0 +1,94 @@
+unit IW.Common.Interlocked;
+{$I IWCompilerDefines.inc}
+{$RANGECHECKS OFF}
+
+{$IFNDEF VCL17ORABOVE}
+  {$DEFINE USE_WINDOWS}
+{$ENDIF}
+
+{$DEFINE INLINE}
+
+interface
+
+uses
+{$IFDEF USE_WINDOWS}
+  Windows, SyncObjs,
+{$ENDIF}
+{$IFDEF FPC}
+  {$UNDEF INLINE}  // Some functions here when inlined in FPC return wrong results. FPC bug???
+  IW.Common.FpcCompat,
+{$ENDIF}
+  SysUtils;
+
+type
+  TInterfacedObjectClass = class of TInterfacedObject;
+
+  TIWInterlocked = class
+  public
+    class function Increment(var Target: Integer): Integer; overload; static; {$IFDEF INLINE} inline; {$ENDIF}
+    class function Increment(var Target: Integer; Value: Integer): Integer; overload; static; {$IFDEF INLINE} inline; {$ENDIF}
+    class function Increment64(var Target: Int64): Int64; overload; static; {$IFDEF INLINE} inline; {$ENDIF}
+    class function Increment64(var Target: Int64; Value: Int64): Int64; overload; static; {$IFDEF INLINE} inline; {$ENDIF}
+    class function Decrement(var Target: Integer): Integer; overload; static; {$IFDEF INLINE} inline; {$ENDIF}
+    class function Decrement(var Target: Integer; Value: Integer): Integer; overload; static; {$IFDEF INLINE} inline; {$ENDIF}
+    class function Decrement64(var Target: Int64): Int64; overload; static; {$IFDEF INLINE} inline; {$ENDIF}
+    class function Decrement64(var Target: Int64; Value: Int64): Int64; overload; static; {$IFDEF INLINE} inline; {$ENDIF}
+    class function Exchange(var Target: Pointer; Value: Pointer): Pointer; overload; static; {$IFDEF INLINE} inline; {$ENDIF}
+    class function Exchange(var Target: Integer; Value: Integer): Integer; overload; static; {$IFDEF INLINE} inline; {$ENDIF}
+    class function ExchangeAdd(var Target: Integer; Value: Integer): Integer; overload; static; {$IFDEF INLINE} inline; {$ENDIF}
+    class function Exchange64(var Target: Int64; Value: Int64): Int64; overload; static; {$IFDEF INLINE} inline; {$ENDIF}
+    class function Exchange64(var Target: Double; Value: Double): Double; overload; static; {$IFDEF INLINE} inline; {$ENDIF}
+    class function ExchangeAdd64(var Target: Int64; Value: Int64): Int64; overload; static; {$IFDEF INLINE} inline; {$ENDIF}
+    class function CompareExchange(var Target: Pointer; Value: Pointer; Comparand: Pointer): Pointer; overload; static; {$IFDEF INLINE} inline; {$ENDIF}
+    class function CompareExchange(var Target: Integer; Value: Integer; Comparand: Integer): Integer; overload; static; {$IFDEF INLINE} inline; {$ENDIF}
+    class function CompareExchange64(var Target: Int64; Value: Int64; Comparand: Int64): Int64; static; {$IFDEF INLINE} inline; {$ENDIF}
+    class function CompareExchangeEx(var Target: Integer; Value: Integer; var Comparand: Integer): Boolean; static; {$IFDEF INLINE} inline; {$ENDIF}
+    class function CompareExchangeIntf(var Target: IInterface; const Value, Comparand: IInterface): IInterface; static; {$IFDEF INLINE} inline; {$ENDIF}
+    class function Read(var Target: Pointer): Pointer; overload; static; {$IFDEF INLINE} inline; {$ENDIF}
+    class function Read(var Target: Integer): Integer; overload; static; {$IFDEF INLINE} inline; {$ENDIF}
+    class function Read64(var Target: Int64): Int64; overload; static; {$IFDEF INLINE} inline; {$ENDIF}
+    class function Read64(var Target: Double): Double; overload; static; {$IFDEF INLINE} inline; {$ENDIF}
+    class function IncrementIfLessThan(var Target: Integer; Threshold: Integer): Boolean; static; {$IFDEF INLINE} inline; {$ENDIF}
+    class function IsBitSet(var Target: Integer; Offset: Integer): Boolean; overload; static; {$IFDEF INLINE} inline; {$ENDIF}
+    class function IsBitSet(var Target: Pointer; Offset: Integer): Boolean; overload; static; {$IFDEF INLINE} inline; {$ENDIF}
+    class procedure CreateInstance(var AObjectRef; ACreateFunc: TFunc<TObject>); overload; static; {$IFDEF INLINE} inline; {$ENDIF}
+    class procedure CreateInstance(var AObjectRef; AObjectClass: TClass); overload; static; {$IFDEF INLINE} inline; {$ENDIF}
+    class procedure CreateInterface(var AInterface: IInterface; AObjectClass: TInterfacedObjectClass); static; {$IFDEF INLINE} inline; {$ENDIF}
+    class procedure FreeAndNil(var Obj); static; {$IFDEF INLINE} inline; {$ENDIF}
+  end;
+
+{$IFDEF USE_WINDOWS}
+// need to add these to the interface so they can be inlined
+function InterlockedCompareExchange64(var Target: Int64; Value, Comparand: Int64): Int64;
+function InterlockedExchange64(var Target: Int64; Value: Int64): Int64;
+function InterlockedIncrement64(var Target: Int64; Value: Int64): Int64;
+function InterlockedIncrement(var Target: Integer; Value: Integer): Integer;
+{$IFDEF FPC}
+// these don't exist in FPC
+function InterlockedExchangePointer(var Target: Pointer; Value: Pointer): Pointer;
+{$ENDIF FPC}
+{$ENDIF USE_WINDOWS}
+
+// compare and swap using a descriptor
+type
+  CASDescriptor32 = packed record
+    NewVal: Integer;
+    ExpVal: Integer;
+    CurVal: Integer;
+    Result: Boolean;
+  end;
+
+  CASDescriptor64 = packed record
+    NewVal: Int64;
+    ExpVal: Int64;
+    CurVal: Int64;
+    Result: Boolean;
+  end;
+
+procedure CAS1_32(var ATarget: Integer; var d: CASDescriptor32); {$IFDEF INLINE} inline; {$ENDIF}
+procedure CAS1_64(var ATarget: Int64; var d: CASDescriptor64); {$IFDEF INLINE} inline; {$ENDIF}
+
+function CAS1_Set32(var ATarget: Integer; AKey: Integer; var APrevTarget: Integer): Boolean; {$IFDEF INLINE} inline; {$ENDIF}
+function CAS1_Set64(var ATarget: Int64; AKey: Int64; var APrevTarget: Int64): Boolean; {$IFDEF INLINE} inline; {$ENDIF}
+
+implementation

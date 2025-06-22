@@ -1,0 +1,61 @@
+unit IWCallBack;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, Classes, IW.Common.RenderStream, IWXMLTag;
+
+type
+  TIWCallBackResponse = class(TObject)
+  private
+    procedure InternalAddTagToRender(const AContent, ATag: string);
+  protected
+    FUpdateTag: TIWXMLTag;
+    FExecuteTag: TIWXMLTag;
+    FRewriteTag: TIWXMLTag;
+    FRenderTag: TIWXMLTag;
+    FSubmitTag: TIWXMLTag;
+    FResponseTag: TIWXMLTag;
+    FTrackTag: TIWXMLTag;
+    FOwner: TObject;  // TIWApplication
+    FFocusedControlHTMLName: string;
+    FRawText: Boolean;
+    FRawContent: string;
+	  FRawContentType: string;
+    FSendResponse: Boolean;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    procedure Initialize;
+    procedure AddJavaScriptToExecute(const AScript: string); overload;
+    procedure AddJavaScriptToExecute(const ABytes: TBytes); overload;
+    procedure AddJavaScriptToExecute(const ABuffer: TIWRenderStream); overload;
+    procedure AddJavaScriptToExecuteAsCDATA(const AScript: string);
+    procedure DoFullSubmit;
+    procedure SetSubmitURL(const AURL: string);
+    procedure SetTrackNumber;
+    procedure AddTagToRewrite(const AContent: string);
+    procedure AddTagToUpdate(const ATag: String); overload;
+    procedure AddTagToUpdate(ATag: TIWXMLTag); overload;
+    procedure AddTagToUpdate(const ABuffer: TIWRenderStream); overload;
+    procedure AddTagToExecute(ATag: TIWXMLTag);
+    procedure AddJsToRender(const AContent: string);
+    procedure AddCssToRender(const AContent: string);
+    procedure AddLinkFileToRender(const AContent: string);
+    procedure AddScriptToRender(const AContent: string);
+    procedure AddListToRemove(const AContent: string);
+    procedure AddHtmlToRender(const AContent: TIWRenderStream; const AControlId, AParentId: string);
+    procedure AddHtmlFormToRender(const AContent: TIWRenderStream);
+    procedure AddRawText(const AContent: string; const AContentType: string = '');
+    function StreamResponse(AStream: TIWRenderStream): Boolean;
+    //
+    property Owner: TObject read FOwner write FOwner;
+    property FocusedControlHTMLName: string read FFocusedControlHTMLName write FFocusedControlHTMLName;
+    property UpdateTag: TIWXmlTag read fUpdateTag;
+    property RawText: Boolean read FRawText write FRawText default False;
+    // user code is responsible for sending the response
+    property SendResponse: Boolean read FSendResponse write FSendResponse default True;
+  end;
+
+implementation

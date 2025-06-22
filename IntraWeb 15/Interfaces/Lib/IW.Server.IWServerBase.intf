@@ -1,0 +1,27 @@
+unit IW.Server.IWServerBase;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, SysUtils, IWCompress;
+
+type
+  IIWServerBase = interface
+    ['{757E8803-6975-497F-B8A0-6BA7EA35842F}']
+    function GetBitsPerSec: Integer;
+    procedure SetBitsPerSec(const Value: Integer);
+    function GetHTTPActive: Boolean;
+    function GetHTTPSActive: Boolean;
+    function GetLogStraffic: Boolean;
+    procedure SetLogTraffic(const Value: Boolean);
+    procedure Start;
+    function Description: string;
+    function GetCompressorClass: TIWCompressorClass;
+    function GetAdditionalHttpsInfo: string;
+    function GetActivePortsInfo: string;
+  end;
+
+function BaseServerInterface(AObject: TObject): IIWServerBase;
+
+implementation

@@ -1,0 +1,199 @@
+unit IWBaseForm;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, Controls, Graphics, Classes, TypInfo,
+  IWFormDsn, IWContainer, IWTypes, IW.Common.RenderStream,
+  IWApplication, IWBaseInterfaces, IWBaseRenderContext, IWComponentHash,
+  IW.Http.Reply, IW.Common.Lists, IW.Common.StrLists;
+
+type
+  //TODO: Remove these - just for old DFM compat
+  TIWBrowserDummy = (brUnknown, brNetscape7 , brIE, brGecko, brOpera, brSafari, brChrome, brIE4, brNetscape6, brNetscape4, brOther, brHTML32Test
+    , brWMLTest, brXHTMLMPTest, brWAP, brSearchEngine
+  );
+  TIWBrowsersDummy = set of TIWBrowserDummy;
+
+  TIWBaseForm = class;
+  TIWMessageFormClass = class of TIWBaseForm;
+
+  TIWFormState = (fsUndefined, fsRendering, fsExecuting, fsCreating, fsCreated, fsDestroying);
+
+  TIWCheckFormIdEvent = procedure(Sender: TObject; var Allow: Boolean) of object;
+
+  TIWGenerateFormEvent = procedure(aReply: THttpReply; var aHandled: Boolean) of object;
+
+  TIWProcessParamsEvent = procedure(Sender: TObject; AParams: TStringList) of object;
+
+  TIWAsyncPageUnloadedEvent = procedure (Sender: TObject; EventParams: TStringList; AIsCurrent: Boolean) of object;
+
+  TIWBaseForm = class(TIWModuleDsn)
+  private
+    FConnectionMode: TIWConnectionMode;
+    // FControlList contains a list of the controls on the canvas in a special order.
+    // Also filters out controls not to be rendered
+    FPreHeader: TStringList;
+    FExtraHeader: TStringList;
+    FContentFiles: TStringList;
+    FHiddenFields: TStringList;
+    FOnAfterRender: TNotifyEvent;
+    FOnCreate: TNotifyEvent;
+    FOnDestroy: TNotifyEvent;
+    FOnShow: TNotifyEvent;
+    FParams: TStringList;
+    FReleased: Boolean;
+    FTitle: string;
+    FWebApplication: TIWApplication;
+    FFormState: TIWFormState;
+    FPreventBackButton: Boolean;
+    FExecCount: Cardinal;
+    FOnCheckFormId: TIWCheckFormIdEvent;
+    FOnGenerateForm: TIWGenerateFormEvent;
+    FOnRefreshForm: TNotifyEvent;
+    FIsFirstRequest: Boolean;
+    FIsPostBack: Boolean;
+    FOnAsyncResize: TIWAsyncEvent;
+    FBrowserScrollPosX: Double;
+    FBrowserScrollPosY: Double;
+    FAutoScrollPos: Boolean;
+    FOnProcessParams: TIWProcessParamsEvent;
+    FOnAsyncPageLoaded: TIWAsyncEvent;
+    FOnAsyncPageUnloaded: TIWAsyncPageUnloadedEvent;
+    FOnAsyncOrientationChange: TIWAsyncEvent;
+    procedure SetContentFiles(const Value: TStringList);
+    procedure SetSupportedBrowsers(const Value: TIWBrowsersDummy);
+  protected
+    FReleaseCalled: Boolean;
+    FFormAction: string;
+    FAllowPageAccess: Boolean;
+    FComponentHash: TIWComponentHash;
+    FFormId: string;
+    FNewComponentList: TIWListBase;
+    FDestroyedComponentList: TIWSimpleStringList;
+    //
+    procedure Dispose(ADispose: Boolean); override;
+    procedure DoAfterRender; virtual;
+    procedure DoCreate;
+    procedure DoDestroy;
+    class function EndFormClassType: TClass; virtual;
+    function GetWebApplication: TIWApplication;
+    procedure InitControl; override;
+    function InitContainerContext(AWebApplication: TIWApplication): TIWContainerContext; override;
+    procedure SetPreHeader(const AValue: TStringList);
+    procedure SetExtraHeader(const AValue: TStringList);
+    procedure SetFormAction(const AValue: string); virtual;
+    procedure SetHiddenFields(const AValue: TStringList);
+    procedure SetChildOrder(Child: TComponent; Order: Integer); override;
+    procedure SetZOrderPosition(Position: Integer);
+    function getTabOrder: TIWTabOrder; override;
+    procedure setTabOrder(Value: TIWTabOrder); override;
+    procedure DoGenerateForm(AStream: TIWRenderStream); virtual;
+    procedure DoExecuteForm; virtual;
+    procedure DoOnFormAsyncResize(AParams: TStringList); virtual;
+    procedure DoOnProcessParams(AParams: TStringList); virtual;
+    function GetNewComponentList: TIWListBase; override;
+    function GetDestroyedComponentList: TIWSimpleStringList; override;
+    procedure DoOnAsyncPageLoaded(AParams: TStringList);
+    procedure DoOnAsyncPageUnloaded(AParams: TStringList);
+    procedure DoOnAsyncOrientationChange(AParams: TStringList); virtual;
+    procedure HandleRenderError(E: Exception); virtual;
+    procedure SafeExecuteFormEvent(AEvent: TNotifyEvent); virtual;
+    procedure DoBeforeRender; override;
+  public
+    // Hide/Show/Release are here instead of just in the app forms because
+    // -To hide the inherited methods in ancestor VCL classes
+    // -Expose it for the appforms.
+    // -Provide a common layer that the render engine can use to access them if necessary
+    procedure Hide; virtual;
+    procedure Release; virtual;
+    procedure ReleaseAndRedirect(const aUrl: string); virtual;
+    procedure Show; virtual;
+
+    procedure ResetTabOrders(AContainer: TIWContainer; ATabSortType: TIWTabSortType; ALevel: Integer = 0); virtual;
+
+    procedure Submit(AControl: IIWSubmitControl);virtual;
+
+    constructor Create(AOwner: TComponent); override;
+    constructor CreateNew(AOwner: TComponent; const ADummy: Integer = 0); virtual;
+    destructor Destroy; override;
+    procedure AfterConstruction; override;
+    procedure BeforeDestruction; override;
+    procedure GenerateForm(AStream: TIWRenderStream);
+    procedure ExecuteForm;
+    function MessageForm: TIWMessageFormClass; virtual;
+    function LocateComponent(const AComponentName: string): TComponent;
+    procedure DoOnShow;
+    class function TextToHTMLStringLiteral(const AText: string): string;
+
+    procedure ComponentAdded(AComponent: TComponent; AParentContainer: TControl = nil);
+    procedure ComponentRemoved(AComponent: TComponent; const AComponentName: string; ACheckState: Boolean = False);
+    //
+    property FormAction: string read FFormAction write SetFormAction;
+    property Params: TStringList read FParams;
+    property Released: Boolean read FReleased;
+    property WebApplication: TIWApplication read GetWebApplication;
+    property FormState: TIWFormState read FFormState;
+    property ExecCount: Cardinal read FExecCount;
+    property IsFirstRequest: Boolean read FIsFirstRequest;
+    property IsPostBack: Boolean read FIsPostBack;
+    property BrowserScrollPosX: Double read FBrowserScrollPosX write FBrowserScrollPosX;
+    property BrowserScrollPosY: Double read FBrowserScrollPosY write FBrowserScrollPosY;
+    property FormID: string read FFormId;
+  published
+    property AllowPageAccess: Boolean read FAllowPageAccess write FAllowPageAccess;
+    property ConnectionMode: TIWConnectionMode read FConnectionMode write FConnectionMode;
+    property PreHeader: TStringList read FPreHeader write SetPreHeader;
+    property ExtraHeader: TStringList read FExtraHeader write SetExtraHeader;
+    property ContentFiles: TStringList read FContentFiles write SetContentFiles;
+    property HiddenFields: TStringList read FHiddenFields write SetHiddenFields;
+    property Title: string read FTitle write FTitle;
+    property PreventBackButton: Boolean read FPreventBackButton write FPreventBackButton default False;
+    property AutoScrollPos: Boolean read FAutoScrollPos write FAutoScrollPos default False;
+
+    // deprecated
+    property SupportedBrowsers: TIWBrowsersDummy write SetSupportedBrowsers;
+    //
+    property OnAfterRender: TNotifyEvent read FOnAfterRender write FOnAfterRender;
+    property OnCreate: TNotifyEvent read FOnCreate write FOnCreate;
+    property OnDestroy: TNotifyEvent read FOnDestroy write FOnDestroy;
+    property OnCheckFormId: TIWCheckFormIdEvent read FOnCheckFormId write FOnCheckFormId;
+    property OnShow: TNotifyEvent read FOnShow write FOnShow;
+    property OnGenerateForm: TIWGenerateFormEvent read FOnGenerateForm write FOnGenerateForm;
+    property OnRefreshForm: TNotifyEvent read FOnRefreshForm write FOnRefreshForm;
+    property OnAsyncResize: TIWAsyncEvent read FOnAsyncResize write FOnAsyncResize;
+    property OnProcessParams: TIWProcessParamsEvent read FOnProcessParams write FOnProcessParams;
+    property OnAsyncPageLoaded: TIWAsyncEvent read FOnAsyncPageLoaded write FOnAsyncPageLoaded;
+    property OnAsyncPageUnloaded: TIWAsyncPageUnloadedEvent read FOnAsyncPageUnloaded write FOnAsyncPageUnloaded;
+    property OnAsyncOrientationChange: TIWAsyncEvent read FOnAsyncOrientationChange write FOnAsyncOrientationChange;
+  end;
+
+  TIWBaseFormClass = class of TIWBaseForm;
+  TComponentArray = array of TComponent;
+
+  IIWMessageForm = interface
+    ['{CA5F1404-2AF2-4E57-8119-058D53E2E8E2}']
+    procedure InitializeAndShow(AMsg, ATemplate: string; AType: TIWShowMessageType);
+  end;
+
+  IIWTestFrameWork = interface
+    ['{3E8E2BDC-5021-42D0-AF8B-94A5A86EB5E1}']
+    procedure SubmitForm( AForm: TIWBaseForm; AControl:IIWSubmitControl);
+    procedure RecordValueSet(AFormClassName, AControlName, AValue: string);
+    procedure RecordFormSubmit(AFormClassName, AControlName, ASubmitParam: string);
+    procedure StartRecording;
+    procedure StopRecording;
+    procedure ClearRecording;
+    function  IsRecording: Boolean;
+    function  GenereateTestUnit(AUnitName: String): string; 
+  end;
+
+  function MessageFormInterface(AInstance: TObject): IIWMessageForm;
+  function TestFrameWorkInterface(AObject: TObject): IIWTestFrameWork;
+
+  function GetOwnerForm(AComponent: TComponent): TIWBaseForm;
+  function GetIWControlParentForm(Control: TControl): TIWBaseForm;
+
+
+implementation

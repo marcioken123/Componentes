@@ -1,0 +1,167 @@
+unit IWjQAccordion;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, Types, Messages, Controls,  Contnrs,
+  IWRenderContext, IWHTMLTag, IWRegion, IWApplication, IWFont, IWXMLTag;
+
+type
+  TIWjQSection = class;
+
+  TjQSectionBeforeChangeEvent = procedure(Sender: TObject; NewSectionIndex: Integer; var AllowChange: Boolean) of object;
+
+  TjQSectionChangeEvent = procedure(Sender: TObject; SectionIndex: Integer) of object;
+
+  {$include IWPlatformAttrib.inc}
+  TIWjQAccordion = class(TIWCustomRegion)
+  private
+    class var FLocalJavaScriptFolder: string;
+    class var FLocalStyleFolder: string;
+  private
+    FSections: TList;
+    FActiveSectionIndex: Integer;
+    FActiveSection: TIWjQSection;
+    FRenderCDNFiles: Boolean;
+    FRenderLocalFiles: Boolean;
+    FFocusOutline: Boolean;
+    FAlignment: TAlignment;
+    FTabHeight,
+    FTabMargin,
+    FTabPadding,
+    FTabTextHeight,
+    FTabBorderHeight: Word;
+    FjQueryUIThemeName: string;
+    FCollapsible,
+    FActive: Boolean;
+    FCssPath: string;
+    FOnAsyncSectionChanged: TjQSectionChangeEvent;
+    FOnAsyncBeforeSectionChange: TjQSectionBeforeChangeEvent;
+    FBlockingBeforeSectionChange: Boolean;
+    function GetjQSelectorID: string;
+    procedure SetActiveSectionIndex(Value: Integer);
+    procedure CheckActiveSection;
+    procedure SetActiveSection(const Value: TIWjQSection);
+    function GetSection(Index: Integer): TIWjQSection;
+    function GetSectionCount: Integer;
+    procedure DeleteSections;
+    function GetjQName: string;
+    procedure ReorderSections;
+    procedure FontChanged(ASender: TObject);
+    procedure Resized;
+    procedure RecalcSizes;
+    procedure SetVoid(AValue: Word);
+    procedure SetRenderCDNFiles(const Value: Boolean);
+    procedure SetRenderLocalFiles(const Value: Boolean);
+    procedure RenameSections(const aOldName: string);
+    function InternalGetWebApp: TIWApplication;
+    procedure SetActive(Value: Boolean);
+    procedure SetCollapsible(Value: Boolean);
+    procedure OptionChanged(const AName, AValue: string);
+    procedure SetjQueryUIThemeName(const Value: string);
+    function AddEvents(AContext: TIWCompContext): string;
+    function InternalSetActiveSectionIndex(Value: Integer): Boolean;
+    procedure DoAsyncSectionChanged(EventParams: TStringList);
+    procedure DoAsyncBeforeSectionChange(EventParams: TStringList);
+    function GetCssPath: string;
+  protected
+    procedure SectionsAdjustSize;
+    procedure Loaded; override;
+    procedure Notification(AComponent: TComponent; Operation: TOperation); override;
+    procedure CMDesignHitTest(var Msg: TCmDesignHitTest); message CM_DESIGNHITTEST;
+    procedure SetName(const AValue: TComponentName); override;
+    procedure RefreshAsyncRender;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    procedure set_Visible(Value: Boolean); override;
+    procedure AddRequiredFiles(AContext: TIWCompContext); virtual;
+  public
+    property jQName: string read GetjQName;
+    property jQSelectorID: string read GetjQSelectorID;
+    property WebApp: TIWApplication read InternalGetWebApp;
+    function TabHeightCalc(AFontSize: Integer = 0): Integer;
+    procedure Invalidate; override;
+    function RenderStyle(AComponentContext: TIWCompContext): string; override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    constructor Create(AOwner: TComponent); override;
+    destructor Destroy; override;
+    function CreateSection(const ACaption: string = ''): TIWjQSection;
+    function AddSection(ASection: TIWjQSection): Integer;
+    function GetSectionIndex(ASection: TIWjQSection): Integer;
+    function GetSectionIndexByName(const ASectionName: string): Integer;
+    procedure RemoveSection(ASection: TIWjQSection);
+    procedure InitControl; override;
+    procedure DownloadContentFiles;
+    property Sections[Index: Integer]: TIWjQSection read GetSection;
+    property SectionCount: Integer read GetSectionCount;
+    property ActiveSectionIndex: Integer read FActiveSectionIndex write SetActiveSectionIndex;
+    property CssPath: string read GetCssPath;
+    class property LocalJavaScriptFolder: string read FLocalJavaScriptFolder write FLocalJavaScriptFolder;
+    class property LocalStyleFolder: string read FLocalStyleFolder write FLocalStyleFolder;
+  published
+    property jQueryUIThemeName: string read FjQueryUIThemeName write SetjQueryUIThemeName;
+    property ActiveSection: TIWjQSection read FActiveSection write SetActiveSection;
+    property Color;
+    property Align;
+    property Anchors;
+    property RenderCDNFiles: Boolean read FRenderCDNFiles write SetRenderCDNFiles default True;
+    property RenderLocalFiles: Boolean read FRenderLocalFiles write SetRenderLocalFiles default False;
+    property FocusOutline: Boolean read FFocusOutline write FFocusOutline default True;
+    property Font: TIWFont read get_WebFont write set_WebFont;
+    property StyleRenderOptions;
+    property TabAlignment: TAlignment read FAlignment write FAlignment default taLeftJustify;
+    property TabHeight: Word read FTabHeight write SetVoid;
+    property TabTextHeight: Word read FTabTextHeight write SetVoid;
+    property TabBorderHeight: Word read FTabBorderHeight write SetVoid;
+    property TabMargin: Word read FTabMargin write SetVoid;
+    property TabPadding: Word read FTabPadding write SetVoid;
+    property Active: Boolean read FActive write SetActive default True;
+    property Collapsible: Boolean read FCollapsible write SetCollapsible default False;
+    property OnAsyncSectionChanged: TjQSectionChangeEvent read FOnAsyncSectionChanged write FOnAsyncSectionChanged;
+    property OnAsyncBeforeSectionChange: TjQSectionBeforeChangeEvent read FOnAsyncBeforeSectionChange write FOnAsyncBeforeSectionChange;
+    property BlockingBeforeSectionChange: Boolean read FBlockingBeforeSectionChange write FBlockingBeforeSectionChange default True;
+  end;
+
+  TIWjQSection = class(TIWCustomRegion)
+  private
+    FIndex: Integer;
+    FAccordion: TIWjQAccordion;
+    FCaption: string;
+    FParentCreating: boolean;
+    FTabWidth: Integer;
+    FEnabled: boolean;
+    procedure SetCaption(const Value: string);
+    function GetSectionIndex: Integer;
+    procedure SetSectionIndex(Value: Integer);
+    function GetjQName: string;
+    procedure UpdateSectionIndex;
+    procedure SetEnabled(const Value: boolean); reintroduce;
+    function GetEnableCode: string;
+  protected
+    procedure set_DoRefreshControl(AValue: Boolean); override;
+    procedure ParentChanging(AOldParent, AParent: TComponent); override;
+    function IsNested: Boolean; override;
+  public
+    constructor Create(AOwner: TComponent); override;
+    destructor Destroy; override;
+    procedure SetBounds(ALeft, ATop, AWidth, AHeight: Integer); override;
+    function RenderHTMLForParent(AContext: TIWCompContext): TIWHTMLTag;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    function RenderStyle(AComponentContext: TIWCompContext): string; override;
+    procedure Invalidate; override;
+    property TabWidth: Integer read FTabWidth;
+    property jQName: string read GetjQName;
+  published
+    property Caption: string read FCaption write SetCaption;
+    property SectionIndex: Integer read GetSectionIndex write SetSectionIndex; // stored False;
+    property Enabled: boolean read FEnabled write SetEnabled default True;
+    property Color;
+    property Anchors;
+  end;
+
+resourcestring
+  sSectionIndexError = '%d is an invalid SectionIndex value.  SectionIndex must be ' +
+    'between 0 and %d';
+  sNewSection = 'New Section';
+
+implementation

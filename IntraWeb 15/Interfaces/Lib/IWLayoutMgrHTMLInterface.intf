@@ -1,0 +1,80 @@
+unit IWLayoutMgrHTMLInterface;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Forms, Windows, Messages, Classes;
+
+type
+  THLMDestroyingProc = procedure of object;
+  THLMSetResultProc = procedure(const AValue: string) of object;
+
+  IHTMLLayoutComponent = interface;
+
+  IHTMLLayoutMgr = interface
+  ['{F2DB1294-8D0A-4DDC-8BB2-C6328F0EF28C}']
+    procedure SetWorkAreaPath(const AValue: string);
+    procedure Load(AHTMLMgr: IHTMLLayoutComponent; const APalletteList: string = '');
+    procedure SetProcDestroying(AValue: THLMDestroyingProc);
+    procedure SetProcSetResult(AValue: THLMSetResultProc);
+    procedure Show;
+    procedure Close;
+  end;
+
+  IIWHTMLDesigner = interface(IHTMLLayoutMgr)
+  ['{5E71AA66-5A91-4179-96DE-B2E7F277924F}']
+    procedure UpdateControl(AControlName: String{; AInserting: Boolean});
+    function GetWorkAreaPath: string;
+    procedure AddComponent(const AComponentName, AClassName: String);
+    procedure DeleteComponent(const AComponentName: String);
+    procedure SelectComponent(const AComponentName: String);
+    procedure AddComponentToPalette(const APaletteName, AComponent: string;
+      AResourceInstance: THandle);
+
+    procedure RenameComponent(const ACurName, ANewName: String);
+
+    property WorkAreaPath: string read GetWorkAreaPath write SetWorkAreaPath;
+  end;
+
+  IHTMLLayoutComponent = interface
+  ['{09E37D16-FF67-4A1E-AE11-F5D50327E29A}']
+    function CreateComponent(const AClassName: String): string;
+    function SelectComponent(const AComponentName: String): string;
+    procedure DeleteComponent(const AComponentName: String);
+    procedure RepaintComponent(const AComponentName: String);
+
+    procedure RenameComponent(const ACurName, ANewName: String);
+
+    procedure ReleaseComponent;
+
+    // procedure ResizeComponent(const AComponentName: string; awidth, aheight: Integer);
+
+    function GetHTMLDesigner: IIWHTMLDesigner;
+
+    procedure BuildPalette;
+
+    procedure ShowObjectInspector;
+
+    function GetComponentList: string;
+
+    property HTMLDesigner: IIWHTMLDesigner read GetHTMLDesigner;
+  end;
+
+  IIWLayoutMgrHTML = interface
+  ['{A01AF71E-5AD7-49DC-8EF5-76A12600AF65}']
+    function HasHTMLEditor: Boolean;
+    procedure OutputWorkFiles(const AWorkPath: string);
+    function GetHTMLEditor: IHTMLLayoutComponent;
+    procedure SetHTMLEditor(AEdtComp: IHTMLLayoutComponent);
+    procedure SetHTML(const AValue: TStringList);
+    function GetHTML: TStringList;
+
+    function GetOwner: TPersistent;
+  end;
+
+type
+  TGetManagerProc = function(AHandle: THandle): IHTMLLayoutMgr;
+  TReleaseManagerProc = procedure;
+
+implementation

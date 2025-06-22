@@ -1,0 +1,178 @@
+unit IWCompCalendar;
+{$I IWCompilerDefines.inc}
+
+// Disable Compiler warings for DEPRECATED set_RenderSize, setRenderSize and get_RenderSize
+{$WARN SYMBOL_DEPRECATED OFF}
+
+interface
+
+uses
+  Controls, Graphics, Classes, SysUtils,
+  IWBaseControl, IWControl,
+  IWHTMLTag, IWCompGrids, IWFileReference, IWCompExtCtrls,
+  IWBaseRenderContext, IWColor, IWFont, IWRenderContext, IWBaseInterfaces;
+
+type
+  TIWCalendarDateChange = procedure(ADate: TDateTime) of object;
+  TIWCalendarGetDateInformation = procedure(ADate: TDateTime; VInformation: TStrings) of object;
+  TIWCalendarWeekStarts = (wsMonday, wsTuesday, wsWednesday, wsThursday, wsFriday, wsSaturday, wsSunday);
+  TIWCalendarGetDayNames = procedure(var Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday: string) of object;
+  TIWCalendarGetMonthName = procedure(MonthNumber : Integer; var MonthName: string) of object;
+
+  TIWCalendar = class;
+
+  TIWCalendarCell = class(TIWGridCell)
+  private
+    FCalendar: TIWCalendar;
+    FImageFile: TIWImageFile;
+    FCellDate: TDateTime;
+    FDateInformation: TStringList;
+    procedure SetCellDate(const Value: TDateTime);
+    procedure SetDateInformation(const Value: TStringList);
+    function RenderContents(AContext: TIWCompContext): string;
+  public
+    constructor Create(ACollection: TCollection); override;
+    destructor Destroy; override;
+    function RenderSelf(AGrid: TIWCustomGrid; const ARow: Integer;
+      const AColumn: Integer; AContext: TIWCompContext; AContainerContext: TIWContainerContext; AText: string = ''): TIWHTMLTag; override;
+
+    property ImageFile: TIWImageFile read FImageFile;
+
+    property CellDate: TDateTime read FCellDate write SetCellDate;
+
+    property DateInformation: TStringList read FDateInformation write SetDateInformation;
+  end;
+
+  TIWCalendarCells = class(TOwnedCollection)
+  public
+    function Add: TIWCalendarCell;
+    function Owner: TPersistent;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWCalendar = class(TIWCustomGrid, IIWSubmitControl)
+  private
+    FHtmlName: string;
+    FSubmitParam: string;
+    FCurrentMonth: word;
+    FCurrentYear: word;
+    FColumnCount: Integer;
+    FRowCount: Integer;
+    FCellCollection: TIWCalendarCells;
+    FCurrentDayImage: TIWFileReference;
+    FNextMonthImage: TIWFileReference;
+    FPreviousMonthImage: TIWFileReference;
+
+    FCalendarColor: TIWColor;
+    FCalendarHeaderColor: TIWColor;
+    FCalendarFont: TIWFont;
+    FCalendarHeaderFont: TIWFont;
+
+    FOnDateChange: TIWCalendarDateChange;
+    FOnGetDateInformation: TIWCalendarGetDateInformation;
+    FOnGetDayNames : TIWCalendarGetDayNames;
+    FOnGetMonthName : TIWCalendarGetMonthName;
+    FAlternateCalendarColor: TIWColor;
+    FCheckerBoard: Boolean;
+    FSelectedDate: TDateTime;
+    FLongDayNames: Boolean;
+    FDisplayYear: Boolean;
+
+
+    FDayNames : array [1..7] of string;
+
+    FCaptionToday: string;
+    FCaptionNext: string;
+    FCaptionPrevious: string;
+    FCss: string;
+    FStartDate: TDateTime;
+    FWeekStarts: TIWCalendarWeekStarts;
+
+    FLocaleID : Integer;
+    FCellStyles: TStringList;
+    FAsyncMode: Boolean;
+    procedure SetCurrentDayImage(const Value: TIWFileReference);
+    procedure SetNextMonthImage(const Value: TIWFileReference);
+    procedure SetPreviousMonthImage(const Value: TIWFileReference);
+    procedure SetOnDateChange(const Value: TIWCalendarDateChange);
+    function GetCurrentDayImage: TIWFileReference;
+    function GetNextMonthImage: TIWFileReference;
+    function GetPreviousMonthImage: TIWFileReference;
+    procedure SetCalendarFont(const Value: TIWFont);
+    procedure SetCalendarHeaderFont(const Value: TIWFont);
+    procedure SetStartDate(const Value: TDateTime);
+    procedure SetSelectedDate(const Value:TDateTime);
+    function GetSubmitLink(AContext: TIWCompContext; const AText, AParam: string; const AAsync: Boolean): TIWHTMLTag;
+    function RenderSubmitLink(AContext: TIWCompContext; const AText,
+      AParam: string): string;
+    procedure InternalDoOnAsyncClick(AParams: TStringList);
+  protected
+    { Protected declarations }
+    procedure DoCellClick(const ARow: Integer; const AColumn: Integer);  virtual;
+    procedure DoGetDateInformation(ADate: TDateTime; VInformation: TStrings);   virtual;
+    procedure LoadMonth(AContext: TIWBaseComponentContext); virtual;
+    procedure GoPreviousMonth; virtual;
+    procedure GoNextMonth(AContext: TIWBaseComponentContext); virtual;
+    function GetCell(const ARow, AColumn: Integer): TIWCalendarCell;
+    function CellExists(const ARow, AColumn: Integer): Boolean;
+    procedure Submit(const AValue: string); override;
+    function GetDayName(DayNo: Integer): string; virtual;
+    procedure RenderCells(AContext: TIWCompContext; AGridTag: TIWHTMLTag); override;
+    procedure DoGetDayNames;virtual;
+    procedure DoRenderCell(ACell: TIWGridCell; const ARow: Integer; const AColumn: Integer);
+
+    function IsValidCell(ACell: TIWGridCell): Boolean; override;
+
+    procedure DefineProperties(Filer: TFiler); override;
+    procedure LoadCaptionToday(Reader: TReader);
+    procedure StoreCaptionToday(Writer: TWriter);
+    procedure LoadCaptionPrevious(Reader: TReader);
+    procedure StoreCaptionPrevious(Writer: TWriter);
+    procedure LoadCaptionNext(Reader: TReader);
+    procedure StoreCaptionNext(Writer: TWriter);
+
+    procedure InitControl; override;
+    procedure InitDesignTime; override;
+
+  protected
+    procedure Dispose(ADispose: Boolean); override;
+  public
+     { Public declarations }
+
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    function GetSubmitParam: string;
+
+    procedure SetHeaderCells;
+    property Cell[const ARow: Integer; const AColumn: Integer]: TIWCalendarCell read GetCell;
+
+    property LocaleID : Integer read FLocaleID write FLocaleID;
+  published
+     { Published declarations }
+    property CurrentDayImage: TIWFileReference read GetCurrentDayImage write SetCurrentDayImage;
+    property PreviousMonthImage: TIWFileReference read GetPreviousMonthImage write SetPreviousMonthImage;
+
+    property Css: string read Fcss write FCss;
+    property NextMonthImage: TIWFileReference read GetNextMonthImage write SetNextMonthImage;
+    property CalendarColor: TIWColor read FCalendarColor write FCalendarColor default clWebGAINSBORO;
+    property AlternateCalendarColor: TIWColor read FAlternateCalendarColor write FAlternateCalendarColor default clWebLAVENDER;
+    property CalendarHeaderColor: TIWColor read FCalendarHeaderColor write FCalendarHeaderColor default clWebLIGHTSTEELBLUE;
+    property CalendarFont: TIWFont read FCalendarFont write SetCalendarFont;
+    property CalendarHeaderFont: TIWFont read FCalendarHeaderFont write SetCalendarHeaderFont;
+    property CheckerBoard: boolean read FCheckerBoard write FCheckerBoard default False;
+    property SelectedDate: TDateTime read FSelectedDate write SetSelectedDate;
+    property FriendlyName;
+    property StartDate: TDateTime read FStartDate write SetStartDate;
+    property UseLongDayNames: boolean read FLongDayNames write FLongDayNames default False;
+    property CaptionToday: string read FCaptionToday write FCaptionToday stored False;
+    property CaptionPrevious: string read FCaptionPrevious write FCaptionPrevious stored False;
+    property CaptionNext: string read FCaptionNext write FCaptionNext stored False;
+    property WeekStarts: TIWCalendarWeekStarts read FWeekStarts write FWeekStarts default wsMonday;
+    property OnDateChange: TIWCalendarDateChange read FOnDateChange write SetOnDateChange;
+    property OnGetDateInformation: TIWCalendarGetDateInformation read FOnGetDateInformation write FOnGetDateInformation;
+    property OnGetDayNames: TIWCalendarGetDayNames read FOnGetDayNames write FOnGetDayNames;
+    property OnGetMonthName : TIWCalendarGetMonthName read FOnGetMonthName write FOnGetMonthName;
+    property DisplayYear: Boolean read FDisplayYear write FDisplayYear;
+    property AsyncMode: Boolean read FAsyncMode write FAsyncMode default False;
+  end;
+
+implementation

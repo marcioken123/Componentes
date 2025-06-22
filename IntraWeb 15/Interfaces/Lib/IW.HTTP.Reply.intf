@@ -1,0 +1,101 @@
+unit IW.HTTP.Reply;
+
+interface
+
+uses
+  Classes, IW.HTTP.Cookie, IW.Common.HttpPacket, IW.Common.StreamHelper,
+  IW.Common.HsmStream, IW.Common.RenderStream;
+
+type
+  THttpReply = class
+  private
+    function GetNonce: string;
+    procedure SetNonce(const Value: string);
+    function GetHasContent: Boolean;
+    procedure ErrorIfHasContent;
+  protected
+    mCode: Word;
+    mCodeText: string;
+    mAllowCaching: Boolean;
+    mAuthRealm: string;
+    mBuffer: PByte;
+    mBufferSize: Integer;
+    mContentType: string;
+    mHeaders: TStrings;
+    mLastModified: TDateTime;
+    mExpires: TDateTime;
+    mCacheTTL: Integer;
+    mDataType: THttpReplyType;
+    mContentStream: TStreamHelper;
+    mCookies: THttpCookieList;
+    mFilePathname: string;
+    mFileDelete: Boolean;
+    mServerPort: Integer;
+    mSendingFile: Boolean;
+    mCacheControlEnabled: Boolean;
+    mP3PHeaders: Boolean;
+    mIECompatibilityMode: string;
+    mP3P: string;
+    mNonce: string;
+    mAcceptRanges: Boolean;
+    mRangeFrom,
+    mRangeTo: Int64;
+    //
+    procedure SetCode(const aValue: Word);
+    procedure SetDataType(aDataType: THttpReplyType);
+    procedure SetHeaders(const aValue: TStrings);
+    procedure SetCacheTTL(const aValue: Integer);
+    procedure SetExpires(const aValue: TDateTime);
+    procedure DoSendRedirect(const aURL: string; aStatusCode: Integer);
+  public
+    class var DefaultCacheTTL: Integer;
+    class var DefaultCacheControl: string;
+    class var DefaultNoCacheControl: string;
+    class var DefaultP3P: string;
+    class var UseInternalFormatSettings: Boolean;  // Use system format settings when interacting with ASPX modulewe pass cookie expires field as a string. We need to fix the decimal separator in case
+    class var MaxStreamSize: Int64;
+
+    constructor Create(aBuffer: PByte; const aSize: Integer);
+    destructor Destroy; override;
+    procedure Commit;
+    procedure WriteString(const aValue: string);
+    procedure WriteXmlResponse(const aXml: string);
+    procedure WriteJsonResponse(const aJson: string);
+    procedure SendRenderStream(aStream: TIWRenderStream);
+    procedure SendStream(aStream: TStream; const aDisableCacheControl: Boolean = False);
+    procedure SendHsmStream(aStream: THsmStream; aCheckContentStream: Boolean = False);
+    procedure SendFile(const aPathname: string; const aDisableCacheControl: Boolean; const aDelete: Boolean);
+    procedure SendCacheFile(const aPathname: string);
+    procedure SendRedirect(const aURL: string); overload;
+    procedure SendRedirect(const aURL: string; aStatusCode: Integer); overload;
+    procedure ResetReplyType;
+    procedure AddHeader(const aName, aValue: string);
+    procedure Clear;
+    procedure ClearContent;
+    procedure SetRange(aFrom, aTo: Int64);
+    //
+    property AllowCaching: Boolean read mAllowCaching write mAllowCaching;
+    property AuthRealm: string read mAuthRealm write mAuthRealm;
+    property CacheTTL: Integer read mCacheTTL write SetCacheTTL;
+    property Code: Word read mCode write SetCode;
+    property CodeText: string read mCodeText write mCodeText;
+    property ContentType: string read mContentType write mContentType;
+    property Cookies: THttpCookieList read mCookies;
+    property LastModified: TDateTime read mLastModified write mLastModified;
+    property Headers: TStrings read mHeaders write SetHeaders;
+    property Expires: TDateTime read mExpires write SetExpires;
+    property DataType: THttpReplyType read mDataType;
+    property ServerPort: Integer read mServerPort write mServerPort;
+    property SendingFile: Boolean read mSendingFile write mSendingFile;
+    // If FALSE, completely disable cache control header fields ("Expires", "Last-Modified", "Pragma: no-cache" and "Cache-Control: no-cache"). Default = TRUE
+    // workaround for IE8 + SSL download bug: http://support.microsoft.com/kb/323308/en-us
+    property CacheControlEnabled: Boolean read mCacheControlEnabled write mCacheControlEnabled;
+    property IECompatibilityMode: string read mIECompatibilityMode write mIECompatibilityMode;
+    property P3P: string read mP3P write mP3P;
+    // nonce is used in CSP scripts/styles autentication
+    property Nonce: string read GetNonce write SetNonce;
+    property AcceptRanges: Boolean read mAcceptRanges write mAcceptRanges default False;
+    property HasContent: Boolean read GetHasContent;
+  end;
+
+implementation

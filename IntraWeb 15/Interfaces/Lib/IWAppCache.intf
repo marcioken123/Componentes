@@ -1,0 +1,85 @@
+unit IWAppCache;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, SysUtils, Graphics, IW.Common.StreamHelper,
+  IW.CacheStream, IWImageUtils, IW.Common.StrLists, IWColor;
+
+type
+  TIWAppCache = class
+  public
+    // prefix used for cache file names. Default to 'ATZ'
+    class var TempFilePrefix: string;
+
+    // General method for temp file name creation. Only the file name is returned, no file is actually created
+    class function NewTempFileName(const AExtension: string = ''): string;
+
+    // Add some existing file to the cache. Returns the URL to the file.
+    // The file name should be preferentially obtained using method NewTempFileName()
+    class function AddFileToCache(aOwner: TObject; const aSourceFileName, aDestFileName: string;
+      const aContentType: string; const aAttachment: Boolean; const aCacheType: TCacheType = ctOneTime): string; overload;
+
+    class function AddFileToCache(aOwner: TObject; const aFileName: string;
+      const aContentType: string; const aCacheType: TCacheType = ctOneTime): string; overload;
+
+    class function AddFileToCache(aOwner: TObject; const aFileName: string;
+      const aContentType: string; const aAttachment: Boolean; const aCacheType: TCacheType = ctOneTime): string; overload;
+
+    // General method for cache stream creation
+    class procedure NewCacheStream(aOwner: TObject; const aFileName, aContentType: string;
+      aCacheType: TCacheType; out ACacheStream: TCacheStream; out aFileHRef: string); overload;
+
+    class procedure NewCacheStream(aOwner: TObject; const aContentType: string;
+      aCacheType: TCacheType; out ACacheStream: TCacheStream; out aFileHRef: string); overload;
+
+    // App (or global) cache stream creation
+    class procedure NewAppCacheStream(aOwner: TObject; const aContentType: string;
+      out ACacheStream: TCacheStream; out aFileHRef: string);
+
+    // Session cache stream creation
+    class procedure NewSessionCacheStream(aOwner: TObject; const aContentType: string;
+      out ACacheStream: TCacheStream; out aFileHRef: string);
+
+    // Form cache stream creation
+    class procedure NewFormCacheStream(aOwner: TObject; const aContentType: string;
+      out ACacheStream: TCacheStream; out aFileHRef: string);
+
+    class function StreamToCacheFile(aOwner: TObject; AStream: TStream; const aContentType: string;
+      const aAttachment: Boolean; const aCacheType: TCacheType = ctOneTime; const aFileName: string = ''): string; overload;
+
+    // Saves AStream to cache file
+    class function StreamToCacheFile(aOwner: TObject; AStream: TStream; const aContentType: string;
+      const aCacheType: TCacheType = ctOneTime; const aFileName: string = ''): string; overload;
+
+    // Saves AStream to cache file. Temp filename should be specified
+    class function StreamToCacheFile(aOwner: TObject; AStream: TStream;
+      const aFileName, aContentType: string; const aCacheType: TCacheType = ctOneTime): string; overload;
+
+    // Saves AGraphic to cache file. Will preferentially use default image format if GIF/JPG or convert it to PNG
+    class function GraphicToCacheFile(aOwner: TObject; AGraphic: TGraphic;
+      const aCacheType: TCacheType = ctOneTime; const PreferPNG: boolean = True): string; overload;
+
+    // Saves AGraphic to cache file. Must specify the output image format
+    class function GraphicToCacheFile(aOwner: TObject; AGraphic: TGraphic;
+      imgType: TIWImageOutput; const aCacheType: TCacheType = ctOneTime): string; overload;
+
+    // Saves AGraphic to cache file. Must specify the output image format. Transparent color for PNG is optional
+    class function GraphicToCacheFile(aOwner: TObject; AGraphic: TGraphic;
+      imgType: TIWImageOutput; aTransparentColor: TIWColor;
+      const aCacheType: TCacheType = ctOneTime): string; overload;
+
+    // Saves a RCDATA resource to a cache file and returns the URL
+    class function ResourceToCacheFile(aOwner: TObject; const aResourceName,
+      aContentType: string; const aCacheType: TCacheType = ctOneTime): string;
+
+    // Deletes all files in ACacheList from cache folder and remove its reference from the list.
+    // If the list still contains file references after the call, then the file could not be deleted.
+    class function ClearCache(ACacheList: TIWMinStringList): Integer;
+
+    class function DeleteFromCache(const aFileName: string): Boolean;
+
+  end;
+
+implementation

@@ -1,0 +1,11 @@
+unit IWMime;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses Classes, SysUtils;
+
+function EncodeString(const AString: string): string;
+function DecodeString(const AString: string): string;
+
+implementation

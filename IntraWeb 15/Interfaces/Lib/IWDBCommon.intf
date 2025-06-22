@@ -1,0 +1,47 @@
+unit IWDBCommon;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, DB;
+
+{$IFDEF VER200}
+type
+  TIntegerArray = array of Integer;
+  TFieldArray = array of TField;
+{$ENDIF}
+
+{$IFDEF FPC}
+type
+  TDataSetHelper = class helper for TDataSet
+  public
+    procedure GetDetailDataSets(List: TList);
+  end;
+{$ENDIF}
+
+function InEditMode(ADataset: TDataset): Boolean;
+
+function CheckDataSet(ADataSet: TDataSet): Boolean; overload; inline;
+function CheckDataSet(ADataSet: TDataSet; AMustBeActive: Boolean): Boolean; overload; inline;
+function CheckDataSet(ADataSet: TDataSet; const AFieldName: string; var VField: TField): Boolean; overload;
+function CheckLookupDataSet(ADataSet: TDataSet; const AKeyFieldName, AListFieldName: string; out vKeyField, vListField: TField): Boolean; overload;
+
+function CheckDataSource(ADataSource: TDataSource): Boolean; overload; inline;
+function CheckDataSource(ADataSource: TDataSource; AMustBeActive: Boolean): Boolean; overload; inline;
+function CheckDataSource(ADataSource: TDataSource; const AFieldName: string): Boolean; overload;
+function CheckDataSource(ADataSource: TDataSource; const AFieldName: string; var VField: TField): Boolean; overload;
+function CheckLookupDataSource(ADataSource: TDataSource; const AKeyFieldName, AListFieldName: string): Boolean; overload;
+function CheckLookupDataSource(ADataSource: TDataSource; const AKeyFieldName, AListFieldName: string; out vKeyField, vListField: TField): Boolean; overload;
+
+function GetFieldText(AField: TField): string;
+function GetDataSourceField(ADataSource: TDataSource; const AFieldName: string): TField;
+function FieldIsEditable(ADataSource: TDataSource; const AFieldName: string): Boolean;
+function GetDetailDataSetList(ADataSource: TDataSource; AList: TList): Boolean;
+function GetVisibleFieldCount(ADataSet: TDataSet; var AFieldsIndexes: {$IFDEF VER200}TIntegerArray{$ELSE}TArray<Integer>{$ENDIF}): Integer;
+function GetVisibleFields(ADataSet: TDataSet; var AFieldArray: {$IFDEF VER200}TFieldArray{$ELSE}TArray<TField>{$ENDIF}): Integer;
+
+// This is for DataTables support. Generates a Json packet to be used as the input data of a DataTables grid
+function DataSetToDataTablesJson(ds: TDataSet; const aDraw: Integer = -1; const aFiltered: Integer = -1): string;
+
+implementation

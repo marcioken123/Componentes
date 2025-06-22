@@ -1,0 +1,29 @@
+unit IWSessionList;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, SysUtils, IW.Common.StrLists, IW.Common.Lists, IW.Common.Threads,
+  IWLFHashTable, IW.Common.HashUtils;
+
+type
+  TIWExpiredSessionList = class
+  private
+    class var FCapacity: Integer;
+  private
+    FHashTable: TIWLFHashTable;
+    function GetKey(const ASessionID: string): Integer; inline;
+    procedure DoRemoveOldSessions;
+  public
+    constructor Create;
+    destructor Destroy; override;
+
+    function GetRunParams(const ASessionID: string; ARemove: Boolean): string;
+    function Exists(const ASessionID: string): Boolean;
+    procedure Add(const ASessionID, ARunParams: string);
+    procedure Purge;
+    class property Capacity: Integer read FCapacity write FCapacity;
+  end;
+
+implementation

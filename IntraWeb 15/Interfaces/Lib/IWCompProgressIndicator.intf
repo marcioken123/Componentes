@@ -1,0 +1,88 @@
+unit IWCompProgressIndicator;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, IWColor, IWHTMLTag, IWFont, IWResourceStrings, Graphics;
+
+type
+  TIWProgressTextPosition = (tpLeft, tpRight);
+
+  TIWProgressTextSettings = class(TPersistent)
+  private
+    FText: string;
+    FFont: TIWFont;
+    FTextAlignment: TAlignment;
+    FPosition: TIWProgressTextPosition;
+    FVisible: Boolean;
+    procedure SetFont(const Value: TIWFont);
+  public
+    constructor Create;
+    destructor Destroy; override;
+  published
+    property Text: string read FText write FText;
+    property Font: TIWFont read FFont write SetFont;
+    property TextAlignment: TAlignment read FTextAlignment write FTextAlignment default taCenter;
+    property Position: TIWProgressTextPosition read FPosition write FPosition default tpRight;
+    property Visible: boolean read FVisible write FVisible default True;
+  end;
+
+  TIWProgressIndicatorMode = (pimAsync, pimSync, pimBoth);
+
+  {$include IWPlatformAttrib.inc}
+  TIWProgressIndicator = class(TComponent)
+  protected
+    FPreScript: TStrings;
+    FPostScript: TStrings;
+    FPreAsyncScript: TStrings;
+    FPostAsyncScript: TStrings;
+    FRenderTag: TIWHTMLTag;
+    FProgressTextSettings: TIWProgressTextSettings;
+    FCss: string;
+    FBGColor: TIWColor;
+    FBoxColor: TIWColor;
+    FBoxBorderColor: TIWColor;
+    FOpacity: Integer;
+    FUserDefined: Boolean;
+    FBoxVisible: Boolean;
+    FMode: TIWProgressIndicatorMode;
+    FBoxBorderWidth: Integer;
+    FImageVisible: Boolean;
+    function GetBoxColor: TIWColor;
+    procedure SetBoxColor(const Value: TIWColor);
+    function GetBGColor: TIWColor;
+    procedure SetBGColor(const Value: TIWColor);
+    procedure SetDiv(const Value: TIWHTMLTag);
+    procedure SetOpacity(const Value: Integer);
+    procedure SetBoxBorderWidth(const Value: Integer);
+    procedure SetPostScript(const Value: TStrings);
+    procedure SetPreScript(const Value: TStrings);
+    function GetBoxBorderColor: TIWColor;
+    procedure SetBoxBorderColor(const Value: TIWColor);
+    procedure SetPostAsyncScript(const Value: TStrings);
+    procedure SetPreAsyncScript(const Value: TStrings);
+  public
+    constructor Create(AOwner: TComponent); override;
+    destructor Destroy; override;
+    function Render: string;
+    property RenderTag: TIWHTMLTag read FRenderTag write SetDiv;
+  published
+    property Css: string read FCss write FCss;
+    property BGColor: TIWColor read GetBGColor write SetBGColor default clWebGray;
+    property BoxColor: TIWColor read GetBoxColor write SetBoxColor default clWebWhite;
+    property BoxBorderColor: TIWColor read GetBoxBorderColor write SetBoxBorderColor default clBlack;
+    property BoxBorderWidth: Integer read FBoxBorderWidth write SetBoxBorderWidth default 1;
+    property Opacity: Integer read FOpacity write SetOpacity default 60;
+    property UserDefined: Boolean read FUserDefined write FUserDefined default False;
+    property Mode: TIWProgressIndicatorMode read FMode write FMode default pimSync;
+    property BoxVisible: Boolean read FBoxVisible write FBoxVisible default True;
+    property ImageVisible: Boolean read FImageVisible write FImageVisible default True;
+    property PreScript: TStrings read FPreScript write SetPreScript;
+    property PostScript: TStrings read FPostScript write SetPostScript;
+    property PreAsyncScript: TStrings read FPreAsyncScript write SetPreAsyncScript;
+    property PostAsyncScript: TStrings read FPostAsyncScript write SetPostAsyncScript;
+    property ProgressTextSettings: TIWProgressTextSettings read FProgressTextSettings write FProgressTextSettings;
+  end;
+
+implementation

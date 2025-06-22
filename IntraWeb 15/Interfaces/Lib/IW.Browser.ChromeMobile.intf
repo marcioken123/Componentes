@@ -1,0 +1,19 @@
+unit IW.Browser.ChromeMobile;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  IW.Browser.Browser, IW.Browser.Chrome;
+
+type
+  TChromeMobile = class(TChrome)
+  public
+    const
+      BROWSER_NAME = 'Chrome Mobile';
+      MIN_VERSION = 18;
+    constructor Create(aVersion: single); override;
+    class function Match(AUserAgent: string; out AVersion: Single): Boolean; override;
+  end;
+
+implementation

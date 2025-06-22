@@ -1,0 +1,314 @@
+unit IW.Common.StrLists;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, SysUtils, {$IFNDEF FPC} AnsiStrings, {$ENDIF} RTLConsts,
+  IW.Common.XPlatTypes,
+  Types;  // needed for inlining
+
+// Faster/Smaller TStringList-like containers
+// They all use fast CompareText() instead of slow AnsiCompareText(). They all are case insensitive
+// because we rarely need case sensitive StringLists.
+// InstanceSizes comparison:
+// Class                      x86            x64
+// TStringList                92 bytes       152 bytes
+// TIWMinStringList           24 bytes        40 bytes
+// TIWNameValueList           24 bytes        40 bytes
+// TIWSimpleStringList        24 bytes        40 bytes
+
+// These classes inherit from TObject, not from TPersistent. Among other things
+// it avoids fixup resolution during destruction.
+
+// There is also a TStringList descendant, TIWStringList, which uses faster CompareText()/CompareStr()
+// Also allows IndexOfName() fast search in sorted lists
+
+type
+  TStringArray = array of string;
+
+  // Minimal string list. It does not hold objects nor name=value pairs. Case-insensitive.
+  // Each element on the list also takes less memory than a regular TStringList.
+  TIWMinStringList = class
+  private
+    FList: TStringArray;
+    FCount: Integer;
+    FCapacity: Integer;
+    FSorted: Boolean;
+    FDuplicates: TDuplicates;
+    function Get(Index: Integer): string;
+    procedure SetCapacity(NewCapacity: Integer);
+    procedure Put(Index: Integer; const Value: string);
+    procedure QuickSort(L, R: Integer);
+    procedure SetSorted(Value: Boolean);
+    function GetTextStr: string;
+    function InternalGetDelimitedText(const ADelimiter: string; const AQuoted: Boolean): string;
+  public
+    constructor Create(const ACapacity: Integer = 0); virtual;
+    destructor Destroy; override;
+    function Add(const S: string): Integer;
+    procedure Clear;
+    function Find(const S: string; var Index: Integer): Boolean;
+    function IndexOf(const S: string): Integer;
+    procedure Sort;
+    procedure AddStrings(Strings: TStrings); overload;
+    procedure AddStrings(Strings: TIWMinStringList); overload;
+    procedure Delete(Index: Integer);
+    function Remove(const S: string): Boolean;
+    procedure Assign(Source: TObject);
+    procedure SetDelimitedText(const ADelimitedText: string; ADelimiter: Char);
+    function GetDelimitedText(const ADelimiter: string): string;
+    function Contains(const S: string): Boolean;
+    property Count: Integer read FCount;
+    property Strings[Index: Integer]: string read Get write Put; default;
+    property Sorted: Boolean read FSorted write SetSorted default False;
+    property Duplicates: TDuplicates read FDuplicates write FDuplicates default dupIgnore;
+    property Text: string read GetTextStr;
+    property List: TStringArray read FList;
+    property Capacity: Integer read FCapacity write SetCapacity;
+  end;
+
+// TIWNameValueList
+// Case-insensitive Name=Value string list. Can be sorted and allows fast Name search
+// For a small number of elements (< 100) it is usually faster than a TDictionary.
+// Uses less memory than TStringList when number of elements is small (most cases in IW).
+// When the number of elements increases, it uses more memory (because of the overhead - 12 or 16 bytes -
+// of one additional string per array element), but it performs even better.
+// Performance comparison (count < 10):
+// sList.Values['SomeName'] := 'SomeValue' -> 5-10x faster than std TStringList
+// s := sList.Values['SomeName'] -> 10x faster than std TStringList
+
+  PNameValueItem = ^TNameValueItem;
+  TNameValueItem = record
+    FName: string;
+    FValue: string;
+  end;
+
+  TNameValueArray = array of TNameValueItem;
+
+  TIWNameValueList = class
+  private
+    FList: TNameValueArray;
+    FCount: Integer;
+    FCapacity: Integer;
+    FSorted: Boolean;
+    FDuplicates: TDuplicates;
+    FNameValueSeparator: Char;
+    function GetName(Index: Integer): string;
+    procedure SetName(Index: Integer; const AName: string);
+    function GetValueFromIndex(Index: Integer): string;
+    procedure SetCapacity(NewCapacity: Integer);
+    procedure ExchangeItems(Index1, Index2: Integer);
+    procedure QuickSort(L, R: Integer);
+    procedure SetSorted(Value: Boolean);
+    function GetValue(const Name: string): string;
+    function GetTextString(Index: Integer): string;
+    procedure SetTextString(Index: Integer; const Value: string);
+    function GetText: string;
+    function InternalGetDelimitedText(const ADelimiter: string; const AQuoted: Boolean): string;
+    function InternalAdd(const AName, AValue: string): Integer; {$IFDEF USE_INLINE} inline; {$ENDIF}
+    //This is only safe for lists containing ASCII chars only. No unicode!
+    function GetAsRawBytes(Index: Integer): TBytes;
+  protected
+    procedure SetValueFromIndex(Index: Integer; const AValue: string); virtual;
+    procedure SetValue(const Name, Value: string); virtual;
+  public
+    constructor Create; virtual;
+    destructor Destroy; override;
+    function Add(const AName: string; const AValue: string = ''): Integer;
+    function FastAdd(const AName, AValue: string): Integer;
+    procedure Clear;
+    function FindName(const AName: string; var Index: Integer): Boolean;
+    function IndexOfName(const AName: string): Integer;
+    procedure Sort;
+    procedure Delete(Index: Integer);
+    function Remove(const AName: string): Boolean;
+    procedure Assign(Source: TObject);
+    procedure AddStrings(ASource: TIWNameValueList); overload;
+    procedure AddStrings(ASource: TStringList); overload;
+	  procedure SetDelimitedText(const ADelimitedText: string; ADelimiter: Char);
+    function GetDelimitedText(const ADelimiter: string): string;
+    function ContainsName(const AName: string): Boolean;
+    function AddPair(const Name, Value: string): TIWNameValueList; overload;
+    function AddPair(const Name: string; Value: Integer): TIWNameValueList; overload;
+    function AddPair(const Name: string; Value: Int64): TIWNameValueList; overload;
+    property Count: Integer read FCount;
+    property Strings[Index: Integer]: string read GetTextString write SetTextString; default;
+    property RawBytes[Index: Integer]: TBytes read GetAsRawBytes;
+    property Names[Index: Integer]: string read GetName write SetName;
+    property Values[const Name: string]: string read GetValue write SetValue;
+    property Capacity: Integer read FCapacity write SetCapacity;
+    // ValueFromIndex behaves differently from standard TStrings: invalid indexes are NOT allowed
+    property ValueFromIndex[Index: Integer]: string read GetValueFromIndex write SetValueFromIndex;
+    property Sorted: Boolean read FSorted write SetSorted default False;
+    property Duplicates: TDuplicates read FDuplicates write FDuplicates default dupIgnore;
+    property NameValueSeparator: Char read FNameValueSeparator write FNameValueSeparator;
+    property Text: string read GetText;
+    property List: TNameValueArray read FList;
+  end;
+
+  PStringListItem = ^TStringListItem;
+  TStringListItem = record
+    FString: string;
+    FObject: TObject;
+  end;
+
+  TStringListArray = array of TStringListItem;
+
+  // Simple TStringList replacement. Can hold strings and objects
+  // Faster search in both sorted and unsorted. Case-insensitive.
+  TIWSimpleStringList = class
+  private
+    FList: TStringListArray;
+    FCount: Integer;
+    FCapacity: Integer;
+    FSorted: Boolean;
+    FDuplicates: TDuplicates;
+    FOwnsObject: Boolean;
+    function GetString(Index: Integer): string;
+    procedure PutString(Index: Integer; const S: string);
+    function GetObjectFromName(const Name: string): TObject;
+    procedure PutObjectFromName(const Name: string; AObject: TObject);
+    procedure SetCapacity(NewCapacity: Integer);
+    procedure ExchangeItems(Index1, Index2: Integer);
+    procedure QuickSort(L, R: Integer);
+    procedure SetSorted(Value: Boolean);
+    function GetObject(Index: Integer): TObject;
+    procedure SetObject(Index: Integer; AObject: TObject);
+    function GetTextStr: string;
+    function InternalGetDelimitedText(const ADelimiter: string; AQuoted: Boolean): string;
+  public
+    constructor Create(const ACapacity: Integer = 0); virtual;
+    destructor Destroy; override;
+    function Add(const S: string): Integer;
+    function AddObject(const S: string; const AObject: TObject): Integer;
+    procedure Clear;
+    function Find(const S: string; var Index: Integer): Boolean;
+    function IndexOf(const S: string): Integer;
+    function IndexOfObject(AObject: TObject): Integer;
+    procedure SetDelimitedText(const ADelimitedText: string; ADelimiter: Char);
+    function GetDelimitedText(const ADelimiter: string): string;
+    procedure Delete(Index: Integer);
+    function Remove(const S: string): Boolean;
+    procedure Sort;
+    procedure AddStrings(Strings: TStrings); overload;
+    procedure AddStrings(Strings: TIWSimpleStringList); overload;
+    function Contains(const S: string): Boolean;
+    property Count: Integer read FCount;
+    property Strings[Index: Integer]: string read GetString write PutString; default;
+    property Objects[Index: Integer]: TObject read GetObject write SetObject;
+    property ObjectFromName[const Name: string]: TObject read GetObjectFromName write PutObjectFromName;
+    property Sorted: Boolean read FSorted write SetSorted default False;
+    property Duplicates: TDuplicates read FDuplicates write FDuplicates default dupIgnore;
+    property Capacity: Integer read FCapacity write SetCapacity;
+    property OwnsObjects: Boolean read FOwnsObject write FOwnsObject default False;
+    property Text: string read GetTextStr;
+    property List: TStringListArray read FList;
+  end;
+
+  // TStringList replacement with faster CompareStrings routine, i.e. faster IndexOf() and Find() calls
+  // in both sorted and unsorted lists.
+  TIWStringList = class(TStringList)
+  protected
+    function CompareStrings(const S1, S2: RtlString): Integer; override;
+    function GetObjectFromName(const Name: string): TObject;
+    procedure PutObjectFromName(const Name: string; AObject: TObject);
+  public
+    function IndexOfName(const Name: RtlString): Integer; override;
+    procedure AddStrings(Strings: TStrings); overload; override;
+    procedure AddStrings(ASource: TStringList; AAddObjects: Boolean = True; ATrim: Boolean = False); reintroduce; overload; virtual;
+    procedure AssignStrings(Source: TStringList; ATrim: Boolean = False);
+    procedure AppendStrings(Source: TStringList; ATrim: Boolean = False);
+    function GetHashCode: NativeIntH; override;
+    function Contains(const S: string): Boolean;
+    class function Clone(ASource: TStrings): TIWStringList;
+    property ObjectFromName[const AName: string]: TObject read GetObjectFromName write PutObjectFromName;
+    {$IFNDEF VCL240}
+    function AddPair(const Name, Value: string): TStrings;
+    {$ENDIF}
+    function IndexOfValue(const AValue: string): Integer; virtual;
+    procedure ClearSafe(ACheckForDuplicates: Boolean = True);
+  end;
+
+  // AnsiString version of TNameValueStringList. This is used to hold data
+  // passed to Http.sys
+
+  PAnsiNameValueItem = ^TAnsiNameValueItem;
+  TAnsiNameValueItem = record
+    FName: AnsiString;
+    FValue: AnsiString;
+  end;
+
+  TAnsiNameValueArray = array of TAnsiNameValueItem;
+
+  TNameValueAnsiStringList = class
+  private
+    FList: TAnsiNameValueArray;
+    FCount: Integer;
+    FCapacity: Integer;
+    FSorted: Boolean;
+    FDuplicates: TDuplicates;
+    FNameValueSeparator: AnsiChar;
+    function GetName(Index: Integer): AnsiString;
+    procedure SetName(Index: Integer; const AName: AnsiString);
+    function GetValueFromIndex(Index: Integer): AnsiString;
+    procedure SetCapacity(NewCapacity: Integer);
+    procedure ExchangeItems(Index1, Index2: Integer);
+    procedure QuickSort(L, R: Integer);
+    procedure SetSorted(Value: Boolean);
+    function GetValue(const Name: AnsiString): AnsiString;
+    function GetTextString(Index: Integer): AnsiString;
+    procedure SetTextString(Index: Integer; const Value: AnsiString);
+    function GetText: AnsiString;
+    function InternalGetDelimitedText(const ADelimiter: AnsiString; const AQuoted: Boolean): AnsiString;
+    function InternalAdd(const AName, AValue: AnsiString): Integer; {$IFDEF USE_INLINE} inline; {$ENDIF}
+  protected
+    procedure SetValueFromIndex(Index: Integer; const AValue: AnsiString); virtual;
+    procedure SetValue(const Name, Value: AnsiString); virtual;
+  public
+    constructor Create; virtual;
+    destructor Destroy; override;
+    function Add(const AName: AnsiString; const AValue: AnsiString = ''): Integer; overload;
+    function Add(const AName: AnsiString; const AValue: string): Integer; overload;
+    function FastAdd(const AName, AValue: AnsiString): Integer;
+    procedure Clear;
+    function FindName(const AName: AnsiString; var Index: Integer): Boolean;
+    function IndexOfName(const AName: AnsiString): Integer;
+    function Find(const AName: AnsiString; var Value: AnsiString): Boolean;
+    procedure Sort;
+    procedure Delete(Index: Integer);
+    procedure Assign(Source: TObject);
+    procedure AddStrings(ASource: TNameValueAnsiStringList);
+	  procedure SetDelimitedText(const ADelimitedText: AnsiString; ADelimiter: AnsiChar);
+    function GetDelimitedText(const ADelimiter: AnsiString): AnsiString;
+    property Count: Integer read FCount;
+    property Strings[Index: Integer]: AnsiString read GetTextString write SetTextString; default;
+    property Names[Index: Integer]: AnsiString read GetName write SetName;
+    property Values[const Name: AnsiString]: AnsiString read GetValue write SetValue;
+    property Capacity: Integer read FCapacity write SetCapacity;
+    // ValueFromIndex behaves differently from standard TStrings: invalid indexes are NOT allowed
+    property ValueFromIndex[Index: Integer]: AnsiString read GetValueFromIndex write SetValueFromIndex;
+    property Sorted: Boolean read FSorted write SetSorted default False;
+    property Duplicates: TDuplicates read FDuplicates write FDuplicates default dupIgnore;
+    property NameValueSeparator: AnsiChar read FNameValueSeparator write FNameValueSeparator;
+    property Text: AnsiString read GetText;
+    property List: TAnsiNameValueArray read FList;
+  end;
+
+  TAnsiStringContainer = class
+  private
+    FBuffer: PAnsiChar;
+    FBufferSize: Integer;
+    FBufferPosition: Integer;
+  public
+    constructor Create(AInitialBufferSize: Integer);
+    destructor Destroy; override;
+    function Add(const S: AnsiString): PAnsiChar;
+    procedure Clear;
+  end;
+
+// must be declared in interface so functions referencing it can be inlined
+procedure Error(const Msg: string); overload;
+procedure Error(const Msg: string; Data: Integer); overload;
+
+implementation

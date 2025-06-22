@@ -1,0 +1,65 @@
+unit IWBaseHTMLComponent;
+{$I IWCompilerDefines.inc}
+
+interface
+
+Uses
+  Classes, SysUtils,
+  IWMarkupLanguageTag, IWHTMLTag, IWBaseRenderContext,
+  IWRenderContext, IWBaseHTMLInterfaces, IWBaseComponent,
+  IW.Common.RenderStream, IWApplication;
+
+type
+  TIWBaseHTMLComponentImplementation = class(TIWBaseComponentImplementation)
+  private
+    FOnHTMLTag: TIWOnHTMLTag;
+  public
+    function getHTMLName: string; virtual;
+    function getHasName: Boolean; virtual;
+    function getOnHTMLTag: TIWOnHTMLTag;
+    procedure setOnHTMLTag(AValue: TIWOnHTMLTag);
+
+    procedure MakeHTMLTag(ATag: TIWHTMLTag; ABuffer: TIWRenderStream);
+    procedure DoHTMLTag(ATag: TIWHTMLTag);
+
+    property OnHTMLTag: TIWOnHTMLTag read getOnHTMLTag write setOnHTMLTag;
+    property HTMLName: string read getHTMLName;
+  end;
+
+  TIWBaseHTMLComponent = class(TIWBaseComponent, IIWBaseHTMLComponent)
+  private
+    FNeedsFormTag: Boolean;
+  protected
+    // IIWBaseHTMLComponent interface
+    procedure InitDesignTime; override;
+    procedure InitControl; override;
+
+    procedure MakeHTMLTag(ATag: TIWHTMLTag; ABuffer: TIWRenderStream); overload;
+    function MakeHTMLTag(ATag: TIWHTMLTag): string; overload; // SLOW, for backward compatibility only
+
+    procedure DoHTMLTag(ATag: TIWHTMLTag);
+
+    function RenderMarkupLanguageTag(AContext: TIWBaseComponentContext): TIWMarkupLanguageTag; override;
+
+    function BaseHTMLComponentImplementation: TIWBaseHTMLComponentImplementation;
+    function GetDesignMode: Boolean;
+  public
+    function get_HasName: Boolean;
+    function get_HTMLName: string; virtual;
+
+    function NeedsFormTag: Boolean;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; virtual;
+    function GetWebApp: TIWApplication;
+
+    property HTMLName: string read get_HTMLName;
+    property IsDesignMode: Boolean read GetDesignMode;
+  published
+    function get_OnHTMLTag: TIWOnHTMLTag;
+    procedure set_OnHTMLTag(Value: TIWOnHTMLTag);
+
+    property OnHTMLTag: TIWOnHTMLTag read get_OnHTMLTag write set_OnHTMLTag;
+  end;
+
+  TIWBaseHTMLComponentImplementationInternal = TIWBaseHTMLComponentImplementation;
+
+implementation

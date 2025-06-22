@@ -1,0 +1,81 @@
+unit IWDBExtCtrls;
+{$I IWCompilerDefines.inc}
+
+{PUBDIST}
+	
+interface
+
+uses
+  SysUtils, Classes, DB, Controls, Graphics, {$IFNDEF FPC} Jpeg, {$ENDIF} IWDBStdCtrls, IWXMLTag,
+  IWCompExtCtrls, IWHTMLTag, IWRenderContext, IWBaseInterfaces, IWHTML40Interfaces,
+  IW.Common.XPlatTypes;
+
+type
+  TIWImageDataLink = class(TIWDataLink)
+  private
+    procedure CheckAndUpdateImage;
+  protected
+    procedure ActiveChanged; override;
+    procedure DataEvent(Event: TDataEvent; Info: NativeIntDE); override;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWDBImage = class(TIWDynamicImage)
+  private
+    FDataLink: TIWImageDataLink;
+    procedure SetDataSource(const Value: TDataSource);
+  protected
+    FDataField: string;
+    FDataSource: TDataSource;
+    //
+    procedure Notification(AComponent: TComponent; AOperation: TOperation); override;
+    procedure InitControl; override;
+    procedure CheckData; virtual;
+  public
+    destructor Destroy; override;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+  published
+    property FriendlyName;
+    property DataField: string read FDataField write FDataField;
+    property DataSource: TDataSource read FDataSource write SetDataSource;
+    property TabOrder;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWDBRadioGroup = class(TIWCustomRadioGroup, IIWInputControl, IIWInputControl40, IIWAutoEditableControl)
+  private
+    FDataLink: TIWDataLink;
+    procedure SetDataSource(const Value: TDataSource);
+  protected
+    FTrimValues: Boolean;
+    FAutoEditable: Boolean;
+    FDataField: string;
+    FDataSource: TDataSource;
+    FValues: TStringList;
+    //
+    procedure Notification(AComponent: TComponent; AOperation: TOperation); override;
+    procedure SetValues(const AValue: TStringList);
+    procedure InitControl; override;
+    procedure CheckData; virtual;
+    procedure EditingChanged;
+    procedure ValueChanged; override;
+  public
+    destructor Destroy; override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+  published
+    property TrimValues: Boolean read FTrimValues write FTrimValues;
+    property AutoEditable: Boolean read FAutoEditable write FAutoEditable;
+    property Editable;
+    property Font;
+    property Layout;
+    property DataField: string read FDataField write FDataField;
+    property FriendlyName;
+    property DataSource: TDataSource read FDataSource write SetDataSource;
+    property Values: TStringList read FValues write SetValues;
+    property Items;
+    property TabOrder;
+  end;
+
+implementation

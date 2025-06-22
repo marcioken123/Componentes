@@ -1,0 +1,30 @@
+unit IWAutherList;
+{$I IWCompilerDefines.inc}
+
+{Dist Public}
+
+interface
+
+uses
+  Classes,
+  IWAutherBase,
+  SysUtils;
+
+type
+  {$include IWPlatformAttrib.inc}
+  TIWAutherList = class(TIWAutherBase)
+  private
+    procedure SetList(const Value: TStrings);
+  protected
+    mList: TStrings;
+  published
+  public
+    constructor Create(AOwner: TComponent); override;
+    destructor Destroy; override;
+    //
+    function Check(const aUser: string; const aPass: string): Boolean; override;
+  published
+    property List: TStrings read mList write SetList;
+  end;
+
+implementation

@@ -1,0 +1,58 @@
+unit IW.HTTP.FileItem;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses SysUtils, Classes, IW.Common.Lists;
+
+type
+  THttpFile = class
+  protected
+    mFileName: TFileName;
+    mTempPathName: TFileName;
+    mContentType: string;
+    mFileSize: Int64;
+    mFieldName: string;
+    mDeleteFile: Boolean;
+    mFileSize_WebApi: Int64;
+    mLastModified_WebApi: TDateTime;
+    mMIMEType_WebApi: string;
+  public
+    constructor Create(const aFileName, aTempFileName: TFileName; const aContentType, aFieldName: string;
+      aFileSize: Int64); overload;
+    constructor Create(aHttpFile: THttpFile); overload;
+    destructor Destroy; override;
+    procedure SaveToFile(const aFileName: string; const Overwrite: boolean = False);
+    procedure SaveToStream(aStream: TStream);
+    function ReadAllBytes: TBytes;
+    function ReadAllText: string;
+    //
+    property FileName: TFileName read mFileName;
+    property TempPathName: TFileName read mTempPathName write mTempPathName;
+    property ContentType: string read mContentType;
+    property FileSize: Int64 read mFileSize;
+    property FieldName: string read mFieldName;
+    //
+    property FileSize_WebApi: Int64 read mFileSize_WebApi;
+    property LastModified_WebApi: TDateTime read mLastModified_WebApi;
+    property MIMEType_WebApi: string read mMIMEType_WebApi;
+  end;
+
+  THttpFileList = class(TIWObjectList)
+  private
+    function GetItem(Index: Integer): THttpFile;
+    procedure SetItem(Index: Integer; const Value: THttpFile);  // the list owns its objects
+  public
+    function Find(const aFieldName: string): THttpFile;
+    function FindFile(const aFileName: string): THttpFile;
+    property Items[Index: Integer]: THttpFile read GetItem write SetItem; default;
+  end;
+
+  THttpFileInfo = record
+    FileName: string;
+    FileSize: Int64;
+    ContentType: string;
+    FieldName: string;
+  end;
+
+implementation

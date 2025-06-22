@@ -1,0 +1,99 @@
+unit IWStandAloneServer;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Controls, ComCtrls, Forms, Graphics, Clipbrd, Windows,
+  Classes, SysUtils, IW.Common.Threads;
+
+type
+  TIWWebBrowser = (wbDefault, wbIE, wbOpera, wbFirefox, wbChrome, wbSafari, wbEdge, wbChromeApp);
+
+  TOnDebugLog = procedure(ASender: TObject; ALog: String) of object;
+  TOnDebugLogBytes = procedure(ASender: TObject; ABytes: Int64) of object;
+  TOnUpdateTotalBytes = procedure(ASender: TObject; const ABytes: Int64) of object;
+
+  {$include ..\Core\IWPlatformAttrib.inc}
+  TIWStandAloneServer = class(TComponent)
+  protected
+    FLock: TIWSlimReaderWriter;
+    FHttpServerInstance: TComponent;
+    FActiveSessions: Integer;
+    FTotalBytes: Int64;
+    FDebugLog: Boolean;
+    FIEExecutable: string;
+    FFirefoxExecutable: string;
+    FOnDebugLog: TOnDebugLog;
+    FOnDebugLogBytes: TOnDebugLogBytes;
+    FOnUpdateTotalBytes: TOnUpdateTotalBytes;
+    FOnCloseSession: TNotifyEvent;
+    FOnNewSession: TNotifyEvent;
+    FOperaExecutable: string;
+    FSafariExecutable: string;
+    FChromeExecutable: string;
+    FParams: string;
+    FSSL: Boolean;
+    FLaunchUrl: string;
+    FHost: string;
+    FRunIn: TIWWebBrowser;
+    function GetTotalBytes: Int64;
+    //
+    procedure ExecuteApplicationOpera;
+    procedure ExecuteApplicationFirefox;
+    procedure ExecuteApplicationIE;
+    procedure ExecuteApplicationChrome(const AParams: string = '');
+    procedure ExecuteApplicationSafari;
+    procedure ExecuteApplicationEdge;
+    procedure ExecuteApplicationDefault(aAsSSL: Boolean = False);
+    procedure OnCreateSession(ASender: TObject);
+    procedure OnDestroySession(ASender: TObject);
+    procedure DoCreateSession;
+    procedure DoDestroySession;
+
+    procedure DoLog(AMessage: String); overload;
+    procedure DoLog(const ABytes: Int64); overload;
+    procedure DoUpdateTotalBytes(const ABytes: Int64);
+    procedure SetSSL(const Value: Boolean);
+  public
+    procedure ClearSessions;
+    procedure CopyStartURLToClipboard;
+    procedure SetConnectionSpeed(AValue: Integer);
+    constructor Create(AOwner: TComponent); overload; override;
+    constructor Create(AOwner: TComponent; ALog: TOnDebugLog; ALogBytes: TOnDebugLogBytes;
+      AUpdateTotalBytes: TOnUpdateTotalBytes); reintroduce; overload;
+    destructor Destroy; override;
+    //TODO: These are currently disabled becuase of changes to IWServer
+    procedure Log(const AMsg: string; const ADetailedOnly: Boolean = False);
+    procedure LogBytes(const ABytes: Int64);
+    procedure InitShutdown;
+
+    procedure Run;
+    procedure Start(aHttpServerClass: TComponentClass);
+    function StartURL(AAsSSL: Boolean = False): string;
+    function TestForOpera: Boolean;
+    function TestForEdge: Boolean;
+    function TestForIE: Boolean;
+    function TestForFirefox: Boolean;
+    function TestForSafari: Boolean;
+    function TestForChrome: Boolean;
+    procedure ClearTemplateCache;
+    //
+    property ActiveSessions: Integer read FActiveSessions;
+    property TotalBytes: Int64 read GetTotalBytes;
+    property LaunchUrl: string read FLaunchUrl write FLaunchUrl;
+    property Host: string read FHost write FHost;
+  published
+    property DebugLog: Boolean read FDebugLog write FDebugLog;
+    property Params: string read FParams write FParams;
+    property RunIn: TIWWebBrowser read FRunIn write FRunIn;
+    property RunSSL: Boolean read FSSL write SetSSL;
+    //
+    property OnDebugLog: TOnDebugLog read FOnDebugLog write FOnDebugLog;
+    property OnDebugLogBytes: TOnDebugLogBytes read FOnDebugLogBytes write FOnDebugLogBytes;
+    property OnUpdateTotalBytes: TOnUpdateTotalBytes read FOnUpdateTotalBytes write FOnUpdateTotalBytes;
+    property OnNewSession: TNotifyEvent read FOnNewSession write FOnNewSession;
+    property OnCloseSession: TNotifyEvent read FOnCloseSession write FOnCloseSession;
+  end;
+
+implementation

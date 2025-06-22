@@ -1,0 +1,56 @@
+unit IWLFSessionList;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, SysUtils, IW.Common.StrLists, IW.Common.Lists, IW.Common.Threads,
+  IWLFHashTable, IW.Common.HashUtils;
+
+type
+  TSessionProcEx = {$IFDEF DELPHI} reference to {$ENDIF} procedure (ASession: TObject; AData: Pointer) {$IFDEF FPC} of Object {$ENDIF};
+
+  TSessionListProcEx = {$IFDEF DELPHI} reference to {$ENDIF} procedure (ASession: TObject; AData: Pointer; var VContinue: Boolean) {$IFDEF FPC} of Object {$ENDIF};
+
+  // 15.0.x TSessionProc signature
+  TSessionProc = {$IFDEF DELPHI} reference to {$ENDIF} procedure (ASession: TObject) {$IFDEF FPC} of Object {$ENDIF};
+
+  // TIWSessionList keeps an interface to the internal session list
+  // which is maintained in a lock free hash table
+  TIWSessionList = class
+  private
+    class var FCapacity: Integer;
+  private
+    FHashTable: TIWLFHashTable;
+    function GetCount: Integer;
+    function GetKey(const ASessionID: string): Integer; inline;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    ///Summary: Adds a new Session to session list. Returns the session ID.
+    procedure Add(var ASessionID: string; ASession: TObject);
+    ///Summary: Returns true if ASession is in the list of sessions
+    function Exists(const ASessionID: string): Boolean;
+    function Lock(const ASessionID: string): TObject; overload;
+    function Lock(const ASessionID: string; out SessionAlreadyLocked: Boolean): TObject; overload;
+    function Unlock(const ASessionID: string): Boolean;
+    function Remove(const ASessionID: string; ADestroying: Boolean): TObject;
+    procedure ChangeSessionID(const ASessionID: string; var ANewSessionID: string);
+    function NewSessionID: string;
+    property Count: Integer read GetCount;
+    // Executes AProc for a specific session determined by ASessionID. The session and AData are passed to AProc as parameter
+    function Execute(AProc: TSessionProcEx; const ASessionID: string; AData: Pointer = nil): Boolean; overload;
+    // Executes AProc for ALL session. The session and AData are passed to AProc as parameter
+    function Execute(AProc: TSessionProcEx; AData: Pointer = nil): Boolean; overload;
+    // Same as previous methods, but doesn't pass AData to AProc method. This is intended to keep
+    // compatibility with 15.0.x method signature. In most cases this is not convenient to be used
+    // with FPC code and should be replaced by the other overloads
+    function Execute(AProc: TSessionProc; const ASessionID: string): Boolean; overload;
+    function Execute(AProc: TSessionProc): Boolean; overload;
+    // Executes AProc for ALL sessions. The session and AData are passed to AProc as parameter.
+    // AProc may terminate the loop prematurely
+    function Execute(AProc: TSessionListProcEx; AData: Pointer = nil): Boolean; overload;
+    class property Capacity: Integer read FCapacity write FCapacity;
+  end;
+
+implementation

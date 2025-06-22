@@ -1,0 +1,41 @@
+unit IWHTMLTag;
+{$I IWCompilerDefines.inc}
+
+{dist pub}
+
+interface
+
+uses
+  Classes, IWMarkupLanguageTag;
+
+type
+  TIWHTMLTag = class;
+
+  TIWHTMLTagCollection = class(TIWMarkupLanguageTagCollection)
+  public
+    function AddTagAsObject(const ATag: TIWHTMLTag; const ASetParentElement: Boolean = False): TIWHTMLTag; overload;
+    function AddTag(const ATag: string; const ASetParentElement: Boolean = False): TIWHTMLTag; reintroduce;
+    function AddScriptTag(const ACode: string; const ANonce: string): TIWHTMLTag;
+    function AddHiddenField(const AName, AValue: string): TIWHTMLTag; overload;
+    function AddHiddenField(const AId, AName, AValue: string): TIWHTMLTag; overload;
+    class function CreateScriptTag(const ACode: string; const ANonce: string = ''): TIWHTMLTag;
+  end;
+
+  TIWHTMLTag = class(TIWMarkupLanguageTag)
+  protected
+    function GetContents: TIWHTMLTagCollection;
+    procedure SetTag(const Value: string); override;
+    function ContentsClass: TIWMarkupLanguageTagCollectionClass; override;
+    procedure InitializeElement(AParentElement: TIWMarkupLanguageElement); override;
+  public
+    //added dummy parameter to remove compiler warning
+    constructor CreateHTMLTag(const ATag: string; const AClosingTag: TIWCloseTag = cbTrue;
+      const AParentElement: TIWMarkupLanguageElement = nil); deprecated;
+    //
+    property ClosingTag;
+    property Contents: TIWHTMLTagCollection read GetContents;
+  end;
+
+  TIWHTMLTagClass = class of TIWHTMLTag;
+
+implementation

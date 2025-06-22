@@ -1,0 +1,420 @@
+unit IWChartJS;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, Generics.Collections,
+  IWControl, IWRenderContext, IWHTMLTag, IWRegion, IWApplication, IWFont, IWXMLTag,
+  IW.Common.Lists, IW.Common.StrBuilder, IWColor, IWCanvas, IWUtils;
+
+type
+  TIWChartJS = class;
+
+  TPointI = record
+    X, Y: Integer;
+  end;
+
+  TPointD = record
+    X, Y: Double;
+  end;
+
+  TChartDataBase = class(TObject)
+  protected
+    FData: TStrBuilder;
+    FChart: TIWChartJS;
+    FCount: Integer;
+  public
+    constructor Create(AChart: TIWChartJS);
+    destructor Destroy; override;
+    function Clear: TChartDataBase;
+    procedure Render(AContext: TIWCompContext; sb: IStrBuilder); virtual;
+    property Count: Integer read FCount;
+  end;
+
+  TChartData = class(TChartDataBase)
+  public
+    function Add(Value: Integer): TChartData; overload;
+    function Add(Value: Double): TChartData; overload;
+    function Add(const Value: string): TChartData; overload;
+    function Add(Value: TDateTime): TChartData; overload;
+    function Add(X, Y: Integer): TChartData; overload;
+    function Add(X, Y: Double): TChartData; overload;
+    function Add(X: TDateTime; Y: Integer): TChartData; overload;
+    function Add(X: TDateTime; Y: Double): TChartData; overload;
+    function Add(Values: array of Integer): TChartData; overload;
+    function Add(Values: array of Double): TChartData; overload;
+    function Add(Values: array of string): TChartData; overload;
+    function Add(Values: array of TPointI): TChartData; overload;
+    function Add(Values: array of TPointD): TChartData; overload;
+    function Add(Values: array of TPair<Integer, Integer>): TChartData; overload;
+    function Add(Values: array of TPair<Double, Double>): TChartData; overload;
+    function Add(Values: array of TPair<TDateTime, Double>): TChartData; overload;
+    function Add(Values: array of TPair<TDateTime, Integer>): TChartData; overload;
+  end;
+
+  TChartColors= class(TChartDataBase)
+  public
+    function Add(Value: TIWColor): TChartColors; overload;
+    function Add(Value: TIWColor; aTransparency: Double): TChartColors; overload;
+    function Add(Values: array of TIWColor; aTransparency: Double = 1): TChartColors; overload;
+    // add colors as strings, e.g. #00d2d3
+    function Add(const Value: string): TChartColors; overload;
+    function Add(Values: array of string; aTransparency: Double = 1): TChartColors; overload;
+  end;
+
+  TChartObject = class(TPersistent)
+  protected
+    FChart: TIWChartJS;
+    FVisible: Boolean;
+    FEnabled: Boolean;
+    procedure Invalidate;
+  protected
+    procedure Render(AContext: TIWCompContext; sb: IStrBuilder; const aBefore, aAfter: string); virtual;
+    function AsJson(AContext: TIWCompContext): TIWSimpleJSON; virtual; abstract;
+
+    procedure SetVisible(const Value: Boolean);
+    procedure SetEnabled(const Value: Boolean);
+    property Visible: Boolean read FVisible write SetVisible default True;
+    property Enabled: Boolean read FEnabled write SetEnabled default True;
+  public
+    constructor Create(AChart: TIWChartJS);
+    procedure Assign(Source: TPersistent); override;
+    function ShouldRender: Boolean; virtual;
+  end;
+
+  TChartPlugin = class(TChartObject)
+  published
+    property Visible;
+  end;
+
+  TChartTextPosition = (tpTop, tpLeft, tpBottom, tpRight, tpChartArea);
+
+  TChartTextAlign = (ctCenter, ctStart, ctEnd);
+
+  TChartLegendOption = (loFullSize, loReverse, loRtl);
+
+  TChartLegendOptions = set of TChartLegendOption;
+
+  TChartTextPlugin = class(TChartPlugin)
+  private
+    function IsFontStored: Boolean;
+  protected
+    FPosition: TChartTextPosition;
+    FAlign: TChartTextAlign;
+    FFont: TIWFont;
+    procedure SetPosition(const Value: TChartTextPosition);
+    procedure SetAlign(const Value: TChartTextAlign);
+    procedure SetFont(const Value: TIWFont);
+  public
+    constructor Create(AChart: TIWChartJS);
+    destructor Destroy; override;
+    procedure Assign(Source: TPersistent); override;
+  published
+    property Position: TChartTextPosition read FPosition write SetPosition default tpTop;
+    property Align: TChartTextAlign read FAlign write SetAlign default ctCenter;
+    property Font: TIWFont read FFont write SetFont stored IsFontStored;
+  end;
+
+  TChartTitleOption = (toFullSize);
+
+  TChartTitleOptions = set of TChartTitleOption;
+
+  TChartTitle = class(TChartTextPlugin)
+  protected
+    FOptions: TChartTitleOptions;
+    FText: string;
+    FPadding: Integer;
+    procedure SetOptions(const Value: TChartTitleOptions);
+    procedure SetText(const Value: string);
+    procedure SetPadding(const Value: Integer);
+  public
+    constructor Create(AChart: TIWChartJS);
+    function ShouldRender: Boolean; override;
+    function AsJson(AContext: TIWCompContext): TIWSimpleJSON; override;
+    procedure Assign(Source: TPersistent); override;
+  published
+    property Options: TChartTitleOptions read FOptions write SetOptions default [toFullSize];
+    property Padding: Integer read FPadding write SetPadding default 10;
+    property Text: string read FText write SetText;
+  end;
+
+  TChartLegend = class(TChartTextPlugin)
+  protected
+    FOptions: TChartLegendOptions;
+    FTitle: TChartTitle;
+    procedure SetOptions(const Value: TChartLegendOptions);
+    procedure SetTitle(const Value: TChartTitle);
+  public
+    constructor Create(AChart: TIWChartJS);
+    destructor Destroy; override;
+    function ShouldRender: Boolean; override;
+    function AsJson(AContext: TIWCompContext): TIWSimpleJSON; override;
+    procedure Assign(Source: TPersistent); override;
+  published
+    property Options: TChartLegendOptions read FOptions write SetOptions default [loFullSize];
+    property Title: TChartTitle read FTitle write SetTitle;  // Legend title is another title object
+  end;
+
+  TChartType = (ctBar, ctLine, ctPie, ctScatter, ctRadar, ctDoughnut, ctPolarArea);
+
+  TChartSeries = class(TChartData)
+  protected
+    FText: string;
+    FChartType: TChartType;
+    FReverseIndexAxis: Boolean;
+    FColors: TChartColors;
+    FBorderColors: TChartColors;
+    FFill,
+    FShowLine: Boolean;
+    FLineTension: Single;
+    FPointColors: TChartColors;
+    FPointRadius: Single;
+    FBorderWidth: Integer;
+    procedure SetText(const Value: string);
+    procedure Invalidate;
+    procedure SetChartType(const Value: TChartType);
+    procedure SetReverseIndexAxis(const Value: Boolean);
+  public
+    constructor Create(AChart: TIWChartJS);
+    destructor Destroy; override;
+    procedure SetRandomColors(AColorCount: Integer = 0);
+    property Text: string read FText write SetText;
+    property ChartType: TChartType read FChartType write SetChartType default ctBar;
+    property ReverseIndexAxis: Boolean read FReverseIndexAxis write SetReverseIndexAxis default False;
+    property Colors: TChartColors read FColors;
+    property BorderColors: TChartColors read FBorderColors;
+    property PointColors: TChartColors read FPointColors;
+    property Fill: Boolean read FFill write FFill default False;
+    property ShowLine: Boolean read FShowLine write FShowLine default True;
+    property LineTension: Single read FLineTension write FLineTension;
+    property PointRadius: Single read FPointRadius write FPointRadius;
+    property BorderWidth: Integer read FBorderWidth write FBorderWidth default 3;
+  end;
+
+  TChartScaleType = (stDefault, stLogarithmic, stTime);
+
+  TChartScale = class(TChartPlugin)
+  private
+    const MinInt = -2147483648;
+  private
+    FMax: Double;
+    FMin: Double;
+    FStacked: Boolean;
+    FSuggestedMax: Double;
+    FSuggestedMin: Double;
+    FType: TChartScaleType;
+    FTitle: TChartTitle;
+    FTimeUnit: string;
+    procedure SetMax(const Value: Double);
+    procedure SetMin(const Value: Double);
+    procedure SetStacked(const Value: Boolean);
+    function GetMaxStored: Boolean;
+    function GetMinStored: Boolean;
+    function GetSuggestedMaxStored: Boolean;
+    function GetSuggestedMinStored: Boolean;
+    procedure SetSuggestedMax(const Value: Double);
+    procedure SetSuggestedMin(const Value: Double);
+    procedure SetType(const Value: TChartScaleType);
+    procedure SetTitle(const Value: TChartTitle);
+  public
+    constructor Create(AChart: TIWChartJS);
+    destructor Destroy; override;
+    procedure Assign(Source: TPersistent); override;
+    function ShouldRender: Boolean; override;
+    function AsJson(AContext: TIWCompContext): TIWSimpleJSON; override;
+  published
+    property Min: Double read FMin write SetMin stored GetMinStored;
+    property Max: Double read FMax write SetMax stored GetMaxStored;
+    property SuggestedMin: Double read FSuggestedMin write SetSuggestedMin stored GetSuggestedMinStored;
+    property SuggestedMax: Double read FSuggestedMax write SetSuggestedMax stored GetSuggestedMaxStored;
+    property Stacked: Boolean read FStacked write SetStacked default False;
+    property Title: TChartTitle read FTitle write SetTitle;
+    property ScaleType: TChartScaleType read FType write SetType default stDefault;
+    property TimeUnit: string read FTimeUnit write FTimeUnit;
+  end;
+
+  {$REGION 'Zoom related classes'}
+  TChartLimits = class(TChartObject)
+  private
+    FXMin: Double;
+    FXMax: Double;
+    FYMin: Double;
+    FYMax: Double;
+    function GetValueStored(const Index: Integer): Boolean;
+    procedure SetValue(const Index: Integer; const Value: Double);
+  protected
+    function AsJson(AContext: TIWCompContext): TIWSimpleJSON; override;
+  public
+    constructor Create(AChart: TIWChartJS);
+    procedure Assign(Source: TPersistent); override;
+  published
+    property XMin: Double index 0 read FXMin write SetValue stored GetValueStored;
+    property YMin: Double index 1 read FYMin write SetValue stored GetValueStored;
+    property XMax: Double index 2 read FXMax write SetValue stored GetValueStored;
+    property YMax: Double index 3 read FYMax write SetValue stored GetValueStored;
+  end;
+
+  TChartZoomMode = (zmXY, zmX, zmY);
+
+  TChartZoomKey = (zkNone, zkCtrl, zkAlt, zkShift, zkMeta);
+
+  TChartPan = class(TChartObject)
+  private
+    FEnabled: Boolean;
+    FMode: TChartZoomMode;
+    FKey: TChartZoomKey;
+    FThreshold: Integer;
+    procedure SetKey(const Value: TChartZoomKey);
+    procedure SetMode(const Value: TChartZoomMode);
+    procedure SetThreshold(const Value: Integer);
+  protected
+    function AsJson(AContext: TIWCompContext): TIWSimpleJSON; override;
+  public
+    constructor Create(AChart: TIWChartJS);
+    procedure Assign(Source: TPersistent); override;
+  published
+    property Enabled default False;
+    property Mode: TChartZoomMode read FMode write SetMode default zmXY;
+    property ModifierKey: TChartZoomKey read FKey write SetKey default zkNone;
+    property Threshold: Integer read FThreshold write SetThreshold default 10;
+  end;
+
+  TChartZoom = class(TChartObject)
+  private
+    FLimits: TChartLimits;
+    FDrag: Boolean;
+    FWheel: Boolean;
+    FPinch: Boolean;
+    FPan: TChartPan;
+    FMode: TChartZoomMode;
+    procedure SetLimits(const Value: TChartLimits);
+    procedure SetDrag(const Value: Boolean);
+    procedure SetWheel(const Value: Boolean);
+    function RenderEnabled(AContext: TIWCompContext; AValue: Boolean): string;
+    procedure SetPinch(const Value: Boolean);
+    procedure SetPan(const Value: TChartPan);
+    procedure SetMode(const Value: TChartZoomMode);
+  public
+    constructor Create(AChart: TIWChartJS);
+    destructor Destroy; override;
+    procedure Assign(Source: TPersistent); override;
+    function AsJson(AContext: TIWCompContext): TIWSimpleJSON; override;
+    procedure Reset;
+    function ShouldRender: Boolean; override;
+  published
+    property Enabled default False;
+    property Limits: TChartLimits read FLimits write SetLimits;
+    property Wheel: Boolean read FWheel write SetWheel default False;
+    property Drag: Boolean read FDrag write SetDrag default False;
+    property Pinch: Boolean read FPinch write SetPinch default False;
+    property Pan: TChartPan read FPan write SetPan;
+    property Mode: TChartZoomMode read FMode write SetMode default zmXY;
+  end;
+  {$ENDREGION 'Zoom related classes'}
+
+  TRenderPluginEvent = procedure(Sender: TIWChartJS; var APlugin: string) of object;
+
+  {$include IWPlatformAttrib.inc}
+  TIWChartJS = class(TIWCustomCanvas)
+  private
+    class var FLocalJavaScriptFolder: string;
+    class var FLocalStyleFolder: string;
+    procedure SetZoom(const Value: TChartZoom);
+  protected
+    FLabels: TChartData;
+    FMainSeries: TChartSeries;
+    FSeries: TIWObjectList;
+    FTitle: TChartTitle;
+    FSubTitle: TChartTitle;
+    FLegend: TChartLegend;
+    FRenderCDNFiles: Boolean;
+    FRenderLocalFiles: Boolean;
+    FWebApplication: TIWApplication;
+    FResponsive: Boolean;
+    FDPR: Single;
+    FLocale: string;
+    FXScale: TChartScale;
+    FYScale: TChartScale;
+    FOnRenderPlugin: TRenderPluginEvent;
+    FZoom: TChartZoom;
+    procedure SetRenderCDNFiles(const Value: Boolean);
+    procedure SetRenderLocalFiles(const Value: Boolean);
+    procedure set_Visible(Value: Boolean); override;
+    procedure AddRequiredFiles(AContext: TIWCompContext); virtual;
+    procedure SetChartType(const Value: TChartType);
+    procedure SetResponsive(const Value: Boolean);
+    procedure SetLegend(const Value: TChartLegend);
+    procedure SetTitle(const Value: TChartTitle);
+    function GetChartType: TChartType;
+    function RenderColorPlugin(AContext: TIWCompContext): string;
+    procedure SetDPR(const Value: Single);
+    function IsDPRStored: Boolean;
+    procedure SetLocale(const Value: string);
+    procedure SetSubTitle(const Value: TChartTitle);
+    procedure CreateInternalObjects;
+    procedure FreeInternalObjects;
+    procedure Loaded; override;
+    procedure SetXScale(const Value: TChartScale);
+    procedure SetYScale(const Value: TChartScale);
+    function GetSeries(const idx: Integer): TChartSeries;
+  public
+    procedure InitControl; override;
+    procedure Dispose(ADispose: Boolean); override;
+    procedure Invalidate; override;
+    function RenderStyle(AComponentContext: TIWCompContext): string; override;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    function AddSeries(AChartType: TChartType; const AText: string): TChartSeries;
+    procedure DeleteSeries(aIndex: Integer);
+    procedure DeleteAllSeries;
+    procedure ResetChart;
+    procedure DownloadContentFiles;
+    function DatePluginEnabled: Boolean;
+    class property LocalJavaScriptFolder: string read FLocalJavaScriptFolder write FLocalJavaScriptFolder;
+    class property LocalStyleFolder: string read FLocalStyleFolder write FLocalStyleFolder;
+  public
+    property Labels: TChartData read FLabels;
+    property MainSeries: TChartSeries read FMainSeries;
+    property PenColor;
+    property BrushColor;
+    property Series[const idx: Integer]: TChartSeries read GetSeries;
+  published
+    property Color default clNone;
+    property Anchors;
+    property RenderCDNFiles: Boolean read FRenderCDNFiles write SetRenderCDNFiles default True;
+    property RenderLocalFiles: Boolean read FRenderLocalFiles write SetRenderLocalFiles default False;
+    property StyleRenderOptions;
+
+    property ChartType: TChartType read GetChartType write SetChartType default ctBar;
+    // responsive: true is ChartJS default, but we use the opposite. When True, chart will be resized
+    // to fill it's container
+    property Responsive: Boolean read FResponsive write SetResponsive default False;
+    property Legend: TChartLegend read FLegend write SetLegend;
+    property Title: TChartTitle read FTitle write SetTitle;
+    property SubTitle: TChartTitle read FSubTitle write SetSubTitle;
+    property DevicePixelRatio: Single read FDPR write SetDPR stored IsDPRStored;
+    property Locale: string read FLocale write SetLocale;
+    property XScale: TChartScale read FXScale write SetXScale;
+    property YScale: TChartScale read FYScale write SetYScale;
+    property Zoom: TChartZoom read FZoom write SetZoom;
+    property OnRenderPlugin: TRenderPluginEvent read FOnRenderPlugin write FOnRenderPlugin;
+  end;
+
+const
+  // Some nice colors to be used randomly when user doesn't set them
+  FlatUIColorCount = 50;
+  FlatUIColors: array[1..FlatUIColorCount] of string = (
+    '#f1c40f','#e67e22','#e74c3c','#ecf0f1','#95a5a6',
+    '#54a0ff','#00d2d3','#FD7272','#1abc9c','#833471',
+    '#2ecc71','#3498db','#9b59b6','#34495e','#25CCF7',
+    '#16a085','#27ae60','#2980b9','#8e44ad','#2c3e50',
+    '#f39c12','#d35400','#c0392b','#bdc3c7','#7f8c8d',
+    '#55efc4','#81ecec','#74b9ff','#a29bfe','#dfe6e9',
+    '#00b894','#00cec9','#0984e3','#6c5ce7','#ffeaa7',
+    '#fab1a0','#ff7675','#fd79a8','#fdcb6e','#e17055',
+    '#d63031','#feca57','#5f27cd','#54a0ff','#01a3a4',
+    '#833471','#A3CB38','#f78fb3','#c44569','#3dc1d3'
+  );
+
+implementation

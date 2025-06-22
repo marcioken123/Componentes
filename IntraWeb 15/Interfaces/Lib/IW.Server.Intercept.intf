@@ -1,0 +1,19 @@
+unit IW.Server.Intercept;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, Classes, InIntercept, InGlobal;
+
+type
+  TIWServerIntercept = class(TIdConnectionIntercept)
+  private
+    FBytesPerSecond: Integer;
+  public
+    procedure NotifyBufferSend(const ABufferSize: Integer); override;
+  published
+    property BytesPerSecond: Integer read FBytesPerSecond write FBytesPerSecond;
+  end;
+
+implementation

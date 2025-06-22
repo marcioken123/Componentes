@@ -1,0 +1,51 @@
+unit IW.Parser.Files;
+
+interface
+
+uses
+  Windows, Classes, SysUtils, SyncObjs, IW.Common.Lists, IW.Common.StreamHelper;
+
+type
+  THttpParsedFile = class
+  protected
+    FFieldName: string;
+    FContentType: string;
+    FFileName: string;
+    FFileSize: Int64;
+    FTempFileName: string;
+    FStream: TStream;
+    FStreamHelper: TStreamHelper;
+  public
+    constructor Create(const AFieldName, AFileName, AContentType: string; AFileSize: Int64); virtual;
+    destructor Destroy; override;
+    procedure CloseStream(const Success: Boolean);
+    property Size: Int64 read FFileSize;
+    property FileName: string read FFileName;
+    property FieldName: string read FFieldName;
+    property ContentType: string read FContentType;
+    property TempFileName: string read FTempFileName;
+    property Stream: TStream read FStream;
+    property StreamHelper: TStreamHelper read FStreamHelper;
+  end;
+
+  THttpParsedFileList = class
+  protected
+    FFilesList: TIWObjectList;
+    function GetCount: Integer;
+    function GetItem(I: Integer): THttpParsedFile;
+  public
+    constructor Create; virtual;
+    destructor Destroy; override;
+    procedure Clear;
+    function Add(Item: THttpParsedFile): Integer;
+    property FilesList: TIWObjectList read FFilesList;
+    property Items[I: Integer]: THttpParsedFile read GetItem; default;
+    property Count: Integer read GetCount;
+  end;
+
+// other content types can be registered for parsing by IW.ISAPI. (ISAPI) and THTTPServerIndy (SA) and Http.sys
+// when receiving POST, PUT or PATCH requests
+procedure RegisterContentType(const aContentType: string);
+function CanParseContentType(const aContentType: string): Boolean;
+
+implementation

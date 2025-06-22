@@ -1,0 +1,74 @@
+unit IWFont;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, Classes, Graphics, IW.Browser.Browser, IWColor, IWHTMLTag,
+  IW.Common.XPlatTypes;
+
+type
+  TIWFontStyles = TFontStyles;
+
+  TIWFont = class(TPersistent)
+  private
+    procedure SetFontFamily(const Value: string);
+    procedure SetFontVariant(const Value: string);
+    procedure SetPxSize(const Value: Integer);
+  protected
+    FColor: TIWColor;
+    FEnabled: Boolean;
+    FFontName: string;
+    FFontFamily: string;
+    FFontVariant: string;
+    FOnChange: TNotifyEvent;
+    FSize: Integer;
+    FPxSize: Integer;
+    FStyle: TIWFontStyles;
+    FHashCode: Integer;
+    procedure Changed;
+    procedure SeTIWColor(const AValue: TIWColor);
+    procedure SetFontName(const AValue: string);
+    procedure SetSize(const AValue: Integer);
+    procedure SetStyle(const AValue: TIWFontStyles);
+    procedure AssignTo(ADest: TPersistent); override;
+    function TextDecoration: string;
+    function ColorStyle: string;
+    function FontStyle: string;
+  public
+    const
+      PixelsPerInch: Integer = 96;
+      PointsPerInch: Integer = 72;
+    class var
+      DefaultFontFamily: string;
+    constructor Create; overload;
+    // if font instance IsDefault it doesn't need to be streamed to dfm
+    class function IsDefault(aFont: TIWFont): Boolean;
+    // this is the prefered method to get the style
+    function FontToStringStyle: string; overload;
+    // this was kept for compatibility
+    function FontToStringStyle(aBrowser: TBrowser; ABaseFont: TIWFont = nil): string; overload;
+    function FontToStringTag(const AText: string): TIWHTMLTag;
+    function RenderCanvasFont: string;
+    function RenderAsJson: string;
+    property OnChange: TNotifyEvent read FOnChange write FOnChange;
+    function GetHashCode: NativeIntH; override;
+    // methods do calculate font sizes on browser, converting from Em or Pt size into Px size
+    class function PtToPx(AFontSize: Integer): Integer; overload; static;
+    class function PxToPt(APxSize: Integer): Integer;
+    class function EmToPx(AValue: Single; AFontSize: Integer): Integer; overload; static;
+    class function EmToPx(AValue: Single; AFontSize: Integer; ALineHeight: Single): Integer; overload; static;
+    function EmToPx(AValue: Single; ALineHeight: Single): Integer; overload;
+    function EmToPx(AValue: Single): Integer; overload;
+  published
+    property Color: TIWColor read FColor write SeTIWColor;
+    property Enabled: Boolean read FEnabled write FEnabled default true;
+    property FontName: string read FFontName write SetFontName;
+    property FontFamily: string read FFontFamily write SetFontFamily;
+    property FontVariant: string read FFontVariant write SetFontVariant;
+    property Size: Integer read FSize write SetSize;
+    property Style: TIWFontStyles read FStyle write SetStyle;
+    property PxSize: Integer read FPxSize write SetPxSize;
+  end;
+
+implementation

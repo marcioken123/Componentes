@@ -1,0 +1,96 @@
+unit IWMimeTypes;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, SysUtils, IW.Common.StrLists;
+
+// MIME types and utilities used in Content-type header fields in HTTP responses
+// Also used by IWServer when serving static files
+type
+  TMimeType = (mtUnknown, mtBinary, mtJPG, mtGIF, mtPNG, mtRSS, mtXML, mtTXT, mtICO,
+               mtHTML, mtJavaScript, mtPDF, mtZIP, mtCSS, mtMP3, mtOGG, mtWAV,
+               mtEXE, mtFlash, mtWMV, mtMOV, mtAVI, mtMPEG, mtXSL, mtGZIP,
+               mtWOFF, mtTTF, mtOTF, mtSVG, mtJSON, mtDOCX, mtXLSX, mtPPTX,
+               mtMP4);
+
+  TIWMimeTypes = class
+  private
+    class var mStaticFileExtList: TIWStringList;
+    class procedure Init;
+    class procedure Finalize;
+  public
+    // Returns true if a file should be served as a static file.
+    // Static files, by default, are served by IntraWeb without session validation,
+    // which makes it much faster
+    class function IsStaticFile(const aFileName: string): Boolean; overload;
+    // The same above. Also, aMimeTypes returns the associated MIME type, if result is true
+    class function IsStaticFile(const aFileName: string; out aMimeType: string): Boolean; overload;
+    // Changes the static file property of a registered file type
+    class procedure SetIsStaticFile(const aFileName: string; const aIsStatic: Boolean);
+    // Given a file extension, returns a string containing the MIME type for that file. Returns an empty string if the file extension is not known
+    class function GetAsString(const aExt: string): string; overload;
+    // Given a TMimeType, returns a string containing the MIME type
+    class function GetAsString(const aMimeType: TMimeType): string; overload;
+    // Registers a new MIME type for a file extension. It adds the new file extension to the static file list
+    class procedure RegisterType(const aFileExtension, aMimeTypeDesc: string; const aIsStatic: Boolean);
+    // Unregister a MIME type and removes its entry from Static file extensions list
+    class procedure UnregisterType(const aFileExtension: string);
+
+    class function IsImageFile(const aFileName: string): Boolean;
+
+    class function CheckFileMimeType(const APhysFileName, AUploadFileName: string): string;
+  end;
+
+const
+  { do not localize }
+  MIME_JPG = 'image/jpeg';
+  MIME_GIF = 'image/gif';
+  MIME_PNG = 'image/png';
+  MIME_BMP = 'image/bmp';
+  MIME_TIF = 'image/tiff';
+  MIME_WEBP = 'image/webp';
+  MIME_RSS = 'application/rss+xml; charset=UTF-8';
+  MIME_XML = 'text/xml; charset=UTF-8';
+  MIME_XSL = 'text/xsl; charset=UTF-8';
+  MIME_TXT = 'text/plain; charset=UTF-8';
+  MIME_ICO = 'image/x-ico';
+  MIME_JavaScript = 'application/javascript; charset=UTF-8';
+  MIME_JsModule = 'text/javascript; charset=UTF-8';
+  MIME_JsMap = 'application/json';
+  MIME_PDF = 'application/pdf';
+  MIME_ZIP =  'application/zip';
+  MIME_CSS = 'text/css; charset=UTF-8';
+  MIME_MP3 = 'audio/mpeg';
+  MIME_OGG = 'audio/ogg';
+  MIME_WAV = 'audio/wav';
+  MIME_Flash = 'application/x-shockwave-flash';
+  MIME_WMA = 'audio/x-ms-wma';
+  MIME_WMV = 'video/x-ms-wmv';
+  MIME_MOV = 'video/quicktime';
+  MIME_AVI = 'video/x-msvideo';
+  MIME_MPEG = 'video/mpeg';
+  MIME_MP4 = 'video/mp4';
+  MIME_Binary = 'application/octet-stream';
+  MIME_DLL = 'application/x-msdownload';
+  MIME_HTML = 'text/html; charset=UTF-8';
+  MIME_IWML = 'text/iwml; charset=UTF-8';
+  MIME_GZIP = 'application/x-gzip';
+  MIME_RAR = 'application/x-rar-compressed';
+  MIME_7ZIP = 'application/x-7z-compressed';
+  MIME_WOFF = 'application/font-woff';
+  MIME_TTF = 'application/x-font-ttf';
+  MIME_OTF = 'application/font-otf';
+  MIME_SVG = 'image/svg+xml';
+  MIME_JSON = 'application/json';
+  MIME_WOFF2 = 'application/font-woff2';
+  MIME_EOT = 'application/vnd.ms-fontobject';
+  MIME_DOC = 'application/msword';
+  MIME_XLS = 'application/vnd.ms-excel';
+  MIME_PPT = 'application/vnd.ms-powerpoint';
+  MIME_DOCX = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
+  MIME_XLSX = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+  MIME_PPTX = 'application/vnd.openxmlformats-officedocument.presentationml.presentation';
+
+implementation

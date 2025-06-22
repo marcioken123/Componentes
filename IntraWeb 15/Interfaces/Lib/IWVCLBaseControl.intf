@@ -1,0 +1,96 @@
+unit IWVCLBaseControl;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, Controls, Graphics, Messages, IWTypes;
+
+type
+  TIWControlCanvas = TControlCanvas;
+
+  TIWVCLBaseControl = class(TControl)
+  private
+    FAutosize: Boolean;
+    function GetLoading: Boolean; inline;
+    function GetDesignMode: Boolean; inline;
+  protected
+    function _Release: Integer; stdcall;
+
+    procedure ColorChanged; overload; virtual;
+    procedure ColorChanged(var AMessage: TMessage); overload; message CM_COLORCHANGED;
+
+    function getTabOrder: TIWTabOrder; virtual; abstract;
+    procedure setTabOrder(AValue: TIWTabOrder); virtual; abstract;
+    function get_TabOrder: TIWTabOrder;
+    procedure set_TabOrder(AValue: TIWTabOrder);
+
+    function GetAutoSize: Boolean;
+    procedure SetAutoSize(AValue: Boolean); override;
+    procedure TextChanged(var AMessage: TMessage); message CM_TEXTCHANGED;
+    procedure TextChangedNotification; virtual; abstract;
+    procedure WMPaint(var AMessage: TWMPaint); message WM_PAINT;
+
+    function getText: TCaption; virtual;
+
+    procedure IWPaint; virtual;
+    procedure Paint; virtual;
+
+    procedure InitDesignTime; virtual;
+    procedure InitControl; virtual;
+
+    procedure RequestAlign; override;
+
+    procedure SetTransparent;
+
+    function HasOnClick: Boolean;
+
+    function get_Canvas: TCanvas; virtual; abstract;
+
+    procedure SetParent(AParent: TWinControl); override;
+    procedure ParentChanging(AOldParent, AParent: TComponent); virtual;
+    procedure AfterParentChanging(AOldParent, AParent: TComponent);virtual;
+    function IsTabOrderStored: Boolean; virtual;
+    //
+    property AutoSize: Boolean read GetAutoSize write SetAutoSize default True;
+    property Canvas: TCanvas read get_Canvas;
+
+    property isLoading: Boolean read GetLoading;
+  protected
+    procedure Dispose(ADispose: Boolean); virtual;
+    function DesignMode: Boolean;
+    function get_Visible: Boolean; virtual;
+    procedure set_Visible(Value: Boolean); virtual;
+    {$IFDEF VCL160}  // Touch was introduced in Delphi XE2
+    procedure CreateTouchManager; override;
+    {$ENDIF}
+  public
+    function get_Width: Integer;
+    function get_Height: Integer;
+
+    function get_Anchors: TAnchors;
+    procedure set_Anchors(Value: TAnchors);
+    function get_Align: TAlign;
+    procedure set_Align(Value: TAlign);
+    function get_ShowHint: Boolean;
+    procedure set_ShowHint(Value: Boolean);
+
+    function get_ParentShowHint: Boolean;
+    procedure set_ParentShowHint(Value: Boolean);
+
+    procedure SetText(const AValue: TCaption); virtual;
+
+    constructor Create(AOwner: TComponent); override;
+    destructor Destroy; override;
+
+    property IsDesignMode: Boolean read GetDesignMode;
+    property TabOrder: TIWTabOrder read getTabOrder write setTabOrder stored IsTabOrderStored;
+    procedure Repaint; override;
+    {$IFDEF VCL160}  // Touch was introduced in Delphi XE2
+    procedure CMParentTabletOptionsChanged(var Message: TMessage); message CM_PARENTTABLETOPTIONSCHANGED;
+    {$ENDIF}
+  published
+    property Visible: Boolean read get_Visible write set_Visible default True;
+  end;
+
+implementation

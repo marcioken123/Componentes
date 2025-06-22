@@ -1,0 +1,136 @@
+unit IWUserSessionBase;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, IWApplication, IWUserSessionInterface, IWException,
+  IW.Http.Request, IW.Http.Reply;
+
+type
+  TIWDatamodule = TDataModule;
+
+  TValueDataType = (vdtNone, vdtInt, vdtLong, vdtULong, vdtFloat, vdtDateTime, vdtBool, vdtObject);
+
+  // simple Clipboard-like class to allow data transfer within the same session
+  // at **server-side** i.e. between IW classes, like IWForms, datamodules, etc.
+  TIWClipboard = class
+  private type
+    {$REGION InternalTypes}
+    TValueRec = record
+      case TValueDataType of
+        vdtNone: (P: PChar);
+        vdtInt: (I: Integer);
+        vdtLong: (L: Int64);
+        vdtULong: (U: UInt64);
+        vdtFloat: (F: Double);
+        vdtDateTime: (D: TDateTime);
+        vdtBool: (B: Boolean);
+        vdtObject: (O: Pointer);
+    end;
+    TValue = class
+    strict private
+      FValue: TValueRec;
+      FStr: string;
+      function GetBool: Boolean;
+      function GetDateTime: TDateTime;
+      function GetFloat: Double;
+      function GetInt: Integer;
+      function GetLong: Int64;
+      function GetString: string;
+      function GetULong: UInt64;
+      function GetObject: TObject;
+      procedure SetBool(const Value: Boolean);
+      procedure SetDateTime(const Value: TDateTime);
+      procedure SetFloat(const Value: Double);
+      procedure SetInt(const Value: Integer);
+      procedure SetLong(const Value: Int64);
+      procedure SetString(const Value: string);
+      procedure SetULong(const Value: UInt64);
+      procedure SetObject(const Value: TObject);
+    public
+      property S: string read GetString write SetString;
+      property I: Integer read GetInt write SetInt;
+      property L: Int64 read GetLong write SetLong;
+      property U: UInt64 read GetULong write SetULong;
+      property F: Double read GetFloat write SetFloat;
+      property D: TDateTime read GetDateTime write SetDateTime;
+      property B: Boolean read GetBool write SetBool;
+      property O: TObject read GetObject write SetObject;
+    end;
+    {$ENDREGION InternalTypes}
+  strict private
+    FDataList: TStringList;
+    FFound: Boolean;
+  private
+    function GetCount: Integer;
+    function GetTValue(const aDataId: string; aRaiseError: Boolean = True): TIWClipboard.TValue;
+    function InternalGetItem(const aDataId: string; const aCreateIfNotFound: Boolean): TIWClipboard.TValue;
+    function GetItem(const aDataId: string): TIWClipboard.TValue;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    procedure Clear(const aDataId: string); overload;
+    procedure Clear; overload;
+
+    function Put(const aDataId: string; aData: TStrings): TIWClipboard; overload;
+    function Put(const aDataId: string; const aData: string): TIWClipboard; overload;
+    function Put(const aDataId: string; aData: TObject): TIWClipboard; overload;
+    function Put(const aDataId: string; aData: Boolean): TIWClipboard; overload;
+    function Put(const aDataId: string; aData: Integer): TIWClipboard; overload;
+    function Put(const aDataId: string; aData: Int64): TIWClipboard; overload;
+    function Put(const aDataId: string; aData: UInt64): TIWClipboard; overload;
+    function Put(const aDataId: string; aData: Double): TIWClipboard; overload;
+    function Put(const aDataId: string; aData: TDateTime): TIWClipboard; overload;
+
+    function Get(const aDataId: string; aData: TStrings; aRemove: Boolean = True): Boolean; overload;
+    function Get(const aDataId: string; var aData: string; aRemove: Boolean = True): Boolean; overload;
+    function Get(const aDataId: string; var aData: TObject; aRemove: Boolean = True): Boolean; overload;
+    function Get(const aDataId: string; var aData: Boolean; aRemove: Boolean = True): Boolean; overload;
+    function Get(const aDataId: string; var aData: Integer; aRemove: Boolean = True): Boolean; overload;
+    function Get(const aDataId: string; var aData: Int64; aRemove: Boolean = True): Boolean; overload;
+    function Get(const aDataId: string; var aData: UInt64; aRemove: Boolean = True): Boolean; overload;
+    function Get(const aDataId: string; var aData: Double; aRemove: Boolean = True): Boolean; overload;
+    function Get(const aDataId: string; var aData: TDateTime; aRemove: Boolean = True): Boolean; overload;
+
+    property Item[const aDataId: string]: TIWClipboard.TValue read GetItem; default;
+
+    function ItemId(const aIndex: Integer): string;
+    property Count: Integer read GetCount;
+  end;
+
+  TQueryStatusEvent = procedure(out Value: Integer) of object;
+
+  TQueryEvent = procedure (ARequest: THttpRequest; AResponse: THttpReply) of object;
+
+  TIWUserSessionBase = class(TIWDataModule, IIWUserSessionInterface)
+  private
+    FWebApplication: TIWApplication;
+    FOnBeforeExecuteForm: TNotifyEvent;
+    FOnAfterExecuteForm: TNotifyEvent;
+    FClipboard: TIWClipboard;
+    FOnQueryStatus: TQueryStatusEvent;
+    FOnQuery: TQueryEvent;
+    function GetWebApplication: TIWApplication;
+    function GetClipboard: TIWClipboard;
+  protected
+    procedure DoDestroy; override;
+    // IIWUserSessionInterface methods
+    procedure DoBeforeExecuteForm(Sender: TObject);
+    procedure DoAfterExecuteForm(Sender: TObject);
+    function DoQueryStatus(out Value: Integer): Boolean;
+    procedure DoQuery(ARequest, AResponse: TObject);
+  public
+    constructor Create(AOwner: TComponent; ASession: TIWApplication); reintroduce; overload;
+    property WebApplication: TIWApplication read GetWebApplication;
+    property Clipboard: TIWClipboard read GetClipboard;
+  published
+    property OnBeforeExecuteForm: TNotifyEvent read FOnBeforeExecuteForm write FOnBeforeExecuteForm;
+    property OnAfterExecuteForm: TNotifyEvent read FOnAfterExecuteForm write FOnAfterExecuteForm;
+    property OnQueryStatus: TQueryStatusEvent read FOnQueryStatus write FOnQueryStatus;
+    property OnQuery: TQueryEvent read FOnQuery write FOnQuery;
+  end;
+
+  EIWClipboardException = class(EIWException);
+
+implementation

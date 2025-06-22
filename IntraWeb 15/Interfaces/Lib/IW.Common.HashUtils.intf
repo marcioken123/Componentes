@@ -1,0 +1,24 @@
+unit IW.Common.HashUtils;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils;
+
+// $ALIGN ON is also required but defined in IWCompilerDefines.inc
+{$POINTERMATH ON}
+{$RANGECHECKS OFF}
+
+function FNV1aMeiyanHash(AData: Pointer; ADataLength: Integer): Cardinal; overload; inline;
+function FNV1aMeiyanHash(AInteger: PInteger): Cardinal; overload; inline;
+function FNV1aMeiyanHash(AInt64: PInt64): Cardinal; overload; inline;
+function FNV1aMeiyanHash(const AString: string): Cardinal; overload; inline;
+
+function DJBHash(AData: Pointer; ADataLength: Integer): Cardinal; inline;
+function FNV1aHash(AData: Pointer; ADataLength: Integer): Cardinal; inline;
+function Murmur2Hash(AData: Pointer; ADataLength: Integer): Cardinal; inline;
+
+function DoubleHash(AData: Pointer; ADataLength: Integer): Int64;
+
+implementation

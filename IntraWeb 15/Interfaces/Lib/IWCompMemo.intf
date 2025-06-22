@@ -1,0 +1,104 @@
+unit IWCompMemo;
+{$I IWCompilerDefines.inc}
+
+{PUBDIST}
+
+// Disable Compiler warings for DEPRECATED set_RenderSize, setRenderSize and get_RenderSize
+{$WARN SYMBOL_DEPRECATED OFF}
+
+interface
+
+uses
+  Classes, Controls,
+  IWHTMLTag, IWControl, IWColor, IWRenderContext, IWXMLTag, IWBaseInterfaces,
+  IWHTML40Interfaces, IWTypes;
+
+type
+  TMemoResizeDirection = (rdNone, rdBoth, rdVertical, rdHorizontal);
+
+  TIWCustomMemo = class(TIWCustomControl, IIWInputControl, IIWInputControl40)
+  private
+    FResizeDirection: TMemoResizeDirection;
+    FAttributes: TIWInputAttributes;
+    FDelayKeyEvents: Boolean;
+    procedure SetAttributes(const Value: TIWInputAttributes);
+    procedure RenderAsyncInputAttributes(AContext: TIWCompContext; ATag: TIWXMLTag);
+  protected
+    FHorizScrollBar: Boolean;
+    FVertScrollBar: Boolean;
+    FBGColor: TIWColor;
+    FLines: TStringList;
+    FRequired: Boolean;
+    FEndsWithCRLF: Boolean;
+    FInvisibleBorder: Boolean;
+    FControlBorderWidth: Integer;
+    //
+    procedure OnItemsChange( ASender : TObject );
+    procedure SetLines(const AValue: TStringList);
+    procedure SetValue(const AValue: string); virtual;
+    procedure SetBGColor(AValue: TIWColor);
+    procedure SetVertScrollBar(AValue: Boolean);
+
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+
+    procedure InitControl; override;
+    function getText: TCaption; override;
+    procedure TextChangedNotification; override;
+    procedure Dispose(ADispose: Boolean); override;
+    function get_HTMLWidth: Integer; override;
+    function get_HTMLHeight: Integer; override;
+    property DelayKeyEvents: Boolean read FDelayKeyEvents write FDelayKeyEVents default False;
+  public
+    procedure Clear; virtual;
+    procedure SetText(const AValue: TCaption); override;
+    procedure ScrollToTop;
+    procedure ScrollToBottom;
+
+    // make it visible to PaintHandler
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    function RenderStyle(AComponentContext: TIWCompContext): string; override;
+    procedure RenderScripts(AComponentContext: TIWCompContext); override;
+    property Text: TCaption read getText write setText;
+    property Lines: TStringList read FLines write SetLines;
+    property Attributes: TIWInputAttributes read FAttributes write SetAttributes default DefaultIWInputAttributes;
+  published
+    property BGColor: TIWColor read FBGColor write SetBGColor;
+    property Editable;
+    property ExtraTagParams;
+    property Font;
+    property ScriptEvents;
+    property InvisibleBorder: Boolean read FInvisibleBorder write FInvisibleBorder;
+    property HorizScrollBar: Boolean read FHorizScrollBar write FHorizScrollBar;
+    property VertScrollBar: Boolean read FVertScrollBar write SetVertScrollBar;
+    property Required: Boolean read FRequired write FRequired;
+    property TabOrder;
+    property SubmitOnAsyncEvent;
+    property ResizeDirection: TMemoResizeDirection read FResizeDirection write FResizeDirection default rdBoth;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWMemo = class(TIWCustomMemo)
+  public
+  published
+    property Attributes;
+    property Enabled;
+    property FriendlyName;
+    property Lines;
+    property OnAsyncClick;
+    property OnAsyncDoubleClick;
+    property OnAsyncChange;
+    property OnAsyncEnter;
+    property OnAsyncExit;
+    property OnAsyncKeyDown;
+    property OnAsyncKeyUp;
+    property OnAsyncKeyPress;
+    property OnAsyncMouseDown;
+    property OnAsyncMouseMove;
+    property OnAsyncMouseOver;
+    property OnAsyncMouseOut;
+    property OnAsyncMouseUp;
+    property OnAsyncSelect;
+    property DelayKeyEvents;
+  end;
+
+implementation

@@ -1,0 +1,38 @@
+unit IWImageList;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Controls, Graphics, Classes, IW.CacheStream, IW.Common.StrLists;
+
+type
+  // Don't make any virtual methods here. In some cases we may cast
+  // TIWImageList to this in order to use non-vritual methods
+  {$include IWPlatformAttrib.inc}
+  TIWImageList = class(TImageList)
+  private
+    FCacheImages: Boolean;
+    FCacheList: TIWNameValueList;
+    function GetCacheOwner(var ACacheType: TCacheType): TObject;
+  protected
+    procedure Initialize; override;
+  public
+    destructor Destroy; override;
+    function ExtractImageToCache(AImageIndex: Integer; const ACacheType: TCacheType = ctOneTime): string; virtual;
+    procedure ClearCacheList;
+  published
+    property AllocBy;
+    property BlendColor;
+    property DrawingStyle;
+    property ImageType;
+    property ShareImages;
+    property BkColor;
+    property Height;
+    property Masked;
+    property OnChange;
+    property Width;
+    property CacheImages: Boolean read FCacheImages write FCacheImages default True;
+  end;
+
+implementation

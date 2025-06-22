@@ -1,0 +1,186 @@
+unit IWGlobal;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, IWException, IWBaseForm, IWTypes, IWServerControllerBase,
+  IW.Common.SysTools, IW.Common.Lists;
+
+type
+  TIWAppType = (atStandAlone, atISAPI, atLibrary, atHttpSys);
+  THttpExecuteHook = procedure(aBytes: PByte; aSize: Integer);
+  TAppInitHook = procedure;
+
+  TIWPerfData = record
+  private
+    FStartupTime: TDateTime;
+    FRequestCount: Int64;
+    FBytesSent: Int64;
+    FLastTimeoutThreadRun: Double;
+    FStatus400Count: Integer;
+    FStatus500Count: Integer;
+    FDMPoolSize: Integer;
+    FDMPoolUsageCount: Integer;
+    FLastRemovedSessionCount: Integer;
+    FTotalRemovedSessionCount: Integer;
+    FSessionTimeoutThreadRestartCount: Integer;
+    procedure SetDMPoolSize(Value: Integer);
+    procedure SetDMPoolUsageCount(Value: Integer);
+    procedure SetLastRemovedSessionCount(Value: Integer);
+    function GetRequestCount: Int64;
+    function GetBytesSent: Int64;
+    function GetStatus400Count: Integer;
+    function GetStatus500Count: Integer;
+    function GetDMPoolSize: Integer;
+    function GetDMPoolUsageCount: Integer;
+    function GetLastTimeoutThreadRun: Double;
+    function GetLastRemovedSessionCount: Integer;
+    function GetTotalRemovedSessionCount: Integer;
+    function GetSessionTimeoutThreadRestartCount: Integer;
+  public
+    procedure LogBytes(const ABytes: Int64);
+    procedure IncReqCount;
+    procedure IncStatus400;
+    procedure IncStatus500;
+    procedure IncRemovedSessionCount;
+    function IncSessionTimeoutThreadRestartCount: Integer;
+    property StartupTime: TDateTime read FStartupTime;
+    property RequestCount: Int64 read GetRequestCount;
+    property BytesSent: Int64 read GetBytesSent;
+    property Status400Count: Integer read GetStatus400Count;
+    property Status500Count: Integer read GetStatus500Count;
+    property DataModulePoolSize: Integer read GetDMPoolSize write SetDMPoolSize;
+    property DataModulePoolUsageCount: Integer read GetDMPoolUsageCount write SetDMPoolUsageCount;
+    property LastTimeoutThreadRun: Double read GetLastTimeoutThreadRun;  // actually a TDateTime stored in a double for simplicity
+    property LastRemovedSessionCount: Integer read GetLastRemovedSessionCount write SetLastRemovedSessionCount;
+    property TotalRemovedSessionCount: Integer read GetTotalRemovedSessionCount;
+    property SessionTimeoutThreadRestartCount: Integer read GetSessionTimeoutThreadRestartCount;
+  end;
+
+const
+  // Markup constants
+  gHeadStart = '<head>' + EOL + '<meta charset="utf-8">';
+  gHtmlStart = '<html lang="en">' + EOL + gHeadStart;
+  gHtmlFullStart = '<!DOCTYPE html>' + EOL +
+                   '<html lang="en">' + EOL +
+                   '<head>' + EOL +
+                   '<meta charset="utf-8">' + EOL +
+                   '%viewport%' + EOL +
+                   '<title></title>' + EOL;
+  gHtmlEnd = '</form>' + EOL + '</body>' + EOL + '</html>';
+
+  // render the minified version. The non minified is used in IWBrowser.js
+  jsGetWindowSizes = 'function getWH(){var e=0,t=0,n=document,i=window,d=i.devicePixelRatio||1;'+
+                     'return i&&i.innerWidth?(e=i.innerWidth,t=i.innerHeight):n.documentElement&&n'+
+                     '.documentElement.clientWidth?(e=n.documentElement.clientWidth,t=n.documentElement'+
+                     '.clientHeight):n.body&&n.body.clientWidth&&(e=n.body.clientWidth,t=n.body'+
+                     '.clientHeight),[e,t,d]}';
+
+  jsGetWindowScrollSizes = 'function getWS(){var o=0,l=0,t=document,r=window.devicePixelRatio||1;return"CSS1Compat"==t.compatMode?'+
+                           '(o=Math.max(t.body.scrollWidth,t.documentElement.scrollWidth),l=Math.max(t.body.scrollHeight,'+
+                           't.documentElement.scrollHeight)):(o=t.body.scrollWidth,l=t.body.scrollHeight),[o,l,r]}';
+
+  jsCookieCheck = 'function cookieCheck(){var o=navigator,e=document,i=!!o.cookieEnabled;return void 0!==o.cookieEnabled||i||(e.cookie="testcookie",i=-1!=e.cookie.indexOf("testcookie")),i}';
+
+  jsIFrameCheck = 'function isIFrame(){if(window.location!==window.parent.location)return 1;return 0;}';
+
+  // render the minified version. The non minified version is commented out below
+  jsIWTop = 'function IWTop(){var w=window;if(w===w.parent||!w.parent){return w}try{return w.parent.IWTop()}catch(e){return w}}';
+
+{$REGION 'uncompressed JavaScript functions'}
+{$IFNDEF FPC}  // WTH FPC chokes with the comment section below????
+(*
+  jsGetWindowSizes = 'function getWH() {' + EOL +
+                     '  var w=0, h=0, d=document, wnd=window, r = wnd.devicePixelRatio || 1;' + EOL +
+ 	                   '  if (wnd && wnd.innerWidth) {' + EOL +               // FF / WebKit / Non-IE
+                     '    w = wnd.innerWidth;' + EOL +
+                     '    h = wnd.innerHeight;' + EOL +
+                     '  } else if (d.documentElement && d.documentElement.clientWidth) {' + EOL +
+                     '    w = d.documentElement.clientWidth;' + EOL +       // IE 6+ in 'standards compliant mode'
+                     '    h = d.documentElement.clientHeight;' + EOL +
+                     '  } else if (d.body && d.body.clientWidth) {' + EOL +
+                     '    w = d.body.clientWidth;' + EOL +                  // IE Quirks
+                     '    h = d.body.clientHeight;' + EOL +
+                     '  }' + EOL +
+                     '  return [w, h, r];' + EOL +
+                     '}';
+
+  jsGetWindowScrollSizes = function getWS() {
+        var w = 0,
+            h = 0,
+            d = document,
+            r = window.devicePixelRatio || 1;
+        if (d.compatMode == "CSS1Compat") {
+            w = Math.max(d.body.scrollWidth, d.documentElement.scrollWidth);
+            h = Math.max(d.body.scrollHeight, d.documentElement.scrollHeight);
+        } else {
+            w = d.body.scrollWidth;
+            h = d.body.scrollHeight;
+        }
+        return [w, h, r];
+    }
+
+  jsCookieCheck = 'function cookieCheck() {' + EOL +
+                  '    var n = navigator, d = document,' + EOL +
+                  '          cookieEnabled = (n.cookieEnabled) ? true : false;' + EOL +
+                  '      if (typeof n.cookieEnabled == "undefined" && !cookieEnabled)' + EOL +
+                  '      {' + EOL +
+                  '          d.cookie="testcookie";' + EOL +
+                  '          cookieEnabled = (d.cookie.indexOf("testcookie") != -1) ? true : false;' + EOL +
+                  '      }' + EOL +
+                  '      return (cookieEnabled);' + EOL +
+                  '  }';
+
+  jsIWTop = 'function IWTop(){ ' + EOL +
+            '    var w = window;' + EOL +
+            '    if (w === w.parent || !w.parent) {' + EOL +
+            '        return w;' + EOL +
+            '    }' + EOL +
+            '    try {' + EOL +
+            '        return w.parent.IWTop();' + EOL +
+            '    } catch (e) {' + EOL +
+            '        return w;' + EOL +
+            '    }' + EOL +
+            '}';
+*)
+{$ENDIF}
+{$ENDREGION}
+
+  gXmlHeader = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>';
+
+var
+  gAppInit: procedure() = nil;
+  gHttpExecuteHook: THttpExecuteHook = nil;
+
+  GAppType: TIWAppType = atStandAlone;
+  GIWFormTypes: TIWListBase;
+
+  // TComponentClass instead of TIWBaseFormClass for 15/17 dual functionality.
+  gMainFormClass: TComponentClass;
+
+  gServerController: TIWServerControllerBase = nil;
+  // gServerController was too much to type all the time, but we keep the old one
+  // so we don't break code. But now you can access it as gSC as well.
+  // gSC = gServerController
+  gSC: TIWServerControllerBase = nil;
+  gServerControllerClass: TIWServerControllerBaseClass = nil;
+
+  GTestFramework: IIWTestFrameWork = nil;
+
+  // This is the method used to do Log.
+  gLogProcedure: TIWLogProcedure = nil;
+  gLogBytesProcedure: TIWLogBytesProcedure = nil;
+
+  gRequestCount: Int64;
+
+  gPerfData: TIWPerfData;
+
+// Procs
+  procedure SetLicenseKey(const AKey: string);
+  procedure RegisterIWFormType(AType: TIWBaseFormClass);
+  function IsSupportedFormType(AType: TIWBaseForm): Boolean;
+  function HtmlStart: string;
+  function HtmlFullStart: string;
+
+implementation

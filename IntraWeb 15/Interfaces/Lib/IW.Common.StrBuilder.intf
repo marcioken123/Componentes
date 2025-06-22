@@ -1,0 +1,144 @@
+unit IW.Common.StrBuilder;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, Classes, Math;
+
+const
+  TWO_KB = 2 * 1024;  // most style related stuff will fit in 2kb without reallocation
+
+type
+  TStrBuilder = class;
+
+  IStrBuilder = interface
+    ['{DFD2790B-F690-48F4-8D4A-FAB63A53AC5D}']
+    procedure SetCapacity(const Value: Integer);
+    function GetCapacity: Integer;
+    function GetSize: Integer;
+    function GetBuf: TBytes;
+    function GetUtf8Buffer: TBytes;
+    function GetIsEmpty: Boolean;
+    procedure Add(const s: string); overload;
+    procedure Add(const s1, s2: string); overload;
+    procedure Add(const s1, s2, s3: string); overload;
+    procedure Add(const s1, s2, s3, s4: string); overload;
+    procedure Add(const s1, s2, s3, s4, s5: string); overload;
+    procedure Add(const s1, s2, s3, s4, s5, s6: string); overload;
+    procedure Add(const s1, s2, s3, s4, s5, s6, s7: string); overload;
+    procedure Add(const s1, s2, s3, s4, s5, s6, s7, s8: string); overload;
+    procedure Add(const s: string; i: Integer); overload;
+    procedure Add(const s1: string; i: Integer; const s2: string); overload;
+    procedure Add(const s1, s2: string; i: Integer; const s3: string); overload;
+    procedure Add(const s1, s2: string; i1: Integer; const s3: string; i2: Integer; const s4: string); overload;
+    procedure Add(const s1: string; i1: Integer; const s2: string; i2: Integer; const s3: string); overload;
+    procedure Add(const s: string; d: Double); overload;
+    procedure Add(const s1: string; d: Double; const s2: string); overload;
+    procedure Add(const s1: string; d1: Double; const s2: string; d2: Double; const s3: string); overload;
+    procedure Add(i: Integer); overload;
+    procedure Add(i: Int64); overload;
+    procedure Add(d: Double); overload;
+    procedure Add(d: Double; AFormatSettings: TFormatSettings); overload;
+    procedure Add(b: Boolean); overload;
+    procedure Add(const sb: IStrBuilder); overload;
+    procedure Add(const s: string; b: Boolean); overload;
+    procedure Add(const s1: string; b: Boolean; const s2: string); overload;
+    function ToString: string;
+    procedure Clear;
+    property Capacity: Integer read GetCapacity write SetCapacity;
+    property Size: Integer read GetSize;
+    property Buffer: TBytes read GetBuf;
+    property Utf8Buffer: TBytes read GetUtf8Buffer;
+    property IsEmpty: Boolean read GetIsEmpty;
+  end;
+
+  TStrBuilder = class(TObject, IStrBuilder)
+  private
+    FBuf: TBytes;
+    FSize: Integer;
+    FCapacity: Integer;
+    FRefCount: Integer;
+    procedure SetCapacity(const Value: Integer);
+    function GetCapacity: Integer;
+    // IInterface
+    function QueryInterface({$IFDEF FPC}constref{$ELSE}const{$ENDIF} IID: TGUID; out Obj): HResult; stdcall;
+    function _AddRef: Integer; stdcall;
+    function _Release: Integer; stdcall;
+    class procedure ClearPool; static;
+    function GetSize: Integer;
+    procedure WriteBuf(const PBuf: Pointer; Count: Longint); inline;
+    function GetBuf: TBytes;
+    function GetIsEmpty: Boolean;
+    function GetUtf8Buffer: TBytes;
+    function GetByteAt(Pos: Integer): Byte;
+    function GetLastByte: Byte;
+  public
+    constructor Create(const aCapacity: Integer = TWO_KB);
+    destructor Destroy; override;
+    class procedure GetInstance(var AStrBuilder: IStrBuilder); static;
+    class function GetObjInstance: TStrBuilder; static;
+    procedure Dispose;
+    procedure Clear;
+    procedure Add(const s: string); overload; inline;  // inlining other methods won't make any significant change in performance
+    procedure Add(const s1, s2: string); overload;
+    procedure Add(const s1, s2, s3: string); overload;
+    procedure Add(const s1, s2, s3, s4: string); overload;
+    procedure Add(const s1, s2, s3, s4, s5: string); overload;
+    procedure Add(const s1, s2, s3, s4, s5, s6: string); overload;
+    procedure Add(const s1, s2, s3, s4, s5, s6, s7: string); overload;
+    procedure Add(const s1, s2, s3, s4, s5, s6, s7, s8: string); overload;
+    procedure Add(const s: string; i: Integer); overload;
+    procedure Add(const s1: string; i: Integer; const s2: string); overload;
+    procedure Add(const s1, s2: string; i: Integer; const s3: string); overload;
+    procedure Add(const s1, s2: string; i1: Integer; const s3: string; i2: Integer; const s4: string); overload;
+    procedure Add(const s1: string; i1: Integer; const s2: string; i2: Integer; const s3: string); overload;
+    procedure Add(const s: string; d: Double); overload;
+    procedure Add(const s1: string; d: Double; const s2: string); overload;
+    procedure Add(const s1: string; d1: Double; const s2: string; d2: Double; const s3: string); overload;
+    procedure Add(i: Integer); overload;
+    procedure Add(i: Int64); overload;
+    procedure Add(d: Double); overload;
+    procedure Add(d: Double; AFormatSettings: TFormatSettings); overload;
+    procedure Add(b: Boolean); overload;
+    procedure Add(const s: string; b: Boolean); overload;
+    procedure Add(const s1: string; b: Boolean; const s2: string); overload;
+    procedure Add(const sb: IStrBuilder); overload;
+    function ToString: string; {$IFNDEF FPC}override;{$ENDIF}
+    property Capacity: Integer read GetCapacity write SetCapacity;
+    property Size: Integer read GetSize;
+    property Buffer: TBytes read GetBuf;
+    property Utf8Buffer: TBytes read GetUtf8Buffer;
+    property IsEmpty: Boolean read GetIsEmpty;
+    property ByteAt[Pos: Integer]: Byte read GetByteAt;
+    property LastByte: Byte read GetLastByte;
+  end;
+
+type
+  { IWNotes regarding memory layout of strings:
+
+  Memory layout of a Delphi (unicode) string:
+  --------------------------------------------------------------------------------
+     -12     |   -10     |      -8      |     -4     |    String reference address
+             |           |              |            |
+  Code page  | Elem size |   Ref count  |   length   |     First char of string
+  --------------------------------------------------------------------------------
+
+  Memory layout of a string (Ansi/Unicode) in FPC x86 - 32-bits:
+  --------------------------------------------------------------------------------
+        -8      |     -4     |    String reference address
+                |            |
+     Ref count  |   length   |     First char of string
+  --------------------------------------------------------------------------------
+
+  Memory layout of a string (Ansi/Unicode) in FPC x64 - 64-bits:
+  --------------------------------------------------------------------------------
+        -16     |     -8     |    String reference address
+                |            |
+     Ref count  |   length   |     First char of string
+  --------------------------------------------------------------------------------
+  }
+  IntStrLen = {$IFDEF FPC}{$IFDEF CPUX64}Int64{$ELSE}Integer{$ENDIF}{$ELSE}Integer{$ENDIF};
+  PIntStrLen = ^IntStrLen;
+
+implementation

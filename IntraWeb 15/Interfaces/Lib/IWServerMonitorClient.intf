@@ -1,0 +1,28 @@
+unit IWServerMonitorClient;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, SysUtils, IWMailSlot, IW.Common.Threads, IW.Common.StrLists;
+
+type
+  TIWServerMonitorClient = class
+  private
+    FChannel: TIWMailslotClient;
+    FIntervalMinutes: SmallInt;
+    FWorkerThread: TIWTimedThread;
+    FOwner: TObject;
+    FLock: TIWSlimReaderWriter;
+    FCustomData: TIWMinStringList;
+  protected
+    procedure SendInfo;
+    function GetCustomData: string;
+    procedure Execute(AData: Pointer);
+  public
+    constructor Create(aOwner: TObject; aIntervalMinutes: SmallInt);
+    destructor Destroy; override;
+    procedure Send(const aMsg: string);
+  end;
+
+implementation

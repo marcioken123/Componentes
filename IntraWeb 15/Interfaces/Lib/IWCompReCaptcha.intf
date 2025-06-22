@@ -1,0 +1,60 @@
+unit IWCompReCaptcha;
+{$I IWCompilerDefines.inc}
+
+{PUBDIST}
+
+interface
+
+uses
+  Classes,
+  IWXMLTag, IWTypes,
+  IWControl, IWHTMLTag, IWColor, IWRenderContext, IWMarkupLanguageTag,
+  IWScriptEvents;
+
+type
+  TValidationErrorEvent = procedure (Sender: TObject; const AResponse: string) of object;
+
+  TIWDataSize = (dsNormal, dsCompact);
+
+  TIWDataTheme = (dtLight, dtDark);
+
+  TIWReCaptcha = class(TIWCustomControl)
+  private
+    FSiteKey: string;
+    FSecretKey: string;
+    FOnValidationError: TValidationErrorEvent;
+    FOnSuccess: TNotifyEvent;
+    FOnExpired: TNotifyEvent;
+    FValidated: Boolean;
+    FChallengeTS: string;
+    FHostName: string;
+    FSize: TIWDataSize;
+    FTheme: TIWDataTheme;
+    procedure DoVerifyCallback(AParams: TStringList);
+    procedure DoExpiredCallback(AParams: TStringList);
+    procedure ParseResponse(const aResponse: string);
+    procedure SetSize(const Value: TIWDataSize);
+    procedure SetTheme(const Value: TIWDataTheme);
+  protected
+    procedure InitControl; override;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    procedure AssignAsyncEvents(APageContext: TIWPageContext40; AScriptEvents: TIWScriptEvents); override;
+  public
+    function RenderCSSClass(AComponentContext: TIWCompContext): string; override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    function RenderStyle(AComponentContext: TIWCompContext): string; override;
+    property ChallengeTS: string read FChallengeTS;
+    property Validated: Boolean read FValidated;
+    property HostName: string read FHostName;
+  published
+    property SecretKey: string read FSecretKey write FSecretKey;
+    property SiteKey: string read FSiteKey write FSiteKey;
+    property OnExpired: TNotifyEvent read FOnExpired write FOnExpired;
+    property OnSuccess: TNotifyEvent read FOnSuccess write FOnSuccess;
+    property OnValidationError: TValidationErrorEvent read FOnValidationError write FOnValidationError;
+    property Size: TIWDataSize read FSize write SetSize default dsNormal;
+    property Theme: TIWDataTheme read FTheme write SetTheme default dtLight;
+    property Visible;
+  end;
+
+implementation

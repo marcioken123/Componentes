@@ -1,0 +1,115 @@
+unit IWContainer;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Controls, Forms, Windows, Messages, Classes, Graphics,
+  IWVCLBaseContainer, IWBaseInterfaces, IWBaseContainerLayout, IWMarkupLanguageTag,
+  IWBaseControl, IWBaseRenderContext, IWApplication, IW.Common.Lists, IWTypes;
+
+type
+  TIWContainerImplementation = class
+  protected
+    FContainer: TComponent;
+    FComponentList: TIWListBase;
+    FContainerContext: TIWContainerContext;
+    procedure set_ContainerContext(const Value: TIWContainerContext);
+    function get_ContainerContext: TIWContainerContext;
+    function GetWebApplication: TIWApplication;
+    function IsCallBack: Boolean;
+  public
+    constructor Create(AContainer: TComponent); reintroduce;
+    destructor Destroy; override;
+
+    function ContainerName: string;
+    function ContainerClassname: string;
+
+    procedure NotifyBaseComponents(AComponent: TComponent);
+    procedure AddComponent(AComponent: TComponent);
+    procedure RemoveComponent(AComponent: TComponent);
+    function FindComponent(AComponent: TComponent): Integer;
+    function FindComponentByName(const AComponentName: String): TComponent;
+
+    function GetComponent(AIndex: Integer): TComponent;
+    function get_IWComponentsCount: Integer;
+
+    //
+    //TODO: Rename this - too easily confused with TComponent.Components[]
+    property Component[AIndex: Integer]: TComponent read GetComponent;
+    property ContainerContext: TIWContainerContext read get_ContainerContext write set_ContainerContext;
+    property IWComponentsCount: Integer read get_IWComponentsCount;
+  end;
+
+  TIWContainer = class(TIWBaseContainer, IIWBaseContainer, IIWFreeNotification)
+  private
+    FOnRender: TNotifyEvent;
+    FParent: TComponent;
+    FContainerImplementation: TIWContainerImplementation;
+    procedure RemoveFromTabOrderList(AComponent: TComponent);
+  protected
+    FPaintHandler: TIWPaintHandler;
+    FTabOrderList: TIWListBase; //TODO: Move to private when possible
+    FLayoutMgr: TIWBaseContainerLayout;
+    FRenderAsyncEnabled: Boolean;
+    function get_ContainerContext: TIWContainerContext;
+    procedure set_ContainerContext(const AContainerContext: TIWContainerContext);
+    function get_IWComponentsCount: Integer;
+    function get_Component(AIndex: Integer): TComponent;
+    procedure FixUpTabList;
+    procedure Loaded; override;
+    procedure Dispose(ADispose: Boolean); override;
+    function CacheControls: Boolean; virtual;
+    procedure IWComponentsChanged(AComponent: TComponent); virtual;
+    function ContainerPrefix: string; virtual;
+    function CheckComponentForRender(AComponent: TComponent): Boolean; virtual;
+    function CheckUpdateTree(AComponent: TComponent): Boolean; virtual;
+    function DoPostRenderProcessing(ATag: TIWMarkupLanguageTag;
+      AComponentContext: TIWBaseComponentContext; AComponent: TComponent): TIWMarkupLanguageTag; virtual;
+    procedure DoBeforeRender; virtual;
+    procedure DoRender; virtual;
+    procedure InitDesignTime; override;
+    procedure InitControl; override;
+    function InitPaintHandler: TIWPaintHandler; virtual;
+    procedure Notification(AComponent: TComponent; AOperation: TOperation); override;
+    procedure Paint; override;
+    procedure PaintTo(ACanvas: TCanvas); overload;
+    procedure ParentChanging(AOldParent, AParent: TComponent); override;
+    function GetComponentsToRender(AContainerContext: TIWContainerContext; APageContext: TIWBasePageContext): TIWListBase;
+    procedure DoRenderComponents(AContainerContext: TIWContainerContext; APageContext: TIWBasePageContext; ACompList: TIWListBase);
+    procedure RenderComponents(AContainerContext: TIWContainerContext; APageContext: TIWBasePageContext); virtual;
+
+    function ContainerImplementation: TIWContainerImplementation; virtual;
+
+    function ContainerName: string;
+    function ContainerClassname: string;
+    function InterfaceInstance: TComponent;
+    procedure IWAddComponent(AComponent: TComponent);
+    procedure IWRemoveComponent(AComponent: TComponent);
+    function IWFindComponent(AComponent: TComponent): Integer;
+    function FindComponentByName(AControl: String): TComponent;
+    function InitContainerContext(AWebApplication: TIWApplication): TIWContainerContext; virtual; abstract;
+    procedure AsyncRenderComponent(AComponent: TComponent); virtual; // Empty method, only implemented in IWForm
+    function GetClientOrigin: TPoint; override;
+    function IsNested: Boolean; virtual;
+  public
+    property Component[AIndex: Integer]: TComponent read get_Component;
+    property ContainerContext: TIWContainerContext read get_ContainerContext write set_ContainerContext;
+    property IWComponentsCount: Integer read get_IWComponentsCount;
+    property TabOrderList: TIWListBase read FTabOrderList;
+    procedure Freeing(AObject: TObject);
+    function GetParentContainer: IIWBaseContainer;
+  published
+    property OnRender: TNotifyEvent read FOnRender write FOnRender;
+  end;
+
+function GetOwnerContainer(AControl: TControl): TIWContainer;
+// Used to get ContainerPrefix for controls names
+function GetParentFramesNames(AOwnerFrame: TComponent): string;
+// ordered list of child controls which implement ITabOrder interface *and* have tab order
+function GetContainerControlList(AContainer: TControl): TIWListBase;
+procedure FillContainerControlList(AContainer: TControl; AList: TIWListBase);
+function IsIWContainer(AControl: TControl): Boolean;
+procedure ResetTabOrders(AContainer: TIWContainer; ATabSortType: TIWTabSortType; ALevel: Integer; AReverse: Boolean);
+
+implementation

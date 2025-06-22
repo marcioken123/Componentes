@@ -1,0 +1,30 @@
+unit IWIWPTemplater;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses Classes, IWTag;
+
+//TODO: check if it is possible to unify the code of both classes
+type
+  TIWIWPTemplater = class
+  private
+    mFile: string;
+    mRootPath: string;
+    function GetTemplateFileName: string; virtual;
+    procedure ProcessBody(aSource, aDest: TStringStream);
+    procedure ProcessTitle(aSource, aDest: TStringStream);
+    procedure DoURLRewrite(aDest: TStringStream; aTag: TIWTag; aDocPath: string; aTemplatePath: string);
+    function IsHTMLTag(aTag: TIWTag): Boolean;
+  public
+    constructor Create(const aRootPath: string; const aFile: string);
+    function Execute: TStream; virtual;
+  end;
+
+  TIWIWPTemplaterTemplate = class(TIWIWPTemplater)
+  private
+    function GetTemplateFileName: string; override;
+    function Execute(aDocPath: string; aSource: TStringStream = nil): TStream; reintroduce;
+  end;
+
+implementation

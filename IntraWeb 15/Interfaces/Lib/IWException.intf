@@ -1,0 +1,120 @@
+unit IWException;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils;
+
+type
+  TIWExceptionInfo = record
+    ResourceName,
+    Addr,
+    AppID,
+    Content,
+    RunParams,
+    ExceptionSpecific,
+    Detail,
+    DefaultMessage: string;
+  end;
+
+  EIWException = class(Exception)
+  protected
+    mDetails: string;
+  public
+    constructor Create(const Msg, aDetails: string); overload;
+    class procedure IfAssigned(
+      const ACheck: TObject;
+      const AMsg: string);
+    class procedure IfFalse(
+      const ACheck: Boolean;
+      const AMsg: string);
+    class procedure IfNotAssigned(
+      const ACheck: TObject;
+      const AMsg: string;
+      const AMethodName: string = '');
+    class procedure IfNotInRange(
+      const AValue: Integer;
+      const AMin: Integer;
+      const AMax: Integer;
+      const AMsg: string);
+    class procedure IfTrue(
+      const ACheck: Boolean;
+      const AMsg: string);
+    property Details: string read mDetails;
+  end;
+
+  EIWNoFrameContainer = class(EIWException); // Thrown when no container is found on a frame
+  EIWWrongSubnet = class(EIWException); // Thrown when the current IP originates from a different subnet than the original session IP 
+
+  EDeviceNotSupported = class(EIWException);
+
+  EIWInvalidKey = class(EIWException);
+
+  EUnknownBrowserException = class(EIWException)
+    protected FSupportsJS: Boolean;
+  public
+    constructor Create(const AMsg: string);
+    property SupportsJS: Boolean read FSupportsJS write FSupportsJS;
+  end;
+
+  EIWSessionException = class(EIWException)
+  private
+    mAppID: string;
+  public
+    constructor Create(const AAppID: string; const ErrorMessage: string); overload;
+    property AppID: string read mAppID;
+  end;
+
+  EInvalidSession = class(EIWSessionException);
+  EInvalidAppID = class(EInvalidSession);
+
+  EExpiredSession = class(EInvalidSession);
+
+  ESessionAlreadyLocked = class(EIWSessionException);
+  EInvalidProcess = class(EInvalidSession);
+
+  // raised when /$/StartCheck is received but there is no Session ID (probably error in cookies)
+  EIWNoSessionId = class(EIWException);
+
+  EIWAuthException = class(EIWException);
+
+  EIWSecurityException = class(EIWException);
+
+  EIWInvalidResourceException = class(EIWException);
+
+  EIWNoActiveForm = class(EIWException);
+
+  EIWHSysException = class(EIWException)
+  private
+    mFunctionName: string;
+    mErrorCode: Cardinal;
+  public
+    constructor Create(const AErrorCode: Cardinal; const AFunctionName: string); overload;
+    constructor Create(const AErrorCode: Cardinal; const AFunctionName, ADetails: string); overload;
+    property FunctionName: string read mFunctionName;
+    property ErrorCode: Cardinal read mErrorCode;
+  end;
+
+  EIWReplyException = class(EIWException);
+
+  EIWSubmitException = class(EIWException)
+  private
+    mSubmitControl: string;
+  public
+    constructor Create(const ErrorMessage: string; const ASubmitControl: string); overload;
+    property SubmitControl: string read mSubmitControl;
+  end;
+
+  EIWInvalidUrlPath = class(EIWException)
+  public
+    constructor Create(const ErrorMessage: string; const AUrlPath: string); overload;
+  end;
+
+  ENoCookieSupportException = class(EIWException);
+
+  EIWAppCache = class(EIWException);
+
+  EIWContentHandler = class(EIWException);
+
+implementation

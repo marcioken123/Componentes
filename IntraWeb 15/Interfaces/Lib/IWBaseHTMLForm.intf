@@ -1,0 +1,32 @@
+unit IWBaseHTMLForm;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, Controls, Forms, Graphics, TypInfo,
+  IWBaseForm, IWContainer, IWColor, IWBaseInterfaces, IW.Common.XPlatTypes;
+
+type
+  TIWBaseHTMLForm = class(TIWBaseForm)
+  private
+    // FControlList contains a list of the controls on the canvas in a special order.
+    // Also filters out controls not to be rendered
+    FBGColor: TIWColor;
+    FLinkColor: TIWColor;
+    FTextColor: TIWColor;
+    FVLinkColor: TIWColor;
+  protected
+    procedure Dispose(ADispose: Boolean); override;
+  protected
+    procedure ValidateRename(AComponent: TComponent; const CurName, NewName: RtlString); override;
+    procedure SetBGColor(const AValue: TIWColor);
+    procedure InitControl; override;
+  published
+    property BGColor: TIWColor read FBGColor write SetBGColor default clNone;
+    property LinkColor: TIWColor read FLinkColor write FLinkColor default clNone;
+    property TextColor: TIWColor read FTextColor write FTextColor default clNone;
+    property VLinkColor: TIWColor read FVLinkColor write FVLinkColor default clNone;
+  end;
+
+implementation

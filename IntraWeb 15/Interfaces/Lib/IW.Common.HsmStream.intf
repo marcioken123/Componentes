@@ -1,0 +1,50 @@
+unit IW.Common.HsmStream;
+{$I IWCompilerDefines.inc}
+
+interface
+
+{
+Stream which uses RAM until a sepcified size, after which will flush to disk and use a filestream.
+}
+
+uses
+  SysUtils, Classes;
+
+type
+  THsmStream = class(TStream)
+  strict private
+    class var mFlushSize: Integer;
+  private
+    function GetEmpty: Boolean;
+  protected
+    mInnerStream: TStream;
+    mIsFlushed: Boolean;
+    mPathname: string;
+    mTransient: Boolean;
+    //
+    procedure Flush(const aSize: Int64); overload;
+    function GetSize: Int64; override;
+    procedure SetSize(const NewSize: Int64); override;
+    procedure ReleaseInnerStream;
+  public
+    constructor Create(const aTransient: Boolean); overload;
+    constructor Create(const aBytes: TBytes); overload;
+    destructor Destroy; override;
+    procedure Clear;
+    procedure Flush; overload;
+    procedure Flush(const aStartPos, aSize: Int64); overload;
+    function Read(var aBuffer; aCount: Longint): Longint; override;
+    function Seek(aOffset: Longint; aOrigin: Word): Longint; override;
+    function Write(const aBuffer; aCount: Longint): Longint; override;
+    procedure SaveToFile(const AFileName: string);
+    // We control the position internally, so InnerStream can't be exposed.
+    // If it becomes exposed, mPosition can't be used anymore
+    //property InnerStream: TStream read mInnerStream;
+    property IsFlushed: boolean read mIsFlushed;
+    property Pathname: string read mPathname;
+    property Empty: Boolean read GetEmpty;
+    class property FlushSize: Integer read mFlushSize write mFlushSize;
+  end;
+
+
+implementation

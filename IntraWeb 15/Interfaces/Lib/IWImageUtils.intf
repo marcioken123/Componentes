@@ -1,0 +1,42 @@
+unit IWImageUtils;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, Graphics, SysUtils,
+  {$IFNDEF FPC} GifImg, PngImage, Jpeg, {$ELSE} IW.Common.FPCCompat, {$ENDIF}
+  IWJpegOptions, IWColor;
+
+type
+  TIWImageOutput = (ioJPEG, ioGIF, ioPNG);
+
+// Stream saving routines
+procedure ToGifStream(AGraphic: TGraphic; aStream: TStream; const ATransparentColor: TIWColor = clNone);
+procedure ToPngStream(AGraphic: TGraphic; aStream: TStream; const ATransparentColor: TIWColor = clNone);
+procedure ToJpegStream(AGraphic: TGraphic; aStream: TStream; AOptions: TIWJpegOptions = nil);
+procedure GraphicToStream(AGraphic: TGraphic; AStream: TStream; ImageOutput: TIWImageOutput; aTransparentColor: TIWColor = clNone);
+// utility
+function GetImageType(AGraphic: TGraphic; PreferPNG: Boolean): TIWImageOutput;
+// Png <-> JPEG conversion
+procedure JpegToPng(Input: TJPEGImage; Output: TPngImage);
+procedure PngToJpeg(Input: TPngImage; Output: TJPEGImage);
+// ICON conversion
+procedure IcoToPng(Input: TIcon; Output: TPngImage);
+procedure IcoToJpeg(Input: TIcon; Output: TJPEGImage);
+
+procedure GraphicToBase64Str(Input: TGraphic; var Output: string);
+procedure Base64StrToGraphic(var Input: string; Output: TGraphic);
+function CreateGraphicFromBase64Str(var Input: string): TGraphic;
+procedure Base64StrToPng(var Input: string; Output: TPngImage);
+procedure Base64StrToJpg(var Input: string; Output: TJpegImage);
+procedure Base64StrToGif(var Input: string; Output: TGifImage);
+function Base64StrToImageFile(var Input, AFileName: string): Boolean;
+
+const
+  PNG_BASE64_IMG_PREFIX = 'data:image/png;base64,';
+  JPG_BASE64_IMG_PREFIX = 'data:image/jpeg;base64,';
+  GIF_BASE64_IMG_PREFIX = 'data:image/gif;base64,';
+  PDF_BASE64_PREFIX = 'data:application/pdf;base64,';
+
+implementation

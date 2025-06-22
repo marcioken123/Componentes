@@ -1,0 +1,37 @@
+unit IWCompActiveX;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, IWFileReference, IWCompObject, IWRenderContext, IWHTMLTag, IWGlobal;
+
+type
+  {$include IWPlatformAttrib.inc}
+  TIWActiveX = class(TIWCustomObject)
+  protected
+    FActiveXObject: TIWFileReference;
+    FForceActivation: Boolean;
+    procedure SetActiveXObject(const Value: TIWFileReference);
+    procedure DoFileReferenceChage(Sender : TObject);
+    procedure InitControl; override;
+    procedure Dispose(ADispose: Boolean); override;
+  public
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+  published
+    property ActiveXObject: TIWFileReference read FActiveXObject write SetActiveXObject;
+    property Archive;
+    property ClassID;
+    property CodeBase;
+    property CodeType;
+    property Data;
+    property Declare;
+    property FriendlyName;
+    property ForceActivation: boolean read FForceActivation write FForceActivation;
+    property ObjectType;
+    property PluginsPage;
+    property RenderEMBED;
+    property StandBy;
+  end;
+
+implementation

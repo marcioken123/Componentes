@@ -1,0 +1,330 @@
+unit IWCompListbox;
+{$I IWCompilerDefines.inc}
+
+{PUBDIST}
+
+// Disable Compiler warings for DEPRECATED set_RenderSize, setRenderSize and get_RenderSize
+{$WARN SYMBOL_DEPRECATED OFF}
+
+interface
+
+uses
+  Classes, Controls, Graphics, IW.Common.StrLists,
+  IWHTMLTag, IWControl, IWScriptEvents, IWXMLTag, IWRenderContext, IWBaseInterfaces, IWApplication,
+  IWColor, IWFileReference, IWHTML40Interfaces, IWCompLabel, IW.Common.Lists,
+  DB;
+
+type
+  {$Warnings Off}
+  TIWCustomListCombo = class(TIWCustomControl)
+  private
+    FItems: TStringList;
+    procedure WriteNoSelectionText(Writer: TWriter);
+    procedure SetBoolean(const Value: Boolean);
+    procedure SetText(const Value: TCaption);
+  protected
+    FBGColor: TIWColor;
+    FItemIndex: Integer;
+    FItemsHaveValues: Boolean;
+    FRequireSelection: Boolean;
+    FNoSelectionText: string;
+    FOnChange: TNotifyEvent;
+    FUseSize: Boolean;
+    FRequired: Boolean;
+    FFocusColor: TIWColor;
+    FControlBorderWidth: Integer;
+    FNeedToRenderItems: Boolean;
+    FNoSelectionTextRendered: Boolean;
+    FDisableUpdates: Boolean;
+
+    procedure InitItems; virtual;
+    procedure SetBGColor(const Value: TIWColor);
+    procedure OnItemsChange(ASender: TObject);
+    procedure DoChange;
+    function GetSorted: Boolean;
+    function getText: TCaption; override;
+    procedure HookEvents(AContext: TIWPageContext40; AScriptEvents: TIWScriptEvents); override;
+    procedure SetItems(AValue: TStringList);
+    function GetItems: TStringList;
+    procedure SetItemIndex(AIndex: Integer); virtual;
+    procedure SetRequireSelection(const AValue: Boolean); virtual;
+    procedure SetSorted(AValue: Boolean);
+    procedure SetUseSize(const AValue: Boolean);
+    procedure SetItemsHaveValues(const Value: Boolean);
+    procedure SetNoSelectionText(const Value: string);
+    function GetSelectedValue: string; virtual;
+    function GetSelectedText: string; virtual;
+    function ShouldRenderNoSelectedText: Boolean; virtual;
+
+    procedure InitControl; override;
+    function get_ShouldRenderTabOrder: Boolean; override;
+    function SupportsInput: Boolean; override;
+    function get_HTMLWidth: Integer; override;
+    function get_HTMLHeight: Integer; override;
+    procedure DefineProperties(Filer: TFiler);  override;
+    procedure SetSelectedValue(const AValue: string); virtual;
+    procedure SetSelectedText(const AText: string); virtual;
+    procedure UpdateControlValue; virtual;
+    function InternalSetValue(const AValue: string; AValueIsIndex: Boolean = True): Boolean; virtual;
+    function InternalSetText(const AText: string): Boolean; virtual;
+
+    property Items: TStringList read GetItems write SetItems;
+    property ItemIndex: Integer read FItemIndex write SetItemIndex;
+
+    // Do not publish sorted. DB controls use this and using it can interfere with their
+    // functionality. Such as the lookuplist ones which rely on the sort order remaining the same
+    // as fetched from the DB.
+    //
+    //The items in the TIWCustomListCombo are sorted.
+    //
+    //
+    property Sorted: Boolean read GetSorted write SetSorted default False;
+  protected
+    procedure Dispose(ADispose: Boolean); override;
+  public
+    procedure Clear; virtual;
+    procedure RefreshItems; virtual;
+    function RenderStyle(AContext: TIWCompContext): string; override;
+    function IndexOfName(const AText: string): Integer;
+    function IndexOfValue(const AValue: string; AValueIsIndex: Boolean): Integer;
+    procedure PopulateFromDataSet(ds: TDataSet; const aListFieldName: string); overload;
+    procedure PopulateFromDataSet(ds: TDataSet; const aKeyFieldName, aListFieldName: string); overload;
+    property SelectedValue: string read GetSelectedValue write SetSelectedValue;
+    property SelectedText: string read GetSelectedText write SetSelectedText;
+    property Text: TCaption read getText write SetText;
+  published
+    property Enabled default True;
+    property BGColor: TIWColor read FBGColor write SetBGColor default clNone;
+    property ExtraTagParams;
+    property Font;
+    property FocusColor: TIWColor read FFocusColor write FFocusColor default clNone;
+    property AutoHideOnMenuActivation: Boolean write SetBoolean default False;  // deprecated, not used anymore
+    property ItemsHaveValues: Boolean read FItemsHaveValues write SetItemsHaveValues default False;
+    property NoSelectionText: string read FNoSelectionText write SetNoSelectionText stored False;
+    property Required: Boolean read FRequired write FRequired default False;
+    property RequireSelection: Boolean read FRequireSelection write SetRequireSelection default True;
+    property ScriptEvents;
+    property OnChange: TNotifyEvent read FOnChange write FOnChange;
+    property UseSize: Boolean read FUseSize write SetUseSize default True;
+    property OnAsyncClick;
+    property OnAsyncDoubleClick;
+    property OnAsyncChange;
+    property OnAsyncEnter;
+    property OnAsyncExit;
+    property OnAsyncKeyDown;
+    property OnAsyncKeyUp;
+    property OnAsyncKeyPress;
+    property OnAsyncMouseDown;
+    property OnAsyncMouseMove;
+    property OnAsyncMouseOver;
+    property OnAsyncMouseOut;
+    property OnAsyncMouseUp;
+    property OnAsyncSelect;
+  end;
+  {$Warnings On}
+
+  TIWCustomComboBoxStyle = (stNormal, stEnhanced);
+
+  TIWCustomComboBox = class(TIWCustomListCombo, IIWInputControl, IIWSubmitControl, IIWInputControl40)
+  private
+    FInnerLabel: TIWLabel;
+    procedure UpdateInnerLabel;
+  protected
+    FSubmitParam: string;
+    FStyle: TIWCustomComboBoxStyle;
+    FButtonColor: TIWColor;
+    FButtonImage: TIWFileReference;
+    procedure InitControl; override;
+
+    procedure SetValue(const AValue: string); virtual;
+    procedure Submit(const AValue: string); override;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    function RenderHTML_Enhanced(AContext: TIWCompContext): TIWHTMLTag;
+    function RenderHTML_Label(AContext: TIWCompContext): TIWHTMLTag;
+    function RenderHTML_Normal(AContext: TIWCompContext): TIWHTMLTag;
+  public
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    function GetSubmitParam: string;
+    // Needed for PaintHandlers
+    property Items;
+    property ItemIndex;
+    constructor Create(AOwner : TComponent); override;
+    destructor Destroy; override;
+  published
+    property Style: TIWCustomComboBoxStyle read FStyle write FStyle default stNormal;
+    property ButtonColor: TIWColor read FButtonColor write FButtonColor default clBtnFace;
+    property ButtonImage: TIWFileReference read FButtonImage write FButtonImage;
+    property DoSubmitValidation;
+    property Editable default True;
+    property NonEditableAsLabel default False;
+    property SubmitOnAsyncEvent default True;
+    property TabOrder;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWComboBox = class(TIWCustomComboBox)
+  published
+    property ItemIndex;
+    property Items;
+    property Sorted default False;
+    property FriendlyName;
+  end;
+
+  TIWCustomListbox = class(TIWCustomListCombo, IIWInputControl, IIWSubmitControl, IIWInputControl40)
+  protected
+    FSubmitParam: string;
+    FMultiSelect: Boolean;
+    FSelectedList: TIWListBase;
+    FOnDblClick: TNotifyEvent;
+    FSkipItemListRendering: Boolean;
+    //
+    function GetOnClick: TNotifyEvent;
+    procedure SetOnClick(const AValue: TNotifyEvent);
+    procedure DoItemsChange(Sender: TObject);
+    procedure DoItemsChanging(Sender: TObject);
+    function GetSelected(AIndex: Integer): Boolean;
+    procedure SetSelected(AIndex: Integer; const AValue: Boolean);
+    procedure SetItemIndex(AIndex: Integer); override;
+    procedure SetMultiSelect(const AValue: Boolean);
+    procedure HookEvents(AContext: TIWPageContext40; AScriptEvents: TIWScriptEvents); override;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    procedure SetValue(const AValue: string); virtual;
+    procedure Submit(const AValue: string); override;
+    procedure InitItems; override;
+    procedure InitControl; override;
+    procedure MouseDownEvent(Sender: TObject; Session: TIWApplication);
+    function ShouldRenderNoSelectedText: Boolean; override;
+    procedure SetSkipItemListRendering(const AValue: Boolean);
+  protected
+    procedure Dispose(ADispose: Boolean); override;
+    property SkipItemListRendering: Boolean read FSkipItemListRendering write SetSkipItemListRendering;
+    function GetSelectedValue: string; override;
+    function GetSelectedText: string; override;
+    function InternalSetValue(const AValue: string; AValueIsIndex: Boolean = True): Boolean; override;
+    function InternalSetText(const AText: string): Boolean; override;
+    procedure SetSelectedText(const AText: string); override;
+  public
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+
+    function GetSubmitParam: string;
+    // Needed for PaintHandlers
+    property Items;
+    property ItemIndex;
+    property MultiSelect: boolean read FMultiSelect write SetMultiSelect default False;
+    property Selected[AIndex: Integer]: Boolean read GetSelected write SetSelected;
+
+    procedure ResetSelection;
+  published
+    property OnClick: TNotifyEvent read GetOnClick write SetOnClick;
+    property OnDblClick: TNotifyEvent read FOnDblClick write FOnDblClick;
+    property Confirmation;
+    property DoSubmitValidation;
+    property Editable default True;
+    property TabOrder;
+    property SubmitOnAsyncEvent default True;
+    property NonEditableAsLabel default False;
+    property MaxItems: Integer write SetInteger; // not used - preserved for dfm compatibility
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWListbox = class(TIWCustomListbox)
+  protected
+    procedure SetRequireSelection(const AValue: Boolean); override;
+  published
+    property FriendlyName;
+    property ItemIndex default -1;
+    property Items;
+    property Sorted default False;
+    property MultiSelect;
+  end;
+
+  TIWSelectOption = (soAllowClear, soCloseOnSelect, soPlaceholder, soServerSide);
+
+  TIWSelectOptions = set of TIWSelectOption;
+
+  TIWOnAsyncLookupListEvent = procedure (Sender: TObject; const AText: string; AItems: TStringList) of object;
+
+  TIWOnLookupListItemNeeded = procedure (Sender: TObject; const AValue: string) of object;
+
+  // JS Select2 component wrapper
+  {$include IWPlatformAttrib.inc}
+  TIWSelect = class(TIWCustomComboBox)
+  private
+    class var FLocalJavaScriptFolder: string;
+    class var FLocalStyleFolder: string;
+  private
+    FMultiSelect: Boolean;
+    FSelectOptions: TIWSelectOptions;
+    FSelectedList: TIWListBase;
+    FOnAsyncLookupList: TIWOnAsyncLookupListEvent;
+    FOnLookupListItemNeeded: TIWOnLookupListItemNeeded;
+    FSelectDelay: SmallInt;
+    FMinInputLength: SmallInt;
+    FMinCountForSearch: SmallInt;
+    FMaxInputLength: SmallInt;
+    FRenderCDNFiles: Boolean;
+    FRenderLocalFiles: Boolean;
+    procedure SetSelectOptions(const Value: TIWSelectOptions);
+    procedure SetMultiSelect(const AValue: Boolean);
+    function GetSelected(AIndex: Integer): Boolean;
+    procedure SetSelected(AIndex: Integer; const Value: Boolean);
+    procedure DoOnAsyncLookupList(aParams: TStrings; out aResult, aContentType: string; var aHandled: Boolean);
+    function InternalGetJSValue(const AIncludeText: Boolean): string;
+    procedure SetRenderCDNFiles(const Value: Boolean);
+    procedure SetRenderLocalFiles(const Value: Boolean);
+  protected
+    procedure SetItemIndex(AIndex: Integer); override;
+    procedure SetRequireSelection(const AValue: Boolean); override;
+    function DoRenderHTML(AContext: TIWCompContext): TIWHTMLTag;
+    property NoSelectionText; // hide this and expose it as PlaceholderText
+    procedure SetValue(const AValue: string); override;
+    procedure InitControl; override;
+    procedure Dispose(ADispose: Boolean); override;
+    function GetSelectedValue: string; override;
+    function GetSelectedText: string; override;
+    procedure ParentChanging(AOldParent, AParent: TComponent); override;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    procedure AddRequiredFiles(AContext: TIWCompContext); virtual;
+    procedure set_Visible(Value: Boolean); override;
+    procedure GetInputControlNames(ANames: TStringList); override;
+    procedure Loaded; override;
+    function InternalSetValue(const AValue: string; AValueIsIndex: Boolean = True): Boolean; override;
+    function InternalSetText(const AText: string): Boolean; override;
+    procedure UpdateControlValue; override;
+    procedure SetSelectedText(const AText: string); override;
+    procedure SetSelectedValue(const AValue: string); override;
+  public
+    function get_EventTargetHTMLName: string; override;
+    function SelectHTMLName: string;
+    function DivHTMLName: string;
+    function RenderCSSClass(AComponentContext: TIWCompContext): string; override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    function RenderStyle(AComponentContext: TIWCompContext): string; override;
+    function HasValue: Boolean;
+    function IsServerSide: Boolean;
+    procedure DownloadContentFiles;
+    procedure ResetSelection;
+    property Selected[AIndex: Integer]: Boolean read GetSelected write SetSelected;
+    property SelectedValue: string read GetSelectedValue write SetSelectedValue;
+    class property LocalJavaScriptFolder: string read FLocalJavaScriptFolder write FLocalJavaScriptFolder;
+    class property LocalStyleFolder: string read FLocalStyleFolder write FLocalStyleFolder;
+  published
+    property PlaceholderText: string read FNoSelectionText write SetNoSelectionText stored False;
+    property RenderCDNFiles: Boolean read FRenderCDNFiles write SetRenderCDNFiles default True;
+    property RenderLocalFiles: Boolean read FRenderLocalFiles write SetRenderLocalFiles default False;
+    property SelectOptions: TIWSelectOptions read FSelectOptions write SetSelectOptions default [];
+    property MultiSelect: Boolean read FMultiSelect write SetMultiSelect default False;
+    property OnAsyncLookupList: TIWOnAsyncLookupListEvent read FOnAsyncLookupList write FOnAsyncLookupList;
+    property OnLookupListItemNeeded: TIWOnLookupListItemNeeded read FOnLookupListItemNeeded write FOnLookupListItemNeeded;
+    property SelectDelay: SmallInt read FSelectDelay write FSelectDelay default 500;
+    property SelectMinInputLength: SmallInt read FMinInputLength write FMinInputLength default 0;
+    property SelectMaxInputLength: SmallInt read FMaxInputLength write FMaxInputLength default 0;
+    property SelectMinCountForSearch: SmallInt read FMinCountForSearch write FMinCountForSearch default 10;
+    property ItemIndex;
+    property Items;
+    property Sorted default False;
+    property FriendlyName;
+    property ZIndex default 2000;
+  end;
+
+implementation

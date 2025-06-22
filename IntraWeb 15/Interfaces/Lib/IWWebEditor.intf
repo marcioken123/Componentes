@@ -1,0 +1,58 @@
+unit IWWebEditor;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, SysUtils, IWAppForm, IWApplication, IWTypes, Controls,
+  IWVCLBaseControl, IWBaseControl, IWBaseHTMLControl, IWControl, IWWebEdit,
+  IWCompButton, IWVCLBaseContainer, IWContainer, IWHTMLContainer,
+  IWRegion, IWCompEdit, IWCompLabel;
+
+type
+  TIWHTMLEditor = class(TIWAppForm)
+  public
+    class function CanEdit(const aDocName: string): Boolean; virtual; abstract;
+    class procedure Edit(const aDocName: string); virtual; abstract;
+  end;
+
+  TfrmWebEditor = class(TIWHTMLEditor)
+  private
+    procedure DoUpdateSizes;
+  protected
+    WebEditor: TTIWWebEdit;
+    irButtons: TIWRegion;
+    SaveButton: TIWButton;
+    CancelButton: TIWButton;
+    ReloadButton: TIWButton;
+    ButtonClose: TIWButton;
+    //
+    irDocTitle: TIWRegion;
+    DocTitleEdit: TIWEdit;
+    DocTitleLabel: TIWLabel;
+    //
+    mDocument: TFileName;
+    mTitleTag: string;
+
+    procedure IWAppFormRender(Sender: TObject);
+    procedure SaveButtonClick(Sender: TObject);
+    procedure ReloadButtonClick(Sender: TObject);
+    procedure CancelButtonClick(Sender: TObject);
+    procedure ButtonCloseClick(Sender: TObject);
+    procedure SetDocument(const Value: TFileName);
+    procedure SaveFile;
+    procedure LoadFile;
+    procedure CloseForm;
+    constructor CreateNew(AOwner: TComponent); reintroduce; overload;
+    property Document: TFileName read mDocument write SetDocument;
+  public
+    class function CanEdit(const aDocName: string): Boolean; override;
+    class procedure Edit(const aDocName: string); override;
+  end;
+
+  TIWHTMLEditorClass = class of TIWHTMLEditor;
+
+function EditDocument(const aDocName: string): Boolean;
+procedure RegisterEditor(AIWHTMLEditorClass: TIWHTMLEditorClass);
+
+implementation

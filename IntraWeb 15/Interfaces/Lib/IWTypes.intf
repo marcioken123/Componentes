@@ -1,0 +1,122 @@
+unit IWTypes;
+{$I IWCompilerDefines.inc}
+
+{PUBDIST}
+
+interface
+
+uses
+  Classes, Controls, SysUtils;
+
+type
+  TIWAsyncCommonProp = (acpEnabled, acpCSS, acpCursor, acpVisible, acpLeft,
+    acpTop, acpHeight, acpWidth, acpZIndex, acpHint, acpFont, acpPosition, acpPadding, acpMargin, acpAlignment);
+
+  TIWInputAttribute = (iaAutocomplete, iaSpellcheck, iaPlaceholder);
+
+  TIWDisplayStyle = (dsInherit, dsBlock, dsInline, dsInlineBlock, dsCompact, dsFlex,
+    dsInlineFlex, dsListItem);
+
+  TIWInputAttributes = set of TIWInputAttribute;
+
+  TIWWindowOption = (
+    woButtons, woStatusBar, woMenuBar, woScrollBars, woResizable,
+    woCopyHistory, woFullScreen, woDetectBlock, woDefault);
+
+  TIWWindowOptions = set of TIWWindowOption;
+
+  TIWTabOrder = TTabOrder;
+
+  TIWCursor = (crAuto, crCrossHair, crDefault, crPointer, crMove, crEResize,
+    crNEResize, crNWResize, crNResize, crSEResize, crSWResize, crSResize, crWResize,
+    crText, crWait, crHandPoint, crHelp);
+
+  TIWShowMessageType = (smAlert, smNewWindow, smSameWindow, smSameWindowFrame, smAjaxNotify);
+
+  TIWNotifyType = (ntLog, ntSuccess, ntError);
+
+  TWarningProc = procedure(const AMsg: string);
+  TServerControllerDesignProc = procedure(Sender: TObject; const AMsg: string);
+
+  TIWLogProcedure = procedure(const AMsg: string; const ADetailedOnly: Boolean = False) of object;
+  TIWLogBytesProcedure = procedure(const ABytes: Int64) of object;
+
+  TIWTemplateLayoutHTMLTagType = (ttIntraWeb, ttBorland);
+
+  TIWUnknownTagEvent = procedure(const AName: string; var VValue: string) of object;
+
+  TIWTemplateProcessEvent = procedure(var VTemplate: TStream) of object;
+
+  TIWConnectionMode = (cmAny, cmSecure, cmNonSecure);
+
+  TIWVerticalAlignment = (vaMiddle, vaTop, vaBottom, vaBaseline);
+
+  TIWCenteringOption = (coCenterBoth, coCenterVertical, coCenterHorizontal);
+
+  // Not used anymore
+  // This is ignored, kept only for streaming compat
+  TIWFormUpdateMode = (umAll, umPartial);
+
+  TIWFormEncoding = (feURL, feMultiPart);
+  // D2010 supports attributes, but we still support D2009.
+  // So we use this interface like an attribute to mark TIWCompFile.
+  // This allows removal of a lot of crap from the input interface and the
+  // obligatory crap required for every control that implements the intput interface.
+  //
+  // We could just change to MpfData only, but UrlEncoded is significantly smaller
+  // and AJAX uses it. So we keep both encodings and only use MpfData when needed.
+  IMpfDataAttrib = interface
+    ['{394F159E-ED3D-4507-BAB2-A582F9D2F041}']
+  end;
+
+  // reset tab orders type
+  TIWTabSortType = (stXY, stYX);
+
+  TRenderFlag = (rfRenderSize,
+                 rfRenderPosition,
+                 rfRenderFont,
+                 rfRenderZIndex,
+                 rfRenderVisibility,
+                 rfRenderStatus,
+                 rfRenderAbsolute,
+                 rfRenderPadding,
+                 rfRenderBorder,
+                 rfUseDisplay);
+
+  TRenderFlags = set of TRenderFlag;
+
+  TIWStyleRenderOptions = class(TPersistent)
+  private
+    procedure SetRenderFlags(const Value: TRenderFlags);
+  protected
+    FRenderFlags: TRenderFlags;
+    FOnChange: TNotifyEvent;
+    procedure SetPropValue(Index: Integer; const Value: Boolean);
+    function GetPropValue(Index: Integer): Boolean;
+    procedure Changed();
+  public
+    constructor Create;
+    procedure Assign(Source: TPersistent); override;
+    procedure Clear;
+    // public access to all flags in a single property
+    property RenderFlags: TRenderFlags read FRenderFlags write SetRenderFlags;
+  published
+    property RenderSize: Boolean index 0 read GetPropValue write SetPropValue default True;
+    property RenderPosition: Boolean index 1 read GetPropValue write SetPropValue default True;
+    property RenderFont: Boolean index 2 read GetPropValue write SetPropValue default True;
+    property RenderZIndex: Boolean index 3 read GetPropValue write SetPropValue default True;
+    property RenderVisibility: Boolean index 4 read GetPropValue write SetPropValue default True;
+    property RenderStatus: Boolean index 5 read GetPropValue write SetPropValue default True;
+    property RenderAbsolute: Boolean index 6 read GetPropValue write SetPropValue default True;
+    property RenderPadding: Boolean index 7 read GetPropValue write SetPropValue default True;
+    property RenderBorder: Boolean index 8 read GetPropValue write SetPropValue default True;
+    property UseDisplay: Boolean index 9 read GetPropValue write SetPropValue default False;
+    property OnChange: TNotifyEvent read FOnChange write FOnChange;
+  end;
+
+  TIWAsyncEvent = procedure (Sender: TObject; EventParams: TStringList) of object;
+
+const
+  DefaultIWInputAttributes =  [iaAutocomplete, iaSpellcheck];
+
+implementation

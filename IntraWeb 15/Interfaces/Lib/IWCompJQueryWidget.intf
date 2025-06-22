@@ -1,0 +1,31 @@
+unit IWCompJQueryWidget;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Graphics, Classes, IWBaseInterfaces;
+
+type
+  {$include IWPlatformAttrib.inc}
+  TIWJQueryWidget = class(TComponent, IIWRequiresFormRender)
+  protected
+    FEnabled: Boolean;
+    FContentFiles: TStringList;
+    FOnReady: TStringList;
+    //
+    procedure SetContentFiles(const Value: TStringList);
+    procedure SetOnReady(const Value: TStringList);
+  public
+    constructor Create(AOwner: TComponent); override;
+    destructor Destroy; override;
+    function GetContentFiles: TStringList;
+    function GetOnReadyProc: string;
+    function GetEnabled: Boolean;
+  published
+    property Enabled: Boolean read FEnabled write FEnabled;
+    property ContentFiles: TStringList read FContentFiles write SetContentFiles;
+    property OnReady: TStringList read FOnReady write SetOnReady;
+  end;
+
+implementation

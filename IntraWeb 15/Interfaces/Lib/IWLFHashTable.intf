@@ -1,0 +1,69 @@
+unit IWLFHashTable;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, Classes, IWHashTableLock, IW.Common.HashUtils, IW.Common.Threads,
+  IW.Common.Interlocked;
+
+{$ALIGN ON}
+{$RANGECHECKS OFF}
+
+type
+  TBucket = record
+    Key: Int64;       // Key is actually: Key (Lo 32 bits) + State (Hi 32 bits)
+    Value: Pointer;
+  end;
+
+  TBucketArray = array of TBucket;
+
+  TIWLFHashTable = class
+  private
+    FStorage: TBucketArray;
+    FSize: Integer;
+    FCount: Integer;
+    FMaxProbeLen: Integer;
+    FTombstoneCount: Integer;
+    FKeyIsHash: Boolean;
+    FLock: TIWSlimReaderWriter;
+    FRehashTreshold: Integer;
+    FAutoRehash: Boolean;
+    function GetBucket(AKey: Integer): Integer; overload; inline;
+    function GetBucket(AKey, ASize: Integer): Integer; overload; inline;
+    procedure IncBucket(var ABucket: Integer); overload; inline;
+    procedure IncBucket(var ABucket, ASize: Integer); overload; inline;
+    function IncProbeLen(var AProbeLen: Integer): Boolean; inline;
+    procedure SetMaxProbeLen(const AProbeLen: Integer); //inline;
+    function InternalSetItem(const Key: Integer; Value: Pointer): Boolean;
+    function InternalGetItem(const Key: Integer; out ItemAlreadyLocked: Boolean): Pointer;
+    function IsTombstone(AKey: Integer): Boolean; inline;
+    function IsKeyValid(AKey: Integer): Boolean; inline;
+    function NeedsRehash(var NewSize: Integer): Boolean; overload; inline;
+    function NeedsRehash: Boolean; overload; inline;
+  private
+    const
+      TOMBSTONE: Cardinal = $FFFFFFFF;
+  public
+    constructor Create(ASize: Integer; AKeyIsHash: Boolean = False);
+    destructor Destroy; override;
+    function SetItem(const Key: Integer; Value: Pointer): Boolean;
+    function GetItem(const Key: Integer; out ItemAlreadyLocked: Boolean): Pointer; overload;
+    function GetItem(const Key: Integer): Pointer; overload;
+    function GetItemShared(const Key: Integer): Pointer;
+    procedure UnlockItemShared(const Key: Integer);
+    function UnlockItemExclusive(const Key: Integer): Boolean;
+    function LockItemByIndexShared(const ABucket: Integer): Pointer;
+    procedure UnlockItemByIndexShared(const ABucket: Integer);
+    function ContainsKey(const Key: Integer): Boolean;
+    function RemoveItem(const Key: Integer; ADestroying: Boolean): Pointer;
+    function RemoveItemByIndex(const ABucket: Integer; ADestroying: Boolean): Pointer;
+    procedure Rehash();
+    procedure ReleaseObjects;
+    property Count: Integer read FCount;
+    property Size: Integer read FSize;
+    property MaxProbeLen: Integer read FMaxProbeLen;
+    property AutoRehash: Boolean read FAutoRehash write FAutoRehash default True;
+  end;
+
+implementation

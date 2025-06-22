@@ -1,0 +1,35 @@
+unit IWComponentHash;
+{$I IWCompilerDefines.inc}
+
+// This unit created by Pete d'Oronzio with assistance from Pedro Lopes
+// designed to be used by IWBaseForm to hash components for
+// faster lookup than LocateComponent used previously
+//  Changed by Atozed team
+
+{$OVERFLOWCHECKS OFF}
+
+interface
+
+uses Classes, IWBaseInterfaces, IWBaseHTMLInterfaces, IW.Common.StrDictionary;
+
+type
+  TValueNameCollection = array of string;
+
+  TIWComponentHash = class
+  protected
+    FNeedsRefresh: Boolean;
+    FDictionary: TIWStrDictionary;
+    FInputNamesList: TStringList;
+    function IsContainerComponent(AComponent: TComponent): Boolean; inline;
+    procedure DoPopulate(ARoot: TComponent); virtual;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    procedure Add(AComponent: TComponent);
+    procedure Populate(AForm: TComponent);
+    function LookUp(const AKey: string): TObject;
+    function GetValueNames: TValueNameCollection;  // Debugging aid
+    property NeedsRefresh: boolean read FNeedsRefresh write FNeedsRefresh;
+  end;
+
+implementation

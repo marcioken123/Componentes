@@ -1,0 +1,17 @@
+unit IWCompressorHSys;
+{$I IWCompilerDefines.inc}
+
+// ZLib compressor for Http.sys based applications
+
+interface
+
+uses
+  SysUtils, Classes, IWCompress, IWHSysServer;
+
+type
+  TIWCompressorHSys = class(TIWCompressor)
+  public
+    procedure Compress(const ARequest, AResponse: TObject); override;
+  end;
+
+implementation

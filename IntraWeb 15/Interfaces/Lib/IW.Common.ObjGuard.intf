@@ -1,0 +1,23 @@
+unit IW.Common.ObjGuard;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, Classes;
+
+type
+  TGuardProc = procedure of object;
+
+  IMethodGuard = interface(IInterface)
+  ['{6E7B2F1F-1645-46EC-B505-51C4F868F46F}']
+    procedure StartGuard;
+    procedure EndGuard;
+  end;
+
+// Makes sure that AObj is always free'd when application finishes
+function IWObjectGuard(AObj: TObject): TObject;
+// Makes sure that AMethod is always called. See notes in implementaion for details
+function IWMethodGuard(AMethod: TGuardProc; AStart: Boolean = False): IMethodGuard;
+
+implementation

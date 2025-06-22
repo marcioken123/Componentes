@@ -1,0 +1,47 @@
+unit IW.Content.Handlers;
+{$I IWCompilerDefines.inc}
+
+// Check for handlers that register by
+// Search order - Most to least specific:
+// Search paths by length - ie most to least again
+//   -Path + Document
+//   -Path + Extension
+//   -Path
+//   -Document
+//   -Extension
+// On add check for dup prop combos
+// Props: Path, Document, Extension
+// responders are instances, contentbase are classes - resolve?
+// responder - file must exist
+// other default indexes
+
+interface
+
+uses
+  Classes, SysUtils, IW.Content.Base;
+
+type
+  TGetStartHandlerProc = procedure(var aHandler: TContentBase) of object;
+
+  // This is static because Delphi can init in weird orders and the global var is often still nil on add with
+  // direct access to global. Also this is a better design.
+  THandlers = class
+  protected
+    class var mStartHandler: TContentBase;
+    class var mRootHandler: TContentBase;
+    class var mList: TStringList;
+    class var mGetStartHandlerProc: TGetStartHandlerProc;
+    class var mHasWildcard: Boolean;
+  public
+    class function Add(const aPath, aDocument: string; aHandler: TContentBase): TContentBase; overload;
+    class function Add(const aDocument: string; aHandler: TContentBase): TContentBase; overload;
+    class function AddStartHandler(const aPath, aDocument: string; aHandler: TContentBase): TContentBase;
+    class function AddRootHandler(const aPath, aDocument: string; aHandler: TContentBase): TContentBase;
+    class function AddForExtension(const aExt: string; aHandler: TContentBase): TContentBase;
+    class function FindMatch(aFullPath: string): TContentBase;
+    class procedure RegisterGetStartHandlerProc(aProc: TGetStartHandlerProc);
+    class property StartHandler: TContentBase read mStartHandler;
+    class property RootHandler: TContentBase read mRootHandler;
+   end;
+
+implementation

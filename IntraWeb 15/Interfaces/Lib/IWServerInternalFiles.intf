@@ -1,0 +1,79 @@
+unit IWServerInternalFiles;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, Classes, IW.Common.StrLists, IW.Common.Threads;
+
+type
+  TIWMREW = class(TIWSlimReaderWriter);
+
+  TIWResourceNeededEvent = procedure (const AFileName: string; out ResStream: TStream; out EnableCache: Boolean) of object;
+
+  TIWServerInternalFiles = class
+  strict private
+    class var FInstance: TIWServerInternalFiles;
+  strict private
+    FLock: TIWMREW;
+    FUseUncompressedFiles: Boolean;
+    FOnResourceNeeded: TIWResourceNeededEvent;
+    FResourceStringCache: TIWNameValueList;
+    FPreCompressFiles: Boolean;
+    FCustomLockerAnimationFile: string;
+    FPreCompressionLevel: Byte;
+    procedure SetUseUncompressedFiles(const Value: Boolean);
+    procedure SetPreCompressFiles(const Value: Boolean);
+    procedure InternalAddStream(AStream: TStream; AResName, AFileName: string);
+    function GetTotalSize: Int64;
+    procedure SetCustomLockerAnimationFile(const Value: string);
+    procedure InternalResourceAsString(const AName: string; var vResourceString: string);
+    {$HINTS OFF}
+    procedure InternalAddToStringCache(const AName: string);  // not used currently but might be
+    {$HINTS ON}
+  protected
+    // We have considered replacing our fast string list with a std dictionary or
+    // even our own TIWStrDictionary. However, performance tests shows that the
+    // string list is actually faster than the dictionary up to ~100 elements
+    // because we need to call LowerCase() (or UpperCase) before processing the
+    // keys (the dictionary must be case insensitive)
+    mFiles: TIWStringList;
+    mIsDesignTime: Boolean;
+    procedure InternalAdd(AResName, AFileName: string; ALookupByFileName: Boolean = False); virtual;
+    procedure AddUncompressedFiles;
+    procedure AddSystemFiles;
+    procedure DoPreCompressFiles;
+  public
+    class {$IFNDEF VER200}constructor{$ELSE}procedure{$ENDIF} CreateClass;
+    class {$IFNDEF VER200}destructor{$ELSE}procedure{$ENDIF} DestroyClass;
+    constructor Create;
+    destructor Destroy; override;
+    class function GetResourceStream(const AResName: string): TStream;
+    class function GetResourceStreamAsString(const AResName: string): string;
+    class function Instance: TIWServerInternalFiles;
+    procedure Add(AResName, AFileName: string; ALookupByFileName: Boolean = False);
+    procedure AddStream(aStream: TMemoryStream; AResName, AFileName: string);
+    procedure AddFromFile(const aPhysFileName, AResName, AFileName: string);
+    function ResourceExists(const AName: string): Boolean;
+    function ResourceAsStream(const AName, APrefix, AFileExtension: string; out EnableCache: Boolean; out IsCompressed: Boolean): TStream; overload;
+    function ResourceAsStream(const AName: string): TStream; overload;
+    function ResourceAsString(const AName: string; AddToCache: Boolean = True): string;
+    procedure WriteAllToDisk(const aPath: string);
+    function GetHashCode(const AFileName, AExt: string): string; reintroduce;
+	{$IFDEF VCL140}
+    function RunSelfTest(var aSize, aTimeMS: Int64): Boolean;
+	{$ENDIF}
+    procedure InitOptions(aPreCompress: Boolean; aLevel: Byte; aUseNonMinifiedFiles: Boolean);
+    property UseUncompressedFiles: Boolean read FUseUncompressedFiles write SetUseUncompressedFiles;
+    property PreCompressFiles: Boolean read FPreCompressFiles write SetPreCompressFiles;
+    property OnResourceNeeded: TIWResourceNeededEvent read FOnResourceNeeded write FOnResourceNeeded;
+    property TotalSize: Int64 read GetTotalSize;
+    property CustomLockerAnimationFile: string read FCustomLockerAnimationFile write SetCustomLockerAnimationFile;
+  end;
+
+// Not used. For backward compatibility
+function gInternalFiles: TIWServerInternalFiles;
+
+{$R IWData.res}
+
+implementation

@@ -1,0 +1,44 @@
+unit IWCompMPEG;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes,
+  IWFileReference, IWCompObject, IWGlobal, IWHTMLTag;
+
+type
+  {$include IWPlatformAttrib.inc}
+  TIWMPEG = class(TIWCustomObject)
+  protected
+    FMPEGFile: TIWFileReference;
+
+    procedure SetMPEGFile(const Value: TIWFileReference);
+    procedure DoFileReferenceChange(Sender : TObject);
+
+    procedure InitControl; override;
+  private
+    FAutoStart: Boolean;
+    procedure SetAutoStart(const Value: Boolean);
+ protected
+    procedure Dispose(ADispose: Boolean); override;
+  public
+    function RenderInnerHTML(AParent:TIWHTMLTag): TIWHTMLTag; override;
+  published
+    property MPEGFile: TIWFileReference read FMPEGFile write SetMPEGFile;
+    property Archive;
+    property AutoStart:boolean read FAutoStart write SetAutoStart;
+    property ClassID;
+    property CodeBase;
+    property CodeType;
+    property Data;
+    property Declare;
+    property FriendlyName;
+    property ObjectType;
+    property PluginsPage;
+    property RenderEMBED;
+    property StandBy;
+  end deprecated 'use TIWAudio or TIWVideo instead';
+
+
+implementation

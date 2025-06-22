@@ -1,0 +1,81 @@
+unit IW.HTTP.ClientBase;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, Classes, {$IFDEF FPC} IW.Common.FPCCompat, {$ENDIF} IW.Common.HsmStream;
+
+type
+  TRequestProc = procedure of Object;
+
+  TIWHTTPClientBase = class(TPersistent)
+  private
+    class var FClientClassName: string;
+  strict private
+    mParamsStream: TStream;
+    mDataStream: THsmStream;
+  protected
+    mURL: string;
+    mErrorCode: Integer;
+    mErrorMessage: string;
+    mResponseText: string;
+    mResponseHeaders: TStrings;
+    mResponseCode: Integer;
+    mContentType: string;
+    mUseSSL: Boolean;
+    mCustomHeaders: TStrings;
+    FReadTimeout: Integer;
+    FConnectTimeout: Integer;
+    FClientCertificate: string;
+    function GetDataAsString: string;
+    function GetDataBytes: TBytes;
+    procedure InternalClear;
+    function DoGet: Boolean; virtual;
+    function DoDelete: Boolean; virtual;
+    function DoPost: Boolean; virtual;
+    function DoPut: Boolean; virtual;
+    procedure ClientGet; virtual; abstract;
+    procedure ClientDelete; virtual; abstract;
+    procedure ClientPost; virtual; abstract;
+    procedure ClientPut; virtual; abstract;
+    procedure HandleError(E: Exception); virtual;
+    procedure HandleResponse; virtual; abstract;
+    procedure SetProps; virtual;
+    procedure SetParams(AParams: TStream);
+    function SetRequestParams(AParams: TStringList): string; virtual; abstract;
+    function ExecuteRequest(AProc: TRequestProc): Boolean; virtual;
+  public
+    constructor Create; virtual;
+    destructor Destroy; override;
+    class function CreateClient(Sender: TObject): TIWHTTPClientBase;
+    class procedure SetClientClass(const AClassName: string);
+    function Get(const AURL: string): Boolean; overload;
+    function Get(const AURL: string; AParams: TStringList): Boolean; overload;
+    function Delete(const AURL: string; const AContentType: string = ''): Boolean;
+    function Post(const AURL: string; AParams: TStream; const AContentType: string = ''): Boolean; overload;
+    function Post(const AURL: string; AParams: string; const AContentType: string = ''): Boolean; overload;
+    function Post(const AURL: string; AParams: TStringList; const AContentType: string = ''): Boolean; overload;
+    function Put(const AURL: string; AParams: TStream; const AContentType: string = ''): Boolean; overload;
+    function Put(const AURL: string; AParams: string; const AContentType: string = ''): Boolean; overload;
+    function DownloadFile(const AURL: string; const AFileName: string): Boolean;
+    property ParamsStream: TStream read mParamsStream;
+    property ContentType: string read mContentType;
+    property ErrorCode: Integer read mErrorCode;
+    property ErrorMessage: string read mErrorMessage;
+    property URL: string read mURL write mURL;
+    property DataStream: THsmStream read mDataStream;
+    property ResponseCode: Integer read mResponseCode;
+    property ResponseText: string read mResponseText;
+    property ResponseRawHeaders: TStrings read mResponseHeaders;
+    property DataAsString: string read GetDataAsString;
+    property DataBytes: TBytes read GetDataBytes;
+    property CustomHeaders: TStrings read mCustomHeaders;
+    property ConnectTimeout: Integer read FConnectTimeout write FConnectTimeout default -1; // -1 = use Indy's default
+    property ReadTimeout: Integer read FReadTimeout write FReadTimeout default -1; // -1 = use Indy's default
+    property ClientCertificate: string read FClientCertificate write FClientCertificate;
+  end;
+
+  TIWHTTPClientBaseClass = class of TIWHTTPClientBase;
+
+implementation

@@ -1,0 +1,19 @@
+unit IW.Browser.Firefox;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  IW.Browser.Browser;
+
+type
+  TFirefox = class(TBrowser)
+  public
+    const
+      BROWSER_NAME = 'Firefox';
+      MIN_VERSION = 3.6;
+    constructor Create(aVersion: single); override;
+    class function Match(AUserAgent: string; out AVersion: Single): Boolean; override;
+  end;
+
+implementation

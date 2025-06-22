@@ -1,0 +1,31 @@
+unit IWVCLComponent;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Controls, Classes;
+
+type
+  TIWDataModule = class(TDataModule)
+  strict private
+    function GetDesignMode: Boolean;
+  protected
+    procedure InitDesignTime; virtual;
+    procedure InitControl; virtual;
+  public
+    property IsDesignMode: Boolean read GetDesignMode;
+  end;
+
+  TIWVCLComponent = class(TComponent)
+  strict private
+    function GetDesignMode: Boolean;
+  protected
+    procedure InitControl; virtual;
+    procedure InitDesignTime; virtual;
+  public
+    constructor Create(AOnwer: TComponent); override;
+    property IsDesignMode: Boolean read GetDesignMode;
+  end;
+
+implementation

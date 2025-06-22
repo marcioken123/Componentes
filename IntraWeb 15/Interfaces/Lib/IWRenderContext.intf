@@ -1,0 +1,211 @@
+unit IWRenderContext;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  IW.Browser.Browser, Classes, IW.Common.SysTools, IWApplication,
+  IWHTMLTag, IWCompProgressIndicator, IWMarkupLanguageTag,
+  IWBaseRenderContext, IW.Common.Strings, IW.Common.StrLists, IWBaseContainerLayout,
+  IW.Common.StreamHelper, IWCallbackFunc, IW.Common.XPlatTypes;
+
+type
+  TIWPageContext40 = class;
+
+  IIWResyncEvents = interface
+    ['{123BB785-E365-4EBD-A5E2-B622C239FDE9}']
+    procedure RegisterAsyncEvents(APageContext: TIWPageContext40);
+  end;
+
+  TIWBaseHTMLPageContext = class;
+
+  TIWCompContext = class(TIWBaseComponentContext)
+  private
+    function GetBrowser: TBrowser;
+    function GetContainerLayout: TIWBaseContainerLayout;
+  protected
+    FPageContext: TIWBaseHTMLPageContext;
+    FInitProc: string;
+    FInitProcDoLastCode: string;
+    FJavaScript: string;
+    FIWCLInitProc: string;
+    FUpdateInitProc: string;
+    //
+    function GetHTMLTag: TIWHTMLTag;
+    procedure SetHTMLTag(const Value: TIWHTMLTag);
+  public
+    constructor Create(AComponent: TComponent; AContainerContext: TIWContainerContext;
+      APageContext: TIWBasePageContext); override;
+    procedure AddToUpdateInitProc(const ACode: string);
+    procedure AddStyle(const ASelector, AStyle: string); overload;
+    procedure AddStyle(const AStyle: string); overload;
+    procedure AddClassStyle(const AClassName, AStyle: string);
+    procedure AddElementStyle(const AElementID, AStyle: string);
+    procedure AddValidation(const ACondition: string; const AMsg: string);
+    procedure AddToInitProc(const ACode: string);
+    procedure AddToInitProcDoLastCode(const ACode: string);
+    procedure AddToIWCLInitProc(const ACode: string);
+    procedure AddToJavaScriptOnce(const ACode: string); overload;
+    procedure AddToJavaScriptOnce(const ACode: string; AUnique: Boolean); overload;
+    procedure AddScriptFile(const AFilename: string);
+    procedure AddBodyScriptFile(const AFilename: string);
+    procedure AddLinkFile(const AFilename: string);
+    procedure AddInternalLinkFile(const AFilename: string);
+    procedure InitIWCLProperty(const AHTMLName, APropName, APropValue: string);
+    procedure CacheImage(const AName: string; const AURL: string);
+    procedure Clear; virtual;
+    //
+    property HTMLTag: TIWHTMLTag read GetHTMLTag write SetHTMLTag;
+    property PageContext: TIWBaseHTMLPageContext read FPageContext;
+    property Browser: TBrowser read GetBrowser;
+    property ContainerLayout: TIWBaseContainerLayout read GetContainerLayout;
+  end;
+
+  TIWBaseHTMLPageContext = class(TIWBasePageContext)
+  private
+    function GetBrowser: TBrowser;
+  protected
+    FFormTag: TIWHTMLTag;
+    FBodyTag: TIWHTMLTag;
+    FURLBase: string;
+    FTitle: string;
+    FFormHiddenInput: TIWMinStringList;
+    FExtraHeader: TIWMinStringList;
+    FPreHeader: TIWMinStringList;
+    FParentForm: TObject;
+  public
+    constructor Create(AWebApplication: TIWApplication); override;
+    destructor Destroy; override;
+    procedure AppendHiddenInput(const AName: string);
+    procedure Clear(ADesignTime: Boolean = false); override;
+    function ToString: RtlString; override;
+    //
+    property PreHeader: TIWMinStringList read FPreHeader;
+    property ExtraHeader: TIWMinStringList read FExtraHeader;
+    property Browser: TBrowser read GetBrowser;
+    property Title: string read FTitle write FTitle;
+    property URLBase: string read FURLBase write FURLBase;
+    property BodyTag: TIWHTMLTag read FBodyTag;
+    property FormTag: TIWHTMLTag read FFormTag;
+    property ParentForm: TObject read FParentForm write FParentForm;
+  end;
+
+  TIWPageContext40 = class(TIWBaseHTMLPageContext)
+  protected
+    FOnReadyProc: string;
+    FInitProc: string;
+    FInitProcFocusCode: string;
+    FInitProcNewWindowCode: string;
+    FInitProcPageUnlockCode: string;
+    FInitProcDoLastCode: string;
+    FUpdateInitProc: string;
+    FUpdateInitProcNewWindowCode: string;
+    FUpdateInitProcFocusCode: string;
+    FUpdateInitProcPageUnlockCode: string;
+    FIWCLInitProc: string;
+    FScriptFiles: TIWMinStringList;
+    FLinkFiles: TIWMinStringList;
+    FInternalLinkFiles: TIWMinStringList;
+    FJavaScript: string;
+    FValidation: TIWNameValueList;
+    FStyleTag: TIWStyleTag;
+    FUpdateControlsProc: string;
+    FProgressIndicator: TIWProgressIndicator;
+    FServerResize: Boolean;
+    FDocType: string;
+    FPreScriptFiles: TIWMinStringList;
+    FBodyScript: string;
+    FCallbacks: TIWCallBacks;
+    FDestroying: Boolean;
+    FBodyScriptFiles: TIWMinStringList;
+    FTabOrderThreshold: Integer;
+    FInitProcDoFirstCode: string;
+    FBodyScriptModule: string;
+    FRenderingErrors: string;
+    function GetOnReadyProc: string;
+    function GetInitProc: string;
+    function GetUpdateInitProc: string;
+    procedure InternalAddFile(const AFilename: string; AIsExternal: Boolean; AList: TIWMinStringList);
+  public
+    constructor Create(AWebApplication: TIWApplication); override;
+    destructor Destroy; override;
+    //
+    procedure Clear(ADesignTime: Boolean = false); override;
+    function ScriptFile(const AScriptFile: string): string;
+    function LinkFile(const ALinkFile: string): string;
+    function LinkInternalFile(const ALinkFile: string): string;
+    function RenderScriptFiles: string;
+    function RenderLinkFiles: string;
+    procedure AppendContext(AContext: TIWBaseComponentContext); override;
+    procedure InitContext;
+    procedure FinalizeContext;
+    function RenderPreScriptFiles: string;
+    function RenderBodyScriptFiles: string;
+    procedure AddToOnReady(const ACode: string);
+    procedure AddToInitProc(const ACode: string);
+    procedure AddToInitProcFocusCode(const ACode: string);
+    procedure AddToInitProcNewWindowCode(const ACode: string);
+    procedure AddToInitProcPageUnlockCode(const ACode: string);
+    procedure AddToInitProcDoLastCode(const ACode: string);
+    procedure AddToIWCLInitProc(const ACode: string);
+    procedure AddToUpdateInitProc(const ACode: string);
+    procedure AddToUpdateInitProcNewWindowCode(const ACode: string);
+    procedure AddToUpdateInitProcPageUnlockCode(const ACode: string);
+    procedure AddToUpdateInitProcFocusCode(const ACode: string);
+    procedure AddToUpdateControlsProc(const ACode: string);
+    procedure AddStyle(const ASelector, AStyle: string); overload;
+    procedure AddStyle(const AStyle: string); overload;
+    procedure AddClassStyle(const AClassName, AStyle: string);
+    procedure AddElementStyle(const AElementID, AStyle: string);
+    procedure AddValidation(const ACondition: string; const AMsg: string);
+    procedure AddToJavaScriptOnce(const ACode: string); overload;
+    procedure AddToJavaScriptOnce(const ACode: string; AUnique: Boolean); overload;
+    procedure AddScriptFile(const AFilename: string); overload;
+    procedure AddScriptFile(const AFilename: string; AIsExternal: Boolean); overload;
+    procedure AddPreScriptFile(const AFilename: string); overload;
+    procedure AddPreScriptFile(const AFilename: string; AIsExternal: Boolean); overload;
+    procedure AddLinkFile(const AFilename: string);
+    procedure AddInternalLinkFile(const AFilename: string);
+    function GetInternalFileURL(const AFilename: string): string;
+    function GetExternalFileURL(const AFilename: string): string;
+    procedure AppendIWCLInitProc(const ACode: string);
+    procedure RegisterCallBack(const AName: string; AMethod: TIWCallbackMethod); overload;
+    procedure RegisterCallBack(const AName: string; AProc: TIWCallbackProc0); overload;
+    procedure RegisterCallBack(const AName: string; AProc: TIWCallbackProc1); overload;
+    procedure RegisterCallBack(const AName: string; AProc: TIWCallbackProc2); overload;
+    procedure RegisterCallBack(const AName: string; AProc: TIWCallbackProc3); overload;
+    procedure RegisterCallBack(const AName: string; AProc: TIWCallbackProc4); overload;
+    procedure UnregisterCallBack(const AName: string); overload;
+    procedure UnregisterCallBack(AMethod: TIWCallbackMethod); overload;
+    procedure PerformCallBack(Sender: TComponent; const AName: string);
+    function IsCallbackRegistered(const AName: string): Boolean;
+    procedure AddBodyScript(const ACode: string);
+    procedure AddBodyScriptFile(const AFilename: string); overload;
+    procedure AddBodyScriptFile(const AFilename: string; AIsExternal: Boolean); overload;
+    procedure AddToInitProcDoFirstCode(const ACode: string);
+    procedure AddBodyScriptModule(const ACode: string);
+    procedure LogRenderError(const AMessage: string);
+    //
+    property UpdateInitProc: string read GetUpdateInitProc;
+    property UpdateControlsProc: string read FUpdateControlsProc;
+    property InitProcCode: string read GetInitProc;
+    property OnReadyProcCode: string read GetOnReadyProc;
+    property IWCLInitProc: string read FIWCLInitProc;
+    property JavaScript: string read FJavaScript write FJavaScript;
+    property PreScriptFiles: TIWMinStringList read FPreScriptFiles;
+    property ScriptFiles: TIWMinStringList read FScriptFiles;
+    property BodyScriptFiles: TIWMinStringList read FBodyScriptFiles;
+    property LinkFiles: TIWMinStringList read FLinkFiles;
+    property InternalLinkFiles: TIWMinStringList read FInternalLinkFiles;
+    property StyleTag: TIWStyleTag read FStyleTag;
+    property ServerResize: Boolean read FServerResize write FServerResize;
+    property DocType:string read FDocType write FDocType;
+    property ProgressIndicator: TIWProgressIndicator read FProgressIndicator write FProgressIndicator;
+    property Destroying: Boolean read FDestroying;
+    property BodyScript: string read FBodyScript write AddBodyScript;
+    property TabOrderThreshold: Integer read FTabOrderThreshold write FTabOrderThreshold;
+    property BodyScriptModule: string read FBodyScriptModule write AddBodyScriptModule;
+    property RenderingErrors: string read FRenderingErrors;
+  end;
+
+implementation

@@ -1,0 +1,33 @@
+unit IW.HTTP.IndyClient;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, Classes, IW.HTTP.ClientBase, InHTTP, InBaseComponent, InComponent,
+  InHTTPHeaderInfo, InSSLOpenSSL, InException;
+
+type
+  TIWIndyHttpClient = class(TIWHTTPClientBase)
+  private
+    mHTTPClient: TInHTTP;
+    mSSLIOHandler: TInSSLIOHandlerSocketOpenSSL;
+    mProxyParameters: TIdProxyConnectionInfo;
+  protected
+    procedure ClientGet; override;
+    procedure ClientDelete; override;
+    procedure ClientPost; override;
+    procedure ClientPut; override;
+    procedure SetProps; override;
+    procedure HandleError(E: Exception); override;
+    procedure HandleResponse; override;
+    procedure InitSSL; virtual;
+    function SetRequestParams(AParams: TStringList): string; override;
+  public
+    constructor Create; override;
+    destructor Destroy; override;
+    property ProxyParams: TIdProxyConnectionInfo read mProxyParameters write mProxyParameters;
+    property IdHTTPClient: TInHTTP read mHTTPClient;
+  end;
+
+implementation

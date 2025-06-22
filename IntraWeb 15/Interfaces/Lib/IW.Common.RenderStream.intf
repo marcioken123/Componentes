@@ -1,0 +1,20 @@
+unit IW.Common.RenderStream;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  IW.Common.StreamHelper, IW.Common.HsmStream;
+
+type
+  TIWRenderStream = class(TStreamHelper)
+  protected
+    mHsmStream: THsmStream;
+    FData: TObject;
+  public
+    constructor Create(aFreeHsmStream: Boolean = True; aDeleteFile: Boolean = False);
+    property HsmStream: THsmStream read mHsmStream;
+    property Data: TObject read FData write FData;   // any  object can be passed
+  end;
+
+implementation

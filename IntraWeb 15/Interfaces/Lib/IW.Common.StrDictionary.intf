@@ -1,0 +1,68 @@
+unit IW.Common.StrDictionary;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, SysUtils, Types, IW.Common.HashUtils;
+
+type
+  PStrKeyValueItem = ^TStrKeyValueItem;
+  TStrKeyValueItem = record
+    Key: string;
+    Value: TObject;
+  end;
+
+  TDicOption = (doOwnsObjects, doIgnoreDuplicates);
+
+  TDicOptions = set of TDicOption;
+
+  TKeyValueArray = array of TStrKeyValueItem;
+  PKeyValueArray = ^TKeyValueArray;
+
+  TBucketArray = array of TKeyValueArray;
+
+  TCompareFunc = function (const S1, S2: string): Integer;
+
+  TKeyCollection = array of string;
+
+  TIWStrDictionary = class
+  strict private
+    FCapacity: Cardinal;
+    FCount: Cardinal;
+    FBuckets: TBucketArray;
+    FOptions: TDicOptions;
+    FCompareStr: TCompareFunc;
+    function GetLoadFactor: Double;
+    procedure Resize(NewCapacity: Cardinal);
+    procedure SetCapacity(const Value: Cardinal);
+    function GetValue(const AKey: string): TObject;
+    procedure SetPropValue(AOption: TDicOption; const Value: Boolean);
+    function GetPropValue(AOption: TDicOption): Boolean;
+    function GetBucketIndex(const AKey: string; const ABucketCount: Cardinal): Cardinal; inline;
+    procedure GetBucketPointer(const AKey: string; const ABucketCount: Cardinal; out pBucket: PKeyValueArray); inline;
+  public
+    constructor Create(AOwnsObjects: Boolean; ACapacity: Cardinal);
+    destructor Destroy; override;
+    procedure GetStats(out EmptySlots, MaxSlotSize: Integer);
+    function Add(const AKey: string; AValue: TObject): Boolean;
+    function ContainsKey(const AKey: string): Boolean;
+    function ContainsValue(AValue: TObject): Boolean;
+    function TryGetValue(const AKey: string; out AValue: TObject): Boolean;
+    procedure Remove(const AKey: string);
+    function ExtractPair(const AKey: string): TStrKeyValueItem;
+    procedure AddOrSetValue(const AKey: string; const AValue: TObject);
+    procedure Clear;
+    procedure TrimExcess;
+    function GetKeys: TKeyCollection;
+    property LoadFactor: Double read GetLoadFactor;
+    property Capacity: Cardinal read FCapacity write SetCapacity;
+    property Count: Cardinal read FCount;
+    property Items[const AKey: string]: TObject read GetValue;
+    property OwnsObjects: Boolean Index doOwnsObjects read GetPropValue write SetPropValue;
+    property IgnoreDuplicates: Boolean Index doIgnoreDuplicates read GetPropValue write SetPropValue;
+  end;
+
+  EStrDictionaryException = class(Exception);
+
+implementation

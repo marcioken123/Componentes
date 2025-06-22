@@ -1,0 +1,160 @@
+unit IWjQPageControl;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, Types, Messages, Controls,  Contnrs,
+  IWRenderContext, IWHTMLTag, IWRegion, IWApplication, IWFont, IWXMLTag,
+  IW.Common.StrBuilder;
+
+type
+  TIWjQTabPage = class;
+
+  TjQPageBeforeChangeEvent = procedure(Sender: TObject; NewPageIndex: Integer; var AllowChange: Boolean) of object;
+
+  TjQPageChangeEvent = procedure(Sender: TObject; TabIndex: Integer) of object;
+
+  {$include IWPlatformAttrib.inc}
+  TIWjQPageControl = class(TIWCustomRegion)
+  private
+    class var FLocalJavaScriptFolder: string;
+    class var FLocalStyleFolder: string;
+  private
+    FPages: TList;
+    FActivePageIndex: Integer;
+    FActivePage: TIWjQTabPage;
+    FRenderCDNFiles: Boolean;
+    FRenderLocalFiles: Boolean;
+    FFocusOutline: Boolean;
+    FAlignment: TAlignment;
+    FTabHeight,
+    FTabMargin,
+    FTabPadding,
+    FTabBorderHeight,
+    FTabTextHeight: Word;
+    FjQueryUIThemeName: string;
+    FCssPath: string;
+    FOnAsyncPageChanged: TjQPageChangeEvent;
+    FOnAsyncBeforePageChange: TjQPageBeforeChangeEvent;
+    FBlockingBeforePageChange: Boolean;
+    function GetjQSelectorID: string;
+    procedure SetActivePageIndex(Value: Integer);
+    procedure CheckActivePage;
+    procedure SetActivePage(const Value: TIWjQTabPage);
+    function GetPage(Index: Integer): TIWjQTabPage;
+    function GetPageCount: Integer;
+    procedure DeletePages;
+    function GetjQName: string;
+    procedure ReorderPages;
+    procedure FontChanged(ASender: TObject);
+    procedure Resized;
+    procedure RecalcSizes;
+    procedure SetVoid(AValue: Word);
+    procedure SetRenderCDNFiles(const Value: Boolean);
+    procedure SetRenderLocalFiles(const Value: Boolean);
+    procedure RenamePages(const aOldName: string);
+    function InternalGetWebApp: TIWApplication;
+    procedure SetjQueryUIThemeName(const Value: string);
+    function AddEvents(AContext: TIWCompContext): string;
+    function InternalSetActivePageIndex(Value: Integer): Boolean;
+    procedure DoAsyncPageChanged(EventParams: TStringList);
+    procedure DoAsyncBeforePageChange(EventParams: TStringList);
+    function GetCssPath: string;
+  protected
+    procedure Loaded; override;
+    procedure Notification(AComponent: TComponent; Operation: TOperation); override;
+    procedure CMDesignHitTest(var Msg: TCmDesignHitTest); message CM_DESIGNHITTEST;
+    procedure SetName(const AValue: TComponentName); override;
+    procedure RefreshAsyncRender;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    procedure set_Visible(Value: Boolean); override;
+    procedure AddRequiredFiles(AContext: TIWCompContext); virtual;
+  public
+    property jQName: string read GetjQName;
+    property jQSelectorID: string read GetjQSelectorID;
+    property WebApp: TIWApplication read InternalGetWebApp;
+    function TabHeightCalc(AFontSize: Integer = 0): Integer;
+    procedure Invalidate; override;
+    function RenderStyle(AComponentContext: TIWCompContext): string; override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    constructor Create(AOwner: TComponent); override;
+    destructor Destroy; override;
+    function CreatePage(const ACaption: string = ''): TIWjQTabPage;
+    function AddPage(APage: TIWjQTabPage): Integer;
+    function GetPageIndex(APage: TIWjQTabPage): Integer;
+    function GetPageIndexByName(const APageName: string): Integer;
+    procedure RemovePage(APage: TIWjQTabPage);
+    procedure InitControl; override;
+    procedure DownloadContentFiles;
+    property Pages[Index: Integer]: TIWjQTabPage read GetPage;
+    property PageCount: Integer read GetPageCount;
+    property ActivePageIndex: Integer read FActivePageIndex write SetActivePageIndex;
+    property CssPath: string read GetCssPath;
+    class property LocalJavaScriptFolder: string read FLocalJavaScriptFolder write FLocalJavaScriptFolder;
+    class property LocalStyleFolder: string read FLocalStyleFolder write FLocalStyleFolder;
+  published
+    property jQueryUIThemeName: string read FjQueryUIThemeName write SetjQueryUIThemeName;
+    property ActivePage: TIWjQTabPage read FActivePage write SetActivePage;
+    property Color;
+    property Align;
+    property Anchors;
+    property RenderCDNFiles: Boolean read FRenderCDNFiles write SetRenderCDNFiles default True;
+    property RenderLocalFiles: Boolean read FRenderLocalFiles write SetRenderLocalFiles default False;
+    property FocusOutline: Boolean read FFocusOutline write FFocusOutline default True;
+    property Font: TIWFont read get_WebFont write set_WebFont;
+    property StyleRenderOptions;
+    property TabAlignment: TAlignment read FAlignment write FAlignment default taLeftJustify;
+    property TabHeight: Word read FTabHeight write SetVoid;
+    property TabTextHeight: Word read FTabTextHeight write SetVoid;
+    property TabMargin: Word read FTabMargin write SetVoid;
+    property TabPadding: Word read FTabPadding write SetVoid;
+    property TabBorderHeight: Word read FTabBorderHeight write SetVoid;
+    property OnAsyncPageChanged: TjQPageChangeEvent read FOnAsyncPageChanged write FOnAsyncPageChanged;
+    property OnAsyncBeforePageChange: TjQPageBeforeChangeEvent read FOnAsyncBeforePageChange write FOnAsyncBeforePageChange;
+    property BlockingBeforePageChange: Boolean read FBlockingBeforePageChange write FBlockingBeforePageChange default True;
+  end;
+
+  TIWjQTabPage = class(TIWCustomRegion)
+  private
+    FTabIndex: Integer;
+    FPageControl: TIWjQPageControl;
+    FCaption: string;
+    FParentCreating: Boolean;
+    FTabWidth: Integer;
+    FEnabled: Boolean;
+    procedure SetCaption(const Value: string);
+    function GetPageIndex: Integer;
+    procedure SetPageIndex(Value: Integer);
+    function GetjQName: string;
+    procedure UpdatePageIndex;
+    procedure SetEnabled(const Value: Boolean); reintroduce;
+    function GetEnableCode: string;
+  protected
+    procedure ParentChanging(AOldParent, AParent: TComponent); override;
+    procedure set_DoRefreshControl(AValue: Boolean); override;
+    function IsNested: Boolean; override;
+  public
+    constructor Create(AOwner: TComponent); override;
+    destructor Destroy; override;
+    procedure SetBounds(ALeft, ATop, AWidth, AHeight: Integer); override;
+    function RenderHTMLForParent(AContext: TIWCompContext): TIWHTMLTag;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    function RenderStyle(AComponentContext: TIWCompContext): string; override;
+    procedure Invalidate; override;
+    property TabWidth: Integer read FTabWidth;
+    property jQName: string read GetjQName;
+  published
+    property Caption: string read FCaption write SetCaption;
+    property PageIndex: Integer read GetPageIndex write SetPageIndex; // stored False;
+    property Enabled: Boolean read FEnabled write SetEnabled default True;
+    property Color;
+    property Anchors;
+  end;
+
+resourcestring
+  sPageIndexError = '%d is an invalid PageIndex value.  PageIndex must be ' +
+    'between 0 and %d';
+  sNewPage = 'New Page';
+
+implementation

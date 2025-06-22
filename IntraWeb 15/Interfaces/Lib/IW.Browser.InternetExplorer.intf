@@ -1,0 +1,19 @@
+unit IW.Browser.InternetExplorer;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  IW.Browser.Browser;
+
+type
+  TInternetExplorer = class(TBrowser)
+  public
+    const
+      BROWSER_NAME = 'Microsoft Internet Explorer';
+      MIN_VERSION = 7;
+    constructor Create(aVersion: single); override;
+    class function Match(AUserAgent: string; out AVersion: Single): Boolean; override;
+  end;
+
+implementation

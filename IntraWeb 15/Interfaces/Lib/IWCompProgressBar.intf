@@ -1,0 +1,40 @@
+unit IWCompProgressBar;
+{$I IWCompilerDefines.inc}
+
+{PUBDIST}
+
+interface
+
+uses
+  Classes,
+  IWControl, IWColor, IWHTMLTag, IWRenderContext, IWApplication, IWXMLTag;
+
+type
+  TIWCustomProgressIndicator = class(TIWCustomControl)
+  protected
+    FPercent: Integer;
+    FShowText: Boolean;
+    procedure SetPercent(const Value: Integer);
+    procedure InitControl; override;
+  published
+    property FriendlyName;
+    property Font;
+    property Percent: Integer read FPercent write SetPercent;
+    property ShowText: Boolean read FShowText write FShowText;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWProgressBar = class(TIWCustomProgressIndicator)
+  protected
+    FBGColor: TIWColor;
+    procedure SetBGColor(const Value: TIWColor);
+    procedure InitControl; override;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+  public
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+  published
+    property BGColor: TIWColor read FBGColor write SetBGColor;
+    property Color;
+  end;
+
+implementation

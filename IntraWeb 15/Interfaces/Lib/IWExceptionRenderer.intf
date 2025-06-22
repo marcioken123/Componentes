@@ -1,0 +1,31 @@
+unit IWExceptionRenderer;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, Classes, IW.Http.Request, IWColor, IWException;
+
+type
+  TIWExceptionRenderer = class
+  private
+    class procedure InternalGetResourceHTML(var Result: string; const AErrorInfo: TIWExceptionInfo);
+  public
+    class var
+      HeaderBackColor1: TIWColor;
+      HeaderBackColor2: TIWColor;
+      HeaderTextColor: TIWColor;
+      BodyBackColor: TIWColor;
+      BodyTextColor: TIWColor;
+    class procedure SetColors(HBC1, HBC2, HTC, BBC, BTC: TIWColor);
+    class function GetResourceHTML(const AErrorInfo: TIWExceptionInfo): string;
+    class function RenderHTML(AException: Exception; ARequest: THttpRequest): string; virtual;
+    class function RedirectURL(AException: Exception; ARequest: THttpRequest): string; virtual;
+  end;
+
+  TIWExceptionRendererClass = class of TIWExceptionRenderer;
+
+function GetExceptionRendererClass: TIWExceptionRendererClass;
+procedure SetExceptionRendererClass(IWExceptionRendererClass: TIWExceptionRendererClass);
+
+implementation

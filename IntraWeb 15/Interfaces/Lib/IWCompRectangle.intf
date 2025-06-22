@@ -1,0 +1,65 @@
+unit IWCompRectangle;
+{$I IWCompilerDefines.inc}
+
+// Disable Compiler warings for DEPRECATED set_RenderSize, setRenderSize and get_RenderSize
+{$WARN SYMBOL_DEPRECATED OFF}
+
+interface
+
+uses
+  Classes,
+  IWContainerBorderOptions,
+  IWControl, IWTypes, IWCompGridCommon, IWColor, IWRenderContext,
+  IWMarkupLanguageTag, IWXMLTag, IWHTMLTag;
+
+type
+  TIWCustomRectangle = class(TIWCustomControl)
+  private
+    procedure BorderOptionsChange(ASender: TObject);
+  protected
+    procedure Dispose(ADispose: Boolean); override;
+  protected
+    FAlignment: TAlignment;
+    FBorderOptions: TIWBorderOptions;
+    FVAlign: TIWGridVAlign;
+    //
+    procedure SetAlignment(const Value: TAlignment);
+    procedure SetVAlign(const Value: TIWGridVAlign);
+    procedure SetBorderOptions(const Value: TIWBorderOptions);
+    procedure RenderInnerHTML(AParentTag: TIWMarkupLanguageTag);
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+
+    procedure InitControl; override;
+  public
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    function get_HasTabOrder: Boolean; override;
+
+    property Alignment: TAlignment read FAlignment write SetAlignment;
+    property BorderOptions: TIWBorderOptions read FBorderOptions write SetBorderOptions;
+    property VAlign: TIWGridVAlign read FVAlign write SetVAlign;
+  published
+    property Text;
+    property Font;
+  end;
+
+  {$include IWPlatformAttrib.inc}
+  TIWRectangle = class(TIWCustomRectangle)
+  published
+    property BorderOptions;
+    property FriendlyName;
+    property Color;
+    property Alignment;
+    property VAlign;
+    property OnAsyncClick;
+    property OnAsyncDoubleClick;
+    property OnAsyncKeyDown;
+    property OnAsyncKeyUp;
+    property OnAsyncKeyPress;
+    property OnAsyncMouseDown;
+    property OnAsyncMouseMove;
+    property OnAsyncMouseOver;
+    property OnAsyncMouseOut;
+    property OnAsyncMouseUp;
+  end;
+
+implementation

@@ -1,0 +1,12 @@
+unit IW.Common.Lists;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, Classes;
+
+// TList and TObjectList replacements
+// Std TList is deprecated in Delphi 10.2 Tokyo. Performance and memory comsumption of
+// its generic replacement TList<T> is unaceptable (See reported bug https://quality.embarcadero.com/browse/RSP-18815)
+// Thus we have our own implementation

@@ -1,0 +1,29 @@
+unit IW.Common.ReadFileStream;
+{$I IWCompilerDefines.inc}
+
+interface
+
+{
+Stream for reading from a file.
+Optionally deletes file after use.
+}
+
+uses
+  Classes;
+
+type
+  TReadFileStream = class(TFileStream)
+  protected
+    mDeleteFile: Boolean;
+  public
+    constructor Create(const aPathname: string; aDeleteFile: Boolean = False); overload;
+    destructor Destroy; override;
+    function CreateStreamFromRange(AStart, AEnd: Int64): TStream;
+  end;
+
+  TReadStreamHelper = class
+  public
+    class function CreateStream(const aPathname: string; ARangeBegin, ARangeEnd: Int64; aDeleteFile: Boolean; out vFileSize: Int64): TStream;
+  end;
+
+implementation

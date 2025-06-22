@@ -1,0 +1,75 @@
+unit IW.Common.FPCCompat;
+{$I IWCompilerDefines.inc}
+
+// This unit is exclusive for FPC compilation
+// Contains constants, types, classes and functions missing in FPC
+
+interface
+
+{$IFDEF FPC}  // in case someone adds this unit to a Delphi project
+
+uses
+  Classes, SysUtils, Windows, Graphics, FPReadJPEG;
+
+type
+  // reference to procedure/function is not supported in FPC yet.
+  // We will need to fallback to normal object methods for now
+  TProc = procedure of Object;
+  TProc<T> = procedure (Arg1: T) of Object;
+  TProc<T1,T2> = procedure (Arg1: T1; Arg2: T2) of Object;
+  TProc<T1,T2,T3> = procedure (Arg1: T1; Arg2: T2; Arg3: T3) of Object;
+  TProc<T1,T2,T3,T4> = procedure (Arg1: T1; Arg2: T2; Arg3: T3; Arg4: T4) of Object;
+
+  TFunc<TResult> = function: TResult of Object;
+  TFunc<T,TResult> = function (Arg1: T): TResult of Object;
+  TFunc<T1,T2,TResult> = function (Arg1: T1; Arg2: T2): TResult of Object;
+  TFunc<T1,T2,T3,TResult> = function (Arg1: T1; Arg2: T2; Arg3: T3): TResult of Object;
+  TFunc<T1,T2,T3,T4,TResult> = function (Arg1: T1; Arg2: T2; Arg3: T3; Arg4: T4): TResult of Object;
+
+  TPredicate<T> = function (Arg1: T): Boolean of Object;
+
+  TPngImage = TPortableNetworkGraphic;
+
+  TIsUniqueGlobalComponentName = function(const Name: string): Boolean;
+
+const
+  jpBestSpeed = FPReadJPEG.jpBestSpeed;
+
+const
+  MOVEFILE_WRITE_THROUGH = $00000008;
+  H2BValidSet = ['0'..'9','A'..'F','a'..'f'];
+  H2BConvert: array['0'..'f'] of SmallInt =
+    ( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9,-1,-1,-1,-1,-1,-1,
+     -1,10,11,12,13,14,15,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+     -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+     -1,10,11,12,13,14,15);
+
+// Win API "W" functions that use WideStrings instead of AnsiStrings. LCL exposes the Ansi string versions only...
+function FindResourceW(hModule:HINST; lpName:LPCWSTR; lpType:LPCWSTR): HRSRC; stdcall; external 'kernel32' name 'FindResourceW';
+function RegisterEventSourceW(lpUNCServerName:LPCWSTR; lpSourceName:LPCWSTR): HANDLE; stdcall; external 'advapi32' name 'RegisterEventSourceW';
+function GetTempFileNameW(lpPathName:LPCWSTR; lpPrefixString:LPCWSTR; uUnique:UINT; lpTempFileName:LPWSTR):UINT; stdcall; external 'kernel32' name 'GetTempFileNameW';
+function DeleteFileW(lpFileName: LPCWSTR): BOOL; stdcall; external 'kernel32' name 'DeleteFileW';
+function MoveFileExW(lpExistingFileName:LPCWSTR; lpNewFileName:LPCWSTR; dwFlags:DWORD):WINBOOL; stdcall; external 'kernel32' name 'MoveFileExW';
+
+function CompareStr(const S1, S2: string): Integer;
+function UTF8ToUnicodeString(const S: RawByteString): string;
+
+function HexToBin(Text : PWideChar; Buffer: PAnsiChar; BufSize: Integer): Integer;
+function IntToIdent(Int: Integer; var Ident: string; const Map: array of TIdentMapEntry): Boolean;
+function ColorToIdent(AColor: Integer; var AIdent: string): Boolean;
+
+function GetExceptionCallStack(E: Exception): string;
+
+procedure YieldProcessor;
+
+function Rect(ALeft, ATop, ARight, ABottom: Integer): TRect;
+function Point(X, Y: Integer): TPoint;
+
+function IsUniqueGlobalComponentName(const Name: string): Boolean;
+
+var
+  IsUniqueGlobalComponentNameProc: TIsUniqueGlobalComponentName;
+
+{$ENDIF FPC}
+
+implementation

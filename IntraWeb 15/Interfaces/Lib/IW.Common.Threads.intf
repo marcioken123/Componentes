@@ -1,0 +1,92 @@
+unit IW.Common.Threads;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, Classes, Windows, {$IFDEF FPC} IW.Common.FpcCompat, {$ENDIF} SyncObjs;
+
+const
+  CACHE_LINE_SIZE = 64;
+
+type
+  TIWThreadProc = {$IFDEF DELPHI}reference to {$ENDIF} procedure (AData: Pointer) {$IFDEF FPC} of Object {$ENDIF};
+
+  TIWThreadBase = class(TThread)
+  strict private
+    FData: Pointer;
+    FTag: Integer;
+    FSynchronize: Boolean;
+    procedure CallOnTerminate;
+  protected
+    FMethod: TIWThreadProc;
+    FOnTerminateProc: TIWThreadProc;
+    FName: string;
+    procedure DoExecute; virtual;
+    procedure Execute; override;
+    procedure DoTerminate; override;
+  public
+    constructor Create(const AName: string; AMethod: TIWThreadProc); overload; virtual;
+    /// <summary> Executes an anonymous method in a thread </summary>
+    /// <param name="AMethod">Anonymous method to be executed. The method parameter is the own thread which executes it </param>
+    /// <param name="AThreadName">Name of the thread</param>
+    /// <param name="AData">Any data that must be passed to the AMethod, as a pointer parameter. If AData is not provided, the thread itself is passed</param>
+    class procedure ExecInThread(AMethod: TIWThreadProc; const AThreadName: string = ''; AData: Pointer = nil); overload;
+    /// <summary> Executes an anonymous method in a thread. Do *not* set ASynchronize to True in an IntraWeb application </summary>
+    /// <param name="AMethod">Anonymous method to be executed. The method parameter is the own thread which executes it </param>
+    class procedure ExecInThread(AMethod: TIWThreadProc; const AThreadName: string; AOnTerminate: TIWThreadProc; ASynchronize: Boolean; AData: Pointer = nil); overload;
+    {$IFDEF DELPHI} {$IFNDEF VCL140}
+    procedure Start; // missing method in D2009
+    {$ENDIF} {$ENDIF}
+    property Terminated;
+    property Tag: Integer read FTag write FTag; // general purpose integer property
+  end;
+
+  TIWTimedThread = class(TIWThreadBase)
+  strict private
+    FEvent: THandle;
+    FIntervalMS: Integer;
+    FExecuteAtStart: Boolean;
+  protected
+    procedure InternalExecute;
+    procedure DoExecute; override;
+    procedure Execute; override;
+    procedure HandleThreadException(E: Exception; var AContinue: Boolean); virtual;
+  public
+    constructor Create(const AName: string; AIntervalMS: Integer); overload; virtual;
+    destructor Destroy; override;
+    procedure Finish;
+    property ExecuteAtStart: Boolean read FExecuteAtStart write FExecuteAtStart default False;
+    property Method: TIWThreadProc read FMethod write FMethod;
+    property OnTerminateProc: TIWThreadProc read FOnTerminateProc write FOnTerminateProc;
+    property IntervalMS: Integer read FIntervalMS write FIntervalMS;
+  end;
+
+  TPoolRec = record
+    Ptr: Pointer;
+    Padding: array [1..CACHE_LINE_SIZE-SizeOf(Pointer)] of Byte;
+  end;
+
+  // Critical section fix
+  // http://www.delphitools.info/2011/11/30/fixing-tcriticalsection/
+  TIWCriticalSection = class(TCriticalSection)
+  strict private
+    {$HINTS OFF}
+    FDummy: array [0..95-SizeOf(TRTLCriticalSection)-2*SizeOf(Pointer)] of Byte; // not used. See notes
+    {$HINTS ON}
+  end;
+
+  TThreadSafeValue = record
+  strict private
+    FValue: Integer;
+    function GetValue: Integer;
+    procedure SetValue(AValue: Integer);
+  public
+    function Add(AValue: Integer): Integer;
+    function Subtract(AValue: Integer): Integer;
+    function Increment: Integer;
+    function Equals(AValue: Integer): Boolean;
+    property Value: Integer read GetValue write SetValue;
+  end;
+
+  // Slim Reader/Writer (SRW) Locks implementation

@@ -1,0 +1,71 @@
+unit IWCompAudio;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, Classes, IWVCLBaseControl, IWBaseControl, IWBaseHTMLControl,
+  IWControl, IWFileReference, IWRenderContext, IWHTMLTag, IWXMLTag, IWScriptEvents;
+
+type
+  {$include IWPlatformAttrib.inc}
+  TIWAudio = class(TIWCustomControl)
+  private
+    { Protected declarations }
+    FAudioFile: TIWFileReference;
+    FAutoPlay: Boolean;
+    FLoop: Boolean;
+    FShowAudioPlayer: Boolean;
+    FPreLoad: Boolean;
+    FAlternateAudioFile: TIWFileReference;
+    FFocusOutline: Boolean;
+    FAltText: string;
+    FPlay: Boolean;
+    FOnAsyncEnded: TIWAsyncEvent;
+    FOnAsyncPlay: TIWAsyncEvent;
+    FOnAsyncPause: TIWAsyncEvent;
+    FOnAsyncError: TIWAsyncEvent;
+    FOnAsyncWaiting: TIWAsyncEvent;
+    procedure SetAudioFile(const Value: TIWFileReference);
+    procedure SetAlternateAudioFile(const Value: TIWFileReference);
+    procedure SetFocusOutline(const Value: Boolean);
+    procedure SetShowAudioPlayer(const Value: Boolean);
+    function ExecAction(const Action: string): string;
+    procedure DoOnAsyncEnded(AParams: TStringList);
+    procedure DoOnAsyncPlay(AParams: TStringList);
+    procedure DoOnAsyncPause(AParams: TStringList);
+    procedure DoOnAsyncError(AParams: TStringList);
+    procedure DoOnAsyncWaiting(AParams: TStringList);
+  protected
+    procedure InitControl; override;
+    procedure Dispose(ADispose: Boolean); override;
+    procedure RegisterAsyncEvents(APageContext: TIWPageContext40); override;
+    procedure AssignAsyncEvents(APageContext: TIWPageContext40; AScriptEvents: TIWScriptEvents); override;
+  public
+    function RenderCSSClass(AComponentContext: TIWCompContext): string; override;
+    function RenderStyle(AContext: TIWCompContext): string; override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    function RenderAsync(AContext: TIWCompContext): TIWXMLTag; override;
+    class function GetAudioType(const AudioFileName: string): string;
+    procedure Pause;
+    procedure Play;
+  published
+    { Published declarations }
+    property AudioFile: TIWFileReference read FAudioFile write SetAudioFile;
+    property FocusOutline: boolean read FFocusOutline write SetFocusOutline default False;
+    property AlternateAudioFile: TIWFileReference read FAlternateAudioFile write SetAlternateAudioFile;
+    property ShowAudioPlayer: Boolean read FShowAudioPlayer write SetShowAudioPlayer default True;
+    property AutoPlay: boolean read FAutoPlay write FAutoPlay default False;
+    property Loop: boolean read FLoop write FLoop default False;
+    property PreLoad: boolean read FPreLoad write FPreLoad default True;
+    property AltText: string read FAltText write FAltText;
+    property Width default 400;
+    property Height default 45;
+    property OnAsyncEnded: TIWAsyncEvent read FOnAsyncEnded write FOnAsyncEnded;
+    property OnAsyncPlay: TIWAsyncEvent read FOnAsyncPlay write FOnAsyncPlay;
+    property OnAsyncPause: TIWAsyncEvent read FOnAsyncPause write FOnAsyncPause;
+    property OnAsyncError: TIWAsyncEvent read FOnAsyncError write FOnAsyncError;
+    property OnAsyncWaiting: TIWAsyncEvent read FOnAsyncWaiting write FOnAsyncWaiting;
+  end;
+
+implementation

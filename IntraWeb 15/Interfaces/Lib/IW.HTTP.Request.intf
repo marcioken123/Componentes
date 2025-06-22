@@ -1,0 +1,103 @@
+unit IW.HTTP.Request;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, SysUtils, IW.HTTP.FileItem;
+
+type
+  THttpMethod = (hmGet, hmPost, hmPut, hmHead, hmDelete, hmOptions, hmPatch, hmNone);
+
+  THttpRequest = class
+  private
+    function GetIsXMLHttpRequest: Boolean;
+    function GetIsPost: Boolean;
+    function GetIsFormUrlEncoded: Boolean;
+    function GetContentType: string;
+    function GetIsGet: Boolean;
+  protected
+    mUserAgent: string;
+    mReferer: string;
+    mScriptName: string;
+    mHost: string;
+    mAuthorization: string;
+    mURL: string;
+    mPathInfo: string;
+    mRemoteAddr: string;
+    mServerPort: Integer;
+    mQuery: string;
+    mHttpMethod: THttpMethod;
+    mIfModifiedSince: string;
+    mForwardedFor: string;
+    mHttpClientIP: string;
+    mAuthorizationHeader: string;
+    mAuthUser: string;
+    mAuthPass: string;
+    mAcceptLanguage: string;
+    mHttpsHeader: string;
+    mRangeBytes: string;
+    mRawHeaders: TStrings;
+    mContentFields: TStrings;
+    mCookieFields: TStrings;
+    mQueryFields: TStrings;
+    mServerVariables: TStrings;
+    mHasContent: Boolean;
+    mFiles: THttpFileList;
+    mParams: TStrings;
+    mFreeContentFields: Boolean;
+    function GetFieldValue(aList: TStrings; const aFieldName: string): string;
+    function GetParams: TStrings;
+    function GetHasRange: Boolean;
+  public
+    constructor Create(aBytes: PByte; aSize: Integer);
+    destructor Destroy; override;
+    function GetCookieValue(const aName: string): string;
+    function GetRawHeaderValue(const aName: string): string;
+    function GetServerVariableValue(const aVariableName: string): string;
+    function GetContentFieldValue(const aContentFieldName: string): string;
+    function GetQueryFieldValue(const aQueryFieldName: string): string;
+    function HasField(const aContentFieldName: string): Boolean;
+    procedure SetRewriteURL(const aValue: string);
+    function AcceptsGZip: Boolean;
+    procedure GetEncodedQueryFields(aList: TStrings);
+    class function StringToHttpMethod(s: string): THttpMethod;
+    procedure GetRange(var aFrom, aTo: Int64);
+    //
+    property UserAgent: string read mUserAgent write mUserAgent;
+    property Referer: string read mReferer;
+    property ScriptName: string read mScriptName;
+    property Host: string read mHost;
+    property Authorization: string read mAuthorization;
+    property URL: string read mURL;
+    property PathInfo: string read mPathInfo;
+    property RemoteAddr: string read mRemoteAddr;
+    property ServerPort: Integer read mServerPort;
+    property Query: string read mQuery;
+    property HttpMethod: THttpMethod read mHttpMethod;
+    property IfModifiedSince: string read mIfModifiedSince;
+    property ForwardedFor: string read mForwardedFor;
+    property HttpClientIP: string read mHttpClientIP;
+    property AuthorizationHeader: string read mAuthorizationHeader;
+    property AuthUser: string read mAuthUser;
+    property AuthPass: string read mAuthPass;
+    property AcceptLanguage: string read mAcceptLanguage;
+    property HttpsHeader: string read mHttpsHeader;
+    property RawHeaders: TStrings read mRawHeaders;
+    property ContentFields: TStrings read mContentFields;
+    property CookieFields: TStrings read mCookieFields;
+    property QueryFields: TStrings read mQueryFields;
+    property ServerVariables: TStrings read mServerVariables;
+    property HasContent: boolean read mHasContent;
+    property Files: THttpFileList read mFiles;
+    property QueryString: string read mQuery;
+    property Params: TStrings read GetParams;
+    property IsXMLHttpRequest: Boolean read GetIsXMLHttpRequest;
+    property IsPost: Boolean read GetIsPost;
+    property IsGet: Boolean read GetIsGet;
+    property IsFormUrlEncoded: Boolean read GetIsFormUrlEncoded;
+    property ContentType: string read GetContentType;
+    property HasRange: Boolean read GetHasRange;
+  end;
+
+implementation

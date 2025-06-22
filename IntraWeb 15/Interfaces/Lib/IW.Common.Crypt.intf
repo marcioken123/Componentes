@@ -1,0 +1,325 @@
+unit IW.Common.Crypt;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, Classes, Windows;
+
+type
+  TIWCrypt = class
+  private
+    class var FCryptoProvider: DWORD;
+    class var FHashAlgorithm: DWORD;
+  private
+    class procedure InternalCryptStream(const InputStream, OutputStream: TStream; const aKey: string; ToCrypt: Boolean);
+    class function InternalHashStream(const InputStream: TStream): string;
+  public
+    class {$IFNDEF VER200}constructor{$ELSE}procedure{$ENDIF} CreateClass;
+    // Encrypt & Decrypt
+    class function EncryptString(const InputString: string; const key: string): RawByteString;
+    class function DecryptString(const InputString: RawByteString; const key: string): string;
+    class function EncryptStringBase64(const InputString: string; const key: string): string;
+    class function DecryptStringBase64(const InputString: string; const key: string): string;
+    class procedure EncryptStream(const InputStream, OutputStream: TStream; const key: string);
+    class procedure DecryptStream(const InputStream, OutputStream: TStream; const key: string);
+    class procedure EncryptFile(const InputFileName, OutputFileName, key: string);
+    class procedure DecryptFile(const InputFileName, OutputFileName, key: string);
+    // Hash
+    class function HashString(const InputString: string): string;
+    class function HashStream(const InputStream: TStream): string;
+    class function HashFile(const InputFileName: string): string;
+    // General stuff
+    class function GetRandomBytes(Len: Cardinal): TBytes;
+    // Certificates
+    class procedure ExtractCertificateData(const encodedCertData: TBytes; var Subject, Issuer, SerialNo: string; var ValidFrom, ValidTo: TDateTime);
+    class function GetClientCertificateContext(const aCertThumbprint: string; const aStore: string = 'MY'; aLocalMachine: Boolean = True): Pointer; overload; // Result is actually a PCCERT_CONTEXT
+    class function GetClientCertificateContextBySubject(const aCertSubject: string; const aStore: string = 'MY'; aLocalMachine: Boolean = True): Pointer; overload; // Result is actually a PCCERT_CONTEXT
+
+    class property CryptoProvider: DWORD read FCryptoProvider write FCryptoProvider;
+    class property HashAlgorithm: DWORD read FHashAlgorithm write FHashAlgorithm;
+  end;
+
+{$Region 'WinCrypt headers'}
+// Minimum WinCrypt header translation for our needs
+// WinCrypt API is deprecated and Cryptography API Next Generation (CNG) will likely need to be used in the future.
+// However, CNG is not supported in older platforms (Windows 2003, XP)
+// so we will keep using WinCrypt for now
+const
+  {$EXTERNALSYM PROV_RSA_FULL}
+  PROV_RSA_FULL = 1;
+  {$EXTERNALSYM PROV_RSA_AES}
+  PROV_RSA_AES  = 24; // default
+  {$EXTERNALSYM CRYPT_SILENT}
+  CRYPT_SILENT = $00000040;
+  {$EXTERNALSYM CRYPT_VERIFYCONTEXT}
+  CRYPT_VERIFYCONTEXT = $F0000000;
+  {$EXTERNALSYM CRYPT_NEWKEYSET}
+  CRYPT_NEWKEYSET      = $00000008;
+  {$EXTERNALSYM CALG_SHA}
+  CALG_SHA = $00008004;
+  {$EXTERNALSYM CALG_SHA_256}
+  CALG_SHA_256 = $0000800C; // hashing
+  {$EXTERNALSYM CALG_SHA_384}
+  CALG_SHA_384 = $0000800D;
+  {$EXTERNALSYM CALG_SHA_512}
+  CALG_SHA_512 = $0000800E;
+  {$EXTERNALSYM CALG_AES_256}
+  CALG_AES_256 = $00006610; // cryptography
+  {$EXTERNALSYM CALG_RC4}
+  CALG_RC4 = $00006801;
+  {$EXTERNALSYM HP_HASHVAL}
+  HP_HASHVAL = $0002;
+  {$EXTERNALSYM HP_HASHSIZE}
+  HP_HASHSIZE = $0004;
+  {$EXTERNALSYM MS_ENH_RSA_AES_PROV}
+  MS_ENH_RSA_AES_PROV = WideString('Microsoft Enhanced RSA and AES Cryptographic Provider (Prototype)');
+  {$EXTERNALSYM MS_ENHANCED_PROV}
+  MS_ENHANCED_PROV= WideString('Microsoft Enhanced Cryptographic Provider v1.0');
+
+type
+  {$EXTERNALSYM HCRYPTPROV}
+  HCRYPTPROV = NativeUInt;
+  {$EXTERNALSYM PHCRYPTPROV}
+  PHCRYPTPROV = ^HCRYPTPROV;
+  {$EXTERNALSYM HCRYPTKEY}
+  HCRYPTKEY  = NativeUInt;
+  {$EXTERNALSYM HCRYPTHASH}
+  HCRYPTHASH = NativeUInt;
+  {$EXTERNALSYM ALG_ID}
+  ALG_ID = UINT;
+
+  // Certificate related stuff
+  {$EXTERNALSYM CRYPTOAPI_BLOB}
+  CRYPTOAPI_BLOB = record
+    cbData: DWORD;
+    pbData: PByte;
+  end;
+  {$EXTERNALSYM CRYPT_INTEGER_BLOB}
+  CRYPT_INTEGER_BLOB   = CRYPTOAPI_BLOB;
+  {$EXTERNALSYM PCRYPT_INTEGER_BLOB}
+  PCRYPT_INTEGER_BLOB  = ^CRYPT_INTEGER_BLOB;
+  {$EXTERNALSYM CRYPT_UINT_BLOB}
+  CRYPT_UINT_BLOB      = CRYPTOAPI_BLOB;
+  {$EXTERNALSYM CRYPT_OBJID_BLOB}
+  CRYPT_OBJID_BLOB     = CRYPTOAPI_BLOB;
+  {$EXTERNALSYM CERT_NAME_BLOB}
+  CERT_NAME_BLOB       = CRYPTOAPI_BLOB;
+  {$EXTERNALSYM CERT_RDN_VALUE_BLOB}
+  CERT_RDN_VALUE_BLOB  = CRYPTOAPI_BLOB;
+
+  {$EXTERNALSYM CERT_EXTENSION}
+  CERT_EXTENSION = record
+    pszObjId:  LPSTR;
+    fCritical: BOOL;
+    Value:     CRYPT_OBJID_BLOB;
+  end;
+  {$EXTERNALSYM PCERT_EXTENSION}
+  PCERT_EXTENSION = ^CERT_EXTENSION;
+
+  {$EXTERNALSYM CRYPT_ALGORITHM_IDENTIFIER}
+  CRYPT_ALGORITHM_IDENTIFIER = record
+    pszObjId:   LPSTR;
+    Parameters: CRYPT_OBJID_BLOB;
+  end;
+  {$EXTERNALSYM PCRYPT_ALGORITHM_IDENTIFIER}
+  PCRYPT_ALGORITHM_IDENTIFIER = ^CRYPT_ALGORITHM_IDENTIFIER;
+
+  {$EXTERNALSYM CRYPT_BIT_BLOB}
+  CRYPT_BIT_BLOB = record
+    cbData:      DWORD;
+    pbData:      PBYTE;
+    cUnusedBits: DWORD;
+  end;
+  {$EXTERNALSYM PCRYPT_BIT_BLOB}
+  PCRYPT_BIT_BLOB = ^CRYPT_BIT_BLOB;
+
+  {$EXTERNALSYM CERT_PUBLIC_KEY_INFO}
+  CERT_PUBLIC_KEY_INFO = record
+    Algorithm: CRYPT_ALGORITHM_IDENTIFIER;
+    PublicKey: CRYPT_BIT_BLOB;
+  end;
+  {$EXTERNALSYM PCERT_PUBLIC_KEY_INFO}
+  PCERT_PUBLIC_KEY_INFO = ^CERT_PUBLIC_KEY_INFO;
+
+  {$EXTERNALSYM TARR_CERT_EXTENSION}
+  TARR_CERT_EXTENSION = PCERT_EXTENSION;
+  {$EXTERNALSYM CERT_INFO}
+  CERT_INFO = record
+    dwVersion:            DWORD;
+    SerialNumber:         CRYPT_INTEGER_BLOB;
+    SignatureAlgorithm:   CRYPT_ALGORITHM_IDENTIFIER;
+    Issuer:               CERT_NAME_BLOB;
+    NotBefore:            FILETIME;
+    NotAfter:             FILETIME;
+    Subject:              CERT_NAME_BLOB;
+    SubjectPublicKeyInfo: CERT_PUBLIC_KEY_INFO;
+    IssuerUniqueId:       CRYPT_BIT_BLOB;
+    SubjectUniqueId:      CRYPT_BIT_BLOB;
+    cExtension:           DWORD;
+    rgExtension:          TARR_CERT_EXTENSION;
+  end;
+  {$EXTERNALSYM PCERT_INFO}
+  PCERT_INFO = ^CERT_INFO;
+
+  {$EXTERNALSYM HCERTSTORE}
+  HCERTSTORE = pointer;
+
+  {$EXTERNALSYM CERT_CONTEXT}
+  CERT_CONTEXT = record
+    dwCertEncodingType: DWORD;
+    pbCertEncoded: PBYTE;
+    cbCertEncoded: DWORD;
+    pCertInfo: PCERT_INFO;
+    hCertStore: HCERTSTORE;
+  end;
+  {$EXTERNALSYM PCERT_CONTEXT}
+  PCERT_CONTEXT = ^CERT_CONTEXT;
+  {$EXTERNALSYM PCCERT_CONTEXT}
+  PCCERT_CONTEXT = ^CERT_CONTEXT;
+  {$EXTERNALSYM PPCCERT_CONTEXT}
+  PPCCERT_CONTEXT = ^PCCERT_CONTEXT;
+
+  {$EXTERNALSYM CERT_RDN_ATTR}
+  CERT_RDN_ATTR = record
+    pszObjId:    LPSTR;
+    dwValueType: DWORD;
+    Value:       CERT_RDN_VALUE_BLOB;
+  end;
+  {$EXTERNALSYM PCERT_RDN_ATTR}
+  PCERT_RDN_ATTR = ^CERT_RDN_ATTR;
+
+  {$EXTERNALSYM CERT_RDN}
+  CERT_RDN = record
+    cRDNAttr:  DWORD;
+    rgRDNAttr: PCERT_RDN_ATTR;
+  end;
+  {$EXTERNALSYM PCERT_RDN}
+  PCERT_RDN = ^CERT_RDN;
+
+  {$EXTERNALSYM CERT_NAME_INFO}
+  CERT_NAME_INFO = record
+    cRDN:  DWORD;
+    rgRDN: PCERT_RDN;
+  end;
+  {$EXTERNALSYM PCERT_NAME_INFO}
+  PCERT_NAME_INFO = ^CERT_NAME_INFO;
+
+const
+  {$EXTERNALSYM CRYPT_ASN_ENCODING}
+  CRYPT_ASN_ENCODING  = $00000001;
+  {$EXTERNALSYM CRYPT_NDR_ENCODING}
+  CRYPT_NDR_ENCODING  = $00000002;
+  {$EXTERNALSYM X509_ASN_ENCODING}
+  X509_ASN_ENCODING   = $00000001;
+  {$EXTERNALSYM X509_NDR_ENCODING}
+  X509_NDR_ENCODING   = $00000002;
+  {$EXTERNALSYM PKCS_7_ASN_ENCODING}
+  PKCS_7_ASN_ENCODING = $00010000;
+  {$EXTERNALSYM PKCS_7_NDR_ENCODING}
+  PKCS_7_NDR_ENCODING = $00020000;
+
+  {$EXTERNALSYM CERT_STORE_PROV_SYSTEM_W}
+  CERT_STORE_PROV_SYSTEM_W = (LPCSTR(10));
+  {$EXTERNALSYM CERT_STORE_PROV_SYSTEM}
+  CERT_STORE_PROV_SYSTEM = CERT_STORE_PROV_SYSTEM_W;
+  {$EXTERNALSYM CERT_STORE_MAXIMUM_ALLOWED_FLAG}
+  CERT_STORE_MAXIMUM_ALLOWED_FLAG = $00001000;
+
+  {$EXTERNALSYM CERT_SYSTEM_STORE_CURRENT_USER}
+  CERT_SYSTEM_STORE_CURRENT_USER  = $00010000;
+  {$EXTERNALSYM CERT_SYSTEM_STORE_LOCAL_MACHINE}
+  CERT_SYSTEM_STORE_LOCAL_MACHINE = $00020000;
+
+  {$EXTERNALSYM CERT_NAME_EMAIL_TYPE}
+  CERT_NAME_EMAIL_TYPE            = 1;
+  {$EXTERNALSYM CERT_NAME_RDN_TYPE}
+  CERT_NAME_RDN_TYPE              = 2;
+  {$EXTERNALSYM CERT_NAME_ATTR_TYPE}
+  CERT_NAME_ATTR_TYPE             = 3;
+  {$EXTERNALSYM CERT_NAME_SIMPLE_DISPLAY_TYPE}
+  CERT_NAME_SIMPLE_DISPLAY_TYPE   = 4;
+  {$EXTERNALSYM CERT_NAME_FRIENDLY_DISPLAY_TYPE}
+  CERT_NAME_FRIENDLY_DISPLAY_TYPE = 5;
+  {$EXTERNALSYM CERT_NAME_DNS_TYPE}
+  CERT_NAME_DNS_TYPE              = 6;
+  {$EXTERNALSYM CERT_NAME_URL_TYPE}
+  CERT_NAME_URL_TYPE              = 7;
+  {$EXTERNALSYM CERT_NAME_UPN_TYPE}
+  CERT_NAME_UPN_TYPE              = 8;
+
+  {$EXTERNALSYM CERT_NAME_ISSUER_FLAG}
+  CERT_NAME_ISSUER_FLAG           = $1;
+
+  {$EXTERNALSYM CRYPT_STRING_BASE64HEADER}
+  CRYPT_STRING_BASE64HEADER = $00000000;
+
+  {$EXTERNALSYM CERT_COMPARE_SHIFT}
+  CERT_COMPARE_SHIFT = 16;
+  {$EXTERNALSYM CERT_COMPARE_ANY}
+  CERT_COMPARE_ANY = 0;
+  {$EXTERNALSYM CERT_COMPARE_SHA1_HASH}
+  CERT_COMPARE_SHA1_HASH = 1;
+
+  {$EXTERNALSYM CERT_INFO_SUBJECT_FLAG}
+  CERT_INFO_SUBJECT_FLAG = 7;
+  {$EXTERNALSYM CERT_COMPARE_NAME_STR_W}
+  CERT_COMPARE_NAME_STR_W = 8;
+  {$EXTERNALSYM CERT_FIND_SHA1_HASH}
+  CERT_FIND_SHA1_HASH = (CERT_COMPARE_SHA1_HASH shl CERT_COMPARE_SHIFT);
+  {$EXTERNALSYM CERT_FIND_SUBJECT_STR_W}
+  CERT_FIND_SUBJECT_STR_W = (CERT_COMPARE_NAME_STR_W shl CERT_COMPARE_SHIFT or CERT_INFO_SUBJECT_FLAG);
+  {$EXTERNALSYM CERT_FIND_SUBJECT_STR}
+  CERT_FIND_SUBJECT_STR = CERT_FIND_SUBJECT_STR_W;
+
+  {$EXTERNALSYM CERT_SHA1_HASH_PROP_ID}
+  CERT_SHA1_HASH_PROP_ID = 3;
+  {$EXTERNALSYM CERT_MD5_HASH_PROP_ID}
+  CERT_MD5_HASH_PROP_ID = 4;
+  {$EXTERNALSYM CERT_HASH_PROP_ID}
+  CERT_HASH_PROP_ID = CERT_SHA1_HASH_PROP_ID;
+var
+  {$EXTERNALSYM CryptAcquireContext}
+  CryptAcquireContext: function(hProv: PHCRYPTPROV; pszContainer, pszProvider: LPCWSTR; dwProvType, dwFlags: DWORD): BOOL; stdcall;
+  {$EXTERNALSYM CryptReleaseContext}
+  CryptReleaseContext: function(hProv: HCRYPTPROV; dwFlags: DWORD): BOOL; stdcall;
+  {$EXTERNALSYM CryptDeriveKey}
+  CryptDeriveKey: function(hProv: HCRYPTPROV; Algid: ALG_ID; hBaseData: HCRYPTHASH; dwFlags: DWORD; var phKey: HCRYPTKEY): BOOL; stdcall;
+  {$EXTERNALSYM CryptDestroyKey}
+  CryptDestroyKey: function(hKey: HCRYPTKEY): BOOL; stdcall;
+  {$EXTERNALSYM CryptEncrypt}
+  CryptEncrypt: function(hKey: HCRYPTKEY; hHash: HCRYPTHASH; Final: BOOL; dwFlags: DWORD; pbData: PByte; var pdwDataLen, dwBufLen: DWORD): BOOL; stdcall;
+  {$EXTERNALSYM CryptDecrypt}
+  CryptDecrypt: function(hKey: HCRYPTKEY; hHash: HCRYPTHASH; Final: BOOL; dwFlags: DWORD; pbData: PByte; var pdwDataLen: DWORD): BOOL; stdcall;
+  {$EXTERNALSYM CryptCreateHash}
+  CryptCreateHash: function(hProv: HCRYPTPROV; Algid: ALG_ID; hKey: HCRYPTKEY; dwFlags: DWORD; var phHash: HCRYPTHASH): BOOL; stdcall;
+  {$EXTERNALSYM CryptHashData}
+  CryptHashData: function(hHash: HCRYPTHASH; pbData: PBYTE; dwDataLen: DWORD; dwFlags: DWORD): BOOL; stdcall;
+  {$EXTERNALSYM CryptGetHashParam}
+  CryptGetHashParam: function(hHash: HCRYPTHASH; dwParam: DWORD; pbData: PBYTE; var pdwDataLen: DWORD; dwFlags: DWORD): BOOL; stdcall;
+  {$EXTERNALSYM CryptDestroyHash}
+  CryptDestroyHash: function(hHash: HCRYPTHASH): BOOL; stdcall;
+  {$EXTERNALSYM CryptGenRandom}
+  CryptGenRandom: function(hProv: HCRYPTPROV; dwLen: DWORD; pbBuffer: PBYTE): BOOL; stdcall;
+
+  {$EXTERNALSYM CertCreateCertificateContext}
+  CertCreateCertificateContext: function(dwCertEncodingType: DWORD; pbCertEncoded: PBYTE; cbCertEncoded: DWORD): PCCERT_CONTEXT; stdcall;
+  {$EXTERNALSYM CertGetNameString}
+  CertGetNameString: function(pCertContext: PCCERT_CONTEXT; dwType: DWORD; dwFlags: DWORD; pvTypePara: Pointer; pszNameString: LPWSTR; cchNameString: DWORD): DWORD; stdcall;
+  {$EXTERNALSYM CertFreeCertificateContext}
+  CertFreeCertificateContext: function(pCertContext: PCCERT_CONTEXT): BOOL; stdcall;
+  {$EXTERNALSYM CryptStringToBinary}
+  CryptStringToBinary: function(pszString: LPCWSTR; cchString: DWORD; dwFlags: DWORD; var pbBinary: DWORD; pcbBinary: PDWORD; pdwSkip: PDWORD; pdwFlags: PDWORD): BOOL; stdcall;
+  {$EXTERNALSYM CertOpenStore}
+  CertOpenStore: function(lpszStoreProvider: LPCSTR; dwEncodingType: DWORD; hCryptProv: HCRYPTPROV; dwFlags: DWORD; const pvPara: Pointer):HCERTSTORE; stdcall;
+  {$EXTERNALSYM CertOpenSystemStore}
+  CertOpenSystemStore: function(hProv: HCRYPTPROV; szSubsystemProtocol: LPCWSTR): HCERTSTORE; stdcall;
+  {$EXTERNALSYM CertCloseStore}
+  CertCloseStore: function(hCertStore: HCERTSTORE; dwFlags: DWORD): BOOL; stdcall;
+  {$EXTERNALSYM CertFindCertificateInStore}
+  CertFindCertificateInStore: function(hCertStore: HCERTSTORE; dwCertEncodingType: DWORD; dwFindFlags: DWORD; dwFindType: DWORD;
+                                 const pvFindPara: Pointer; pPrevCertContext: PCCERT_CONTEXT):PCCERT_CONTEXT; stdcall;
+
+{$EndRegion 'WinCrypt headers'}
+
+implementation

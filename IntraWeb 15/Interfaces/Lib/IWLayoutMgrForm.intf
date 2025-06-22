@@ -1,0 +1,32 @@
+unit IWLayoutMgrForm;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes,
+  IWContainerLayout, IWRenderContext, IWBaseHTMLInterfaces, IWBaseRenderContext,
+  IW.Common.RenderStream, IWHTMLTag;
+
+type
+  {$include IWPlatformAttrib.inc}
+  TIWLayoutMgrForm = class(TIWContainerLayout)
+  protected
+    procedure InitControl; override;
+    procedure InsertClassID(aContainer: TIWContainerContext;
+      const APageContext: TIWBaseHTMLPageContext; const AControl: IIWBaseHTMLComponent; const aEmitStyle: boolean = true);
+    function CreateDefaultFormTag: TIWHTMLTag; virtual;
+  public
+    procedure ProcessControls(AContainerContext: TIWContainerContext;
+      APageContext: TIWBaseHTMLPageContext); override;
+    procedure ProcessControl(AContainerContext: TIWContainerContext;
+      APageContext: TIWBaseHTMLPageContext; AControl: IIWBaseHTMLComponent); override;
+    procedure Process(ABuffer: TIWRenderStream;
+      AContainerContext: TIWContainerContext;
+      APageContext: TIWBasePageContext); override;
+    function RenderStyle(ABaseHTMLControl: IIWBaseHTMLControl): string; override;
+  published
+    property StyleAttributesToRemove;
+  end;
+
+implementation

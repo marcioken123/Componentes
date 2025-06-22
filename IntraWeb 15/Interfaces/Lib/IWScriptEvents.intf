@@ -1,0 +1,72 @@
+unit IWScriptEvents;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Windows, Classes, SysUtils, IWRenderContext, IWUtils, IW.Common.Lists;
+
+type
+  TIWScriptEventsItem = class(TCollectionItem)
+  strict private
+    FEventCode: TStrings;
+    FEventName: string;
+    FHookedCodeList: TIWObjectList;
+  private
+    FTransient: Boolean;
+  protected
+    procedure SetEventCode(const Value: TStrings);
+    procedure SetEventCodeAsString(const Value: string);
+    procedure SetEventName(const Value: string);
+    procedure AddHookScript(const Value: string);
+  public
+    constructor Create(ACollection: TCollection); override;
+    destructor Destroy; override;
+    procedure Assign(ASource: TPersistent); override;
+    procedure ClearHookedCode;
+    property EventName: string read FEventName write SetEventName;
+    property HookedCodeList: TIWObjectList read FHookedCodeList;
+  published
+    property EventCode: TStrings read FEventCode write SetEventCode;
+    property Event: string read FEventName write SetEventName;
+  end;
+
+  TIWScriptEvents = class(TOwnedCollection)
+  private
+    function GetItem(AIndex: Integer): TIWScriptEventsItem;
+    procedure SetItem(AIndex: Integer; const Value: TIWScriptEventsItem);
+    function GetCodeByEventName(const AEventName: string): string;
+    procedure SetCodeByEventName(const AEventName, AEventCode: string);
+    function GetCode(AItemIndex: Integer): string;
+    procedure SetCode(AItemIndex: Integer; const AEventCode: string);
+  protected
+    FDefaultHandlers: string;
+    FProperties: TIWSimpleJSON;
+    FRendering: Boolean;
+    function GetHookedCount(AIndex: Integer): Integer;
+    function GetHookedCode(AItemIndex, ACodeIndex: Integer): string;
+  public
+    constructor Create(AOwner: TPersistent);
+
+    function Add(const AEventName: string): TIWScriptEventsItem; overload;
+    function Add(const AEventName, AEventCode: string): TIWScriptEventsItem; overload;
+    procedure HookEvent(const AEventName: string; AEventCode: string);
+    procedure HookDefaultHandler(const AEventName: string; const LockOnAsync: Boolean); overload;
+    procedure HookDefaultHandler(const AEventName, AEventData: string); overload;
+    procedure HookIWCLProperty(const Name, Value: string);
+    function RenderEvents(APageContext: TIWPageContext40): string;
+    procedure Clear;
+    procedure ClearHooked;
+    function IndexOf(const AEventName: string): Integer;
+
+    property Items[AIndex: Integer]: TIWScriptEventsItem read GetItem write SetItem;
+    property Values[const AEventName: string]: string read GetCodeByEventName write SetCodeByEventName;
+    property Code[AItemIndex: Integer]: string read GetCode write SetCode;
+    property DefaultHandlers: string read FDefaultHandlers;
+    property HookedCount[AIndex: Integer]: Integer read GetHookedCount;
+    property HookedCode[AItemIndex, ACodeIndex: Integer]: string read GetHookedCode;
+    property IWCLProperties: TIWSimpleJSON read FProperties write FProperties;
+    property Rendering: Boolean read FRendering write FRendering default False;
+  end;
+
+implementation

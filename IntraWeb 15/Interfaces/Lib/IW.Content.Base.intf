@@ -1,0 +1,56 @@
+unit IW.Content.Base;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, IWApplication, IW.Http.Request, IW.Http.Reply;
+
+type
+  TBeforeExecuteHandlerProc = procedure(Sender: TObject; var Continue: Boolean) of object;
+
+  TRedirectToPathEvent = procedure(Sender: TObject; const aPathInfo: string; var aPath: string; var aRedirect: Boolean);
+
+  TContentBase = class(TObject)
+  protected
+    mPath: string;
+    mFileMustExist: Boolean;
+    mCanStartSession: Boolean;
+    mRequiresSessionStart: Boolean;
+    mRequiresSession: Boolean;
+    mOnBeforeExecute: TBeforeExecuteHandlerProc;
+    mRedirectToPath: Boolean;
+    mOnRedirectToPath: TRedirectToPathEvent;
+    //
+    procedure Send404(aReply: THttpReply); virtual;
+    function Execute(aRequest: THttpRequest; aReply: THttpReply; const aPathname: string;
+                    aSession: TIWApplication; aParams: TStrings): Boolean; virtual;
+    // in TIWAppForm, RequestAuth is a class method, but it is an object method here
+  public
+    constructor Create; virtual;
+    function DoExecute(aRequest: THttpRequest; aReply: THttpReply; const aPathname: string;
+                       aSession: TIWApplication; aParams: TStrings): Boolean;
+    function RequestAuth(aRequest: THttpRequest; var rGroup: string): Boolean; virtual;
+    property Path: string read mPath;
+    // True if this is a "file based" handler, i.e. the handler needs the existence of some file to be executed
+    property FileMustExist: Boolean read mFileMustExist write mFileMustExist default True;
+    // This property controls if the content handler can be used to respond to the first request of the session
+    // e.g. if the FIRST requested URL is something like http://server:port/MyHandlerPath, and MyHandlerPath is registered for this specific handler,
+    // it will then be executed if CanStartSession is TRUE. Otherwise it will be ignored and the Application main form will be executed instead.
+    property CanStartSession: Boolean read mCanStartSession write mCanStartSession default False;
+    // RequiresSessionStart means that this content handler will only be executed AFTER session has been
+    // fully started, i.e. /$/SessionStart has been executed
+    // This property is ignored if CanStartSession is FALSE
+    property RequiresSessionStart: Boolean read mRequiresSessionStart write mRequiresSessionStart default True;
+    // if RequiresSession = False then IW will Execute this content handler *BEFORE* obtaining a session
+    // i.e. aSession parameter in Execute() method will be NIL.
+    property RequiresSession: Boolean read mRequiresSession write mRequiresSession default True;
+    // if Path doesn't match the path specified for the content handler, it will redirect to the handler's path,
+    // meaning that it will actually run twice
+	// TODO: Default is False but I don't want to touch the interface section
+    property RedirectToPath: Boolean read mRedirectToPath write mRedirectToPath default True;
+    property OnBeforeExecute: TBeforeExecuteHandlerProc read mOnBeforeExecute write mOnBeforeExecute;
+    property OnRedirectToPath: TRedirectToPathEvent read mOnRedirectToPath write mOnRedirectToPath;
+  end;
+
+implementation

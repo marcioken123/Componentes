@@ -1,0 +1,78 @@
+unit IWCallBackFunc;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, Classes, IW.Common.StrLists, Generics.Collections, Generics.Defaults,
+  IW.Common.HashUtils;
+
+type
+  // Although we could declare these types using generics such as TProc<T>, TProc<T1, T2>, etc,
+  // the missing parameter names and method signatures would make things much more
+  // obscure especially for IW users, so I'm declaring these types explicitly here:
+
+  // These are the new async method types available since 15.1
+  TIWCallbackProc0 = {$IFDEF DELPHI} reference to {$ENDIF} procedure {$IFDEF FPC} of Object {$ENDIF};
+
+  TIWCallbackProc1 = {$IFDEF DELPHI} reference to {$ENDIF} procedure (aParams: TStrings) {$IFDEF FPC} of Object {$ENDIF};
+
+  TIWCallbackProc2 = {$IFDEF DELPHI} reference to {$ENDIF} procedure (aParams: TStrings; out aResult: string) {$IFDEF FPC} of Object {$ENDIF};
+
+  TIWCallbackProc3 = {$IFDEF DELPHI} reference to {$ENDIF} procedure (aParams: TStrings; out aResult: string; var aHandled: Boolean) {$IFDEF FPC} of Object {$ENDIF};
+
+  TIWCallbackProc4 = {$IFDEF DELPHI} reference to {$ENDIF} procedure (aParams: TStrings; out aResult, aContentType: string; var aHandled: Boolean) {$IFDEF FPC} of Object {$ENDIF};
+
+  // This is the original callback method type
+  TIWCallbackMethod = procedure (aParams: TStringList) of object;
+
+  // TIWCallbackFunction is the type name used since the introduction of callbacks in IW
+  TIWCallbackFunction = TIWCallbackMethod;
+
+  IIWCallbackRef = Interface
+    ['{E70114DF-89C5-4D6A-8873-C4E16E512212}']
+    procedure Execute(aParams: TStrings; out aResult, aContentType: string; var aHandled: Boolean);
+    // used to unregister methods. Only object methods can be unregistered by using the method pointer
+    function MethodPtr: TIWCallbackMethod;
+  end;
+
+  TIWCallbackDictionary = TDictionary<string,IIWCallbackRef>;
+
+//  A type like this is not compatible with C++ Builder 2009/2010, possibly others
+//  TIWCallbackDictionary = class(TDictionary<string,TIWCallbackRec>)
+//  public
+//    constructor Create; overload;
+//  end;
+
+  TIWCallBacks = class
+  private
+    FList: TIWCallbackDictionary;
+    FSession: TObject;
+    FEventParams: TIWStringList;
+    FExtendedErrorInfo: string;
+    procedure Invoke(ACallbackRec: IIWCallbackRef);
+    function GetList: TIWCallbackDictionary;
+  public
+    constructor Create(ASession: TObject);
+    destructor Destroy; override;
+    // Register object methods as callbacks. This is the default, used by all controls
+    procedure &Register(const AName: string; AMethod: TIWCallbackMethod); overload;
+    // New: allow registration of anonymous methods as callbacks. These methods
+    // can't be unregistered using the method reference.
+    procedure &Register(const AName: string; AProc: TIWCallbackProc0); overload;
+    procedure &Register(const AName: string; AProc: TIWCallbackProc1); overload;
+    procedure &Register(const AName: string; AProc: TIWCallbackProc2); overload;
+    procedure &Register(const AName: string; AProc: TIWCallbackProc3); overload;
+    procedure &Register(const AName: string; AProc: TIWCallbackProc4); overload;
+    procedure Unregister(AMethod: TIWCallbackMethod); overload;
+    procedure Unregister(const AName: string); overload;
+    procedure PerformCallBack(Sender: TComponent; const AName: string);
+    function FindCallback(const AName: string; var ACallbackRec: IIWCallbackRef): Boolean;
+    function Exists(const AName: string): Boolean;
+    property List: TIWCallbackDictionary read GetList;
+    // Debugging aid stuff
+    function GetRegisteredMethods: string;
+    property ExtendedErrorInfo: string read FExtendedErrorInfo;
+  end;
+
+implementation

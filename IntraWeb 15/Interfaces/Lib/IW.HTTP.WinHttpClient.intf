@@ -1,0 +1,28 @@
+unit IW.HTTP.WinHttpClient;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, Classes, IW.HTTP.ClientBase, IW.HTTP.WinHttp;
+
+type
+  TIWWinHttpClient = class(TIWHttpClientBase)
+  private
+    mHTTPClient: TWinHttpClient;
+  protected
+    procedure ClientGet; override;
+    procedure ClientDelete; override;
+    procedure ClientPost; override;
+    procedure ClientPut; override;
+    procedure SetProps; override;
+    procedure HandleError(E: Exception); override;
+    procedure HandleResponse; override;
+    function SetRequestParams(AParams: TStringList): string; override;
+  public
+    constructor Create; override;
+    destructor Destroy; override;
+    property HTTPClient: TWinHttpClient read mHTTPClient;
+  end;
+
+implementation

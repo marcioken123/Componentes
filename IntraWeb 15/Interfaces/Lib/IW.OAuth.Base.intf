@@ -1,0 +1,207 @@
+unit IW.OAuth.Base;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  SysUtils, Classes, {$IFDEF FPC} IW.Common.FPCCompat, {$ENDIF} IW.Common.Threads, IW.Common.Lists;
+
+type
+  ToaGrantType = (gtAuthorizationCode, gtClientCredentials, gtRefreshToken, gtImplicit, gtPasswordCredentials);
+
+  ToaResponseType = (rtCode, rtToken, rtIdToken, rtCodeIdToken, rtCodeToken);
+
+  ToaAccessType = (atOnline, atOffline);
+
+  ToaResponseMode = (rmQuery, rmFragment, rmFormPost, rmJWT, rmWebMessage);
+
+  ToaPromptType = (ptDefault, ptConsent, ptLogin, ptNone);  // not all types are supported by some specific provider
+
+  TIWOAuthApplication = class abstract
+  private
+    // request fields
+    FTenantID: string;
+    FClientID: string;
+    FClientSecret: string;
+    FScope: string;
+    FProjectID: string;
+    FTokenEndpoint: string;
+    FAuthorizationEndpoint: string;
+    FUserInfoEndpoint: string;
+    FTokenInfoEndpoint: string;
+    FRedirectUrl: string;
+    FPromptType: ToaPromptType;
+    FAutoReleaseClient: Boolean;
+    FSuccessRedirectUrl: string;
+    FErrorRedirectUrl: string;
+  protected
+    class function GetApiId: string; virtual; abstract;
+  public
+    constructor Create; virtual;
+    procedure ResetToDefaults; virtual; abstract;
+    procedure LoadFromJsonFile(const aFilename: string = ''); virtual; abstract;
+    function CreateOAuthClient: TObject; virtual; abstract;
+    function RegisterApplication: Boolean;
+    property ApiId: string read GetApiId; // ApiId is the ID for which we will locate the applications e.g. "Azure" or "Google"
+    {$Region 'API-Related properties'}
+    property TenantID: string read FTenantID write FTenantID;
+    property ClientID: string read FClientID write FClientID;
+    property ClientSecret: string read FClientSecret write FClientSecret;
+    property Scope: string read FScope write FScope;
+    property ProjectID: string read FProjectID write FProjectID;
+    property PromptType: ToaPromptType read FPromptType write FPromptType default ptDefault;
+    // Url can contain variables such as {tenant} which will be replaced by TenantID
+    // e.g. Microsoft oAuth: https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/token
+    property TokenEndpoint: string read FTokenEndpoint write FTokenEndpoint;
+    // e.g. Microsoft oAuth: https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/authorize
+    property AuthorizationEndpoint: string read FAuthorizationEndpoint write FAuthorizationEndpoint;
+    // endpoint used to retrieve user information
+    property UserInfoEndpoint: string read FUserInfoEndpoint write FUserInfoEndpoint;
+    // endpoint used to check an access token
+    property TokenInfoEndpoint: string read FTokenInfoEndpoint write FTokenInfoEndpoint;
+    // callback url used by the API when authorization is executed
+    property RedirectUrl: string read FRedirectUrl write FRedirectUrl;
+    {$EndRegion}
+    {$Region 'IntraWeb-Related properties'}
+    property AutoReleaseClient: Boolean read FAutoReleaseClient write FAutoReleaseClient default True;
+    property SuccessRedirectUrl: string read FSuccessRedirectUrl write FSuccessRedirectUrl;
+    property ErrorRedirectUrl: string read FErrorRedirectUrl write FErrorRedirectUrl;
+    {$EndRegion}
+  end;
+
+  TIWOAuthApplications = class
+  strict private
+    class var FList: TIWObjectList;
+    class var Lock: TIWSlimReaderWriter;
+    class function InternalFind(const ApiId: string): TIWOAuthApplication;
+  public
+    class {$IFNDEF VER200}constructor{$ELSE}procedure{$ENDIF} CreateClass;
+    class {$IFNDEF VER200}destructor{$ELSE}procedure{$ENDIF} DestroyClass;
+    class function RegisterApplication(AOAuthApp: TIWOAuthApplication): Boolean;
+    class function Find(const ApiId: string): TIWOAuthApplication;
+  end;
+
+  TOAuthToken = class
+  private
+    FAccessToken: string;
+    FRefreshToken: string;
+    FTokenType: string;
+    FExpiresIn: Int64;
+    FExpiresAt: TDateTime;
+    FIdToken: string;
+    FApiId: string;
+    procedure SetExpiresIn(Value: Int64);
+    procedure SetRefreshToken(const Value: string);
+  public
+    procedure ResetToDefaults;
+    procedure ResetRefreshToken;
+    function Clone: TOAuthToken;
+    function NeedsRefresh: Boolean;
+    property AccessToken: string read FAccessToken write FAccessToken;
+    property RefreshToken: string read FRefreshToken write SetRefreshToken;
+    property TokenType: string read FTokenType write FTokenType;
+    property ExpiresIn: Int64 read FExpiresIn write SetExpiresIn;
+    property ExpiresAt: TDateTime read FExpiresAt;
+    property IdToken: string read FIdToken write FIdToken;
+    property ApiId: string read FApiId write FApiId;
+  end;
+
+  TIWOAuthClientBase = class;
+
+  TOAuthUserInfo = class
+  private
+    FId: string;
+    FEmail: string;
+    FName: string;
+    FSurname: string;
+    FGivenName: string;
+    FVerifiedEmail: Boolean;
+    FPictureUrl: string;
+  public
+    property Id: string read FId write FId;
+    property Email: string read FEmail write FEmail;
+    property Name: string read FName write FName;
+    property GivenName: string read FGivenName write FGivenName;
+    property Surname: string read FSurname write FSurname;
+    property VerifiedEmail: Boolean read FVerifiedEmail write FVerifiedEmail;
+    property PictureUrl: string read FPictureUrl write FPictureUrl;
+    procedure ResetToDefaults;
+    function Clone: TOAuthUserInfo;
+  end;
+
+  TOnGetStateEvent = TFunc<string>;
+
+  TOAuthErrorInfo = record
+    Response: string;
+    ResponseCode: Integer;
+    ErrorCode: Integer;
+  end;
+
+  // This declares the public interface of the concrete classes
+  TIWOAuthClientBase = class abstract
+  private
+    FApp: TIWOAuthApplication;
+    FToken: TOAuthToken;
+    FUserInfo: TOAuthUserInfo;
+    FState: string;
+    FOnGetState: TOnGetStateEvent;
+    FPromptType: ToaPromptType;
+    FRedirectUrl: string;
+  protected
+    function GetGrantType(aGrantType: ToaGrantType): string;
+    function GetResponseType(aResponseType: ToaResponseType): string;
+    function GetAccessType(aAccessType: ToaAccessType): string;
+    function GetResponseMode(aResponseMode: ToaResponseMode): string;
+    procedure StateNeeded;
+    procedure PropNeeded(const aPropName, aPropValue: string);
+  protected
+    procedure ResetToDefaults; virtual; abstract;
+  public
+    constructor Create(AOAuthApp: TIWOAuthApplication); virtual;
+    destructor Destroy; override;
+
+    function RequestAuthorizationCode: string; virtual; abstract;
+    function ExchangeAccessToken(const aAuthorizationCode: string): Boolean; virtual; abstract;
+    function RefreshAccessToken: Boolean; virtual; abstract;
+    function GetUserInfo: Boolean; virtual; abstract;
+    function GetErrorInfo: TOAuthErrorInfo; virtual; abstract;
+    function ValidateAccessToken(const aAccessToken, aRefreshToken: string): Boolean; virtual; abstract;
+
+    property App: TIWOAuthApplication read FApp;
+    property Token: TOAuthToken read FToken;
+    property UserInfo: TOAuthUserInfo read FUserInfo;
+    property State: string read FState write FState;
+    property PromptType: ToaPromptType read FPromptType write FPromptType; // default is  default ptDefault (same as TIWOAuthApplication)
+    property RedirectUrl: string read FRedirectUrl write FRedirectUrl;  // may differ from Application's
+    // callback to retrieve Session ID
+    property OnGetState: TOnGetStateEvent read FOnGetState write FOnGetState;
+  end;
+
+  // Extracted from TIWApplication, handles WebApplication's oAuth authentication code
+  TOAuthController = class
+  private
+    FSessionId,
+    FApplicationUrl: string;
+    FOAuthClient: TIWOAuthClientBase;
+    FOAuthUserInfo: TOAuthUserInfo;
+    FOAuthAccessToken: TOAuthToken;
+    FOnNavigate: TProc<string>;
+    function GetApp: TIWOAuthApplication;
+  protected
+    procedure SaveToken;
+  public
+    destructor Destroy; override;
+    procedure Init(const ASessionId, AApplicationUrl: string);
+    procedure StartAuthentication(const ApiId: string);
+    function ValidateAccessToken(const ApiId, AccessToken, RefreshToken: string): Boolean;
+    function ExchangeAccessToken(const aCode: string): Boolean;
+    procedure ReleaseClient;
+    function GetErrorInfo: TOAuthErrorInfo;
+    property App: TIWOAuthApplication read GetApp;
+    property Client: TIWOAuthClientBase read FOAuthClient;
+    property UserInfo: TOAuthUserInfo read FOAuthUserInfo;
+    property Token: TOAuthToken read FOAuthAccessToken;
+    property OnNavigate: TProc<string> read FOnNavigate write FOnNavigate;
+  end;
+
+implementation

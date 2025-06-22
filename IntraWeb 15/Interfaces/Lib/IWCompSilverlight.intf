@@ -1,0 +1,67 @@
+unit IWCompSilverlight;
+{$I IWCompilerDefines.inc}
+{$WARN SYMBOL_DEPRECATED OFF}
+
+interface
+
+uses
+  Classes, IWHTMLTag, IWControl, IWGlobal, IWColor,
+  IWRenderContext, IWFileReference;
+
+type
+  TIWBaseSilverlight = class(TIWCustomControl)
+  protected
+    FXAP: TIWFileReference;
+    FBGColor: TIWColor;
+    FWindowless: Boolean;
+    FFramerate: Integer;
+    FEnableFramerateCounter: Boolean;
+    //
+    procedure InitControl; override;
+    procedure InitDesignTime; override;
+    function RenderSilverlight: string;
+  public
+    constructor Create(AOwner: TComponent); override;
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+    destructor Destroy; override;
+  published
+    property EnableFramerateCounter: Boolean read FEnableFramerateCounter write FEnableFramerateCounter;
+    property Framerate: Integer read FFramerate write FFramerate;
+    property BGColor: TIWColor read FBGColor write FBGColor;
+    property Windowless: Boolean read FWindowless write FWindowless;
+    property XAP: TIWFileReference read FXAP write FXAP;
+  end deprecated 'Silverlight is deprecated by Microsoft';
+
+  {$include IWPlatformAttrib.inc}
+  TIWSilverlight = class(TIWBaseSilverlight)
+  end;
+
+  // Get the list from the MSDN Docs
+  TIWSilverlightVideoStretch = (stretchNone, stretchUniform, stretchUniformToFill, stretchFill);
+
+  {$include IWPlatformAttrib.inc}
+  TIWSilverlightVideo = class(TIWBaseSilverlight)
+  protected
+    FAutoPlay: Boolean;
+    FIsMuted: Boolean;
+    FStretch: TIWSilverlightVideoStretch;
+    FVolume: Integer;
+    FMedia: TIWFileReference;
+    FShowControls: Boolean;
+    procedure SetMedia(const Value: TIWFileReference);
+    function RenderShowControls(AContents: TStringList): string;
+    function RenderVideoControlsJS(AControl: string): string;
+    procedure InitControl; override;
+    procedure SetVolume(const Value: Integer);
+  public
+    function RenderHTML(AContext: TIWCompContext): TIWHTMLTag; override;
+  published
+    property AutoPlay: Boolean read FAutoPlay write FAutoPlay;
+    property Muted: Boolean read FIsMuted write FIsMuted;
+    property Stretch: TIWSilverlightVideoStretch read FStretch write FStretch;
+    property Volume: Integer read FVolume write SetVolume;
+    property Media: TIWFileReference read FMedia write SetMedia;
+    property ShowControls: Boolean read FShowControls write FShowControls;
+  end deprecated 'Silverlight is deprecated by Microsoft. Use TIWVideo instead';
+
+implementation

@@ -1,0 +1,22 @@
+unit IW.Content.Redirect;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, IW.Content.Base, IWApplication, IW.HTTP.Request, IW.HTTP.Reply;
+
+type
+  TContentRedirect = class(TContentBase)
+  protected
+    mURL: string;
+    FPrependBaseUrl: Boolean;
+    //
+    function Execute(aRequest: THttpRequest; aReply: THttpReply; const aPathname: string;
+                     aSession: TIWApplication; aParams: TStrings): Boolean; override;
+  public
+    constructor Create(const aURL: string); reintroduce; overload;
+    property PrependBaseUrl: Boolean read FPrependBaseUrl write FPrependBaseUrl;
+  end;
+
+implementation

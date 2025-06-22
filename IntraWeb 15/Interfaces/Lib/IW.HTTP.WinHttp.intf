@@ -1,0 +1,122 @@
+unit IW.HTTP.WinHttp;
+{$I IWCompilerDefines.inc}
+
+interface
+
+{.$DEFINE DEBUG_WINHTTP}
+
+uses
+  Classes, SysUtils, IW.HTTP.WinHttpHeaders, IW.Common.StrLists;
+
+type
+  TWinHttpRequest = class
+  private
+    FHeaders: TIWStringList;
+    FUserAgent: string;
+    FContentType: string;
+    FContentStream: TStream;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function EncodeFormData(const FormData: TStringList): string;
+    procedure ResetToDefaults;
+    property Headers: TIWStringList read FHeaders write FHeaders;
+    property UserAgent: string read FUserAgent write FUserAgent;
+    property ContentType: string read FContentType write FContentType;
+    property ContentStream: TStream read FContentStream write FContentStream;
+  end;
+
+  TWinHttpResponse = class
+  private
+    FHeaders: TIWStringList;
+    FStatusCode: Integer;
+    FStatusText: string;
+    FContentStream: TStream;
+    FContentLength: Int64;
+    FErrorCode: Integer;
+    FErrorMessage: string;
+    function GetContentType: string;
+    function GetContentAsString: string;
+    procedure SetContentStream(AStream: TStream);
+  public
+    constructor Create;
+    destructor Destroy; override;
+    procedure ResetToDefaults;
+    property StatusCode: Integer read FStatusCode;
+    property StatusText: string read FStatusText;
+    property ContentStream: TStream read FContentStream;
+    property ContentAsString: string read GetContentAsString;
+    property ContentType: string read GetContentType;
+    property ContentLength: Int64 read FContentLength;
+    property Headers: TIWStringList read FHeaders;
+    property ErrorCode: Integer read FErrorCode;
+    property ErrorMessage: string read FErrorMessage;
+  end;
+
+  TUrlParts = record
+    Protocol: string;
+    Host: string;
+    Port: Integer;
+    UrlPath: string;
+    Params: string;
+  end;
+
+  EWinHttpClientException = class(Exception);
+
+  TWinHttpClient = class
+  private
+    FRequest: TWinHttpRequest;
+    FResponse: TWinHttpResponse;
+    FConnectTimeout,
+    FReadTimeout: Integer;
+    FClientCertThumbprint: string;
+    FClientCertContext: Pointer;
+    function SendRequest(const AMethod, AUrl: string; AContent: TStream): Boolean;
+    function GetHttpQueryNInfo(hRequest: Pointer; InfoLevel: Cardinal): Cardinal;
+    function GetHttpQuerySInfo(hRequest: Pointer; InfoLevel: Cardinal): string;
+    function GetRequestContentStream(AStream: TStream; var AMustFreeStream: Boolean): TMemoryStream;
+    function WinHttpErrorToString(const aValue: LongInt): string;
+    procedure GetResponseContentStream(hRequest: Pointer);
+    procedure SetTimeouts(hInet: Pointer);
+    procedure SetClientCertificate(hRequest: Pointer);
+    procedure SetLastError(const aMethodName: string; aCode: Integer = 0);
+    procedure RaiseLastError(const aMethodName: string; aCode: Integer = 0);
+  public
+    constructor Create;
+    procedure AfterConstruction; override;
+    destructor Destroy; override;
+    procedure ResetToDefaults;
+    class procedure ParseURL(const AURL: string; var UrlParts: TUrlParts);
+    function Delete(const AUrl: string): Boolean; overload;
+    function Get(const AUrl: string; AResponseStream: TStream): Boolean;
+    function Post(const AUrl: string; AResponseStream: TStream): Boolean; overload;
+    function Post(const AUrl: string; AParams: TStream; AResponseStream: TStream): Boolean; overload;
+    function Post(const AUrl, AParams: string; AResponseStream: TStream): Boolean; overload;
+    function Put(const AUrl: string; AResponseStream: TStream): Boolean; overload;
+    function Put(const AUrl: string; AParams: TStream; AResponseStream: TStream): Boolean; overload;
+    function Put(const AUrl, AParams: string; AResponseStream: TStream): Boolean; overload;
+    procedure ReleaseClientCertificate;
+    property Response: TWinHttpResponse read FResponse;
+    property Request: TWinHttpRequest read FRequest;
+    property ConnectTimeout: Integer read FConnectTimeout write FConnectTimeout default -1;  // never timesout
+    property ReadTimeout: Integer read FReadTimeout write FReadTimeout default -1;
+    property ClientCertificateThumbprint: string read FClientCertThumbprint write FClientCertThumbprint;
+  end;
+
+// Delphi wrappers for functions declared in WinHttp
+type
+  PCharArr = array of PChar;
+
+function _HttpOpen(const Agent: string; AccessType: Integer; const Proxy, ProxyByPass: string; Flags: Integer): Pointer;
+function _HttpSetTimeout(hInet: Pointer; aConnectTimeout, aReadTimeout: Integer): Boolean;
+function _HttpConnect(hInet: Pointer; const ServerName: string; nServerPort: Word): Pointer;
+function _HttpCloseHandle(HINet: Pointer): Boolean;
+function _HttpQueryHeaders(hRequest: Pointer; InfoLevel: Cardinal; Buffer: Pointer; var BufferLength: Cardinal): Boolean;
+function _HttpReceiveResponse(hRequest: Pointer): Boolean;
+function _HttpReadData(hRequest: Pointer; var Buffer; NumberOfBytesToRead: Cardinal; var NumberOfBytesRead: Cardinal): Boolean;
+function _HttpQueryDataAvailable(hFile: Pointer; var NumberOfBytesAvailable: Cardinal): Boolean;
+function _HttpOpenRequest(hConnect: Pointer; const Verb, ObjectName, Version, Referrer: string; AcceptTypes: PCharArr; Flags: Cardinal): Pointer;
+function _HttpSendRequest(hRequest: Pointer; const Headers: string; Optional: Pointer; OptionalLength, TotalLength: Cardinal): Boolean;
+function _HttpCrackUrl(const Url: string; dwFlags: Cardinal; var lpUrlComponents: TURLComponents): Boolean;
+
+implementation

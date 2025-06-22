@@ -1,0 +1,22 @@
+unit IW.Browser.SearchEngine;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  IW.Browser.Browser;
+
+type
+  TSearchEngine = class(TBrowser)
+  protected
+    function GetEngineName: string;
+  public
+    const
+      BROWSER_NAME = 'Search Engine';
+      MIN_VERSION = 0;
+    constructor Create(aVersion: single); override;
+    class function Match(AUserAgent: string; out AVersion: Single): Boolean; override;
+    property EngineName: string read GetEngineName;
+  end;
+
+implementation

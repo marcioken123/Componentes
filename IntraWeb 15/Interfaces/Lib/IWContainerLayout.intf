@@ -1,0 +1,82 @@
+unit IWContainerLayout;
+{$I IWCompilerDefines.inc}
+
+interface
+
+uses
+  Classes, Controls, IW.Common.Lists,
+  IWVCLComponent, IWBaseContainerLayout, IWRenderContext, IWBaseInterfaces,
+  IWBaseHTMLInterfaces, IWBaseRenderContext, IW.Common.RenderStream;
+
+type
+  TIWLayoutType = (ltGrid, ltFlow);
+
+  TIWContainerLayout = class(TIWBaseContainerLayout)
+  private
+    FStyleAttributesToRemove: TStringList;
+    procedure SetStyleAttributesToRemove(const Value: TStringList);
+    function IsStyleAttributesToRemoveStored: Boolean;
+  protected
+    FAllowFrames: Boolean;
+    FLayoutType: TIWLayoutType;
+    FRenderStyles: Boolean;
+    //
+    procedure SetAllowFrames(AValue: Boolean);
+    function ScriptSection(APageContext: TIWPageContext40): string; virtual;
+    function ScriptRenderErrors(APageContext: TIWPageContext40): string;
+    function BodyScriptSection(APageContext: TIWPageContext40): string; virtual;
+    function ScriptIWCLInitProc(APageContext: TIWPageContext40): string;
+    procedure SetLayoutType(AType: TIWLayoutType);
+    procedure InitControl; override;
+    function FindParentID(AContainerContext: TIWContainerContext; AComponent: TComponent): string; virtual;
+  public
+    destructor Destroy; override;
+    // TIWBaseContainerLayout.Process is ABSTRACT. To use TIWContainerLayout we have to implement it
+    procedure Process(AStream: TIWRenderStream;
+      AContainerContext: TIWContainerContext; APageContext: TIWBasePageContext); override;
+    procedure ProcessAsync(AContainerContext: TIWContainerContext; APageContext: TIWBasePageContext); virtual;
+    procedure ProcessControl(AContainerContext: TIWContainerContext;
+      APageContext: TIWBaseHTMLPageContext; AControl: IIWBaseHTMLComponent); virtual;
+    procedure ProcessControls(AContainerContext: TIWContainerContext;
+      APageContext: TIWBaseHTMLPageContext); virtual;
+    procedure ProcessAsyncControls(AContainerContext: TIWContainerContext;
+      APageContext: TIWBaseHTMLPageContext; ANewComponentsList: TIWListBase); virtual;
+    function RenderStyle(AControl: IIWBaseHTMLControl): string; virtual;
+    function RenderStyleAttribute(AComponent: TComponent; const AStyleAttribName: string): Boolean; virtual;
+    property AllowFrames: Boolean read FAllowFrames;
+    property LayoutType: TIWLayoutType read FLayoutType;
+    property StyleAttributesToRemove: TStringList read FStyleAttributesToRemove write SetStyleAttributesToRemove stored IsStyleAttributesToRemoveStored;
+    property RenderStyles: Boolean read FRenderStyles write FRenderStyles default True;
+  end;
+
+  TIWOnGetVariableValueEvent = procedure (const ASender: TComponent; const AName: string; var Value: string) of object;
+
+  TIWTemplateVariable = (tvWWWRoot, tvAppUrlBase, tvCacheUrlBase, tvUserCacheUrlBase, tvInternalUrlBase, tvAppUrl);
+
+  TIWTemplateProcessorBase = class(TIWContainerLayout)
+  private
+    FVariables: TStringList;
+    FOnGetVariableValue: TIWOnGetVariableValueEvent;
+    function IsVariablesStored: Boolean;
+    procedure SetVariables(AValue: TStringList);
+    function ReplaceUserVariable(var ASource, AName, AValue: string): Boolean;
+    function ReplaceIWVariable(APageContext: TIWBasePageContext; var ASource: string; AVariable: TIWTemplateVariable): Boolean;
+  protected
+    procedure InitControl; override;
+    function ReplaceVariables(APageContext: TIWBasePageContext; var ASource: string): Boolean;
+    function PreProcessTemplate(APageContext: TIWBasePageContext; var ASource: string): Boolean; virtual;
+    function GetIWVariableValue(APageContext: TIWBasePageContext; const AVariable: TIWTemplateVariable): string; virtual;
+  public
+    destructor Destroy; override;
+  published
+    property Variables: TStringList read FVariables write SetVariables stored IsVariablesStored;
+    property OnGetVariableValue: TIWOnGetVariableValueEvent read FOnGetVariableValue write FOnGetVariableValue;
+  end;
+
+
+const
+  IWTemplateVariableNames: array [TIWTemplateVariable] of string = (
+    'WWWROOT', 'APPURLBASE', 'CACHEURLBASE', 'USERCACHEURLBASE', 'INTERNALURLBASE', 'APPURL'
+  );
+
+implementation
