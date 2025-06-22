@@ -1,0 +1,49 @@
+ - Validating license
+License validated
+License written to registry
+BPL path for D10_4 is C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl\
+BPL path for D10_4 is C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl\
+BPL path for D10_4 is C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl\
+BPL path for D10_4 is C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl\
+BPL path for D10_4 is C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl\
+BPL path for D10_4 is C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl\
+dclIntraweb_15_D10_4.bpl - UnRegisterDesignTimePackage
+Removing old IntraWeb Design Packages registration on: HKCU Software\Embarcadero\BDS\21.0
+Removing design time packages files
+Removing runtime packages files
+Removing design packages files from Windows\System32 folder
+Removing runtime packages files from Windows\System32 folder
+RemoveIWFiles
+BPL path for D10_4 is C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl\
+BPL path for D10_4 is C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl\
+BPL path for D10_4 is C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl\
+BPL path for D10_4 is C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl\
+BPL path for D10_4 is C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl\
+BPL path for D10_4 is C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl\
+ - UpdateSearchPathOnRegistry
+Reading registry: SOFTWARE\Embarcadero\BDS\21.0\Library\Win32
+Updating registry: adding d:\Projetos\Componentes\IntraWeb 15\LibD10_4W32; to Search Path
+Updating registry: adding d:\Projetos\Componentes\IntraWeb 15\LibD10_4W32; to Search Path
+ - UpdateSearchPathOnRegistry
+Reading registry: SOFTWARE\Embarcadero\BDS\21.0\Library\Win64
+Updating registry: adding d:\Projetos\Componentes\IntraWeb 15\LibD10_4W64; to Search Path
+Updating registry: adding d:\Projetos\Componentes\IntraWeb 15\LibD10_4W64; to Search Path
+ - UpdateGlobalsOnRegistry
+SOFTWARE\Embarcadero\BDS\21.0\Globals - ForceEnvOptionsUpdate
+ - UpdateCPPPathsOnRegistry
+Reading registry: Software\Embarcadero\BDS\21.0\C++\Paths\Win32
+ - UpdateCPPPathsOnRegistry
+Reading registry: Software\Embarcadero\BDS\21.0\C++\Paths\Win64
+dclIntraweb_15_D10_4.bpl - RegisterDesignTimePackage
+Updating registry: Software\Embarcadero\BDS\21.0\Known Packages adding C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl\dclIntraweb_15_D10_4.bpl
+ - RegisterDesignTimePackage OK
+dclIWBootstrapD104.bpl - RegisterDesignTimePackage
+Updating registry: Software\Embarcadero\BDS\21.0\Known Packages adding C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl\dclIWBootstrapD104.bpl
+ - RegisterDesignTimePackage OK
+dclIWBootstrap4D104.bpl - RegisterDesignTimePackage
+Updating registry: Software\Embarcadero\BDS\21.0\Known Packages adding C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl\dclIWBootstrap4D104.bpl
+ - RegisterDesignTimePackage OK
+ - CreateWin32LicenseFile in d:\Projetos\Componentes\IntraWeb 15\LibD10_4W32
+ - CreateBCBBatchFile in d:\Projetos\Componentes\IntraWeb 15\LibD10_4W32
+ - CreateWin64LicenseFile in d:\Projetos\Componentes\IntraWeb 15\LibD10_4W64
+ - CreateBCBBatchFile x64 in d:\Projetos\Componentes\IntraWeb 15\LibD10_4W64
