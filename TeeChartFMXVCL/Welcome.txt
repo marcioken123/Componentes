@@ -1,0 +1,86 @@
+==================================================
+   Welcome to TeeChart Pro 2020 !
+
+   Steema Software SL
+   www.steema.com
+==================================================
+ Copyright (c) 1995-2020 by Steema Software. 
+ All Rights Reserved.
+==================================================
+
+ INSTALL.TXT   
+
+  File contains installation information.
+
+ LICENSE.TXT   
+
+  File contains License and Disclaimer issues.
+
+ RELEASE.TXT   
+
+  File contains information & links to release
+  information including new features and bugfixes.
+
+
+ Online Resources:
+ -----------------
+
+ What's New?
+  http://www.steema.com/linkIn/WhatsNewVCL
+
+ Wishes and Bugs Database:
+   http://bugs.teechart.net
+
+ Online API Help / Reference:
+   http://wiki.teechart.net/index.php?title=TeeChart_for_VCL   
+
+ Customer Support Forums:
+   http://support.steema.com
+
+ Peer Support at StackOverflow:
+   http://stackoverflow.com/questions/tagged/teechart
+
+ Demo Examples at GitHub:
+   https://github.com/Steema
+
+
+ The Docs folder contains:
+ -------------------------
+
+ TeeChart.hlp: Component Library reference
+
+ TeeChart.chm: HTML format Library reference, Tutorials and User Guide
+
+ TeeUser.hlp: Runtime Editor help (source included)
+
+ The sub folder 'RAD Studio' for those IDE versions that support HTML Help 
+ v2, contains files to support F1 context sensitive help from the IDE.
+
+
+ The Demo project located in the Examples folder (Tee9New),
+ includes more than 575 forms showing full TeeChart 
+ capabilities.
+
+ The QuickReport folder includes the source code of
+ the "TQRChart" component.
+
+ With these sources you can re-compile TeeChart for any 
+ QuickReport version.
+
+ See the "QuickReport\Install.pdf" file for complete details.
+
+ The "Examples\VCL for the Web" folder includes the source code
+ of the "TeeChart for Intraweb" component and an example project
+ showing its usage.
+
+ Keep visiting our web site and the private sections for
+ upgrades, new announcements, examples, technical information and
+ Frequently Asked Questions.
+
+ Thank You Very Much for TeeCharting !
+
+ ----------------------------------------------------------------
+ Steema Software
+ www.steema.com
+ Copyright (c) 1995-2020 by Steema Software. All Rights Reserved.
+ ----------------------------------------------------------------

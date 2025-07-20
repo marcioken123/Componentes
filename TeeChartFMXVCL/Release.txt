@@ -1,0 +1,1424 @@
+===============================================
+ TeeChart v2020
+ Copyright (c) 1995-2020 by Steema Software.
+ All Rights Reserved.
+
+ http://www.steema.com
+
+ Support forum: http://support.steema.com
+ Wishes and issues: http://bugs.teechart.net
+ Email: info@steema.com
+ 
+===============================================
+Release Notes 25th May 2020
+TeeChart VCL/FMX version 2020
+Build 2020.30.200525
+
+New Features:
+--------------------------
+For an overview of new functionality and 
+properties implemented please visit 
+http://www.steema.com/linkIn/WhatsNewVCL
+
+Bugfixes/changes:
+-------------------------
+For a full list of all new features,
+bugs fixes and changes please visit
+https://tinyurl.com/TeeChartVCLFMX-2020-30-200525
+
+===============================================
+Release Notes 13th Jan 2020
+TeeChart VCL/FMX version 2020
+Build 2020.29.200113
+
+New Features:
+--------------------------
+For an overview of new functionality and 
+properties implemented please visit 
+http://www.steema.com/linkIn/WhatsNewVCL
+
+Bugfixes/changes:
+-------------------------
+For a full list of all new features,
+bugs fixes and changes please visit
+https://tinyurl.com/TeeChartVCLFMX-2020-29-200113
+
+===============================================
+Release Notes 11th Oct 2019
+TeeChart VCL/FMX version 2019
+Build 2019.28.191011
+
+New Features:
+--------------------------
+For an overview of new functionality and 
+properties implemented please visit 
+http://www.steema.com/linkIn/WhatsNewVCL
+
+Bugfixes/changes:
+-------------------------
+For a full list of all new features,
+bugs fixes and changes please visit
+https://tinyurl.com/TeeChartVCLFMX-2019-28-191011
+
+===============================================
+Release Notes 30th May 2019
+TeeChart VCL/FMX version 2019
+Build 2019.27.190530
+
+New Features:
+--------------------------
+For an overview of new functionality and 
+properties implemented please visit 
+http://www.steema.com/linkIn/WhatsNewVCL
+
+Bugfixes/changes:
+-------------------------
+For a full list of all new features,
+bugs fixes and changes please visit
+https://tinyurl.com/TeeChartVCLFMX-2019-27-190530
+
+===============================================
+Release Notes 3rd December 2018
+TeeChart VCL/FMX version 2018
+Build 2018.26.181203
+
+New Features:
+--------------------------
+Full support for RAD Studio, Delphi and C++ Builder 10.3 Rio 
+for the following platforms is not yet supported due to some 
+inconsistencies with Rio's own support of them. This has been 
+brought to Embarcadero's attention. We will provide an update
+as soon as the issues are resolved.
+
+- Delphi FMX for iOS Simulator.
+- C++Builder FMX for MacOSX and Android.
+- Delphi FMX for iOS Device 32bit and iOS Device 64bit
+- C++Builder FMX for iOS Device 32bit and iOS Device 64bit
+
+For an overview of new functionality and 
+properties implemented please visit 
+http://www.steema.com/linkIn/WhatsNewVCL
+
+Bugfixes/changes:
+-------------------------
+For a full list of all new features,
+bugs fixes and changes please visit
+https://tinyurl.com/TeeChartVCLFMX-2018-26-181203
+ 
+===============================================
+Release Notes 8th August 2018
+TeeChart VCL/FMX version 2018
+Build 2018.25.180808
+
+New Features:
+--------------------------
+For an overview of new functionality and 
+properties implemented please visit 
+http://www.steema.com/linkIn/WhatsNewVCL
+
+Bugfixes/changes:
+-------------------------
+For a full list of all new features,
+bugs fixes and changes please visit
+https://tinyurl.com/TeeChartVCLFMX-2018-25-180808
+
+===============================================
+Release Notes 21st March 2018
+TeeChart VCL/FMX version 2018
+Build 2018.24.180321
+
+New Features:
+--------------------------
+This version adds full support for RAD Studio,
+Delphi and C++ Builder 10.2 Tokyo Update 3.
+
+For an overview of new functionality and 
+properties implemented please visit 
+http://www.steema.com/linkIn/WhatsNewVCL
+
+Bugfixes/changes:
+-------------------------
+For a full list of all new features,
+bugs fixes and changes please visit
+https://tinyurl.com/TeeChartVCLFMX-2018-24-180320
+
+===============================================
+Release Notes 21st December 2017
+TeeChart VCL/FMX version 2017
+Build 2017.23.171221
+
+New Features:
+--------------------------
+1)New Activity Gauge Series style has been added.
+2)New Series Type Added. Uses Bar and High Marker Points.
+
+This version adds full support for RAD Studio,
+Delphi and C++ Builder 10.2 Tokyo Update 2.
+
+For an overview of new functionality and 
+properties implemented please visit 
+http://www.steema.com/linkIn/WhatsNewVCL
+
+Known issues:
+--------------------------
+Activity Gauge not yet supported in Gallery at designtime.
+
+Bugfixes/changes:
+-------------------------
+For a full list of all new features,
+bugs fixes and changes please visit
+https://tinyurl.com/TeeChartVCLFMX-2017-23-171312
+
+===============================================
+Release Notes 19th June 2017
+TeeChart VCL/FMX version 2017
+Build 2017.22.170619
+
+New Features:
+--------------------------
+This version adds full support for RAD Studio,
+Delphi and C++ Builder 10.1 Berlin Starter and 10.2 Tokyo Starter. For a full list of
+new functionality and properties implemented 
+please visit 
+http://www.steema.com/linkIn/WhatsNewVCL
+
+Bugfixes/changes:
+-------------------------
+For a full list of all new features,
+bugs fixes and changes please visit
+http://tinyurl.com/TeeChartVCLFMX-2017-22-170531
+
+[ID1654] The bug has been reviewed
+
+===============================================
+Release Notes 29th March 2017
+TeeChart VCL/FMX version 2017
+Build 2017.21.170329
+
+New Features:
+--------------------------
+This version adds full support for RAD Studio,
+Delphi and C++ Builder 10.2 Tokyo. For a full list of
+new functionality and properties implemented 
+please visit 
+http://www.steema.com/linkIn/WhatsNewVCL
+
+Bugfixes/changes:
+-------------------------
+For a full list of all new features,
+bugs fixes and changes please visit
+http://tinyurl.com/TeeChartVCLFMX-2017-21-170329
+
+===============================================
+Release Notes 6th March 2017
+TeeChart VCL/FMX version 2017
+Build 2017.20.170306
+
+New Features:
+--------------------------
+For an overview of new functionality and 
+properties implemented please visit 
+http://www.steema.com/linkIn/WhatsNewVCL
+
+Bugfixes/changes:
+-------------------------
+For a full list of all new features,
+bugs fixes and changes please visit
+http://tinyurl.com/TeeChartVCLFMX-2017-20-170306
+
+===============================================
+Release Notes 25th October 2016
+TeeChart VCL/FMX version 2016
+Build 2016.19.161025
+
+New Features:
+--------------------------
+A new Hindi translation has been added in 
+this build.
+
+For an overview of new functionality and 
+properties implemented please visit 
+http://www.steema.com/linkIn/WhatsNewVCL
+
+Bugfixes/changes:
+-------------------------
+For a full list of all new features,
+bugs fixes and changes please visit
+http://tinyurl.com/TeeChartVCLFMX-2016-19-161025
+ 
+===============================================
+Release Notes 4th May 2016
+TeeChart VCL/FMX version 2016
+Build 2016.18.160504
+
+Bugfixes/changes:
+-------------------------
+This release resolves one issue introduced in the
+last build only, affecting the new feature, Pie 
+Mark Tails. The Tail should be default Visible 
+False but was rendering on first Pie paint.
+Fixed for this release. 
+
+===============================================
+Release Notes 26th April 2016
+TeeChart VCL/FMX version 2016
+Build 2016.17.160426
+
+New Features:
+--------------------------
+This version adds full support for RAD Studio,
+Delphi and C++ Builder 10.1 Berlin. For a full list of
+new functionality and properties implemented 
+please visit 
+http://www.steema.com/linkIn/WhatsNewVCL
+
+Bugfixes/changes:
+-------------------------
+Binary support for Delphi 7, Delphi, C++ Builder 
+and RAD Studio 2007, 2009 and 2010 being discontinued
+in this version. Those environments will continue 
+being supported via the source code version.
+
+For a full list of all new features,
+bugs fixes and changes please visit
+http://tinyurl.com/TeeChartVCLFMX-2016-17-160426
+ 
+===============================================
+Release Notes 1st September 2015
+TeeChart VCL/FMX version 2015
+Build 2015.16.150901
+
+New Features:
+--------------------------
+This version adds full support for RAD Studio,
+Delphi and C++ Builder 10 Seattle. For a full list of
+new functionality and properties implemented 
+please visit 
+http://www.steema.com/linkIn/WhatsNewVCL
+
+Bugfixes/changes:
+-------------------------
+For a full list of all new features,
+bugs fixes and changes please visit
+http://tinyurl.com/TeeChartVCLFMX-2015-16-160901
+ 
+===============================================
+Release Notes 20th April 2015
+TeeChart VCL/FMX version 2015
+Build 2015.15.150420
+
+New Features:
+--------------------------
+This version adds full support for RAD Studio,
+Delphi and C++ Builder XE8. For a full list of
+new functionality and properties implemented 
+please visit 
+http://www.steema.com/linkIn/WhatsNewVCL
+
+Brand new installer for all IDEs. It downloads
+and installs required components on demand.
+
+Bugfixes/changes:
+-------------------------
+For a full list of all new features,
+bugs fixes and changes please visit
+http://tinyurl.com/TeeChartVCLFMX-2015-15-150420
+
+===============================================
+Release Notes 20th January 2015
+TeeChart VCL/FMX version 2015
+Build 2015.14.150120
+
+New Features:
+--------------------------
+For a full list of new functionality and properties
+implemented please visit 
+http://www.steema.com/linkIn/WhatsNewVCL
+
+Bugfixes/changes:
+-------------------------
+For a full list of all new features,
+bugs fixes and changes please visit
+http://tinyurl.com/TeeChartVCLFMX-2015-14-150120
+
+===============================================
+Release Notes 23th Sep 2014
+TeeChart VCL/FMX version 2014
+Build 2014.12.140923
+
+New Features:
+--------------------------
+This version adds full support for RAD Studio,
+Delphi and C++ Builder XE7. For a full list of
+new functionality and properties implemented 
+please visit 
+http://www.steema.com/linkIn/WhatsNewVCL
+
+Bugfixes/changes:
+-------------------------
+For a full list of all new features,
+bugs fixes and changes please visit
+http://tinyurl.com/TeeChartVCLFMX-2014-12-140923
+
+===============================================
+Release Notes 12th May 2014
+TeeChart VCL/FMX version 2014
+Build 2014.11.140512
+
+New Features:
+--------------------------
+This version adds full support for RAD Studio,
+Delphi and C++ Builder XE6. For a full list of
+new functionality and properties implemented 
+please visit 
+http://www.steema.com/linkIn/WhatsNewVCL
+
+Bugfixes/changes:
+-------------------------
+For a full list of all new features,
+bugs fixes and changes please visit
+http://tinyurl.com/TeeChartVCLFMX-2014-11-140512
+
+===============================================
+Release Notes 20th February 2014
+TeeChart VCL/FMX version 2014
+Build 2014.10.140220
+
+New Features:
+--------------------------
+For a full list of new functionality and properties
+implemented please visit 
+http://www.steema.com/linkIn/WhatsNewVCL
+
+Bugfixes/changes:
+-------------------------
+For a full list of all new features,
+bugs fixes and changes please visit
+http://tinyurl.com/kzd5jlc
+
+===============================================
+Release Notes 19th November 2013
+TeeChart VCL version 2013
+Build 2013.09.131119
+
+New Features:
+--------------------------
+This version adds full support for RAD Studio,
+Delphi and C++ Builder XE5 with Update 1.
+Including new Android personality. For a full
+list of new functionality and properties
+implemented please visit 
+http://www.steema.com/linkIn/WhatsNewVCL
+
+Bugfixes/changes:
+-------------------------
+1)  [TV52016601]
+    TErrorBarSeries not painting bars when
+    error values are zero. Fixed.
+2)  [TV52016532]
+    Clipping for the TSeriesRegionTool.
+3)  [TV52016641]
+    TSeriesRegionTool incorrectly drawn when you
+    scroll up the chart.
+4)  [TV52016644]
+    In GDIPlus, the TSeriesRegionTool draws a
+    line over the associated TLineSeries.
+5)  [TV52016639]	
+    Series marks text assigned wrongly
+    in XE4. Fixed.
+6)  [TV52016696]
+    TScrollPagerTool clones the source series
+    multiple times if assigned at the OnResize
+    event. Fixed.
+7)  [TV52016703]
+    Label overlapping in the Axis Increment editor
+    when Windows Aero is active. Fixed.
+8)  [TV52016712]
+    TMapSeries shape editor crashed. Fixed.
+9)  [TV52016047]
+    TCursorTool still drawing out of the ChartRect
+    and moving to the center of the chart
+    automatically. Fixed.
+10) [ID9]
+    http://bugs.teechart.net/show_bug.cgi?id=9
+    AV in a SubChart within a Frame.
+11) [ID70]
+    http://bugs.teechart.net/show_bug.cgi?id=70
+    TAnnotationTool disappears when 
+    PositionUnits is set to muPercent.
+12) [ID71]
+    http://bugs.teechart.net/show_bug.cgi?id=71
+    BackImage & pbmStretch causes wrong rendering.
+13) [ID74]
+    http://bugs.teechart.net/show_bug.cgi?id=74
+    TColorLine.DrawBehind not working in 2D.
+14) [ID77]	
+    http://bugs.teechart.net/show_bug.cgi?id=77
+	Marks inheriting the Series transparency.
+	Fixed with new Marks.UseSeriesTransparency
+    property, which is true by default.	
+15) [ID69]	
+    http://bugs.teechart.net/show_bug.cgi?id=69
+    Wrong printing output in GDI+.
+16) [ID101]	
+    http://bugs.teechart.net/show_bug.cgi?id=101
+	Legend text with CRLF overlaps other items.
+17) [TV52016375]	
+    C++ Builder 2007 failed to compile using
+    GDI+ canvas.
+
+===============================================
+Release Notes 21st May 2013
+TeeChart VCL version 2013
+Build 2013.08.130521
+===============================================
+Please send feedback to:
+http://www.teechart.net/support/index.php
+===============================================
+
+Bugfixes/changes:
+-------------------------
+1)  [TV52015903]
+    Shadow in TPieSeries didn't plot correctly.
+    Fixed.
+2)  [TV52016400 and TV52016403]
+    Removing an AntiAlias tool with the chart
+    editor produced an Access Violation error.
+    Fixed.
+3)  [NO BUG ID]
+    Fixed resource leak when creating / saving 
+    more than 2500 JPEGs.
+4)  [TV52016180]	
+    Pie series not rendering correctly in
+    GDI+ when Rotation<>0. Fixed.
+5)  [TV52016371]
+    "Close" button in chart editor not visible
+    after visiting "Export" tab. Fixed.
+6)  [TV52016475]
+    ApplyBright function makes the AnnotationTool
+    to be drawn incorrectly in FMX. Fixed.
+7)  Support for C++ Builder 5, C++ Builder 6,	
+    Delphi 5, Delphi 6, Delphi 2005 and
+    BDS 2006 has been discontinued from this
+    release.
+8)  [TV52016177]
+    "Grid index out of range" error when adding a
+    Custom Legend tool at design time. Fixed.
+9)  [TV52016237 and TV52016487]
+    Pointer Brush Style and Pointer Brush Color
+    don't work fine. Fixed.
+10) [TV52016525]
+    Scrolling with the MouseWheel doesn't save
+    the state of the axes. Fixed.
+11) Renamed TeeProcs "ColorPalette" global array
+    variable, to "TeeColorPalette".
+12) [TV52016531]
+    TAxisBreaksTool was not displaying axis labels
+    correctly.
+13) [TV52015791]
+    Clicked function for TAreaSeries with Stairs
+    doesn't work well. Fixed.
+14) Missing binary packages and libraries for 
+    C++ Builder 64-bit. Fixed.
+15) [TV52016555]
+    Clicked function for TBarSeries in 3D doesn't
+    work fine. Fixed.
+16) [TV52016561]
+    Null points drawn incorrectly in TFastLineSeries
+    with stairs. Fixed.
+17) TEquiVolumeSeries improved, several bug-fixes 
+    and enhancements. 
+18) Grid lines in TSmithSeries were not displayed 
+    at all with GDI+ canvas. Fixed.
+19) Series Marks RoundSize (RoundRectangle), 
+    was wrongly positioned using OpenGL canvas.
+
+New Features:
+--------------------------
+1)  Full RAD Studio XE4 support.
+2)  New TDashBoard component.
+3)  New auto update feature in the about box.
+4)  TCircledSeries Circled property default value
+    changed, from False to True. (Pie,Donut,etc)
+5)  New TPieSeries.PieMarks.InsideSlice boolean
+    property (default False).
+6)  Custom chart themes: New TThemesList.Apply 
+    methods to use any TeeChart or *.tee file 
+    as a theme for other charts.
+7)  Firemonkey only: All Pen properties have a
+    public Fill property, to allow painting strokes
+    filled with gradients or bitmaps.
+8)  Firemonkey and VCL with GDI+ canvas only:
+    All Gradient properties now accept multiple colors,
+    supporting transparency (alphablending) per color.
+9)  Firemonkey: Improved TTeeCanvas.StretchDraw to
+    fill areas in 3D with bitmaps. (ie: TColorGridSeries)
+10)  Firemonkey: Implemented TTeeCanvas GetPixel and
+    SetPixel methods (Pixels[X,Y] property).
+11) [TV52014335]
+    New Series.Marks.Style: smsLabelPercentValue
+    which includes: Label, Percent, and Value.
+12) [TV52016570]
+    TCursorTool now snaps to the Z position of the
+    points when lined to a 3D series.
+13) Predefined color palettes support multiple
+    custom colors.	
+14) Default series color (clTeeColor) can be used
+    as a series color via series editors.	
+15) All new charts are created with GDI+ canvas
+    by default.	
+16) New 3D -> Render tab in the chart editor to
+    choose which canvas to be used: GDI, GDI+ or
+    OpenGL.	
+17) TPieSeries rendering improved using floating
+    point arcs instead of integers among other
+    enhancements and bug fixes.	
+18) [TV52012125]	
+    TNearestTool.Distance property. Sets the
+	maximum allowed distance from mouse cursor to
+    series points to paint the tool (0 = any distance).
+19) New TNearestTool.Hint and HintStyle properties 
+    and OnGetHint event.
+20) New iOS Palette.
+21) Improved Ellipse rendering using floating
+    point calculations instead of integers where 
+    appliable.	
+22) New TChartPen.Fill property (type TBrush).
+    Only available in Firemonkey.
+23) New property at TCustomSeries: Line, Area, 
+    Point and all derived from them), and 
+    TFastLineSeries. Series1.ClickTolerance,
+    indicates the number of pixels around lines
+    to consider "clicked". Default is zero, which 
+	is current behavior.
+24) Pie Slice tool now works with multiple pie 
+    series in a chart now.	
+
+New Features TeeTree:
+---------------------
+1)  TTree for FireMonkey (RAD XE3 and XE4)
+    Runtime support (no design-time editors yet)
+2)  New Tree1.CrossBox.SignStyle property,
+    to switch between cross "+" and triangles ">"
+3)  New node ToggleCheck method, to check/uncheck
+    tree nodes: TreeNodeShape123.ToggleCheck
+4)  New TTree OnCheckedShape event, called whenever
+    a node is checked or unchecked.
+5)  New TreeImagePool.Add overload method to load
+    pictures from files: TreeImagePool.Add('my_icon.png')
+ 
+===============================================
+Release Notes 5th November 2012
+TeeChart VCL version 2012
+Build 2012.07.121105
+===============================================
+Please send feedback to:
+http://www.teechart.net/support/index.php
+===============================================
+
+Bugfixes/changes
+-------------------------
+1)  Everything included in build 2012.07.121031
+    now implemented for all the IDEs supported.
+2)  [TV52016391]
+    Firemonkey editors containing TSpinBox
+    controls crashed in XE2. Fixed.
+3)  [TV52016179]
+    Standard Deviation not working under
+    some circumstances. Fixed.	
+
+New Features
+--------------------------
+1)  Support for RAD Studio, Delphi &
+    C++ Builder XE3 added.
+2)  Firemonkey desktop & iOS demo projects 
+    source code included.	
+	
+===============================================
+Release Notes 31st October 2012
+TeeChart VCL version 2012
+Build 2012.07.121031 for the following IDEs:
+Delphi 5, Delphi 6, Delphi 7, Delphi 2005,
+BDS 2006, RAD Studio 2007, RAD Studio 2009,
+RAD Studio 2010 and RAD Studio XE only.
+===============================================
+Please send feedback to:
+http://www.teechart.net/support/index.php
+===============================================
+
+Bugfixes/changes
+-------------------------
+1)  [TV52015167]
+    EditorBrush buttons did not always give 
+    expected results when applied to Area and 
+    LineSeries. Fixed.
+2)  [TV52016235]
+    "Access denied" message on image exportation
+    preview in some IDEs. Fixed.
+3)  [TV52016247]
+    Zooming and panning not working when not 
+    having the "normal" TTeeCommander button. 
+    Fixed.
+4)  [TV52016296]
+    Some buttons in the export editor overlapped
+    when resizing it. Fixed.
+5)  [TV52016309]
+    Circled property broken for TCircledSeries.
+    Fixed.
+6)  [TV52016335]
+    Clicked function for TPoint3DSeries doesn't 
+    work well in non-orthogonal charts. Fixed.
+7)  [TV52016253]
+    Abstract error thrown when adding some 
+    tools at design-time in XE2. Fixed.
+8)  [TV52016351]
+    Floating point overflow when zooming several
+    times an inverted axis in some circumstances.
+    Fixed.
+9)  [TV52016334]
+    TClusteringTool description text constants
+    for localization were missing. Fixed.
+10) Fixes for VCL.NET compilation.  
+11) [TV52016377]
+    Null points still drawn when TFastLineSeries uses
+    DrawAllPointsStyle daMinMax. Fixed.
+
+New Features
+--------------------------
+1)  Clicked function for TErrorPointSeries and
+    TErrorPoint3DSeries.
+2)  TeeChart Pro 2012 constants fully
+    translated to Hungarian and Slovene.
+3)  [TV52015085]
+    MarksOnBar aligns the marks also when the
+    Bars are stacked.
+4)  Improved support for Lazarus 1.0 IDE
+    (See teechart.lpk Lazarus package)
+
+===============================================
+Release Notes 13th June 2012
+TeeChart VCL version 2012
+Build 2012.06.120613
+===============================================
+Please send feedback to:
+http://www.teechart.net/support/index.php
+===============================================
+
+Bugfixes/changes
+-------------------------
+1)  [TV52016064]
+    Zoom Rectangle drawn incorrectly when
+    tzdHorizontal or tzdVertical directions 
+    are used. Fixed.
+2)  [TV52014076]
+    VideoTool produces an error under Delphi 
+    2009 and up. Fixed.
+3)  [TV52015427] & [TV52015964]
+    Part 2 bugfix for this issue, resolving line
+    width plot issues when TAntiAlias Tool active
+    in Chart.
+4)  [TV52015862]
+    Fix for TCursorTool in GDI+. It wasn't 
+    rendering correctly in previous versions. Now
+    resolved.
+5)  [TV52015898]
+    FastLineSeries errored when scrolling all data
+    off Chart. Fixed.
+6)  [TV52015865]
+    DonutSeries sidewalls painting incorrectly for
+    some value combinations. Improved for this
+    release.
+7)  [TV52015521]
+    Affecting rendering in GDI+ only, Canvas 
+    StretchDraw was not functioning correctly 
+    causing the non-rendering of rotated graphics
+    (example images on Chart LeftWall or RightWall).
+    Now fixed.
+8)  [TV52015773]
+    The default palette could not be returned for
+    serialization once it had been changed to 
+    another. Fixed.
+9)  [TV52015428]
+    Custom Axis Labels would not completely scroll
+    off the Axis when scrolled to so do. Fixed.
+10) [TV52015747]
+    The ClearChart method was not correctly 
+    updating the SeriesList counter. Fixed.
+11) [TV52016086]
+    Candle series with same Open, Close and
+    High/Low values not being drawn as a 
+    perfect "T" or inverted "T". Fixed.
+12) [TV52015729]
+    Setting BackIsBlack color palette in the
+    ColorPalettes_MacOS example at Tee9New
+    demo project did not work. Fixed.
+13) [TV52015978]
+    The unique case of changing a Series colour to 
+    a default one after changing the Chart palette
+    from a default machine palette with non zero 
+    index to the zero index palette (TeeChart)
+    causes the new Series colour to be not 
+    serialised correctly (overwritten by machine
+    palette default colour). Fixed.
+14) [TV52016042]
+    Clicking on a chart with a TLegendPaletteTool
+    caused an exception. Fixed.
+15) [TV52015654]
+    THorizHistogramSeries not rendering 
+    correctly in 3D. Fixed.
+16) [TV52015731]
+    Ilink32 error when compiling a C++ XE2 
+    application for OSX32. Fixed.
+	
+New Features
+--------------------------
+1)  TeeChart Pro 2012 constants fully
+    translated to Slovak.
+2)  New export format to Javascript for the HTML5
+    Canvas. The current implementation defaults to
+    use Steema's online .js source at:
+    http://www.steema.com/files/public/teechart/html5/jscript/src
+
+    The Javascript export format supports a limited 
+    chart featureset to create active charts for most
+    browser types. Javascript Export currently supports
+    the following Series types only:
+    - Line
+    - Area
+    - Bar
+    - HorizLine
+    - HorizArea
+    - HorizBar
+    - Pie
+    - Bubble
+    - Donut
+    - Candle
+
+    Please see the Steema Javascript pages for more
+    details of use, examples and documentation:
+    http://www.steema.com/teechart/html5
+3)  New EquiVolume Financial Series. Series plots
+    market volume and trade movements on a non-linear 
+    Axis scale.
+	
+===============================================
+Release Notes 27th March 2012
+TeeChart VCL version 2012
+Build 2012.05.120327
+===============================================
+Please send feedback to:
+http://www.teechart.net/support/index.php
+===============================================
+
+Bugfixes/changes
+-------------------------
+1)  [TV52015931]
+    TeeLegendScrollBarEditor unit missing in
+    binary installers. Fixed.
+2)  [TV52015960]
+    CrossPoints function gives wrong points in
+    some cases. Fixed.
+3)  [TV52015939]
+    Null points broken for TFastLineSeries.
+    Fixed.
+4)  [TV52015992]
+    Filled TContourSeries not plotting 
+    correctly when IrregularGrid=True.
+5)  [TV52015896]
+    Second and next TAreaSeries drawn incorrectly
+    in 64bits. Fixed.
+6)  [TV52016025]
+    MarkTools causes Access Violation error when
+    one of the stacked TAreaSeries is empty.
+7)  [TV52015944]
+    Use Origin checkbox was overlapping in 
+    volume series editor. Fixed.
+8)  [TV52015959]
+    Chart Editor - Tab Panel - Tab Image:
+    Some image options were not shown. Fixed.
+
+New Features
+--------------------------
+1)  [TV52016040]
+    New LineTransparency property for the
+    TPoint3DSeries LinePen.
+2)  TeeChart Pro 2012 constants fully
+    translated to Portuguese. Usage of 
+    the Portuguese translation is 
+    encouraged too for Brazilian users
+    as it complies with directives 
+    included in the language 
+    standardisation agreement made
+    between Portuguese speaking countries.
+3)  RAD Studio XE2, Delphi XE2 and 
+    C++	Builder XE2 Update 4 support.
+
+===============================================
+Release Notes 17th November 2011
+TeeChart VCL version 2011
+Build 2011.04.41118
+===============================================
+Please send feedback to:
+http://www.teechart.net/support/index.php
+===============================================
+
+Bugfixes/changes
+-------------------------
+1)  [TV52015540]
+    Clicked function returns the righ point
+    index while should return the left. Fixed.
+2)  [TV52015573]
+    TeeMouseCursor editor not fully translated.
+    Fixed.
+3)  [TV52015567]
+    New series in TeeErrorPoint not translated
+    in the chart editor gallery. Fixed.
+4)  [TV52015565]
+    Cloning a TKnobGauge series threw an AV 
+    exception. Fixed.	
+5)  Global var TeeUseMouseWheel (Chart.pas) 
+    moved to Chart1.Panning.MouseWheel property.
+6)  TChart, TDraw3D, etc: TabStop property 
+    default now changed to: True.
+7)  [TV52014153]   
+    Bar and HorizBar Series, bars still 
+    drawn when value is 0. Fixed.
+8)  [TV52015481]   
+    Pie frame is not displayed. Fixed.
+9)  [TV52015482]   
+    Example demos: What’s New?->Welcome!->
+    New in Series->Gauges->CircularGauge Frame
+    edition is not working. Fixed.
+10) [QC Entry 88720]   
+    In some cases, when adding more than one
+    series, axis labels were not read properly.
+    Fixed.
+11) [TV52015541]
+    TCursorTool not refreshing in MDI
+    applications under some circumstances.
+    Fixed.
+12) [TV52015469]
+    Treemap_AddFolder.pas example in TeeNew 
+    demo raised a List out of bounds error.
+    Fixed.
+13) [TV52015486]
+    Opening SeriesType_Treemap demo at Tee9New
+    in designtime rendered the series incorrectly.
+    There was also a List index out of bounds
+    error when editing the series.
+    Fixed.
+14) [TV52015484]
+    When resizing a Subchart tool it could not 
+    be made bigger. Fixed.
+15) [TV52015730]
+    Bar and HorizBar with Stacked100 Style and
+    negative values don't calculate min and max
+    axes correctly in some circumstances. Fixed.
+16) [TV52015496]
+    MarksToolTip didn't work in Subcharts. Fixed.
+17) [TV52015493]
+    Numeric and Linear Gauges editor threw
+    an error. Fixed.
+18) [TV52015489]
+    Axis_RetrieveOldLabels demo example not
+    working correctly. Fixed.
+19) [TV52015494]
+    The OnCancelHint event wasn't raised correctly
+    when moving mouse cursor over an arrow
+    horizontal bar. Fixed.
+
+New Features
+--------------------------
+1)  Delphi, C++ Builder and RAD Studio XE2
+    support including: 64-bit compilation,
+    Firemonkey (Win32, Mac OSX and iOS) and
+    LiveBindings.
+2)  Custom color palette save and loading
+    functionality for Custom3D series.	
+3)  TeeChart Pro 2011 constants fully
+    translated to Japanese and Korean.
+4)  Front and Back Errors for TErrorPoint3DSeries.
+5)  New "Mouse" and "Palette" subtabs at Chart 
+    editor (General tab).
+6)  New tool: TClusteringTool 
+    (at TeeClusteringTool.pas unit).
+7)  New grouping options for Summary datasource
+    in TDBChart component.  	
+8)  [TV52013868]
+    New Property Labels.IgnoreCase to control
+    SortByLabels method.
+9)  [TV52015814]
+    New UniqueCustomRadius property to control if
+    SetOtherCustomRadius is called when changing
+    CustomXRadius or CustomYRadius in Circular
+    series (Pie and Donut).
+10) [TV52015822]
+    New LabelsAsSeriesTitles property for 
+    TChartDepthAxis class to enable Depth Axis 
+    to display labels as either series titles or 
+    series value point.	
+	
+===============================================
+ TeeChart Pro v2011 VCL / VCL.NET / CLX version
+ Copyright (c) 1995-2011 by Steema Software.
+ All Rights Reserved.
+
+ http://www.steema.com
+ email: info@steema.com
+ support forum: http://support.steema.com
+
+===============================================
+Release Notes 7th April 2011
+TeeChart VCL version 2011
+Build 2011.03.30407
+===============================================
+Please send feedback to:
+http://www.teechart.net/support/index.php
+===============================================
+
+Bugfixes/changes
+-------------------------
+1)  [TV52015386]
+    Adding a TPageNumTool via the chart 
+    editor threw and exception. Fixed.
+2)  [TV52015390]	
+    DrawToMetaCanvas not working correctly.
+    Fixed.
+3)  [TV52015260]
+    Excel exported files failed to import 
+    correctly in Japanese Excel 2010. Now 
+    fixed.
+4)  [TV52015444]
+    Series.Pen.Visible:=False didn't work
+    in 3D GDI+ charts. Fixed.
+5)  [TV52015423]
+    TIsoSurfaceSeries not calculating first
+    level correctly. Fixed.
+6)  [TV52015430]
+    Chart panel color not working. Fixed.
+7)  [TV52015409]
+    Series background turned black at the 
+    editor gallery under some circumstances.
+    Fixed.
+8)  [TV52015426]
+    Changing an AngleValue in a Polar
+    series did not work. Fixed.
+9)  [TV52015433]
+    Rotating pie and donut series crashed
+    for certain rotation/elevation angles.
+    Fixed.	
+10) [TV52015250]
+    TPolarSeries population methods failed
+    in C++ Builder XE. Fixed.
+11) [TV52015309]
+    Series->Clear() in C++ Builder XE threw
+    an Access Violation error. Fixed.
+12) [TV52015353]
+    AddXY method drew an horizontal line
+    at Y=0 in C++ Builder XE. Fixed.
+13) [TV52015462]
+    Wrong line colors in TPolarSeries when
+    ColorEachPoint=True. Fixed.
+14) [TV52015411]
+    Area Series not correctly responding 
+    to Gradient render codelines. Fixed.
+15) [TV52015318]
+    TVideoPlayerTool non-functional. Fixed. 	
+16) [TV52015427]
+    TAntiAliasTool not clipping series 
+    points correclty. Fixed.
+17) [TV52011753]
+    Series transparency and legend checkboxes
+    not working with TAntiAliasCanvas. Fixed.
+
+New Features
+--------------------------
+1)  New TErrorPointSeries.
+2)  New TErrorPoint3DSeries.
+	
+Changes
+--------------------------
+1)  Custom GDI+ API units renamed to 
+    TeeGDIPAPI and TeeGDIPOBJ for 
+    compatibility with those shipped 
+    with RAD Studio.
+	
+===============================================
+ TeeChart Pro v2010 VCL / VCL.NET / CLX version
+ Copyright (c) 1995-2011 by Steema Software.
+ All Rights Reserved.
+
+ http://www.steema.com
+ email: info@steema.com
+ support forum: http://support.steema.com
+
+===============================================
+Release Notes 2nd February 2011
+TeeChart VCL version 2010
+Build 2010.02.20202
+===============================================
+Please send feedback to:
+http://www.teechart.net/support/index.php
+===============================================
+
+Bugfixes/changes
+-------------------------
+1)  ZoomText property is now an enumerated type
+    (TCanvasZoomText) instead of a boolean.
+    Chart1.View3DOptions.ZoomText:=ztManual
+2)  [TV52015196]
+    GDIPlus not closing all threads at end of
+    run when TeeChart-GDI+ compiled into dll.
+    Now fixed.
+3)  [TV52015202]
+    Series Legend Symbols drawn twice under some
+    circumstances. PaintSeriesLegend fixed.
+4)  [TV52014983]	
+    ChartRect not being set correctly for 
+    series in OpenGL. Fixed.
+5)  [TV52015216]	
+    TCustomLegendTool not available at chart
+    editor. Fixed.
+6)  [TV52015181]	
+    TColorBandTool raises and AV error at
+    designtime when not assigned to any axis
+    and trying to change its name. Fixed.
+7)  TAxisBreakTool. Performance improvements.
+8)  [TV52015199]
+    ColorEachLine broken in 2D lines. Fixed.
+9)  [TV52015228]
+    Zoom not working in charts with several
+    series with different axes. Fixed.
+10) [TV52015190]	
+    Second pointer in a series not drawn
+    when there's an inverted axis. Fixed.
+11) TTernarySeries. Axis Label Brush was 
+    painting incorrectly. Now resolved.	
+12) [TV52015266]
+    Polar series not plotting correctly
+    when ClockWiseLabels set to false.	
+13) [TV52015163]
+    CustomChartRect not reflected in 
+    printed charts. Fixed.	
+14) [TV52015271]	
+    BarWidthPercent=100 not rendering
+    correctly when MultiBar=mbSide. Fixed.
+15) [TV52015275]
+    Line color in 2D charts broken. Fixed.
+16) [TV52014986]
+    Functions with different X values not
+    calculating correctly. CalcByValue
+    property (false by default) added to
+    fix this.
+17) [TV52015301]
+    TChartScrollBar not working fine 
+    when axis Minimum <> 0. Fixed.	
+18) [TV52015285]
+    TSeriesTextSource not working  with 
+    3D series. Fixed.
+19) [TV52015282 and TV52015313]
+    Clicked method broken for TAreaSeries.
+    Fixed.
+20) [TV52015316]
+    Adding a series using the chart editor
+    set in some specific languages threw
+    an error. Fixed.
+21) [TV52015327]
+    Ternary series editor crashing in
+    Delphi 5. Fixed.
+22) [TV52015319]
+    Themes tab in chart editor crashing
+    randomly when selecting Random theme.
+    Fixed.
+23) [TV52015330]
+    ColorEachPoint not working as
+    expected. Fixed.
+24) [TV52015261]
+    TChartLegend.DrawLegend method not
+    working as expected. Fixed.
+25) [TV52015225]
+    First right vertex label of TTernarySeries
+    not responding to changes to font 
+    characteristics. Fixed.
+26) [TV52015186]
+    Axis scales not calculating correctly
+    in TErrorSeries under some circumstances.
+    Fixed.
+27) [TV52015103]
+    TSeriesRegionTool not respecting Stairs
+    property of associated series. Fixed.
+28) [TV52015351]
+    Series datasource editor crashing with
+    some specific MDI applications. Fixed.
+29) [TV52015179]
+    Axis text labels overlapping with
+    multiple series. Fixed.
+	
+New Features
+--------------------------
+1)  New Caption parameter for EditTeeCustomShape
+    method which allows to set a Title for the
+    dialog.
+2)  TeeChart Pro 2010 constants fully
+    translated to Hellenic and Hindi.
+3)  New ztAuto option (automatic font size when
+    chart is resized)
+    Chart1.View3DOptions.ZoomText:=ztAuto
+4)  New TChartSeries LegendTitle (string) property
+    to customize legend text for each series.
+5)  New run-time Items tab at Legend editor.
+6)  New TLegendItem Font property for custom items.
+7)  [TV52014801]
+    OnScroll and OnAllowScroll events implemented
+    for TAxisScrollTool.
+8)  Added Export encoding (Unicode support) for 
+    HTML Data export.
+9)  New TDragPointTool OnStartDrag event
+10) New internal Chart DebugPaint property to draw
+    frame count and frames per second.
+11) New GradientCell property for TCustomChartGrid
+    component.
+12) TeeChart F1 context sensitive help is now 
+    installed as a default option for RAD Studio 
+    versions.
+	
+Changes
+--------------------------
+1)  No further VCL.NET updates will be included 
+    with TeeChart VCL. If you have any specific 
+    requirement please contact us.
+
+===============================================
+Release Notes 4th October 2010
+TeeChart VCL version 2010
+Build 2010.01.11004
+===============================================
+Please send feedback to:
+http://www.teechart.net/support/index.php
+===============================================
+
+Bugfixes/changes
+--------------------------
+1)  [TV52012679]
+    XValues not exported to XML under
+    some circumstances. Fixed.
+2)  [TV52014201]
+    In circular gauges with TotalAngle = 360 
+    (or near 360), axis' 360 and 0 labels
+    overlapped. Fixed.
+3)  [TV52010125]
+    Axis labels not exported correctly in
+    VML under some circumstances. Fixed.    
+4)  [TV52014835]
+    CustomChartRect property not working 
+    correctly. Fixed.
+5)  [TV52014800]
+    Pie series with visible gradient produces
+    wrong colours. Correct ones are shown in
+    legend symbols. Fixed.
+6)  [TV52014592]
+    Rotating pie chart that appears on start 
+    up of Tee9New has a problem with colors. 
+    They change as the pie rotates. Fixed.
+7)  [TV52014770]	
+    Setting TButtonColor to black didn't
+    work. Fixed.
+8)  [TV52014890]	
+    Memory leak with TGDIPlusCanvas and
+    transparency. Fixed.
+9)  [TV52014902]	
+    TeeFonts.res missing with Standard
+    version. Fixed.
+10) [TV52011757]
+    Stacked area series not plotting
+    correctly with negative values. Fixed.	
+11) [TV52013609]
+    Problem with logarithmic labels using
+    certain data ranges. Fixed.
+12) [TV52013859]	
+    TDataTableTool not working fine when
+    scrolling containing chart. Fixed.
+13) [No ticket number]
+    Improvements to AxisBreakTool Zoom and 
+    Scroll support.
+14) [TV52014961]	
+    Memory leak in TGDIPlusCanvas. Fixed.
+15) [TV52010822 and TV52013855]
+    TAreaSeries with Stairs=True not
+    painting correctly when rotating or
+    moving the chart. Fixed.
+16) [TV52014950]
+    Chart panel's SubGradient was broken.
+	Fixed.
+17) [TV52012044]
+    TCursorTool not visible in monochrome
+    charts. Fixed.	
+18) [TV52011478]
+    TSelectorTool didn't place handles on
+    Right axis correctly. Fixed.	
+19) [TV52014989]	
+    Vertical-aligned TCircularGauge series
+    paint center in wrong position. Fixed.
+20) [TV52014813]	
+    Chart->General->Fonts and OpenGL 
+    editors raised some exceptions. Fixed.
+21) [TV52013668]	
+    TAntiAliasTool not working with charts
+    not plotting in a canvas. Fixed.	
+22) [TV52014785]
+    TeeImage95 package could not be loaded.
+    Fixed.
+23) [TV52014938]
+    Removing series with TDBCrossTabSource
+    not working fine. Fixed.
+24) [TV52014658]
+    TPieSeries.EdgeStyle not working in
+    IDEs previous to BDS 2006. Fixed.
+25) [TV52014936]
+    Chart editor hanged up in a chart 
+    with TDBCrossTabSource. Fixed.
+26) [TV52014981]	
+    BevelInner and BevelOutter not assigned
+    in TChart.Assign method. Fixed.
+27) [TV52014993]	
+    Chart not repainting after calling
+    TeeCreateBitmap. Fixed.
+28) [TV52014497]	
+    Some series marks disappered under some
+    circumstances, after exporting. Fixed.
+29) [TV52015018]	
+    Clicked method not working fine with
+    TLineSeries. Fixed.
+30) [TV52015030]
+    Color not working in TSelectorTool.
+    Fixed.
+31) [TV52014269]
+    Not all axis text labels were plotted
+    with multiple series in a chart. Fixed.
+32) [TV52015060]
+    Access Violation exception thrown
+    when assigning a TCircularGauge series
+    to another one. Fixed.	
+33) [TV52015101]	
+    First slice in a 2D TDonutSeries not
+    visible using GDI+. Fixed.
+34) TAxisBreakStyle talNone constant was 
+    incorrectly named. Renamed to tabNone.
+35) [TV52014945]
+    OnMouseEnter or OnMouseLeave fired
+    OnClickPointer event too. Fixed.
+36) [TV52015075]
+    Changing the cursor in some series 
+    fires the OnClickPointer event when
+    mouse is over a pointer. Fixed.
+37) [TV52015063]	
+    Std. Deviation function not working
+    correctly using some specific Period
+    property settings. Fixed.
+38) [TV52014805]	
+    Points not drawing in screen coordiantes
+    when zooming causes series being drawn
+    at wrong position. Fixed.	
+39) [TV52015184]
+    Bars in TErrorSeries not calculated
+    correctly with logarithmic axes. Fixed.
+40) [TV52015187]
+    TErrorSeries plotted negative error 
+    values downwards and viceversa. Fixed. 
+	
+New Features
+--------------------------
+1)  Added RoundRect Bar Style and allow to 
+    specify the rounded size throught the 
+    Chart Editor.
+2)  [TV52014853]
+    Axis.Increment property added at 
+    TLinearGauge and TCircularGauge editor.	
+3)  AddBubbleXYZ and AddBubbleXYZWeight now
+    have two overloads which allow to specify
+    the point label.
+4)  [TV52010306]
+    Marks.OnTop property implemented to avoid
+    series overlapping marks in 2D charts.	
+5)  [TV52014920]	
+    Clicked method for TTreeMapSeries 
+    implemented. 
+6)  [TV52014956]	
+    ClipPoints set to False by default when
+    adding a TCustomPolarSeries from the 
+    chart editor.
+7)  TeeChart Pro 2010 constants fully 
+    translated to those languages: Brazilian, 
+    Bulgarian, Czech, Danish, Dutch, Farsi, 
+    French, German, Indonesian, Italian, 
+    Norwegian, Polish and  Russian.
+8)  New Frame border for TPieSeries in 2D mode
+    which allows to customize its inner, outer 
+    and middle frame.
+9)  [TV52015054]
+    New DataStyle property for 
+    THistogramFunction being hdsTruncate by
+    default. Previous behavior can be achieved
+    using hdsRound.
+10) Support for RAD Studio XE, Delphi XE and
+    C++ Builder XE.
+11) The TeeChart Editor shows double-byte
+    unicode characters in their correct format
+    when used with RADStudio 2009 and 2010.
+12) [TV52015098]
+    New talPointValue value for LabelStyle 
+	property.
+13) [TV52014775]	
+    Scrolling outside ChartRect has been 
+    implemented. It can be disabled setting
+    TChart.Panning.InsideBounds property to
+    True. It's False by default.
+14) Added new OnValidDataSource event to 
+    TChart, TDBChart and TQRChart.	
+15) Added new SeriesIndex read-only integer
+    property to TCustomChartSeries.
+16) Several improvements at TFlexCanvas
+    (exporting Charts to Adobe Flex / Flash)
+17) New TChartWalls.Hide and Show methods.
+18) New TTeeShadow.BlurSize integer property.
+19) New TTeeFont.Quality property.
+20) New TAnnotationTool.Draw3D boolean property.
+21) New TBannerTool.ScrollStep integer property.
+22) OpenGL: Scroll and zoom now supported in 2D
+23) New TContourLevel.Text string property.
+24) New TFaderTool.ParentColor property.
+25) New TGrayScaleFilter Method style: gmLight.
+26) New TChartGalleryPanel.CanvasClass property.
+27) New HTML5 Canvas and Export class.
+28) New Chart Legend text style: ltsXAndText
+29) New TOrgItem Level and Parent functions.
+30) Renamed PNGImage unit to TeePNGImage to avoid
+    name conflicts with existing PNGImage unit.
+31) Chart background is now printed by default
+    (TeePrintTeePanel global defaults to True now)
+32) New TSeriesTextSource.DataSource property to
+    link Series with for example a TMemo.
+33) New TSeriesTextSource.Automatic boolean property.
+34) New TLightTool DrawStyle property
+
+===============================================
+Release Notes 12th April 2010
+TeeChart VCL version 2010
+Build 2010.00.00407
+===============================================
+Please send feedback to:
+http://www.teechart.net/support/index.php
+===============================================
+
+For a list of changes, please open the
+WhatsNew.htm file located at installation
+folder under \Docs\Whats New.
+
+An updated list of changes and additions is located here:
+
+http://www.steema.com/support/teechart/9/WhatsNew/WhatsNew.htm
+
+===============================================
+Please send feedback to:
+http://www.teechart.net/support/index.php
+===============================================
