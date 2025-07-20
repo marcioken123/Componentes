@@ -1,0 +1,140 @@
+object PDFOptions: TPDFOptions
+  Left = 0
+  Top = 0
+  Caption = 'PDF Export'
+  ClientHeight = 250
+  ClientWidth = 299
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [dkDesktop, dkiPhone, dkiPad]
+  OnActivate = FormActivate
+  OnCloseQuery = FormCloseQuery
+  DesignerMobile = False
+  DesignerWidth = 0
+  DesignerHeight = 0
+  DesignerDeviceName = ''
+  DesignerOrientation = 0
+  object Label1: TLabel
+    Height = 17.000000000000000000
+    Position.X = 16.000000000000000000
+    Position.Y = 16.000000000000000000
+    Text = 'Page Size:'
+    Width = 120.000000000000000000
+  end
+  object CBPageSize: TComboBox
+    DisableFocusEffect = False
+    Height = 22.000000000000000000
+    ItemIndex = 0
+    Position.X = 16.000000000000000000
+    Position.Y = 35.000000000000000000
+    TabOrder = 1
+    Width = 137.000000000000000000
+    object TListBoxItem
+      Height = 19.000000000000000000
+      IsSelected = True
+      Text = 'Default'
+      Width = 19.000000000000000000
+    end
+    object TListBoxItem
+      Height = 19.000000000000000000
+      Text = 'A3'
+      Width = 19.000000000000000000
+    end
+    object TListBoxItem
+      Height = 19.000000000000000000
+      Text = 'A4'
+      Width = 19.000000000000000000
+    end
+    object TListBoxItem
+      Height = 19.000000000000000000
+      Text = 'A5'
+      Width = 19.000000000000000000
+    end
+    object TListBoxItem
+      Height = 19.000000000000000000
+      Text = 'Letter'
+      Width = 19.000000000000000000
+    end
+    object TListBoxItem
+      Height = 19.000000000000000000
+      Text = 'Legal'
+      Width = 19.000000000000000000
+    end
+    object TListBoxItem
+      Height = 19.000000000000000000
+      Text = 'Tabloid'
+      Width = 19.000000000000000000
+    end
+    object TListBoxItem
+      Height = 19.000000000000000000
+      Text = 'Custom'
+      Width = 19.000000000000000000
+    end
+  end
+  object RGOrient: TRadioGroup
+    StyledSettings = [ssFamily, ssSize, ssStyle, ssFontColor, ssOther]
+    Height = 65.000000000000000000
+    Padding.Left = 6.000000000000000000
+    Padding.Top = 14.000000000000000000
+    Position.X = 16.000000000000000000
+    Position.Y = 72.000000000000000000
+    Text = 'Orientation:'
+    Width = 137.000000000000000000
+    TabOrder = 2
+    ItemIndex = 0
+    object RadioButton1: TRadioButton
+      Height = 19.000000000000000000
+      IsChecked = True
+      Position.X = 6.000000000000000000
+      Position.Y = 14.000000000000000000
+      TabOrder = 0
+      Text = 'Portrait'
+      Width = 120.000000000000000000
+    end
+    object RadioButton2: TRadioButton
+      Height = 19.000000000000000000
+      Position.X = 6.000000000000000000
+      Position.Y = 33.000000000000000000
+      TabOrder = 1
+      Text = 'Landscape'
+      Width = 120.000000000000000000
+    end
+  end
+  object Label2: TLabel
+    Height = 17.000000000000000000
+    Position.X = 16.000000000000000000
+    Position.Y = 144.000000000000000000
+    Text = 'Position:'
+    Width = 120.000000000000000000
+  end
+  object CBPosition: TComboBox
+    DisableFocusEffect = False
+    Height = 22.000000000000000000
+    ItemIndex = 0
+    Position.X = 16.000000000000000000
+    Position.Y = 163.000000000000000000
+    TabOrder = 4
+    Width = 137.000000000000000000
+    object TListBoxItem
+      Height = 19.000000000000000000
+      IsSelected = True
+      Text = 'Center'
+      Width = 19.000000000000000000
+    end
+    object TListBoxItem
+      Height = 19.000000000000000000
+      Text = 'Stretch'
+      Width = 19.000000000000000000
+    end
+    object TListBoxItem
+      Height = 19.000000000000000000
+      Text = 'Fit'
+      Width = 19.000000000000000000
+    end
+    object TListBoxItem
+      Height = 19.000000000000000000
+      Text = 'Custom'
+      Width = 19.000000000000000000
+    end
+  end
+end

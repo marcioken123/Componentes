@@ -1,0 +1,412 @@
+﻿// CodeGear C++Builder
+// Copyright (c) 1995, 2020 by Embarcadero Technologies, Inc.
+// All rights reserved
+
+// (DO NOT EDIT: machine generated header) 'TeeMaker127.dpk' rev: 34.00 (Windows)
+
+#ifndef Teemaker127HPP
+#define Teemaker127HPP
+
+#pragma delphiheader begin
+#pragma option push
+#pragma option -w-      // All warnings off
+#pragma option -Vx      // Zero-length empty class member 
+#pragma pack(push,8)
+#include <System.hpp>	// (rtl)
+#include <SysInit.hpp>
+#include <TeeTextureSelector.hpp>
+#include <TeeBlockEditor.hpp>
+#include <TeeBlocks.hpp>
+#include <TeeChartBlock.hpp>
+#include <TeeDraw3DEditor.hpp>
+#include <TeeMakerControl.hpp>
+#include <TeeMakerEditor.hpp>
+#include <TeeRain.hpp>
+#include <TeeRevolution.hpp>
+#include <TeeStairs.hpp>
+#include <TeeLoadBlock.hpp>
+#include <TeePipe.hpp>
+#include <TeePlayMP3.hpp>
+#include <TeeLoadError.hpp>
+#include <TeeExtruded.hpp>
+#include <TeeGLUT.hpp>
+#include <TeeWater.hpp>
+#include <TeeTerrain.hpp>
+#include <TeeRoundRect.hpp>
+#include <TeeSelectProperty.hpp>
+#include <TeeExtrudedEditor.hpp>
+#include <TeeRevolutionEditor.hpp>
+#include <TeeChart3D.hpp>
+#include <TeeActionGallery.hpp>
+#include <TeeBlockFormat.hpp>
+#include <TeeBlockGallery.hpp>
+#include <TeeEdgeStyle.hpp>
+#include <TeeHelix.hpp>
+#include <TeeMakerLibrary.hpp>
+#include <TeeMesh.hpp>
+#include <TeePointEditor.hpp>
+#include <TeeVideoBlock.hpp>
+#include <TeeProperties.hpp>
+#include <TeeColorPalette.hpp>
+#include <TeeAnimationGallery.hpp>
+#include <TeeAnimateEditor.hpp>
+#include <VCLTee.TeeObjectInspector.hpp>
+#include <TeeChartBlock3DEditor.hpp>
+#include <TeeBlockCanvas.hpp>
+#include <TeeSoundSelector.hpp>
+#include <TeeMakerConst.hpp>
+#include <TeeBlockReplacer.hpp>
+#include <TeePointItemEditor.hpp>
+#include <TeeSubdivideMesh.hpp>
+#include <TeeCamera.hpp>
+#include <TeeGLSLShaders.hpp>
+#include <TeeClipBlock.hpp>
+#include <TeeMoveAnimation.hpp>
+#include <TeeActionAnimation.hpp>
+#include <TeeBlockAnimations.hpp>
+#include <TeeNumberAnimation.hpp>
+#include <TeeKinematics.hpp>
+#include <TeeBlockClasses.hpp>
+#include <TeeViewBlock.hpp>
+#include <Tee3DSFormat.hpp>
+#include <TeeFacesBlock.hpp>
+#include <TeeTarga.hpp>
+#include <TeeObjFormat.hpp>
+#include <System.UITypes.hpp>	// (rtl)
+#include <Winapi.Windows.hpp>	// (rtl)
+#include <Winapi.PsAPI.hpp>	// (rtl)
+#include <System.Character.hpp>	// (rtl)
+#include <System.Internal.ExcUtils.hpp>	// (rtl)
+#include <System.SysUtils.hpp>	// (rtl)
+#include <System.VarUtils.hpp>	// (rtl)
+#include <System.Variants.hpp>	// (rtl)
+#include <System.Math.hpp>	// (rtl)
+#include <System.Rtti.hpp>	// (rtl)
+#include <System.TypInfo.hpp>	// (rtl)
+#include <System.Generics.Defaults.hpp>	// (rtl)
+#include <System.TimeSpan.hpp>	// (rtl)
+#include <System.Classes.hpp>	// (rtl)
+#include <System.DateUtils.hpp>	// (rtl)
+#include <System.IOUtils.hpp>	// (rtl)
+#include <System.IniFiles.hpp>	// (rtl)
+#include <System.Win.Registry.hpp>	// (rtl)
+#include <System.UIConsts.hpp>	// (rtl)
+#include <Vcl.Graphics.hpp>	// (vcl)
+#include <System.Messaging.hpp>	// (rtl)
+#include <System.Actions.hpp>	// (rtl)
+#include <Vcl.ActnList.hpp>	// (vcl)
+#include <System.HelpIntfs.hpp>	// (rtl)
+#include <System.SyncObjs.hpp>	// (rtl)
+#include <Winapi.UxTheme.hpp>	// (rtl)
+#include <Vcl.GraphUtil.hpp>	// (vcl)
+#include <Vcl.StdCtrls.hpp>	// (vcl)
+#include <Winapi.ShellAPI.hpp>	// (rtl)
+#include <Vcl.Printers.hpp>	// (vcl)
+#include <Vcl.Clipbrd.hpp>	// (vcl)
+#include <Vcl.ComCtrls.hpp>	// (vcl)
+#include <Vcl.Dialogs.hpp>	// (vcl)
+#include <Vcl.ExtCtrls.hpp>	// (vcl)
+#include <Vcl.Themes.hpp>	// (vcl)
+#include <System.AnsiStrings.hpp>	// (rtl)
+#include <System.Win.ComObj.hpp>	// (rtl)
+#include <Winapi.FlatSB.hpp>	// (rtl)
+#include <Vcl.Forms.hpp>	// (vcl)
+#include <Vcl.Menus.hpp>	// (vcl)
+#include <Winapi.MsCTF.hpp>	// (rtl)
+#include <Vcl.Controls.hpp>	// (vcl)
+#include <Vcl.CheckLst.hpp>	// (vclx)
+#include <VCLTee.TeeHtml.hpp>	// (Tee927)
+#include <VCLTee.TeeConst.hpp>	// (Tee927)
+#include <VCLTee.TeCanvas.hpp>	// (Tee927)
+#include <VCLTee.TeeFilters.hpp>	// (Tee927)
+#include <VCLTee.TeeProcs.hpp>	// (Tee927)
+#include <VCLTee.OpenGL2.hpp>	// (TeeGL927)
+#include <VCLTee.TeeGLCanvas.hpp>	// (TeeGL927)
+#include <VCLTee.TeeAnimate.hpp>	// (TeeUI927)
+#include <Vcl.Imaging.jpeg.hpp>	// (vclimg)
+#include <Vcl.Imaging.GIFImg.hpp>	// (vclimg)
+#include <Vcl.Imaging.pngimage.hpp>	// (vclimg)
+#include <VCLTee.TeEngine.hpp>	// (Tee927)
+#include <VCLTee.Chart.hpp>	// (Tee927)
+#include <VCLTee.TeeStore.hpp>	// (Tee927)
+#include <VCLTee.TeeURL.hpp>	// (TeeUI927)
+#include <Vcl.Buttons.hpp>	// (vcl)
+#include <VCLTee.TeeSpline.hpp>	// (Tee927)
+#include <VCLTee.TeeGalleryPanel.hpp>	// (TeeUI927)
+#include <Winapi.GDIPOBJ.hpp>	// (rtl)
+#include <VCLTee.TeeGDIPlus.hpp>	// (Tee927)
+#include <Vcl.ExtDlgs.hpp>	// (vcl)
+#include <Vcl.Grids.hpp>	// (vcl)
+#include <VCLTee.TeeEmfOptions.hpp>	// (TeeUI927)
+#include <Winapi.Mapi.hpp>	// (rtl)
+#include <VCLTee.TeeBmpOptions.hpp>	// (TeeUI927)
+#include <VCLTee.TeeExport.hpp>	// (TeeUI927)
+#include <VCLTee.TeeJPEG.hpp>	// (TeeImage927)
+#include <VCLTee.TeeAnimations.hpp>	// (TeeUI927)
+#include <VCLTee.TeeGIF.hpp>	// (TeeImage927)
+#include <VCLTee.TeePNG.hpp>	// (TeeImage927)
+#include <VCLTee.TeeTextShapeEditor.hpp>	// (TeeUI927)
+#include <VCLTee.TeeFunci.hpp>	// (Tee927)
+#include <VCLTee.TeeGally.hpp>	// (TeeUI927)
+#include <VCLTee.TeeBaseFuncEdit.hpp>	// (TeeUI927)
+#include <VCLTee.TeeEdiPeri.hpp>	// (TeeUI927)
+#include <VCLTee.TeePoEdi.hpp>	// (TeeUI927)
+#include <VCLTee.TeeToolsGallery.hpp>	// (TeeUI927)
+#include <VCLTee.TeeEditTools.hpp>	// (TeeUI927)
+#include <VCLTee.TeeAnimationEditor.hpp>	// (TeeUI927)
+#include <VCLTee.TeeAnimationEditors.hpp>	// (TeeUI927)
+#include <VCLTee.TeeAnimationsGallery.hpp>	// (TeeUI927)
+#include <System.Zip.hpp>	// (rtl)
+#include <VCLTee.TeeAbout.hpp>	// (Tee927)
+#include <VCLTee.TeeEditCha.hpp>	// (TeeUI927)
+#include <VCLTee.TeeProCo.hpp>	// (TeePro927)
+#include <VCLTee.TeeCustEdit.hpp>	// (TeeUI927)
+#include <VCLTee.TeeAreaEdit.hpp>	// (TeeUI927)
+#include <VCLTee.TeeStackBarEdit.hpp>	// (TeeUI927)
+#include <VCLTee.TeeBarEdit.hpp>	// (TeeUI927)
+#include <VCLTee.TeeCircledEdit.hpp>	// (TeeUI927)
+#include <VCLTee.TeePieEdit.hpp>	// (TeeUI927)
+#include <VCLTee.TeeFLineEdi.hpp>	// (TeeUI927)
+#include <VCLTee.TeeShape.hpp>	// (Tee927)
+#include <VCLTee.TeeShapeEdi.hpp>	// (TeeUI927)
+#include <VCLTee.TeeCustomFuncEditor.hpp>	// (TeeUI927)
+#include <VCLTee.TeeAvgFuncEditor.hpp>	// (TeeUI927)
+#include <VCLTee.GanttCh.hpp>	// (Tee927)
+#include <VCLTee.TeeGanttEdi.hpp>	// (TeeUI927)
+#include <VCLTee.ArrowCha.hpp>	// (Tee927)
+#include <VCLTee.TeeArrowEdi.hpp>	// (TeeUI927)
+#include <VCLTee.BubbleCh.hpp>	// (Tee927)
+#include <VCLTee.TeeBubbleEdit.hpp>	// (TeeUI927)
+#include <VCLTee.OHLChart.hpp>	// (TeePro927)
+#include <VCLTee.CandleCh.hpp>	// (TeePro927)
+#include <VCLTee.StatChar.hpp>	// (TeePro927)
+#include <VCLTee.TeeCandlEdi.hpp>	// (TeePro927)
+#include <VCLTee.TeeVolEd.hpp>	// (TeePro927)
+#include <VCLTee.TeeSurfa.hpp>	// (TeePro927)
+#include <VCLTee.TeeGriEd.hpp>	// (TeePro927)
+#include <VCLTee.TeeSurfEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeePolar.hpp>	// (TeePro927)
+#include <VCLTee.TeePolarEditor.hpp>	// (TeePro927)
+#include <VCLTee.ErrorBar.hpp>	// (TeePro927)
+#include <VCLTee.TeeErrBarEd.hpp>	// (TeePro927)
+#include <VCLTee.CurvFitt.hpp>	// (TeePro927)
+#include <VCLTee.TeePolarGrid.hpp>	// (TeePro927)
+#include <VCLTee.TeePolarGridEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeContourEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeBezie.hpp>	// (TeePro927)
+#include <VCLTee.TeePoin3.hpp>	// (TeePro927)
+#include <VCLTee.TeePo3DEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeCount.hpp>	// (TeePro927)
+#include <VCLTee.TeeCumu.hpp>	// (TeePro927)
+#include <VCLTee.TeeDonut.hpp>	// (TeePro927)
+#include <VCLTee.TeeDonutEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeTools.hpp>	// (TeePro927)
+#include <VCLTee.TeeToolSeriesEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeAnnToolEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeCursorEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeTriSurface.hpp>	// (TeePro927)
+#include <VCLTee.TeeTriSurfEdit.hpp>	// (TeePro927)
+#include <VCLTee.MyPoint.hpp>	// (TeePro927)
+#include <VCLTee.Bar3D.hpp>	// (TeePro927)
+#include <VCLTee.BigCandl.hpp>	// (TeePro927)
+#include <VCLTee.ImageBar.hpp>	// (TeePro927)
+#include <VCLTee.ImaPoint.hpp>	// (TeePro927)
+#include <VCLTee.TeeImaEd.hpp>	// (TeePro927)
+#include <VCLTee.TeeRose.hpp>	// (TeePro927)
+#include <VCLTee.TeeBoxPlot.hpp>	// (TeePro927)
+#include <VCLTee.TeeHistoEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeAxisToolEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeColorLineEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeColorBandEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeAxisArrowEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeDrawLineEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeImageToolEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeBarJoinEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeLinePointEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeRotateToolEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeHighLowEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeClockEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeBoxPlotEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeWindRoseEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeColorGridEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeWaterFallEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeSmith.hpp>	// (TeePro927)
+#include <VCLTee.TeePyramid.hpp>	// (TeePro927)
+#include <VCLTee.TeePyramidEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeKDEEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeViolinEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeNearestToolEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeSmithEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeCalendar.hpp>	// (TeePro927)
+#include <VCLTee.TeeCalendarEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeePageNumTool.hpp>	// (TeePro927)
+#include <VCLTee.TeePageNumToolEditor.hpp>	// (TeePro927)
+#include <Xml.Win.msxmldom.hpp>	// (xmlrtl)
+#include <Xml.xmldom.hpp>	// (xmlrtl)
+#include <VCLTee.TeeMapSeries.hpp>	// (TeePro927)
+#include <VCLTee.TeeDragPoint.hpp>	// (TeePro927)
+#include <VCLTee.TeeMapSeriesEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeVolumePipe.hpp>	// (TeePro927)
+#include <VCLTee.TeeVolumePipeEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeMarksTipToolEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeDragMarksEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeFunnel.hpp>	// (TeePro927)
+#include <VCLTee.TeeFunnelEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeADXFuncEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeMovAveFuncEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeSmoothFuncEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeTransposeTool.hpp>	// (TeePro927)
+#include <VCLTee.TeeTransposeToolEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeTransposeSeries.hpp>	// (TeePro927)
+#include <VCLTee.TeeTransposeSeriesEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeCompressOHLC.hpp>	// (TeePro927)
+#include <VCLTee.TeeMACDFuncEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeCLVFunction.hpp>	// (TeePro927)
+#include <VCLTee.TeeMoneyFlowFuncEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeRVIFuncEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeAlligatorFuncEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeBollingerEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeRMSFuncEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeExpAveFuncEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeGanttTool.hpp>	// (TeePro927)
+#include <VCLTee.TeeGanttToolEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeGridBandToolEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeOBVFunction.hpp>	// (TeePro927)
+#include <VCLTee.TeeCCIFunction.hpp>	// (TeePro927)
+#include <VCLTee.TeePVOFunction.hpp>	// (TeePro927)
+#include <VCLTee.TeeDownSampling.hpp>	// (TeePro927)
+#include <VCLTee.TeePointFigure.hpp>	// (TeePro927)
+#include <VCLTee.TeeGauges.hpp>	// (TeePro927)
+#include <VCLTee.TeeGaugeEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeTowerEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeVectorEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeSeriesAnimEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeePieTool.hpp>	// (TeePro927)
+#include <VCLTee.TeePieToolEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeSeriesBandTool.hpp>	// (TeePro927)
+#include <VCLTee.TeeSeriesBandToolEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeExtraLegendTool.hpp>	// (TeePro927)
+#include <VCLTee.TeeExtraLegendToolEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeSelectorTool.hpp>	// (TeePro927)
+#include <VCLTee.TeeSelectorToolEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeLighting.hpp>	// (TeePro927)
+#include <VCLTee.TeeLegendScrollBar.hpp>	// (TeePro927)
+#include <VCLTee.TeeSurfaceTool.hpp>	// (TeePro927)
+#include <VCLTee.TeeSurfaceToolEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeDataTableTool.hpp>	// (TeePro927)
+#include <VCLTee.TeeDataTableEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeIsoSurface.hpp>	// (TeePro927)
+#include <VCLTee.TeeSeriesStats.hpp>	// (TeePro927)
+#include <VCLTee.TeeDragPointEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeHistogram.hpp>	// (TeePro927)
+#include <VCLTee.TeeSubsetEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeExpandAnimationEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeCustomLegendTool.hpp>	// (TeePro927)
+#include <VCLTee.TeeCustomLegendToolEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeSeriesStatsEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeSeriesRegion.hpp>	// (TeePro927)
+#include <VCLTee.TeeSeriesRegionEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeLegendPalette.hpp>	// (TeePro927)
+#include <VCLTee.TeeLegendPaletteEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeFibonacci.hpp>	// (TeePro927)
+#include <VCLTee.TeeFibonacciEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeLegendScrollBarEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeAxisBreaks.hpp>	// (TeePro927)
+#include <VCLTee.TeeAxisBreaksEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeThemes.hpp>	// (TeePro927)
+#include <VCLTee.TeeSubChart.hpp>	// (TeePro927)
+#include <VCLTee.TeeSubChartEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeVideo.hpp>	// (TeePro927)
+#include <VCLTee.TeeVideoPlayer.hpp>	// (TeePro927)
+#include <VCLTee.TeeExcelSource.hpp>	// (TeeUI927)
+#include <VCLTee.TeeAntiAlias.hpp>	// (TeePro927)
+#include <VCLTee.TeeHighLowLine.hpp>	// (TeePro927)
+#include <VCLTee.TeeFrameTool.hpp>	// (TeePro927)
+#include <VCLTee.TeeFrameToolEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeSAR.hpp>	// (TeePro927)
+#include <VCLTee.TeeBannerTool.hpp>	// (TeePro927)
+#include <VCLTee.TeeBannerToolEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeMagnifyTool.hpp>	// (TeePro927)
+#include <VCLTee.TeeFaderTool.hpp>	// (TeePro927)
+#include <VCLTee.TeeCurveFittingEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeAxisScrollEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeOrgSeries.hpp>	// (TeePro927)
+#include <VCLTee.TeeTagCloud.hpp>	// (TeePro927)
+#include <VCLTee.TeeRenkoSeries.hpp>	// (TeePro927)
+#include <VCLTee.TeeKagiSeries.hpp>	// (TeePro927)
+#include <VCLTee.TeeNumericGauge.hpp>	// (TeePro927)
+#include <VCLTee.TeeLinearGauge.hpp>	// (TeePro927)
+#include <VCLTee.TeeLinkTool.hpp>	// (TeePro927)
+#include <VCLTee.TeeLinkToolEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeCircularGauge.hpp>	// (TeePro927)
+#include <VCLTee.TeeNumericGaugeEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeLinearGaugeEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeCircularGaugeEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeTagCloudEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeHighLowLineEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeKnobGauge.hpp>	// (TeePro927)
+#include <VCLTee.TeeKnobGaugeEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeArrowTool.hpp>	// (TeePro927)
+#include <VCLTee.TeeArrowToolEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeTernary.hpp>	// (TeePro927)
+#include <VCLTee.TeeTernaryEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeRoseEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeTreeMapSeries.hpp>	// (TeePro927)
+#include <VCLTee.TeeOrgSeriesEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeTreeMapSeriesEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeErrorPoint.hpp>	// (TeePro927)
+#include <VCLTee.TeeErrorPointEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeErrorPoint3DEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeClusteringTool.hpp>	// (TeePro927)
+#include <VCLTee.TeeClusteringToolEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeScrollPagerTool.hpp>	// (TeePro927)
+#include <VCLTee.TeeScrollPagerEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeKagiSeriesEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeRenkoSeriesEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeEquiVolume.hpp>	// (TeePro927)
+#include <VCLTee.TeeEquiVolEdi.hpp>	// (TeePro927)
+#include <VCLTee.TeeText3D.hpp>	// (TeePro927)
+#include <VCLTee.TeeToolsGalleryDemos.hpp>	// (TeePro927)
+#include <VCLTee.TeeTransformAnimationEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeAnimationsGalleryDemos.hpp>	// (TeePro927)
+#include <VCLTee.TeeGDIPlusEditor.hpp>	// (TeeUI927)
+#include <VCLTee.TeeThemeEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeDoubleHorizBar.hpp>	// (TeePro927)
+#include <VCLTee.TeeDoubleHorizBarEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeePolarContour.hpp>	// (TeePro927)
+#include <VCLTee.TeePolarContourEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeBubbleCloudEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeAxisScrollBarEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeComboEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeRepaintMonitorEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeChartLayout.hpp>	// (TeePro927)
+#include <VCLTee.TeeDownSamplingEditor.hpp>	// (TeePro927)
+#include <VCLTee.TeeActivityDonut.hpp>	// (TeePro927)
+#include <VCLTee.TeeActivityGauge.hpp>	// (TeePro927)
+#include <VCLTee.TeeActivityGaugeEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeEqualizerSeries.hpp>	// (TeePro927)
+#include <VCLTee.TeeEqualizerEdit.hpp>	// (TeePro927)
+#include <VCLTee.TeeEditPro.hpp>	// (TeePro927)
+#include <VCLTee.TeeGLEditor.hpp>	// (TeeGL927)
+// PRG_EXT: .bpl
+// BPI_DIR: C:\tcroot\TeeChartVCL\Sources9\Compiled\Delphi27.win32\Lib\Obj
+// OBJ_DIR: C:\tcroot\TeeChartVCL\Sources9\Compiled\Delphi27.win32\Lib\Obj
+// OBJ_EXT: .obj
+
+//-- user supplied -----------------------------------------------------------
+
+namespace Teemaker127
+{
+//-- forward type declarations -----------------------------------------------
+//-- type declarations -------------------------------------------------------
+//-- var, const, procedure ---------------------------------------------------
+}	/* namespace Teemaker127 */
+#if !defined(DELPHIHEADER_NO_IMPLICIT_NAMESPACE_USE) && !defined(NO_USING_NAMESPACE_TEEMAKER127)
+using namespace Teemaker127;
+#endif
+#pragma pack(pop)
+#pragma option pop
+
+#pragma delphiheader end.
+//-- end unit ----------------------------------------------------------------
+#endif	// Teemaker127HPP

@@ -1,0 +1,214 @@
+﻿// CodeGear C++Builder
+// Copyright (c) 1995, 2020 by Embarcadero Technologies, Inc.
+// All rights reserved
+
+// (DO NOT EDIT: machine generated header) 'TeeBlockCanvas.pas' rev: 34.00 (Windows)
+
+#ifndef TeeblockcanvasHPP
+#define TeeblockcanvasHPP
+
+#pragma delphiheader begin
+#pragma option push
+#pragma option -w-      // All warnings off
+#pragma option -Vx      // Zero-length empty class member 
+#pragma pack(push,8)
+#include <System.hpp>
+#include <SysInit.hpp>
+#include <Winapi.Windows.hpp>
+#include <System.Classes.hpp>
+#include <System.UITypes.hpp>
+#include <Vcl.Graphics.hpp>
+#include <System.Types.hpp>
+#include <VCLTee.TeCanvas.hpp>
+#include <TeeBlocks.hpp>
+#include <TeePipe.hpp>
+#include <System.Math.Vectors.hpp>
+
+//-- user supplied -----------------------------------------------------------
+
+namespace Teeblockcanvas
+{
+//-- forward type declarations -----------------------------------------------
+class DELPHICLASS TBlockCanvas;
+//-- type declarations -------------------------------------------------------
+class PASCALIMPLEMENTATION TBlockCanvas : public Vcltee::Tecanvas::TTeeNeutralCanvas
+{
+	typedef Vcltee::Tecanvas::TTeeNeutralCanvas inherited;
+	
+	
+private:
+	typedef System::DynamicArray<Teeblocks::TBlocks*> _TBlockCanvas__1;
+	
+	
+private:
+	int FDepth;
+	int FWidth;
+	int FHeight;
+	HDC FDC;
+	double FX;
+	double FY;
+	double FZ;
+	bool FIs3D;
+	bool FUseBuffer;
+	Vcl::Graphics::TCanvas* IDestCanvas;
+	Vcltee::Tecanvas::TTeeTransparency ITransp;
+	Teeblocks::TBlocks* IBlocks;
+	_TBlockCanvas__1 IRestoreBlocks;
+	System::Classes::TComponent* IOwner;
+	double IXOffset;
+	void __fastcall AddBlock(Teeblocks::TCustomBlock* ABlock);
+	Teeblocks::TRectangleBlock* __fastcall RectangleBlock(System::Classes::TComponent* AOwner);
+	void __fastcall SetFormat(Teeblocks::TCustomBlock* ABlock);
+	void __fastcall SetLocationSize(Teeblocks::TCustomBlock* ABlock, const double Left, const double Top, const double Right, const double Bottom, const double Z0, const double Z1);
+	void __fastcall SetPipe(Teepipe::TPipeBlock* P);
+	void __fastcall SetTitle(Teeblocks::TCustomBlock* ABlock, const System::UnicodeString ATitle);
+	
+protected:
+	virtual Vcltee::Tecanvas::TVisualBlock* __fastcall BeginEntity(const System::UnicodeString Entity, Vcltee::Tecanvas::TVisualBlock* const Visual = (Vcltee::Tecanvas::TVisualBlock*)(0x0), Vcltee::Tecanvas::TTeeTransform* const Transform = (Vcltee::Tecanvas::TTeeTransform*)(0x0));
+	virtual void __fastcall EndEntity();
+	HIDESBASE void __fastcall InternalCylinder(bool Vertical, int Left, int Top, int Right, int Bottom, int Z0, int Z1, bool Dark3D, int ConePercent, Vcltee::Tecanvas::TTeeBrush* const Side1 = (Vcltee::Tecanvas::TTeeBrush*)(0x0), Vcltee::Tecanvas::TTeeBrush* const Side2 = (Vcltee::Tecanvas::TTeeBrush*)(0x0));
+	virtual HDC __fastcall GetHandle();
+	virtual bool __fastcall GetIsNoBMPGrid();
+	virtual System::Uitypes::TColor __fastcall GetPixel(int x, int y);
+	virtual System::Uitypes::TColor __fastcall GetPixel3D(int X, int Y, int Z);
+	virtual bool __fastcall GetSupports3DText();
+	virtual bool __fastcall GetSupportsFullRotation();
+	virtual bool __fastcall GetSupportsXORMode();
+	virtual bool __fastcall GetUseBuffer();
+	virtual void __fastcall SetPixel(int X, int Y, System::Uitypes::TColor Value);
+	virtual void __fastcall SetPixel3D(int X, int Y, int Z, System::Uitypes::TColor Value);
+	virtual void __fastcall SetUseBuffer(bool Value);
+	virtual void __fastcall SmoothShadow(Vcltee::Tecanvas::TTeeShadow* const Shadow, const System::Types::TRect &Rect, bool Ellipse, int RoundSize, const System::Types::TPoint *P, const int P_High, int DonutPercent = 0x0, const double StartAngle = 0.000000E+00, const double EndAngle = 3.600000E+02);
+	
+public:
+	bool BeveledCubes;
+	bool LinesAsPipes;
+	bool PieTorus;
+	bool TextAsPictures;
+	double TextDepth;
+	__fastcall TBlockCanvas(Teeblocks::TBlocks* const ABlocks);
+	__classmethod virtual System::UnicodeString __fastcall Description();
+	void __fastcall Repaint();
+	virtual void __fastcall DisableRotation();
+	virtual void __fastcall EnableRotation();
+	virtual Vcltee::Tecanvas::TTeeBlend* __fastcall BeginBlending(const System::Types::TRect &R, Vcltee::Tecanvas::TTeeTransparency Transparency);
+	virtual void __fastcall EndBlending(Vcltee::Tecanvas::TTeeBlend* const Blend);
+	virtual void __fastcall Arc(const int Left, const int Top, const int Right, const int Bottom, const int StartX, const int StartY, const int EndX, const int EndY)/* overload */;
+	virtual void __fastcall Donut(int XCenter, int YCenter, int XRadius, int YRadius, const double StartAngle, const double EndAngle, const double HolePercent)/* overload */;
+	virtual void __fastcall Draw(int X, int Y, Vcl::Graphics::TGraphic* const Graphic);
+	virtual void __fastcall EraseBackground(const System::Types::TRect &Rect);
+	virtual void __fastcall Ellipse(const int X1, const int Y1, const int X2, const int Y2)/* overload */;
+	virtual void __fastcall FillRect(const System::Types::TRect &Rect);
+	virtual void __fastcall LineTo(const int X, const int Y)/* overload */;
+	virtual void __fastcall MoveTo(const int X, const int Y)/* overload */;
+	virtual void __fastcall Pie(int X1, int Y1, int X2, int Y2, int X3, int Y3, int X4, int Y4)/* overload */;
+	virtual void __fastcall Rectangle(const int X0, const int Y0, const int X1, const int Y1)/* overload */;
+	virtual void __fastcall RoundRect(int X1, int Y1, int X2, int Y2, int X3, int Y3)/* overload */;
+	virtual void __fastcall StretchDraw(const System::Types::TRect &Rect, Vcl::Graphics::TGraphic* const Graphic)/* overload */;
+	virtual void __fastcall TextOut(int X, int Y, const System::UnicodeString Text)/* overload */;
+	virtual void __fastcall ClipRectangle(const System::Types::TRect &Rect)/* overload */;
+	virtual void __fastcall ClipCube(const System::Types::TRect &Rect, int MinZ, int MaxZ);
+	virtual void __fastcall GradientFill(const System::Types::TRect &Rect, System::Uitypes::TColor StartColor, System::Uitypes::TColor EndColor, Vcltee::Tecanvas::TGradientDirection Direction, int Balance = 0x32, int RadialX = 0x0, int RadialY = 0x0)/* overload */;
+	virtual void __fastcall Invalidate();
+	virtual void __fastcall Polyline(const System::Types::TPoint *Points, const int Points_High)/* overload */;
+	virtual void __fastcall Polygon(const System::Types::TPoint *Points, const int Points_High);
+	virtual void __fastcall RotateLabel(int x, int y, const System::UnicodeString St, double RotDegree, bool AllowHTML = false);
+	virtual void __fastcall UnClipRectangle();
+	HIDESBASE System::Types::TPoint __fastcall Calculate2DPosition(const double x, const double y, const double z)/* overload */;
+	virtual void __fastcall Calculate2DPosition(int &x, int &y, int z)/* overload */;
+	virtual System::Types::TPoint __fastcall Calculate3DPosition(int x, int y, int z)/* overload */;
+	virtual System::Types::TRect __fastcall InitWindow(Vcl::Graphics::TCanvas* const DestCanvas, Vcltee::Tecanvas::TView3DOptions* const A3DOptions, System::Uitypes::TColor ABackColor, bool Is3D, const System::Types::TRect &UserRect);
+	virtual void __fastcall Projection(int MaxDepth, const System::Types::TRect &Bounds, const System::Types::TRect &Rect);
+	virtual void __fastcall ShowImage(Vcl::Graphics::TCanvas* const DestCanvas, Vcl::Graphics::TCanvas* const DefaultCanvas, const System::Types::TRect &UserRect);
+	virtual bool __fastcall ReDrawBitmap();
+	virtual void __fastcall Arrow(bool Filled, const System::Types::TPoint &FromPoint, const System::Types::TPoint &ToPoint, int ArrowWidth, int ArrowHeight, int Z0, int Z1, const double ArrowPercent)/* overload */;
+	virtual void __fastcall Cone(bool Vertical, int Left, int Top, int Right, int Bottom, int Z0, int Z1, bool Dark3D, int ConePercent);
+	virtual void __fastcall Cube(int Left, int Right, int Top, int Bottom, int Z0, int Z1, bool DarkSides = true, int RoundSize = 0x0)/* overload */;
+	virtual void __fastcall Cube(int Left, int Right, int Top, int Bottom, int Z0, int Z1, int BevelSize, bool DarkSides = true, int RoundSize = 0x0)/* overload */;
+	HIDESBASE void __fastcall Cube(double Left, double Right, double Top, double Bottom, double Z0, double Z1, bool DarkSides)/* overload */;
+	virtual void __fastcall Cylinder(bool Vertical, int Left, int Top, int Right, int Bottom, int Z0, int Z1, bool DarkCover);
+	virtual void __fastcall Diamond(const int Left, const int Top, const int Right, const int Bottom, int Z0, int Z1)/* overload */;
+	virtual void __fastcall EllipseWithZ(const int X1, const int Y1, const int X2, const int Y2, const int Z)/* overload */;
+	HIDESBASE void __fastcall Line(const System::Math::Vectors::TPoint3D &A, const System::Math::Vectors::TPoint3D &B);
+	virtual void __fastcall LineTo3D(const int X, const int Y, const int Z)/* overload */;
+	virtual void __fastcall LineWithZ(int X0, int Y0, int X1, int Y1, int Z)/* overload */;
+	virtual void __fastcall MoveTo3D(const int X, const int Y, const int Z)/* overload */;
+	virtual void __fastcall Pie3D(int XCenter, int YCenter, int XRadius, int YRadius, int Z0, int Z1, const double StartAngle, const double EndAngle, bool DarkSides, bool DrawSides, int DonutPercent = 0x0, Vcltee::Tecanvas::TCustomTeeGradient* Gradient = (Vcltee::Tecanvas::TCustomTeeGradient*)(0x0), int BevelPercent = 0x0, Vcltee::Tecanvas::TEdgeStyle EdgeStyle = (Vcltee::Tecanvas::TEdgeStyle)(0x2), Vcltee::Tecanvas::TTeeTransparency Transparency = (Vcltee::Tecanvas::TTeeTransparency)(0x0), int BevelBright = 0x0, bool BevelBorder = true, bool HideSides = false);
+	virtual void __fastcall Plane3D(const System::Types::TPoint &A, const System::Types::TPoint &B, int Z0, int Z1);
+	virtual void __fastcall PlaneWithZ(const System::Types::TPoint &P1, const System::Types::TPoint &P2, const System::Types::TPoint &P3, const System::Types::TPoint &P4, int Z)/* overload */;
+	virtual void __fastcall PlaneFour3D(Vcltee::Tecanvas::TFourPoints &Points, int Z0, int Z1);
+	void __fastcall Polygon3DFloat(const System::Math::Vectors::TPoint3D *Points, const int Points_High)/* overload */;
+	virtual void __fastcall Polygon3D(const Vcltee::Tecanvas::TPoint3D *Points, const int Points_High)/* overload */;
+	virtual void __fastcall PolygonWithZ(const System::Types::TPoint *Points, const int Points_High, int Z);
+	virtual void __fastcall Pyramid(bool Vertical, int Left, int Top, int Right, int Bottom, int z0, int z1, bool DarkSides);
+	virtual void __fastcall PyramidTrunc(const System::Types::TRectF &R, const double StartZ, const double EndZ, const double TruncX, const double TruncZ, bool TopCover = true, bool BottomCover = true);
+	virtual void __fastcall RectangleWithZ(const System::Types::TRect &Rect, int Z);
+	virtual void __fastcall RectangleY(const int Left, const int Top, const int Right, const int Z0, const int Z1);
+	virtual void __fastcall RectangleZ(const int Left, const int Top, const int Bottom, const int Z0, const int Z1);
+	virtual void __fastcall RotateLabel3D(int x, int y, int z, const System::UnicodeString St, double RotDegree, bool AllowHTML = false);
+	virtual void __fastcall RoundRect(const System::Types::TRect &R, int X, int Y, int Z0, int Z1)/* overload */;
+	virtual void __fastcall Sphere(int x, int y, int z, const double Radius)/* overload */;
+	HIDESBASE void __fastcall Sphere(const double x, const double y, const double z, const double Radius)/* overload */;
+	virtual void __fastcall StretchDraw(const System::Types::TRect &Rect, Vcl::Graphics::TGraphic* const Graphic, const double Pos, Vcltee::Tecanvas::TCanvas3DPlane Plane = (Vcltee::Tecanvas::TCanvas3DPlane)(0x2))/* overload */;
+	virtual void __fastcall Surface3D(Vcltee::Tecanvas::TTeeCanvasSurfaceStyle Style, bool SameBrush, bool CreateCached, bool AddNormals, int NumXValues, int NumZValues, const Vcltee::Tecanvas::TTeeCanvasCalcPoints CalcPoints, Vcltee::Tecanvas::TTeeCachedObject* &Cached);
+	void __fastcall Tetrahedron(double Left, double Top, double Right, double Bottom, double z0, double z1);
+	virtual void __fastcall TextOut3D(int X, int Y, int Z, const System::UnicodeString Text, bool AllowHTML = false)/* overload */;
+	virtual void __fastcall Triangle3D(const Vcltee::Tecanvas::TTrianglePoints3D &Points, const Vcltee::Tecanvas::TTriangleColors3D &Colors);
+	virtual void __fastcall TriangleWithZ(const System::Types::TPoint &P1, const System::Types::TPoint &P2, const System::Types::TPoint &P3, int Z);
+	virtual void __fastcall TriSurface(int NumTriangles, bool CreateCached, bool AddNormals, Vcltee::Tecanvas::TTeeBlend* const Blend, Vcltee::Tecanvas::TTeeTransparency Transparency, const Vcltee::Tecanvas::TTeeCanvasTriPoints CalcPoints, Vcltee::Tecanvas::TTeeCachedObject* &Cached);
+public:
+	/* TTeeNeutralCanvas.Create */ inline __fastcall virtual TBlockCanvas() : Vcltee::Tecanvas::TTeeNeutralCanvas() { }
+	
+public:
+	/* TTeeCanvas3D.Destroy */ inline __fastcall virtual ~TBlockCanvas() { }
+	
+	/* Hoisted overloads: */
+	
+public:
+	inline void __fastcall  Arc(const int Left, const int Top, const int Right, const int Bottom, const int StartX, const int StartY, const int EndX, const int EndY, const int Z){ Vcltee::Tecanvas::TCanvas3D::Arc(Left, Top, Right, Bottom, StartX, StartY, EndX, EndY, Z); }
+	inline void __fastcall  Arc(const int Left, const int Top, const int Right, const int Bottom, const float StartAngle, const float EndAngle){ Vcltee::Tecanvas::TTeeCanvas::Arc(Left, Top, Right, Bottom, StartAngle, EndAngle); }
+	inline void __fastcall  Arc(const System::Types::TRect &R, const float StartAngle, const float EndAngle){ Vcltee::Tecanvas::TTeeCanvas::Arc(R, StartAngle, EndAngle); }
+	inline void __fastcall  Ellipse(const System::Types::TRect &R){ Vcltee::Tecanvas::TTeeCanvas::Ellipse(R); }
+	inline void __fastcall  LineTo(const System::Types::TPoint &P){ Vcltee::Tecanvas::TTeeCanvas::LineTo(P); }
+	inline void __fastcall  LineTo(const _POINTFLOAT &P){ Vcltee::Tecanvas::TTeeCanvas::LineTo(P); }
+	inline void __fastcall  MoveTo(const System::Types::TPoint &P){ Vcltee::Tecanvas::TTeeCanvas::MoveTo(P); }
+	inline void __fastcall  MoveTo(const _POINTFLOAT &P){ Vcltee::Tecanvas::TTeeCanvas::MoveTo(P); }
+	inline void __fastcall  Pie(const System::Types::TRect &R, const double StartAngle, const double EndAngle){ Vcltee::Tecanvas::TTeeCanvas3D::Pie(R, StartAngle, EndAngle); }
+	inline void __fastcall  Rectangle(const System::Types::TRect &R, int Z){ Vcltee::Tecanvas::TCanvas3D::Rectangle(R, Z); }
+	inline void __fastcall  Rectangle(const int X0, const int Y0, const int X1, const int Y1, int Z){ Vcltee::Tecanvas::TCanvas3D::Rectangle(X0, Y0, X1, Y1, Z); }
+	inline void __fastcall  Rectangle(const System::Types::TRect &R){ Vcltee::Tecanvas::TTeeCanvas::Rectangle(R); }
+	inline void __fastcall  RoundRect(const System::Types::TRect &R, int X, int Y, Vcltee::Tecanvas::TTeeCorners* const ACorners = (Vcltee::Tecanvas::TTeeCorners*)(0x0)){ Vcltee::Tecanvas::TTeeCanvas::RoundRect(R, X, Y, ACorners); }
+	inline void __fastcall  TextOut(const int X, const int Y, const System::UnicodeString Text, bool AllowHtml){ Vcltee::Tecanvas::TTeeCanvas::TextOut(X, Y, Text, AllowHtml); }
+	inline void __fastcall  ClipRectangle(const System::Types::TRect &Rect, int RoundX, int RoundY){ Vcltee::Tecanvas::TTeeCanvas::ClipRectangle(Rect, RoundX, RoundY); }
+	inline void __fastcall  GradientFill(Vcltee::Tecanvas::TCustomTeeGradient* const Gradient, const System::Types::TRect &Rect){ Vcltee::Tecanvas::TTeeCanvas3D::GradientFill(Gradient, Rect); }
+	inline void __fastcall  Polyline(const System::Types::TPoint *Points, const int Points_High, int Z){ Vcltee::Tecanvas::TCanvas3D::Polyline(Points, Points_High, Z); }
+	inline void __fastcall  Calculate3DPosition(_POINTFLOAT &P, const float zPos){ Vcltee::Tecanvas::TTeeCanvas3D::Calculate3DPosition(P, zPos); }
+	inline System::Types::TPoint __fastcall  Calculate3DPosition(const Vcltee::Tecanvas::TPoint3D &P){ return Vcltee::Tecanvas::TCanvas3D::Calculate3DPosition(P); }
+	inline System::Types::TPoint __fastcall  Calculate3DPosition(const System::Types::TPoint &P, int z){ return Vcltee::Tecanvas::TCanvas3D::Calculate3DPosition(P, z); }
+	inline void __fastcall  Arrow(bool Filled, const System::Types::TPoint &FromPoint, const System::Types::TPoint &ToPoint, int ArrowWidth, int ArrowHeight, int Z){ Vcltee::Tecanvas::TCanvas3D::Arrow(Filled, FromPoint, ToPoint, ArrowWidth, ArrowHeight, Z); }
+	inline void __fastcall  Arrow(bool Filled, const double ArrowPercent, const System::Types::TPoint &FromPoint, const System::Types::TPoint &ToPoint, int ArrowWidth, int ArrowHeight){ Vcltee::Tecanvas::TTeeCanvas::Arrow(Filled, ArrowPercent, FromPoint, ToPoint, ArrowWidth, ArrowHeight); }
+	inline void __fastcall  Cube(const System::Types::TRect &R, int Z0, int Z1, bool DarkSides = true, int RoundSize = 0x0){ Vcltee::Tecanvas::TCanvas3D::Cube(R, Z0, Z1, DarkSides, RoundSize); }
+	inline void __fastcall  Diamond(const System::Types::TRect &R, int Z0, int Z1){ Vcltee::Tecanvas::TCanvas3D::Diamond(R, Z0, Z1); }
+	inline void __fastcall  EllipseWithZ(const System::Types::TRect &Rect, int Z){ Vcltee::Tecanvas::TCanvas3D::EllipseWithZ(Rect, Z); }
+	inline void __fastcall  LineTo3D(const Vcltee::Tecanvas::TPoint3D &P){ Vcltee::Tecanvas::TCanvas3D::LineTo3D(P); }
+	inline void __fastcall  LineTo3D(const float X, const float Y, const float Z){ Vcltee::Tecanvas::TCanvas3D::LineTo3D(X, Y, Z); }
+	inline void __fastcall  LineWithZ(const System::Types::TPoint &FromPoint, const System::Types::TPoint &ToPoint, int Z){ Vcltee::Tecanvas::TCanvas3D::LineWithZ(FromPoint, ToPoint, Z); }
+	inline void __fastcall  MoveTo3D(const Vcltee::Tecanvas::TPoint3D &P){ Vcltee::Tecanvas::TCanvas3D::MoveTo3D(P); }
+	inline void __fastcall  MoveTo3D(const float X, const float Y, const float Z){ Vcltee::Tecanvas::TCanvas3D::MoveTo3D(X, Y, Z); }
+	inline void __fastcall  PlaneWithZ(const Vcltee::Tecanvas::TFourPoints &P, int Z){ Vcltee::Tecanvas::TCanvas3D::PlaneWithZ(P, Z); }
+	inline void __fastcall  TextOut3D(int x, int y, int z, const System::UnicodeString Text){ Vcltee::Tecanvas::TCanvas3D::TextOut3D(x, y, z, Text); }
+	
+};
+
+
+//-- var, const, procedure ---------------------------------------------------
+}	/* namespace Teeblockcanvas */
+#if !defined(DELPHIHEADER_NO_IMPLICIT_NAMESPACE_USE) && !defined(NO_USING_NAMESPACE_TEEBLOCKCANVAS)
+using namespace Teeblockcanvas;
+#endif
+#pragma pack(pop)
+#pragma option pop
+
+#pragma delphiheader end.
+//-- end unit ----------------------------------------------------------------
+#endif	// TeeblockcanvasHPP

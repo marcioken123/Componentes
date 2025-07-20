@@ -1,0 +1,153 @@
+﻿// CodeGear C++Builder
+// Copyright (c) 1995, 2020 by Embarcadero Technologies, Inc.
+// All rights reserved
+
+// (DO NOT EDIT: machine generated header) 'FMXTee.Gauges.Knob.pas' rev: 34.00 (iOSSIM)
+
+#ifndef Fmxtee_Gauges_KnobHPP
+#define Fmxtee_Gauges_KnobHPP
+
+#pragma delphiheader begin
+#pragma option push
+#pragma option -w-      // All warnings off
+#pragma option -Vx      // Zero-length empty class member 
+#pragma pack(push,8)
+#include <System.hpp>
+#include <SysInit.hpp>
+#include <System.SysUtils.hpp>
+#include <System.Classes.hpp>
+#include <System.Math.hpp>
+#include <System.Types.hpp>
+#include <FMX.Types.hpp>
+#include <System.UITypes.hpp>
+#include <FMX.Platform.hpp>
+#include <FMXTee.Canvas.hpp>
+#include <FMXTee.Procs.hpp>
+#include <FMXTee.Engine.hpp>
+#include <FMXTee.Gauges.Circular.hpp>
+#include <FMXTee.Gauges.Linear.hpp>
+#include <FMXTee.Gauges.Numeric.hpp>
+#include <FMXTee.Series.hpp>
+
+//-- user supplied -----------------------------------------------------------
+
+namespace Fmxtee
+{
+namespace Gauges
+{
+namespace Knob
+{
+//-- forward type declarations -----------------------------------------------
+class DELPHICLASS TKnobGauge;
+//-- type declarations -------------------------------------------------------
+class PASCALIMPLEMENTATION TKnobGauge : public Fmxtee::Gauges::Circular::TCircularGauge
+{
+	typedef Fmxtee::Gauges::Circular::TCircularGauge inherited;
+	
+private:
+	bool FActiveCenter;
+	bool FActiveChange;
+	bool FAxisInside;
+	Fmxtee::Canvas::TTeeGradient* FHighLight;
+	System::Types::TRectF FInnerEllipse;
+	int IAxisGap;
+	int OldX;
+	int OldY;
+	System::Uitypes::TCursor OldCursor;
+	System::Types::TRectF __fastcall CalcRectangle();
+	void __fastcall DrawHighLight(const System::Types::TRectF &R, const int StartAngle, const int EndAngle, bool FarSide);
+	void __fastcall SetAxisInside(const bool Value);
+	void __fastcall SetActiveCenter(const bool Value);
+	void __fastcall SetHighLight(Fmxtee::Canvas::TTeeGradient* const Value);
+	
+protected:
+	virtual void __fastcall CalcOrigRect();
+	virtual void __fastcall DrawAllValues();
+	virtual void __fastcall DrawAxis();
+	virtual void __fastcall DrawCenter();
+	virtual void __fastcall DrawColorLine(Fmxtee::Gauges::Linear::TGaugePointerRange* const Line);
+	virtual void __fastcall DrawFace();
+	__classmethod virtual System::UnicodeString __fastcall GetEditorClass();
+	DYNAMIC void __fastcall PrepareForGallery();
+	virtual void __fastcall SetAxisOnce();
+	virtual void __fastcall SetGaugePalette(const System::Uitypes::TAlphaColor *Palette, const int Palette_High);
+	virtual void __fastcall SetParentChart(Fmxtee::Engine::TCustomAxisPanel* const Value);
+	virtual void __fastcall SetValues();
+	void __fastcall TeeEvent(Fmxtee::Procs::TTeeEvent* Event);
+	
+public:
+	__fastcall virtual TKnobGauge(System::Classes::TComponent* AOwner);
+	__fastcall virtual ~TKnobGauge();
+	virtual void __fastcall Assign(System::Classes::TPersistent* Source);
+	System::Types::TPointF __fastcall CenterPoint();
+	__property Fmxtee::Canvas::TTeeGradient* HighLight = {read=FHighLight, write=SetHighLight};
+	
+__published:
+	__property Active = {default=1};
+	__property Cursor = {default=0};
+	__property ParentChart;
+	__property DataSource;
+	__property PercentFormat = {default=0};
+	__property ShowInLegend = {default=0};
+	__property Title = {default=0};
+	__property ValueFormat = {default=0};
+	__property AfterDrawValues;
+	__property BeforeDrawValues;
+	__property OnAfterAdd;
+	__property OnBeforeAdd;
+	__property OnChange;
+	__property OnClearValues;
+	__property OnClick;
+	__property OnDblClick;
+	__property OnMouseEnter;
+	__property OnMouseLeave;
+	__property XValues;
+	__property YValues;
+	__property bool ActiveCenter = {read=FActiveCenter, write=SetActiveCenter, default=0};
+	__property bool AxisInside = {read=FAxisInside, write=SetAxisInside, default=0};
+	__property Center;
+	__property Circled = {default=1};
+	__property EndPoint;
+	__property Face;
+	__property Frame;
+	__property GreenLine = {stored=false};
+	__property Hand = {stored=false};
+	__property LabelsInside = {default=1};
+	__property Maximum = {default=0};
+	__property Minimum = {default=0};
+	__property MinorTickDistance = {default=3};
+	__property MinorTicks;
+	__property RedLine = {stored=false};
+	__property RotateLabels = {default=1};
+	__property RotationAngle = {default=0};
+	__property Ticks;
+	__property TotalAngle = {default=0};
+	__property Value = {default=0};
+private:
+	void *__ITeeEventListener;	// Fmxtee::Procs::ITeeEventListener 
+	
+public:
+	operator Fmxtee::Procs::ITeeEventListener*(void) { return (Fmxtee::Procs::ITeeEventListener*)&__ITeeEventListener; }
+	
+};
+
+
+//-- var, const, procedure ---------------------------------------------------
+}	/* namespace Knob */
+}	/* namespace Gauges */
+}	/* namespace Fmxtee */
+#if !defined(DELPHIHEADER_NO_IMPLICIT_NAMESPACE_USE) && !defined(NO_USING_NAMESPACE_FMXTEE_GAUGES_KNOB)
+using namespace Fmxtee::Gauges::Knob;
+#endif
+#if !defined(DELPHIHEADER_NO_IMPLICIT_NAMESPACE_USE) && !defined(NO_USING_NAMESPACE_FMXTEE_GAUGES)
+using namespace Fmxtee::Gauges;
+#endif
+#if !defined(DELPHIHEADER_NO_IMPLICIT_NAMESPACE_USE) && !defined(NO_USING_NAMESPACE_FMXTEE)
+using namespace Fmxtee;
+#endif
+#pragma pack(pop)
+#pragma option pop
+
+#pragma delphiheader end.
+//-- end unit ----------------------------------------------------------------
+#endif	// Fmxtee_Gauges_KnobHPP
