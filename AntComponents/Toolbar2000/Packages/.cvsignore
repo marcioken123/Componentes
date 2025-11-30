@@ -1,0 +1,14 @@
+*.bdsproj.local
+*.bpl
+*.cfg
+*.dcpil
+*.dcu
+*.dcuil
+*.dll
+*.hpp
+*.identcache
+*.lib
+*.obj
+*.pdb
+*.rsp
+*.~dll

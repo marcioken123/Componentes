@@ -1,0 +1,52 @@
+package tbx_d4;
+
+{$R *.RES}
+{$ALIGN ON}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $2FC00000}
+{$DESCRIPTION 'Toolbar2000 -- TBX Extensions (Alex Denisov)'}
+{$IMPLICITBUILD ON}
+
+requires
+  tb2k_d4;
+
+contains
+  TBX in '..\TBX.pas',
+  TBXConsts in '..\TBXConsts.pas',
+  TBXColorConsts in '..\TBXColorConsts.pas',
+  TBXDkPanels in '..\TBXDkPanels.pas',
+  TBXExtItems in '..\TBXExtItems.pas',
+  TBXLists in '..\TBXLists.pas',
+  TBXMDI in '..\TBXMDI.pas',
+  TBXStatusBars in '..\TBXStatusBars.pas',
+  TBXSwitcher in '..\TBXSwitcher.pas',
+  TBXThemes in '..\TBXThemes.pas',
+  TBXToolPals in '..\TBXToolPals.pas',
+  TBXUtils in '..\TBXUtils.pas',
+  TBXUxThemes in '..\TBXUxThemes.pas',
+  TBXDefaultTheme in '..\TBXDefaultTheme.pas',
+  TBXOfficeXPTheme in '..\TBXOfficeXPTheme.pas',
+  TBXStripesTheme in '..\TBXStripesTheme.pas',
+  TBXAluminumTheme in '..\TBXAluminumTheme.pas',
+  TBXColorAluminumTheme in '..\TBXColorAluminumTheme.pas',
+  TBXOffice2003Theme in '..\TBXOffice2003Theme.pas';
+
+end.
