@@ -8211,8 +8211,7 @@ begin
   Result := IsPartFixedLength(s, op, ALen, ADummyMaxLen, OP_EEND, nil, []);
 end;
 
-function TRegExpr.IsFixedLengthEx(var op: TREOp; var AMinLen, AMaxLen: integer
-  ): boolean;
+function TRegExpr.IsFixedLengthEx(var op: TREOp; var AMinLen, AMaxLen: integer): boolean;
 var
   s: PRegExprChar;
 begin
