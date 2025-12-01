@@ -1,4 +1,4 @@
-package AsBarCode;
+package BarCodeX;
 
 {$R *.res}
 {$ALIGN 8}

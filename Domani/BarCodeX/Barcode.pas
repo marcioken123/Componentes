@@ -1,4 +1,4 @@
-unit Barcode_old;
+unit Barcode;
 
 {
 Barcode Component
